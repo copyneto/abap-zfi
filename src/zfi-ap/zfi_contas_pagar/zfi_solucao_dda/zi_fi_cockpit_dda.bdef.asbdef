@@ -1,0 +1,16 @@
+unmanaged implementation in class zclfi_bp_cockpit_dda unique;
+//implementation in class zbp_i_fi_cockpit_dda unique;
+
+define behavior for ZI_FI_COCKPIT_DDA alias Cockpit
+//late numbering
+lock master
+//etag master <field_name>
+
+{
+
+  action reprocessar;
+  action notadiv parameter ZI_FI_POPUP_NFDIV;
+  //  create;
+  //  update;
+  //  delete;
+}

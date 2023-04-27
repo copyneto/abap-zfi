@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_GKO_CLEARING</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>GKO: Classe para lançamento de documentos</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR_DOCUMENTS</CMPNAME>
+     <SCONAME>RT_BLNTAB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela interface de compensação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_AUGVL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Operação de compensação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_AMOUNT</CMPNAME>
+     <SCONAME>IV_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante em moeda do documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_AMOUNT</CMPNAME>
+     <SCONAME>RV_CONV_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Char 20</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_DATE</CMPNAME>
+     <SCONAME>IV_DATUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_DATE</CMPNAME>
+     <SCONAME>RV_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de caracteres do comprimento 10</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MSG_TEXT</CMPNAME>
+     <SCONAME>IS_MENSAGEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MSG_TEXT</CMPNAME>
+     <SCONAME>RV_MSG_TEXT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ZLSCH</CMPNAME>
+     <SCONAME>IV_BUKRS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Área def.imprecisam., evtlm.utiliz.p/níveis Support Package</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ZLSCH</CMPNAME>
+     <SCONAME>IV_LIFNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de caracteres do comprimento 10</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ZLSCH</CMPNAME>
+     <SCONAME>RV_ZLSCH</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_VALUE_FTPOST</CMPNAME>
+     <SCONAME>IV_FIELD</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome de campo BDC</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_VALUE_FTPOST</CMPNAME>
+     <SCONAME>IV_SCREEN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Numerador cabeç.doc./linha documento (interface contabiliz.)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_VALUE_FTPOST</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.de registro para interface de contabilização interna</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

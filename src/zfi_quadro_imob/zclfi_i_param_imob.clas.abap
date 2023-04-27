@@ -1,0 +1,6 @@
+CLASS zclfi_i_param_imob DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_param_imob.
+ENDCLASS.
+
+CLASS zclfi_i_param_imob IMPLEMENTATION.
+
+ENDCLASS.

@@ -1,0 +1,45 @@
+projection;
+
+define behavior for ZC_FI_CONTRATO_CRESC //alias <alias_name>
+{
+  //  use create;
+  use update;
+  //  use delete;
+
+  use association _CadCresci { create; }
+  use association _CompCresci { create; }
+  use association _FaixaCresc { create; }
+  use association _FamiliaCresc { create; }
+}
+
+define behavior for ZC_FI_CAD_CRESCI alias _CadCresci
+{
+  use update;
+  use delete;
+
+  use association _Crescimento;
+}
+
+define behavior for ZC_FI_COMP_CRESCI alias _CompCresci
+{
+  use update;
+  use delete;
+
+  use association _Crescimento;
+}
+
+define behavior for ZC_FI_FAIXA_CRESC alias _FaixaCresc
+{
+  use update;
+  use delete;
+
+  use association _Crescimento;
+}
+
+define behavior for ZC_FI_FAMILIA_CRESC alias _FamiliaCresc
+{
+  use update;
+  use delete;
+
+  use association _Crescimento;
+}

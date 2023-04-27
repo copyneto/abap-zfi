@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition para Carga de Pendencias'
+define service ZUI_FI_CARGA_DE_PENDENCIAS {
+  expose ZC_FI_CARGA_PENDENCIAS;
+}

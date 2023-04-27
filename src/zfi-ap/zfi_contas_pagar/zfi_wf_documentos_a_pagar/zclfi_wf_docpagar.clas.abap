@@ -1,0 +1,5 @@
+CLASS zclfi_wf_docpagar DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_wf_docpagar.
+ENDCLASS.
+
+CLASS zclfi_wf_docpagar IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Raiz CNPJ',
+                     title: { value: 'CnpjRaiz' },
+                     typeNamePlural: 'Raiz CNPJ'
+                   }
+     }
+annotate entity ZC_FI_RAIZ_CNPJ_CONT with
+{
+
+  @UI.facet: [
+              { id:              'DescricaoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'DescricaoHeader',
+                position:        10 },
+
+              { id:             'AditivoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'AditivoHeader',
+                position:        20 },
+
+                { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+                 { id:           'geral',
+                 purpose:       #STANDARD,
+                 parentId:        'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 label:         'Dados Gerais',
+                 targetQualifier: 'geral',
+                 position:      10 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 },
+
+             { id:            'cliente',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Clientes',
+                 position:      40,
+                 targetElement: '_Clientes'}   ]
+
+  @UI: { dataPoint:        { qualifier: 'DescricaoHeader', title: 'N° Contrato' } }
+  Contrato;
+
+  @UI: { dataPoint:        { qualifier: 'AditivoHeader', title: 'N° Aditivo' } }
+  Aditivo;
+  
+  @UI: { lineItem:        [ { position: 10 },
+                            {   type: #FOR_ACTION, dataAction: 'buscaCliente', label: 'Buscar Clientes' }  ],
+         identification:  [ { position: 10 },
+                            {   type: #FOR_ACTION, dataAction: 'buscaCliente', label: 'Buscar Clientes' } ],
+         selectionField:  [ { position: 10 } ] }
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'geral' } ]
+  CnpjRaiz;
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         selectionField:  [ { position: 20 } ]}
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'geral' } ]
+  RazaoSoci;
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         selectionField:  [ { position: 30 } ] }
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'geral' } ]
+  NomeFanta;
+
+  @UI: { identification:  [ { position: 40 } ]}
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI: { identification:  [ { position: 50 } ]}
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI: { identification:  [ { position: 60 } ]}
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar' } ]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 70 } ]}
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 80 } ]}
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar' } ]
+  LocalLastChangedAt;
+
+}

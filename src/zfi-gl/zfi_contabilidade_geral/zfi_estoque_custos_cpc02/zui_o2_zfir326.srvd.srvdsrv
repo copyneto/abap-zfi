@@ -1,0 +1,4 @@
+@EndUserText.label: 'Query CPC2L-01'
+define service ZUI_O2_ZFIR326 {
+  expose ZC_FI_QRY_CPC2L as ZFIR326;
+}

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Classe para Cockpit de Associação de Créditos</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Doc: &amp;1 Tipo Doc. pagamento fornecedor deve ser &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Doc: &amp;1 Chav Lan. pagamento fornecedor deve ser &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Doc: &amp;1 Form Pag. pagamento for. deve ser &amp;2 ou &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Documentos processados com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Doc: &amp;1 Fornecedor &amp;2 não possui dados bancários cadastrados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Selecionar apenas uma fatura!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Selecionar uma fatura!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Doc: &amp;1 Tipo Doc. Associação deve ser &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Doc: &amp;1 Chav Lan. Associação deve ser &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Doc: &amp;1 Form Pag.Associação deve ser &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Doc: &amp;1 Cod. Razão Esp. Associação deve ser &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Doc Créd: &amp;1 Pagamento realizado com sucesso &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Doc Créd: &amp;1 Associação realizada com sucesso &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Mensagens:</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Doc. &amp;1 Empresa &amp;2 Exercício &amp;3 contabilizado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Doc. &amp;1 Empresa &amp;2 Exercício &amp;3 contabilizado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Associação não foi possivel!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Fatura a Pagar não foi possivel!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Pagar Fornecedor</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Associação</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ASSOCI_CRE</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Fatura &amp;1 Empresa &amp;2 Exercício &amp;3 não tem saldo disponível.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_CONTABILIZAR alias _Depre
+{
+
+  use action contab;
+  use action reav;
+}

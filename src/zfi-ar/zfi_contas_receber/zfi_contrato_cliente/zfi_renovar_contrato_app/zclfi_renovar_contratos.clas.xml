@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_RENOVAR_CONTRATOS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Renovação de Contrato</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <RSTAT>K</RSTAT>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECAR_DATAS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Checa as Datas Propostas.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_CONTRATO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Contrato Unico</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>RENOVAR_CONTRATO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Renova um contrato.</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECAR_DATAS</CMPNAME>
+     <SCONAME>CX_INVALID_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>invalid date supplied</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECAR_DATAS</CMPNAME>
+     <SCONAME>IV_DATA_FIM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data fim validade</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECAR_DATAS</CMPNAME>
+     <SCONAME>IV_DATA_INICIO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data Início validade</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>CX_CNV_00001_ENTRY_NOT_FOUND</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Corresponding entry was not found</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_ADITIVO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Aditivo Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>N° Contrato</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_DOC_UUID_H</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RENOVAR_CONTRATO</CMPNAME>
+     <SCONAME>IV_DATA_FIM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data fim validade</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME_M>
+     <HASH_ID>9315ED5EB8DB2150ED8529A3FD60F991F7A28BF1</HASH_ID>
+     <ID>&lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>ACCOUNTPAYABLE</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/financeiro/contaspagarrh</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/financeiro/contaspagarrh</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZFI_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/financeiro/contaspagarrh</X-ML_NSPCE>
+     <X-ML_NAME>ACCOUNTPAYABLE</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>AMT_DOCCUR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>AMT_DOCCUR</OBJ_NAME2>
+     <ID>&lt;element&gt; AMT_DOCCUR &lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>AMT_DOCCUR</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>13</IFR_PREC>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>AMT_DOCCUR</R3_NAME>
+     <R3_DATATYP>DEC</R3_DATATYP>
+     <R3_LENGTH>000027</R3_LENGTH>
+     <R3_DECIMAL>000013</R3_DECIMAL>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BUPLA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BUPLA</OBJ_NAME2>
+     <ID>&lt;element&gt; BUPLA &lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BUPLA</IFR_NAME>
+     <IFR_TEXT>Local de negócios</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>4</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BUPLA</R3_NAME>
+     <R3_TEXT>Local de negócios</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000004</R3_LENGTH>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BUZEI</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BUZEI</OBJ_NAME2>
+     <ID>&lt;element&gt; BUZEI &lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BUZEI</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BUZEI</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>LIFNR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>LIFNR</OBJ_NAME2>
+     <ID>&lt;element&gt; LIFNR &lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>LIFNR</IFR_NAME>
+     <IFR_TEXT>Nº conta do fornecedor</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>14</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>LIFNR</R3_NAME>
+     <R3_TEXT>Nº conta do fornecedor</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000014</R3_LENGTH>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SGTXT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SGTXT</OBJ_NAME2>
+     <ID>&lt;element&gt; SGTXT &lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SGTXT</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SGTXT</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SHKZG</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SHKZG</OBJ_NAME2>
+     <ID>&lt;element&gt; SHKZG &lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SHKZG</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SHKZG</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ZFBDT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ZFBDT</OBJ_NAME2>
+     <ID>&lt;element&gt; ZFBDT &lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ZFBDT</IFR_NAME>
+     <IFR_TEXT>Data base para cálculo do vencimento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ZFBDT</R3_NAME>
+     <R3_TEXT>Data base para cálculo do vencimento</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</OBJ_NAME2>
+     <ID>&lt;type&gt; ACCOUNTPAYABLE &lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>ACCOUNTPAYABLE</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH_A</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

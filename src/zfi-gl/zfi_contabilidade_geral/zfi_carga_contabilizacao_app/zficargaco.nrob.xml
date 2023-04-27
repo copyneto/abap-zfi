@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZFICARGACO</OBJECT>
+    <DOMLEN>ZD_NR_CARGA_FI</DOMLEN>
+    <PERCENTAGE>5.0</PERCENTAGE>
+    <CHANGED_AT>20211206180419.688913</CHANGED_AT>
+    <CHANGED_BY>PFERRAZ</CHANGED_BY>
+    <ENAME>PFERRAZ</ENAME>
+    <EDATE>2021-12-02</EDATE>
+    <ETIME>09:58:59</ETIME>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZFICARGACO</OBJECT>
+    <TXT>Carga contabilização - FIGL</TXT>
+    <TXTSHORT>Carga contabilização</TXTSHORT>
+    <ENAME>PFERRAZ</ENAME>
+    <EDATE>2021-12-02</EDATE>
+    <ETIME>09:58:59</ETIME>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

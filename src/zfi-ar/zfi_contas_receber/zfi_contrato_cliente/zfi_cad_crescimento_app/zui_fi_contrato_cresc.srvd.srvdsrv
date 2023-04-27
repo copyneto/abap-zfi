@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service definition Contrato Cliente'
+define service ZUI_FI_CONTRATO_CRESC {
+  expose ZC_FI_CONTRATO_CRESC;
+  expose ZC_FI_CAD_CRESCI;
+  expose ZC_FI_COMP_CRESCI;
+  expose ZC_FI_FAIXA_CRESC;
+  expose ZC_FI_FAMILIA_CRESC;
+}

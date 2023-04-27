@@ -1,0 +1,80 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Base de Comparação Crescimento',
+    typeNamePlural: 'Base de Comparação Crescimento',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    }
+  }}
+  @UI.presentationVariant: [{
+    sortOrder: [ { by: 'Ciclos' } ] } ]
+annotate view ZC_FI_COMP_CRESCI with
+{
+  @UI.facet: [
+
+              { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+              { id:           'geral',
+                 purpose:       #STANDARD,
+                 parentId:        'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 label:         'Dados Gerais',
+                 targetQualifier: 'geral',
+                 position:      10 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 } ]
+
+  @UI.hidden: true
+  DocUuidH;
+  @UI.hidden: true
+  DocUuidCiclo;
+  @UI.hidden: true
+  Contrato;
+  @UI.hidden: true
+  Aditivo;
+  
+  @UI: { lineItem:    [ { position: 10, label: 'Ciclo Base de Comparação' } ],
+     identification:  [ { position: 10, label: 'Ciclo Base de Comparação' } ] }
+  @UI.fieldGroup:     [ { position: 10, qualifier: 'geral' } ]
+  Ciclos;
+
+  @UI: { lineItem:    [ { position: 20, label: 'Montante de Comparação' } ],
+     identification:  [ { position: 20, label: 'Montante de Comparação' } ]}
+  @UI.fieldGroup:     [ { position: 20, qualifier: 'geral' } ]
+  MontComp;
+
+  @UI.hidden: true
+  Waers;
+
+  @UI: { identification:  [ { position: 30 } ]}
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI: { identification:  [ { position: 40 } ]}
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI: { identification:  [ { position: 50 } ]}
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar' } ]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 60 } ]}
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 70 } ]}
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar' } ]
+  LocalLastChangedAt;
+
+  /* Associations */
+  //    _Sistema;;
+
+}

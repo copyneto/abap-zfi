@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_WEVO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Valor duplicado!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Código de Cenário Inválido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Código do Tipo de Cenário Inválido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Código da Ordem Inválido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Código do Pagamento Inválido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Código do Ressarcimento Inválido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Código da Mercadoria Inválida!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Valor da Taxa não encontrada. Lançamento será realizado a posterior.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Erro na criação do LOG. Favor efetuar lançamento novamente!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Administradora de Cartão não é necessária lançamento de taxa.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Documento criado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Erro ao Gravar LOG. Refazer lançamento!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Não foi localizado configuração para o Cenário fornecido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Não existe configuração para Empresa e Local de Negócio fornecido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>LOG gravado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_WEVO</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Erro ao gravar o LOG!</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

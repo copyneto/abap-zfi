@@ -1,0 +1,34 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeNamePlural: 'Clientes Sem Contratos'
+    }}
+annotate view ZC_FI_SEM_CONTR_DDE
+    with 
+{
+  @UI.facet: [ { id:         'clientes',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Clientes Sem Contratos',
+               position:      10 }]
+ @UI: { lineItem:        [ { position: 10, label: 'Empresa' } ],
+        identification:  [ { position: 10, label: 'Empresa' } ] }
+    Empresa;
+ @UI: { lineItem:        [ { position: 20, label: 'Cliente' } ],
+        identification:  [ { position: 20, label: 'Cliente' } ] }
+    Cliente;
+ @UI: { lineItem:        [ { position: 30, label: 'Grp.condições' } ],
+        identification:  [ { position: 30, label: 'Grp.condições' } ] }
+    GrpCondicoes;
+ @UI: { lineItem:        [ { position: 40, label: 'Dia do Mês Fixo' } ],
+        identification:  [ { position: 40, label: 'Dia do Mês Fixo' } ] }
+    DiaMes;
+ @UI: { lineItem:        [ { position: 50, label: 'Dia da Semana' } ],
+        identification:  [ { position: 50, label: 'Dia da Semana' } ] }
+    DiaSemana;
+ @UI.hidden: true
+    LastChangedAt;
+ @UI.hidden: true
+    LocalLastChangedAt;
+    
+}

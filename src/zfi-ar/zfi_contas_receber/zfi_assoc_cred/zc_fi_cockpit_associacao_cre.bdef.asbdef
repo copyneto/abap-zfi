@@ -1,0 +1,34 @@
+projection;
+
+define behavior for ZC_FI_COCKPIT_ASSOCIACAO_CRE alias _Associ
+{
+  use update;
+
+  use action LimpaSelecao;
+
+  use association _Creditos;
+  use association _Fatura;
+}
+
+define behavior for ZC_FI_COCKPIT_CREDITOS_CLI alias _Creditos
+{
+  use update;
+
+  use action LimpaSelecaoCre;
+  use action CalcularSoma;
+  use action ExecAssociacao;
+  use action PagarFornecedor;
+
+  use association _Associ;
+}
+
+define behavior for ZC_FI_COCKPIT_FATURA_CLI alias _Fatura
+{
+
+  use update;
+
+  use action LimpaSelecaoFat;
+  use action GravaSelecao;
+
+  use association _Associ;
+}

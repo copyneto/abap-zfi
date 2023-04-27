@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_FI_WF_DOCPAGAR {
+    grant 
+        select
+            on
+                ZI_FI_WF_DOCPAGAR
+                    where
+                        ( ) = aspect pfcg_auth( ZFIMTABLE, ACTVT = '03', TABLE = 'ZTFI_WF_DOCPAGAR' );
+                        
+}

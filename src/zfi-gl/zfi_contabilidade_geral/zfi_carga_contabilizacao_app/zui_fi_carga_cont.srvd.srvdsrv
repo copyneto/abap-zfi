@@ -1,0 +1,6 @@
+@EndUserText.label: 'Carga Contabilização'
+define service ZUI_FI_CARGA_CONT {
+  expose ZC_FI_CARGA_H;
+  expose ZC_FI_CARGA_DOC;
+  expose ZC_FI_CARGA_ITEM;
+}

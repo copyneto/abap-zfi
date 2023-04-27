@@ -1,0 +1,28 @@
+managed; // implementation in class zbp_i_fi_centro_lucro_lc unique;
+
+define behavior for ZI_FI_CENTRO_LUCRO_LC alias CentroLucro
+implementation in class zclfi_clucro_lancontabil unique
+persistent table ztfi_clucro
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) Empresa, Divisao, ContaContabil;
+
+  field (mandatory : create) CentroLucro;
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_clucro
+  {
+    Empresa = empresa;
+    Divisao = divisao;
+    ContaContabil = conta_contabil;
+    CentroLucro = centro_lucro;
+  }
+}

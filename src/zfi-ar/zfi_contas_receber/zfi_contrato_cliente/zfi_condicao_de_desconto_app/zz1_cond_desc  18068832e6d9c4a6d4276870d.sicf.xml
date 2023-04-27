@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SICF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <URL>/sap/bc/bsp/sap/zz1_cond_desc/</URL>
+   <ICFSERVICE>
+    <ICF_NAME>ZZ1_COND_DESC</ICF_NAME>
+    <ORIG_NAME>zz1_cond_desc</ORIG_NAME>
+   </ICFSERVICE>
+   <ICFDOCU>
+    <ICF_NAME>ZZ1_COND_DESC</ICF_NAME>
+    <ICF_LANGU>P</ICF_LANGU>
+    <ICF_DOCU>Condição de Desconto</ICF_DOCU>
+   </ICFDOCU>
+  </asx:values>
+ </asx:abap>
+</abapGit>

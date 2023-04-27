@@ -1,0 +1,121 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Regra',
+        typeNamePlural: 'Regras',
+        title: { type: #STANDARD,
+                 label: 'Regra',
+                 value: 'RegraLabel' },
+        description: {
+            type: #STANDARD,
+            value: 'Descricao' }
+    },
+
+    presentationVariant: [{
+    sortOrder: [{
+        by: 'Regra',
+        direction: #ASC
+    }],
+    visualizations: [{
+        type: #AS_LINEITEM
+    }]
+}]
+}
+
+annotate entity ZC_FI_CFG_AUTO_TEXTOS_REGRAS with
+{
+
+  @UI.facet: [{ id: 'Regras',
+                purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE,
+                position: 10,
+                importance: #HIGH,
+                label: 'Regras' },
+
+              { id: 'SelEmpresa',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                position: 20,
+                importance: #HIGH,
+                label: 'Critérios: Empresas',
+                targetElement: '_Empresa' },
+
+              { id: 'SelTipoDoc',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                position: 30,
+                importance: #HIGH,
+                label: 'Critérios: Tipos de Documento',
+                targetElement: '_TipoDocumento' },
+
+              { id: 'SelConta',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                position: 40,
+                importance: #HIGH,
+                label: 'Critérios: Contas Contábeis',
+                targetElement: '_ContaContabil' },
+
+              { id: 'SelChave',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                position: 50,
+                importance: #HIGH,
+                label: 'Critérios: Chaves de Lançamento',
+                targetElement: '_ChaveLancto' },
+
+              { id: 'SelTipoAtualizacao',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                position: 60,
+                importance: #HIGH,
+                label: 'Critérios: Tipos de Atualização',
+                targetElement: '_TipoAtualizacao' },
+
+              { id: 'SelTipoProduto',
+                purpose: #STANDARD,
+                type: #LINEITEM_REFERENCE,
+                position: 60,
+                importance: #HIGH,
+                label: 'Critérios: Tipos de Produto',
+                targetElement: '_TipoProduto' },
+
+                { id: 'Campos',
+                  purpose: #STANDARD,
+                  type: #LINEITEM_REFERENCE,
+                  position: 90,
+                  importance: #HIGH,
+                  label: 'Campos',
+                  targetElement: '_Campos' }
+  ]
+
+  @UI: { lineItem:       [{ position: 10, label: 'Regra' }],
+         identification: [{ position: 10, label: 'Regra' }],
+         selectionField: [{ position: 10 }]
+  }
+  Regra;
+
+  @UI: { lineItem:       [{ position: 20, label: 'Descrição' }],
+         identification: [{ position: 20, label: 'Descrição' }],
+         selectionField: [{ position: 20 }]
+  }
+  Descricao;
+
+
+  @UI: { lineItem:       [{  position: 30, label: 'Texto Fixo' }],
+         identification: [{  position: 30, label: 'Texto Fixo' }]
+  }
+  TextoFixo;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

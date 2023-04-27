@@ -1,0 +1,5 @@
+CLASS zclfi_provisao_cli DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_provisao_cli.
+ENDCLASS.
+
+CLASS zclfi_provisao_cli IMPLEMENTATION.
+ENDCLASS.

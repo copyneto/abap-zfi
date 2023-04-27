@@ -1,0 +1,106 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'Movimentos Material Ledger',
+    typeNamePlural: 'Movimentos Material Ledger',
+    title: {
+        type: #STANDARD,
+        label: 'matnr',
+        value: 'matnr'
+    }
+}
+annotate entity ZC_FI_MOV_LEDGER with
+{
+
+  @UI.facet: [{
+        id: 'Dir',
+        purpose: #STANDARD,
+        position: 10,
+        label: 'Entradas',
+        type: #IDENTIFICATION_REFERENCE
+    }]
+
+  //  @UI: { lineItem: [{ position: 05 }],
+  //  identification: [{ position: 05 }],
+  //  selectionField: [{ position: 05 }] }
+  //  categ;
+
+  @UI: { lineItem: [{ position: 10 }],
+  identification: [{ position: 10 }] }
+  Categoria;
+
+  //  @UI: { lineItem: [{ position: 20 }],
+  //  identification: [{ position: 20 }] }
+  //  ptyp;
+
+  @UI: { lineItem: [{ position: 30 }],
+  identification: [{ position: 30 }] }
+  ktext;
+
+  @UI: { lineItem: [{ position: 40 }],
+  identification: [{ position: 40 }],
+  selectionField: [{ position: 05 }] }
+  budat;
+
+
+  @UI: { lineItem: [{ position: 50 }],
+  identification: [{ position: 50 }],
+  selectionField: [{ position: 50 }] }
+  matnr;
+
+  @UI: { lineItem: [{ position: 60 }],
+  identification: [{ position: 60 }] }
+  lifnr;
+
+  @UI: { lineItem: [{ position: 70 }],
+  identification: [{ position: 70 }] }
+  Name1;
+
+  @UI: { lineItem: [{ position: 80 }],
+  identification: [{ position: 80 }] }
+  Xblnr;
+
+  @UI: { lineItem: [{ position: 90 }],
+  identification: [{ position: 90 }],
+  selectionField: [{ position: 90 }]}
+  belnr;
+
+  @UI: { lineItem: [{ position: 100 }],
+  identification: [{ position: 100 }] }
+  awref;
+
+  @UI: { lineItem: [{ position: 110 }],
+  identification: [{ position: 110 }] }
+  CustoReal;
+
+  @UI: { lineItem: [{ position: 120 }],
+   identification: [{ position: 120 }] }
+  Quant;
+  @UI: { lineItem: [{ position: 125 }],
+   identification: [{ position: 125 }] }
+  Meins;
+
+  @UI: { lineItem: [{ position: 130 }],
+  identification: [{ position: 130 }],
+  selectionField: [{ position: 130 }] }
+  bwkey;
+
+  @UI: { lineItem: [{ position: 140 }],
+  identification: [{ position: 140 }] }
+  bwtar;
+
+  @UI: { lineItem: [{ position: 150 }],
+  identification: [{ position: 150 }],
+  selectionField: [{ position: 150 }] }
+  exercicio;
+
+  @UI: { lineItem: [{ position: 160 }],
+  identification: [{ position: 160 }],
+  selectionField: [{ position: 160 }] }
+  periodo;
+
+
+
+
+
+}

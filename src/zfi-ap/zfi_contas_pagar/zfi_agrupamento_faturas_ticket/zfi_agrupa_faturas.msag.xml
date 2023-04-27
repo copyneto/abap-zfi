@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens Agrupamento de faturas</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Arquivo &amp;1 já foi processado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro ao importar aquivo</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Busca de faturas executada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao iniciar processo de agrupamento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Não foi possível recuperar as faturas para agrupamento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Fornecedor &amp;1 já cadastrado como agrupador.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Fornecedor &amp;1 já cadastrado como agrupado do fornecedor &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Arquivo possui linhas com erro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Fornecedor &amp;1 não cadastrado como agrupador.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Fornecedor &amp;1 não está cadastrado para o Forn. Agrupador &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Fornecedor não cadastrado no SAP</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Fatura em aberto não encontrada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Divergência de valores</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Divergência de datas</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Agrupado com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Diferença entre valores excede o desconto do Fornecedor Agrupador.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Erro durante agrupamento das faturas</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AGRUPA_FATURAS</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Data de emissão NF &amp;1 deve ser estar no formato DD/MM/AAAA</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

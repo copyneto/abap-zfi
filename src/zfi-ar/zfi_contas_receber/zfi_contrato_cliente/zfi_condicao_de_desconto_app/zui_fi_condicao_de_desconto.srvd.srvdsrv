@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition para Condição de Desconto'
+define service ZUI_FI_CONDICAO_DE_DESCONTO {
+  expose ZC_FI_CONDICAO_DESCONTO as CondDesc;
+}

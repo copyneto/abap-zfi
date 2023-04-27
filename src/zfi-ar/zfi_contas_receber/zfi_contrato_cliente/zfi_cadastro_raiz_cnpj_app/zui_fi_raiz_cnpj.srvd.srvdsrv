@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Definition para Cnpj Raiz'
+define service ZUI_FI_RAIZ_CNPJ {
+  expose ZC_FI_RAIZ_CNPJ;
+  expose ZC_FI_RAIZ_CLIENTES;
+}

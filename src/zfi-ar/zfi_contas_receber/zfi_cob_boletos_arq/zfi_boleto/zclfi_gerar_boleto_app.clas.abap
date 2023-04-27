@@ -1,0 +1,5 @@
+CLASS zclfi_gerar_boleto_app DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_boleto.
+ENDCLASS.
+
+CLASS zclfi_gerar_boleto_app IMPLEMENTATION.
+ENDCLASS.

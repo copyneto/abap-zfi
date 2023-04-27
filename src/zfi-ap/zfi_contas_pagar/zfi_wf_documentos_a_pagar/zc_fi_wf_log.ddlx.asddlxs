@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Log',
+        typeNamePlural: 'Logs',
+        title: {
+            type: #STANDARD,
+            label: 'Workflow',
+            value: 'WfId'
+        }
+    }
+}
+@UI.presentationVariant: [{ sortOrder: [{ by: 'WfId', direction: #DESC }] }]
+annotate view ZC_FI_WF_LOG with
+{
+  @UI.facet: [{
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Log de Aprovação',
+      type: #IDENTIFICATION_REFERENCE
+  }]
+
+  @UI.hidden: true
+  Uuid;
+  @UI.selectionField: [{position: 10}]
+  @UI: { lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }]}
+  WfId;
+  @UI.selectionField: [{position: 20}]
+  @UI: { lineItem: [{ position: 20 }],
+         identification: [{ position: 20 }]}
+  TaskId;
+  @UI.selectionField: [{position: 30}]
+  @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }]}
+  Aprovador;
+  //@UI.selectionField: [{position: 40}]
+  @UI: { lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }]}
+  NivelAprovacao;  
+  @UI.selectionField: [{position: 50}]
+  @UI: { lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }]}
+  Data;
+  @UI.selectionField: [{position: 60}]
+  @UI: { lineItem: [{ position: 60 }],
+         identification: [{ position: 60 }]}
+  Hora;
+  @UI.selectionField: [{position: 70}]
+  @UI: { lineItem: [{ position: 70 }],
+         identification: [{ position: 70 }]}
+  Empresa;
+  @UI.selectionField: [{position: 80}]
+  @UI: { lineItem: [{ position: 80 }],
+         identification: [{ position: 80 }]}
+  Documento;
+  @UI.selectionField: [{position: 90}]
+  @UI: { lineItem: [{ position: 90 }],
+         identification: [{ position: 90 }]}
+  Exercicio;
+  //@UI.selectionField: [{position: 100}]
+  @UI: { lineItem: [{ position: 100 }],
+         identification: [{ position: 100 }]}
+  Item;
+  @UI.selectionField: [{position: 110}]
+  @UI: { lineItem: [{ position: 110, criticality: 'StatusCriticality' }],
+         identification: [{ position: 110 }]}
+  StatusAprovacao;
+
+}

@@ -1,0 +1,106 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Associação Créditos',
+                     typeNamePlural: 'Associação Créditos' },
+  presentationVariant: [{ sortOrder: [{ by: 'Empresa', direction:  #ASC },
+                                      { by: 'Cliente', direction:  #ASC }] }] }
+
+annotate view ZC_FI_COCKPIT_ASSOCIACAO_CRE with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'HeaderEmpresa',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderEmpresa',
+                 position:        10 },
+
+               { id:              'HeaderMont',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderMont',
+                 position:        50 },
+
+               { id:              'HeaderFatMont',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderFatMont',
+                 position:        60 },
+                
+                { id:              'HeaderTotCre',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderTotCre',
+                 position:        70 },
+
+                { id:              'HeaderTotFat',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderTotFat',
+                 position:        80 },
+
+                { id:              'HeaderTotLiq',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderTotLiq',
+                 position:        90 },
+
+                { id:              'HeaderTotRes',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderTotRes',
+                 position:        100 },
+                
+                { id:              'Creditos',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Créditos',
+                 position:        120,
+                 targetElement:   '_Creditos'},
+                 
+                { id:              'Fatura',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Faturas',
+                 position:        130,
+                 targetElement:   '_Fatura'} ]
+
+  @UI: { identification:  [ { position: 10, type: #FOR_ACTION, dataAction: 'LimpaSelecao', label: 'Limpar' } ]  }
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:       [{ position: 10, label: 'Empresa' }],
+         selectionField: [{ position: 10 }],
+         dataPoint:      { qualifier: 'HeaderEmpresa', title: 'Empresa' } }
+  Empresa;
+  @UI: { lineItem:       [{ position: 20, label: 'Descrição' }] }
+  EmpresaText;
+  @UI: { lineItem:       [{ position: 40, label: 'Cliente' }],
+         selectionField: [{ position: 40 }]}
+  Cliente;
+  @UI: { lineItem:       [{ position: 50, label: 'Raiz ID' }],
+         selectionField: [{ position: 50 }]}
+  RaizId;
+  @UI: { lineItem:       [{ position: 60, label: 'Nome' }],
+         selectionField: [{ position: 60 }]}
+  Nome;  
+  @UI: { lineItem:       [{ position: 70, label: 'Raiz S/N' }],
+         selectionField: [{ position: 70 }]}
+  RaizSn;  
+  @UI: { lineItem:       [{ position: 80, label: 'Montante Total Créditos' }],
+         dataPoint:      { qualifier: 'HeaderMont', title: 'Total Creditos' } }
+  Montante;
+  @UI: { lineItem:       [{ position: 90, label: 'Montante Total Faturas' }],
+         dataPoint:      { qualifier: 'HeaderFatMont', title: 'Total Faturas' } }
+  FaturaMontante; 
+  @UI: { dataPoint:      { qualifier: 'HeaderTotCre', title: 'Total Créditos Atribuídos' }}  
+  TotalizadorDetalhe1;
+  @UI: { dataPoint:      { qualifier: 'HeaderTotFat', title: 'Total Fatura Atribuída' }}  
+  TotalizadorDetalhe2;
+  @UI: { dataPoint:      { qualifier: 'HeaderTotLiq', title: 'Total Líquido' }}  
+  TotalizadorDetalhe3;
+  @UI: { dataPoint:      { qualifier: 'HeaderTotRes', title: 'Crédito Residual' }}  
+  TotalizadorDetalhe4;
+}

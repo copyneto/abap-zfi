@@ -1,0 +1,7 @@
+unmanaged implementation in class zclfi_venc_cli_f01 unique;
+
+define behavior for ZI_FI_VENC_CLI_F01
+
+{
+  action modVencimento parameter ZI_FI_VENC_F01_POPUP;
+}

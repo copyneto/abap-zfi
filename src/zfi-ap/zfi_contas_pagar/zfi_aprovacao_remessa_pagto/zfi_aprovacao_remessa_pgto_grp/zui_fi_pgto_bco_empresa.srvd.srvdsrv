@@ -1,0 +1,6 @@
+@EndUserText.label: 'Serv. Def. Pagto Bco Empresa'
+define service Zui_fi_pgto_bco_empresa {
+  expose ZC_FI_PGTO_BCO_EMPRESA;
+  expose ZC_FI_PROG_PAG_DOC_ITENS as Itens;
+  expose ZC_FI_APROV_DOC_PGTO as URL;
+}

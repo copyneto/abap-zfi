@@ -1,0 +1,33 @@
+managed;
+
+define behavior for ZI_FI_WF_DOCPAGAR //alias <alias_name>
+implementation in class zclfi_wf_docpagar unique
+persistent table ztfi_wf_docpagar
+authorization master ( instance )
+lock master
+
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+  field ( readonly : update ) DocumentType, Counter;
+  field ( mandatory : create ) DocumentType, Counter, DocumentText;
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_wf_docpagar
+  {
+    DocumentType = blart;
+    Counter      = contador;
+    DocumentText = bktxt;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}

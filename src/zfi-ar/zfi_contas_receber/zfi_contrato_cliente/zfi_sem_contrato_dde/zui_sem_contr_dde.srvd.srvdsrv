@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv. Definition Clientes Sem Contrato'
+define service ZUI_SEM_CONTR_DDE {
+  expose ZC_FI_SEM_CONTR_DDE;
+  expose ZI_FI_DIASEMANA;
+}

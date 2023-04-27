@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_FI_CONT_APROVACAO {
+    grant 
+        select
+            on
+                ZI_FI_CONT_APROVACAO
+                    where
+                        ( Bukrs ) = aspect pfcg_auth(ZFIBUKRS, BUKRS , ACTVT = '03');
+                        
+}

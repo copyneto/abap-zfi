@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_ADITIVO_CONT {
+    grant
+        select
+            on
+                ZC_ADITIVO_CONT
+                    where
+                        inheriting conditions from entity ZI_ADITIVO_CONT;
+                        
+}

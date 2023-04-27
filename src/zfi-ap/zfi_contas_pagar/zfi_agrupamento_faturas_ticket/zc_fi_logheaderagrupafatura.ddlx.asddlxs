@@ -1,0 +1,137 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Log de agrupamento',
+        typeNamePlural: 'Arquivos importados',
+        title: {
+            type: #STANDARD,
+            label: 'Arquivo',
+            value: 'Arquivo'
+        },
+        description: {
+            type: #STANDARD,
+            value: 'DataImportacao'
+        }
+    }
+}
+annotate entity ZC_FI_LOGHEADERAGRUPAFATURA with
+{
+
+  @UI.facet: [ { id: 'StatusArquivo',
+                 purpose: #HEADER,
+                 type: #DATAPOINT_REFERENCE,
+                 position: 10,
+                 targetQualifier: 'StatusArq'
+                 },
+
+               { id: 'DadosGerais',
+                 purpose: #STANDARD,
+                 type: #COLLECTION,
+                 position: 10,
+                 importance: #HIGH,
+                 label: 'Cabeçalho' },
+
+               { id: 'Arquivo',
+                 parentId: 'DadosGerais',
+                 purpose: #STANDARD,
+                 position: 10,
+                 label: 'Dados do Arquivo',
+                 type: #IDENTIFICATION_REFERENCE },
+
+                { id: 'DadosImportacao',
+                 purpose: #STANDARD,
+                 type: #FIELDGROUP_REFERENCE,
+                 parentId: 'DadosGerais',
+                 position: 20,
+                 label: 'Importação',
+                 targetQualifier: 'GrupoImportacao' },
+
+                { id: 'DadosAtualizacao',
+                 purpose: #STANDARD,
+                 type: #FIELDGROUP_REFERENCE,
+                 parentId: 'DadosGerais',
+                 position: 20,
+                 label: 'Status',
+                 targetQualifier: 'GrupoAtualizacao' },
+
+               { id: 'Linhas',
+                 purpose: #STANDARD,
+                 position: 40,
+                 label: 'Registros',
+                 type: #LINEITEM_REFERENCE,
+                 targetElement: '_ItemLog' }
+    ]
+
+  @UI: { lineItem: [{ position: 10, criticality: 'StatusCriticality' }],
+         dataPoint: { qualifier: 'StatusArq', title: 'Status', criticality: 'StatusCriticality'  },
+         selectionField: [{ position: 10 }]
+  }
+  @UI.textArrangement: #TEXT_ONLY
+  StatusProcessamento;
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI: { lineItem: [{ position: 20 }],
+         identification: [  { position: 20} ],
+         selectionField: [{ position: 20 }]
+  }
+  Arquivo;
+
+  @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30}],
+         selectionField: [{ position: 30 }]
+  }
+  CompanyCode;
+
+  @UI: { lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }],
+         selectionField: [{ position: 40 }]
+  }
+  @EndUserText.label: 'Fornecedor agrupador'
+  FornAgrupador;
+
+  @UI: { fieldGroup: [{ qualifier: 'GrupoImportacao', position: 10, label: 'Usuário' }] }
+  @EndUserText.label: 'Usuário'
+  CreatedBy;
+
+  @UI: { lineItem: [{ position: 50 }],
+         selectionField: [{ position: 50 }],
+         fieldGroup: [{ qualifier: 'GrupoImportacao', position: 20, label: 'Data Importação' }]
+  }
+  @EndUserText.label: 'Data Importação'
+  DataImportacao;
+
+  @UI: { fieldGroup: [{ qualifier: 'GrupoImportacao', position: 30, label: 'Hora Importação' }] }
+  @EndUserText.label: 'Hora Importação'
+  HoraImportacao;
+
+  @UI: { lineItem: [{ position: 60 }],
+           identification: [{ position: 60 }],
+           selectionField: [{ position: 60 }]
+    }
+  @EndUserText.label: 'Vencimento'
+  Vencimento;
+
+  @UI: { lineItem: [{ position: 70 }],
+           identification: [{ position: 70 }],
+           selectionField: [{ position: 70 }]
+    }
+  @EndUserText.label: 'Referência'
+  Referencia;
+
+  @UI: { identification: [{ position: 80 }] }
+  @EndUserText.label: 'Valor Desconto'
+  Desconto;
+
+  @UI: { fieldGroup: [{ qualifier: 'GrupoAtualizacao', position: 10, label: 'Usuário Status' }] }
+  @EndUserText.label: 'Usuário Status'
+  LastChangedBy;
+
+  @UI: { fieldGroup: [{ qualifier: 'GrupoAtualizacao', position: 20, label: 'Data e hora Status' }] }
+  @EndUserText.label: 'Data e hora Status'
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

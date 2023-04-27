@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_FI_CONCILIACAO_MANUAL_DDA
+{
+
+  use action conciliaManual;
+}

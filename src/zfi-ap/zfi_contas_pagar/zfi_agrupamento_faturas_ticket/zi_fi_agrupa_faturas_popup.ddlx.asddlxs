@@ -1,0 +1,41 @@
+@Metadata.layer: #CORE
+annotate entity ZI_FI_AGRUPA_FATURAS_POPUP with
+{
+
+  @Consumption.valueHelpDefinition: [ { entity:  { name:    'ZI_CA_VH_COMPANY',
+                                        element:            'CompanyCode' }
+  }]
+  @EndUserText.label: 'Empresa'
+  selCompanyCode;
+
+  @Consumption.valueHelpDefinition: [ { entity:  { name:    'ZI_FI_VH_FORN_AGRUPADOR',
+                                        element:            'FornAgrupador' }
+  }]
+  @EndUserText.label: 'Fornecedor Agrupador'
+  selFornAgrupa;
+
+  @EndUserText.label: 'Dt. vencimento'
+  selDueDate;
+
+  @EndUserText.label: 'Nº Fatura'
+  selReference;
+
+  @EndUserText.label: 'Dt. Emissão'
+  selPostingDate;
+
+  @EndUserText.label: 'Dt. do documento'
+  selDocumentDate;
+
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CostCenterText',
+                                                 element: 'CostCenter' }
+  }]
+  @EndUserText.label: 'Centro de Custo'
+  selCostCenter;
+
+  @EndUserText.label: 'Desconto (R$)'
+  selDesconto;
+
+  @UI.hidden: true
+  selCurrency;
+
+}

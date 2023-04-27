@@ -1,0 +1,201 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Arquivo x Fatura',
+        typeNamePlural: 'Análise Arquivo x Fatura ',
+        title: { type: #STANDARD,
+                 label: 'NF',
+                 value: 'NotaFiscal' }
+    }
+}
+annotate entity ZC_FI_AGRUPALINHAS with
+{
+
+  @UI.facet: [{ id: 'Principal',
+                purpose: #STANDARD,
+                position: 10,
+                label: 'Análise Arquivo x Fatura',
+                type: #COLLECTION },
+
+              { id: 'InfoGerais',
+                purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE,
+                parentId: 'Principal',
+                position: 10,
+                importance: #HIGH,
+                label: 'Dados Básicos' },
+
+              { id: 'Status',
+                purpose: #STANDARD,
+                type: #FIELDGROUP_REFERENCE,
+                parentId: 'Principal',
+                position: 20,
+                label: 'Status',
+                targetQualifier: 'GrupoStatus' },
+
+              { id: 'Valores',
+                purpose: #STANDARD,
+                type: #FIELDGROUP_REFERENCE,
+                parentId: 'Principal',
+                position: 30,
+                label: 'Valores',
+                targetQualifier: 'GrupoValores' },
+
+              { id: 'Datas',
+                purpose: #STANDARD,
+                type: #FIELDGROUP_REFERENCE,
+                parentId: 'Principal',
+                position: 40,
+                label: 'Datas',
+                targetQualifier: 'GrupoDatas' },
+
+              { id: 'Agrupado',
+                purpose: #STANDARD,
+                type: #FIELDGROUP_REFERENCE,
+                parentId: 'Principal',
+                position: 50,
+                label: 'Agrupamento',
+                targetQualifier: 'GrupoAgrup' }  ]
+
+
+  @UI: { lineItem: [{ position: 10, criticality: 'ItemCriticality' }],
+         fieldGroup: [{ qualifier: 'GrupoStatus', position: 10, criticality: 'ItemCriticality', label: 'Status' }],
+         selectionField: [{ position: 10 }]
+  }
+  @UI.textArrangement: #TEXT_ONLY
+  ItemStatus;
+  @UI.hidden: true
+  ItemCriticality;
+
+  @UI: { fieldGroup: [{ qualifier: 'GrupoStatus', position: 20, label: 'Mensagem' }] }
+  @EndUserText.label: 'Mensagem'
+  Msg;
+
+  @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 30 }]
+
+  }
+  CompanyCode;
+
+  @UI: { lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }],
+         selectionField: [{ position: 40 }]
+  }
+  Supplier;
+
+  @UI: { lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }],
+         selectionField: [{ position: 50 }]
+  }
+  @EndUserText.label: 'Nota Fiscal'
+  NotaFiscal;
+
+  @UI: { lineItem: [{ position: 60 }],
+         identification: [{ position: 60 }],
+         selectionField: [{ position: 60 }]
+  }
+  @EndUserText.label: 'CNPJ'
+  Cnpj;
+
+  @UI: { lineItem: [{ position: 70 }],
+         selectionField: [{ position: 70 }],
+         fieldGroup: [{ qualifier: 'GrupoDatas', position: 30, label: 'Vencimento' }]
+  }
+  @EndUserText.label: 'Vencimento'
+  DueDate;
+
+  @UI: { lineItem: [{ position: 90 }],
+         fieldGroup: [{ qualifier: 'GrupoValores', position: 10, label: 'Valor NF Arq.' }]
+  }
+  @EndUserText.label: 'Valor NF Arq.'
+  ValorNFArquivo;
+
+  @UI: { lineItem: [{ position: 100 }],
+
+         fieldGroup: [{ qualifier: 'GrupoValores', position: 20, label: 'Valor NF Fatura' }]
+  }
+  @EndUserText.label: 'Valor NF Fatura'
+  ValorNFFatura;
+
+  @UI: { lineItem: [{ position: 110 }],
+         identification: [{ position: 110 }],
+         selectionField: [{ position: 110 }]
+  }
+  AccountingDocument;
+
+  @UI: { lineItem: [{ position: 120 }],
+         identification: [{ position: 120 }]
+  }
+  AccountingItem;
+
+  @UI: { lineItem: [{ position: 130 }],
+         selectionField: [{ position: 130 }],
+         fieldGroup: [{ qualifier: 'GrupoDatas', position: 10, label: 'Emissão Arquivo' }]
+  }
+  @EndUserText.label: 'Emissão Arquivo'
+  DtEmissaoArquivo;
+
+  @UI: { lineItem: [{ position: 140 }],
+         selectionField: [{ position: 140 }],
+         fieldGroup: [{ qualifier: 'GrupoDatas', position: 20, label: 'Emissão Fatura' }]
+  }
+  @EndUserText.label: 'Emissão Fatura'
+  DtEmissaoFatura;
+
+  @UI: { lineItem: [{ position: 150 }],
+           fieldGroup: [{ qualifier: 'GrupoAgrup', position: 10, label: 'Fatura Agrupada' }]
+    }
+  @EndUserText.label: 'Fatura Agrupada'
+  FaturaAgrupada;
+
+  @UI: { lineItem: [{ position: 150 }],
+           fieldGroup: [{ qualifier: 'GrupoAgrup', position: 20, label: 'Fornecedor Destino' }]
+    }
+  @EndUserText.label: 'Fornecedor Destino'
+  FornAgrupador;
+
+  //  @UI.hidden: true
+  //  @EndUserText.label: 'Empresa'
+  //  selCompanyCode;
+  //
+  //  @UI.hidden: true
+  //  @EndUserText.label: 'Fornecedor Agrupador'
+  //  selFornAgrupa;
+  //
+  //  @EndUserText.label: 'Dt. Vencimento'
+  //  @UI.hidden: true
+  //  selDueDate;
+  //
+  //  @EndUserText.label: 'Nº Fatura'
+  //  @UI.hidden: true
+  //  selReference;
+  //
+  //  @EndUserText.label: 'Dt. Emissão'
+  //  @UI.hidden: true
+  //  selPostingDate;
+  //
+  //  @EndUserText.label: 'Dt. Documento'
+  //  @UI.hidden: true
+  //  selDocumentDate;
+  //
+  //  @EndUserText.label: 'Texto cabeçalho'
+  //  @UI.hidden: true
+  //  selDocumentText;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

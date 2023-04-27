@@ -1,0 +1,4 @@
+@EndUserText.label: 'Def. Serviço'
+define service ZUI_REL_CANCELA {
+  expose ZC_FI_REL_CANCELA as relCancela;
+}

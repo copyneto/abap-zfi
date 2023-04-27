@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Estorno documento</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_ESTORNO_DOCTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_ESTORNO_DOC</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_ESTORNO_DOC</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Estorno documento</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_EMPRESA</PARAMETER>
+       <TYP>BUKRS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOC</PARAMETER>
+       <TYP>BELNR_D</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ANO</PARAMETER>
+       <TYP>GJAHR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DTESTORNO</PARAMETER>
+       <TYP>DATUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_PERIODO</PARAMETER>
+       <TYP>MONAT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_COD</PARAMETER>
+       <TYP>STGRD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CV_DOC_REV</PARAMETER>
+       <TYP>BELNR_D</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>CV_ANO_REV</PARAMETER>
+       <TYP>GJAHR</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>CT_MENSAGENS</PARAMETER>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSCHA>
+     </CHANGING>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_EMPRESA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Empresa</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ANO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DTESTORNO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_PERIODO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mês do exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_COD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Motivo para estorno ou lançamento inverso</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CV_DOC_REV</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CV_ANO_REV</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CT_MENSAGENS</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

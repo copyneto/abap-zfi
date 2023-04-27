@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_FI_ALERTA_VIGENCIA_CONTRATO {
+    grant
+        select
+            on
+                ZC_FI_ALERTA_VIGENCIA_CONTRATO
+                    where
+                        inheriting conditions from entity ZI_FI_ALERTA_VIGENCIA_CONTRATO;
+                        
+}

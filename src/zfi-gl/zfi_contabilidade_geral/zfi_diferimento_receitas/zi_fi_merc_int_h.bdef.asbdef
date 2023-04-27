@@ -1,0 +1,29 @@
+unmanaged implementation in class zclfi_merc_int unique;
+
+define behavior for ZI_FI_MERC_INT_H alias Header
+//late numbering
+//lock master
+//etag master <field_name>
+{
+  //  create;
+  //  update;
+  //  delete;
+
+  action diferir;
+  action contabilizar parameter ZI_FI_CONTAB_POPUP;
+  action simular parameter ZI_FI_SIMULAR_POPUP;
+
+  association _MercIntItem;
+}
+
+define behavior for ZI_FI_MERC_INT_I alias Item
+//late numbering
+//lock dependent by <association>
+//etag master <field_name>
+{
+  //  create;
+  //  update;
+  //  delete;
+
+  association _MercIntHeader;
+}

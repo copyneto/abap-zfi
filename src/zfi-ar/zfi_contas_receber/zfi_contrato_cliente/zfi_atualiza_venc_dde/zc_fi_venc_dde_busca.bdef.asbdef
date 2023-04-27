@@ -1,0 +1,13 @@
+unmanaged implementation in class zclfi_bh_venc_dde_busca unique;
+
+define behavior for ZC_FI_VENC_DDE_BUSCA //alias <alias_name>
+//late numbering
+//lock master
+//etag master <field_name>
+{
+  //  create;
+  //  update;
+  //  delete;
+
+  action ATUALIZA;
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_QTDCHAR</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>10</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>10</SCRLEN2>
+    <SCRLEN3>10</SCRLEN3>
+    <DDTEXT>Quantidade</DDTEXT>
+    <REPTEXT>Quantidade</REPTEXT>
+    <SCRTEXT_S>Quantidade</SCRTEXT_S>
+    <SCRTEXT_M>Quantidade</SCRTEXT_M>
+    <SCRTEXT_L>Quantidade</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>QUAN</DATATYPE>
+    <LENG>000005</LENG>
+    <OUTPUTLEN>000006</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

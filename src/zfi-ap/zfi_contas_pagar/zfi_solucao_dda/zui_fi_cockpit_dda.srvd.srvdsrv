@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Def. Cockpit DDA'
+define service ZUI_FI_COCKPIT_DDA {
+  expose ZC_FI_COCKPIT_DDA;
+}

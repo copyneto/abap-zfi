@@ -1,0 +1,17 @@
+projection;
+
+define behavior for ZC_FI_DEFRECE_HKONT alias _DeParahkonyProc
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _HKONCONTRA {create; }
+
+}
+
+define behavior for zc_fi_defrece_hkoncontra alias _Item {
+
+  use association _DEFRECE_HKONT;
+
+}

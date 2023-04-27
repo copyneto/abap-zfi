@@ -1,0 +1,93 @@
+managed; // implementation in class zbp_i_fi_alerta_vigencia_contr unique;
+
+define behavior for ZI_FI_ALERTA_VIGENCIA_CONTRATO alias _AlertaCont
+implementation in class zclfi_envioemail unique
+persistent table ZTFI_CONTRATO
+authorization master ( instance )
+lock master
+etag master LocalLastChangedAt
+{
+
+  update;
+
+ action enviar_email result [1] $self;
+
+   mapping for ZTFI_CONTRATO
+
+  {
+   DocUuidH           = doc_uuid_h;
+   Contrato           = contrato;
+   Aditivo            = aditivo;
+   ContratoProprio    = contrato_proprio;
+   ContratoJurid      =contrato_jurid;
+   DataIniValid       = data_ini_valid;
+   DataFimValid       = data_fim_valid;
+   Empresa            = bukrs;
+   Local_negocio      = branch;
+   GrpContratos       = grp_contratos;
+   GrpCond            = grp_cond;
+   Chamado            = chamado;
+   PrazoPagto         = prazo_pagto;
+   FormaPagto         = forma_pagto;
+   RespLegal          = resp_legal;
+   RespLegalGtcor     = resp_legal_gtcor;
+   ProdContemplado    = prod_contemplado;
+   Observacao         = observacao;
+   Status             = status;
+   Desativado         = desativado;
+   Canal              = canal;
+   GrpEconomico       = grp_economico;
+   Abrangencia        = abrangencia;
+   Estrutura          = estrutura;
+   Canalpdv           = canalpdv;
+   TipoEntrega        = tipo_entrega;
+   DataEntrega        = data_entrega;
+   DataFatura         = data_fatura;
+   Crescimento        = crescimento;
+   AjusteAnual        =ajuste_anual;
+   DataAssinatura     = data_assinatura;
+   Multas             = multas;
+   RenovAut           = renov_aut;
+   AlertaVig          = alerta_vig;
+   AlertaEnviado      = alerta_enviado;
+   AlertaDataEnvio    = alerta_data_envio;
+   CreatedBy          = created_by;
+   CreatedAt          = created_at;
+   LastChangedBy      = last_changed_by;
+   LastChangedAt      = last_changed_at;
+   LocalLastChangedAt = local_last_changed_at;
+   Aprov1             = aprov1;
+   Dataaprov1         = dataaprov1;
+   Hora_aprov1        = hora_aprov1;
+   Aprov2             = aprov2;
+   Dataaprov2         = dataaprov2;
+   Hora_aprov2        = hora_aprov2;
+   Aprov3             = aprov3;
+   Dataaprov3         = dataaprov3;
+   Hora_aprov3        = hora_aprov3;
+   Aprov4             = aprov4;
+   Dataaprov4         = dataaprov4;
+   Hora_aprov4        = hora_aprov4;
+   Aprov5             = aprov5;
+   Dataaprov5         = dataaprov5;
+   Hora_aprov5        = hora_aprov5;
+   Aprov6             = aprov6;
+   Dataaprov6         = dataaprov6;
+   Hora_aprov6        = hora_aprov6;
+   Aprov7             = aprov7;
+   Dataaprov7         = dataaprov7;
+   Hora_aprov7        = hora_aprov7;
+   Aprov8             = aprov8;
+   Dataaprov8         = dataaprov8;
+   Hora_aprov8        = hora_aprov8;
+   Aprov9             = aprov9;
+   Dataaprov9         = dataaprov9;
+   Hora_aprov9        = hora_aprov9;
+   Aprov10            = aprov10;
+   Dataaprov10        = dataaprov10;
+   Hora_aprov10       = hora_aprov10;
+
+
+  }
+
+}

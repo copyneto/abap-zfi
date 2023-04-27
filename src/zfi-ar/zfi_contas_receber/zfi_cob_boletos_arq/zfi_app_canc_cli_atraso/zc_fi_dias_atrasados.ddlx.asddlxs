@@ -1,0 +1,7 @@
+@Metadata.layer: #CORE
+annotate entity zc_fi_dias_atrasados with
+{
+  @EndUserText.quickInfo: 'Quantidade'
+  Quantidade;
+
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Definition Prov. de Contr. Cliente'
+define service ZUI_PROVISAO_CLI {
+  expose ZC_FI_PROVISAO_CLI;
+}

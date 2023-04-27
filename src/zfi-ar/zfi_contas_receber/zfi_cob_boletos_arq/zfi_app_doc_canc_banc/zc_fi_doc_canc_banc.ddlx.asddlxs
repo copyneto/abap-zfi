@@ -1,0 +1,135 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Dados do cancelamento', // Object Page
+                     typeNamePlural: 'Cancel. banc. de faturas de devoluções', // List Report
+                     title: { type: #STANDARD, value: 'belnr' } } }
+annotate view ZC_FI_DOC_CANC_BANC with
+{
+
+  @UI.facet: [ { id:              'Cancela',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Dados do cancelamento', // Object page deploy
+                 position:        10
+             } ]
+  @UI: { lineItem:       [ { position: 10 } ],
+         identification: [ { position: 10 } ],
+         selectionField: [ { position: 10 } ] }
+
+  bukrs;
+
+  @UI: {  lineItem:       [ { position: 20 } ],
+           identification: [ { position: 20 } ],
+           selectionField: [ { position: 50 } ] }
+
+  kunnr;
+  
+  @UI: {  lineItem:       [ { position: 30, label: 'Documento de devolução' } ],
+          identification: [ { position: 30 } ],
+          selectionField: [ { position: 20 } ] }
+
+  belnr;
+
+  @UI: {  lineItem:       [ { position: 40 } ],
+          identification: [ { position: 40 } ] }
+
+  buzei;
+
+  @UI: {  lineItem:       [ { position: 50 } ],
+          identification: [ { position: 50 } ],
+          selectionField: [ { position: 40 } ] }
+
+  gjahr;
+
+  @UI: {  lineItem:       [ { position: 60 } ],
+          identification: [ { position: 60 } ],
+          selectionField: [ { position: 30 } ] }
+
+  budat;
+
+  @UI: {  lineItem:       [ { position: 70 } ],
+          identification: [ { position: 70 } ] }
+
+  bschl;
+
+  @UI: {  lineItem:       [ { position: 80 } ],
+          identification: [ { position: 80 } ] }
+
+  blart;
+    
+//  @UI: {  lineItem:       [ { position: 90 } ],
+//          identification: [ { position: 90 } ] }
+  @UI.hidden: true
+  anfbn;
+
+  @UI: {  lineItem:       [ { position: 100 } ],
+          identification: [ { position: 100 } ] }
+
+  zuonr;
+  
+  @UI: {  lineItem:       [ { position: 120, label: 'Nº de documento'} ],
+          identification: [ { position: 120 } ] }
+
+  rebzg;
+
+  @UI: {  lineItem:       [ { position: 130 } ],
+          identification: [ { position: 130 } ] }
+
+  dmbtr;
+
+  @UI: {  lineItem:       [ { position: 140 } ],
+          identification: [ { position: 140 } ] }
+
+  xblnr;
+
+  @UI: {  lineItem:       [ { position: 150 } ],
+          identification: [ { position: 150 } ] }
+
+  hbkid;
+
+  @UI: {  lineItem:       [ { position: 160 } ],
+          identification: [ { position: 160 } ] }
+
+  zlsch;
+
+  @UI.hidden: true
+  @UI: {  lineItem:       [ { position: 170 } ],
+          identification: [ { position: 170 } ] }
+  bldat;
+
+  @UI.hidden: true
+  @UI: {  lineItem:       [ { position: 180 } ],
+          identification: [ { position: 180 } ] }
+  wrbtr;
+
+  @UI.hidden: true
+  @UI: {  lineItem:       [ { position: 190 } ],
+          identification: [ { position: 190 } ] }
+
+  waers;
+
+  @UI.hidden: true
+  @UI: {  lineItem:       [ { position: 200 } ],
+          identification: [ { position: 200 } ] }
+  zfbdt;
+
+  @UI.hidden: true
+  @UI: {  lineItem:       [ { position: 210 } ],
+          identification: [ { position: 210 } ] }
+  zbd1t;
+
+  @UI.hidden: true
+  @UI: {  lineItem:       [ { position: 220 } ],
+          identification: [ { position: 220 } ] }
+  zbd2t;
+
+  @UI.hidden: true
+  @UI: {  lineItem:       [ { position: 230 } ],
+          identification: [ { position: 230 } ] }
+  zbd3t;
+
+  @UI.hidden: true
+  @UI: { lineItem:       [ { position: 180, type: #FOR_ACTION, dataAction: 'cancelar', label: 'Cancelar Faturas', invocationGrouping: #CHANGE_SET } ] }
+  @EndUserText.label: 'Inserir a quantidade'
+  Quantidade;
+
+}

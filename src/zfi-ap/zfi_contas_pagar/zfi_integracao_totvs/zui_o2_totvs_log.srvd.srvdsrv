@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_O2_TOTVS_LOG {
+  expose ZC_FI_TOTVS_LOG as Log;
+}

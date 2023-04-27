@@ -1,0 +1,7 @@
+@Metadata.layer: #CORE
+annotate entity ZC_FI_PARAM_CONTABILI with
+{
+  @EndUserText.label: 'Data de Lançamento'
+  budat;
+
+}

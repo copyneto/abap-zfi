@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def para Log Contabilização'
+define service ZUI_LOG_CONTABILIZACAO {
+  expose ZC_FI_LOG_CONTABILIZACAO;
+}

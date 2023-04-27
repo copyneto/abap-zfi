@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_DENM_COLIGADA_EMPRESA with
+{
+  // ------------------------------------------------------
+  // Informações de cabeçalho
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'Cadastro',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'CGC Coligadas p/ Empresa',
+                 position:        10 },
+
+               { id:              'Dados',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Dados',
+                 position:        20,
+                 targetQualifier: 'DADOS' },
+
+               { id:              'Modific',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Modificações',
+                 position:        30,
+                 targetQualifier: 'MODIF' }
+              ]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }],
+         selectionField: [{ position: 10 }]}
+  Bukrs;
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }],
+         selectionField: [{ position: 20 }]}
+  Branch;
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 30 }]}
+  Chave;
+  @UI: { lineItem:       [{ position: 40 }],
+         fieldGroup:     [{ position: 10,  qualifier: 'DADOS' }] }
+  Conteudo;
+  @UI: { lineItem:       [{ position: 50 }],
+         fieldGroup:     [{ position: 20,  qualifier: 'DADOS' }] }
+  Descricao;
+  @UI: { fieldGroup:     [{ position: 10,  qualifier: 'MODIF' }]}
+  CreatedBy;
+  @UI: { fieldGroup:     [{ position: 20,  qualifier: 'MODIF' }]}
+  CreatedAt;
+  @UI: { fieldGroup:     [{ position: 30,  qualifier: 'MODIF' }]}
+  LastChangedBy;
+  @UI: { fieldGroup:     [{ position: 40,  qualifier: 'MODIF' }]}
+  LastChangedAt;
+  @UI: { fieldGroup:     [{ position: 50,  qualifier: 'MODIF' }]}
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  TextBukrs;
+  @UI.hidden: true
+  TextBranch;
+  @UI.hidden: true
+  TextCreat;
+  @UI.hidden: true
+  TextMod;
+
+}

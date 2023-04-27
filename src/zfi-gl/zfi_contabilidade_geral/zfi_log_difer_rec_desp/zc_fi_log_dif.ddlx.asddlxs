@@ -1,0 +1,76 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Log Diferimento',
+                     typeNamePlural: 'Log Diferimento',
+                     title:{  type: #STANDARD, label: 'Empresa', value: 'Empresa' } } }
+
+@UI.lineItem: [{criticality: 'StatusCriticality'}]
+annotate entity ZC_FI_LOG_DIF with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'DADOS_CAB',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Cabeçalho',
+                 position:        10 },
+
+               { id:              'Mensagens',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Mensagens',
+                 position:        20,
+                 targetElement:   '_Mensagens'
+               } ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:       [ { position: 20 } ],
+         selectionField: [ { position: 20 } ],
+         identification: [ { position: 20 } ] }
+  Empresa;
+
+  @UI: { lineItem:       [ { position: 30 } ],
+         selectionField: [ { position: 30 } ],
+         identification: [ { position: 30 } ] }
+  NumDoc;
+
+  @UI: { lineItem:       [ { position: 40 } ],
+         selectionField: [ { position: 40 } ],
+         identification: [ { position: 40 } ] }
+  Ano;
+
+  @UI: { lineItem:       [ { position: 10, criticality: 'StatusCriticality' } ],
+         selectionField: [ { position: 10 } ],
+         identification: [ { position: 10, criticality: 'StatusCriticality' } ] }
+  Status;
+
+  @UI.hidden: true
+  StatusText;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+
+  @UI: { lineItem:       [ { position: 50 } ],
+         selectionField: [ { position: 50 } ],
+         identification: [ { position: 50 } ] }
+  Usuario;
+
+  @UI: { lineItem:       [ { position: 60 } ],
+         selectionField: [ { position: 60 } ],
+         identification: [ { position: 60 } ] }
+  DtExec;
+
+  @UI: { lineItem:       [ { position: 70 } ],
+         selectionField: [ { position: 70 } ],
+         identification: [ { position: 70 } ] }
+  HrExec;
+
+  @UI: { lineItem:       [ { position: 80 } ],
+         selectionField: [ { position: 80 } ],
+         identification: [ { position: 80 } ] }
+  Descricao;
+
+}

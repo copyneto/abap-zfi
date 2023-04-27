@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition Vencimentos Modificados Partidas de Cliente'
+define service ZUI_VENC_CLI {
+  expose ZC_FI_VENC_CLI;
+}

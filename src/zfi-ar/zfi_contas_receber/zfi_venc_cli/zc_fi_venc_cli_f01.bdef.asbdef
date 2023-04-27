@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_FI_VENC_CLI_F01 //alias <alias_name>
+{
+
+  use action modVencimento;
+}

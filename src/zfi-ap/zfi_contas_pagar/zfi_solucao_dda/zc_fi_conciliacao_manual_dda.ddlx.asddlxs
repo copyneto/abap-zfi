@@ -1,0 +1,143 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Partida para Conciliação',
+                     typeNamePlural: 'Partidas abertas para Conciliação',
+                     title: {   type: #STANDARD,
+                                label: 'Referência',
+                                value: 'ReferenceNo' } } }
+
+annotate entity ZC_FI_CONCILIACAO_MANUAL_DDA with
+{
+
+  @UI.facet: [{
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Partidas',
+      type: #IDENTIFICATION_REFERENCE
+  }]
+
+  @UI: { selectionField: [{position: 10}],
+         lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }]
+  }
+  CompanyCode;
+
+  @UI: { selectionField: [{position: 20}],
+         lineItem: [{ position: 20 }],
+         identification: [{ position: 20 }]
+  }
+  Supplier;
+
+  @UI: { selectionField: [{position: 30}],
+         lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }]
+  }
+  FiscalYear;
+
+  @UI: { selectionField: [{position: 40}],
+         lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }]
+  }
+  DocNumber;
+
+  @UI: { lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }] }
+  @EndUserText.label: 'Nº Nota Fiscal'         
+  ReferenceNo;
+
+
+  @Consumption.filter.hidden: true
+  @EndUserText.label: 'Nota Fiscal (Nº Referência)'
+  NotaFiscal;
+
+  @UI: { selectionField: [{position: 60}],
+         lineItem: [{ position: 60 }],
+         identification: [{ position: 60 }]
+  }
+  @EndUserText.label: 'Data vencimento'
+  DueDateConverted;
+
+  @Consumption.filter.hidden: true
+  DueDate;
+
+  @UI: { lineItem: [{ position: 70 }],
+         identification: [{ position: 70 }]
+  }
+  Amount;
+
+  @UI: { lineItem: [{ position: 80 }],
+         identification: [{ position: 80 }]
+  }
+  PostingDate;
+
+  @UI: {
+       lineItem: [{ position: 90 }],
+       identification: [{ position: 90 }]
+  }
+  DocumentDate;
+
+  @UI: {
+       lineItem: [{ position: 100 }],
+       identification: [{ position: 100 }]
+  }
+  AccountingDocumentType;
+
+  @UI: {
+       lineItem: [{ position: 110 }],
+       identification: [{ position: 110 }]
+  }
+  @EndUserText.label: 'Montante da fatura'
+  AccountingDocumentAmount;
+
+  @UI: {
+       lineItem: [{ position: 120 }],
+       identification: [{ position: 120 }]
+  }
+  PaymentMethod;
+
+  @UI: {
+       lineItem: [{ position: 130 }],
+       identification: [{ position: 130 }]
+  }
+  ItemText;
+
+
+  @UI: {
+       lineItem: [{ position: 140 }],
+       identification: [{ position: 140 }]
+  }
+  SupplierCNPJFormat;
+
+  @UI.hidden
+  SupplierCNPJ;
+
+  @Consumption.filter.hidden: true
+  SupplierCnpjRoot;
+
+  @UI: {
+       lineItem: [{ position: 150 }],
+       identification: [{ position: 150 }]
+  }
+  SupplierCPFFormat;
+
+  @UI.hidden
+  SupplierCPF;
+
+  @UI: {
+       lineItem: [{ position: 160 }],
+       identification: [{ position: 160 }]
+  }
+  @EndUserText.label: 'Nome Fornecedor'
+  SupplierName;
+
+  @UI.lineItem  :  [{ type: #FOR_ACTION,
+                      invocationGrouping: #CHANGE_SET,
+                      dataAction: 'conciliaManual',
+                      label: 'Associar cód. de barras'  }]
+  @Consumption.filter.hidden: true
+  @EndUserText.label : 'Associar Cód. de barras ao documento?'
+  ConciliacaoManual;
+  @EndUserText.label: 'Código Barras'
+  Barcode;
+
+}

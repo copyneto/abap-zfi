@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_CGC_COLIGADAS_EMPRES alias CGC
+{
+  use create;
+  use update;
+  use delete;
+}

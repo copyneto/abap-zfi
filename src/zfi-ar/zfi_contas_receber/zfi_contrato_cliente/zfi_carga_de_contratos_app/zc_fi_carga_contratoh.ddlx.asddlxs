@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_CARGA_CONTRATOH with
+{
+  //DocUuidH;
+  //  @UI: { lineItem:    [ { position: 10 } ],
+  //     identification:  [ { position: 10 }],
+  //     selectionField:  [ { position: 10 } ] }
+  //  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  //  @Search.defaultSearchElement: true
+  //  @Search.fuzzinessThreshold: 0.8
+  @UI.hidden: true
+  DocUuidH;
+  @UI: { lineItem:        [ { position: 20, label: 'Documento' } ],
+       identification:  [ { position: 20, label: 'Documento' } ],
+       selectionField:  [ { position: 20 } ],
+       dataPoint: { qualifier: 'StatusHeader', title: 'Documento' } }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'geral' }]
+  @UI.hidden: true
+  Documentno;
+  @UI: { lineItem:        [ { position: 30, label: 'Data carga' } ],
+         identification:  [ { position: 30, label: 'Data carga' } ],
+         dataPoint: { qualifier: 'StatusHeader', title: 'Data carga' } }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'geral' }]
+  DataCarga;
+  @UI: { lineItem:    [ { position: 40, label: 'Tabela' } ],
+     identification:  [ { position: 40, label: 'Tabela' }],
+     selectionField:  [ { position: 30 } ],
+     dataPoint: { qualifier: 'StatusHeader', title: 'Tabela' } }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'geral' }]
+  TipoCarga;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Modificar' }]
+  CreatedBy;
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Modificar' }]
+  CreatedAt;
+  @UI: { identification:  [ { position: 70 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Modificar' }]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 80 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Modificar' }]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 90 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 50, qualifier: 'Modificar' }]
+  LocalLastChangedAt;
+  /* Associations */
+  //  _Carga;
+
+}

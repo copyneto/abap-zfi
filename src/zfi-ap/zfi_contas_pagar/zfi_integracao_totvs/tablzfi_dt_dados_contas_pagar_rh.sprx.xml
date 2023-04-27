@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME_M>
+     <HASH_ID>37E778A1CD3CCF7FC63187986DC1B70CCDDD59AB</HASH_ID>
+     <ID>&lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtDadosContasPagarRh</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/financeiro/contaspagarrh</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/financeiro/contaspagarrh</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZFI_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/financeiro/contaspagarrh</X-ML_NSPCE>
+     <X-ML_NAME>dtDadosContasPagarRh</X-ML_NAME>
+     <VERSION_ID>3e3e6c7fcc7e11ec94cf00000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ACCOUNTGL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ACCOUNTGL</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZFI_DT_DADOS_CONTAS_PAGAR_TAB1</OBJ_NAME_R>
+     <ID>&lt;element&gt; ACCOUNTGL &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ACCOUNTGL</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ACCOUNTGL</R3_NAME>
+     <R3_SEQNUM>000009</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ACCOUNTPAYABLE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ACCOUNTPAYABLE</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZFI_DT_DADOS_CONTAS_PAGAR__TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; ACCOUNTPAYABLE &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ACCOUNTPAYABLE</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ACCOUNTPAYABLE</R3_NAME>
+     <R3_SEQNUM>000008</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BKTXT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BKTXT</OBJ_NAME2>
+     <ID>&lt;element&gt; BKTXT &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BKTXT</IFR_NAME>
+     <IFR_TEXT>Texto de cabeçalho de documento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>25</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BKTXT</R3_NAME>
+     <R3_TEXT>Texto de cabeçalho de documento</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000025</R3_LENGTH>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BLART</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BLART</OBJ_NAME2>
+     <ID>&lt;element&gt; BLART &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BLART</IFR_NAME>
+     <IFR_TEXT>Tipo de documento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>2</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BLART</R3_NAME>
+     <R3_TEXT>Tipo de documento</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000002</R3_LENGTH>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BLDAT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BLDAT</OBJ_NAME2>
+     <ID>&lt;element&gt; BLDAT &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BLDAT</IFR_NAME>
+     <IFR_TEXT>Data no documento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BLDAT</R3_NAME>
+     <R3_TEXT>Data no documento</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BUDAT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BUDAT</OBJ_NAME2>
+     <ID>&lt;element&gt; BUDAT &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BUDAT</IFR_NAME>
+     <IFR_TEXT>Data de lançamento no documento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BUDAT</R3_NAME>
+     <R3_TEXT>Data de lançamento no documento</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BURKS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BURKS</OBJ_NAME2>
+     <ID>&lt;element&gt; BURKS &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BURKS</IFR_NAME>
+     <IFR_TEXT>Empresa</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>8</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BURKS</R3_NAME>
+     <R3_TEXT>Empresa</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000008</R3_LENGTH>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>WAERS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>WAERS</OBJ_NAME2>
+     <ID>&lt;element&gt; WAERS &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>WAERS</IFR_NAME>
+     <IFR_TEXT>Código da moeda</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>3</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>WAERS</R3_NAME>
+     <R3_TEXT>Código da moeda</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000003</R3_LENGTH>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>XBLNR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>XBLNR</OBJ_NAME2>
+     <ID>&lt;element&gt; XBLNR &lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>XBLNR</IFR_NAME>
+     <IFR_TEXT>Nº documento de referência</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>16</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>XBLNR</R3_NAME>
+     <R3_TEXT>Nº documento de referência</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000016</R3_LENGTH>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZFI_DT_DADOS_CONTAS_PAGAR_RH</OBJ_NAME2>
+     <ID>&lt;type&gt; dtDadosContasPagarRh http://trescoracoes.com.br/financeiro/contaspagarrh http://trescoracoes.com.br/financeiro/contaspagarrh</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtDadosContasPagarRh</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZFI_DT_DADOS_CONTAS_PAGAR_RH</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

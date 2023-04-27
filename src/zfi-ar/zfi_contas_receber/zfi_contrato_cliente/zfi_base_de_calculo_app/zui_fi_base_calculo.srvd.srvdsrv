@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def Base de Calculo'
+define service ZUI_FI_BASE_CALCULO {
+  expose ZC_FI_CONTRATO_BASE as ContratosBase;
+  expose ZC_FI_BASE_DE_CALCULO as BaseCalculo;
+}

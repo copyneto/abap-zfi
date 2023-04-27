@@ -1,0 +1,23 @@
+projection;
+
+define behavior for ZC_FI_CARGA_H alias _H
+{
+
+  use association _Doc { }
+  use association _Item { }
+  use action cancelar;
+  use action lancar;
+  use action message;
+}
+
+define behavior for ZC_FI_CARGA_DOC alias _Doc
+{
+
+  use association _H;
+}
+
+define behavior for ZC_FI_CARGA_ITEM alias _Item
+{
+
+  use association _H;
+}

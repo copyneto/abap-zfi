@@ -1,0 +1,5 @@
+@EndUserText.label: 'Reversão da Provisão PDC'
+define service ZUI_FI_REVERSAO_PROV {
+  expose ZC_FI_REVERSAO_PROVISAO_PDC as Reversao;
+  expose ZI_FI_VH_REVERSAO_PDC as ReversaoPopUp;
+}

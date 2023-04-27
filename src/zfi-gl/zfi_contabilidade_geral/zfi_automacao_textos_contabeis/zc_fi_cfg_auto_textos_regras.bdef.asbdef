@@ -1,0 +1,72 @@
+projection;
+
+define behavior for ZC_FI_CFG_AUTO_TEXTOS_REGRAS alias Regras
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Campos { create; }
+  use association _Empresa { create; }
+  use association _TipoDocumento { create; }
+  use association _ContaContabil { create; }
+  use association _ChaveLancto { create; }
+  use association _TipoAtualizacao { create; }
+  use association _TipoProduto { create; }
+}
+
+define behavior for ZC_FI_CFG_AUTO_TEXTOS_CAMPOS alias Campos
+{
+  use update;
+  use delete;
+
+  use association _Regras;
+}
+
+define behavior for ZC_FI_CFG_AUTOTXT_CRIT_EMPRESA alias SelEmpresa
+{
+  use update;
+  use delete;
+
+  use association _Regras;
+}
+
+define behavior for ZC_FI_CFG_AUTOTXT_CRIT_TIPODOC alias SelTipoDoc
+{
+  use update;
+  use delete;
+
+  use association _Regras;
+}
+
+define behavior for ZC_FI_CFG_AUTOTXT_CRIT_CONTA alias SelConta
+{
+  use update;
+  use delete;
+
+  use association _Regras;
+}
+
+define behavior for ZC_FI_CFG_AUTOTXT_CRIT_CHAVE alias SelChave
+{
+  use update;
+  use delete;
+
+  use association _Regras;
+}
+
+define behavior for ZC_FI_CFG_AUTOTXT_CRIT_FLOWTP alias SelTipoAtualizacao
+{
+  use update;
+  use delete;
+
+  use association _Regras;
+}
+
+define behavior for ZC_FI_CFG_AUTOTXT_CRIT_PRODTP alias SelTipoProduto
+{
+  use update;
+  use delete;
+
+  use association _Regras;
+}

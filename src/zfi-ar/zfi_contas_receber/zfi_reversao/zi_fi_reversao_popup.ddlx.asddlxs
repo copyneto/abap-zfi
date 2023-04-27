@@ -1,0 +1,13 @@
+@Metadata.layer: #CORE
+annotate entity ZI_FI_REVERSAO_POPUP with
+{
+  @Consumption.valueHelpDefinition: [ { entity:  { name:    'ZI_CA_STGRD',
+                                        element:            'MotEstorno' }
+  }]
+
+  @EndUserText.label: 'Motivo Estorno'
+  motEstorno;
+  @EndUserText.label: 'Data de Lançamento'
+  dataLancEst;
+
+}

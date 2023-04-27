@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Def. Conciliação Manual DDA'
+define service ZUI_FI_CONCILIACAO_MANUAL {
+  expose ZC_FI_CONCILIACAO_MANUAL_DDA;
+}

@@ -1,0 +1,10 @@
+@Metadata.layer: #CORE
+annotate entity ZI_FI_BUSCA_FATURA_AGRUP_POPUP with
+{
+  @Consumption.valueHelpDefinition: [ { entity:  { name:    'ZI_CA_VH_COMPANY',
+                                        element:            'CompanyCode' }
+  }]
+  @EndUserText.label: 'Empresa'
+  selCompanyCode;
+
+}

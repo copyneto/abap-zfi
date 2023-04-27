@@ -1,0 +1,4 @@
+@EndUserText.label: 'Aditivo Contrato'
+define service ZUI_FI_ADITIVO {
+  expose ZC_ADITIVO_CONT as Aditivo;
+}

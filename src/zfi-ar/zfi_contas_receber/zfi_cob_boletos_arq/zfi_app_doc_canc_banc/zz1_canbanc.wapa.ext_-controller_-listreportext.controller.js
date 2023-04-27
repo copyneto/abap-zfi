@@ -1,0 +1,3 @@
+sap.ui.define([],function(){"use strict";return{onNavegar:function(a){sap.ushell.Container.getService("CrossApplicationNavigation").isNavigationSupported([{target:{shellHash:"ApplicationLog-showList"}}]).done(function(a){a.map(function(a,e){if(a.supporte+
+d===true){var i=sap.ushell&&sap.ushell.Container&&sap.ushell.Container.getService("CrossApplicationNavigation").hrefForExternal({target:{semanticObject:"ApplicationLog",action:"showList"},params:{LogObjectId:"ZFI_CAN_JOB",LogObjectSubId:"MODELO"}})||"";s+
+ap.m.URLHelper.redirect(i,false)}else{alert("Usuário sem permissão para acessar o link")}})}).fail(function(){alert("Falha ao acessar o link")})}}});                                                                                                          

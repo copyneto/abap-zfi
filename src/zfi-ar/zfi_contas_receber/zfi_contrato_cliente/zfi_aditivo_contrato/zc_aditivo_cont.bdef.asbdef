@@ -1,0 +1,6 @@
+projection;
+
+define behavior for ZC_ADITIVO_CONT alias _Aditivo
+{
+  use action aditivo;
+}

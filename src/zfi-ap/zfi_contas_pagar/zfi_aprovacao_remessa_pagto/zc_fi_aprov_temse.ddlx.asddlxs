@@ -1,0 +1,127 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+    typeName: 'Aprovação de Documento',
+    typeNamePlural: 'Aprovação de Documentos',
+    title: {
+        type: #STANDARD,
+        value: 'CashPlanningGroupName' },
+    description: {
+        type: #STANDARD,
+        value: 'CompanyCodeName'
+    }
+}
+
+@UI.presentationVariant: [{
+    requestAtLeast: ['CompanyCode', 'CompanyCodeName', 'PaymentRunID', 'CashPlanningGroup', 'CashPlanningGroupName', 'NetDueDate', 'RepType', 'RepTypeText', 'PaymentCurrency', 'Userlevel', 'NivelAtual', 'RunHourTo',
+                     'encerrador', 'aprov1', 'aprov2', 'aprov3', 'encerradorcrit', 'aprov1crit', 'aprov2crit', 'aprov3crit', 'encerradortext', 'aprov1text', 'aprov2text', 'aprov3text', 'Username' ]
+//                     'encerradorcrit', 'aprov1crit', 'aprov2crit', 'aprov3crit', 'encerradortext', 'aprov1text', 'aprov2text', 'aprov3text', 'Username' ]
+}]
+
+annotate view ZC_FI_APROV_TEMSE with
+{
+
+  @UI.facet: [
+  //               { id:            'Dados',
+  //                 purpose:       #STANDARD,
+  //                 type:          #IDENTIFICATION_REFERENCE,
+  //                 label:         'Dados',
+  //                 position:      10 }
+
+              { id: 'NetDueDate',               position: 10, purpose: #HEADER, targetQualifier: 'NetDueDate',               type: #DATAPOINT_REFERENCE },
+              { id: 'RunHourto',                position: 20, purpose: #HEADER, targetQualifier: 'RunHourto',              type: #DATAPOINT_REFERENCE },
+  //              { id: 'CashPlanningGroup',        position: 30, purpose: #HEADER, targetQualifier: 'CashPlanningGroup',        type: #DATAPOINT_REFERENCE },
+              { id: 'RepType',                  position: 40, purpose: #HEADER, targetQualifier: 'RepType',                  type: #DATAPOINT_REFERENCE },
+              { id: 'PaidAmountInPaytCurrency', position: 50, purpose: #HEADER, targetQualifier: 'PaidAmountInPaytCurrency', type: #DATAPOINT_REFERENCE },
+              { id: 'OpenAmount',               position: 60, purpose: #HEADER, targetQualifier: 'OpenAmount',               type: #DATAPOINT_REFERENCE },
+              { id: 'BlockedAmount',            position: 70, purpose: #HEADER, targetQualifier: 'BlockedAmount',            type: #DATAPOINT_REFERENCE },
+
+               { id:            'Documentos',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Documentos',
+                 position:      20,
+                 targetElement: '_Itens'}
+              ]
+
+
+  @UI: { selectionField: [{position: 10}] }
+  @Consumption: { valueHelpDefinition: [{ entity: { name: 'C_CompanyCodeValueHelp', element: 'CompanyCode' } }],
+                             filter  : { mandatory: true, selectionType: #SINGLE }}
+  CompanyCode;
+
+  @UI: { lineItem: [{position: 50}] }
+  @Consumption.filter.hidden: true
+  CashPlanningGroup;
+
+  @UI: { selectionField: [{position: 20}],
+              dataPoint: { qualifier: 'NetDueDate' }, textArrangement: #TEXT_ONLY }
+  @Consumption: { filter: { mandatory: true, selectionType: #SINGLE } }
+  NetDueDate;
+
+  @UI: { lineItem: [{position: 5}],
+        dataPoint: { qualifier: 'RunHourto' }, textArrangement: #TEXT_ONLY }
+  //  @UI.hidden: true
+  RunHourTo;
+
+  @Consumption: { filter.hidden: true }
+  @UI: { lineItem: [{ position: 60 }],
+        dataPoint: { qualifier: 'PaidAmountInPaytCurrency' }, textArrangement: #TEXT_ONLY }
+  PaidAmountInPaytCurrency;
+
+  @Consumption: { filter.hidden: true }
+  PaymentCurrency;
+
+  @UI: { selectionField: [{position: 30}],
+         dataPoint: { qualifier: 'RepType' },
+         textArrangement: #TEXT_ONLY }
+  @Consumption: { valueHelpDefinition: [{ entity: { name: 'ZI_FI_VH_TIPOREL', element: 'Value' } }],
+                             filter  : { mandatory: true, selectionType: #SINGLE } }
+  RepType;
+
+  @UI: { lineItem: [{position: 70 }],
+        dataPoint: { qualifier: 'OpenAmount' }, textArrangement: #TEXT_ONLY }
+  @Consumption: { filter.hidden: true }
+  OpenAmount;
+
+  @UI: { lineItem: [{position: 80 }],
+        dataPoint: { qualifier: 'BlockedAmount' }, textArrangement: #TEXT_ONLY }
+  @Consumption: { filter.hidden: true }
+  BlockedAmount;
+
+  @UI: { lineItem: [{position: 10, criticality: 'encerradorcrit'}], textArrangement: #TEXT_ONLY }
+  encerrador;
+
+  @Consumption.filter.hidden: true
+  encerradorcrit;
+
+  @UI: { lineItem: [{position: 20, criticality: 'aprov1crit'}], textArrangement: #TEXT_ONLY }
+  aprov1;
+
+  @Consumption.filter.hidden: true
+  aprov1crit;
+
+  @UI: { lineItem: [{position: 30, criticality: 'aprov2crit'}], textArrangement: #TEXT_ONLY }
+  @Consumption.filter.hidden: true
+  aprov2;
+
+  @Consumption.filter.hidden: true
+  aprov2crit;
+
+  @UI: { lineItem: [{position: 40, criticality: 'aprov3crit'}], textArrangement: #TEXT_ONLY }
+  @Consumption.filter.hidden: true
+  aprov3;
+
+  @Consumption.filter.hidden: true
+  aprov3crit;
+
+  @Consumption.filter.hidden: true
+  CompanyCodeName;
+
+  @Consumption.filter.hidden: true
+  CashPlanningGroupName;
+
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  RepTypeText;
+
+}

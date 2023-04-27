@@ -1,0 +1,59 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Condição de Desconto',
+                typeNamePlural: 'Condições de Desconto',
+                title: { type: #STANDARD, label: 'Tipo Condição', value: 'TipoCond' } },
+  presentationVariant: [{ sortOrder: [{ by: 'TipoCond', direction:  #DESC }] }] }
+
+annotate view ZC_FI_CONDICAO_DESCONTO with
+{
+  @UI.facet: [ { id:      'Facet',
+             purpose: #STANDARD,
+             type:    #COLLECTION,
+             label:   'Principal',
+             position: 10 },
+         { id:              'geral',
+           purpose:         #STANDARD,
+           parentId:        'Facet',
+           type:            #FIELDGROUP_REFERENCE,
+           label:           'Dados Gerais',
+           targetQualifier: 'geral',
+           position:         20 } ,
+         {  id:             'Modificar',
+            purpose:        #STANDARD,
+            label:          'Dados Modificação',
+            parentId:       'Facet',
+            type:           #FIELDGROUP_REFERENCE,
+            targetQualifier: 'Modificar',
+            position:       20 } ]
+            
+  @UI.lineItem:        [ { position: 10, label: 'Condição de Desconto'} ]
+  @UI.identification:  [ { position: 10, label: 'Condição de Desconto' } ]
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'geral' } ]
+  TipoCond;
+  @UI.lineItem:        [ { position: 20, label: 'Denominação Condição'} ]
+  @UI.identification:  [ { position: 20, label: 'Denominação Condição' } ]
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'geral' } ]
+  Text;
+  @UI.lineItem:        [ { position: 30, label: 'Criado Por' } ]
+  @UI.identification:  [ { position: 30, label: 'Criado Por' } ]
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI.lineItem:        [ { position: 40, label: 'Criado Em' } ]
+  @UI.identification:  [ { position: 40, label: 'Criado Em' } ]
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI.lineItem:        [ { position: 50, label: 'Alterado Por' } ]
+  @UI.identification:  [ { position: 50, label: 'Alterado Por' } ]
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar'} ]
+  LastChangedBy;
+  @UI.lineItem:        [ { position: 60, label: 'Alteardo Em' } ]
+  @UI.identification:  [ { position: 60, label: 'Alteardo Em' } ]
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI.lineItem:        [ { position: 70, label: 'Registro hora'} ]
+  @UI.identification:  [ { position: 70, label: 'Registro hora'} ]
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar'} ]
+  LocalLastChangedAt;
+
+}

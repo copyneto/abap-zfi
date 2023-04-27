@@ -1,0 +1,103 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Crescimento Contrato Cliente',
+    typeNamePlural: 'Crescimento Contratos Cliente',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    }
+  }}
+annotate view ZC_FI_CONTRATO_CRESC with
+{
+
+  @UI.facet: [ { id:         'Crescimento',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Principal',
+                 position:      10 },
+               { id:            'CadCresci',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Cadastro Crescimento',
+                 position:      20,
+                 targetElement: '_CadCresci'},
+                 { id:            'FaixaCresc',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Faixa e Bônus',
+                 position:      30,
+                 targetElement: '_FaixaCresc'},
+                 { id:            'CompCresci',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Base de Comparação Crescimento',
+                 position:      40,
+                 targetElement: '_CompCresci'},
+               { id:            'FamiliaCresc',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Família Crescimento',
+                 position:      50,
+                 targetElement: '_FamiliaCresc'}]
+
+  @UI.hidden: true
+  DocUuidH;
+  @UI: { lineItem:        [ { position: 10, label: 'N° Contrato', importance: #HIGH} ],
+         identification:  [ { position: 10, label: 'N° Contrato' } ] }
+  @UI : { selectionField: [ { position: 10 } ] }
+
+  Contrato;
+  @UI: { lineItem:        [ { position: 20, label: 'Aditivo' , importance: #HIGH } ],
+         identification:  [ { position: 20, label: 'Aditivo' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  Aditivo;
+  @UI: { lineItem:        [ { position: 30, label: 'N° Contrato Próprio' } ],
+         identification:  [ { position: 30, label: 'N° Contrato Próprio' } ] }
+  @UI : { selectionField: [ { position: 30 } ] }
+  Contrato_proprio;
+  @UI: { lineItem:        [ { position: 40, label: 'N° Contrato Jurídico ' } ],
+         identification:  [ { position: 40, label: 'N° Contrato Jurídico ' } ] }
+  @UI : { selectionField: [ { position: 40 } ] }
+  Contrato_jurid;
+  @UI: { lineItem:        [ { position: 50, label: 'Data Início validade ' } ],
+         identification:  [ { position: 50, label: 'Data Início validade ' } ] }
+  @UI : { selectionField: [ { position: 50 } ] }
+  Data_ini_valid;
+  @UI: { lineItem:        [ { position: 60, label: 'Data fim validade ' } ],
+         identification:  [ { position: 60, label: 'Data fim validade ' } ] }
+  @UI : { selectionField: [ { position: 60 } ] }
+  Data_fim_valid;
+  @UI: { lineItem:        [ { position: 62, label: 'CNPJ Principal' } ],
+         identification:  [ { position: 62, label: 'CNPJ Principal' } ] }
+  CnpjPrincipal;
+
+  @UI: { lineItem:        [ { position: 64, label: 'Razão Social' } ],
+         identification:  [ { position: 64, label: 'Razão Social' } ] }
+  RazaoSocial;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Empresa' } ],
+         identification:  [ { position: 70, label: 'Empresa' } ] }
+  @UI : { selectionField: [ { position: 70 } ] }
+  Bukrs;
+  @UI: { lineItem:        [ { position: 80, label: 'Local de negócios' } ],
+         identification:  [ { position: 80, label: 'Local de negócios' } ] }
+  @UI : { selectionField: [ { position: 80 } ] }
+  Branch;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  /* Associations */
+  //  _CadCresci;
+  //  _CompCresci;
+  //  _FaixaCresc;
+}

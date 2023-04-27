@@ -1,0 +1,9 @@
+projection;
+
+define behavior for ZC_FI_DENM_COLIGADA_EMPRESA alias Denom
+{
+  use create;
+  use update;
+  use delete;
+
+}

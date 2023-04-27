@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Automação Textos contábeis</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Regra &amp;1 possui critérios em conflito com o(s) critério(s) selecionado(s)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Já existe uma Regra &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>O campo &amp;1 já foi configurado com a ordenação &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Job executado. Verifique o log na transação SLG1, obj &amp;1 suboj &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Não há regras configuradas para o preenchimento automático dos textos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Não há campos configurados para a regra &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Não há documentos para os critérios selecionados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Doc. &amp;1 empresa &amp;2 exercício &amp;3: texto atualizado conforme regra &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Doc. &amp;1 empresa &amp;2 exercício &amp;3: erro ao atualizar texto regra &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Não há campos configurados para as regras.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Preencha o(s) campo(s) obrigatório(s).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Data de lançamento - De não pode ser posterior à Data de lançamento - Até</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Execução manual concluída. Consulte o log para maiores informações</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Erro ao executar. Usuário sem autorização para esta ação.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Ordenação &amp;1 já atribuída ao campo &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Os documentos selecionados não se enquadram em nenhuma regra</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Campo Até não será considerado para esta opção &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Campo Até não pode ser inferior ao valor do campo De</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Campo Até não deve ficar em branco para a opção &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_AUTO_TXT_CONTAB</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Doc. &amp;1 empresa &amp;2 exercício &amp;3: não se enquadra em nenhuma regra</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

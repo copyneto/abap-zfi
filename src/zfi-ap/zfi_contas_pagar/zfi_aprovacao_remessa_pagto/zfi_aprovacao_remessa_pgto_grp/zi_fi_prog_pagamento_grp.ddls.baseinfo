@@ -1,0 +1,17 @@
+{
+"BASEINFO":
+{
+"FROM":
+[
+"ZI_FI_PGTO_BCOEMP_OVERALL_STAT",
+"ZI_FI_PROG_PAGAMENTO_P"
+],
+"ASSOCIATED":
+[],
+"BASE":
+[],
+"ANNO_REF":
+[],
+"VERSION":0
+}
+}

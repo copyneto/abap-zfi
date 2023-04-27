@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCLM_RENOVAR_CONTRAT</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCLM_RENOVAR_CONTRAT</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&quot;Contrato/Aditivo &amp; renovado com sucesso!&quot;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCLM_RENOVAR_CONTRAT</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>&quot;Contrato/Aditivo &amp; renovação não foi possivel!&quot;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZCLM_RENOVAR_CONTRAT</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>&quot;Operação realizada.&quot;</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

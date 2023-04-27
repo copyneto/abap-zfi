@@ -1,0 +1,5 @@
+CLASS zclfi_contrato_raizcnpj DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_contrato.
+ENDCLASS.
+
+CLASS zclfi_contrato_raizcnpj IMPLEMENTATION.
+ENDCLASS.

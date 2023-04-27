@@ -1,0 +1,7 @@
+@EndUserText.label: 'Serv. Definition Reversão'
+define service ZUI_REVERSAO {
+  expose ZC_FI_REVERSAO_APP;
+  expose ZI_CA_STGRD;
+  expose I_SalesDocumentRjcnReason;
+  expose I_CompanyCodeVH;
+}

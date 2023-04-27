@@ -1,0 +1,78 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Documento',
+    typeNamePlural: 'Partidas',
+    title: {
+      type: #STANDARD,
+      label: 'Documentos',
+      value: 'HouseBank'
+    },
+    description: {
+        value: 'PaymentMethod'
+    }
+  }}
+
+@UI.presentationVariant: [{
+    sortOrder: [{by: 'ItemStatus'}],
+    includeGrandTotal: false,
+    requestAtLeast: ['CompanyCode', 'Supplier', 'CashPlanningGroup', 'NetDueDate' ]
+ }]
+
+@UI.lineItem: [{ criticality: 'ItemStatus' }]
+
+annotate entity ZC_FI_PROG_PAG_DOCN with
+{
+
+  @UI.facet: [ { id:              'Cabecalho',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 position:        10 } ]
+
+  @UI: { selectionField: [{position: 10}] }
+  @UI: { lineItem:       [ { position: 80 } ] }
+  CompanyCode;
+  @UI.hidden: true
+  //@UI: { lineItem:       [ { position: 70 } ] }
+  Supplier;
+  @UI: { lineItem:       [ { position: 60 } ] }
+  CashPlanningGroup;
+  @UI: { lineItem:       [ { position: 10 } ] }
+  @UI                      : { selectionField: [{position: 20}] }
+  NetDueDate;
+  
+  @UI: { lineItem:       [ { position: 30 } ] }
+  FiscalYear;
+  //  @Consumption.semanticObject: 'Supplier'
+  @UI: { lineItem:       [ { position: 40 } ] }
+  AccountingDocument;
+  @UI: { lineItem:       [ { position: 50 } ] }
+  AccountingDocumentItem;
+  @UI.hidden: true
+  PaymentCurrency;
+  @UI: { lineItem:       [ { position: 70 } ] }
+  PaidAmountInPaytCurrency;
+  @UI: { lineItem:       [ { position: 100 } ] }
+  @UI: { selectionField: [{position: 30}] }
+  RepType;
+  @UI.hidden:true
+  ItemStatus;
+
+  @UI.hidden:true
+  HouseBank;
+  @UI.hidden:true
+  PaymentMethod;
+  @UI.hidden:true
+  novogrptesouraria;
+  @UI.hidden:true
+  RepTypeText;
+  @UI.hidden:true
+  CompanyCodeName;
+  
+  @UI.hidden:true
+  CashPlanningGroupName;
+  
+  @UI.hidden:true
+  PaymentDocument;
+
+}

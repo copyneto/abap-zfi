@@ -1,0 +1,2250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZRFFOBR_U</NAME>
+    <SQLX>R</SQLX>
+    <DBAPL>F</DBAPL>
+    <DBNA>PY</DBNA>
+    <CLAS>FORD</CLAS>
+    <SUBC>1</SUBC>
+    <APPL>F</APPL>
+    <RSTAT>P</RSTAT>
+    <RLOAD>E</RLOAD>
+    <LDBNAME>PYF</LDBNAME>
+    <UCCHECK>X</UCCHECK>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>0**</KEY>
+     <ENTRY>*     parte totais e listagem</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Avisos de pagamento</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Lista de pagamentos</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Log de erros</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>Disco rígido - nota de acompanhamento</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>Nota acomp.banda magnética</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>006</KEY>
+     <ENTRY>IDS disquete - banc.&amp;/&amp;2</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>007</KEY>
+     <ENTRY>IDS file para banco &amp;1/&amp;2</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>008</KEY>
+     <ENTRY>TemSe IDS - banc.&amp;/&amp;2</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>1**</KEY>
+     <ENTRY>*     Textos p/caracters.de seleção</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>100</KEY>
+     <ENTRY>À impressora</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>101</KEY>
+     <ENTRY>Comando col.impressão</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>102</KEY>
+     <ENTRY>Intercâmbio de dados por suporte magnético</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>103</KEY>
+     <ENTRY>Imprimir avisos</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>104</KEY>
+     <ENTRY>Imprimir lista de pagamentos</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>108</KEY>
+     <ENTRY>Imprimir imediatamente</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>121</KEY>
+     <ENTRY>Versão ITAU deve ser 010, 020, 050 ou 080</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>122</KEY>
+     <ENTRY>Versão FEBRABAN deve ser 030, 040, 050 ou 087</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>222</KEY>
+     <ENTRY>ou não excl.</ENTRY>
+     <LENGTH>13</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>5**</KEY>
+     <ENTRY>*  Elementos no formulário</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>505</KEY>
+     <ENTRY>(título1)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>510</KEY>
+     <ENTRY>(título2)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>515</KEY>
+     <ENTRY>(Doc.pagamento)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>520</KEY>
+     <ENTRY>(Parts.indiv.)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>525</KEY>
+     <ENTRY>(Total por moeda)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>530</KEY>
+     <ENTRY>(Encerr.form.)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>531</KEY>
+     <ENTRY>(Montante por moeda em encerramento form.)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>535</KEY>
+     <ENTRY>(Crédito nota de acompan.)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>540</KEY>
+     <ENTRY>(Débito nota de acompan.)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>605</KEY>
+     <ENTRY>(nosso nºconta)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>610</KEY>
+     <ENTRY>(Txt-&amp;MEIOPGT)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>612</KEY>
+     <ENTRY>(Recebedor diferente do pgto.)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>613</KEY>
+     <ENTRY>(Pagamento através de ordem)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>615</KEY>
+     <ENTRY>(Título)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>620</KEY>
+     <ENTRY>(Transporte acima)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>625</KEY>
+     <ENTRY>(Parts.indiv.)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>630</KEY>
+     <ENTRY>(Total)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>635</KEY>
+     <ENTRY>(Transporte abaixo)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>777</KEY>
+     <ENTRY>/</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>778</KEY>
+     <ENTRY>Ep</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>779</KEY>
+     <ENTRY>DOC</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>780</KEY>
+     <ENTRY>PA</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>781</KEY>
+     <ENTRY>TIT NOSSO</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>782</KEY>
+     <ENTRY>TIT OUTRO</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>800</KEY>
+     <ENTRY>Lista de pgtos.- &amp;FORM</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>801</KEY>
+     <ENTRY>Data de emissão</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>802</KEY>
+     <ENTRY>Cód.bancário    Banco rec.</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>803</KEY>
+     <ENTRY>Ban. NºCta.          NºDoc.     CC Conta   Nome                        CEP/Cidade                        &amp;FC                &amp;LC</ENTRY>
+     <LENGTH>127</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>810</KEY>
+     <ENTRY>Montante total</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>811</KEY>
+     <ENTRY>Subtotal (moeda interna):</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>812</KEY>
+     <ENTRY>Subtotal (moeda estrangeira &amp;WAERS):</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>813</KEY>
+     <ENTRY>Núm.meios trans.ban</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>814</KEY>
+     <ENTRY>Conta banc.mont.total em &amp;WAERS</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>815</KEY>
+     <ENTRY>Empresa montante total em &amp;WAERS</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>816</KEY>
+     <ENTRY>Em palavras</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>820</KEY>
+     <ENTRY>Razão:</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>821</KEY>
+     <ENTRY>Ep:</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>822</KEY>
+     <ENTRY>MP:</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>830</KEY>
+     <ENTRY>Erro transmissão EDI;</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>902</KEY>
+     <ENTRY>Nºdoc.pgmto empresa</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>903</KEY>
+     <ENTRY>Em formulário &amp;FORM p/janela &amp;WINDOW falta elemento &amp;ELEMENT &amp;TEXT</ENTRY>
+     <LENGTH>78</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>904</KEY>
+     <ENTRY>Em formulário &amp;FORM falta janela &amp;WINDOW</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>910</KEY>
+     <ENTRY>Para os seguintes argument. não foram encontrad. entrds em &amp;TAB</ENTRY>
+     <LENGTH>63</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>911</KEY>
+     <ENTRY>Por esse motivo o código da moeda não foi convertido em código ISO</ENTRY>
+     <LENGTH>69</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>912</KEY>
+     <ENTRY>Saída de formulários em causa é defeituosa</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>913</KEY>
+     <ENTRY>Para estas empresas faltam os textos de carta standard</ENTRY>
+     <LENGTH>62</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>914</KEY>
+     <ENTRY>Falta a chave de txt.e o nome da lista p/estes meios de pgto.</ENTRY>
+     <LENGTH>61</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>920</KEY>
+     <ENTRY>Os seg.cheques em moeda externa não puderam ser impressos</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>921</KEY>
+     <ENTRY>pois falta o global para o código de moeda em form.&amp;FORM:</ENTRY>
+     <LENGTH>63</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>922</KEY>
+     <ENTRY>Nos seg.cheques não foi possível converter os montantes por extenso,</ENTRY>
+     <LENGTH>69</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>923</KEY>
+     <ENTRY>pois montan.era muito elevado:</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>924</KEY>
+     <ENTRY>Escrever neste cheque montante manualmente.</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>925</KEY>
+     <ENTRY>A conversão do montante por extenso não foi executada por completo</ENTRY>
+     <LENGTH>80</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>926</KEY>
+     <ENTRY>Por isso, o meio de transferência de dados está incorreto e incompleto</ENTRY>
+     <LENGTH>74</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>930</KEY>
+     <ENTRY>Seguintes documentos não foram atualiz.:</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>931</KEY>
+     <ENTRY>(Resultado validação do doc.de pgto.):</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>932</KEY>
+     <ENTRY>Formulários relevantes não foram gerados</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>990</KEY>
+     <ENTRY>Síntese de listas geradas</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>991</KEY>
+     <ENTRY>Nome                                   Conj.dados     Nº spool</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>IDS Brasil - fornecedor</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_AMT</KEY>
+     <ENTRY>Montante do pagamento</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ANZB</KEY>
+     <ENTRY>Nº notas acompanham.</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ANZP</KEY>
+     <ENTRY>Nº de impressões de teste</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_AVIS</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_BAAV</KEY>
+     <ENTRY>Aviso do banco ao fornecedor</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_BEGL</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_BELP</KEY>
+     <ENTRY>Validação documentos pgto.</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_BRLA</KEY>
+     <ENTRY>Versão Bradesco</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_DTYP</KEY>
+     <ENTRY>Meio de saída</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_EPOS</KEY>
+     <ENTRY>Exibir partidas individuais</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ESPR</KEY>
+     <ENTRY>Textos em idioma recebedor</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_FBLA</KEY>
+     <ENTRY>Versão FEBRABAN</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ISOC</KEY>
+     <ENTRY>Moeda em code ISO</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_J52</KEY>
+     <ENTRY>Segmento J-52</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_MAXP</KEY>
+     <ENTRY>Nº itens em lista pagamentos</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIA</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIB</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIW</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIZ</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_RAZO</KEY>
+     <ENTRY>Bradesco HR (número RAZAO)</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFA</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFB</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFW</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFZ</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_UNIX</KEY>
+     <ENTRY>Nome do file (para IDS)</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_VER</KEY>
+     <ENTRY>Versão ITAU (010/020/050/080)</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_XDTA</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ZDRU</KEY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_HBKI</KEY>
+     <ENTRY>Banco da empresa</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_HKTI</KEY>
+     <ENTRY>ID conta</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_UZAW</KEY>
+     <ENTRY>Suplem.forma pgto.</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_VBLN</KEY>
+     <ENTRY>Nº documento de pagamento</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_WAER</KEY>
+     <ENTRY>Código da moeda</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_ZAWE</KEY>
+     <ENTRY>Formas de pagamento</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>0**</KEY>
+       <ENTRY>*     Summenteil und Ausgabeliste</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Avise</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Begleitliste</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Fehlerprotokoll</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Festplatte Begleitzettel</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Begleitzettel Magnetband</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>DTA Diskette - Bank &amp;/&amp;2</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>DTA Datei für Bank &amp;1/&amp;2</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>TemSe DTA - Bank &amp;/&amp;2</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>1**</KEY>
+       <ENTRY>*     Texte für Selektionsmerkmale</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>An Drucker        ;</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Druck Sammelbefehl</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Datenträgeraustausch</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Avise drucken</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Begleitliste drucken</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>108</KEY>
+       <ENTRY>Sofort drucken</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>ITAU-Version muss 010, 020, 050  oder 080 sein</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>122</KEY>
+       <ENTRY>FEBRABAN-Version muss 030, 040, 050 oder 087 sein</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>222</KEY>
+       <ENTRY>oder n. eind.</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>5**</KEY>
+       <ENTRY>*     Elemente in Formular</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>505</KEY>
+       <ENTRY>(Titel 1)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>510</KEY>
+       <ENTRY>(Titel 2)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>515</KEY>
+       <ENTRY>(Zahlungsbeleg)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>520</KEY>
+       <ENTRY>(Einzelposten)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>525</KEY>
+       <ENTRY>(Summe pro Währung)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>530</KEY>
+       <ENTRY>(FormulAbschl)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>531</KEY>
+       <ENTRY>(Betrag pro Währung in Formularabschluß)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>535</KEY>
+       <ENTRY>(Gutschrift Begleitzettel)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>540</KEY>
+       <ENTRY>(Lastschrift Begleitzettel)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>605</KEY>
+       <ENTRY>(Unsere Kontonr.)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>610</KEY>
+       <ENTRY>(Text-&amp;ZAHLWEG)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>612</KEY>
+       <ENTRY>(Abweichender Zahlungsempfänger)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>613</KEY>
+       <ENTRY>(Zahlung durch Auftrag)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>615</KEY>
+       <ENTRY>(Überschrift)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>620</KEY>
+       <ENTRY>(Übertrag darüber)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>625</KEY>
+       <ENTRY>(Einzelposten)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>630</KEY>
+       <ENTRY>(Summe)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>635</KEY>
+       <ENTRY>(Übertrag darunter)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>777</KEY>
+       <ENTRY>/</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>778</KEY>
+       <ENTRY>BK</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>779</KEY>
+       <ENTRY>DOC</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>780</KEY>
+       <ENTRY>OP</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>781</KEY>
+       <ENTRY>TIT NOSSO</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>782</KEY>
+       <ENTRY>TIT OUTRO</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>800</KEY>
+       <ENTRY>Begleitliste - &amp;FORM</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>801</KEY>
+       <ENTRY>Ausstellungsdatum</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>802</KEY>
+       <ENTRY>BLZ             Empf.bank</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>803</KEY>
+       <ENTRY>Bank KtoNr.          BelNr.     KK Konto   Name                        PLZ/Stadt                         &amp;FC                &amp;LC</ENTRY>
+       <LENGTH>127</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>810</KEY>
+       <ENTRY>Gesamtbetrag</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>811</KEY>
+       <ENTRY>Zwischensumme (Hauswährung):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>812</KEY>
+       <ENTRY>Zwischensumme (Fremdwährung &amp;WAERS):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>813</KEY>
+       <ENTRY>Anz.ÜberweisTräger</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>814</KEY>
+       <ENTRY>Bankkonto Gesamtbetrag in &amp;WAERS</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>815</KEY>
+       <ENTRY>Buchungskreis Gesamtbetrag in &amp;WAERS</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>816</KEY>
+       <ENTRY>In Worten</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>820</KEY>
+       <ENTRY>Hauptbuch:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>821</KEY>
+       <ENTRY>BK:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>822</KEY>
+       <ENTRY>ZW:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>830</KEY>
+       <ENTRY>EDI ÜbertragFehler;</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>902</KEY>
+       <ENTRY>BuKr Zahlungsbelegnr.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>903</KEY>
+       <ENTRY>Im Formular &amp;FORM für das Fenster &amp;WINDOW fehlt das Element &amp;ELEMENT &amp;TEXT</ENTRY>
+       <LENGTH>78</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>904</KEY>
+       <ENTRY>Im Formular &amp;FORM fehlt das Fenster &amp;WINDOW</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>910</KEY>
+       <ENTRY>Für folgende Argumente wurden in &amp;TAB keine Einträge gefunden:</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>911</KEY>
+       <ENTRY>Die Währungsschlüssel wurden deshalb nicht in ISO Code konvertiert.</ENTRY>
+       <LENGTH>69</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>912</KEY>
+       <ENTRY>Die Ausgabe der relevanten Formulare ist fehlerhaft.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>913</KEY>
+       <ENTRY>Für diese Buchungskreise fehlen die Standardbrieftexte.</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>914</KEY>
+       <ENTRY>Textschlüssel und Listenname fehlen für diese Zahlwege.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>920</KEY>
+       <ENTRY>Folgende Fremdwährungschecks konnten nicht gedruckt werden</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>921</KEY>
+       <ENTRY>da das Global für den Währungsschlüssel in Form. &amp;FORM fehlt:</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>922</KEY>
+       <ENTRY>In folgenden Schecks konnten Beträge nicht in Worte umgesetzt werden,</ENTRY>
+       <LENGTH>69</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>923</KEY>
+       <ENTRY>da Betrag zu groß war:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>924</KEY>
+       <ENTRY>Auf diese Schecks Betrag in Worten per Hand schreiben.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>925</KEY>
+       <ENTRY>Die Umsetzung des Betrages in Worte wurde deshalb nicht vollständig durchgeführt</ENTRY>
+       <LENGTH>80</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>926</KEY>
+       <ENTRY>Daher ist Datentransferträger nicht korrekt und nicht ganz voll.</ENTRY>
+       <LENGTH>74</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>930</KEY>
+       <ENTRY>Folgende Belege wurden nicht verbucht:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>931</KEY>
+       <ENTRY>(Ergebnis Validierung des Zahlungsbelegs):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>932</KEY>
+       <ENTRY>Relevanten Formulare wurden nicht generiert</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>990</KEY>
+       <ENTRY>Übersicht der generiert. Listen</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>991</KEY>
+       <ENTRY>Name                                   Daten-Set      Spool-Nummer</ENTRY>
+       <LENGTH>66</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>DTA Brasilien - Kreditoren</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_AMT</KEY>
+       <ENTRY>Zahlungsbetrag</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZB</KEY>
+       <ENTRY>Anzahl Begleitzettel</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZP</KEY>
+       <ENTRY>Anzahl Probedrucke</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BAAV</KEY>
+       <ENTRY>Avis von Bank an Kreditor</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BELP</KEY>
+       <ENTRY>Zahlungsbelegsvalidierung</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BRLA</KEY>
+       <ENTRY>Bradesco-Version</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_DTYP</KEY>
+       <ENTRY>Ausgabemedium</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_EPOS</KEY>
+       <ENTRY>Einzelposten anzeigen</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ESPR</KEY>
+       <ENTRY>Texte in Sprache d. Empfängers</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_FBLA</KEY>
+       <ENTRY>FEBRABAN-Version</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ISOC</KEY>
+       <ENTRY>Währung in ISO Code</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_J52</KEY>
+       <ENTRY>Segment J-52</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_MAXP</KEY>
+       <ENTRY>Anzahl Positionen in BeglListe</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_RAZO</KEY>
+       <ENTRY>Bradesco HR (RAZAO-Nummer)</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_UNIX</KEY>
+       <ENTRY>Dateiname (für DTA)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_VER</KEY>
+       <ENTRY>ITAU-Version (010/020/050/080)</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HBKI</KEY>
+       <ENTRY>Hausbank</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HKTI</KEY>
+       <ENTRY>Konto-ID</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_UZAW</KEY>
+       <ENTRY>Zahlwegzusatz</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_VBLN</KEY>
+       <ENTRY>Zahlungsbelegnummer</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_WAER</KEY>
+       <ENTRY>Währungsschlüssel</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_ZAWE</KEY>
+       <ENTRY>Zahlwege</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>E</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>R</ID>
+       <ENTRY>DME Brazil - A/P</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>0**</KEY>
+       <ENTRY>*     Summary section and output list</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Payment advices</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Payment summary</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Error log</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Disk accompanying sheet</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Magnetic tape accomp.sheet</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>DME diskette - bank &amp;/&amp;2</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>DME file for bank &amp;1/&amp;2</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>TemSe DME - bank &amp;/&amp;2</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>1**</KEY>
+       <ENTRY>*     Texts for selection parameters</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>On printer        ;</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Print collective order</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Data medium exchange</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Print payment advices</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Print payment summary</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>108</KEY>
+       <ENTRY>Print immediately</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>ITAU version must be &apos;010&apos; or &apos;020&apos; or &apos;050&apos; or &apos;080&apos;</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>122</KEY>
+       <ENTRY>Febraban version must be &apos;030&apos; or &apos;040&apos; or &apos;050&apos; or &apos;087&apos;</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>222</KEY>
+       <ENTRY>or not unique</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>5**</KEY>
+       <ENTRY>*     Elements in the form</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>505</KEY>
+       <ENTRY>(Title 1)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>510</KEY>
+       <ENTRY>(Title 2)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>515</KEY>
+       <ENTRY>(Payment document)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>520</KEY>
+       <ENTRY>(Line items)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>525</KEY>
+       <ENTRY>(Total per currency)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>530</KEY>
+       <ENTRY>(Form closing)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>531</KEY>
+       <ENTRY>(Amount per currency in form summary section)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>535</KEY>
+       <ENTRY>(Credit memo accomp.sheet)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>540</KEY>
+       <ENTRY>(Debit memo accomp.sheet)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>605</KEY>
+       <ENTRY>(Our account number)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>610</KEY>
+       <ENTRY>(Text-&amp;ZAHLWEG)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>612</KEY>
+       <ENTRY>(Alternative payee)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>613</KEY>
+       <ENTRY>(Payment takes place in order)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>615</KEY>
+       <ENTRY>(Heading)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>620</KEY>
+       <ENTRY>(Carry forward above)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>625</KEY>
+       <ENTRY>(Line items)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>630</KEY>
+       <ENTRY>(Total)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>635</KEY>
+       <ENTRY>(Carry forward below)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>777</KEY>
+       <ENTRY>/</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>778</KEY>
+       <ENTRY>CC</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>779</KEY>
+       <ENTRY>DOC</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>780</KEY>
+       <ENTRY>OP</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>781</KEY>
+       <ENTRY>TIT NOSSO</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>782</KEY>
+       <ENTRY>TIT OUTRO</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>800</KEY>
+       <ENTRY>Payment summary - &amp;FORM</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>801</KEY>
+       <ENTRY>Issue date</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>802</KEY>
+       <ENTRY>Bank no.        Payee bank</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>803</KEY>
+       <ENTRY>Bank acct no.        Doc.no.    OI acct    Name                        PtCd/City                         &amp;FC                &amp;LC</ENTRY>
+       <LENGTH>127</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>810</KEY>
+       <ENTRY>Total amount</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>811</KEY>
+       <ENTRY>Subtotal (local currency):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>812</KEY>
+       <ENTRY>Subtotal (foreign currency &amp;WAERS):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>813</KEY>
+       <ENTRY>No.of pmnt carriers</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>814</KEY>
+       <ENTRY>Bank acct total amount in &amp;WAERS</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>815</KEY>
+       <ENTRY>Company code total amount in &amp;WAERS</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>816</KEY>
+       <ENTRY>In words</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>820</KEY>
+       <ENTRY>G/L:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>821</KEY>
+       <ENTRY>CC:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>822</KEY>
+       <ENTRY>PM:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>830</KEY>
+       <ENTRY>EDI transmiss.errors;</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>902</KEY>
+       <ENTRY>CoCd Payment document no.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>903</KEY>
+       <ENTRY>In the form &amp;FORM for the window &amp;WINDOW the element &amp;ELEMENT &amp;TEXT is missing</ENTRY>
+       <LENGTH>78</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>904</KEY>
+       <ENTRY>In the form &amp;FORM the window &amp;WINDOW is missing</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>910</KEY>
+       <ENTRY>No entries have been found in &amp;TAB for the following arguments:</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>911</KEY>
+       <ENTRY>The currency keys have therefore not been converted into an ISO code.</ENTRY>
+       <LENGTH>69</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>912</KEY>
+       <ENTRY>The output of the relevant forms is incorrect.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>913</KEY>
+       <ENTRY>The standard letter texts are missing for these company codes.</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>914</KEY>
+       <ENTRY>Text key and list name are missing for these payment methods.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>920</KEY>
+       <ENTRY>The following foreign currency checks could not be printed</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>921</KEY>
+       <ENTRY>since the global for the currency key is missing in form &amp;FORM:</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>922</KEY>
+       <ENTRY>In the following checks the amount could not be converted into words,</ENTRY>
+       <LENGTH>69</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>923</KEY>
+       <ENTRY>since the amount was too large:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>924</KEY>
+       <ENTRY>With these checks, write in the amount in words by hand.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>925</KEY>
+       <ENTRY>The conversion of the amount into words was therefore not completely carried out</ENTRY>
+       <LENGTH>80</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>926</KEY>
+       <ENTRY>The data transfer medium is therefore incorrect and not completely filled.</ENTRY>
+       <LENGTH>74</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>930</KEY>
+       <ENTRY>The following documents were not updated</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>931</KEY>
+       <ENTRY>(Result of the payment document validation):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>932</KEY>
+       <ENTRY>The relevant forms have not been generated.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>990</KEY>
+       <ENTRY>Overview of the lists generated</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>991</KEY>
+       <ENTRY>Name                                   Dataset        Spool number</ENTRY>
+       <LENGTH>66</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_AMT</KEY>
+       <ENTRY>Payment Amount</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZB</KEY>
+       <ENTRY>Number of accompanying sheets</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZP</KEY>
+       <ENTRY>Number of sample printouts</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_AVIS</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BAAV</KEY>
+       <ENTRY>Advice from bank to vendor</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BEGL</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BELP</KEY>
+       <ENTRY>Payment document validation</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BRLA</KEY>
+       <ENTRY>Bradesco Version</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_DTYP</KEY>
+       <ENTRY>Output medium</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_EPOS</KEY>
+       <ENTRY>Display line items</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ESPR</KEY>
+       <ENTRY>Texts in recipient&apos;s lang.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_FBLA</KEY>
+       <ENTRY>Febraban Version</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ISOC</KEY>
+       <ENTRY>Currency in ISO code</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_J52</KEY>
+       <ENTRY>Segment J-52</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_MAXP</KEY>
+       <ENTRY>No.of items in payment summary</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIA</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIB</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIW</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIZ</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_RAZO</KEY>
+       <ENTRY>Bradesco HR (RAZÃO Number)</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFA</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFB</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFW</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFZ</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_UNIX</KEY>
+       <ENTRY>File name (for DME)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_VER</KEY>
+       <ENTRY>ITAU Version(010/020/050/080)</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_XDTA</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ZDRU</KEY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HBKI</KEY>
+       <ENTRY>House bank</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HKTI</KEY>
+       <ENTRY>Account ID</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_UZAW</KEY>
+       <ENTRY>Payment method supplement</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_VBLN</KEY>
+       <ENTRY>Payment document number</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_WAER</KEY>
+       <ENTRY>Currency key</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_ZAWE</KEY>
+       <ENTRY>Payment methods</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>821</KEY>
+       <ENTRY>So:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>822</KEY>
+       <ENTRY>VP:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZB</KEY>
+       <ENTRY>Ctd.notas adjuntas</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZP</KEY>
+       <ENTRY>Ctd.impresiones de prueba</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BELP</KEY>
+       <ENTRY>Validación documento de pago</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>810</KEY>
+       <ENTRY>Importe total:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>811</KEY>
+       <ENTRY>Subtotal (moneda local):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>812</KEY>
+       <ENTRY>Subtotal (moneda extranjera &amp;WAERS):</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>816</KEY>
+       <ENTRY>En palab.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>820</KEY>
+       <ENTRY>Libro may.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_DTYP</KEY>
+       <ENTRY>Medio de salida</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HKTI</KEY>
+       <ENTRY>ID de cuenta</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_UZAW</KEY>
+       <ENTRY>Suplemento de vía de pago</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_VBLN</KEY>
+       <ENTRY>Número del documento de pago</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_WAER</KEY>
+       <ENTRY>Clave de moneda</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_ZAWE</KEY>
+       <ENTRY>Vías de pago</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_EPOS</KEY>
+       <ENTRY>Visualizar partidas indiv.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ISOC</KEY>
+       <ENTRY>Moneda en código ISO</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_MAXP</KEY>
+       <ENTRY>Ctd.posiciones lista adjunta</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_UNIX</KEY>
+       <ENTRY>Nombre de fichero (para ISD)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HBKI</KEY>
+       <ENTRY>Banco propio</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>801</KEY>
+       <ENTRY>Fecha de emisión</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>108</KEY>
+       <ENTRY>Imprimir inmediatamente</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>505</KEY>
+       <ENTRY>(Tít.1)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>510</KEY>
+       <ENTRY>(Tít.2)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>515</KEY>
+       <ENTRY>(Documento pago)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>520</KEY>
+       <ENTRY>(Partida individual)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Avisos</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Lista adjunta</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Log de errores</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Intercambio de soportes de datos</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Imprimir lista adjunta</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>525</KEY>
+       <ENTRY>(Total por moneda)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>625</KEY>
+       <ENTRY>(Partida individual)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>777</KEY>
+       <ENTRY>/</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>778</KEY>
+       <ENTRY>Soc.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>779</KEY>
+       <ENTRY>DOC</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>780</KEY>
+       <ENTRY>PA</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>530</KEY>
+       <ENTRY>Cierre formul.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>531</KEY>
+       <ENTRY>(Importe por moneda en cierre formulario)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>535</KEY>
+       <ENTRY>(Abono nota adjunta)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>612</KEY>
+       <ENTRY>(Receptor alternativo del pago)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>615</KEY>
+       <ENTRY>(Título)</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

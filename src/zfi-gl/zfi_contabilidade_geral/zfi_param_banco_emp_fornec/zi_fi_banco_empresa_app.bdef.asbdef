@@ -1,0 +1,35 @@
+managed;
+
+define behavior for ZI_FI_BANCO_EMPRESA_APP alias BncEmp
+implementation in class zclfi_banco_empresa_app unique
+persistent table ztfi_banco_empr
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+
+  field ( mandatory : create ) Bukrs;
+  field ( readonly : update ) Bukrs, Banco;
+  field ( readonly ) LastChangedAt, LastChangedBy, LocalLastChangedAt, CreatedAt, CreatedBy;
+
+  create;
+  update;
+  delete;
+
+  validation authorityCreate on save { create; }
+  validation mandatoryfields on save { create; }
+
+  mapping for ZTFI_BANCO_EMPR
+  {
+    Bukrs = bukrs;
+    Banco = banco;
+    Hbkid = hbkid;
+    Hktid = hktid;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

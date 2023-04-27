@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+
+
+@UI: { headerInfo: { typeName: 'Titulo',
+                     title: { value: 'Empresa' },
+                     typeNamePlural: 'Empresas'
+                   }
+     }
+annotate entity zc_fi_log_difer with
+{
+
+  @UI.facet: [ { id:         'Log',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Log Diferimentos',
+               position:      10 }]
+
+  @UI: { lineItem:        [ { position: 10, label: 'N° Intervalo' } ],
+   identification:  [ { position: 10, label: 'N° Intervalo' } ] }
+  IntNum;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Empresa' } ],
+  identification:  [ { position: 20, label: 'Empresa' } ],
+  selectionField:  [ { position: 20 } ] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CompanyCode', element: 'CompanyCode' } }]
+  @Consumption.filter.mandatory : true
+  Empresa;
+
+  @UI: { lineItem:        [ { position: 30, label: 'N° Documento' } ],
+   identification:  [ { position: 30, label: 'N° Documento' } ] }
+  NumrDoc;
+
+  @UI: { lineItem:        [ { position: 40, label: 'Ano' } ],
+   identification:  [ { position: 40, label: 'Ano' } ] }
+  Ano;
+
+  @UI: { lineItem:        [ { position: 50, label: 'Data Lançamento' } ],
+  identification:  [ { position: 50, label: 'Data Lançamento' } ],
+  selectionField:  [ { position: 50 } ] }
+@Consumption.filter: { selectionType: #SINGLE, multipleSelections: false }
+  DataLanc;
+
+  @UI: { lineItem:        [ { position: 60, label: 'Hora' } ],
+   identification:  [ { position: 60, label: 'Hora' } ] }
+  Hora;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Mensagem' } ],
+   identification:  [ { position: 70, label: 'Mensagem' } ] }
+  Message;
+
+}

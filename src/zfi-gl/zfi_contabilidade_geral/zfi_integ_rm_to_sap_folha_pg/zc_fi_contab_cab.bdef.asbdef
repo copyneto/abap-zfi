@@ -1,0 +1,15 @@
+projection;
+
+define behavior for ZC_FI_CONTAB_CAB //alias <alias_name>
+{
+  use action simular;
+  use action contabilizar;
+
+//  use association _Item { create; }
+}
+
+define behavior for ZC_FI_CONTAB_ITEM //alias <alias_name>
+{
+
+  use association _Header;
+}

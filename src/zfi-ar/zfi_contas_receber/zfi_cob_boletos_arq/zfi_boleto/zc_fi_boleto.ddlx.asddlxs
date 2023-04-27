@@ -1,0 +1,74 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { title:{ label: 'Boletos', value: 'Empresa' },
+                  description: {
+    type: #STANDARD,
+    value: 'Empresa' },
+                  typeName: 'Boleto',
+                  typeNamePlural: 'Boletos' }
+annotate view ZC_FI_BOLETO with
+
+{
+  @UI.lineItem: [{ position: 10,
+                   label: 'Empresa' }]
+  @UI: {
+        selectionField: [{position: 10}] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CompanyCode', element: 'CompanyCode' } }]
+  Empresa;
+  @UI.lineItem: [{ position: 20,
+                 label: 'Documento' }]
+  @UI: {
+        selectionField: [{position: 20}] }
+  Documento;
+  @UI.lineItem: [{ position: 30,
+                 label: 'Ano' }]
+  @UI: {
+        selectionField: [{position: 30}] }
+  @Consumption.valueHelpDefinition: [ { entity:  { name:    'I_CalendarYear', element: 'CalendarYear' } }]      
+  Ano;
+  @UI.lineItem: [{ position: 40,
+                 label: 'Item' }]
+  @UI: {
+        selectionField: [{position: 40}] }
+  Item;
+  @UI.lineItem: [{ position: 50,
+                 label: 'Cliente' }]
+  @UI: {
+        selectionField: [{position: 50}] }
+  @Consumption.valueHelpDefinition: [ { entity:  { name:    'I_Customer_VH', element: 'Customer' } }]
+  Cliente;
+  @UI.lineItem: [{ position: 51 }]
+  @UI: {
+        selectionField: [{position: 51}] }
+  @Consumption.valueHelpDefinition: [{
+    entity: { name: 'I_BusinessPlace', element: 'BusinessPlace' },
+    additionalBinding:
+    [ { localElement: 'Empresa', element: 'CompanyCode', usage: #FILTER } ]
+   }]
+  LocalNegocio;
+  @UI.lineItem: [{ position: 52 }]
+//  @UI: {
+//        selectionField: [{position: 51}] }
+//  @Consumption.valueHelpDefinition: [{
+//    entity: { name: 'I_BusinessPlace', element: 'BusinessPlace' },
+//    additionalBinding:
+//    [ { localElement: 'Empresa', element: 'CompanyCode', usage: #FILTER } ]
+//   }]
+  FormaPgto;
+  @UI.lineItem: [{ position: 53 }]  
+  Montante;
+  @UI.hidden: true
+  waers;
+  @UI.lineItem: [{ position: 60,
+                   label: 'Divisão' }]
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BusinessAreaStdVH', element: 'BusinessArea' } }]
+  Divisao;
+  @UI.lineItem: [{ position: 70,
+                 label: 'Banco' }]
+  Banco;
+  @UI: {  lineItem:       [ { position: 80, label:'Status' }
+  //    ,
+  //                              { type: #FOR_ACTION, dataAction: 'enviar',  label: 'Enviar email' }
+                          ] }
+  xref3;
+
+}

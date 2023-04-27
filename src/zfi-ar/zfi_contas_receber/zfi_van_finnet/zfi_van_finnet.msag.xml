@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_VAN_FINNET</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens Automatização bancária Van FINNET</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Nenhum diretório para importação configurado na transação &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro ao salvar log de execução</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Diretório &amp;1&amp;2 vazio</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao buscar o diretório &amp;1 &amp;2 para o tipo de processo &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Layout de importação de extrato não determinado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro ao iniciar o JOB de processamento do arquivo &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Arquivo &amp; importado com sucesso na FF.5</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Erro ao importar arquivo &amp; na FF.5</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Arquivo &amp; já importado anteriormente (&amp;) na FF.5</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Nome do arquivo inválido: &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Tipo de arquivo não suportado pelo SAP, apenas (EXT, COB ou PGF).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Existe um JOB ativo em execução no momento!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Sem autorização para exibir informações da empresa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Processo finalizado. Consulte o log na transação SLG1, obj &amp;1, subobj &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_VAN_FINNET</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Diretório não configurado para o tipo de processo &amp;1</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

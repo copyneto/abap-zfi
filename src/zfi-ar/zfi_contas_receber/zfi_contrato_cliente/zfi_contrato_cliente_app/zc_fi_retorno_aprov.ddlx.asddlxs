@@ -1,0 +1,44 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Retorno de aprovação',
+                     title: { value: 'Contrato' },
+                     typeNamePlural: 'Retorno de aprovação'
+                   }
+     }
+annotate entity ZC_FI_RETORNO_APROV with
+{
+  @UI.hidden: true
+  DocUuidH;
+  @UI.hidden: true
+  DocUuidRet;
+  @UI: { lineItem:        [ { position: 10, label: 'Nível' } ],
+       identification:  [ { position: 10, label: 'Nível' } ] }
+  Nivel;
+  @UI: { lineItem:        [ { position: 20, label: 'Descrição' } ],
+       identification:  [ { position: 20, label: 'Descrição' } ] }
+  DescNivel;
+  @UI: { lineItem:        [ { position: 30, label: 'Aprovador' } ],
+       identification:  [ { position: 30, label: 'Aprovador' } ] }
+  Aprovador;
+  @UI: { lineItem:        [ { position: 40, label: 'Data Aprovação' } ],
+     identification:  [ { position: 40, label: 'Data Aprovação' } ] }
+  DataAprov;
+  @UI: { lineItem:        [ { position: 45, label: 'Hora Aprovação' } ],
+       identification:  [ { position: 45, label: 'Hora Aprovação' } ] }
+  HoraAprov;
+  @UI: { lineItem:        [ { position: 50, label: 'Usuário de Retorno' } ],
+       identification:  [ { position: 50, label: 'Usuário de Retorno' } ] }
+  Retornador;
+  @UI: { lineItem:        [ { position: 55, label: 'Data retorno' } ],
+       identification:  [ { position: 55, label: 'Data retorno' } ] }
+  DataRet;
+  @UI: { lineItem:        [ { position: 60, label: 'Hora retorno' } ],
+       identification:  [ { position: 60, label: 'Hora retorno' } ] }
+  HoraRet;
+  @UI: { lineItem:        [ { position: 65, label: 'Observação do Retorno' } ],
+       identification:  [ { position: 65, label: 'Observação do Retorno' } ] }
+  Observacao;
+
+  /* Associations */
+  //  _Contrato;
+
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'WF - Log'
+define service ZUI_FI_WF_LOG {
+  expose ZC_FI_WF_LOG as LogWF;
+}

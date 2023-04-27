@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CRIAR_PROPOSTA_RESP</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLFI_DT_CRIAR_PROPOSTA_RESP</OBJ_NAME_M>
+     <HASH_ID>0345086FD110F99C0BF4F616040AA46B593E91ED</HASH_ID>
+     <ID>&lt;type&gt; dtCriarPropostaResp http://trescoracoes.com.br/contasareceber/criarproposta http://trescoracoes.com.br/contasareceber/criarproposta</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtCriarPropostaResp</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/contasareceber/criarproposta</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/contasareceber/criarproposta</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLFI_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/contasareceber/criarproposta</X-ML_NSPCE>
+     <X-ML_NAME>dtCriarPropostaResp</X-ML_NAME>
+     <VERSION_ID>72ada05b403f11ed891f00000085a0cb</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CRIAR_PROPOSTA_RESP</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>RETORNO_PROVISIONAMENTO_PARCEL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>RETORNO_PROVISIONAMENTO_PARCEL</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZCLFI_DT_CRIAR_PROPOSTA_RE_TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; RetornoProvisionamentoParcelaSAP &lt;type&gt; dtCriarPropostaResp http://trescoracoes.com.br/contasareceber/criarproposta http://trescoracoes.com.br/contasareceber/criarproposta</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>RetornoProvisionamentoParcelaSAP</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>RETORNO_PROVISIONAMENTO_PARCEL</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CRIAR_PROPOSTA_RESP</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLFI_DT_CRIAR_PROPOSTA_RESP</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLFI_DT_CRIAR_PROPOSTA_RESP</OBJ_NAME2>
+     <ID>&lt;type&gt; dtCriarPropostaResp http://trescoracoes.com.br/contasareceber/criarproposta http://trescoracoes.com.br/contasareceber/criarproposta</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtCriarPropostaResp</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLFI_DT_CRIAR_PROPOSTA_RESP</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,9 @@
+@EndUserText.label: 'Serv. Definition Conc. Credito'
+define service ZUI_CONC_CRED {
+  expose ZC_FI_CONC_CRED;
+  expose ZI_CA_VH_BSCHL;
+  expose ZI_CA_VH_DOCTYPE;
+  expose ZI_FI_VH_IDENT;
+  expose ZI_FI_VH_ORIG;
+  expose I_CompanyCodeVH;
+}

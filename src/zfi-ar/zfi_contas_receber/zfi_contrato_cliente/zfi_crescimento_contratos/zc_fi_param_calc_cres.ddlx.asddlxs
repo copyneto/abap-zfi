@@ -1,0 +1,7 @@
+@Metadata.layer: #CORE
+annotate entity ZC_FI_PARAM_CALC_CRES with
+{
+  @EndUserText.label: 'Exercício'
+  gjahr;
+
+}

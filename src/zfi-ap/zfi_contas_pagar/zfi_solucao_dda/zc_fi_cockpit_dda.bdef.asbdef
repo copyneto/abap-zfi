@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_COCKPIT_DDA alias Cockpit
+{
+
+  use action reprocessar;
+  use action notadiv;
+}

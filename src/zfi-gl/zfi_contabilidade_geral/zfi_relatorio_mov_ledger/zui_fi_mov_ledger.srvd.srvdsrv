@@ -1,0 +1,4 @@
+@EndUserText.label: 'Movimentos Material Ledger'
+define service ZUI_FI_MOV_LEDGER {
+  expose ZC_FI_MOV_LEDGER as Movimento;
+}

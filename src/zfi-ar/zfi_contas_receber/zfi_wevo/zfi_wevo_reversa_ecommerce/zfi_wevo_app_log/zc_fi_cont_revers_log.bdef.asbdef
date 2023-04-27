@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_CONT_REVERS_LOG alias Contab
+use etag
+{
+  use update;
+  use delete;
+}

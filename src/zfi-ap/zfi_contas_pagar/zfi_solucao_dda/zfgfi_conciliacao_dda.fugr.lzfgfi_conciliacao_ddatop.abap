@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGFI_CONCILIACAO_DDA.        "MESSAGE-ID ..
+
+* INCLUDE LZFGFI_CONCILIACAO_DDAD...         " Local class definition

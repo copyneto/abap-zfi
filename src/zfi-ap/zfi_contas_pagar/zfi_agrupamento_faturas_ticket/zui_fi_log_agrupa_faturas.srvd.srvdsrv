@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv. Def. Agrupamento de faturas'
+define service ZUI_FI_LOG_AGRUPA_FATURAS {
+  expose ZC_FI_LOGHEADERAGRUPAFATURA;
+  expose ZC_FI_LOGITEMAGRUPAFATURA;
+}

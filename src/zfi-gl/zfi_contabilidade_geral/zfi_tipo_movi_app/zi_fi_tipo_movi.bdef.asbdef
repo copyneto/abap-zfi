@@ -1,0 +1,33 @@
+managed;
+
+define behavior for ZI_FI_TIPO_MOVI alias _TipoMov
+implementation in class Zclfi_beh_i_tipomov unique
+persistent table ztfi_tipo_movi
+authorization master ( instance )
+lock master
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) PlanContas, Conta, chaveLanc, TipoDoc;
+  field ( mandatory : create ) PlanContas, Conta, chaveLanc, TipoDoc;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_tipo_movi
+  {
+    PlanContas = ktopl;
+    Conta = hkont;
+    chaveLanc = shkzg;
+    TipoDoc = blart;
+    TipoMov = bewar;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

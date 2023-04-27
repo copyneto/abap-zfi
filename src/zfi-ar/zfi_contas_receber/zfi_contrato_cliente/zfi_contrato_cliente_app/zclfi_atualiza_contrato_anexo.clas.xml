@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_ATUALIZA_CONTRATO_ANEXO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>atualiza campo anexo no contrato</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ATUALIZA_CAMPO</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ATUALIZA_CAMPO</CMPNAME>
+     <SCONAME>IV_ANEXO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo do Anexo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ATUALIZA_CAMPO</CMPNAME>
+     <SCONAME>IV_UUID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SALVA_TABELA</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SALVA_TABELA</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

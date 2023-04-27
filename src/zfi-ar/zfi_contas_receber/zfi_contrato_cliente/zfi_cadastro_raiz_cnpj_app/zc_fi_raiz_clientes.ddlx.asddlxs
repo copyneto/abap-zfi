@@ -1,0 +1,152 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Cliente',
+                typeNamePlural: 'Clientes',
+                title: { type: #STANDARD, label: 'Raiz CNPJ', value: 'CnpjRaiz' } },
+  presentationVariant: [{ sortOrder: [{ by: 'LastChangedAt', direction:  #DESC }] }] }
+
+annotate view ZC_FI_RAIZ_CLIENTES with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet:[
+             { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+             { id:              'geral',
+               purpose:         #STANDARD,
+               parentId:        'Facet',
+               type:            #FIELDGROUP_REFERENCE,
+               label:           'Dados Gerais',
+               targetQualifier: 'geral',
+               position:         30 } ,
+             {  id:             'Principal',
+                purpose:        #STANDARD,
+                label:          'Dados Principais',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Principal',
+                position:       20 },
+              { id:            'Header',
+                purpose:       #STANDARD,
+                type:          #LINEITEM_REFERENCE,
+                position:      40,
+                targetElement: '_Raiz'}  ]
+
+  // ------------------------------------------------------
+  // Field information Principal
+  // ------------------------------------------------------
+  @UI.lineItem: [ { position: 10, label: 'Cliente' } ]
+  @UI.identification: [ { position: 10, label: 'Cliente' } ]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Principal' }]
+  Cliente;
+
+  @EndUserText.label: 'Contrato'
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Principal' }]
+  Contrato;
+
+  @EndUserText.label: 'Aditivo'
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Principal' }]
+  Aditivo;
+
+  @EndUserText.label: 'CNPJ Raiz'
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Principal' }]
+  CnpjRaiz;
+
+
+  // ------------------------------------------------------
+  // Field information Geral
+  // ------------------------------------------------------
+  @UI.lineItem:[ { position: 20, label: 'Empresa' } ]
+  @UI.identification: [ { position: 20, label: 'Empresa' } ]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  Empresa;
+  @UI.lineItem: [ { position: 30, label: 'Atributo 10' } ]
+  @UI.identification: [ { position: 30, label: 'Atributo 10' } ]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'geral' }]
+  Atributo10;
+  @UI.lineItem: [ { position: 40, label: 'CNPJ' } ]
+  @UI.identification: [ { position: 40, label: 'CNPJ' } ]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'geral' }]
+  Cnpj;
+  @UI.lineItem: [ { position: 50, label: 'Nome' } ]
+  @UI.identification: [ { position: 50, label: 'Nome' } ]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'geral' }]
+  Nome1;
+  @UI.lineItem: [ { position: 60, label: 'Região de Vendas' } ]
+  @UI.identification: [ { position: 60, label: 'Região de Vendas' } ]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'geral' }]
+  RegiaoVendas;
+  @UI.lineItem: [ { position: 70, label: 'Forma de Pagamento' } ]
+  @UI.identification: [ { position: 70, label: 'Forma de Pagamento' } ]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'geral' }]
+  FormaPagamento;
+  @UI.lineItem: [ { position: 80, label: 'Condição de Pagamento' } ]
+  @UI.identification: [ { position: 80, label: 'Condição de Pagamento' } ]
+  @UI.fieldGroup: [{ position: 60, qualifier: 'geral' }]
+  CondPagamentos;
+  @UI.lineItem: [ { position: 90, label: 'Centro' } ]
+  @UI.identification: [ { position: 90, label: 'Centro' } ]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'geral' }]
+  Centro;
+  @UI.lineItem: [ { position: 100, label: 'Organização de Venda' } ]
+  @UI.identification: [ { position: 100, label: 'Organização de Venda' } ]
+  @UI.fieldGroup: [{ position: 80, qualifier: 'geral' }]
+  OrgVendas;
+  @UI.lineItem: [ { position: 110, label: 'Canal de Distribuição' } ]
+  @UI.identification: [ { position: 100, label: 'Canal de Distribuição' } ]
+  @UI.fieldGroup: [{ position: 90, qualifier: 'geral' }]
+  CanalDistribuicao;
+  @UI.lineItem: [ { position: 120, label: 'Setor de Atividade' } ]
+  @UI.identification: [ { position: 120, label: 'Setor de Atividade' } ]
+  @UI.fieldGroup: [{ position: 100, qualifier: 'geral' }]
+  SetorAtividade;
+  @UI.lineItem: [ { position: 130, label: 'Classificação do CNPJ' } ]
+  @UI.identification: [ { position: 130, label: 'Classificação do CNPJ' } ]
+  @UI.fieldGroup: [{ position: 110, qualifier: 'geral' }]
+  ClassifCnpj;
+  @EndUserText.label: 'Grupo Economico'
+  @UI.lineItem: [ { position: 140, label: 'Grupo econômico' } ]
+  @UI.identification: [ { position: 140, label: 'Grupo econômico' } ]
+  @UI.fieldGroup: [{ position: 120, qualifier: 'geral' }]
+  GrupoEconomico;
+  @EndUserText.label: 'Bandeira'
+  @UI.lineItem: [ { position: 150, label: 'Bandeira' } ]
+  @UI.identification: [ { position: 150, label: 'Bandeira' } ]
+  @UI.fieldGroup: [{ position: 130, qualifier: 'geral' }]
+  Bandeira;
+  @EndUserText.label: 'Abragência'
+  @UI.lineItem: [ { position: 160, label: 'Abragência' } ]
+  @UI.identification: [ { position: 160, label: 'Abragência' } ]
+  @UI.fieldGroup: [{ position: 140, qualifier: 'geral' }]
+  Abrangencia;
+  @UI.lineItem: [ { position: 170, label: 'Estrutura' } ]
+  @EndUserText.label: 'Estrutura'
+  @UI.identification: [ { position: 170, label: 'Estrutura' } ]
+  @UI.fieldGroup: [{ position: 150, qualifier: 'geral' }]
+  Estrutura;
+  @UI.lineItem: [ { position: 180, label: 'Canal PDV' } ]
+  @UI.identification: [ { position: 180, label: 'Canal PDV' } ]
+  @UI.fieldGroup: [{ position: 160, qualifier: 'geral' }]
+  CanalPDV;
+  @EndUserText.label: 'Escritorio de Vendas'
+  @UI.lineItem: [ { position: 190, label: 'Escritorio de Vendas' } ]
+  @UI.identification: [ { position: 190, label: 'Escritorio de Vendas' } ]
+  @UI.fieldGroup: [{ position: 170, qualifier: 'geral' }]
+  EscritorioVendas;
+  @EndUserText.label: 'Equipe de Vendas'
+  @UI.lineItem: [ { position: 200, label: 'Equipe de Vendas' } ]
+  @UI.identification: [ { position: 200, label: 'Equipe de Vendas' } ]
+  @UI.fieldGroup: [{ position: 180, qualifier: 'geral' }]
+  EquipeVendas;
+  @EndUserText.label: 'Grupo de Codições'
+  @UI.lineItem: [ { position: 210, label: 'Grupo de Codições' } ]
+  @UI.identification: [ { position: 210, label: 'Grupo de Codições' } ]
+  @UI.fieldGroup: [{ position: 190, qualifier: 'geral' }]
+  GruposCondicoes;
+
+}

@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { title:{ label: 'Retirar Blqueios', value: 'bukrs' },
+                  description: {
+    type: #STANDARD,
+    value: 'bukrs' },
+                  typeName: 'Retirar Blqueios',
+                  typeNamePlural: 'Retirar Blqueios' }
+annotate entity ZC_RET_BLOQ with
+{
+  @UI.lineItem: [{ position: 10 },
+   { type: #FOR_ACTION, dataAction: 'retbloq', label: 'Retirar bloqueio' }]
+  @UI: {
+        selectionField: [{position: 10}] }
+  bukrs;
+  @UI.lineItem: [{ position: 20}]
+  @UI: {
+        selectionField: [{position: 20}] }
+  kunnr;
+  @UI.lineItem: [{ position: 30}]
+  @UI: {
+        selectionField: [{position: 30}] }
+  belnr;
+  @UI.lineItem: [{ position: 40}]
+  @UI: {
+        selectionField: [{position: 40}] }
+  buzei;
+  @UI.lineItem: [{ position: 50}]
+  @UI: {
+        selectionField: [{position: 50}] }
+  gjahr;
+  @UI.lineItem: [{ position: 60}]
+  xblnr;
+  @UI.lineItem: [{ position: 70}]
+  zuonr;
+  @UI.lineItem: [{ position: 80}]
+  hbkid;
+  @UI.lineItem: [{ position: 90}]
+  zlsch;
+  @UI.lineItem: [{ position: 100}]
+  blart;
+  @UI.lineItem: [{ position: 110}]
+  zlspr;
+  @UI.lineItem: [{ position: 120}]
+  bschl;
+  @UI.lineItem: [{ position: 130}]
+  zterm;
+  @UI.lineItem: [{ position: 140}]
+  netdt;
+  @UI.lineItem: [{ position: 150}]
+  sgtxt;
+  @UI.lineItem: [{ position: 160}]
+  zumsk;
+  @UI.lineItem: [{ position: 170}]
+  umskz;
+  @UI.lineItem: [{ position: 180}]
+  gsber;
+  @UI.lineItem: [{ position: 190}]
+  dmbtr;
+  @UI.lineItem: [{ position: 200}]
+  bktxt;
+  @UI.lineItem: [{ position: 210}]
+  @UI: {
+        selectionField: [{position: 60}] }
+  cpudt;
+  @UI.lineItem: [{ position: 220}]
+  cputm;
+  @UI.lineItem: [{ position: 230}]
+  koart;
+
+}

@@ -1,0 +1,68 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Remessa Banco x Forma de Pagamento',
+    typeNamePlural: 'Remessas Banco x Forma de Pagamento',
+    title: {
+        type: #STANDARD,
+        value: 'BankName' },
+    description: {
+        type: #STANDARD,
+        value: 'PaymentMethodName' }
+}
+
+@UI.presentationVariant: [{
+includeGrandTotal: false,
+    requestAtLeast: ['RepType', 'Bank', 'PaymentMethod', 'PaidAmountInPaytCurrency', 'CompanyCode', 'CompanyCodeName', 'NetDueDate', 'Status']
+}]
+
+annotate entity ZC_FI_PGTO_BCO_EMPRESA with
+{
+
+  @UI.facet: [ { id:            'Documentos',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Documentos',
+                 position:      10,
+                 targetElement: '_Itens'} ]
+
+
+  @UI: { lineItem: [{ position: 05, criticality: 'Status' }]}
+  StatusText;
+
+  @UI: { lineItem: [{position: 10 }], textArrangement: #TEXT_FIRST}
+  @Consumption.filter.hidden: true
+  Bank;
+
+  @UI: { lineItem: [{position: 20 }], textArrangement: #TEXT_FIRST } //, textArrangement: #TEXT_ONLY}
+  @Consumption.filter.hidden: true
+  PaymentMethod;
+
+  @UI: { lineItem: [{position: 60 }]}
+  @Consumption.filter.hidden: true
+  PaidAmountInPaytCurrency;
+
+  //  //  @UI : { lineItem:       [{position: 70 }]}
+  //  @UI.hidden: true
+  //  @Consumption.filter.hidden: true
+  //  OpenAmount;
+
+  //  //  @UI : { lineItem:       [{position: 80 }]}
+  //  @UI.hidden: true
+  //  @Consumption.filter.hidden: true
+  //  BlockedAmount;
+
+  @UI: { selectionField: [{position: 10}]}
+  @UI: { dataPoint: { qualifier: 'CompanyCode' }, textArrangement: #TEXT_ONLY }
+  CompanyCode;
+
+  @UI: { selectionField: [{position: 20}]}
+  NetDueDate;
+
+  @UI: { selectionField: [{position: 30}]}
+  @UI: { dataPoint: { qualifier: 'RepType' }, textArrangement: #TEXT_ONLY }
+  RepType;
+
+  //  @UI.hidden: true
+  //  RunHourTo;
+
+}

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_GKO_INCOMING_INVOICE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>-- Iniciando o processamento da fatura</ENTRY>
+     <LENGTH>76</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>--- Fatura processada</ENTRY>
+     <LENGTH>42</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>-- Fim do processamento da fatura</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>-- Nenhum registro válido foi encontrado</ENTRY>
+     <LENGTH>80</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T01</KEY>
+     <ENTRY>Faturas</ENTRY>
+     <LENGTH>10</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T02</KEY>
+     <ENTRY>não registrado no monitor</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_ACCOUNT_DISCOUNT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca conta de desconto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DOCUMENT_TYPE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca tipo de documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_INVOICES_NUMBER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>GKO: Faturas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_VENDOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>GKO: Faturas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_SUBRC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: código de retorno de instruções ABAP</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_PARAMS</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FIND_DOCUMENTS_BY_CTE</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FIND_DOCUMENTS_BY_NFS</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FIND_DOCUMENTS_INVOICE_MULTI</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DUE_DATE</CMPNAME>
+     <SCONAME>RV_DUE_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: data atual do servidor de aplicação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ERRORS</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STATUS_DESCRIPTION</CMPNAME>
+     <SCONAME>IV_STATUS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código status de processamento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STATUS_DESCRIPTION</CMPNAME>
+     <SCONAME>RV_DESCRIPTION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto breve para valores fixos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VENDOR_NAME</CMPNAME>
+     <SCONAME>IV_CNPJ_ISSUE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº ID fiscal 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VENDOR_NAME</CMPNAME>
+     <SCONAME>RV_NAME1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INVOICE_GROUPING</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INVOICE_GROUPING_MULTI</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INVOICE_UPDATE</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECOVER_DATA_REPROCESS</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECOVER_DATA_REPROCESS_MULTI</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REMOVE</CMPNAME>
+     <SCONAME>RO_INSTANCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REMOVE_DATA_REPROCESS</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_DOCUMENT</CMPNAME>
+     <SCONAME>IT_BLNTAB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela interface de compensação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_DOCUMENT_MULTI</CMPNAME>
+     <SCONAME>IS_BLNTAB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela interface de compensação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SELECT_VENDOR</CMPNAME>
+     <SCONAME>RT_VENDOR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_INVOICE</CMPNAME>
+     <SCONAME>IS_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>GKO: Estrutura de campos para processamento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_INVOICE</CMPNAME>
+     <SCONAME>IV_INVOICE_NUMBER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento de referência</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_INVOICE</CMPNAME>
+     <SCONAME>RO_INSTANCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_INVOICE_MULTI</CMPNAME>
+     <SCONAME>IT_INVOICES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>GKO: Estrutura de campos para processamento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_INVOICE_MULTI</CMPNAME>
+     <SCONAME>IT_INVOICES_NUMBER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento de referência</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_INVOICE_MULTI</CMPNAME>
+     <SCONAME>RO_INSTANCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_INVOICE_MULTI</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_LOCK_DOCUMENTS</CMPNAME>
+     <SCONAME>IV_BLOCK</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento: novo conteúdo do campo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>START</CMPNAME>
+     <SCONAME>RO_INSTANCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>START_MULTI</CMPNAME>
+     <SCONAME>RO_INSTANCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>START_MULTI</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATE_VALUE</CMPNAME>
+     <SCONAME>ZCXTM_GKO_INCOMING_INVOICE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para processar as faturas auditadas no GKO</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

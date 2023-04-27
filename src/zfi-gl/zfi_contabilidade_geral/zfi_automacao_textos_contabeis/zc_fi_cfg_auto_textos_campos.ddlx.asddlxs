@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Campo',
+        typeNamePlural: 'Campos',
+        title: { type: #STANDARD,
+                 label: 'Campo',
+                 value: 'Campo' }
+    },
+
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'Ordenacao',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
+annotate entity ZC_FI_CFG_AUTO_TEXTOS_CAMPOS with
+{
+
+  @UI.facet: [ { id:         'Campos',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Campos da Regra',
+                 position:      10 }]
+
+  @UI: { lineItem:       [{ position: 10,  label: 'Campo' }],
+         identification: [{ position: 10,  label: 'Campo' }]
+  }
+  Campo;
+
+  @UI: { lineItem:       [{ position: 20,  label: 'Ordenação' }],
+         identification: [{ position: 20,  label: 'Ordenação' }]
+  }
+  Ordenacao;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

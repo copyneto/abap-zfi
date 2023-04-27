@@ -1,0 +1,5 @@
+CLASS zclfi_faixa_cresc DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_contrato_cresc.
+ENDCLASS.
+
+CLASS zclfi_faixa_cresc IMPLEMENTATION.
+ENDCLASS.

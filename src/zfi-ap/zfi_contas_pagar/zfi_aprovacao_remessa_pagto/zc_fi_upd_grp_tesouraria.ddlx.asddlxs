@@ -1,0 +1,26 @@
+@Metadata.layer: #CORE
+annotate entity ZC_FI_UPD_GRP_TESOURARIA
+    with 
+{
+  //@UI.hidden: true
+  @UI: { lineItem:       [ { position: 80, type: #FOR_ACTION, dataAction: 'uplGrpTes', label: 'Alterar Grupo de Tesouraria', invocationGrouping: #CHANGE_SET } ] }
+  CompanyCode;
+  //@UI.hidden: true
+  @UI: { lineItem:       [ { position: 70 } ] }
+  Supplier;
+  @UI: { lineItem:       [ { position: 60 } ] }
+  CashPlanningGroup;
+  @UI.hidden: true
+  NetDueDate;
+  @UI: { lineItem:       [ { position: 10 } ] }
+  DocCompany;
+  @UI: { lineItem:       [ { position: 20 } ] }
+  DocGjahr;
+  @UI: { lineItem:       [ { position: 30 } ] }
+  DocDocument;
+  @UI: { lineItem:       [ { position: 40 } ] }
+  DocCurrency;
+  @UI: { lineItem:       [ { position: 50 } ] }
+  DocAmount;
+    
+}

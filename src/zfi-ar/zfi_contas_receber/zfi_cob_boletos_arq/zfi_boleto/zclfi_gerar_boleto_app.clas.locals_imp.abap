@@ -1,0 +1,41 @@
+CLASS lhc_boleto DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+
+    METHODS lock  FOR LOCK
+      IMPORTING keys FOR LOCK boleto.
+
+    METHODS read FOR READ
+      IMPORTING keys FOR READ boleto RESULT result.
+
+ENDCLASS.
+
+CLASS lhc_boleto IMPLEMENTATION.
+
+
+  METHOD lock.
+    RETURN.
+  ENDMETHOD.
+
+  METHOD read.
+    RETURN.
+  ENDMETHOD.
+
+ENDCLASS.
+
+CLASS lsc_zi_fi_boleto DEFINITION INHERITING FROM cl_abap_behavior_saver.
+  PROTECTED SECTION.
+
+
+    METHODS save REDEFINITION.
+
+
+ENDCLASS.
+
+CLASS lsc_zi_fi_boleto IMPLEMENTATION.
+
+
+  METHOD save.
+    RETURN.
+  ENDMETHOD.
+
+ENDCLASS.

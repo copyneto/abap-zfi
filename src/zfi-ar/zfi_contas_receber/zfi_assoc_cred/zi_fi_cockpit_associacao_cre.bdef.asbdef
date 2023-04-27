@@ -1,0 +1,127 @@
+managed implementation in class ZCLFI_COCKPIT_ASSOCIACAO_CRE unique;
+
+define behavior for ZI_FI_COCKPIT_ASSOCIACAO_CRE alias Associ
+persistent table ztfi_associ_cre
+lock master
+authorization master ( instance )
+{
+  association _Creditos;
+  association _Fatura;
+
+  update;
+
+  action ( features : instance ) LimpaSelecao;
+
+  field ( readonly ) Empresa, Cliente, RaizId, RaizSn, Montante;
+
+  mapping for ZTFI_ASSOCI_CRE
+  {
+    Empresa  = empresa;
+    Cliente  = cliente;
+    RaizId   = raizid;
+    RaizSn   = raizsn;
+    Montante = montante;
+    TotalizadorDetalhe1   = totcre;
+    TotalizadorDetalhe2     = totfat;
+    TotalizadorDetalhe3    = totliq;
+    TotalizadorDetalhe4   = totres;
+  }
+
+}
+
+define behavior for ZI_FI_COCKPIT_CREDITOS_CLI alias Creditos
+persistent table ztfi_creditoscli
+etag master LocalLastChangedAt
+lock dependent by _Associ
+authorization dependent by _Associ
+{
+  association _Associ;
+
+  update ( features : instance );
+
+  action ( features : instance ) LimpaSelecaoCre;
+  action ( features : instance ) CalcularSoma;
+  action ( features : instance ) ExecAssociacao;
+  action ( features : instance ) PagarFornecedor;
+
+  field ( readonly ) Empresa,  Ano, Cliente, RaizId, RaizSn, Documento, Linha, CodCliente,  TipoDocumento, ChaveLancamento, CodigoRZE,
+  Atribuicao, Referencia, DataLancamento, VencimentoLiquido, FormaPagamento, CondicaoPagamento, Moeda, Montante, Desconto;
+
+  field ( features : instance ) Residual;
+
+  determination modifyCreditoCliente on save { create; update; }
+
+  mapping for ztfi_creditoscli
+  {
+    Empresa = empresa;
+    Ano     = ano;
+    Cliente = cliente;
+    RaizId  = raizid;
+    RaizSn  = raizsn;
+    Documento = documento;
+    Linha = linha;
+    CodCliente = codcliente;
+    Residual = residual;
+    TipoDocumento = tipodocumento;
+    ChaveLancamento = chavelancamento;
+    CodigoRZE = codigorze;
+    Atribuicao = atribuicao;
+    Referencia = referencia;
+    DataLancamento = datalancamento;
+    FormaPagamento = formapagamento;
+    Moeda = moeda;
+    Montante = montante;
+    Desconto = desconto;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_COCKPIT_FATURA_CLI alias Fatura
+persistent table ztfi_faturacli
+etag master LocalLastChangedAt
+lock dependent by _Associ
+authorization dependent by _Associ
+{
+  association _Associ;
+
+  update ( features : instance );
+
+  action ( features : instance ) LimpaSelecaoFat;
+  action ( features : instance ) GravaSelecao;
+
+  field ( readonly ) Empresa, Ano, Cliente, RaizId, RaizSn, Documento, Linha, CodCliente, TipoDocumento, ChaveLancamento, CodigoRZE,
+  Atribuicao, Referencia, DataLancamento, VencimentoLiquido, FormaPagamento, Moeda, Montante, Desconto, Marcado, CondicaoPagamento;
+
+  mapping for ztfi_faturacli
+  {
+    Empresa = empresa;
+    Ano     = ano;
+    Cliente = cliente;
+    RaizId  = raizid;
+    RaizSn  = raizsn;
+    Documento = documento;
+    Linha = linha;
+    CodCliente = codcliente;
+    TipoDocumento = tipodocumento;
+    ChaveLancamento = chavelancamento;
+    CodigoRZE = codigorze;
+    Atribuicao = atribuicao;
+    Referencia = referencia;
+    DataLancamento = datalancamento;
+    FormaPagamento = formapagamento;
+    Moeda = moeda;
+    Montante = montante;
+    Desconto = desconto;
+    Marcado = marcado;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

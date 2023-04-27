@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Msg. de Renovação de Contrato</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>A data INICIAL não pode ser menor que a data FIM.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Erro ao salvar os dados na Tabela: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Nenhum Registro para Renovação encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Renovação de contrato &amp;1 / aditivo &amp;2 executado com Sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao executar o Job Renovação de contrato &amp;1 / aditivo &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Não existem contratos para serem atualizados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_RENOVACAO_CONT</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Parâmetro Não Encontrado</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,100 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Job',
+        typeNamePlural: 'Lista',
+        title: { type: #STANDARD,
+                 label: 'Job',
+                 value: 'Jobname' }
+    }
+}
+annotate entity ZC_FI_AUTOTXT_EXEC_MANUAL with
+{
+
+  @UI.facet: [  { id: 'InfoGerais',
+                 purpose: #STANDARD,
+                 type: #COLLECTION,
+                 position: 10,
+                 importance: #HIGH,
+                 label: 'Informações Gerais' },
+
+                { id: 'Job',
+                 purpose: #STANDARD,
+                 type: #IDENTIFICATION_REFERENCE,
+                 parentId: 'InfoGerais',
+                 position: 10,
+                 importance: #HIGH,
+                 label: 'Dados Básicos' },
+
+                { id: 'Empresa',
+                 purpose: #STANDARD,
+                 type: #FIELDGROUP_REFERENCE,
+                 parentId: 'InfoGerais',
+                 position: 20,
+                 label: 'Empresa',
+                 targetQualifier: 'GrupoEmpresas' },
+
+                { id: 'Exercicio',
+                 purpose: #STANDARD,
+                 type: #FIELDGROUP_REFERENCE,
+                 parentId: 'InfoGerais',
+                 position: 30,
+                 label: 'Exercício',
+                 targetQualifier: 'GrupoExercicio' },
+
+                { id: 'Datas',
+                 purpose: #STANDARD,
+                 type: #FIELDGROUP_REFERENCE,
+                 parentId: 'InfoGerais',
+                 position: 40,
+                 label: 'Data de Lançamento',
+                 targetQualifier: 'GrupoDatas' } ]
+
+
+  @UI: { lineItem:       [{ position: 10, label: 'Job' }],
+         identification: [{ position: 10, label: 'Job' }],
+         selectionField: [{ position: 10 }]
+  }
+  Jobname;
+
+  @UI: { lineItem:       [{ position: 20, label: 'Empresa De' }],
+         selectionField: [{ position: 20 }],
+         fieldGroup: [{ qualifier: 'GrupoEmpresas', position: 10, label: 'Empresa - De' }]
+    }
+  CompanyCodeStart;
+
+  @UI: { lineItem:       [{ position: 30, label: 'Empresa Até' }],
+         selectionField: [{ position: 30 }],
+         fieldGroup: [{ qualifier: 'GrupoEmpresas', position: 20, label: 'Empresa - Até' }]
+  }
+  CompanyCodeEnd;
+
+  @UI: { lineItem:       [{ position: 40, label: 'Exercício De' }],
+         selectionField: [{ position: 40 }],
+         fieldGroup: [{ qualifier: 'GrupoExercicio', position: 10, label: 'Exercício - De' }]
+    }
+  FiscalYearStart;
+
+
+  @UI: { lineItem:       [{ position: 50, label: 'Exercício Até' }],
+         selectionField: [{ position: 50 }],
+         fieldGroup: [{ qualifier: 'GrupoExercicio', position: 20, label: 'Exercício - Até' }]
+    }
+  FiscalYearEnd;
+
+  @UI: { lineItem:   [{ position: 60, label: 'Data lançamento - De' }],
+         fieldGroup: [{ qualifier: 'GrupoDatas', position: 10, label: 'Data lançamento - De' }]
+    }
+  PostingDateStart;
+
+  @UI: { lineItem:   [{ position: 70, label: 'Data lançamento - Até' }],
+         fieldGroup: [{ qualifier: 'GrupoDatas', position: 20, label: 'Data lançamento - Até' }]
+    }
+  PostingDateEnd;
+
+  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'ExecutaJob', label: 'Executar'  }]
+  @Consumption.filter.hidden: true
+  @EndUserText.label      : 'Confirma nova execução do Job?'
+  ExecutaJob;
+
+}

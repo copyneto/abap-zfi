@@ -1,0 +1,13 @@
+unmanaged implementation in class zclfi_provisao_cli unique;
+
+define behavior for ZI_FI_PROVISAO_CLI
+
+{
+
+
+//  action ( features : instance ) provisao result [1] $self;
+  action provisao parameter zi_fi_popup_prov;
+//  action ( features : instance ) liquidacao result [1] $self;
+  action liquidacao parameter zi_fi_popup_liqui;
+  action ( features : instance ) estornar result [1] $self;
+}

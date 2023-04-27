@@ -1,0 +1,80 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Configurar Conta DDA',
+    typeNamePlural: 'Lista de Configurações',
+    title: {
+        type: #STANDARD,
+        label: 'Configurar Conta DDA',
+        value: 'CompanyCode'
+    },
+    description: {
+    type: #STANDARD,
+    value: 'CompanyName'
+    }
+}
+
+annotate entity ZC_FI_CONTA_DDA with
+{
+
+  @UI.facet: [{
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Config. Pagto DDA com diferença de valor',
+      type: #IDENTIFICATION_REFERENCE
+  }]
+
+  @UI.selectionField: [{position: 10}]
+  @UI: { lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }]
+  }
+  CompanyCode;
+
+  @UI: { lineItem: [{ position: 20 }],
+         identification: [{ position: 20 }]
+  }
+  @EndUserText.label: 'Valor Tolerância'
+  ValorTolerancia;
+
+  @UI: { lineItem: [{ position: 30, label: 'Conta Ajuste' }],
+         identification: [{ position: 30, label: 'Conta Ajuste' }]
+  }
+  ContaLow;
+
+  @UI: { lineItem: [{ position: 35, label: 'Conta Desconto' }],
+         identification: [{ position: 35, label: 'Conta Desconto' }]
+  }
+  @UI.hidden: true
+  ContaHig;
+
+  @UI.selectionField: [{position: 50}]
+  @UI: { lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }]
+  }
+  @EndUserText.label: 'Forma de Pagto.'
+  @UI.hidden: true
+  PaymentMethod;
+
+  @UI.selectionField: [{position: 60}]
+  @UI: { lineItem: [{ position: 60 }],
+         identification: [{ position: 60 }]
+  }
+  @UI.hidden: true
+  DocumentType;
+
+  @UI.selectionField: [{position: 70}]
+  @UI: { lineItem: [{ position: 70 }],
+         identification: [{ position: 70 }]
+  }
+
+
+  @UI.hidden: true
+  CompanyName;
+
+  @UI.selectionField: [{position: 80}]
+  @UI: { lineItem: [{ position: 80 }],
+         identification: [{ position: 80 }]
+  }
+  CentroCusto;
+
+
+}

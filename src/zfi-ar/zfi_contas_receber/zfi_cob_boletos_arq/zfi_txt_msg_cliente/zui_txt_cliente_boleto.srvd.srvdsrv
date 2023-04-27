@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Dev for ZC_FI_BL_TEXT_CLIENTE'
+define service ZUI_TXT_CLIENTE_BOLETO {
+  expose ZC_FI_BL_TEXT_CLIENTE as TextoCli;
+}

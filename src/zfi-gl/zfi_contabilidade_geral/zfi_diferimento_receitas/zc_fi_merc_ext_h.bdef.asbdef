@@ -1,0 +1,16 @@
+projection;
+
+define behavior for ZC_FI_MERC_EXT_H alias Header
+{
+
+  use action contabilizar;
+  use action simular;
+
+  use association _MercExtItem;
+}
+
+define behavior for ZC_FI_MERC_EXT_I alias Item
+{
+
+  use association _MercExtHeader;
+}

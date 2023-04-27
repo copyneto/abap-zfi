@@ -1,0 +1,15 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_LOG_DIFER_M
+    with 
+{
+@UI.hidden: true
+    IdLog;
+@UI.hidden: true 
+    IdMsg;
+  @UI: { lineItem:       [ { position: 10 } ] }    
+    IdBapi;
+  @UI: { lineItem:       [ { position: 20, criticality: 'MgCor' } ] }    
+    Type;
+  @UI: { lineItem:       [ { position: 30 } ] }    
+    Message;
+}

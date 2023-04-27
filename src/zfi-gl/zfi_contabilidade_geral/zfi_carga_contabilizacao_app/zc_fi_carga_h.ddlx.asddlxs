@@ -1,0 +1,103 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Contabilização em Massa',
+                     title: { value: 'Documentno' },
+                     typeNamePlural: 'Contabilização em Massa'
+                   }
+     }
+@UI.presentationVariant: [{ sortOrder: [{ by: 'Documentno', direction: #DESC }] }]
+annotate entity ZC_FI_CARGA_H with
+{
+
+
+  @UI.facet: [
+
+               { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+             { id:              'geral',
+               purpose:         #STANDARD,
+               parentId:        'Facet',
+               type:            #FIELDGROUP_REFERENCE,
+               label:           'Dados Gerais',
+               targetQualifier: 'geral',
+               position:         20 } ,
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 } ,
+
+              { id:         'StatusHeader',
+                 purpose:    #HEADER,
+                 type:       #DATAPOINT_REFERENCE,
+                 targetQualifier: 'StatusHeader',
+                 position:      20 },
+              { id:            'headerdoc',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Dados de Documentos',
+                 position:      40,
+                 targetElement: '_Doc'},
+               { id:            'itemdoc',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Itens de Documentos',
+                 position:      50,
+                 targetElement: '_Item'}]
+
+  //DocUuidH;
+  @UI: { lineItem:        [ { position: 10 },
+                        { type: #FOR_ACTION, dataAction: 'cancelar', label: 'Cancelar' } ],
+     identification:  [ { position: 10 },
+                        { type: #FOR_ACTION, dataAction: 'cancelar', label: 'Cancelar' } ],
+     selectionField:  [ { position: 10 } ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Documentno;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Data carga' },
+                            { type: #FOR_ACTION, dataAction: 'lancar', label: 'Lançar' }  ],
+         identification:  [ { position: 20, label: 'Data carga' },
+                           { type: #FOR_ACTION, dataAction: 'lancar', label: 'Lançar' } ],
+         selectionField:  [ { position: 20 } ],
+         dataPoint: { qualifier: 'StatusHeader', title: 'Data carga' } }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  DataCarga;
+  @UI: { lineItem:        [ { position: 30, label: 'Status', criticality: 'StatusCriticality' },
+                            { type: #FOR_ACTION, dataAction: 'message', label: 'Log' } ],
+         identification:  [ { position: 30, label: 'Status', criticality: 'StatusCriticality' },
+                            { type: #FOR_ACTION, dataAction: 'message', label: 'Log' } ],
+         selectionField:  [ { position: 30} ],
+         dataPoint: { qualifier: 'StatusHeader', title: 'Status', criticality: 'StatusCriticality' } }
+  Status;
+  //StatusText;
+  //StatusCriticality;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Modificar' }]
+  CreatedBy;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Modificar' }]
+  CreatedAt;
+  @UI: { identification:  [ { position: 60 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Modificar' }]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 70 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Modificar' }]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 80 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 50, qualifier: 'Modificar' }]
+  LocalLastChangedAt;
+  /* Associations */
+  //_Doc;
+  //_Item;
+
+}

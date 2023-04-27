@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_VOUCHER</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000031</LENG>
+    <OUTPUTLEN>000031</OUTPUTLEN>
+    <DDTEXT>Número Voucher</DDTEXT>
+    <DOMMASTER>P</DOMMASTER>
+   </DD01V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

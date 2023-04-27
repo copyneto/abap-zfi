@@ -1,0 +1,4 @@
+@EndUserText.label: 'Relatório Fiscal (Saídas E Entradas)'
+define service ZUI_FI_RELATORIO_FISCAL {
+  expose ZC_FI_RELATORIO_FISCAL as APP_Relat_Fiscal;
+}

@@ -1,0 +1,157 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Alerta',
+                     title: { value: 'Contrato' },
+                     description: { value: 'Empresa' },
+                     typeNamePlural: 'Alerta de Vigência Contratos Cliente'
+                   }
+     }
+
+annotate view ZC_FI_ALERTA_VIGENCIA_CONTRATO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [
+      { id:          'Alerta',
+        purpose:       #STANDARD,
+        type:          #IDENTIFICATION_REFERENCE,
+        label:         'Contratos Cliente',
+        position:      10
+      } ]
+
+   // ------------------------------------------------------
+   // Field information
+   // ------------------------------------------------------
+
+  //  @UI.hidden: true
+  //    DocUuidH;
+  @UI: { lineItem:        [ { position: 10 ,  label: 'Número do  Contrato', importance:#HIGH }],
+      identification:  [ { position: 10,  label: 'Número do  Contrato' } ],
+      selectionField:  [ { position: 10 } ] }
+  Contrato;
+  @UI: { lineItem:        [ { position: 20 ,  label: 'Aditivo Contrato Cliente', importance:#HIGH} ],
+      identification:  [ { position: 20 ,  label: 'Aditivo Contrato Cliente'} ],
+      selectionField:  [ { position: 20 } ] }
+  Aditivo;
+  @UI: { lineItem:        [ { position: 30 ,  label: 'N° Contrato Próprio', importance:#LOW  } ],
+      identification:  [ { position: 30 ,  label: 'N° Contrato Próprio'} ] }
+  @UI.hidden: true
+  ContratoProprio;
+  @UI: { lineItem:        [ { position: 40 ,  label: 'N° Contrato Jurídico', importance:#LOW  } ],
+      identification:  [ { position: 40,  label: 'N° Contrato Jurídico' } ] }
+  ContratoJurid;
+  @UI: { lineItem:        [ { position: 50 ,  label: 'Data Início validade' , importance:#HIGH} ],
+      identification:  [ { position: 50 ,  label: 'Data Início validade'} ] }
+  DataIniValid;
+  @UI: { lineItem:        [ { position: 60 ,  label: 'Data fim validade'} ],
+      identification:  [ { position: 60 ,  label: 'Data fim validade'} ] }
+  DataFimValid;
+  @UI: { lineItem:        [ { position: 70 ,  label: 'Empresa', importance:#HIGH},
+                             { type: #FOR_ACTION, dataAction: 'enviar_email', label: 'Enviar Email'  } ],
+      identification:  [ { position: 70,  label: 'Empresa' } ],
+      selectionField:  [ { position: 30 } ] }
+  Empresa;
+  @UI: { lineItem:        [ { position: 80 ,  label: 'Local de negócios', importance:#HIGH } ],
+      identification:  [ { position: 80,  label: 'Local de negócios' } ],
+      selectionField:  [ { position: 40 } ] }
+  Local_negocio;
+  @UI: { lineItem:        [ { position: 90 ,  label: 'Grupo de Contratos', importance:#LOW  } ],
+      identification:  [ { position: 90 } ] }
+  GrpContratos;
+  @UI: { lineItem:        [ { position: 100 ,  label: 'Clientes grupo de condições 1', importance:#LOW} ],
+      identification:  [ { position: 100 ,  label: 'Clientes grupo de condições 1' } ] }
+  GrpCond;
+  @UI: { lineItem:        [ { position: 101 ,  label: 'Razão social', importance:#LOW} ],
+     identification:  [ { position: 101 ,  label: 'Razão social' } ] }
+  razao_social;
+  @UI: { lineItem:        [ { position: 102 ,  label: 'CNPJ', importance:#LOW} ],
+     identification:  [ { position: 102 ,  label: 'CNPJ' } ] }
+  cnpj_principal;
+  @UI: { lineItem:        [ { position: 110 ,  label: 'N° Chamado', importance:#LOW  } ],
+      identification:  [ { position: 110,  label: 'N° Chamado' } ] }
+  Chamado;
+  @UI: { lineItem:        [ { position: 120 ,  label: 'Prazo Pagamento', importance:#HIGH  } ],
+      identification:  [ { position: 120 ,  label: 'Prazo Pagamento'} ] }
+  PrazoPagto;
+  @UI: { lineItem:        [ { position: 130 ,  label: 'Forma de pagamento', importance:#LOW  } ],
+      identification:  [ { position: 130 ,  label: 'Forma de pagamento'} ] }
+  FormaPagto;
+  @UI: { lineItem:        [ { position: 140 ,  label: 'Resp. Legal do Cliente', importance:#LOW  } ],
+      identification:  [ { position: 140,  label: 'Resp. Legal do Cliente' } ] }
+  RespLegal;
+  @UI: { lineItem:        [ { position: 150 ,  label: 'Resp. Legal GTCOR', importance:#LOW  } ],
+      identification:  [ { position: 150 ,  label: 'Resp. Legal GTCOR'} ] }
+  RespLegalGtcor;
+  @UI: { lineItem:        [ { position: 160 ,  label: 'Produtos Contemplado', importance:#LOW  } ],
+      identification:  [ { position: 160,  label: 'Produtos Contemplado' } ] }
+  ProdContemplado;
+  @UI: { lineItem:        [ { position: 170 ,  label: 'Observação', importance:#LOW  } ],
+      identification:  [ { position: 170,  label: 'Observação' } ] }
+  Observacao;
+  @UI: { lineItem:        [ { position: 180 ,  label: 'Status Contrato', importance:#HIGH  } ],
+      identification:  [ { position: 180  ,  label: 'Status Contrato'} ] }
+  Status;
+  @UI: { lineItem:        [ { position: 190 ,  label: 'Desativado', importance:#LOW  } ],
+      identification:  [ { position: 190,  label: 'Desativado' } ] }
+  Desativado;
+  @UI: { lineItem:        [ { position: 200 ,  label: 'Canal de distribuição', importance:#LOW  } ],
+      identification:  [ { position: 200 ,  label: 'Canal de distribuição' } ] }
+  Canal;
+  @UI: { lineItem:        [ { position: 210 ,  label: 'Grupo Econômico', importance:#LOW  } ],
+      identification:  [ { position: 210,  label: 'Grupo Econômico' } ] }
+  GrpEconomico;
+  @UI: { lineItem:        [ { position: 220 ,  label: 'Abrangência', importance:#LOW  } ],
+      identification:  [ { position: 220 ,  label: 'Abrangência'} ] }
+  Abrangencia;
+  @UI: { lineItem:        [ { position: 230 ,  label: 'Estrutura', importance:#LOW  } ],
+      identification:  [ { position: 230,  label: 'Estrutura' } ] }
+  Estrutura;
+  @UI: { lineItem:        [ { position: 240 ,  label: 'Canal pdv', importance:#LOW  } ],
+      identification:  [ { position: 240,  label: 'Canal pdv' } ] }
+  Canalpdv;
+  @UI: { lineItem:        [ { position: 250 ,  label: 'Tipo de Entrega', importance:#LOW  } ],
+      identification:  [ { position: 250,  label: 'Tipo de Entrega' } ] }
+  TipoEntrega;
+  @UI: { lineItem:        [ { position: 260 ,  label: 'Data de Entrega', importance:#LOW  } ],
+      identification:  [ { position: 260,  label: 'Data de Entrega' } ] }
+  DataEntrega;
+  @UI: { lineItem:        [ { position: 270 ,  label: 'Data de Faturamento', importance:#LOW  } ],
+      identification:  [ { position: 270,  label: 'Data de Faturamento' } ] }
+  DataFatura;
+  @UI: { lineItem:        [ { position: 280 ,  label: 'Crescimento', importance:#LOW  } ],
+      identification:  [ { position: 280 ,  label: 'Crescimento' } ] }
+  Crescimento;
+  @UI: { lineItem:        [ { position: 290 ,  label: 'Ajuste Anual', importance:#LOW  } ],
+      identification:  [ { position: 290 ,  label: 'Ajuste Anual' } ] }
+  AjusteAnual;
+  @UI: { lineItem:        [ { position: 300 ,  label: 'Data de Assinatura', importance:#LOW  } ],
+      identification:  [ { position: 300,  label: 'Data de Assinatura' } ] }
+  DataAssinatura;
+  @UI: { lineItem:        [ { position: 310 ,  label: 'Multas', importance:#LOW  } ],
+      identification:  [ { position: 310,  label: 'Multas' } ] }
+  Multas;
+  @UI: { lineItem:        [ { position: 320 ,  label: 'Renovação Automática', importance:#HIGH  } ],
+      identification:  [ { position: 320,  label: 'Renovação Automática' } ] }
+  RenovAut;
+  @UI: { lineItem:        [ { position: 330 ,  label: 'Alerta de Vigência', importance:#HIGH  } ],
+      identification:  [ { position: 330  ,  label: 'Alerta de Vigência'} ] }
+  AlertaVig;
+  @UI: { lineItem:        [ { position: 340 ,  label: 'Alerta Enviado', importance:#HIGH } ],
+      identification:  [ { position: 340,  label: 'Alerta Enviado' } ] }
+  AlertaEnviado;
+  @UI: { lineItem:        [ { position: 350 ,  label: 'Data Envio de Alerta', importance:#HIGH } ],
+      identification:  [ { position: 350 ,  label: 'Data Envio de Alerta' } ] }
+  AlertaDataEnvio;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

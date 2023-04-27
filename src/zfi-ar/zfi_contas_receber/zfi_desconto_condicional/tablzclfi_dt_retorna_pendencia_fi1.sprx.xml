@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLFI_DT_RETORNA_PENDENCIA_FIN</OBJ_NAME_M>
+     <HASH_ID>68FC32070402979435D7FEAAD2B3FCCDB244FBB9</HASH_ID>
+     <ID>&lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>tab_saida</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/financeiro/pendencias</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/financeiro/pendencias</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLFI_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/financeiro/pendencias</X-ML_NSPCE>
+     <X-ML_NAME>tab_saida</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ANFBN</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ANFBN</OBJ_NAME2>
+     <ID>&lt;element&gt; ANFBN &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ANFBN</IFR_NAME>
+     <IFR_TEXT>Solicitação L/C</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ANFBN</R3_NAME>
+     <R3_TEXT>Solicitação L/C</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000030</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ATRASO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ATRASO</OBJ_NAME2>
+     <ID>&lt;element&gt; ATRASO &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ATRASO</IFR_NAME>
+     <IFR_TEXT>Dias de Atraso</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ATRASO</R3_NAME>
+     <R3_TEXT>Dias de Atraso</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000017</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BELNR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BELNR</OBJ_NAME2>
+     <ID>&lt;element&gt; BELNR &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BELNR</IFR_NAME>
+     <IFR_TEXT>Nº Documento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BELNR</R3_NAME>
+     <R3_TEXT>Nº Documento</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000015</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BLDAT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BLDAT</OBJ_NAME2>
+     <ID>&lt;element&gt; BLDAT &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BLDAT</IFR_NAME>
+     <IFR_TEXT>Data lançamento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BLDAT</R3_NAME>
+     <R3_TEXT>Data lançamento</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000013</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BUKRS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BUKRS</OBJ_NAME2>
+     <ID>&lt;element&gt; BUKRS &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BUKRS</IFR_NAME>
+     <IFR_TEXT>Empresa</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BUKRS</R3_NAME>
+     <R3_TEXT>Empresa</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BUPLA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BUPLA</OBJ_NAME2>
+     <ID>&lt;element&gt; BUPLA &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BUPLA</IFR_NAME>
+     <IFR_TEXT>Loc.negócio</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BUPLA</R3_NAME>
+     <R3_TEXT>Loc.negócio</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BUZEI</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BUZEI</OBJ_NAME2>
+     <ID>&lt;element&gt; BUZEI &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BUZEI</IFR_NAME>
+     <IFR_TEXT>Item</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BUZEI</R3_NAME>
+     <R3_TEXT>Item</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CONT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CONT</OBJ_NAME2>
+     <ID>&lt;element&gt; CONT &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CONT</IFR_NAME>
+     <IFR_TEXT>Quantidade</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CONT</R3_NAME>
+     <R3_TEXT>Quantidade</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>GJAHR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>GJAHR</OBJ_NAME2>
+     <ID>&lt;element&gt; GJAHR &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>GJAHR</IFR_NAME>
+     <IFR_TEXT>Exercício</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>GJAHR</R3_NAME>
+     <R3_TEXT>Exercício</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>HKONT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>HKONT</OBJ_NAME2>
+     <ID>&lt;element&gt; HKONT &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>HKONT</IFR_NAME>
+     <IFR_TEXT>Conta RAzão</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>HKONT</R3_NAME>
+     <R3_TEXT>Conta RAzão</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000014</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>KUNN2</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>KUNN2</OBJ_NAME2>
+     <ID>&lt;element&gt; KUNN2 &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>KUNN2</IFR_NAME>
+     <IFR_TEXT>Vendedor</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>KUNN2</R3_NAME>
+     <R3_TEXT>Vendedor</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000008</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>KUNNR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>KUNNR</OBJ_NAME2>
+     <ID>&lt;element&gt; KUNNR &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>KUNNR</IFR_NAME>
+     <IFR_TEXT>Cliente</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>KUNNR</R3_NAME>
+     <R3_TEXT>Cliente</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000010</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>LIFNR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>LIFNR</OBJ_NAME2>
+     <ID>&lt;element&gt; LIFNR &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>LIFNR</IFR_NAME>
+     <IFR_TEXT>Fornecedor</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>LIFNR</R3_NAME>
+     <R3_TEXT>Fornecedor</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000031</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>MANSP</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>MANSP</OBJ_NAME2>
+     <ID>&lt;element&gt; MANSP &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>MANSP</IFR_NAME>
+     <IFR_TEXT>Bloqueio de Advertência</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>MANSP</R3_NAME>
+     <R3_TEXT>Bloqueio de Advertência</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000027</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>MINDK</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>MINDK</OBJ_NAME2>
+     <ID>&lt;element&gt; MINDK &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>MINDK</IFR_NAME>
+     <IFR_TEXT>Equipe de Vendas</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>MINDK</R3_NAME>
+     <R3_TEXT>Equipe de Vendas</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000032</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NAME1</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NAME1</OBJ_NAME2>
+     <ID>&lt;element&gt; NAME1 &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>NAME1</IFR_NAME>
+     <IFR_TEXT>Nome1</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NAME1</R3_NAME>
+     <R3_TEXT>Nome1</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000011</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NAME_SUP</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NAME_SUP</OBJ_NAME2>
+     <ID>&lt;element&gt; NAME_SUP &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>NAME_SUP</IFR_NAME>
+     <IFR_TEXT>Denominação Equipe de Vendas</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NAME_SUP</R3_NAME>
+     <R3_TEXT>Denominação Equipe de Vendas</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000033</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NAME_VEND</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NAME_VEND</OBJ_NAME2>
+     <ID>&lt;element&gt; NAME_VEND &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>NAME_VEND</IFR_NAME>
+     <IFR_TEXT>Vendedor</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NAME_VEND</R3_NAME>
+     <R3_TEXT>Vendedor</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000009</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NETDT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NETDT</OBJ_NAME2>
+     <ID>&lt;element&gt; NETDT &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>NETDT</IFR_NAME>
+     <IFR_TEXT>Data Vencimento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NETDT</R3_NAME>
+     <R3_TEXT>Data Vencimento</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000016</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>REGIO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>REGIO</OBJ_NAME2>
+     <ID>&lt;element&gt; REGIO &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>REGIO</IFR_NAME>
+     <IFR_TEXT>Região</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>REGIO</R3_NAME>
+     <R3_TEXT>Região</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000026</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SGTXT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SGTXT</OBJ_NAME2>
+     <ID>&lt;element&gt; SGTXT &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SGTXT</IFR_NAME>
+     <IFR_TEXT>Texto Item</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SGTXT</R3_NAME>
+     <R3_TEXT>Texto Item</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000025</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SORT1</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SORT1</OBJ_NAME2>
+     <ID>&lt;element&gt; SORT1 &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SORT1</IFR_NAME>
+     <IFR_TEXT>Termo de Pesquisa 1</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SORT1</R3_NAME>
+     <R3_TEXT>Termo de Pesquisa 1</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000028</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TAX05</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TAX05</OBJ_NAME2>
+     <ID>&lt;element&gt; TAX05 &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TAX05</IFR_NAME>
+     <IFR_TEXT>Menor que 5 Dias</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TAX05</R3_NAME>
+     <R3_TEXT>Menor que 5 Dias</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000018</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TAX120</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TAX120</OBJ_NAME2>
+     <ID>&lt;element&gt; TAX120 &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TAX120</IFR_NAME>
+     <IFR_TEXT>De 61 a 120 Dias</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TAX120</R3_NAME>
+     <R3_TEXT>De 61 a 120 Dias</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000021</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TAX30</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TAX30</OBJ_NAME2>
+     <ID>&lt;element&gt; TAX30 &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TAX30</IFR_NAME>
+     <IFR_TEXT>De 6 a 30 Dias</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TAX30</R3_NAME>
+     <R3_TEXT>De 6 a 30 Dias</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000019</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TAX60</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TAX60</OBJ_NAME2>
+     <ID>&lt;element&gt; TAX60 &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TAX60</IFR_NAME>
+     <IFR_TEXT>De 31 a 60 Dias</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TAX60</R3_NAME>
+     <R3_TEXT>De 31 a 60 Dias</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000020</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TAXMAX</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TAXMAX</OBJ_NAME2>
+     <ID>&lt;element&gt; TAXMAX &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TAXMAX</IFR_NAME>
+     <IFR_TEXT>MAIOR que 120 Dias</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TAXMAX</R3_NAME>
+     <R3_TEXT>MAIOR que 120 Dias</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000022</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TOTAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TOTAL</OBJ_NAME2>
+     <ID>&lt;element&gt; TOTAL &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TOTAL</IFR_NAME>
+     <IFR_TEXT>Total</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TOTAL</R3_NAME>
+     <R3_TEXT>Total</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000024</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>VKBUR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>VKBUR</OBJ_NAME2>
+     <ID>&lt;element&gt; VKBUR &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>VKBUR</IFR_NAME>
+     <IFR_TEXT>Escritório de Vendas</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>VKBUR</R3_NAME>
+     <R3_TEXT>Escritório de Vendas</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>VKGRP</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>VKGRP</OBJ_NAME2>
+     <ID>&lt;element&gt; VKGRP &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>VKGRP</IFR_NAME>
+     <IFR_TEXT>Equipe de vendas</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>VKGRP</R3_NAME>
+     <R3_TEXT>Equipe de vendas</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>VKORG</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>VKORG</OBJ_NAME2>
+     <ID>&lt;element&gt; VKORG &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>VKORG</IFR_NAME>
+     <IFR_TEXT>Organização de Vendas</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>VKORG</R3_NAME>
+     <R3_TEXT>Organização de Vendas</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000034</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>WAERS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>WAERS</OBJ_NAME2>
+     <ID>&lt;element&gt; WAERS &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>WAERS</IFR_NAME>
+     <IFR_TEXT>Moeda</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>WAERS</R3_NAME>
+     <R3_TEXT>Moeda</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000023</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ZLSCH</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ZLSCH</OBJ_NAME2>
+     <ID>&lt;element&gt; ZLSCH &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ZLSCH</IFR_NAME>
+     <IFR_TEXT>Forma de pagamento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ZLSCH</R3_NAME>
+     <R3_TEXT>Forma de pagamento</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000012</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ZUONR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ZUONR</OBJ_NAME2>
+     <ID>&lt;element&gt; ZUONR &lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ZUONR</IFR_NAME>
+     <IFR_TEXT>Atribuição</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ZUONR</R3_NAME>
+     <R3_TEXT>Atribuição</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000029</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLFI_DT_RETORNA_PENDENCIA_FI1</OBJ_NAME2>
+     <ID>&lt;type&gt; tab_saida &lt;element&gt; tab_saida &lt;type&gt; dtRetornaPendenciaFinanceira http://trescoracoes.com.br/financeiro/pendencias http://trescoracoes.com.br/financeiro/pendencias</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>tab_saida</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLFI_DT_RETORNA_PENDENCIA_FI1</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

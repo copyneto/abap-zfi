@@ -1,0 +1,4 @@
+@EndUserText.label: 'Retirar bloqueios'
+define service Zui_fi_ret_bloq {
+  expose ZC_RET_BLOQ as RetBloq;
+}

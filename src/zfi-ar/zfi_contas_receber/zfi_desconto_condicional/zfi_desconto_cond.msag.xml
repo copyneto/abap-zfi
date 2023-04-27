@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Portal Desconto Condicional</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Campo &apos;Tipo de Reversão&apos; em branco. Favor preencher.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Campo &apos;Data do documento&apos; em branco. Favor preencher.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Campo &apos;Data de lançamento&apos; em branco. Favor preencher.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Param. &apos;Conta Razão FI&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Param. &apos;Conta Razão FI CO-PA&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Documento &amp;1/&amp;2/&amp;3 modificado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Documento de Reversão &amp;1/&amp;2/&amp;3 lançado com Sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Documentos não foram encontrados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Documento DD não encontrado para o &amp;1 documento KI</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Documento criado com sucesso! &amp;1/&amp;2/&amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Tentativa Reversão Documento &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DESCONTO_COND</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Param. &apos;PDC-REVERSAO-TIPODOC&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

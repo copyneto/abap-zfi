@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZFICONTRAT</OBJECT>
+    <DOMLEN>ZD_NUM_CONTRATO</DOMLEN>
+    <PERCENTAGE>5.0</PERCENTAGE>
+    <CHANGED_AT>20221025142939.146488</CHANGED_AT>
+    <CHANGED_BY>RROCHA</CHANGED_BY>
+    <ENAME>PFERRAZ</ENAME>
+    <EDATE>2021-12-15</EDATE>
+    <ETIME>22:18:39</ETIME>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZFICONTRAT</OBJECT>
+    <TXT>N° Contrato Cliente</TXT>
+    <TXTSHORT>N° Contrato</TXTSHORT>
+    <ENAME>PFERRAZ</ENAME>
+    <EDATE>2021-12-15</EDATE>
+    <ETIME>22:18:39</ETIME>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

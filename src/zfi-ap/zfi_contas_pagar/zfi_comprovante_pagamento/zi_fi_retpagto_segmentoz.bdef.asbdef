@@ -1,0 +1,42 @@
+managed; // implementation in class zbp_i_fi_retpagto_segmentoz unique;
+
+define behavior for ZI_FI_RETPAGTO_SEGMENTOZ alias SegmentoZ
+persistent table ztfi_retpag_segz
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+
+  mapping for ztfi_retpag_segz
+  {
+
+    Empresa = bukrs;
+    Fornecedor = lifnr;
+    Fatura = belnr;
+    DocContabAuxiliar = nbbln_eb;
+    ExercicioCompensacao = zgjahr;
+    BancoEmpresa = hbkid;
+    Item = buzei;
+    Exercicio = gjahr;
+    FormaPagto = zlsch;
+    Montante = dmbtr;
+    DataCompensacao = augdt;
+    ChaveBreve = kukey_eb;
+    AutenticacaoBanc = zautenticaban;
+    ControleBanc = zcontroleban;
+    Banco = zbanco;
+    Agencia = zagencia;
+    ContaCorrente = zcontacor;
+    BancoFavor = zbancofav;
+    AgenciaFavor = zagenciafav;
+    ContaFavor = zcontafav;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+
+  }
+
+}

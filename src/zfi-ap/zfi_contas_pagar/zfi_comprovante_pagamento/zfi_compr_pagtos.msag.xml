@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens para processamento de comprovante de pagamento</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Adobe Form &amp;1 não encontrado ou inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Não existe interface definida para este form.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Parâmetro &amp;1 não existe na interface deste form</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Parâmetro &amp;1 (tipo &amp;2) difere do tipo da interface &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Parâmetro &amp;1 já informado anteriormente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Parâmetros do job de impressão inválidos. (&amp;1)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Parâmetro obrigatório do form não definido: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Erro na impressão do form</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Erro na chamada do Form (&amp;1)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>101</MSGNR>
+     <TEXT>O campo &amp;1 não está visível na lista exibida</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>102</MSGNR>
+     <TEXT>Selecionar apenas um registro para cada impressão</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>103</MSGNR>
+     <TEXT>Dados de pagamento ainda não recebidos do banco</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>104</MSGNR>
+     <TEXT>Download efetuado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_COMPR_PAGTOS</ARBGB>
+     <MSGNR>105</MSGNR>
+     <TEXT>Comprovante impresso</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

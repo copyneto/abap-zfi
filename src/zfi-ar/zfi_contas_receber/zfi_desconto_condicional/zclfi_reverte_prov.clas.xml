@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_REVERTE_PROV</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Reversão da Provisão PDC</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Documento criado com sucesso!</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CHAVE_LANC_09</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CODIGO_DEBITO_S</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código débito/crédito</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SUB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log de aplicação: subobjeto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TCODE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de transação</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_LOG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Salvar mensagens processamento</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_ACCOUNTPAYABLE</CMPNAME>
+     <SCONAME>IV_GL_ACCOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Conta do Razão da contabilidade geral</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_ACCOUNTPAYABLE</CMPNAME>
+     <SCONAME>IV_ITEMNO_ACC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento da contabilidade</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_ACCOUNTPAYABLE</CMPNAME>
+     <SCONAME>RT_ACCOUNTPAYABLE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de tabela para estrutura BAPIACAP09</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_EXTENSION2</CMPNAME>
+     <SCONAME>IV_DEB_CRED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_EXTENSION2</CMPNAME>
+     <SCONAME>IV_ITEMNO_ACC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento da contabilidade</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_EXTENSION2</CMPNAME>
+     <SCONAME>RT_EXTENSION2</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>PRICAT: tabela para parâmetro de usuário BAPI</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZRFFOBR_D</NAME>
+    <SQLX>R</SQLX>
+    <DBAPL>F</DBAPL>
+    <DBNA>PY</DBNA>
+    <CLAS>FORD</CLAS>
+    <SUBC>1</SUBC>
+    <APPL>F</APPL>
+    <RSTAT>P</RSTAT>
+    <RLOAD>E</RLOAD>
+    <LDBNAME>PYF</LDBNAME>
+    <UCCHECK>X</UCCHECK>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>040</KEY>
+     <ENTRY>Exibir</ENTRY>
+     <LENGTH>7</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>106</KEY>
+     <ENTRY>Nº sequencial boleto</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>200</KEY>
+     <ENTRY>Imprimir transferências coletivas</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>201</KEY>
+     <ENTRY>Impressora</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>202</KEY>
+     <ENTRY>Impressão imediata</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>203</KEY>
+     <ENTRY>Imprimir boletos</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>250</KEY>
+     <ENTRY>Layout Febraban</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>505</KEY>
+     <ENTRY>(título1)</ENTRY>
+     <LENGTH>9</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>510</KEY>
+     <ENTRY>(título2)</ENTRY>
+     <LENGTH>9</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>515</KEY>
+     <ENTRY>(Doc.pagamento)</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>520</KEY>
+     <ENTRY>(PartIndiv.)</ENTRY>
+     <LENGTH>12</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>525</KEY>
+     <ENTRY>(Total por moeda)</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>530</KEY>
+     <ENTRY>(Encerr.form.)</ENTRY>
+     <LENGTH>14</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>531</KEY>
+     <ENTRY>(Montante por moeda em encerramento form.)</ENTRY>
+     <LENGTH>45</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>535</KEY>
+     <ENTRY>(Crédito nota de acompan.)</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>900</KEY>
+     <ENTRY>No momento, os nºs boletos estão</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>901</KEY>
+     <ENTRY>bloqueados pelo usuário.</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>902</KEY>
+     <ENTRY>Tentar imprimir novamente</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>903</KEY>
+     <ENTRY>o boleto?</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>904</KEY>
+     <ENTRY>Dados bloqueados</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>910</KEY>
+     <ENTRY>Impr.boleto</ENTRY>
+     <LENGTH>12</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>911</KEY>
+     <ENTRY>Imprimir boleto para o documento &amp;</ENTRY>
+     <LENGTH>41</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>912</KEY>
+     <ENTRY>Cancelada a transação &apos;lançar + impressão de formulários&apos; sem</ENTRY>
+     <LENGTH>65</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>913</KEY>
+     <ENTRY>impressão de boletos. Por isso boleto para doc.pagamento</ENTRY>
+     <LENGTH>69</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>914</KEY>
+     <ENTRY>                   &amp; &amp; &amp;</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>915</KEY>
+     <ENTRY>tem de ser imprimido posteriormente. Utilizar a possibilidade para</ENTRY>
+     <LENGTH>68</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>916</KEY>
+     <ENTRY>imprimir boleto, executando este documento</ENTRY>
+     <LENGTH>45</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>920</KEY>
+     <ENTRY>Ficha de Compensação</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>921</KEY>
+     <ENTRY>Recibo do Sacado</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>922</KEY>
+     <ENTRY>Ficha de Caixa</ENTRY>
+     <LENGTH>14</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>Meio de pagametno internacional - boleto (somente Brasil)</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ANZB</KEY>
+     <ENTRY>Nº de notas de acompanhamento</ENTRY>
+     <LENGTH>37</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ANZP</KEY>
+     <ENTRY>Nº de impressões de teste</ENTRY>
+     <LENGTH>34</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_AVIS</KEY>
+     <LENGTH>22</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_BEGL</KEY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_BELP</KEY>
+     <ENTRY>Verif.doc.pagamento</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_CRLF</KEY>
+     <ENTRY>Fim do caractere de linha</ENTRY>
+     <LENGTH>33</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_DTYP</KEY>
+     <ENTRY>Meio de saída (p/ISD)</ENTRY>
+     <LENGTH>31</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_DUPL</KEY>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_EPOS</KEY>
+     <ENTRY>Exibir partidas individuais</ENTRY>
+     <LENGTH>35</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ESPR</KEY>
+     <ENTRY>Texto no idioma do recebedor</ENTRY>
+     <LENGTH>37</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_FBLA</KEY>
+     <ENTRY>Versão Febraban</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_FILL</KEY>
+     <ENTRY>Car.ench.dígitos em palavras</ENTRY>
+     <LENGTH>37</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ISOC</KEY>
+     <ENTRY>Código ISO da moeda</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_MAXP</KEY>
+     <ENTRY>Nº partidas na lista de pgtos.</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_NOSU</KEY>
+     <ENTRY>Sem encerramento de formulário</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRDU</KEY>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIA</KEY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIB</KEY>
+     <LENGTH>32</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIW</KEY>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_PRIZ</KEY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_RCHK</KEY>
+     <ENTRY>Reinício a partir de nºboleto</ENTRY>
+     <LENGTH>37</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SODU</KEY>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFA</KEY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFB</KEY>
+     <LENGTH>36</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFW</KEY>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_SOFZ</KEY>
+     <LENGTH>31</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_STAP</KEY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_UNIX</KEY>
+     <ENTRY>Nome do file (p/ISD)</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_XDTA</KEY>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ZDRU</KEY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PAR_ZFOR</KEY>
+     <ENTRY>Formulário boleto divergente</ENTRY>
+     <LENGTH>36</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_GSBR</KEY>
+     <ENTRY>Divisão</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_HBKI</KEY>
+     <ENTRY>Banco da empresa</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_HKTI</KEY>
+     <ENTRY>ID conta</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_UZAW</KEY>
+     <ENTRY>Suplem.forma pgto.</ENTRY>
+     <LENGTH>33</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_VBLN</KEY>
+     <ENTRY>Nº documento de pagamento</ENTRY>
+     <LENGTH>33</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_WAER</KEY>
+     <ENTRY>Código da moeda</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SEL_ZAWE</KEY>
+     <ENTRY>Formas de pagamento</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>040</KEY>
+       <ENTRY>Anzeig.</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Boletostapelnummer</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>200</KEY>
+       <ENTRY>Sammelüberweisungen drucken</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>201</KEY>
+       <ENTRY>Drucker</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>202</KEY>
+       <ENTRY>Sofortdruck</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>203</KEY>
+       <ENTRY>Boletos drucken</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>250</KEY>
+       <ENTRY>Layout Febraban</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>505</KEY>
+       <ENTRY>(Titel 1)</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>510</KEY>
+       <ENTRY>(Titel 2)</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>515</KEY>
+       <ENTRY>(Zahlungsbeleg)</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>520</KEY>
+       <ENTRY>(EinzPosten)</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>525</KEY>
+       <ENTRY>(Summe pro Währung)</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>530</KEY>
+       <ENTRY>(FormulAbschl)</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>531</KEY>
+       <ENTRY>(Betrag pro Währung in Formularabschluß)</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>535</KEY>
+       <ENTRY>(Gutschrift Begleitzettel)</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>900</KEY>
+       <ENTRY>Boletonummern sind durch Benutzer</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>901</KEY>
+       <ENTRY>zur Zeit gesperrt.</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>902</KEY>
+       <ENTRY>Soll ein erneuter Versuch für den</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>903</KEY>
+       <ENTRY>Boletodruck gestartet werden?</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>904</KEY>
+       <ENTRY>Daten gesperrt</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>910</KEY>
+       <ENTRY>Boletodruck</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>911</KEY>
+       <ENTRY>Bitte Boleto zu Beleg &amp; nachdrucken</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>912</KEY>
+       <ENTRY>Die Transaktion &apos;Buchen + Formulardruck&apos; wurde von Ihnen ohne den</ENTRY>
+       <LENGTH>65</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>913</KEY>
+       <ENTRY>Druck von Boletos abgebrochen. Daher muß der Boleto zum Zahlungsbeleg</ENTRY>
+       <LENGTH>69</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>914</KEY>
+       <ENTRY>                   &amp; &amp; &amp;</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>915</KEY>
+       <ENTRY>nachgeholt werden. Bitte verwenden Sie die Möglichkeit zum Druck des</ENTRY>
+       <LENGTH>68</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>916</KEY>
+       <ENTRY>Boletos, indem Sie dieses Dokument ausführen.</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>920</KEY>
+       <ENTRY>Ficha de Compensação</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>921</KEY>
+       <ENTRY>Recibo do Sacado</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>922</KEY>
+       <ENTRY>Ficha de Caixa</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Zahlungsträger International - Boleto (nur Brasilien)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZB</KEY>
+       <ENTRY>Anzahl Begleitzettel</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZP</KEY>
+       <ENTRY>Anzahl Probedrucke</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BELP</KEY>
+       <ENTRY>Zahlungsbeleg-Verprobung</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_CRLF</KEY>
+       <ENTRY>End of Line Character</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_DTYP</KEY>
+       <ENTRY>Ausgabemedium (bei DTA)</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_EPOS</KEY>
+       <ENTRY>Einzelposten anzeigen</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ESPR</KEY>
+       <ENTRY>Texte in Empfängersprache</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_FBLA</KEY>
+       <ENTRY>Febraban Version</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_FILL</KEY>
+       <ENTRY>Füllzeichen Ziffern in Worten</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ISOC</KEY>
+       <ENTRY>Währung in ISO-Code</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_MAXP</KEY>
+       <ENTRY>Postenzahl Begleitliste</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_NOSU</KEY>
+       <ENTRY>Kein Formularabschluß</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_RCHK</KEY>
+       <ENTRY>Restart ab Boletonummer</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_UNIX</KEY>
+       <ENTRY>Dateiname (für DTA)</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ZFOR</KEY>
+       <ENTRY>Abweichendes Boletoformular</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_GSBR</KEY>
+       <ENTRY>Geschäftsbereich</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HBKI</KEY>
+       <ENTRY>Hausbank</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HKTI</KEY>
+       <ENTRY>Konto-Id</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_UZAW</KEY>
+       <ENTRY>Zahlwegzusatz</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_VBLN</KEY>
+       <ENTRY>Zahlungsbelegnummer</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_WAER</KEY>
+       <ENTRY>Währungsschlüssel</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_ZAWE</KEY>
+       <ENTRY>Zahlwege</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>E</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>040</KEY>
+       <ENTRY>Exibir</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Nº sequencial boleto</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>200</KEY>
+       <ENTRY>Imprimir transferências coletivas</ENTRY>
+       <LENGTH>66</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>201</KEY>
+       <ENTRY>Impressora</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>202</KEY>
+       <ENTRY>Impressão imediata</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>203</KEY>
+       <ENTRY>Imprimir boletos</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>250</KEY>
+       <ENTRY>Layout Febraban</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>505</KEY>
+       <ENTRY>(título1)</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>510</KEY>
+       <ENTRY>(título2)</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>515</KEY>
+       <ENTRY>(Doc.pagamento)</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>520</KEY>
+       <ENTRY>(PartIndiv.)</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>525</KEY>
+       <ENTRY>(Total por moeda)</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>530</KEY>
+       <ENTRY>(Encerr.form.)</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>531</KEY>
+       <ENTRY>(Montante por moeda em encerramento form.)</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>535</KEY>
+       <ENTRY>(Crédito nota de acompan.)</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>900</KEY>
+       <ENTRY>No momento, os nºs boletos estão</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>901</KEY>
+       <ENTRY>bloqueados pelo usuário.</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>902</KEY>
+       <ENTRY>Tentar imprimir novamente</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>903</KEY>
+       <ENTRY>o boleto?</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>904</KEY>
+       <ENTRY>Dados bloqueados</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>910</KEY>
+       <ENTRY>Impr.boleto</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>911</KEY>
+       <ENTRY>Imprimir boleto para o documento &amp;</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>912</KEY>
+       <ENTRY>Cancelada a transação &apos;lançar + impressão de formulários&apos; sem</ENTRY>
+       <LENGTH>65</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>913</KEY>
+       <ENTRY>impressão de boletos. Por isso boleto para doc.pagamento</ENTRY>
+       <LENGTH>69</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>914</KEY>
+       <ENTRY>                   &amp; &amp; &amp;</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>915</KEY>
+       <ENTRY>tem de ser imprimido posteriormente. Utilizar a possibilidade para</ENTRY>
+       <LENGTH>68</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>916</KEY>
+       <ENTRY>imprimir boleto, executando este documento</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>920</KEY>
+       <ENTRY>Ficha de Compensação</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>921</KEY>
+       <ENTRY>Recibo do Sacado</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>922</KEY>
+       <ENTRY>Ficha de Caixa</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>International Payment Media - Boleto (Brazil)</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZB</KEY>
+       <ENTRY>Nº de notas de acompanhamento</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZP</KEY>
+       <ENTRY>Nº de impressões de teste</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_AVIS</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BEGL</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BELP</KEY>
+       <ENTRY>Verif.doc.pagamento</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_CRLF</KEY>
+       <ENTRY>Fim do caractere de linha</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_DTYP</KEY>
+       <ENTRY>Meio de saída (p/ISD)</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_DUPL</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_EPOS</KEY>
+       <ENTRY>Exibir partidas individuais</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ESPR</KEY>
+       <ENTRY>Texto no idioma do recebedor</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_FBLA</KEY>
+       <ENTRY>Versão Febraban</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_FILL</KEY>
+       <ENTRY>Car.ench.dígitos em palavras</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ISOC</KEY>
+       <ENTRY>Código ISO da moeda</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_MAXP</KEY>
+       <ENTRY>Nº partidas na lista de pgtos.</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_NOSU</KEY>
+       <ENTRY>Sem encerramento de formulário</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRDU</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIA</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIB</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIW</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_PRIZ</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_RCHK</KEY>
+       <ENTRY>Reinício a partir de nºboleto</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SODU</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFA</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFB</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFW</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_SOFZ</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_STAP</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_UNIX</KEY>
+       <ENTRY>Nome do file (p/ISD)</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_XDTA</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ZDRU</KEY>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ZFOR</KEY>
+       <ENTRY>Formulário boleto divergente</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_GSBR</KEY>
+       <ENTRY>Divisão</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HBKI</KEY>
+       <ENTRY>Banco da empresa</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HKTI</KEY>
+       <ENTRY>ID conta</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_UZAW</KEY>
+       <ENTRY>Suplem.forma pgto.</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_VBLN</KEY>
+       <ENTRY>Nº documento de pagamento</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_WAER</KEY>
+       <ENTRY>Código da moeda</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_ZAWE</KEY>
+       <ENTRY>Formas de pagamento</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>201</KEY>
+       <ENTRY>Impresora</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZB</KEY>
+       <ENTRY>Ctd.notas adjuntas</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ANZP</KEY>
+       <ENTRY>Ctd.impresiones de prueba</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_BELP</KEY>
+       <ENTRY>Comprobación docs.pago</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ESPR</KEY>
+       <ENTRY>Textos en idioma del receptor</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_ISOC</KEY>
+       <ENTRY>Moneda en código ISO</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_MAXP</KEY>
+       <ENTRY>Nº partidas lista adjunta</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PAR_UNIX</KEY>
+       <ENTRY>Nombre de fichero (ISD)</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_HKTI</KEY>
+       <ENTRY>ID de cuenta</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_UZAW</KEY>
+       <ENTRY>Suplemento de vía de pago</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_WAER</KEY>
+       <ENTRY>Clave de moneda</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>SEL_ZAWE</KEY>
+       <ENTRY>Vías de pago</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZRFFOBR_D</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0020</VERSION>
+      <TXTLINES>00240</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZRFFOBR_D</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00020</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>-----------------------------------------------------------------------</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042B-AFORN&amp; = &apos;J_1B_AVIS&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-WFORN&amp; = &apos;J_1B_DME&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-ZFORN&amp; = &apos;J_1B_DUPLICATA&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-ANZPO&amp; = &apos;00&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-XFOSP&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-PROGN&amp; = &apos;RFFOBR_D&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-ZLSTN&amp; = &apos;LIST1S&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-TXTSL&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-XSCHK&amp; = &apos;X&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-XSWEC&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>------------------------------------------------------------------------</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;DESCRIPTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Dieses Programm füllt vornummerierte Boleto-Formulare aus oder druckt</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>nummerierte Boletos. Diese Boleto-Nummer wird aus einem vordefinierten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Nummernkreis zugeordnet und generiert die Verknüpfung zwischen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Boleto-Nummer und BOE-Anforderungsnummer. Beachten Sie, dass die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Barcode- und Prüfzifferbehandlung nur für die brasilianischen Banken</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Itaú und Bradesco unterstützt werden. Ein User-Exit ist verfügbar, um</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Barcodes und Prüfziffern auch für andere Boleto-Layouts zu ermitteln. Um</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>diesen User-Exit zu verwenden, gehen Sie wie folgt vor:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Projekt über Transaktion CMOD anlegen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Erweiterung J1BF0001 wählen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Erweiterungskomponente EXIT_SAPLJ1BM_001 ändern</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Ein Beispielquellcode (gültig für Banco Real) kann verwendet werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Projekt aktivieren</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Neben den Boletos können auch die zugehörigen Zahlungsavise und</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Zahlungsbegleitlisten gedruckt werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Des Weiteren ist es möglich, im gleichen oder in einem anderen Programm</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Sammelüberweisungsaufträge (&apos;Duplicatas&apos;) sowie die zugehörigen Dateien</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(über DME) einschließlich der Datenträger-Begleitzettel anzulegen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Diese Funktion ist aktuell für Banco Itaú, für Banco Bradesco und für</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>das Standard-Febraban-Layout.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Hinweis&lt;/&gt;:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Wenn Sie das Zahlungsformat BR_FEBRABAN_P in der Transaktion DMEEX</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>verwenden, können Sie diesen Report verwenden, um den Boleto ausz</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>udrucken. In diesem Fall können Sie den Report nur mit einer vorhandenen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Boleto-Stapelnummer verwenden. Um den Boleto im Format BR_FEBRABAN_P</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>drucken zu können, müssen Sie sicherstellen, dass das Ankreuzfeld &lt;ZK&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>Datenträgeraustausch &lt;/&gt;im Gruppenrahmen &lt;ZK&gt;Drucksteuerung &lt;/&gt;&lt;ZH&gt;nicht</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;/&gt; markiert ist. Für das automatische Drucken können Sie weiterhin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Ereignis 31 der Payment Medium Workbench verwenden (in Transaktion</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>OBPM3).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Weitere Informationen und einen Beispielquelltext finden Sie im</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP-Hinweis 2986055.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PRECONDITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Boleto-Stapel</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Für die gesamte Boleto-Verwaltung (d.h. Stapel, Numerierung, Entwertung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>usw.) wird die Standardfunktionalität für Schecks verwendet.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Druckfertige Boletos werden in Stapel gegliedert. Die Kriterien, nach</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>denen Stapel gebildet werden, sind frei vom Benutzer bestimmbar (z.B.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Ort der Boleto-Lagerung, Sachbearbeiter oder Drucker). Die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Boleto-Nummern eines Stapels müssen fortlaufend sein.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Ein Stapel wird den zu druckenden Boletos über einen Parameter</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>zugeordnet, dessen Nummer Sie über die entsprechende Stapel-Verwaltung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>für Boletos (z.B Scheck) im System festlegen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.FCHI&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Nach Eingabe der Stapelnummer sucht sich das Druckprogramm eigenständig</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>die erste freie Boleto-Nummer (auch wenn diese nicht in angegebenen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Stapel, sondern in einem Folgestapel liegen sollte).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Konfiguration des Druckprogramms</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Um dem Druckprogramm &amp;T042Z-PROGN&amp; das korrekte Boleto-Formular</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>zuzuordnen, muss dieses Formular in Feld &apos;Alternatives Boleto-Formular&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>auf dem Selektionsbild dieses Programms eingegeben werden. Standardmäßig</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wird das SAP-Standardformular für ITAU Boletos &apos;J_1B_BOLETO_ITAU&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>verwendet.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_F110    &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042B   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042Z   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Hinweis:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Markieren Sie im Abschnitt &apos;Zahlwegklassifikation&apos; &apos;Zahlweg für</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Eingangszahlungen&apos; und &apos;Wechselanforderung&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042E   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Hinweis:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N2</TDFORMAT>
+       <TDLINE>Markieren Sie im Abschnitt &apos;Gliederung von Positionen&apos; die Option</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&apos;Einzelzahlung für markierte Position&apos; markieren.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N2</TDFORMAT>
+       <TDLINE>Die Angaben zum Aussteller werden im Standard auf dem Zahlungsträger für</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Ort und Unterschrift verwendet:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Zeile 1,,Name 1 des Ausstellers</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Zeile 2,,Name 2 des Ausstellers</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Zeile 3,,Leer</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Zeile 4,,Ort.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T012D   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Hinweis:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Ist die Bankleitzahl des Zahlungsträgerempfängers nicht identisch mit</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>der seiner Hausbank, muss erstere gepflegt werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Stellen Sie sicher, dass Sie im Kreditorenstamm brasilienspezifische</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Angaben pflegen. Dies gilt besonders für:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>a) Einzelzahlung.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>b) Zinskennzeichen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.FD02&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Für jedes Bankkonto muss zwecks DTA-Einzug eine Bankvorgangsart gepflegt</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>werden. Diese Bankvorgangsart entspricht der &apos;Carteira&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBBA&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Ordnen Sie in einem nächsten Schritt der Bewegungsart einen Zahlweg zu.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Die Felder &apos;Bewegung&apos; und &apos;Partnerbankengruppe&apos; müssen nicht gepflegt</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBBB&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Bei Verwendung von DTA sollten interne SAP-Weisungscodes über folgenden</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Menüpfad</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>gepflegt werden:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>GE</TDFORMAT>
+       <TDLINE>&lt;LS&gt;Finanzwesen -&gt; Debitoren- und Kreditorenbuchhaltung -&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Geschäftsvorfälle -&gt; Zahlungsausgang -&gt; Zahlungsausgang automatisch -&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Zahlungsträger -&gt; Datenträgeraustausch -&gt; Weisungen für Zahlungsverkehr</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>hinterlegen Ausführen&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.SPRO&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Für die Verzinsung sind folgende Angaben erforderlich:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>a) Festlegung allgemeiner Konditionen zur Vorbereitung der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Überfälligkeitsverzinsung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB82&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>b) Festlegung der Verzinsungsart</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB46&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>c) Festlegung von Bezugszinssätzen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBAC&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>d) Festlegung von Bezugszinswerten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB83&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>e) Festlegung zeitabhängiger Konditionen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB81&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>f) Zinsbuchung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBV1&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_LAYOUT_SET&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_SYMBOLS   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_ADVICE    &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Aufbau der &lt;ZH&gt;Sammelüberweisung&lt;/&gt; (im Standard &amp;T042E-ZFORN&amp;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Seiten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;FIRST             &lt;/&gt;Erste Seite des Auftrags</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;NEXT              &lt;/&gt;Nächste Seite</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;LAST              &lt;/&gt;Formularabschluss</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Fenster und Textelemente</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HEADER            &lt;/&gt;Briefkopf</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;ADDRESS           &lt;/&gt;Absender und Bankadresse</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PAGE              &lt;/&gt;Seitenzahlen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      505     &lt;/&gt;Überschrift zu den Zahlungen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      510     &lt;/&gt;Überschrift zu den Rechnungen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      515     &lt;/&gt;Zahlungsinformationen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      520     &lt;/&gt;Rechnungsinformationen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      525     &lt;/&gt;Summe nach Währung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      530     &lt;/&gt;Überschrift für Einzug</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      531     &lt;/&gt;Gesamtsumme pro Währung für Einzug</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;SUMMARY           &lt;/&gt;Formularabschluss</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Struktur des &lt;ZH&gt;Datenträger-Begleitzettels&lt;/&gt; (Standard = &amp;T042E-WFORN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Seiten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;DTA               &lt;/&gt;Begleitzettel</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;LAST              &lt;/&gt;Formularabschlussseite je Hausbank</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Fenster und Textelemente</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    535     &lt;/&gt;Begleitzettel für Gutschriften</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND       536     &lt;/&gt;Begleitzettel für Überweisungen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    537     &lt;/&gt;Begleitzettel für Lastschriften</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;SUMMARY   520     &lt;/&gt;Formularabschluss</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Struktur des &lt;ZH&gt;ITAU-Boleto-Formulars&lt;/&gt; (Standard = J_1B_BOLETO_ITAU)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Seiten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;FIRST             &lt;/&gt;Boleto-Formular</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Fenster und Textelemente</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BARCODE           &lt;/&gt;Barcode unten auf Boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO1           &lt;/&gt;Teil &apos;Recibo do Sacado&apos; BOLETO</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO2           &lt;/&gt;Teil &apos;Ficha de Caixa&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO3           &lt;/&gt;Dritter Boleto-Teil (inkl. numerischer Barcode)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES1           &lt;/&gt;Horizontale Zeilen für &apos;Recibo do Sacado&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES2           &lt;/&gt;Horizontale Zeilen für Teil &apos;Ficha de Caixa&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES3           &lt;/&gt;Horizontale Zeilen für 3. Teil (inkl.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>numerischer</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                  &lt;/&gt;Barcode)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN              &lt;/&gt;Technisch erforderliches Fenster - nicht</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>verwenden</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;SUMMARY           &lt;/&gt;Technisch erforderliches Fenster - nicht</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>verwenden</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES1           &lt;/&gt;Vertikale Zeilen für &apos;Recibo do Sacado&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES2           &lt;/&gt;Vertikale Zeilen für Teil &apos;Ficha de Caixa&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES3           &lt;/&gt;Vertikale Zeilen für 3. Teil (inkl. numerischer</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                  &lt;/&gt;Barcode)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Hinweis:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Für die korrekte Ausgabe des &lt;ZH&gt;ITAU Boleto-Formulars&lt;/&gt; wurden einige</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Felder der Tabelle REGUD verwendet, um boletospezifische Daten vom</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Druckprogramm auf das Standardformular J_1B_BOLETO_ITAU zu übertragen:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-AUSFT        &lt;/&gt;Fälligkeitsdatum (&apos;Vencimento&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3(3)     &lt;/&gt;Bankvorgangsart (&apos;Carteira&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+10(1)  &lt;/&gt;Kennzeichen &apos;Natürliche Person&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+20(11) &lt;/&gt;CPF-Nummer (Steuerkennzeichen 2)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+40(18) &lt;/&gt;Bundesstaatliche Registrierung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(Steuerkennzeichen 3) (&apos;Inscr. estadual&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT4(1)     &lt;/&gt;Prüfziffer für Boleto-Nummer (&apos;Nosso Número&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT5(10)    &lt;/&gt;Zinssatz pro Tag (&apos;Instruções: Apos o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                   &lt;/&gt;vencimento ... ao dia.&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT6(50)    &lt;/&gt;Weisungen gemäß Weisungscode</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT6+50(50) &lt;/&gt;Weisungen gemäß Weisungscode</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT7(50)    &lt;/&gt;Weisungen gemäß Weisungscode</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT7+50(25) &lt;/&gt;Weisungen gemäß Weisungscode</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT8(47)    &lt;/&gt;Barcode in Ziffern</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT8+50(44) &lt;/&gt;Zahlenfolge, die graphischen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                   &lt;/&gt;Barcode im Layout festlegt</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT9(10)    &lt;/&gt;Belegdatum (&apos;Data do Doc.&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT9+10(9)  &lt;/&gt;Beleg (Nota Fiscal) Nr. (&apos;Número do Doc.&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_MAINTAIN  &apos; OBJECT DOKU ID TX PARAGRAPH AS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_PAYMENT_RUN         &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_SPOOL        &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME          &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME_FILE     &apos; OBJECT DOKU ID TX PARAGRAPH U3</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME_TEMSE    &apos; OBJECT DOKU ID TX PARAGRAPH U3</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_ERRORMESSAGES&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_MAINTAIN  &apos; OBJECT DOKU ID TX PARAGRAPH AS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Boleto-Verwaltung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Die Angaben auf den ausgestellten Boletos können über Scheckverwaltung,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Einzelpostenanzeige für Nebenbücher oder Bankkonten oder über</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Rechnungsbeleg und Zahlungsbeleganzeige abgerufen werden. Für den</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>entsprechenden Programmlauf kann auch eine Registerliste für Boletos</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(d.h. Scheck) erstellt werden. Aufgetretene Fehler in der Zuordnung von</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Boleto-Nummer und Belegnummer lassen sich ebenfalls über die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Scheckverwaltung beheben. Die Scheckverwaltung finden Sie im Kreditoren-</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>bzw. Debitorenmenü im Finanzwesen, sowie im Zahlprogramm über den</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Menüpunkt &quot;Umfeld&quot;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.F110&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Weitere Informationen zur Scheckverwaltung, besonders zu</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>detaillierten Lösungen möglicher Fehler enthalten die FI-Konten.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_ERRORMESSAGES&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZRFFOBR_D</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0020</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00231</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZRFFOBR_D</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00020</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>-----------------------------------------------------------------------</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042B-AFORN&amp; = &apos;J_1B_AVIS&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-WFORN&amp; = &apos;J_1B_DME&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-ZFORN&amp; = &apos;J_1B_DUPLICATA&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-ANZPO&amp; = &apos;00&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-XFOSP&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-PROGN&amp; = &apos;RFFOBR_D&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-ZLSTN&amp; = &apos;LIST1S&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-TXTSL&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-XSCHK&amp; = &apos;X&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-XSWEC&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>------------------------------------------------------------------------</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;DESCRIPTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>This program fills in prenumbered Boleto forms or prints numbered</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Boletos. This Boleto number is to be assigned from a predefined number</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>range and creates the link between Boleto number and BOE request number.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Note that barcode and check digit handling are supported only for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Brazilian banks Itaú and Bradesco. A user exit is available to determine</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>barcode and check digits also for other Boleto layouts. To make use of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this user exit, please proceed as follows:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Create project through transaction CMOD</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Choose enhancement J1BF0001</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Change enhancement component EXIT_SAPLJ1BM_001</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>A sample source code (valid for Banco Real) may be used.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Activate project</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>In addition to the Boletos, the respective payment advice notes and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>payment summaries can also be printed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Moreover, it is possible to create in the same or a different program</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run collective transfer orders (&apos;Duplicatas&apos;) and the corresponding</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>files (via DME), including the respective data medium accompanying</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>sheets.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>This functionality is currently available for Banco Itaú, for Banco</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Bradesco and for the standard Febraban layout.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Note&lt;/&gt;:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>When you use the BR_FEBRABAN_P payment format in the DMEEX transaction,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>you can use this report to print out the boleto. In this case, you can</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>use the report only with an existing boleto lot number. To print the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>boleto in the BR_FEBRABAN_P format, ensure that the &lt;ZK&gt;Data Medium</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Exchange &lt;/&gt;checkbox is &lt;ZH&gt;not &lt;/&gt;selected in the &lt;ZK&gt;Print control</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;/&gt;group box. For automatic printing, you can still use event 31 of the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Payment Medium Workbench (in transaction OBPM3).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>For more information and a code sample, see SAP Note 2986055.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PRECONDITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Boleto lots</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>For the whole area of Boleto management (i.e. lots, numbering, voiding</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>etc.), the standard check functionality is used.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The Boletos which are ready for printing are divided up into lots. The</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>user can freely define the criteria by which lots are formed (for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>example, location of Boleto storage, accounting clerk or printer). The</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Boleto numbers of one lot must be consecutive.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>A lot is assigned to the Boletos to be printed via a parameter whose</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>number you define via the corresponding Boleto (i.e. check) lot</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>management in the system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.FCHI&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>After entering the lot number, the print program independently searches</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>for the first free Boleto number (even if this is in the next lot rather</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>than in the lot specified).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Print program configuration</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>In order to assign the correct Boleto form to the Print program</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&amp;T042Z-PROGN&amp;, it is necessary to enter this form in the field</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&apos;Alternative Boleto form&apos; on the selection screen of this program. As a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>default, the SAP standard form for ITAU Boletos, &apos;J_1B_BOLETO_ITAU&apos; is</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>set.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_F110    &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042B   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042Z   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Note:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>In the section &apos;Payment method classification&apos; please mark &apos;payment</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>method for incoming payments&apos; and &apos;bill of exchange payment request&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042E   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Note:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N2</TDFORMAT>
+       <TDLINE>In the section &apos;Grouping of items&apos; please mark &apos;single payment for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>marked item&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N2</TDFORMAT>
+       <TDLINE>The issuer details are used on the payment medium for city and signature</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in the standard system:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Line 1,,Name 1 of issuer</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Line 2,,Name 2 of issuer</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Line 3,,Blank</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Line 4,,City.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T012D   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Note:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>If the bank number of the recipient of the payment medium is different</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>from that of his house bank, you must maintain the former.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Please make sure, that you maintain Brazilian specific aspects of the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>vendor master. This comprises in particular:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>a) Individual payment.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>b) Interest indicator.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.FD02&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>For each bank account, a bank transaction type has to be maintained for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>collection via DME. This bank transaction type is related to the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&apos;Carteira&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBBA&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>In a next step, please assign a payment method to the transaction type.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>The fields &apos;transaction&apos; and &apos;partner bank group&apos; do not need to be</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>maintained.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBBB&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If DME is used, please maintain SAP internal instruction codes via the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>the following menue path:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>GE</TDFORMAT>
+       <TDLINE>&lt;LS&gt;Financial Accounting -&gt; Accounts Receivable and Accounts Payable -&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Business Transactions -&gt; Outgoing Payments -&gt; Automatic Outgoing</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Payments -&gt; Payment Media -&gt; Data medium exchange -&gt; Define instructions</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>for payment transactions&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.SPRO&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>For interest calculations, please specify the following:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>a) Define general terms to prepare interest on arrears calculation</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB82&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>b) Define interest calculation type</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB46&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>c) Define reference interest rates</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBAC&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>d) Define reference interest values</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB83&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>e) Define time dependent terms</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB81&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>f) Interest posting</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBV1&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_LAYOUT_SET&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_SYMBOLS   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_ADVICE    &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Structure of the &lt;ZH&gt;collective transfer&lt;/&gt; (standard = &amp;T042E-ZFORN&amp;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Pages</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;FIRST             &lt;/&gt;First page of the order</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;NEXT              &lt;/&gt;Next page</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;LAST              &lt;/&gt;Form summary section</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Windows and text elements</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HEADER            &lt;/&gt;Letter header</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;ADDRESS           &lt;/&gt;Sender and bank address</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PAGE              &lt;/&gt;Page numbers</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      505     &lt;/&gt;Heading for the payments</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      510     &lt;/&gt;Heading for the invoices</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      515     &lt;/&gt;Payment information</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      520     &lt;/&gt;Invoice information</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      525     &lt;/&gt;Total by currency</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      530     &lt;/&gt;Heading for collection</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN      531     &lt;/&gt;Total by currency for collection</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;SUMMARY           &lt;/&gt;Form summary section</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Structure of the &lt;ZH&gt;data medium accompanying sheet&lt;/&gt; (standard =</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&amp;T042E-WFORN&amp;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Pages</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;DTA               &lt;/&gt;Accompanying sheet</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;LAST              &lt;/&gt;Form summary section page per house bank</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Windows and text elements</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    535     &lt;/&gt;Accompanying sheet for credit memos</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    536     &lt;/&gt;Accompanying sheet for transfers</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    537     &lt;/&gt;Accompanying sheet for debit notes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;SUMMARY   520     &lt;/&gt;Form summary section</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Structure of the &lt;ZH&gt;ITAU Boleto form&lt;/&gt; (standard =  J_1B_BOLETO_ITAU)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Pages</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;FIRST             &lt;/&gt;Boleto form</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Windows and text elements</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BARCODE           &lt;/&gt;Barcode on bottom of Boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO1           &lt;/&gt;Recibo do Sacado part</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO2           &lt;/&gt;Ficha de Caixa part</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO3           &lt;/&gt;3rd part of Boleto (incl. numerical barcode</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES1           &lt;/&gt;Horizontal lines for Recibo do Sacado part</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES2           &lt;/&gt;Horizontal lines for Ficha de Caixa part</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES3           &lt;/&gt;Horizontal lines for 3rd part (incl. numerical</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                  &lt;/&gt;barcode)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;MAIN              &lt;/&gt;Technically necessary Window - not to be used</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;SUMMARY           &lt;/&gt;Technically necessary Window - not to be used</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES1           &lt;/&gt;Vertical lines for Recibo do Sacado part</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES2           &lt;/&gt;Vertical lines for Ficha de Caixa part</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES3           &lt;/&gt;Vertical lines for 3rd part (incl. numerical</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                  &lt;/&gt;barcode)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Note:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>To enable the correct output of the &lt;ZH&gt;ITAU Boleto form&lt;/&gt;, several</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>fields of table REGUD were used to transfer Boleto specific data from</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the print program to the standard form J_1B_BOLETO_ITAU:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-AUSFT        &lt;/&gt;Due date (&apos;Vencimento&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3(3)     &lt;/&gt;Bank transaction type (&apos;Carteira&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+10(1)  &lt;/&gt;Natural person indicator</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+20(11) &lt;/&gt;CPF number (Taxcode 2)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+40(18) &lt;/&gt;State inscr. (Taxcode 3) (&apos;Inscr. estadual&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT4(1)     &lt;/&gt;Check digit for Boleto number (&apos;Nosso Número&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT5(10)    &lt;/&gt;Interest rate per day (&apos;Instruções: Apos o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                   &lt;/&gt;vencimento ... ao dia.&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT6(50)    &lt;/&gt;Instructions acc. to instruction code</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT6+50(50) &lt;/&gt;Instructions acc. to instruction code</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT7(50)    &lt;/&gt;Instructions acc. to instruction code</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT7+50(25) &lt;/&gt;Instructions acc. to instruction code</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT8(47)    &lt;/&gt;Barcode in numbers</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT8+50(44) &lt;/&gt;Series of numbers from which the graphical</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                   &lt;/&gt;barcode will be determined by the layout</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT9(10)    &lt;/&gt;Document date (&apos;Data do Doc.&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT9+10(9)  &lt;/&gt;Document (Nota Fiscal) no. (&apos;Número do Doc.&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_MAINTAIN  &apos; OBJECT DOKU ID TX PARAGRAPH AS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_PAYMENT_RUN         &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_SPOOL        &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME          &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME_FILE     &apos; OBJECT DOKU ID TX PARAGRAPH U3</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME_TEMSE    &apos; OBJECT DOKU ID TX PARAGRAPH U3</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_ERRORMESSAGES&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_MAINTAIN  &apos; OBJECT DOKU ID TX PARAGRAPH AS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Boleto management</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Information on the Boletos issued can be called up via check management,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>line item display for sub-ledger or bank accounts, or invoice document</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and payment document display. A Boleto (i.e. check) register list can</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>also be created for the respective payment run. Errors occurring during</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Boleto number and document number allocation can also be rectified using</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>check management. You can find check management within Accounts</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Receivable or Accounts Payable, both parts of Financial Accounting, as</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>well as under the &quot;Environment&quot; menu option in the payment program.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.F110&gt;Proceed&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>You can access more information information on check management, esp.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>detailed solutions to possible error situations, in the FI Accounts</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_ERRORMESSAGES&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZRFFOBR_D</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0020</VERSION>
+      <TXTLINES>00257</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZRFFOBR_D</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00020</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>-----------------------------------------------------------------------</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042B-AFORN&amp; = &apos;J_1B_AVIS&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-WFORN&amp; = &apos;J_1B_DME&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-ZFORN&amp; = &apos;J_1B_DUPLICATA&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-ANZPO&amp; = &apos;00&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042E-XFOSP&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-PROGN&amp; = &apos;RFFOBR_D&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-ZLSTN&amp; = &apos;LIST1S&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-TXTSL&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-XSCHK&amp; = &apos;X&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>DEFINE &amp;T042Z-XSWEC&amp; = &apos; &apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>------------------------------------------------------------------------</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;DESCRIPTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Este programa preenche formulários de boleto pré-numerados ou imprime</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>boletos numerados. Este número de boleto deve ser atribuído a partir de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>um intervalo de numeração predefinido e cria a ligação entre o número de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>boleto e o número da solicitação L/C. Considere que o processamento do</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>código de barras do dígito de controle só são suportados para os bancos</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>brasileiros Itaú e Bradesco. Um user exit também está disponível para</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>determinar o código de barras e dígitos de controle para outros layouts</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>de boleto. Para utilizar este user exit, proceda da seguinte forma:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Crie o projeto por meio da transação CMOD</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Selecione a ampliação J1BF0001</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Modifique o componente de ampliação EXIT_SAPLJ1BM_001</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Uma codificação de exemplo (válida para o Banco Real) pode ser</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>utilizada.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Ativar projeto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Além dos boletos, os respectivos avisos de pagamento e listas de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>pagamento também podem ser impressos.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Além disso, é possível criar, na mesma execução do programa ou em uma</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>diferente, ordens de transferência coletiva (&apos;duplicatas&apos;) e os files</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>correspondentes (por meio de DME), incluindo as respectivas notas de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>acompanhamento de suporte de dados.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Esta funcionalidade está disponível atualmente para o banco Itaú, para o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>banco Bradesco e para o layout padrão da Febraban.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Nota&lt;/&gt;:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Se você utilizar a forma de pagamento BR_FEBRABAN_P na transação DMEEX,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>pode utilizar este relatório para imprimir o boleto. Nesse caso, você</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>pode utilizar o relatório somente com um número de lote boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>existente. Para imprimir o boleto no formato BR_FEBRABAN_P, assegure-se</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>de que o campo de seleção &lt;ZK&gt;Intercâmbio de dados por suporte magnético</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;/&gt; &lt;ZH&gt;não &lt;/&gt;está selecionado no quadro de grupo &lt;ZK&gt;Controle de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>impressão&lt;/&gt;. Para a impressão automática, você ainda pode utilizar o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>evento 31 do Payment Medium Workbench (na transação OBPM3).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Maiores informações e um código-exemplo encontram-se na nota SAP</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>2986055.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PRECONDITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Lotes de boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Para toda a área de gerenciamento de boleto (isto é, lotes, numeração,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>desvalorização, etc.), a funcionalidade de cheques padrão é utilizada.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Os boletos disponíveis para impressão são divididos em lotes. O usuário</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>pode definir livremente os critérios pelos quais os lotes são criados</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(por exemplo, localização do armazenamento de Boleto, responsável ou</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>impressora). Os números de boleto de um lote devem ser consecutivos.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Um lote é atribuído aos boletos, para ser impresso mediante um parâmetro</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>cujo número você define por meio do gerenciamento de lotes do boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(isto é, cheque) correspondente, no sistema.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.FCHI&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Após inserir o número do lote, o programa de impressão procura</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>independentemente o primeiro número de boleto livre (mesmo que seja no</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>lote seguinte e não no lote indicado).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Configuração do programa de impressão</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Para atribuir o formulário de boleto correto ao programa de impressão</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&amp;T042Z-PROGN&amp;, é necessário inserir este formulário no campo &apos;Formulário</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>de boleto alternativo’ na tela de seleção deste programa. Como padrão, o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE> formulário padrão da SAP para boletos ITAU, &apos;J_1B_BOLETO_ITAU’ está</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>definido.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_F110    &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042B   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042Z   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Nota:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Na seção &apos;Classificação de forma de pagamento&apos;, marque &apos;forma de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>pagamento para entradas de pagamentos’ e &apos;solicitação de letra de c</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>âmbio&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T042E   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Nota:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N2</TDFORMAT>
+       <TDLINE>Na seção &apos;Agrupamento de itens&apos;, marque &apos;pagamento único para partida</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>marcada&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N2</TDFORMAT>
+       <TDLINE>Os detalhes do emissor são utilizados no meio de pagamento para a cidade</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>e assinatura no sistema padrão:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Linha 1,,Nome 1 do emissor</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Linha 2,,Nome 2 do emissor</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Linha 3,,Espaço em branco</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Linha 4,,Cidade.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_CUSTOMIZING_T012D   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Nota:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Se o número da agência bancária do recebedor do meio de pagamento for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>diferente do número do respectivo banco da empresa, você deve atualizar</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>o primeiro.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Certifique-se de que você atualiza aspectos específicos do Brasil, do</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>mestre de fornecedores. Isto inclui em particular:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>a) Pagamento individual.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>b) Código de juros.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.FD02&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Para cada conta bancária, um tipo de transação bancária tem que ser</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>atualizado para cobrança por meio de DME. Este tipo de transação</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>bancária é relativo à &apos;Carteira&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBBA&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Em uma etapa seguinte, atribua uma forma de pagamento ao tipo de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>transação.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Os campos &apos;transação’ e &apos;grupo de bancos do parceiro’ não precisam ser</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>atualizados.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBBB&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Se o DME for utilizado, atualize os códigos de instrução internos da SAP</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>por meio do seguinte caminho de menu:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>GE</TDFORMAT>
+       <TDLINE>&lt;LS&gt;Contabilidade financeira -&gt; Contabilidade de clientes e</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>contabilidade de fornecedores -&gt; Transações comerciais -&gt; Saídas de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>pagamento -&gt; Saídas de pagamento automáticas -&gt; Meios de pagamento -&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Intercâmbio de dados por suporte magnético -&gt; Definir instruções para</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>operações de pagamento&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.SPRO&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Para cálculos de juros, indique o seguinte:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>a) Defina condições gerais para preparar o cálculo de juros de mora</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB82&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>b) Defina o tipo de cálculo de juros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB46&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>c) Defina taxas de juros de referência</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBAC&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>d) Defina valores de juros de referência</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB83&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>e) Defina condições dependentes do tempo</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OB81&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>f) Lançamento de juros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.OBV1&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_LAYOUT_SET&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_SYMBOLS   &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_ADVICE    &apos; OBJECT DOKU ID TX PARAGRAPH N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Estrutura da &lt;ZH&gt;transferência coletiva&lt;/&gt; (padrão = &amp;T042E-ZFORN&amp;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Páginas</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRIMEIRA             &lt;/&gt;Primeira página da ordem</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;SEGUINTE              &lt;/&gt; Página seguinte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;ÚLTIMA              &lt;/&gt;Encerramento de formulário</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Janelas e elementos de texto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;CABEÇALHO            &lt;/&gt;Texto do cabeçalho</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;ENDEREÇO           &lt;/&gt;Endereço do remetente e do banco</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PÁGINA              &lt;/&gt;Números de página</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL      505     &lt;/&gt;Título para os pagamentos</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL      510     &lt;/&gt;Título para as faturas</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL      515     &lt;/&gt;Informação sobre o pagamento</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL      520     &lt;/&gt;Informação sobre a fatura</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL      525     &lt;/&gt;Total por moeda</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL      530     &lt;/&gt;Título para cobrança</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL      531     &lt;/&gt;Total por moeda, para cobrança</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;RESUMO           &lt;/&gt;Encerramento do formulário</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Estrutura da &lt;ZH&gt;nota de acompanhamento de suporte de dados&lt;/&gt; (padrão =</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE> &amp;T042E-WFORN&amp;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Páginas</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;DTA               &lt;/&gt;Nota de acompanhamento</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;LAST              &lt;/&gt;Página de encerramento de formulário por banco</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>da empresa</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Janelas e elementos de texto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    535     &lt;/&gt;Nota de acompanhamento para notas de crédito</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    536     &lt;/&gt;Nota de acompanhamento para transferências</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;INLAND    537     &lt;/&gt;Nota de acompanhamento para notas de débito</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;RESUMO   520     &lt;/&gt;Encerramento do formulário</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Estrutura do &lt;ZH&gt;formulário de boleto do ITAU&lt;/&gt; (padrão =</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>J_1B_BOLETO_ITAU)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Páginas</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRIMEIRA             &lt;/&gt;Formulário de boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Janelas e elementos de texto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;CÓDIGO DE BARRAS           Código de barras na parte inferior do</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>boleto&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO1           &lt;/&gt;Recibo do Sacado parte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO2           &lt;/&gt;Ficha de Caixa parte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;BOLETO3           &lt;/&gt; terceira parte do boleto (incluindo código de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>barras numérico)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES1           &lt;/&gt;Linhas horizontais para Recibo do Sacado parte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES2           &lt;/&gt;Linhas horizontais para Ficha de Caixa parte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;HLINES3           &lt;/&gt;Linhas horizontais para terceira parte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(incluindo código de barras</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                  &lt;/&gt;numérico)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;PRINCIPAL              &lt;/&gt;Janela necessária tecnicamente - não</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>disponível para utilização</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;RESUMO              &lt;/&gt;Janela necessária tecnicamente - não</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>disponível para utilização</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES1           &lt;/&gt;Linhas verticais para Recibo do Sacado parte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES2           &lt;/&gt;Linhas verticais para Ficha de Caixa parte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;VLINES3           &lt;/&gt;Linhas verticais para terceira parte (incluindo</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>código de barras</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                  &lt;/&gt;numérico)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>Nota:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AL</TDFORMAT>
+       <TDLINE>Para ativar a saída correta do &lt;ZH&gt;Formulário de boleto do ITAU&lt;/&gt;,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>vários campos da tabela REGUD foram utilizados para transferir dados</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>específicos de boleto a partir do programa de impressão para o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>formulário padrão J_1B_BOLETO_ITAU:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-AUSFT        &lt;/&gt;Data de vencimento (&apos;Vencimento&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3(3)     &lt;/&gt;Tipo de transação bancária (&apos;Carteira&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+10(1) &lt;/&gt;Código de pessoa física</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+20(11) &lt;/&gt;Número de CPF (código de imposto 2)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT3+40(18) &lt;/&gt;Inscrição estadual (código de imposto 3)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(&apos;inscr. estadual&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT4(1)     &lt;/&gt;Dígito de controle para o número de boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(&apos;Nosso Número&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT5(10)    &lt;/&gt;Taxa de juros por dia (&apos;Instruções: após o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                   &lt;/&gt;vencimento ... Ao dia.&apos;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT6(50)    &lt;/&gt;Conta de instrução para o código de instrução</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT6+50(50) &lt;/&gt;Contas de instruções para o código de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>instrução</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT7(50)    &lt;/&gt;Conta de instrução para o código de instrução</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT7+50(25) &lt;/&gt;Contas de instruções para o código de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>instrução</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT8(47)    &lt;/&gt;Código de barras em números</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT8+50(44) &lt;/&gt;Números a partir dos quais o código de barras</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;                   &lt;/&gt;gráfico irá ser determinado pelo layout</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT9(10)    &lt;/&gt;Data do documento (&apos;Data do Doc.&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;NP&gt;REGUD-TEXT9+10(9)  &lt;/&gt;Número do documento (Nota Fiscal) (&apos;Número do</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Doc.&apos;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_MAINTAIN  &apos; OBJECT DOKU ID TX PARAGRAPH AS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_PAYMENT_RUN         &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_SPOOL        &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME          &apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME_FILE     &apos; OBJECT DOKU ID TX PARAGRAPH U3</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_DME_TEMSE    &apos; OBJECT DOKU ID TX PARAGRAPH U3</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_ERRORMESSAGES&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_SAPSCRIPT_MAINTAIN  &apos; OBJECT DOKU ID TX PARAGRAPH AS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>RESET N1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Gerenciamento de boleto</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>A informação sobre os boletos emitidos pode ser chamada por meio da</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administração de cheques, exibição da partida individual para contas de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>terceiros ou contas bancárias, ou exibição do documento de faturamento e</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do documento de pagamento. Uma lista de registro de boleto  (ou seja,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>cheque) também pode ser criada para o respectivo ciclo de pagamento. Os</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>erros que ocorram durante a alocação do número de boleto e número do</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>documento também podem ser retificados utilizando a administração de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>cheques. Você pode encontrar a administração de cheques na contabilidade</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>de clientes ou na contabilidade de fornecedores, que fazem parte da</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>contabilidade financeira, como também na opção de menu, no programa de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>pagamento.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>IF &amp;DEVICE&amp; EQ &apos;SCREEN&apos;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>&lt;DS:TRAN.F110&gt;Executar&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>ENDIF.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Você pode acessar mais informações sobre a administração de cheques,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>especialmente</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Soluções detalhadas para situações de erro possíveis, nas contas FI</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/:</TDFORMAT>
+       <TDLINE>INCLUDE &apos;FI_RFFO_OUTPUT_ERRORMESSAGES&apos; OBJECT DOKU ID TX PARAGRAPH U2</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

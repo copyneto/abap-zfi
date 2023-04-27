@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_BL_TEXT_CLIENTE alias TextoCli
+{
+  use create;
+  use update;
+  use delete;
+}

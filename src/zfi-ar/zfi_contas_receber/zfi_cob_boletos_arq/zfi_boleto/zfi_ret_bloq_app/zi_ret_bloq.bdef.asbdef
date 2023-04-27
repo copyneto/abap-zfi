@@ -1,0 +1,7 @@
+unmanaged implementation in class zclfi_bh_ret_bloq unique;
+
+define behavior for ZI_RET_BLOQ alias _RetBloq
+{
+
+  action retbloq;
+}

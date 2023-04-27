@@ -1,0 +1,98 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Contrato',
+    typeNamePlural: 'Contratos',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    }
+  } }
+annotate view ZC_FI_CONTRATO_BASE with
+{
+  @UI.facet: [ { id:         'Contrato',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Contrato Clientes',
+               position:      10 },
+
+             { id:            'Base',
+               purpose:       #STANDARD,
+               type:          #LINEITEM_REFERENCE,
+               label:         'Base de Calculo',
+               position:      20,
+               targetElement: '_BASE'}]
+
+  @UI: { lineItem:        [ { position: 20, label: 'Nº Contrato' } ],
+         identification:  [ { position: 20, label: 'Nº Contrato' } ] }
+  @UI : { selectionField: [ { position: 10 } ] }
+  Contrato;
+  @UI: { lineItem:        [ { position: 30, label: 'Nº Aditivo' } ],
+         identification:  [ { position: 30, label: 'Nº Aditivo' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  Aditivo;
+  @UI: { lineItem:        [ { position: 40, label: 'Nº Contrato Próprio' } ],
+         identification:  [ { position: 40, label: 'Nº Contrato Próprio' } ] }
+  ContratoProprio;
+  @UI: { lineItem:        [ { position: 50, label: 'Empresa' } ],
+         identification:  [ { position: 50, label: 'Empresa' } ] }
+  @UI : { selectionField: [ { position: 30 } ] }
+  Empresa;
+  @UI: { lineItem:        [ { position: 60, label: 'Local de Negócio' } ],
+         identification:  [ { position: 60, label: 'Local de Negócio' } ] }
+  LocalNegocios;
+  @UI: { lineItem:       [ { position: 70, label: 'Data Início Validade' } ],
+         identification: [ { position: 70, label: 'Data Início Validade' } ] }
+  DataIniValid;
+  @UI: { lineItem:        [ { position: 80, label: 'Data Fim da Validade' } ],
+         identification:  [ { position: 80, label: 'Data Fim da Validade' } ] }
+  DataFinValid;
+  @UI : { selectionField: [ { position: 60 } ] }
+  Cliente;
+  @UI: { lineItem:        [ { position: 90, label: 'CNPJ' } ],
+         identification:  [ { position: 90, label: 'CNPJ' } ] }
+  @UI : { selectionField: [ { position: 80 } ] }
+  CNPJ;
+  //  @UI: { lineItem:        [ { position: 100, label: 'Razão Social' } ],
+  //         identification:  [ { position: 100, label: 'Razão Social' } ] }
+  @UI : { selectionField: [ { position: 70 } ] }
+  RazaoSoci;
+  @UI: { lineItem:        [ { position: 110, label: 'Produtos Contemplado' } ],
+         identification:  [ { position: 110, label: 'Produtos Contemplado' } ] }
+  ProdContemplado;
+  @UI: { lineItem:        [ { position: 120, label: 'Status do Contrato' } ],
+         identification:  [ { position: 120, label: 'Status do Contrato' } ] }
+  Status;
+  @UI: { lineItem:        [ { position: 130, label: 'Grupo Econômico' } ],
+         identification:  [ { position: 130, label: 'Grupo Econômico' } ] }
+  GrpEconomico;
+  @UI.hidden: true
+  Crescimento;
+  @UI.hidden: true
+  CrescCriticality;
+  @UI: { lineItem:        [ { position: 140, label: 'Ajuste Anual' } ],
+         identification:  [ { position: 140, label: 'Ajuste Anual' } ] }
+  @UI : { selectionField: [ { position: 40 } ] }
+  AjusteAnual;
+  //  @UI.hidden: true
+  @UI : { selectionField: [ { position: 50 } ] }
+  ExercAtual;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  //  @UI.hidden: true
+  //  Gjahr;
+  //  @UI.hidden: true
+  //  Budat;
+  /* Associations */
+  //   _BASE;
+
+}

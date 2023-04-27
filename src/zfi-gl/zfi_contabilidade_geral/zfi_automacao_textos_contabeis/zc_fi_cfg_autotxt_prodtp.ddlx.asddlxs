@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Seleção de Tipo de Produto',
+        typeNamePlural: 'Tipos de Produto',
+        title: { type: #STANDARD,
+                 label: 'Tipo Produto',
+                 value: 'CritSelFIProdType' }
+    },
+
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'CritSelFIProdType',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+   }]
+}
+annotate entity ZC_FI_CFG_AUTOTXT_CRIT_PRODTP with
+{
+
+  @UI.facet: [  { label: 'Informações Gerais',
+                   id: 'GeneralInfo',
+                   type: #COLLECTION,
+                   position: 10 },
+
+                 { purpose: #STANDARD,
+                   label: 'Geral',
+                   position: 10,
+                   type: #IDENTIFICATION_REFERENCE,
+                   parentId: 'GeneralInfo' },
+
+
+                 { purpose: #STANDARD,
+                   label: 'Tipos de Produto',
+                   position: 20,
+                   type: #FIELDGROUP_REFERENCE,
+                   parentId: 'GeneralInfo',
+                   targetQualifier: 'TipoProduto' } ]
+
+
+  @UI: { lineItem:       [{ position: 10,  label: 'Cód. Seleção' }],
+         identification: [{ position: 10,  label: 'Cód. Seleção' }]
+  }
+  CritSelFIProdType;
+
+  @UI: { lineItem:        [ { position: 20, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'TipoProduto', position: 10 } ] }
+  SignFIProdType;
+
+  @UI: { lineItem:        [ { position: 30, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'TipoProduto', position: 20 } ] }
+  OptFIProdType;
+
+  @UI: { lineItem:        [ { position: 40, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'TipoProduto', position: 30 } ] }
+  LowFIProdType;
+
+  @UI: { lineItem:        [ { position: 50, importance: #HIGH } ],
+           fieldGroup:      [ { qualifier: 'TipoProduto', position: 40 } ] }
+  HighFIProdType;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  //    SignTextFIProdType;
+  //    OptTextFIProdType;
+
+
+}

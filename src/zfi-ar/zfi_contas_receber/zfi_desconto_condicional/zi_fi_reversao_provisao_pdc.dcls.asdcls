@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_FI_REVERSAO_PROVISAO_PDC {
+    grant 
+        select
+            on
+                ZI_FI_REVERSAO_PROVISAO_PDC
+                    where
+                         ( CompanyCode ) = aspect pfcg_auth( ZFIBUKRS, BUKRS, ACTVT = '03' );
+                        
+}

@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGFI_EXEC_ACC_DOC_POST.      "MESSAGE-ID ..
+
+* INCLUDE LZFGFI_EXEC_ACC_DOC_POSTD...       " Local class definition

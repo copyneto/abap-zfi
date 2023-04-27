@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Atualizar Vencimento DDE</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_VENC_DDETOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_VENC_DDE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_VENCIMENTODDE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Vencimento DDE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_BUZEI</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BSEG-BUZEI</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BUKRS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BSEG-BUKRS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BELNR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BSEG-BELNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_GJAHR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BSEG-GJAHR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_PRAZO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZE_PRAZO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ENTREGA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>DATUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_CDS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZC_FI_VENC_DDE_BUSCA</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CT_RETURN</PARAMETER>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSCHA>
+     </CHANGING>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_BUZEI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº linha de lançamento no documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BUKRS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Empresa</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BELNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_GJAHR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_PRAZO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Prazo de Vencimento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ENTREGA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_CDS</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CT_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

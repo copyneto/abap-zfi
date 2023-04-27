@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Def. para ZC_FI_RETPAGTO_SEGMENTOZ'
+define service ZUI_FI_RETPAGTO_SEGMENTOZ {
+  expose ZC_FI_RETPAGTO_SEGMENTOZ;
+}

@@ -1,0 +1,234 @@
+@Metadata.layer: #CORE
+@UI: {
+       headerInfo: {  typeName: 'Item',
+                      typeNamePlural: 'Itens'}
+       }
+
+annotate view ZC_FI_CONT_REVERS_LOG with
+{
+
+  @UI.facet: [ { id:            'Contabs',
+               purpose:         #STANDARD,
+               type:            #FIELDGROUP_REFERENCE,
+               label:           'Item',
+               targetQualifier: 'Header',
+               position:         10 },
+
+               { id:              'Textos',
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Valores',
+                 targetQualifier: 'Valores',
+                 position:         10 }]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         fieldGroup:      [ { position: 10, qualifier: 'Header' }] }
+  @Search.defaultSearchElement: true
+  CodCenario;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         fieldGroup:      [ { position: 20, qualifier: 'Header' }] }
+  @Search.defaultSearchElement: true
+  Bukrs;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         fieldGroup:      [ { position: 30, qualifier: 'Header' }] }
+  @EndUserText.label: 'Pedido'
+  Bstkd;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ],
+         fieldGroup:      [ { position: 40, qualifier: 'Header' }] }
+  @Search.defaultSearchElement: true
+  Bupla;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ],
+         fieldGroup:      [ { position: 50, qualifier: 'Header' }] }
+  @Search.defaultSearchElement: true
+  Gsber;
+
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ],
+         fieldGroup:      [ { position: 60, qualifier: 'Header' }] }
+  Zlsch;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ],
+         fieldGroup:      [ { position: 70, qualifier: 'Header' }] }
+  @Search.defaultSearchElement: true
+  DataI;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ],
+         fieldGroup:      [ { position: 80, qualifier: 'Header' }] }
+  HoraI;
+
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ],
+         fieldGroup:      [ { position: 90, qualifier: 'Header' }] }
+  UserI;
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         fieldGroup:      [ { position: 10, qualifier: 'Valores' }] }
+  Belnr;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         fieldGroup:      [ { position: 20, qualifier: 'Valores' }] }
+  Gjahr;
+
+  @UI: { //lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         fieldGroup:      [ { position: 30, qualifier: 'Valores' }] }
+  BukrsD;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ],
+         fieldGroup:      [ { position: 40, qualifier: 'Valores' }] }
+  CodTipoCenario;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ],
+         fieldGroup:      [ { position: 50, qualifier: 'Valores' }] }
+  CodOrdem;
+
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ],
+         fieldGroup:      [ { position: 60, qualifier: 'Valores' }] }
+  CodPgto;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ],
+         fieldGroup:      [ { position: 70, qualifier: 'Valores' }] }
+  CodRessarcimento;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ],
+         fieldGroup:      [ { position: 80, qualifier: 'Valores' }] }
+  CodMercadoria;
+
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ],
+         fieldGroup:      [ { position: 90, qualifier: 'Valores' }] }
+  Vbeln;
+
+  @UI: { lineItem:        [ { position: 100 } ],
+         identification:  [ { position: 100 } ],
+         fieldGroup:      [ { position: 100, qualifier: 'Valores' }] }
+  Lifnr;
+
+  //Waers;
+  @UI: { lineItem:        [ { position: 110 } ],
+         identification:  [ { position: 110 } ],
+         fieldGroup:      [ { position: 110, qualifier: 'Valores' }] }
+  Zvou;
+
+  @UI: { lineItem:        [ { position: 120 } ],
+         identification:  [ { position: 120 } ],
+         fieldGroup:      [ { position: 120, qualifier: 'Valores' }] }
+  VlrRestituir;
+  @UI: { lineItem:        [ { position: 130 } ],
+         identification:  [ { position: 130 } ],
+         fieldGroup:      [ { position: 130, qualifier: 'Valores' }] }
+  IdPedido;
+
+  @UI: { lineItem:        [ { position: 140 } ],
+         identification:  [ { position: 140 } ],
+         fieldGroup:      [ { position: 140, qualifier: 'Valores' }] }
+  VlrTax;
+
+  @UI: { lineItem:        [ { position: 150 } ],
+         identification:  [ { position: 150 } ],
+         fieldGroup:      [ { position: 150, qualifier: 'Valores' }] }
+  Voucher;
+
+  @UI: { lineItem:        [ { position: 160 } ],
+         identification:  [ { position: 160 } ],
+         fieldGroup:      [ { position: 160, qualifier: 'Valores' }] }
+  Adm;
+
+  @UI: { lineItem:        [ { position: 170 } ],
+         identification:  [ { position: 170 } ],
+         fieldGroup:      [ { position: 170, qualifier: 'Valores' }] }
+  Nsu;
+
+  @UI: { lineItem:        [ { position: 180 } ],
+         identification:  [ { position: 180 } ],
+         fieldGroup:      [ { position: 180, qualifier: 'Valores' }] }
+  DtVenda;
+
+  @UI: { lineItem:        [ { position: 190 } ],
+         identification:  [ { position: 190 } ],
+         fieldGroup:      [ { position: 190, qualifier: 'Valores' }] }
+  NomeIdent;
+
+  @UI: { lineItem:        [ { position: 200 } ],
+         identification:  [ { position: 200 } ],
+         fieldGroup:      [ { position: 200, qualifier: 'Valores' }] }
+  Status;
+
+  @UI: { lineItem:        [ { position: 210 } ],
+         identification:  [ { position: 210 } ],
+         fieldGroup:      [ { position: 210, qualifier: 'Valores' }] }
+  TxPerc;
+
+  @UI: { lineItem:        [ { position: 220 } ],
+         identification:  [ { position: 220 } ],
+         fieldGroup:      [ { position: 220, qualifier: 'Valores' }] }
+  IdSalesForce;
+
+  @UI: { lineItem:        [ { position: 230 } ],
+         identification:  [ { position: 230 } ],
+         fieldGroup:      [ { position: 230, qualifier: 'Valores' }] }
+  Reservado1;
+
+  @UI: { lineItem:        [ { position: 240 } ],
+         identification:  [ { position: 240 } ],
+         fieldGroup:      [ { position: 240, qualifier: 'Valores' }] }
+  Reservado2;
+
+  @UI: { lineItem:        [ { position: 250 } ],
+         identification:  [ { position: 250 } ],
+         fieldGroup:      [ { position: 250, qualifier: 'Valores' }] }
+  Reservado3;
+
+  @UI: { lineItem:        [ { position: 260 } ],
+         identification:  [ { position: 260 } ],
+         fieldGroup:      [ { position: 260, qualifier: 'Valores' }] }
+  Reservado4;
+
+  @UI: { lineItem:        [ { position: 270 } ],
+         identification:  [ { position: 270 } ],
+         fieldGroup:      [ { position: 270, qualifier: 'Valores' }] }
+  Reservado5;
+
+  @UI: { lineItem:        [ { position: 280 } ],
+         identification:  [ { position: 280 } ],
+         fieldGroup:      [ { position: 280, qualifier: 'Valores' }] }
+  Reservado6;
+
+  @UI: { lineItem:        [ { position: 290 } ],
+         identification:  [ { position: 290 } ],
+         fieldGroup:      [ { position: 290, qualifier: 'Valores' }] }
+  Reservado7;
+
+  @UI: { lineItem:        [ { position: 300 } ],
+         identification:  [ { position: 300 } ],
+         fieldGroup:      [ { position: 300, qualifier: 'Valores' }] }
+  Reservado8;
+
+  @UI: { lineItem:        [ { position: 310 } ],
+         identification:  [ { position: 310 } ],
+         fieldGroup:      [ { position: 310, qualifier: 'Valores' }] }
+  Reservado9;
+
+  @UI: { lineItem:        [ { position: 320 } ],
+         identification:  [ { position: 320 } ],
+         fieldGroup:      [ { position: 320, qualifier: 'Valores' }] }
+  Reservado10;
+
+}

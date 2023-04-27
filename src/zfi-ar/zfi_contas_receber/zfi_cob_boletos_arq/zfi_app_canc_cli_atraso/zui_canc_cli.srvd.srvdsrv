@@ -1,0 +1,4 @@
+@EndUserText.label: 'Def. serviço'
+define service ZUI_CANC_CLI {
+  expose zc_fi_canc_cli as CanCliente;
+}

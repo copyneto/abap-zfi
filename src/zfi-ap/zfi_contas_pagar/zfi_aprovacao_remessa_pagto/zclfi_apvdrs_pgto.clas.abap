@@ -1,0 +1,5 @@
+CLASS zclfi_apvdrs_pgto DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_apvdrs_pgto.
+ENDCLASS.
+
+CLASS zclfi_apvdrs_pgto IMPLEMENTATION.
+ENDCLASS.

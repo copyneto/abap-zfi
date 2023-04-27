@@ -1,0 +1,62 @@
+managed;
+
+define behavior for ZI_FI_cont_revers_log alias Contabs
+implementation in class zclfi_cont_revers_log unique
+persistent table ztfi_cont_revers
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  //  create;
+  update;
+  delete;
+
+  field ( readonly : update ) CodCenario, bukrs, bstkd, bupla, zlsch, DataI, HoraI, UserI, Gsber,
+  CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+
+  mapping for ztfi_cont_revers
+  {
+    CodCenario = COD_CENARIO;
+    Bukrs = bukrs;
+    Bstkd = bstkd;
+    Bupla = bupla;
+    Zlsch = ZLSCH;
+    DataI = DATA_I;
+    HoraI = HORA_I;
+    UserI = USER_I;
+    Belnr = BELNR;
+    Gjahr = GJAHR;
+    BukrsD = BUKRS_D;
+    CodTipoCenario = COD_TIPO_CENARIO;
+    CodOrdem = COD_ORDEM;
+    CodPgto = COD_PGTO;
+    CodRessarcimento = COD_RESSARCIMENTO;
+    CodMercadoria = COD_MERCADORIA;
+    VBELN = VBELN;
+    LIFNR = LIFNR;
+    ZVOU = ZVOU;
+    VlrRestituir = VLR_RESTITUIR;
+    IdPedido = ID_PEDIDO;
+    VlrTax = VLR_TAX;
+    VOUCHER = VOUCHER;
+    ADM = ADM;
+    NSU = NSU;
+    DtVenda = DT_VENDA;
+    NomeIdent = NOME_IDENT;
+    STATUS = STATUS;
+    TxPerc = TX_PERC;
+    IdSalesForce = ID_SALES_FORCE;
+    Reservado1 = RESERVADO_1;
+    Reservado2 = RESERVADO_2;
+    Reservado3 = RESERVADO_3;
+    Reservado4 = RESERVADO_4;
+    Reservado5 = RESERVADO_5;
+    Reservado6 = RESERVADO_6;
+    Reservado7 = RESERVADO_7;
+    Reservado8 = RESERVADO_8;
+    Reservado9 = RESERVADO_9;
+    Reservado10 = RESERVADO_10;
+  }
+
+}

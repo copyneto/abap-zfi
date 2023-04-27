@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZFI_MOVFOL</OBJECT>
+    <DOMLEN>NUMC10</DOMLEN>
+    <PERCENTAGE>5.0</PERCENTAGE>
+    <NOIVBUFFER>00000010</NOIVBUFFER>
+    <CHANGED_AT>20220208143003.100404</CHANGED_AT>
+    <CHANGED_BY>CFARIA</CHANGED_BY>
+    <ENAME>RFARIAS</ENAME>
+    <EDATE>2022-01-24</EDATE>
+    <ETIME>15:56:49</ETIME>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZFI_MOVFOL</OBJECT>
+    <TXT>Contabilização</TXT>
+    <TXTSHORT>Contabilização</TXTSHORT>
+    <ENAME>RFARIAS</ENAME>
+    <EDATE>2022-01-24</EDATE>
+    <ETIME>15:56:49</ETIME>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

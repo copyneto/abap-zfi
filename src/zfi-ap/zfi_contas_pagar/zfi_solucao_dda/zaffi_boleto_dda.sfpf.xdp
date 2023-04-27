@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.9.20221102.1.37_SAP" APIVersion="3.6.22306.0"?><xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2023-02-10T21:01:50Z" uuid="0e3124bc-e35e-4e29-bea9-ce8d78dac0b9">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <subform layout="tb" locale="pt_BR" name="data">
+      <pageSet>
+         <pageArea id="Página1" name="Boleto">
+            <contentArea h="284.3mm" w="197.3mm" x="0.25in" y="0.25in"/>
+            <medium long="297mm" short="210mm" stock="a4"/>
+            <subform h="13mm" name="Logotipo" w="35mm" x="6.5mm" y="6.5mm">
+               <bind match="none"/>
+               <field h="10mm" name="Logotipo" w="32.494mm" x="1.459mm" y="1.41mm">
+                  <ui>
+                     <imageEdit/>
+                  </ui>
+                  <bind match="dataRef" ref="$.LOGOTIPO_GRP"/>
+               </field>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <?templateDesigner expand 0?></subform>
+            <subform h="13mm" name="CodigoBanco" w="15mm" x="41.5mm" y="6.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <field access="readOnly" h="8.94mm" name="CodigoBanco" w="13.15mm" x="0.706mm" y="2.47mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="12pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para hAlign="center" vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.BANCO"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="13mm" name="CodigoBarras" w="120mm" x="56.5mm" y="6.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <field access="readOnly" h="7mm" name="CodigoBarras" w="100mm" x="10.478mm" y="4.41mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="8pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para hAlign="center" vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.CODBARRAS"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="LocalPagto" w="120mm" x="6.5mm" y="19.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="20.987mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="62D8FD07-F2BF-4167-BA3A-F9257CDBA0F1">Local de Pagamento</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 56657 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 18 Local de Pagamento 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <draw h="4.94mm" name="Texto1" w="102.66mm" y="4.053mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="0443B0E9-EBEE-440E-A1AB-941029116C06">Pagável em qualquer banco até o vencimento</text>
+                  </value>
+                  <font size="9pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 288171 11169 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 44 Pagável em qualquer banco até o vencimento 0 1417 8523 0 0 0 "Arial" 0 0 9000 ISO-8859-1?></draw>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Vencimento" w="50mm" x="126.5mm" y="19.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="20.987mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="D6A02380-A7DD-45AA-93AF-4D5B87BA67A1">Vencimento</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 56657 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 10 Vencimento 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Vencimento" w="21.721mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.VENCIMENTO"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Cedente" w="120mm" x="6.5mm" y="29.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="20.987mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="D429B1B9-B92D-4902-8FA4-B7667F8018A0">Cedente</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 56657 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 7 Cedente 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Cedente" w="103.04mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.CEDENTE"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Agencia" w="50mm" x="126.5mm" y="29.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="5223DAB0-725F-42FF-B5B0-881702BACACA">Agência / Cod. Cedente</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 23 Agência / Cod. Cedente 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Agencia" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.AGCEDENTE"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Dtdocto" w="31mm" x="6.5mm" y="39.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="4234E85F-D674-4B57-88F9-1AED88F5BEC4">Data do documento</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 17 Data do documento 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="DtDocto" w="21.52mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.DATADOC"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="NumDoc" w="34mm" x="37.5mm" y="39.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="701F4804-FCF2-4CF4-A6D0-9B6B56A46FC5">Nº do documento</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 16 Nº do documento 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="NumDoc" w="24.693mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.NUMDOC"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Especiedoc" w="14mm" x="71.5mm" y="39.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="13.227mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="1089ABBF-5419-4C6E-836C-4E3919FEC2BB">Espécie doc.</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 34660 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 13 Espécie doc. 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="EspecieDoc" w="10.054mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para hAlign="center" vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.ESPECIEDOC"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Aceite" w="10mm" x="85.5mm" y="39.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="7.053mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="83D3507B-73E2-471B-91EF-A46DDC74FFD2">Aceite</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 17159 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 6 Aceite 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <draw h="4.94mm" name="Texto1" w="4.402mm" x="2.186mm" y="4.053mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="0F5228FE-DEA2-4B88-8DCB-FCAE49093972">N</text>
+                  </value>
+                  <font size="8pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 9644 11169 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 1 N 0 1417 7733 0 0 0 "Arial" 0 0 8000 ISO-8859-1?></draw>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="DtProc" w="31mm" x="95.5mm" y="39.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="A543FF6C-81F0-4C59-9F61-5B36366BFC96">Data processamento</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 18 Data processamento 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="DtProc" w="20.287mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.DATAPROC"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="OurNumber" w="50mm" x="126.5mm" y="39.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="60EE533C-38C5-4AF1-A0A6-6EFCF0A3942E">Nosso número</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 13 Nosso número 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="OurNumber" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.NOSSONUM"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="UsoBanco" w="31mm" x="6.5mm" y="49.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="35445770-AB87-4499-88B7-13EF17692153">Uso do Banco</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 12 Uso do Banco 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Carteira" w="22mm" x="37.5mm" y="49.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="17.113mm" x="0.174mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="225759DA-F68E-4492-B0A2-837713B8121C">Carteira</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 45675 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 8 Carteira 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Carteira" w="17.287mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.CARTEIRA"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Especie" w="12mm" x="59.5mm" y="49.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="10.228mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="3EDF087E-05F2-470A-841E-91DC9D889E5C">Espécie</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 26159 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 8 Espécie 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Especie" w="10.054mm" y="4.053mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para hAlign="center" vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.ESPECIE"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Quantidade" w="24mm" x="71.5mm" y="49.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="15.874mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="A4702E5D-8F01-4727-A4AB-BEFC7E2E4364">Quantidade</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 42163 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 10 Quantidade 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Quantidade" w="19.065mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.QUANTIDADE"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Valor" w="31mm" x="95.5mm" y="49.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="15.874mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="773E801E-551E-42AC-B4CA-5CE0252BEF70">Valor</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 42163 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 5 Valor 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Valor" w="23.677mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.VALOR"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="ValorDoc" w="50mm" x="126.5mm" y="49.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="272A243D-4DF5-4552-8D95-FA4D68908FF8">(=) Valor do documento</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 22 (=) Valor do documento 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="ValorDoc" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <decimal fracDigits="-1"/>
+                  </value>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.VALORDOC"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="50mm" name="Instrucoes" w="120mm" x="6.5mm" y="59.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="93.333mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="F6713A12-2435-4202-BBCA-FCFC3A78C68E">Instruções (Todas as informações deste bloqueto são de exclusiva responsabilidade do cedente)</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 261732 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 98 Instruções (Todas as informações deste bloqueto são de exclusiva responsabilidade do cedente) 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="10mm" name="Linha1" w="103.04mm" x="0mm" y="5.06mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.INSTRUCAO01"/>
+               </field>
+               <field access="readOnly" h="10mm" name="Linha2" w="103.04mm" x="0mm" y="17.76mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.INSTRUCAO02"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Desconto" w="50mm" x="126.5mm" y="59.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="32.114mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="EE8858BD-42BF-4390-8E03-0354D678F1A3">(-) Desconto / Abatimentos</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 88198 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 26 (-) Desconto / Abatimentos 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Desconto" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <decimal fracDigits="-1"/>
+                  </value>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.DESCONTO"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Deducoes" w="50mm" x="126.5mm" y="69.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="42441A53-54B3-4057-834C-2D75EF0F489F">(-) Outras Deduções</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 21 (-) Outras Deduções 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Deducoes" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <decimal fracDigits="-1">0</decimal>
+                  </value>
+                  <bind match="none"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Multa" w="50mm" x="126.5mm" y="79.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="8A8B8D18-5C0E-47D9-B322-8A144AD9332E">(+) Mora / Multa</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 16 (+) Mora / Multa 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Multa" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <decimal fracDigits="-1"/>
+                  </value>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.MULTA"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="Acrescimos" w="50mm" x="126.5mm" y="89.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="ED31AE9B-CBA2-4FE7-AD58-9D58104F2B70">(+) Outros acréscimos</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 22 (+) Outros acréscimos 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="Acrescimos" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="none"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+                  <value>
+                     <float>0</float>
+                  </value>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="10mm" name="ValorCobrado" w="50mm" x="126.5mm" y="99.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="23.475mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="AE458408-7CBB-4DA0-91AA-5C8FF7BCD665">(=) Valor cobrado</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 63709 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 17 (=) Valor cobrado 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <field access="readOnly" h="4.234mm" name="ValorCobrado" w="40.013mm" y="4.053mm">
+                  <ui>
+                     <numericEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </numericEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.VALORCOBRADO"/>
+                  <format>
+                     <picture>num{z,zzz,zzz,zz9.99}</picture>
+                  </format>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <subform h="15mm" name="Pagador" w="170mm" x="6.5mm" y="109.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <draw h="3.353mm" name="Titulo" w="9.7mm" y="0.354mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="3AB30674-6438-4CFF-BB1E-ABEB20D0E839">Sacado:</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 24662 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 7 Sacado: 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <?templateDesigner expand 0?>
+               <field access="readOnly" h="4.234mm" name="Sacado" w="103.04mm" x="18.647mm" y="0.521mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.SACADO"/>
+               </field>
+               <field access="readOnly" h="4.234mm" name="Endereco" w="126.727mm" x="18.647mm" y="6.016mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font size="6pt" typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.ENDERECO"/>
+               </field>
+               <draw h="3.353mm" name="Titulo" w="10.649mm" x="0.312mm" y="6.541mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="7A13E9D5-DCA5-4C76-93D2-2685F801EC93">Endereço:</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 27352 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 10 Endereço: 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+               <draw h="3.353mm" name="Titulo" w="18.648mm" y="11.647mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text xliff:rid="1EC27BF0-60DE-4536-ABEE-B1C11AD4EBB6">Sacador / Avalista:</text>
+                  </value>
+                  <font size="6pt" typeface="Arial"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <?renderCache.bounds 50026 6671 0 0 1417 1417 0 0?>
+                  <?renderCache.textRun 19 Sacador / Avalista: 0 1417 6154 0 0 0 "Arial" 0 0 6000 ISO-8859-1?></draw>
+            </subform>
+            <subform h="15mm" name="CodBarras" w="170mm" x="6.5mm" y="124.5mm">
+               <bind match="none"/>
+               <border>
+                  <edge thickness="0.2mm"/>
+                  <corner thickness="0.2mm"/>
+               </border>
+               <field h="12.7mm" name="Barcode" w="80mm" x="37.851mm" y="1.107mm">
+                  <ui>
+                     <barcode dataLength="50" textLocation="none" type="code2Of5Interleaved" wideNarrowRatio="3.0"/>
+                  </ui>
+                  <font typeface="Courier New"/>
+                  <value>
+                     <text xliff:rid="6B5D9E3A-6095-4F5C-BC9B-8E68C16B408F">1234567890</text>
+                  </value>
+                  <bind match="dataRef" ref="$.IS_DADOS_BOLETO.BARCODE"/>
+               </field>
+               <?templateDesigner expand 0?></subform>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <proto/>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Arial" 0 0 ISO-8859-1 4 212 61 0003000B000C000E001000110012001D002000240025002600270028002C002F003000310032003300340036003700380039004400450046004700480049004A004C004F0050005100520053005400550056005700580059005B0069006D006F00700072007D007E009E ()+-./:=ABCDEILMNOPQSTUVabcdefgilmnopqrstuvxáãçéêõúº?>
+      <?renderCache.subset "Arial" 1 0 ISO-8859-1 4 8 2 000F0013,0?>
+      <?renderCache.subset "Courier New" 0 0 ISO-8859-1 4 40 10 0013001400150016001700180019001A001B001C0123456789?>
+   </subform>
+   <?acrobat JavaScript strictScoping?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner Grid show:0, snap:0, units:1, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Zoom 101?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+      <common>
+         <template>
+            <base>https://FIORI-DEV.3CORACOES.COM.BR:443/sap/bc/fp/form/layout/</base>
+         </template>
+      </common>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <pdf>
+         <!--  [0..n]  -->
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="data">
+      <data>
+         <IS_DADOS_BOLETO>
+            <BANCO/>
+            <LOGOTIPO/>
+            <CODBARRAS/>
+            <VENCIMENTO/>
+            <AGCEDENTE/>
+            <CEDENTE/>
+            <DATADOC/>
+            <NUMDOC/>
+            <ESPECIEDOC/>
+            <DATAPROC/>
+            <NOSSONUM/>
+            <CARTEIRA/>
+            <ESPECIE/>
+            <QUANTIDADE/>
+            <VALOR/>
+            <VALORDOC/>
+            <DESCONTO/>
+            <MULTA/>
+            <VALORCOBRADO/>
+            <INSTRUCAO01/>
+            <INSTRUCAO02/>
+            <SACADO/>
+            <ENDERECO/>
+            <AVALISTA/>
+            <BARCODE/>
+         </IS_DADOS_BOLETO>
+         <LOGOTIPO/>
+         <LOGOTIPO_GRP/>
+      </data>
+   </dd:dataDescription>
+</xfa:datasets>
+<sourceSet xmlns="http://www.xfa.org/schema/xfa-source-set/2.8/"/>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection dataDescription="data" name="ZAFFI_BOLETO_DDA">
+      <uri/>
+      <rootElement>data</rootElement>
+   </xsdConnection>
+</connectionSet>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale desc="Português (Brasil)" name="pt_BR">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>janeiro</month>
+            <month>fevereiro</month>
+            <month>março</month>
+            <month>abril</month>
+            <month>maio</month>
+            <month>junho</month>
+            <month>julho</month>
+            <month>agosto</month>
+            <month>setembro</month>
+            <month>outubro</month>
+            <month>novembro</month>
+            <month>dezembro</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>jan</month>
+            <month>fev</month>
+            <month>mar</month>
+            <month>abr</month>
+            <month>mai</month>
+            <month>jun</month>
+            <month>jul</month>
+            <month>ago</month>
+            <month>set</month>
+            <month>out</month>
+            <month>nov</month>
+            <month>dez</month>
+         </monthNames>
+         <dayNames>
+            <day>domingo</day>
+            <day>segunda-feira</day>
+            <day>terça-feira</day>
+            <day>quarta-feira</day>
+            <day>quinta-feira</day>
+            <day>sexta-feira</day>
+            <day>sábado</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>dom</day>
+            <day>seg</day>
+            <day>ter</day>
+            <day>qua</day>
+            <day>qui</day>
+            <day>sex</day>
+            <day>sáb</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D' de 'MMMM' de 'YYYY</datePattern>
+         <datePattern name="long">D' de 'MMMM' de 'YYYY</datePattern>
+         <datePattern name="med">DD/MM/YYYY</datePattern>
+         <datePattern name="short">DD/MM/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">HH'h'MM'min'SS's' Z</timePattern>
+         <timePattern name="long">H'h'M'min'S's' Z</timePattern>
+         <timePattern name="med">HH:MM:SS</timePattern>
+         <timePattern name="short">HH:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$ z,zz9.zz</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping">.</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">R$</currencySymbol>
+         <currencySymbol name="isoname">BRL</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c015 81.161580, 2017/12/01-01:38:21        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" rdf:about="">
+         <xmp:MetadataDate>2023-02-10T21:01:50Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+         <xmpMM:DocumentID>uuid:0e3124bc-e35e-4e29-bea9-ce8d78dac0b9</xmpMM:DocumentID>
+         <pdfuaid:part>1</pdfuaid:part>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

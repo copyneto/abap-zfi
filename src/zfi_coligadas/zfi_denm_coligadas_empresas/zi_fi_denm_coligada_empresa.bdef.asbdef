@@ -1,0 +1,34 @@
+managed;
+
+define behavior for ZI_FI_DENM_COLIGADA_EMPRESA alias Denom
+implementation in class zclfi_denm_coligada_empresa unique
+persistent table ztfi_denm_coliga
+lock master
+etag master LocalLastChangedAt
+{
+
+  field ( mandatory : create ) bukrs, branch, chave;
+  field ( readonly : update ) Bukrs, Branch, Chave;
+  field ( readonly ) LastChangedAt, LastChangedBy, LocalLastChangedAt, CreatedAt, CreatedBy;
+
+  create;
+  update;
+  delete;
+
+  validation authorityCreate on save { create; }
+  validation mandatoryfields on save { create; }
+
+  mapping for ztfi_denm_coliga
+  {
+    Bukrs = bukrs;
+    Branch = branch;
+    Chave = chave;
+    Conteudo = conteudo;
+    Descricao = descricao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

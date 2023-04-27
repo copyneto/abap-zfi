@@ -1,0 +1,9 @@
+unmanaged ; //implementation in class zbp_i_fi_mov_ledger unique;
+
+define behavior for ZI_FI_MOV_LEDGER alias _Mov
+//late numbering
+//lock master
+//etag master <field_name>
+{
+
+}

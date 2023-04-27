@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Parâmetro RM',
+    typeNamePlural: 'Parâmetros RM',
+    title: {
+      type: #STANDARD,
+      label: 'Empresa',
+      value: 'Bukrs'
+    }
+  } 
+}
+annotate view ZC_FI_PARAM_RM with
+{
+
+  @UI.facet: [ { id:           'Bukrs',
+              purpose:         #STANDARD,
+              type:            #IDENTIFICATION_REFERENCE,
+              label:           'Empresa',
+              position:        10 } ]
+  
+  @UI: { lineItem: [ { position: 10, label: 'Empresa' } ],
+  identification:  [ { position: 10, label: 'Empresa' } ],
+  selectionField:  [ { position: 10 } ] }
+  Bukrs;
+  @UI: { lineItem: [ { position: 20, label: 'Divisão' } ],
+  identification:  [ { position: 20, label: 'Divisão' } ],
+  selectionField:  [ { position: 20 } ] }
+  Gsber;
+  @UI: { lineItem: [ { position: 30, label: 'Local de negócios' } ],
+  identification:  [ { position: 30, label: 'Local de negócios' } ],
+  selectionField:  [ { position: 30 } ] }
+  Bupla;
+  @UI: { lineItem: [ { position: 40, label: 'Matriz' } ],
+  identification:  [ { position: 40, label: 'Matriz' } ] }
+  Zmatriz;
+
+}

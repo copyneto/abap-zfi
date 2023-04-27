@@ -1,0 +1,4 @@
+@EndUserText.label: 'Def. Serviço'
+define service ZUI_solic_correcao {
+  expose ZC_FI_SOLICIT_CORRE as solCorrecao;
+}

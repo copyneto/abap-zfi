@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition para Níveis de Aprovação'
+define service ZUI_FI_NIVEIS_DE_APROVACAO {
+  expose ZC_FI_NIVEIS_DE_APROVACAO as NiveisDeAprovacao;
+}

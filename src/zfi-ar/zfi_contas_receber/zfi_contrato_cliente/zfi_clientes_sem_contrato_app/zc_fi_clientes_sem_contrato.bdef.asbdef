@@ -1,0 +1,9 @@
+projection;
+
+define behavior for ZC_FI_CLIENTES_SEM_CONTRATO //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+}

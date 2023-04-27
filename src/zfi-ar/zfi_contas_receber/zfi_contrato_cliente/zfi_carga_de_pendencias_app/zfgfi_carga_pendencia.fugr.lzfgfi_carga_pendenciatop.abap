@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGFI_CARGA_PENDENCIA.        "MESSAGE-ID ..
+
+* INCLUDE LZFGFI_CARGA_PENDENCIAD...         " Local class definition

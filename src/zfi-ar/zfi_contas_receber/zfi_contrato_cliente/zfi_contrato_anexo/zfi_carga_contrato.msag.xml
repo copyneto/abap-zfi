@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_CARGA_CONTRATO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Msg. Carga de Contrato</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTRATO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Tipo de Documento Incorreto. Realizar Nova Carga.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

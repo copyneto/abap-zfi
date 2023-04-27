@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_BUSCA_FATURAS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Agrup. faturas: Busca de faturas</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VARIACOES_FATURA</CMPNAME>
+     <SCONAME>CV_ERRO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGRA_DO_ZERO</CMPNAME>
+     <SCONAME>CT_RESULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGRA_DO_ZERO</CMPNAME>
+     <SCONAME>IV_LIFNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº conta do fornecedor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGRA_DO_ZERO</CMPNAME>
+     <SCONAME>IV_NF</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGRA_DO_ZERO</CMPNAME>
+     <SCONAME>IV_NFARQ</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento de referência</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGRA_DO_ZERO</CMPNAME>
+     <SCONAME>IV_SERIE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGRA_DO_ZERO</CMPNAME>
+     <SCONAME>IV_STCD1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Número de nota fiscal eletrônica</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

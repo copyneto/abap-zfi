@@ -1,0 +1,17 @@
+@Metadata.layer: #CORE
+
+annotate entity zc_fi_defrece_hkoncontra with
+{
+  @UI.facet: [ { id: 'Item',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE,
+  label: 'Contra Partida',
+  position: 10 }]
+  @UI: { lineItem:       [ { position: 30 } ],
+         identification: [ { position: 30 } ],
+         hidden: true }
+  HkontFrom;
+  @UI: { lineItem:       [ { position: 10 } ],
+         identification: [ { position: 10 } ] }
+  HkontContra;
+}

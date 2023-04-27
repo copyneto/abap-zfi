@@ -1,0 +1,13 @@
+unmanaged;
+
+define behavior for ZI_FI_CONCILIACAO_MANUAL_DDA alias Conciliacao
+implementation in class zclfi_conciliacao_dda_app unique
+// persistent table j1b_error_dda
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+
+  action ( features : instance ) conciliaManual;
+
+}

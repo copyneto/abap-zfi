@@ -1,0 +1,4 @@
+@EndUserText.label: 'Def. Serviço'
+define service ZUI_QUADRO_IMOB {
+  expose ZC_FI_PARAM_IMOB;
+}

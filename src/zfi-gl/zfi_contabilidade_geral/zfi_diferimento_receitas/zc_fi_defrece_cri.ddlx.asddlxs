@@ -1,0 +1,65 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Difer. Receita e Ded - Crit de Seleção',
+                     title: { value: 'Bukrs' },
+                     typeNamePlural: 'Difer. Receita e Ded - Crit de Seleção'
+                   }
+     }
+
+annotate view ZC_FI_DEFRECE_CRI with
+{
+
+  @UI.facet: [{ id:               'DADOS',
+                  isSummary:       true,
+                  type:            #COLLECTION,
+                  label:           'De/Para',
+                  position:        10 },
+
+                         { parentId:        'DADOS',
+                           id:              'DADOS_PRINCIPAIS',
+                           type:            #FIELDGROUP_REFERENCE,
+                           position:        10,
+                           label: 'Dados principais',
+                           targetQualifier: 'DADOS_PRINCIPAIS' },
+
+                         { parentId:        'DADOS',
+                           id:              'DADOS_CONTROLE',
+                           type:            #FIELDGROUP_REFERENCE,
+                           position:        10,
+                           label: 'Dados de controle',
+                           targetQualifier: 'DADOS_CONTROLE' } ]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         fieldGroup:      [ { position: 10, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField:  [ { position: 10 } ] }
+  Bukrs;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+         fieldGroup:      [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField:  [ { position: 20 } ] }
+  RegioFrom;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         fieldGroup:      [ { position: 30, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField:  [ { position: 30 } ] }
+  RegioTo;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         fieldGroup:      [ { position: 40, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Preventr;
+
+  @UI: { fieldGroup:     [ { position: 10, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedAt;
+
+  @UI: { fieldGroup:     [ { position: 50, qualifier: 'DADOS_CONTROLE' } ] }
+  LocalLastChangedAt;
+
+}

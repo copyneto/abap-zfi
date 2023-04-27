@@ -1,0 +1,8 @@
+projection;
+
+define behavior for zc_fi_vigen_contratos_clientes //alias <alias_name>
+{
+
+  use action simularm;
+  use function DefaultForCreate;
+}

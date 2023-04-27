@@ -1,0 +1,17 @@
+projection;
+
+define behavior for ZC_FI_RAIZ_CNPJ alias Raiz
+{
+
+  use update;
+  use association _Clientes { create; }
+  use action atualizarClientes;
+
+}
+
+define behavior for ZC_FI_RAIZ_CLIENTES alias Clientes
+{
+  use update;
+  use association _Raiz;
+
+}

@@ -1,0 +1,12 @@
+unmanaged;
+
+// ------------------------------------------------------
+// Behavior: Reversão
+// ------------------------------------------------------
+
+define behavior for ZI_FI_REVERSAO_PROVISAO_PDC alias Reversao
+implementation in class zclfi_reversao_provisao_pdc unique
+lock master
+{
+  action ( features : instance ) reverter parameter ZI_FI_REVERSAO_PROVISAO_POPUP;
+}

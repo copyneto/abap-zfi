@@ -1,0 +1,4 @@
+@EndUserText.label: 'Tipo Movimento'
+define service ZUI_FI_TIPO_MOVI {
+  expose ZC_FI_TIPO_MOVI;
+}

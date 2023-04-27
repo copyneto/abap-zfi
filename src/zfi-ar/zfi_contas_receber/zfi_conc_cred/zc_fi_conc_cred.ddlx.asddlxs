@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeNamePlural: 'Parametros'
+//    title: {
+//      type: #STANDARD,
+//      label: 'Parametros',
+//      value: 'Empresa'
+//    }
+  }}
+annotate view ZC_FI_CONC_CRED with
+{
+  @UI.facet: [ { id:         'Parametros',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Parâmetros',
+               position:      10 }]
+  @UI: { lineItem:        [ { position: 10, label: 'Empresa' } ],
+         identification:  [ { position: 10, label: 'Empresa' } ] }
+  Empresa;
+  @UI: { lineItem:        [ { position: 20, label: 'Tipo Documento' } ],
+         identification:  [ { position: 20, label: 'Tipo Documento' } ] }
+  TipoDoc;
+  @UI: { lineItem:        [ { position: 30, label: 'Chave Lançamento' } ],
+         identification:  [ { position: 30, label: 'Chave Lançamento' } ] }
+  ChaveLanc;
+  @UI: { lineItem:        [ { position: 40, label: 'Identificação' } ],
+         identification:  [ { position: 40, label: 'Identificação' } ] }
+  Identificacao;
+  @UI: { lineItem:        [ { position: 50, label: 'Origem' } ],
+         identification:  [ { position: 50, label: 'Origem' } ] }
+  Origem;
+  @UI: { lineItem:        [ { position: 60, label: 'Forma Pagamento'} ],
+         identification:  [ { position: 60, label: 'Forma Pagamento'} ] }       
+  FormaPgto;
+  @UI: { lineItem:        [ { position: 70, label: 'Dias Mínimo', hidden: #(Disabled) } ],
+         identification:  [ { position: 70, label: 'Dias Mínimo', hidden: #(Disabled) } ] }
+  DiasMin;
+  @UI.hidden: true
+  moeda;
+  @UI: { lineItem:        [ { position: 80, label: 'Residual Mínimo' } ],
+         identification:  [ { position: 80, label: 'Residual Mínimo' } ] }
+  ResidualMin;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

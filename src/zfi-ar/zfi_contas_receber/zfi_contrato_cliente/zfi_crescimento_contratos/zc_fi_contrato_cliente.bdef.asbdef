@@ -1,0 +1,16 @@
+projection;
+
+define behavior for ZC_FI_CONTRATO_CLIENTE alias Contrato
+{
+
+  use action calccresc;
+  use action contabili;
+
+  use association _LOG;
+}
+
+define behavior for ZC_FI_LOG_CALC_CRESCIMENTO alias LogContr
+{
+
+  use association _Contrato;
+}

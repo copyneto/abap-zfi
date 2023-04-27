@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition Vigencia Contratos Clientes'
+define service ZUI_FI_VIGEN_CONTRATOS_CLIENTE {
+  expose zc_fi_vigen_contratos_clientes;
+}

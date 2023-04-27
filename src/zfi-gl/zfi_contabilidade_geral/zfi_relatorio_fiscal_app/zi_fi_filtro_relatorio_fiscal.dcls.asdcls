@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_FI_FILTRO_RELATORIO_FISCAL {
+    grant 
+        select
+            on
+                ZI_FI_FILTRO_RELATORIO_FISCAL
+                    where
+                     ( Bukrs ) = aspect pfcg_auth( ZFIBUKRS, BUKRS, ACTVT = '03' );
+                        
+}

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Chamada BAPI ACC_DOCUMENT_POST</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_CONTABILIZACAOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_CONTABILIZACAO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_CONTABILIZACAO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Chamada BAPI ACC_DOCUMENT_POST</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_DOCUMENTHEADER</PARAMETER>
+       <TYP>BAPIACHE09</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_ACCOUNTGL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIACGL09_TAB</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_CURRENCYAMOUNT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIACCR09_TAB</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_ACCOUNTRECEIVABLE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIACAR09_TAB</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_EXTENSION2</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>T_BAPIPAREX</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_MENSAGENS</PARAMETER>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_DOCUMENTHEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Linha de cabeçalho</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ACCOUNTGL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de tabela para estrutura BAPIACGL09</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CURRENCYAMOUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de tabela para estrutura BAPIACCR09</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ACCOUNTRECEIVABLE</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_EXTENSION2</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MENSAGENS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMFI_CONTABILIZACAO_MASSA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Contabilização em massa</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_SIMULAR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_SIMULAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Simular?</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

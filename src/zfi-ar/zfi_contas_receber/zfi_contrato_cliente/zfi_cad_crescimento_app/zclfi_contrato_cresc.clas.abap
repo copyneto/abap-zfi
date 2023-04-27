@@ -1,0 +1,5 @@
+CLASS zclfi_contrato_cresc DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_contrato_cresc.
+ENDCLASS.
+
+CLASS zclfi_contrato_cresc IMPLEMENTATION.
+ENDCLASS.

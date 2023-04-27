@@ -1,0 +1,11 @@
+unmanaged implementation in class zclfi_prog_pag_docn unique;
+
+define behavior for ZI_FI_PROG_PAG_DOCN alias grupoTesouraria
+{
+
+  //action uplGrpTes parameter ZI_FI_NOVO_GRUPO_TESOURARIA;
+
+
+  action changeGroup parameter ZI_FI_NOVO_GRUPO_TESOURARIA;
+
+}

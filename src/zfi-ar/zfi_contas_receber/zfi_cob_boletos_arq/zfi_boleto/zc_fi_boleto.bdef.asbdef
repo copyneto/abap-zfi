@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_BOLETO alias Boleto
+{
+
+  //use action enviar;
+
+}

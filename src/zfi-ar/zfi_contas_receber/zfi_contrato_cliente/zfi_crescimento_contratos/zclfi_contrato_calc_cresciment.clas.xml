@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_CONTRATO_CALC_CRESCIMENT</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Cálculo de Crescimento do Contrato</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Bimestral</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Trimestral</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Quadrimestral</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>Semestral</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CHV_CALCRES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 1</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CHV_FAC7</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CHV_TPDOCS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_1</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_10</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_11</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_12</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_2</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_3</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_4</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_5</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_6</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_7</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_8</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_9</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERROR_TX</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ID</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: classe de mensagens</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_SUCES_TX</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_TP_E</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema: tipo de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_TP_S</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema: tipo de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PRM_MODULO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Módulo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP1</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Contratos e Clientes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP10</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação dos documentos versus contratos DDE/DDF</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cálculos e campos tela 2 Resumo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP2</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Contratos Válidos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP3</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca do momento da periodicidade exercício de referência</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP4</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca dos documentos do exercício de referência</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP5</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca dos documentos do exercício de COMPARAÇÃO</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP7</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação da Família Centro de Lucro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP8</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação das faturas, devoluções e cancelamentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP9</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificar tipos de apuração devoluções e impostos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>STEP9_COMP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificar tipos de apuração devoluções e impostos - Compar</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <SCONAME>IS_IMPORT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP1</CMPNAME>
+     <SCONAME>ET_CLIENTES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Clientes Crescimento Contrato</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP1</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP1</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP10</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP10</CMPNAME>
+     <SCONAME>IT_DOC_FDC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação das faturas, devoluções e cancelamentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IT_BILLING_REF</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Billing Centro de Lucro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IT_CLIENTES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Clientes Crescimento Contrato</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IT_DOCUMENTOS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documentos de Cálculo de Crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IT_DOC_FDC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação das faturas, devoluções e cancelamentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IT_TOT_MONTANTE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Apuração Imposto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IT_TOT_MONT_COMP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Apuração Imposto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP12_13</CMPNAME>
+     <SCONAME>IV_PERID_ANT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Exercício</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP2</CMPNAME>
+     <SCONAME>CT_CLIENTES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Clientes Crescimento Contrato</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP2</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP2</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP3</CMPNAME>
+     <SCONAME>ET_PERIODOS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Períodos Calculados</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP3</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP3</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP4</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP4</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP5</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP5</CMPNAME>
+     <SCONAME>EV_ERROR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP5</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP7</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP7</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP8</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP8</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9</CMPNAME>
+     <SCONAME>CT_DOCUMENTOS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documentos de Cálculo de Crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9</CMPNAME>
+     <SCONAME>CT_DOC_FDC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação das faturas, devoluções e cancelamentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9</CMPNAME>
+     <SCONAME>ET_TOT_MONTANTE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Apuração Imposto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9_COMP</CMPNAME>
+     <SCONAME>CT_DOCUMENTOS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documentos de Cálculo de Crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9_COMP</CMPNAME>
+     <SCONAME>CT_DOC_FDC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação das faturas, devoluções e cancelamentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9_COMP</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9_COMP</CMPNAME>
+     <SCONAME>ET_TOT_COMPARACAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Apuração Imposto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STEP9_COMP</CMPNAME>
+     <SCONAME>IS_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do cálculo de crescimento</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

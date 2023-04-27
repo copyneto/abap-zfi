@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_RET_BLOQ {
+    grant
+        select
+            on
+                ZI_RET_BLOQ
+                    where
+                        ( bukrs ) = aspect pfcg_auth( ZFIBUKRS, BUKRS, ACTVT = '03');
+                        
+}

@@ -1,0 +1,121 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Dados Itens',
+                     title: { value: 'NumeroItem' },
+                     typeNamePlural: 'Itens'
+                   }
+     }
+annotate entity ZC_FI_CARGA_ITEM with
+{
+
+  @UI.facet: [
+
+           { id:      'Facet',
+             purpose: #STANDARD,
+             type:    #COLLECTION,
+             label:   'Principal',
+             position: 10 },
+         { id:              'geral',
+           purpose:         #STANDARD,
+           parentId:        'Facet',
+           type:            #FIELDGROUP_REFERENCE,
+           label:           'Dados Gerais',
+           targetQualifier: 'geral',
+           position:         20 } ,
+         {  id:             'Modificar',
+            purpose:        #STANDARD,
+            label:          'Dados Modificação',
+            parentId:       'Facet',
+            type:           #FIELDGROUP_REFERENCE,
+            targetQualifier: 'Modificar',
+            position:       20 }  ]
+
+  //DocUuidH;
+  //DocUuidDoc;
+
+  @UI: { lineItem:        [ { position: 05 } ],
+   identification:  [ { position: 05 } ] }
+  @UI.fieldGroup: [{ position: 05, qualifier: 'geral' }]
+  NumeroDoc;
+  //DocUuidItem;
+
+  @UI: { lineItem:        [ { position: 10 } ],
+   identification:  [ { position: 10 } ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  NumeroItem;
+
+  @UI: { lineItem:        [ { position: 15 } ],
+   identification:  [ { position: 15 } ] }
+  @UI.fieldGroup: [{ position: 15, qualifier: 'geral' }]
+  Shkzg;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+   identification:  [ { position: 20 } ]}
+  @UI.fieldGroup: [{ position: 20, qualifier: 'geral' }]
+  Zuonr;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+   identification:  [ { position: 30 } ]}
+  @UI.fieldGroup: [{ position: 30, qualifier: 'geral' }]
+  Hkont;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+   identification:  [ { position: 40 } ]}
+  @UI.fieldGroup: [{ position: 40, qualifier: 'geral' }]
+  Dmbtr;
+
+  //Waers;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+   identification:  [ { position: 50 } ]}
+  @UI.fieldGroup: [{ position: 50, qualifier: 'geral' }]
+  Bupla;
+
+  @UI: { lineItem:        [ { position: 60 } ],
+   identification:  [ { position: 60 } ]}
+  @UI.fieldGroup: [{ position: 60, qualifier: 'geral' }]
+  Gsber;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+   identification:  [ { position: 70 } ]}
+  @UI.fieldGroup: [{ position: 70, qualifier: 'geral' }]
+  Kostl;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+   identification:  [ { position: 80 } ]}
+  @UI.fieldGroup: [{ position: 80, qualifier: 'geral' }]
+  Prctr;
+
+  @UI: { lineItem:        [ { position: 90 } ],
+   identification:  [ { position: 90 } ]}
+  @UI.fieldGroup: [{ position: 90, qualifier: 'geral' }]
+  Segment;
+
+  @UI: { lineItem:        [ { position: 100 } ],
+   identification:  [ { position: 100 } ]}
+  @UI.fieldGroup: [{ position: 100, qualifier: 'geral' }]
+  Sgtxt;
+
+  @UI: { identification:  [ { position: 110 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Modificar' }]
+  CreatedBy;
+
+  @UI: { identification:  [ { position: 120 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Modificar' }]
+  CreatedAt;
+
+  @UI: { identification:  [ { position: 130 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Modificar' }]
+  LastChangedBy;
+
+  @UI: { identification:  [ { position: 140 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Modificar' }]
+  LastChangedAt;
+
+  @UI: { identification:  [ { position: 150 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 50, qualifier: 'Modificar' }]
+  LocalLastChangedAt;
+  /* Associations */
+  //_H;
+
+}

@@ -1,0 +1,196 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Depreciação de Area',
+                     title: { value: 'Bukrs' },
+                     typeNamePlural: 'Depreciação de Area'
+                   }
+     }
+annotate view ZC_FI_CONTABILIZAR with
+{
+
+  @UI.facet: [
+                { id:           'Facet',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Dados Gerais',
+                 position:      10 }   ]
+
+  @UI: { lineItem:        [ { position: 10 },
+                            {   type: #FOR_ACTION, dataAction: 'contab', label: 'Contabilizar Societária' , invocationGrouping: #CHANGE_SET} ],
+         identification:  [ { position: 10 } ,
+                            {   type: #FOR_ACTION, dataAction: 'contab', label: 'Contabilizar Societária' , invocationGrouping: #CHANGE_SET}],
+         selectionField:  [ { position: 10 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Bukrs;
+
+  @UI: { lineItem:        [ { position: 20 } ,
+                            {   type: #FOR_ACTION, dataAction: 'reav', label: 'Contabilizar REAV' , invocationGrouping: #CHANGE_SET}],
+         identification:  [ { position: 20 }  ,
+                            {   type: #FOR_ACTION, dataAction: 'reav', label: 'Contabilizar REAV' , invocationGrouping: #CHANGE_SET}],
+         selectionField:  [ { position: 20 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Anln1;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         selectionField:  [ { position: 30 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Anln2;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+        identification:  [ { position: 40 } ],
+        selectionField:  [ { position: 40 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Anlkl;
+
+  @UI: {  identification:  [ { position: 50 } ]}
+  AnlklTxt;
+
+  @UI: { lineItem:        [ { position: 55, label: 'Contabilizado Societário', criticality: 'StatusCriticality', criticalityRepresentation: #WITH_ICON } ],
+         identification:  [ { position: 55, label: 'Contabilizado Societário', criticality: 'StatusCriticality', criticalityRepresentation: #WITH_ICON } ] }
+  Belnr;
+
+  @UI: { lineItem:        [ { position: 55, label: 'Contabilizado Reav', criticality: 'StatusCriticalityReav', criticalityRepresentation: #WITH_ICON } ],
+        identification:  [ { position: 55, label: 'Contabilizado Reav', criticality: 'StatusCriticalityReav', criticalityRepresentation: #WITH_ICON } ] }
+  BelnrReav;
+
+
+  @UI: {  identification:  [ { position: 60 } ]}
+  Aktiv;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+        identification:  [ { position: 70 } ],
+        selectionField:  [ { position: 70 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  gsber;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+        identification:  [ { position: 80 } ],
+        selectionField:  [ { position: 80 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  kostl;
+
+  @UI: { lineItem:        [ { position: 90 } ],
+        identification:  [ { position: 90 } ],
+        selectionField:  [ { position: 90 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  gjahr;
+
+  @UI: { lineItem:        [ { position: 100 } ],
+        identification:  [ { position: 100 } ],
+        selectionField:  [ { position: 100 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  peraf;
+
+  @UI: {  lineItem:        [ { position: 105 } ],
+          identification:  [ { position: 105 } ]}
+  ANSWL_80;
+  @UI: {  lineItem:        [ { position: 106 } ],
+          identification:  [ { position: 106 } ]}
+  NAFAG_80;
+  @UI: {  lineItem:        [ { position: 107 } ],
+          identification:  [ { position: 107 } ]}
+  Valorcont80;
+
+
+  //  @UI: {  lineItem:        [ { position: 110 } ],
+  //          identification:  [ { position: 110 } ]}
+  @UI.hidden: true
+  Moeda;
+
+  @UI: {  lineItem:        [ { position: 120 } ],
+      identification:  [ { position: 120 } ]}
+  Nafag01;
+
+  @UI: {  lineItem:        [ { position: 130 } ],
+      identification:  [ { position: 130 } ]}
+  Nafag10;
+
+  @UI: {  lineItem:        [ { position: 140 } ],
+      identification:  [ { position: 140 } ]}
+  Nafag11;
+
+  @UI: {  lineItem:        [ { position: 141, label: 'Depreciação plan.Societária 80' } ],
+      identification:  [ { position: 141, label: 'Depreciação plan.Societária 80' } ]}
+  Nafag80;
+
+  @UI: {  lineItem:        [ { position: 150, label: 'Depreciação plan.Societária 82' } ],
+      identification:  [ { position: 150, label: 'Depreciação plan.Societária 82' } ]}
+  Nafag82;
+
+  @UI: {  lineItem:        [ { position: 160, label: 'Depreciação plan.Societária 84' } ],
+      identification:  [ { position: 160, label: 'Depreciação plan.Societária 84' } ]}
+  Nafag84;
+
+  @UI: {  lineItem:        [ { position: 170, label: 'Ajuste Societário 80/01' } ],
+      identification:  [ { position: 170, label: 'Ajuste Societário 80/01' } ]}
+  Ajus80_01;
+
+  @UI: {  lineItem:        [ { position: 180, label: 'Ajuste Societário 82/10' } ],
+      identification:  [ { position: 180, label: 'Ajuste Societário 82/10' } ]}
+  Ajus82_10;
+
+  @UI: {  lineItem:        [ { position: 190, label: 'Ajuste Societário 84/11' } ],
+      identification:  [ { position: 190, label: 'Ajuste Societário 84/11' } ]}
+  Ajus84_11;
+
+  @UI: {  lineItem:        [ { position: 200, label:'Total' } ],
+      identification:  [ { position: 200, label:'Total' } ]}
+  Total;
+
+  @UI: {  lineItem:        [ { position: 210, label:'Conta Deprec Acm Fiscal 01' } ],
+          identification:  [ { position: 210, label:'Conta Deprec Acm Fiscal 01' } ]}
+  ContaDepFiscal_01;
+
+  @UI: {   lineItem:        [ { position: 220, label:'Conta Deprec Acm Fiscal 10' } ],
+           identification:  [ { position: 220, label:'Conta Deprec Acm Fiscal 10' } ]}
+  ContaDepFiscal_10;
+
+  @UI: { lineItem:        [ { position: 230, label:'Conta Deprec Acm Fiscal 11' } ],
+         identification:  [ { position: 230, label:'Conta Deprec Acm Fiscal 11' } ]}
+  ContaDepFiscal_11;
+
+  @UI: { lineItem:        [ { position: 240, label:'Conta Desp Acm Fiscal 01' } ],
+         identification:  [ { position: 240 , label:'Conta Desp Acm Fiscal 01' } ]}
+  ContaDespFiscal_01;
+
+  @UI: {  lineItem:        [ { position: 250, label:'Conta Desp Acm Fiscal 10' } ],
+          identification:  [ { position: 250 , label:'Conta Desp Acm Fiscal 10' } ]}
+  ContaDespFiscal_10;
+
+  @UI: {  lineItem:        [ { position: 260, label:'Conta Desp Acm Fiscal 11' } ],
+          identification:  [ { position: 260, label:'Conta Desp Acm Fiscal 11' } ]}
+  ContaDespFiscal_11;
+
+  @UI: { lineItem:        [ { position: 270, label:'Conta Deprec Acm Societária 80' } ],
+         identification:  [ { position: 270, label: 'Conta Deprec Acm Societária 80' } ]}
+  ContaDepFiscal_80;
+
+  @UI: {  lineItem:        [ { position: 280, label:'Conta Deprec Acm Societária 82' } ],
+          identification:  [ { position: 280, label: 'Conta Deprec Acm Societária 82' } ]}
+  ContaDepFiscal_82;
+
+  @UI: {  lineItem:        [ { position: 290, label:'Conta Deprec Acm Societária 84' } ],
+          identification:  [ { position: 290, label: 'Conta Deprec Acm Societária 84' } ]}
+  ContaDepFiscal_84;
+
+  @UI: {  lineItem:        [ { position: 300, label:'Conta Despesa Societária 80' } ],
+          identification:  [ { position: 300, label: 'Conta Despesa Societária 80' } ]}
+  ContaDespFiscal_80;
+
+  @UI: { lineItem:        [ { position: 310, label:'Conta Despesa Societária 82' } ],
+         identification:  [ { position: 310, label: 'Conta Despesa Societária 82' } ]}
+  ContaDespFiscal_82;
+
+  @UI: {  lineItem:        [ { position: 320, label:'Conta Despesa Societária 84' } ],
+          identification:  [ { position: 320, label: 'Conta Despesa Societária 84' } ]}
+  ContaDespFiscal_84;
+
+}

@@ -1,0 +1,167 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: { typeNamePlural: 'Detalhes das Aprovações',
+                  title:          { value: 'CompanyCodeName' },
+                  description:    { value: 'Bukrs' } }
+
+@UI.presentationVariant: [{
+    requestAtLeast: ['Bukrs', 'CompanyCodeName', 'CashPlanningGroupName', 'Data', 'Hora', 'DataDownload', 'HoraDownload', 'TipoRelatorio', 'Text', 'Hbkid', 'BancoEmpresaText',
+                     'EncText', 'Encerrador', 'EncUser', 'EncText', 'EncData', 'EncHora',
+                     'Apv1Text', 'Aprov1', 'Ap1User', 'Apv1Text', 'Ap1Data', 'Ap1Hora',
+                     'Apv2Text', 'Aprov2', 'Ap2User', 'Apv2Text', 'Ap2Data', 'Ap2Hora',
+                     'Apv3Text', 'Aprov3', 'Ap3User', 'Apv3Text', 'Ap3Data', 'Ap3Hora',
+                     'EncerradorCrit', 'Aprov1Crit', 'Aprov2Crit', 'Aprov3Crit' ]
+//    groupBy: ['TipoRelatorio'],
+//    totalBy: ['TipoRelatorio']
+}]
+annotate view ZC_FI_LOG_APV_PGTO_ITEM with
+{
+
+  @UI.facet: [ { id: 'Geral', purpose: #STANDARD, type: #COLLECTION, position: 10 },
+
+               { id: 'Enc',  label: 'Encerrador',  parentId: 'Geral', targetQualifier: 'Enc',  position: 10, purpose: #STANDARD, type: #FIELDGROUP_REFERENCE },
+               { id: 'Apv1', label: 'Aprovação 1', parentId: 'Geral', targetQualifier: 'Apv1', position: 20, purpose: #STANDARD, type: #FIELDGROUP_REFERENCE },
+               { id: 'Apv2', label: 'Aprovação 2', parentId: 'Geral', targetQualifier: 'Apv2', position: 30, purpose: #STANDARD, type: #FIELDGROUP_REFERENCE },
+               { id: 'Apv3', label: 'Aprovação 3', parentId: 'Geral', targetQualifier: 'Apv3', position: 40, purpose: #STANDARD, type: #FIELDGROUP_REFERENCE }]
+
+    @UI: { lineItem: [{ position: 10 }],
+         textArrangement: #TEXT_FIRST }
+  Bukrs;
+
+  @UI.hidden: true
+  GrpTesouraria;
+
+  @UI: { lineItem: [{ position: 20 }],
+        dataPoint: { qualifier: 'Data' } }
+  Data;
+
+  @UI: { dataPoint: { qualifier: 'DataDownload' } }
+  DataDownload;
+
+  @UI.hidden: true
+  Hora;
+
+  @UI: { dataPoint: { qualifier: 'HoraDownload' } }
+  HoraDownload;
+
+  @UI: { lineItem:       [{ position: 30 }],
+         dataPoint:       { qualifier: 'TpRel' },
+         textArrangement: #TEXT_ONLY }
+  TipoRelatorio;
+
+  @UI: { lineItem:       [{ position: 40 }],
+         dataPoint: { qualifier: 'Amount' } }
+  Valor;
+
+  @UI.hidden: true
+  Moeda;
+
+  @UI: { lineItem:       [{ position: 50, criticality: 'EncerradorCrit', criticalityRepresentation: #WITHOUT_ICON }],
+         fieldGroup:     [{ position: 10, qualifier: 'Enc', criticality: 'EncerradorCrit', criticalityRepresentation: #WITHOUT_ICON }],
+         textArrangement: #TEXT_ONLY }
+  Encerrador;
+
+  @UI: {   lineItem: [{ position: 51 }],
+         fieldGroup: [{ position: 20, qualifier: 'Enc' }] }
+  @Consumption.filter.hidden: true
+  EncUser;
+
+  @UI: {   lineItem: [{ position: 52 }],
+         fieldGroup: [{ position: 30, qualifier: 'Enc' }] }
+  @Consumption.filter.hidden: true
+  EncData;
+
+  @UI: {   lineItem: [{ position: 53 }],
+         fieldGroup: [{ position: 40, qualifier: 'Enc' }] }
+  @Consumption.filter.hidden: true
+  EncHora;
+
+  @UI: { lineItem:       [{ position: 60, criticality: 'Aprov1Crit', criticalityRepresentation: #WITHOUT_ICON }],
+         fieldGroup:     [{ position: 10, qualifier: 'Apv1', criticality: 'Aprov1Crit', criticalityRepresentation: #WITHOUT_ICON }],
+         textArrangement: #TEXT_ONLY }
+  Aprov1;
+
+  @UI: {   lineItem: [{ position: 61 }],
+         fieldGroup: [{ position: 20, qualifier: 'Apv1' }] }
+  @Consumption.filter.hidden: true
+  Ap1User;
+
+  @UI: {   lineItem: [{ position: 62 }],
+         fieldGroup: [{ position: 30, qualifier: 'Apv1' }] }
+  @Consumption.filter.hidden: true
+  Ap1Data;
+
+  @UI: {   lineItem: [{ position: 63 }],
+         fieldGroup: [{ position: 40, qualifier: 'Apv1' }] }
+  @Consumption.filter.hidden: true
+  Ap1Hora;
+
+  @UI: { lineItem:       [{ position: 70, criticality: 'Aprov2Crit', criticalityRepresentation: #WITHOUT_ICON }],
+         fieldGroup:     [{ position: 10, qualifier: 'Apv2', criticality: 'Aprov2Crit', criticalityRepresentation: #WITHOUT_ICON }],
+         textArrangement: #TEXT_ONLY }
+  Aprov2;
+
+  @UI: {   lineItem: [{ position: 71 }],
+         fieldGroup: [{ position: 20, qualifier: 'Apv2' }] }
+  @Consumption.filter.hidden: true
+  Ap2User;
+
+  @UI: {   lineItem: [{ position: 72 }],
+         fieldGroup: [{ position: 30, qualifier: 'Apv2' }] }
+  @Consumption.filter.hidden: true
+  Ap2Data;
+
+  @UI: {   lineItem: [{ position: 73 }],
+         fieldGroup: [{ position: 40, qualifier: 'Apv2' }] }
+  @Consumption.filter.hidden: true
+  Ap2Hora;
+
+  @UI: { lineItem:       [{ position: 80, criticality: 'Aprov3Crit', criticalityRepresentation: #WITHOUT_ICON }],
+         fieldGroup:     [{ position: 10, qualifier: 'Apv3', criticality: 'Aprov3Crit', criticalityRepresentation: #WITHOUT_ICON }],
+       textArrangement: #TEXT_ONLY }
+  Aprov3;
+
+  @UI: {   lineItem: [{ position: 81 }],
+         fieldGroup: [{ position: 20, qualifier: 'Apv3' }] }
+  @Consumption.filter.hidden: true
+  Ap3User;
+
+  @UI: {   lineItem: [{ position: 82 }],
+         fieldGroup: [{ position: 30, qualifier: 'Apv3' }] }
+  @Consumption.filter.hidden: true
+  Ap3Data;
+
+  @UI: {   lineItem: [{ position: 83 }],
+         fieldGroup: [{ position: 40, qualifier: 'Apv3' }] }
+  @Consumption.filter.hidden: true
+  Ap3Hora;
+
+  @UI.hidden: true
+  Hbkid;
+
+  @UI.hidden: true
+  BancoEmpresaText;
+
+  @Consumption.filter.hidden: true
+  CompanyCodeName;
+  @Consumption.filter.hidden: true
+  CashPlanningGroupName;
+  @Consumption.filter.hidden: true
+  Text;
+  @Consumption.filter.hidden: true
+  Apv1Text;
+  @Consumption.filter.hidden: true
+  Apv2Text;
+  @Consumption.filter.hidden: true
+  Apv3Text;
+  @Consumption.filter.hidden: true
+  EncText;
+  @Consumption.filter.hidden: true
+  EncerradorCrit;
+  @Consumption.filter.hidden: true
+  Aprov1Crit;
+  @Consumption.filter.hidden: true
+  Aprov2Crit;
+  @Consumption.filter.hidden: true
+  Aprov3Crit;
+
+}

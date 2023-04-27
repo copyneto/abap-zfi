@@ -1,0 +1,148 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Simulação de Vigência Contratos Cliente',
+    typeNamePlural: 'Simulação de Vigência Contratos Cliente',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    }
+  } }
+annotate entity zi_fi_simul_contratos_cliente with
+{
+
+  @UI.facet: [ { id:         'Contrato',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Contrato',
+               position:      10 }]
+
+  @UI: { lineItem:        [ { position: 20, label: 'Nº Contrato' } ],
+         identification:  [ { position: 20, label: 'Nº Contrato' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  Contrato;
+  @UI: { lineItem:        [ { position: 30, label: 'Nº Aditivo' } ],
+         identification:  [ { position: 30, label: 'Nº Aditivo' } ] }
+  @UI : { selectionField: [ { position: 30 } ] }
+  Aditivo;
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ] }
+  @UI : { selectionField: [ { position: 40 } ] }
+  Bukrs;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  @UI : { selectionField: [ { position: 50 } ] }
+  Belnr;
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ] }
+  @UI : { selectionField: [ { position: 60 } ] }
+  Buzei;
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ] }
+  @UI : { selectionField: [ { position: 70 } ] }
+  Gjahr;
+  @UI: { lineItem:        [ { position: 71 } ],
+         identification:  [ { position: 71 } ] }
+  @UI : { selectionField: [ { position: 71 } ] }
+  Vbeln;
+  @UI: { lineItem:        [ { position: 72, label: 'Item Doc. Faturamento' } ],
+         identification:  [ { position: 72, label: 'Item Doc' } ] }
+  @UI : { selectionField: [ { position: 72 } ] }
+  @EndUserText.label: 'Item Doc. Faturamento'
+  Posnr;
+  @UI: { lineItem:        [ { position: 74 } ],
+       identification:  [ { position: 74 } ] }
+  Xblnr;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ] }
+  @UI : { selectionField: [ { position: 80 } ] }
+  Cliente;
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ] }
+  Augdt;
+  @UI: { lineItem:        [ { position: 100 } ],
+         identification:  [ { position: 100 } ] }
+  Augbl;
+  @Consumption.valueHelpDefinition: [
+    { entity:  { name:    'I_AccountingDocumentTypeStdVH',
+                 element: 'AccountingDocumentType' }
+    }]
+  @UI: { lineItem:        [ { position: 110 } ],
+         identification:  [ { position: 110 } ] }
+  Blart;
+  @UI: { lineItem:        [ { position: 120 } ],
+         identification:  [ { position: 120 } ] }
+  Bschl;
+  @UI: { lineItem:        [ { position: 130 } ],
+         identification:  [ { position: 130 } ] }
+  Budat;
+  @UI: { lineItem:        [ { position: 140 } ],
+         identification:  [ { position: 140 } ] }
+  Netdt;
+  @UI: { lineItem:        [ { position: 150 } ],
+         identification:  [ { position: 150 } ] }
+  @Consumption.valueHelpDefinition: [
+    { entity:  { name:    'I_BusinessAreaStdVH',
+                 element: 'BusinessArea' }
+    }]
+  Gsber;
+  @UI: { lineItem:        [ { position: 160 } ],
+         identification:  [ { position: 160 } ] }
+  Xref1Hd;
+  @UI: { lineItem:        [ { position: 170 } ],
+         identification:  [ { position: 170 } ] }
+  Zbd1p;
+  @UI: { lineItem:        [ { position: 180 } ],
+         identification:  [ { position: 180 } ] }
+  ClassifCnpj;
+  @UI: { lineItem:        [ { position: 190 } ],
+         identification:  [ { position: 190 } ] }
+  Canal;
+  @UI: { lineItem:        [ { position: 200 } ],
+         identification:  [ { position: 200 } ] }
+  Setor;
+  @UI: { lineItem:        [ { position: 210 } ],
+         identification:  [ { position: 210 } ] }
+  FamiliaCl;
+  @UI: { lineItem:        [ { position: 220 }, { label: 'Família CL Todos' } ],
+         identification:  [ { position: 220 }, { label: 'Família CL Todos' } ] }
+  Flagfamtodos;
+  @UI: { lineItem:        [ { position: 230 } ],
+         identification:  [ { position: 230 } ] }
+  TipoDesconto;
+  @UI: { lineItem:        [ { position: 240 } ],
+         identification:  [ { position: 240 } ] }
+  CondDesconto;
+  @UI: { lineItem:        [ { position: 250 } ],
+         identification:  [ { position: 250 } ] }
+  Montante;
+  @UI: { lineItem:        [ { position: 260 }, { label: 'Montante Calculado' } ],
+         identification:  [ { position: 260 }, { label: 'Montante Calculado' } ] }
+  MontanteCalculado;
+  @UI: { lineItem:        [ { position: 270 } ],
+         identification:  [ { position: 270 } ] }
+  AplicaDesconto;
+  @UI: { lineItem:        [ { position: 280 }, { label: 'Montante Desconto' } ],
+         identification:  [ { position: 280 }, { label: 'Montante Desconto' } ] }
+  MontanteDesconto;
+  @UI: { lineItem:        [ { position: 282 }, { label: 'Região de Vendas' } ],
+         identification:  [ { position: 282 }, { label: 'Região de Vendas' } ] }
+  RegiaoVendas;
+  @UI: { lineItem:        [ { position: 290 } ],
+         identification:  [ { position: 290 } ] }
+  @UI : { selectionField: [ { position: 290 } ] }
+  CreatedBy;
+  @UI: { lineItem:        [ { position: 300 } ],
+         identification:  [ { position: 300 } ] }
+  @UI : { selectionField: [ { position: 300 } ] }
+  @Consumption.filter.selectionType: #INTERVAL
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

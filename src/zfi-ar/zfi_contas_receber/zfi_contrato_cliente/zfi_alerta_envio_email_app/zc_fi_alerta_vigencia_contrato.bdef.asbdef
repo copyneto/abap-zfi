@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_FI_ALERTA_VIGENCIA_CONTRATO //alias <alias_name>
+{
+  use update;
+  use action enviar_email;
+}

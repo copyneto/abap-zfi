@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens Solução DDA</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Valor de diferença entre boleto e fatura excede o limite tolerado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Conta não configurada para empresa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Erro ao associar o código de barras.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Conciliação executada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Dados não encontrados para geração do boleto.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Campo obrigatório &amp;1 está vazio.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Não possivel associar, documento bloqueado para pagamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Não pode associar dois titulos a um boleto.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Documento &amp;1 processado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Erro no prcessamento do documento &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Fatura Modificada &amp;1/&amp;2/&amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Erro na Modificação de Fatura!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Execução Concluída</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Fatura Ajustada com Novo Documento &amp;1/&amp;2/&amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Erro no Ajuste de Fatura!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Fatura não localizada com todos critérios &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Processamento finalizado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Erro ao tentar atualizar fatura &amp;1 &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Selecione somente uma linha para nota fiscal divergente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Montante de diferença Fatura DDA &amp; ultrapassa Tolerância</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Match não foi possível: Vencimento divergente &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Match não foi possível: Montante divergente &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_SOLUCAO_DDA</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Match não foi possível: Nota fiscal divergente &amp;</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

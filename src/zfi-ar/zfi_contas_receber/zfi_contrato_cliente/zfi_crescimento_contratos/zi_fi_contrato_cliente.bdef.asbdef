@@ -1,0 +1,31 @@
+unmanaged implementation in class zclfi_contrato_cliente unique;
+
+define behavior for ZI_FI_CONTRATO_CLIENTE alias Contrato
+//late numbering
+lock master
+etag master LocalLastChangedAt
+{
+  //  create;
+  //  update;
+  //  delete;
+
+  //  field ( readonly : update ) Contrato, Aditivo, LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  action calccresc;
+  //  action calccresc parameter ZC_FI_PARAM_CALC_CRES;
+  action contabili parameter ZC_FI_PARAM_CONTABILI;
+
+  association _LOG;
+}
+
+define behavior for ZI_FI_LOG_CALC_CRESCIMENTO alias LogContr
+//late numbering
+lock dependent by _Contrato
+etag dependent by _Contrato
+{
+
+  field ( readonly : update ) Contrato, Aditivo;
+
+  association _Contrato;
+
+}

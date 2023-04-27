@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Preencher todos os campos obrigatórios.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Contrato cliente aditivado: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Nenhum Nível de Aprovação encontrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Retornado aprovação &amp;1 &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao Retornar Aprovação!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Você Não Possui Autorização Para Retornar Aprovação.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Objeto de Autorização Não Encontrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>concluída com Sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Falha ao atualizar dados na tabela.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Anexo Removido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>com Sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>DocLiq &amp;1 estornado &amp;2 realizado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Estorno  não foi possivel!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Processamento concluído!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Liquidação  não foi possivel!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Liquidação &amp;1 &amp;2 &amp;3 contabilizada com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Erro ao lançar documento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Provisão &amp;1 &amp;2 &amp;3 gravada com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Provisão  não foi possivel!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Doc. Provisão &amp;1 já lançado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Doc. Liquidação &amp;1 já lançado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Doc. Estorno &amp;1 já lançado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Só é permitido criar 1 Ciclo para o período anual</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Atribuir 1° Ciclo para o período anual</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Só é permitido criar 2 Ciclos para o período semestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Atribuir 1° ou 2° Ciclo para o período semestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Só é permitido criar 3 Ciclos para o período quadrimestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Atribuir 1°, 2° ou 3° Ciclo para o período quadrimestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Só é permitido criar 4 Ciclos para o período trimestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Atribuir 1°, 2°, 3° ou 4° Ciclo para o período trimestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Só é permitido criar 6 Ciclos para o período bimestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Atribuir 1°, 2°, 3°, 4°, 5° ou 6° Ciclo para o período bimestral</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Só é permitido criar 12 Ciclos para o período mensal</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Definir periodicidade do crescimento antes de definir os ciclos</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Ciclo já cadastrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Obrigatório o preenchimento do Montante de Comparação</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Não existem documentos para os parâmetros informados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Já existe Cadastro de Crescimento para o Contrato</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Somente é posível gravar dia da Semana ou Mês fixo.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Alerta de Vigência e Renovação Automática devem ser igualmente preenchido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Já existe linha cadastrada com a mesma chave.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Obrigatório preencher apenas uma das informações: percentual ou montante.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Não é possível marcar Recorrência anual com Período de Vigência em branco</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Liquidação somente possível se houver Provisão!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>&amp;1 &amp;2 sem renovação automática, acionar Alerta de Vigência</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>&amp;1 &amp;2 com renovação automática, não acionar Alerta de vigência</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONTRATO_CLIENTE</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Processo de replicação executado</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

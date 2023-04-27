@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>INTF</OBJECT>
+     <OBJ_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME>
+     <OBJECT_M>INTF</OBJECT_M>
+     <OBJ_NAME_M>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME_M>
+     <HASH_ID>D956EE68A20AF2C0D1B01517DA6790B7C2EA9784</HASH_ID>
+     <ID>&lt;portType&gt; siRecebeConsultaPropostaIn http://trescoracoes.com.br/financeiro/consultaproposta http://trescoracoes.com.br/financeiro/consultaproposta</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>portType</IFR_TYPE>
+     <IFR_NAME>siRecebeConsultaPropostaIn</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/financeiro/consultaproposta</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/financeiro/consultaproposta</IFR_GNSPCE>
+     <GEN_VERS>0006</GEN_VERS>
+     <PREFIX>ZCLFI_</PREFIX>
+     <CATEGORY>ifmmessif</CATEGORY>
+     <DIRECTION>I</DIRECTION>
+     <X-ML_NSPCE>http://trescoracoes.com.br/financeiro/consultaproposta</X-ML_NSPCE>
+     <X-ML_NAME>siRecebeConsultaPropostaIn</X-ML_NAME>
+     <FURTHER_DATA>&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;DATA&gt;&lt;SOAP_APPL&gt;urn:sap-com:soap:application:esr:server:710&lt;/SOAP_APPL&gt;&lt;/DATA&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</FURTHER_DATA>
+     <VERSION_ID>00d3766eaacc11ecc1a500000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>INTF</OBJECT>
+     <OBJ_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME>
+     <OBJECT1>CLAS</OBJECT1>
+     <OBJ_NAME1>ZCLFI_CL_SI_RECEBE_CONSULTA_PR</OBJ_NAME1>
+     <OBJECT2>CLAS</OBJECT2>
+     <OBJ_NAME2>ZCLFI_CL_SI_RECEBE_CONSULTA_PR</OBJ_NAME2>
+     <ID>&lt;CLIM&gt; siRecebeConsultaPropostaIn http://trescoracoes.com.br/financeiro/consultaproposta http://trescoracoes.com.br/financeiro/consultaproposta</ID>
+     <IFR_TYPE>CLIM</IFR_TYPE>
+     <IFR_NAME>siRecebeConsultaPropostaIn</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <R3_TYPE>CLAS</R3_TYPE>
+     <R3_NAME>ZCLFI_CL_SI_RECEBE_CONSULTA_PR</R3_NAME>
+     <R3_TEXT>Proxy Class (generated)</R3_TEXT>
+    </item>
+    <item>
+     <OBJECT>INTF</OBJECT>
+     <OBJ_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME>
+     <OBJECT1>INTF</OBJECT1>
+     <OBJ_NAME1>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME1>
+     <OBJECT2>INTF</OBJECT2>
+     <OBJ_NAME2>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME2>
+     <ID>&lt;portType&gt; siRecebeConsultaPropostaIn http://trescoracoes.com.br/financeiro/consultaproposta http://trescoracoes.com.br/financeiro/consultaproposta</ID>
+     <IFR_TYPE>portType</IFR_TYPE>
+     <IFR_NAME>siRecebeConsultaPropostaIn</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>INTF</R3_TYPE>
+     <R3_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</R3_NAME>
+     <R3_TEXT>Proxy Interface (generated)</R3_TEXT>
+     <CATEGORY>ifmmessif</CATEGORY>
+     <DIRECTION>I</DIRECTION>
+    </item>
+    <item>
+     <OBJECT>INTF</OBJECT>
+     <OBJ_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME>
+     <OBJECT1>METH</OBJECT1>
+     <OBJ_NAME1>SI_RECEBE_CONSULTA_PROPOSTA_IN</OBJ_NAME1>
+     <OBJECT2>EXCE</OBJECT2>
+     <OBJ_NAME2>ZCLFI_CX_FMT_CONSULTA_PROPOSTA</OBJ_NAME2>
+     <OBJECT_R>CLAS</OBJECT_R>
+     <OBJ_NAME_R>ZCLFI_CX_FMT_CONSULTA_PROPOSTA</OBJ_NAME_R>
+     <ID>&lt;fault&gt; fmtConsultaProposta &lt;operation&gt; siRecebeConsultaPropostaIn &lt;portType&gt; siRecebeConsultaPropostaIn http://trescoracoes.com.br/financeiro/consultaproposta http://trescoracoes.com.br/financeiro/consultaproposta</ID>
+     <IFR_TYPE>fault</IFR_TYPE>
+     <IFR_NAME>fmtConsultaProposta</IFR_NAME>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>EXCE</R3_TYPE>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>INTF</OBJECT>
+     <OBJ_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME>
+     <OBJECT1>METH</OBJECT1>
+     <OBJ_NAME1>SI_RECEBE_CONSULTA_PROPOSTA_IN</OBJ_NAME1>
+     <OBJECT2>METH</OBJECT2>
+     <OBJ_NAME2>SI_RECEBE_CONSULTA_PROPOSTA_IN</OBJ_NAME2>
+     <ID>&lt;operation&gt; siRecebeConsultaPropostaIn &lt;portType&gt; siRecebeConsultaPropostaIn http://trescoracoes.com.br/financeiro/consultaproposta http://trescoracoes.com.br/financeiro/consultaproposta</ID>
+     <IFR_TYPE>operation</IFR_TYPE>
+     <IFR_NAME>siRecebeConsultaPropostaIn</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>METH</R3_TYPE>
+     <R3_NAME>SI_RECEBE_CONSULTA_PROPOSTA_IN</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+     <DIRECTION>I</DIRECTION>
+     <SYNCHRON>X</SYNCHRON>
+    </item>
+    <item>
+     <OBJECT>INTF</OBJECT>
+     <OBJ_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME>
+     <OBJECT1>METH</OBJECT1>
+     <OBJ_NAME1>SI_RECEBE_CONSULTA_PROPOSTA_IN</OBJ_NAME1>
+     <OBJECT2>PAEX</OBJECT2>
+     <OBJ_NAME2>OUTPUT</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZCLFI_MT_RETORNO_CONSULTA_PROP</OBJ_NAME_R>
+     <ID>&lt;output&gt; output &lt;operation&gt; siRecebeConsultaPropostaIn &lt;portType&gt; siRecebeConsultaPropostaIn http://trescoracoes.com.br/financeiro/consultaproposta http://trescoracoes.com.br/financeiro/consultaproposta</ID>
+     <IFR_TYPE>PartOutput</IFR_TYPE>
+     <IFR_NAME>output</IFR_NAME>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>PAEX</R3_TYPE>
+     <R3_NAME>OUTPUT</R3_NAME>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>INTF</OBJECT>
+     <OBJ_NAME>ZCLFI_II_SI_RECEBE_CONSULTA_PR</OBJ_NAME>
+     <OBJECT1>METH</OBJECT1>
+     <OBJ_NAME1>SI_RECEBE_CONSULTA_PROPOSTA_IN</OBJ_NAME1>
+     <OBJECT2>PAIM</OBJECT2>
+     <OBJ_NAME2>INPUT</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZCLFI_MT_CONSULTAR_PROPOSTA</OBJ_NAME_R>
+     <ID>&lt;input&gt; input &lt;operation&gt; siRecebeConsultaPropostaIn &lt;portType&gt; siRecebeConsultaPropostaIn http://trescoracoes.com.br/financeiro/consultaproposta http://trescoracoes.com.br/financeiro/consultaproposta</ID>
+     <IFR_TYPE>PartInput</IFR_TYPE>
+     <IFR_NAME>input</IFR_NAME>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>PAIM</R3_TYPE>
+     <R3_NAME>INPUT</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

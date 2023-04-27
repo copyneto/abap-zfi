@@ -1,0 +1,9 @@
+projection;
+
+define behavior for ZC_FI_CONC_CRED //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+}

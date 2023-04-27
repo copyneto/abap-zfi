@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service def. - Cancelamento Bancário'
+define service ZUI_DOC_CANC_BANC {
+  expose ZC_FI_DOC_CANC_BANC as CancelBanc;
+}

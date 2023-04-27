@@ -1,0 +1,166 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Dados Tabela',
+                     title: { value: 'Contrato' },
+                     typeNamePlural: 'Dados Tabela'
+                   }
+     }
+annotate view ZC_FI_CARGA_PENDENCIAS with
+{
+  @UI.facet:[
+             { id:        'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+             { id:              'geral',
+               purpose:         #STANDARD,
+               parentId:        'Facet',
+               type:            #FIELDGROUP_REFERENCE,
+               label:           'Dados Gerais',
+               targetQualifier: 'geral',
+               position:         20 } ,
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 } ]
+
+  @UI.hidden: true
+  Doc_guid;
+
+  @UI: { lineItem:        [ { position: 10 } ],
+     identification:  [ { position: 10 } ] }
+  //     selectionField:  [ { position: 10 } ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  Contrato;
+  @UI: { lineItem:    [ { position: 20 } ],
+  identification:  [ { position: 20 } ]}
+  //  selectionField:  [ { position: 20 } ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'geral' }]
+  Aditivo;
+  @UI: { lineItem:    [ { position: 30 } ],
+  identification:  [ { position: 30 } ] }
+  //  selectionField:  [ { position: 30 } ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'geral' }]
+  Bukrs;
+  @UI: { lineItem:    [ { position: 40 } ],
+  identification:  [ { position: 40 } ] }
+  //  selectionField:  [ { position: 40 } ] }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'geral' }]
+  Kunnr;
+  @UI: { lineItem:    [ { position: 50 } ],
+  identification:  [ { position: 50 } ] }
+  //  selectionField:  [ { position: 50 } ] }
+  @UI.fieldGroup: [{ position: 50, qualifier: 'geral' }]
+  Belnr;
+  @UI: { lineItem:    [ { position: 60 } ],
+  identification:  [ { position: 60 } ] }
+  //  selectionField:  [ { position: 60 } ] }
+  @UI.fieldGroup: [{ position: 60, qualifier: 'geral' }]
+  Gjahr;
+  @UI: { lineItem:    [ { position: 60 } ],
+  identification:  [ { position: 60 } ] }
+  @UI.fieldGroup: [{ position: 60, qualifier: 'geral' }]
+  NumeroItem;
+  @UI: { lineItem:    [ { position: 70 } ],
+  identification:  [ { position: 70 } ] }
+  @UI.fieldGroup: [{ position: 70, qualifier: 'geral' }]
+  Budat;
+  @UI: { lineItem:    [ { position: 80 } ],
+  identification:  [ { position: 80 } ] }
+  @UI.fieldGroup: [{ position: 80, qualifier: 'geral' }]
+  Wrbtr;
+  @UI: { lineItem:    [ { position: 90 } ],
+  identification:  [ { position: 90 } ] }
+  @UI.fieldGroup: [{ position: 90, qualifier: 'geral' }]
+  Waers;
+  @UI: { lineItem:    [ { position: 100 } ],
+  identification:  [ { position: 100 } ] }
+  @UI.fieldGroup: [{ position: 100, qualifier: 'geral' }]
+  Bzirk;
+  @UI: { lineItem:    [ { position: 110 } ],
+  identification:  [ { position: 110 } ] }
+  @UI.fieldGroup: [{ position: 110, qualifier: 'geral' }]
+  Canal;
+  @UI: { lineItem:    [ { position: 120 } ],
+  identification:  [ { position: 120 } ] }
+  @UI.fieldGroup: [{ position: 120, qualifier: 'geral' }]
+  Setor;
+  @UI: { lineItem:    [ { position: 130 } ],
+  identification:  [ { position: 130 } ] }
+  @UI.fieldGroup: [{ position: 130, qualifier: 'geral' }]
+  Vkorg;
+  @UI: { lineItem:    [ { position: 140 } ],
+  identification:  [ { position: 140 } ] }
+  @UI.fieldGroup: [{ position: 140, qualifier: 'geral' }]
+  TipoDesc;
+  @UI: { lineItem:    [ { position: 150 } ],
+  identification:  [ { position: 150 } ] }
+  @UI.fieldGroup: [{ position: 150, qualifier: 'geral' }]
+  DocProvisao;
+  @UI: { lineItem:    [ { position: 160 } ],
+  identification:  [ { position: 160 } ] }
+  @UI.fieldGroup: [{ position: 160, qualifier: 'geral' }]
+  ExercProvisao;
+  @UI: { lineItem:    [ { position: 170 } ],
+  identification:  [ { position: 170 } ] }
+  @UI.fieldGroup: [{ position: 170, qualifier: 'geral' }]
+  MontProvisao;
+  @UI: { lineItem:    [ { position: 180 } ],
+  identification:  [ { position: 180 } ] }
+  @UI.fieldGroup: [{ position: 180, qualifier: 'geral' }]
+  DocLiquidacao;
+  @UI: { lineItem:    [ { position: 190 } ],
+  identification:  [ { position: 190 } ] }
+  @UI.fieldGroup: [{ position: 190, qualifier: 'geral' }]
+  ExercLiquidacao;
+  @UI: { lineItem:    [ { position: 200 } ],
+  identification:  [ { position: 200 } ] }
+  @UI.fieldGroup: [{ position: 200, qualifier: 'geral' }]
+  MontLiquidacao;
+  @UI: { lineItem:    [ { position: 210 } ],
+  identification:  [ { position: 210 } ] }
+  @UI.fieldGroup: [{ position: 210, qualifier: 'geral' }]
+  DocEstorno;
+  @UI: { lineItem:    [ { position: 220 } ],
+  identification:  [ { position: 220 } ] }
+  @UI.fieldGroup: [{ position: 220, qualifier: 'geral' }]
+  ExercEstorno;
+  @UI: { lineItem: [ { position: 230 } ],
+  identification:  [ { position: 230 } ] }
+  @UI.fieldGroup: [{ position: 230, qualifier: 'geral' }]
+  MontEstorno;
+  @UI: { lineItem:  [ { position: 240 } ],
+  identification:  [ { position: 240 } ] }
+  @UI.fieldGroup: [{ position: 240, qualifier: 'geral' }]
+  StatusProvisao;
+  @UI: { lineItem:    [ { position: 250 } ],
+  identification:  [ { position: 250 } ] }
+  @UI.fieldGroup: [{ position: 250, qualifier: 'geral' }]
+  TipoDado;
+  @UI.lineItem:        [ { position: 260, label: 'Criado Por' } ]
+  @UI.identification:  [ { position: 260, label: 'Criado Por' } ]
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI.lineItem:        [ { position: 270, label: 'Criado Em' , hidden: true} ]
+  @UI.identification:  [ { position: 270, label: 'Criado Em' , hidden: true } ]
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI.lineItem:        [ { position: 280, label: 'Alterado Por' } ]
+  @UI.identification:  [ { position: 280, label: 'Alterado Por' } ]
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar'} ]
+  LastChangedBy;
+  @UI.lineItem:        [ { position: 290, label: 'Alteardo Em' } ]
+  @UI.identification:  [ { position: 290, label: 'Alteardo Em' } ]
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI.lineItem:        [ { position: 300, label: 'Registro hora'},
+                         { type: #FOR_ACTION, dataAction: 'message', label: 'Log' } ]
+  @UI.identification:  [ { position: 300, label: 'Registro hora'} ]
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar'} ]
+  LocalLastChangedAt;
+
+}

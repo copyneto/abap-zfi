@@ -1,0 +1,28 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Aprovação',
+                     title: { value: 'Contrato' },
+                     typeNamePlural: 'Aprovação'
+                   }
+     }
+annotate view ZC_FI_CONT_PROX_NIVEL with
+{
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         fieldGroup:      [ { position: 10 } ]}
+  Nivel;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+     identification:  [ { position: 20 } ],
+     fieldGroup:      [ { position: 20 } ]}
+  DescNivel;
+  @UI: { lineItem:        [ { position: 20 } ],
+     identification:  [ { position: 20 } ],
+     fieldGroup:      [ { position: 20 } ]}
+  Bname;
+  @UI: { lineItem:        [ { position: 20 } ],
+     identification:  [ { position: 20 } ],
+     fieldGroup:      [ { position: 20 } ]}
+  Email;
+
+}

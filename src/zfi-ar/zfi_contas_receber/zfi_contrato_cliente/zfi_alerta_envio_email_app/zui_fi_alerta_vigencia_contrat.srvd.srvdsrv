@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition for Alerta de Vigência'
+define service ZUI_FI_ALERTA_VIGENCIA_CONTRAT {
+  expose ZC_FI_ALERTA_VIGENCIA_CONTRATO;
+}

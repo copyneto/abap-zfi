@@ -1,0 +1,4 @@
+@EndUserText.label: 'Alerta de Vigência Contratos Cliente'
+define service ZUI_FI_CADASTRO_CONTRAT_CLIENT {
+  expose ZC_FI_CONTRATOS13;
+}

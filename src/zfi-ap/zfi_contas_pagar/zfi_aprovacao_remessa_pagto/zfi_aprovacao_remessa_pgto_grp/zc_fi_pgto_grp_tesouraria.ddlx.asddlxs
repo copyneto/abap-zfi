@@ -1,0 +1,138 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Pagamento por Grupo de Tesouraria',
+    typeNamePlural: 'Pagamentos por Grupo de Tesouraria',
+    title: {
+        type: #STANDARD,
+        value: 'CashPlanningGroup'    },
+    description: {
+        type: #STANDARD,
+        value: 'CompanyCode'
+    }
+}
+
+@UI.presentationVariant: [{
+includeGrandTotal: false,
+    requestAtLeast: ['CompanyCode', 'CompanyCodeName', 'CashPlanningGroup', 'CashPlanningGroupName', 'NetDueDate', 'RepType', 'RepTypeText', 'PaymentCurrency',
+                     'encerrador', 'aprov1', 'aprov2', 'aprov3',
+                     'encerradorcrit', 'aprov1crit', 'aprov2crit', 'aprov3crit',
+                     'encerradortext', 'aprov1text', 'aprov2text', 'aprov3text', 'Username', 'PaymentRunID' ]
+}]
+
+annotate entity ZC_FI_PGTO_GRP_TESOURARIA with
+{
+
+  @UI                      : { selectionField: [{position: 10}], textArrangement: #TEXT_LAST}
+
+  CompanyCode;
+
+  //  Supplier;
+
+  @UI                      : { lineItem:       [{position: 50}], textArrangement: #TEXT_LAST }
+  @Consumption.filter.hidden: true
+  CashPlanningGroup;
+
+  @UI                      : { selectionField: [{position: 20}]}
+  NetDueDate;
+
+  @UI                      : { lineItem:       [{position: 60 }]}
+  //  @UI                      : { lineItem:       [{position: 60, type: #WITH_URL, url: '_URL.PaymentDocument' }]}
+  @Consumption.filter.hidden: true
+  PaidAmountInPaytCurrency;
+
+  //  @Consumption.filter.hidden: true
+  //   @UI                      : { textArrangement: #TEXT_LAST }
+  //  Supplier;
+
+  @Consumption.filter.hidden: true
+  PaymentCurrency;
+
+  //  @Consumption.filter.hidden: true
+  //  runhour;
+
+  //  @Consumption.filter.hidden: true
+  //  DownloadDate;
+
+  //  @Consumption.filter.hidden: true
+  //  paymentrundate;
+  //
+  //  @Consumption.filter.hidden: true
+  //  paymentrunid;
+  //
+  //  @Consumption.filter.hidden: true
+  //  paymentrunisproposal;
+  //
+  //  @Consumption.filter.hidden: true
+  //  @UI.textArrangement: #TEXT_LAST
+  //  bank;
+  //
+  //  @Consumption.filter.hidden: true
+  //  @UI                      : { textArrangement: #TEXT_LAST }
+  //  paymentmethod;
+
+  @UI                      : { selectionField: [{position: 30}], textArrangement: #TEXT_ONLY}
+  RepType;
+
+  @UI                      : { lineItem:       [{position: 70 }]}
+  @Consumption.filter.hidden: true
+  OpenAmount;
+
+  @UI                      : { lineItem:       [{position: 80 }]}
+  @Consumption.filter.hidden: true
+  BlockedAmount;
+
+  @UI                      : { lineItem:       [{position: 10, criticality: 'encerradorcrit'}], textArrangement: #TEXT_ONLY }
+  @Consumption.filter.hidden: true
+  encerrador;
+
+  @Consumption.filter.hidden: true
+  encerradorcrit;
+
+  @Consumption.filter.hidden: true
+  encerradortext;
+
+  @UI                      : { lineItem:       [{position: 20, criticality: 'aprov1crit'}], textArrangement: #TEXT_ONLY }
+  @Consumption.filter.hidden: true
+  aprov1;
+
+  @Consumption.filter.hidden: true
+  aprov1crit;
+
+  @Consumption.filter.hidden: true
+  aprov1text;
+
+  @UI                      : { lineItem:       [{position: 30, criticality: 'aprov2crit'}], textArrangement: #TEXT_ONLY }
+  @Consumption.filter.hidden: true
+  aprov2;
+
+  @Consumption.filter.hidden: true
+  aprov2crit;
+
+  @Consumption.filter.hidden: true
+  aprov2text;
+
+  @UI                      : { lineItem:       [{position: 40, criticality: 'aprov3crit'}], textArrangement: #TEXT_ONLY }
+  @Consumption.filter.hidden: true
+  aprov3;
+
+  @Consumption.filter.hidden: true
+  aprov3crit;
+
+  @Consumption.filter.hidden: true
+  aprov3text;
+
+  @Consumption.filter.hidden: true
+  CompanyCodeName;
+
+  @Consumption.filter.hidden: true
+  CashPlanningGroupName;
+
+  @Consumption.filter.hidden: true
+  RepTypeText;
+
+  //  @Consumption.filter.hidden: true
+  //  paymentmethodname;
+  //
+  //  @Consumption.filter.hidden: true
+  //  bankname;
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_GKO_SEQCTE</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>17</HEADLEN>
+    <SCRLEN1>08</SCRLEN1>
+    <SCRLEN2>08</SCRLEN2>
+    <SCRLEN3>14</SCRLEN3>
+    <DDTEXT>Sequencial do CTe</DDTEXT>
+    <REPTEXT>Sequencial do CTe</REPTEXT>
+    <SCRTEXT_S>Seq. CTe</SCRTEXT_S>
+    <SCRTEXT_M>Seq. CTe</SCRTEXT_M>
+    <SCRTEXT_L>Sequencial CTe</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>INT4</DATATYPE>
+    <LENG>000010</LENG>
+    <OUTPUTLEN>000011</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

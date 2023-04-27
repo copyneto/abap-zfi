@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_CONT_RCB</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Processo J59 - Contas a Receber</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Registros não encontrados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Máximo de 8 linhas</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Tamanho 72 posições ultrapassado para linha &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao tentar modificar documento: &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Documento modificado com sucesso: &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro função ITEM_DERIVE_FIELDS. Documento: &amp;1, Empresa: &amp;2,N° conta: &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Reimpressão do Documento &amp;1 Não é Possivel</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Reimpressão do Documento &amp;1 somente é possivel com a forma D ou Z</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Reimpressão do Documento &amp;1 somente é possivel com o Banco Empresa</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Novo vencimento não poderá ser menor que a data de lançamento!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Informações gerais.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Acessar a transação &quot;SLG1&quot; para a visualização dos logs.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Erro ao tentar retirar bloqueio: &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Processamento finalizado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Documento ainda não possui prazo minimo para lib.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Documento &amp;1 &amp;2 &amp;3 retirado bloqueio.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Documento &amp;1 item &amp;2 está fora do ranger de dias em atraso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Documento &amp; modificado na empresa &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONT_RCB</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Documento(s) &amp; Empresa &amp; Exercício &amp; modificado com sucesso!</TEXT>
+    </T100>
+   </T100>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZFI_CONT_RCB003</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00003</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZFI_CONT_RCB003</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cada linha só pode ter 72 caracteres.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Ajustar a linha &amp; informada para a quantidade de 72 caracteres.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Corrigir a quantidade de informações.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

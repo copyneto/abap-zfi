@@ -1,0 +1,30 @@
+managed;
+
+define behavior for ZI_FI_SEM_CONTR_DDE alias Semcontrato implementation in class zclfi_sem_contr_dde unique
+persistent table ztfi_sem_ctr_dde
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+    field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+    validation validateDia on save { create; update; }
+    validation existeContr on save { create; update; }
+
+  mapping for ztfi_sem_ctr_dde {
+    Empresa = bukrs;
+    Cliente = kunnr;
+    GrpCondicoes = kdkg1;
+    DiaMes = zjanmes;
+    DiaSemana = zjansem;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

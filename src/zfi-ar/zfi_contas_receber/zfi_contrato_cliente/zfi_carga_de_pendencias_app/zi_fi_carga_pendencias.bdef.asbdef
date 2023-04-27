@@ -1,0 +1,46 @@
+managed; // implementation in class zbp_i_fi_carga_pendencias unique;
+
+define behavior for ZI_FI_CARGA_PENDENCIAS //alias <alias_name>
+
+persistent table ztfi_cont_cont
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+
+{
+
+  mapping for ztfi_cont_cont
+  {
+    Contrato = contrato;
+    Aditivo = aditivo;
+    Bukrs = bukrs;
+    Kunnr = kunnr;
+    Belnr = belnr;
+    Gjahr = gjahr;
+    NumeroItem = numero_item;
+    Budat = budat;
+    Wrbtr = wrbtr;
+    Waers = waers;
+    Bzirk = bzirk;
+    Canal = canal;
+    Setor = setor;
+    Vkorg = vkorg;
+    TipoDesc = tipo_desc;
+    DocProvisao = doc_provisao;
+    ExercProvisao = exerc_provisao;
+    MontProvisao = mont_provisao;
+    DocLiquidacao = doc_liquidacao;
+    ExercLiquidacao = exerc_liquidacao;
+    MontLiquidacao = mont_liquidacao;
+    DocEstorno = doc_estorno;
+    ExercEstorno = exerc_estorno;
+    MontEstorno = mont_estorno;
+    StatusProvisao = status_provisao;
+    TipoDado = tipo_dado;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

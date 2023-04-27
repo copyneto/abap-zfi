@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Formato de arquivo não suportado. Realizar nova carga com formato &quot;xlsx&quot;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Falha ao salvar dados de carga tabela.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Erro linha: &amp;1 N° Contrato em branco</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro linha: &amp;1 Contrato não localizado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Erro linha: &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Carga realizada com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Processo finalizado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Registro existe para o &amp;1 &amp;2 CNPJ &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Empresa, Local de Neg., Nível e Usuário são Obrigatórios</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Informar % ou Valor de faixa: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_EXCEL</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Preencher % Bonus OU Mont Bonus: &amp;1</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

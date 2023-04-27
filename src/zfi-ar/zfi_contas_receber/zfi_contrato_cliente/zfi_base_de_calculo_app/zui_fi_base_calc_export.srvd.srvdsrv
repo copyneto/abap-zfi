@@ -1,0 +1,4 @@
+@EndUserText.label: 'Exportar dados'
+define service ZUI_FI_BASE_CALC_EXPORT {
+  expose ZC_FI_BASE_DE_CALCULO;
+}

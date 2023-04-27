@@ -1,0 +1,5 @@
+CLASS zclfi_sem_contr_dde DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_sem_contr_dde.
+ENDCLASS.
+
+CLASS zclfi_sem_contr_dde IMPLEMENTATION.
+ENDCLASS.

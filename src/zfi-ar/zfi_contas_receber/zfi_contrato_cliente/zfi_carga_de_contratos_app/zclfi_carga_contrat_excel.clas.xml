@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_CARGA_CONTRAT_EXCEL</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Classe de carga de dados</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NEXT_DOCUMENTNO</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NEXT_DOCUMENTNO</CMPNAME>
+     <SCONAME>RV_DOCNUMBER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Numero do Documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NEXT_GUID</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NEXT_GUID</CMPNAME>
+     <SCONAME>EV_GUID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NEXT_GUID</CMPNAME>
+     <SCONAME>RV_GUID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD_FILL_DATA_CONTRATO</CMPNAME>
+     <SCONAME>IT_FILE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela para carga excel</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD_FILL_DATA_RAIZCNPJ</CMPNAME>
+     <SCONAME>IT_FILE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela para carga excel</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD_HEADER</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD_HEADER</CMPNAME>
+     <SCONAME>IV_FILETYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo Carga de Contratos</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

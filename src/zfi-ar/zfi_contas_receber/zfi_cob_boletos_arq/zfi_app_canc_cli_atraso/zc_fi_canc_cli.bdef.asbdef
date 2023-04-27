@@ -1,0 +1,9 @@
+unmanaged implementation in class zclfi_canc_cli unique;
+
+define behavior for zc_fi_canc_cli //alias <alias_name>
+//late numbering
+//lock master
+//etag master <field_name>
+{
+  action ( features : instance ) cancelar;
+}

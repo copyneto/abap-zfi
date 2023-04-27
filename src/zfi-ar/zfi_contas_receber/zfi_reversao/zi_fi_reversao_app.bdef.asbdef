@@ -1,0 +1,12 @@
+unmanaged implementation in class zclfi_reversao_app unique;
+
+define behavior for ZI_FI_REVERSAO_APP alias _Estorno
+//late numbering
+//lock master
+//etag master <field_name>
+{
+action motivoEstorno parameter ZI_FI_REVERSAO_POPUP;
+//  create;
+//  update;
+//  delete;
+}

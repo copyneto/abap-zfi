@@ -1,0 +1,39 @@
+managed;
+
+define behavior for ZI_FI_DEFRECE_CRI alias _Criterios
+implementation in class zclfi_defere_cri unique
+persistent table ztfi_defrece_cri
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+
+  field ( mandatory : create ) Bukrs, RegioFrom, RegioTo;
+  field ( readonly : update ) Bukrs, RegioFrom, RegioTo;
+  field ( readonly )
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+  create;
+  update;
+  delete;
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_defrece_cri
+  {
+    bukrs = bukrs;
+    RegioFrom = regio_from;
+    RegioTo = regio_to;
+    preventr = preventr;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}

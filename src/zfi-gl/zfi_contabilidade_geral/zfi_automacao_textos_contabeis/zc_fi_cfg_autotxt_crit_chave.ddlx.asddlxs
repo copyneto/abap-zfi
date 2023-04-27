@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Seleção de Chave de Lançamento',
+        typeNamePlural: 'Chaves',
+        title: { type: #STANDARD,
+                 label: 'Chave Lancto',
+                 value: 'CritSelPostingKey' }
+    },
+
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'CritSelPostingKey',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+   }]
+}
+annotate entity ZC_FI_CFG_AUTOTXT_CRIT_CHAVE with
+{
+
+  @UI.facet: [  { label: 'Informações Gerais',
+                   id: 'GeneralInfo',
+                   type: #COLLECTION,
+                   position: 10 },
+
+                 { purpose: #STANDARD,
+                   label: 'Geral',
+                   position: 10,
+                   type: #IDENTIFICATION_REFERENCE,
+                   parentId: 'GeneralInfo' },
+
+
+                 { purpose: #STANDARD,
+                   label: 'Chaves',
+                   position: 20,
+                   type: #FIELDGROUP_REFERENCE,
+                   parentId: 'GeneralInfo',
+                   targetQualifier: 'ChaveLancto' } ]
+
+
+  @UI: { lineItem:       [{ position: 10,  label: 'Cód. Seleção' }],
+         identification: [{ position: 10,  label: 'Cód. Seleção' }]
+  }
+  CritSelPostingKey;
+
+  @UI: { lineItem:        [ { position: 20, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'ChaveLancto', position: 10 } ] }
+  SignPostingKey;
+
+  @UI: { lineItem:        [ { position: 30, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'ChaveLancto', position: 20 } ] }
+  OptPostingKey;
+
+  @UI: { lineItem:        [ { position: 40, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'ChaveLancto', position: 30 } ] }
+  LowPostingKey;
+
+  @UI: { lineItem:        [ { position: 50, importance: #HIGH } ],
+           fieldGroup:      [ { qualifier: 'ChaveLancto', position: 40 } ] }
+  HighPostingKey;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  //    SignTextPostingKey;
+  //    OptTextPostingKey;
+
+
+}

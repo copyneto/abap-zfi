@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def para Mercado Interno'
+define service ZUI_FI_MERC_INT {
+  expose ZC_FI_MERC_INT_H;
+  expose ZC_FI_MERC_INT_I;
+}

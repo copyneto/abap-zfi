@@ -1,0 +1,6 @@
+projection;
+
+define behavior for ZC_FI_REVERSAO_PROVISAO_PDC alias Reversao
+{
+  use action reverter;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Manutenção de Contas'
+define service ZUI_FI_MAN_CONTAS {
+  expose ZC_FI_MAN_CONTAS as Contas;
+}

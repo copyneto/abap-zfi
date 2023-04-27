@@ -1,0 +1,6 @@
+projection;
+
+define behavior for ZC_FI_RENOVACAO_CONTRATO alias Contrato
+{
+    use action renovarContrato;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Definition para Aprovação de Contratos'
+define service ZUI_FI_APROVAR_CONTRATOS {
+  expose ZC_FI_CONT_APROVACAO as Aprovacao;
+  expose ZC_FI_CONT_PROX_NIVEL as ProxNivel;
+}

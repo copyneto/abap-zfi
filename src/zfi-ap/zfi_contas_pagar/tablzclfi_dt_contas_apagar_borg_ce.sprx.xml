@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONTAS_APAGAR_BORG_CE</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLFI_DT_CONTAS_APAGAR1</OBJ_NAME_M>
+     <HASH_ID>B01B3E38943B6DAB861DF9C18F59E77FFACB66F9</HASH_ID>
+     <ID>&lt;type&gt; BOrgCentro &lt;element&gt; BOrgCentro &lt;type&gt; Borgs &lt;element&gt; Borgs &lt;type&gt; ContaAPagar &lt;element&gt; ContaAPagar &lt;type&gt; Itens &lt;element&gt; Itens &lt;type&gt; msgContasAPagarList &lt;element&gt; msgContasAPagarList &lt;type&gt; dtContasAPagar http://trescoracoes.com.br/suprimentos/contasapagar http://trescoracoes.com.br/suprimentos/contasapagar</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>BOrgCentro</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/suprimentos/contasapagar</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/suprimentos/contasapagar</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLFI_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/suprimentos/contasapagar</X-ML_NSPCE>
+     <X-ML_NAME>BOrgCentro</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONTAS_APAGAR_BORG_CE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CODIGO_BORG</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CODIGO_BORG</OBJ_NAME2>
+     <ID>&lt;element&gt; CodigoBOrg &lt;type&gt; BOrgCentro &lt;element&gt; BOrgCentro &lt;type&gt; Borgs &lt;element&gt; Borgs &lt;type&gt; ContaAPagar &lt;element&gt; ContaAPagar &lt;type&gt; Itens &lt;element&gt; Itens &lt;type&gt; msgContasAPagarList &lt;element&gt; msgContasAPagarList &lt;type&gt; dtContasAPagar http://trescoracoes.com.br/suprimentos/contasapagar http://trescoracoes.com.br/suprimentos/contasapagar</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CodigoBOrg</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CODIGO_BORG</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONTAS_APAGAR_BORG_CE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CODIGO_VENT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CODIGO_VENT</OBJ_NAME2>
+     <ID>&lt;element&gt; CodigoVEnt &lt;type&gt; BOrgCentro &lt;element&gt; BOrgCentro &lt;type&gt; Borgs &lt;element&gt; Borgs &lt;type&gt; ContaAPagar &lt;element&gt; ContaAPagar &lt;type&gt; Itens &lt;element&gt; Itens &lt;type&gt; msgContasAPagarList &lt;element&gt; msgContasAPagarList &lt;type&gt; dtContasAPagar http://trescoracoes.com.br/suprimentos/contasapagar http://trescoracoes.com.br/suprimentos/contasapagar</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CodigoVEnt</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CODIGO_VENT</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONTAS_APAGAR_BORG_CE</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLFI_DT_CONTAS_APAGAR_BORG_CE</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLFI_DT_CONTAS_APAGAR_BORG_CE</OBJ_NAME2>
+     <ID>&lt;type&gt; BOrgCentro &lt;element&gt; BOrgCentro &lt;type&gt; Borgs &lt;element&gt; Borgs &lt;type&gt; ContaAPagar &lt;element&gt; ContaAPagar &lt;type&gt; Itens &lt;element&gt; Itens &lt;type&gt; msgContasAPagarList &lt;element&gt; msgContasAPagarList &lt;type&gt; dtContasAPagar http://trescoracoes.com.br/suprimentos/contasapagar http://trescoracoes.com.br/suprimentos/contasapagar</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>BOrgCentro</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLFI_DT_CONTAS_APAGAR_BORG_CE</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

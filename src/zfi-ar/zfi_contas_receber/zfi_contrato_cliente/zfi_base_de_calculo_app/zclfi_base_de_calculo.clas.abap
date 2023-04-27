@@ -1,0 +1,5 @@
+CLASS zclfi_base_de_calculo DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_contrato_base.
+ENDCLASS.
+
+CLASS zclfi_base_de_calculo IMPLEMENTATION.
+ENDCLASS.

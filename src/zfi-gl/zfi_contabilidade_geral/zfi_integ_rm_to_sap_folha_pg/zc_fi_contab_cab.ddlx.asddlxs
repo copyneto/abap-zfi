@@ -1,0 +1,110 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Relatório de Conferência',
+                     typeNamePlural: 'Relatório de Conferência',
+                     title: { type: #STANDARD, label: 'Identificação',  value: 'Identificacao' } },
+  presentationVariant: [{ sortOrder: [{ by: 'Identificacao', direction:  #ASC }] }] }
+
+@UI.lineItem: [{criticality: 'StatusCriticality'}]
+annotate entity ZC_FI_CONTAB_CAB with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'STATUS_RM',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Status RM',
+                 position:        10 },
+
+                        { parentId:        'STATUS_RM',
+                          id:              'RM',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'RM' },
+
+               { id:              'CABECALHO_DADOS',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Cabeçalho',
+                 position:        20 },
+
+                        { parentId:        'CABECALHO_DADOS',
+                          id:              'CabDados',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'CabDados' },
+
+               { id:              'Itens',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Itens',
+                 position:        20,
+                 targetElement:   '_Item'
+               } ]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  //  @UI.lineItem:         [ { position: 10, type: #FOR_ACTION, dataAction: 'simular', label: 'Simular',invocationGrouping: #CHANGE_SET },
+  //                          { position: 20, type: #FOR_ACTION, dataAction: 'contabilizar', label: 'Contabilizar',invocationGrouping: #CHANGE_SET },
+  //                          { position: 30, type: #FOR_ACTION, dataAction: 'eliminar', label: 'Eliminar',invocationGrouping: #CHANGE_SET  } ]
+  //
+  //  @UI.identification:   [ { position: 10, type: #FOR_ACTION, dataAction: 'simular', label: 'Simular' },
+  //                          { position: 20, type: #FOR_ACTION, dataAction: 'contabilizar', label: 'Contabilizar' },
+  //                          { position: 30, type: #FOR_ACTION, dataAction: 'eliminar', label: 'Eliminar' } ]
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  //  @UI.hidden: true
+  //  Id;
+
+  @UI.hidden: true
+  StatusText;
+
+  @UI.textArrangement: #TEXT_ONLY
+  @Consumption.valueHelpDefinition: [{entity: {name: 'ZI_FI_VH_STATUS_CONTABILIZACAO', element: 'ObjectId' }}]
+  @UI: { lineItem:       [ { position: 10, criticality: 'StatusCriticality' } ],
+         fieldGroup:     [ { position: 10, qualifier: 'RM', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         selectionField: [ { position: 10 } ] }
+  StatusCode;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI: { lineItem:       [ { position: 20 } ],
+         fieldGroup:     [ { position: 20, qualifier: 'RM' } ],
+         selectionField: [ { position: 20 } ] }
+  Identificacao;
+
+  @UI: { lineItem:       [ { position: 30 } ],
+         fieldGroup:     [ { position: 10, qualifier: 'CabDados' } ],
+         selectionField: [ { position: 30 } ] }
+  Empresa;
+
+  @UI: { lineItem:       [ { position: 40 } ],
+         fieldGroup:     [ { position: 20, qualifier: 'CabDados' } ] }
+  DataDocumento;
+
+  @UI: { lineItem:       [ { position: 50 } ],
+         fieldGroup:     [ { position: 30, qualifier: 'CabDados' } ] }
+  DataLancamento;
+
+  @UI: { lineItem:       [ { position: 60 } ],
+         fieldGroup:     [ { position: 40, qualifier: 'CabDados' } ] }
+  TipoDocumento;
+
+  @UI: { lineItem:       [ { position: 70 } ],
+         fieldGroup:     [ { position: 50, qualifier: 'CabDados' } ],
+         selectionField: [ { position: 40 } ] }
+  Referencia;
+
+  @UI: { lineItem:       [ { position: 80 } ],
+         fieldGroup:     [ { position: 60, qualifier: 'CabDados' } ] }
+  TextCab;
+
+  @UI: { lineItem:       [ { position: 90 } ],
+         fieldGroup:     [ { position: 30, qualifier: 'RM' } ] }
+  TextStatus;
+
+}

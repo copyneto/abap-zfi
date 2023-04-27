@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGFI_CONTABILIZACAO.         "MESSAGE-ID ..
+
+* INCLUDE LZFGFI_CONTABILIZACAOD...          " Local class definition

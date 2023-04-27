@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition para o boleto'
+define service ZUI_BOLETO {
+  expose ZC_FI_BOLETO;
+}

@@ -1,0 +1,53 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+    typeName: 'Log',
+    typeNamePlural: 'Logs',
+    title: {
+        type: #STANDARD,
+        label: 'Integração',
+        value: 'Mensagem'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Log de Execução',
+        value: 'Data'
+    }
+}
+annotate view ZC_FI_TOTVS_LOG with
+{
+
+  @UI.facet: [{ id: 'Log', purpose: #STANDARD, position: 10, label: 'Entradas', type: #IDENTIFICATION_REFERENCE }]
+
+  @UI: {       lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  Identificacao;
+
+  @UI: {       lineItem: [{ position: 20, criticality: 'StatusCriticality' }],
+         identification: [{ position: 20, criticality: 'StatusCriticality' }],
+         selectionField: [{ position: 20 }] }
+  Status;
+
+  @UI: {       lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }] }
+  Data;
+
+  @UI: {       lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }] }
+  Hora;
+  
+  @UI: {       lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }] }
+  Mensagem;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

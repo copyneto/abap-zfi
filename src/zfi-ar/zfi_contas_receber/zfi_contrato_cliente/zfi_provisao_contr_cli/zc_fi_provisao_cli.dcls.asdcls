@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_FI_PROVISAO_CLI {
+    grant
+        select
+            on
+                ZC_FI_PROVISAO_CLI
+                    where
+                        inheriting conditions from entity ZI_FI_PROVISAO_CLI;
+                        
+}

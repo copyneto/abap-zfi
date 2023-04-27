@@ -1,0 +1,5 @@
+CLASS zclfi_defere_hkont DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_defrece_hkont.
+ENDCLASS.
+
+CLASS zclfi_defere_hkont IMPLEMENTATION.
+ENDCLASS.

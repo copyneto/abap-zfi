@@ -1,0 +1,10 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_FI_CONTABILIZAR {
+    grant
+        select
+            on
+                ZC_FI_CONTABILIZAR
+                    where
+                        inheriting conditions from entity ZI_FI_CONTABILIZAR;
+}

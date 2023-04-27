@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Definition App Venc DDE'
+define service ZUI_VENC_DDE {
+  expose ZC_FI_VENC_DDE_BUSCA;
+}

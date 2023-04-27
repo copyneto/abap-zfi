@@ -1,0 +1,93 @@
+@Metadata.layer:#CORE
+@UI: { headerInfo: { typeName: 'Credito',
+                     typeNamePlural: 'Créditos:',
+                     title: { type: #STANDARD, value: 'Linha' } },
+                     presentationVariant: [{ sortOrder: [{ by: 'Empresa', direction:  #ASC },
+                                      { by: 'Cliente', direction:  #ASC }] }] }
+
+annotate view ZC_FI_COCKPIT_CREDITOS_CLI with
+{
+// ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Creditos',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Créditos',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 10, label: 'Empresa' },
+                            { position: 10, type: #FOR_ACTION, dataAction: 'LimpaSelecaoCre', label: 'Limpar' },
+                            { position: 20, type: #FOR_ACTION, dataAction: 'CalcularSoma', label: 'Somar', invocationGrouping: #CHANGE_SET },
+                            { position: 30, type: #FOR_ACTION, dataAction: 'ExecAssociacao', label: 'Associação', invocationGrouping: #CHANGE_SET },
+                            { position: 40, type: #FOR_ACTION, dataAction: 'PagarFornecedor', label: 'Pagar Fornecedor', invocationGrouping: #CHANGE_SET } ],
+         identification:  [ { position: 10, label: 'Empresa' } ]  }
+  Empresa;
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 20, label: 'Cliente' } ],
+         identification:  [ { position: 20, label: 'Cliente' } ]  }  
+  Cliente;
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 30, label: 'Raiz Id' } ],
+         identification:  [ { position: 30, label: 'Raiz Id' } ]  }  
+  RaizId;
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 40, label: 'Raiz Sim/Não' } ],
+         identification:  [ { position: 40, label: 'Raiz Sim/Não' } ]  }  
+  RaizSn;
+  @UI: { lineItem:        [ { position: 50, label: 'Documento' } ],
+         identification:  [ { position: 50, label: 'Documento' } ]  }
+  Documento;
+  @UI: { lineItem:        [ { position: 60, label: 'Ano' } ],
+         identification:  [ { position: 60, label: 'Ano' } ]  }           
+  Ano;
+  @UI: { lineItem:        [ { position: 70, label: 'Item' } ],
+         identification:  [ { position: 70, label: 'Item' } ]  }
+  Linha;
+  @UI: { lineItem:        [ { position: 75, label: 'Cliente' } ],
+         identification:  [ { position: 75, label: 'Cliente' } ]  }  
+  CodCliente;
+  @UI: { lineItem:        [ { position: 80, label: 'Residual' } ],
+         identification:  [ { position: 80, label: 'Residual' } ]  }  
+  Residual;
+  @UI: { lineItem:        [ { position: 90, label: 'Tipo de Documento' } ],
+         identification:  [ { position: 90, label: 'Tipo de Documento' } ]  }  
+  TipoDocumento;
+  @UI: { lineItem:        [ { position: 100, label: 'Chave de Lançamento' } ],
+         identification:  [ { position: 100, label: 'Chave de Lançamento' } ]  }  
+  ChaveLancamento;
+  @UI: { lineItem:        [ { position: 110, label: 'Código Razão' } ],
+         identification:  [ { position: 110, label: 'Código Razão' } ]  }  
+  CodigoRZE;
+  @UI: { lineItem:        [ { position: 115, label: 'Vencimento Líquido' } ],
+         identification:  [ { position: 115, label: 'Vencimento Líquido' } ]  }    
+  VencimentoLiquido;
+  @UI: { lineItem:        [ { position: 120, label: 'Atribuição' } ],
+         identification:  [ { position: 120, label: 'Atribuição' } ]  }    
+  Atribuicao;
+  @UI: { lineItem:        [ { position: 130, label: 'Referência' } ],
+         identification:  [ { position: 130, label: 'Referência' } ]  }    
+  Referencia;
+  @UI: { lineItem:        [ { position: 140, label: 'Data Lançamento' } ],
+         identification:  [ { position: 140, label: 'Data Lançamento' } ]  }    
+  DataLancamento;
+  @UI: { lineItem:        [ { position: 150, label: 'Forma de Pagamento' } ],
+         identification:  [ { position: 150, label: 'Forma de Pagamento' } ]  }    
+  FormaPagamento;
+  @UI: { lineItem:        [ { position: 155, label: 'Condicao de Pagamento' } ],
+         identification:  [ { position: 155, label: 'Condicao de Pagamento' } ]  }      
+  CondicaoPagamento;
+  @UI: { lineItem:        [ { position: 160, label: 'Moeda' } ],
+         identification:  [ { position: 160, label: 'Moeda' } ]  }    
+  Moeda;
+  @UI: { lineItem:        [ { position: 170, label: 'Montante' } ],
+         identification:  [ { position: 170, label: 'Montante' } ]  }    
+  Montante;
+  @UI: { lineItem:        [ { position: 180, label: 'Desconto' } ],
+         identification:  [ { position: 180, label: 'Desconto' } ]  }    
+  Desconto;
+}

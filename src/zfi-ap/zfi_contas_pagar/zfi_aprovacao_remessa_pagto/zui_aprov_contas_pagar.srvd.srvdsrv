@@ -1,0 +1,9 @@
+@EndUserText.label: 'Service Def-Aprovação de Contas a Pagar'
+define service ZUI_APROV_CONTAS_PAGAR {
+  expose ZC_FI_APROV_TEMSE as ContasPagar;
+  expose ZC_FI_PROG_PAG_DOC_ITENS as ContasPagarItens;
+  expose ZC_FI_APROV_DOC_PGTO as URL;
+  expose ZC_FI_APROV_CONTAS_PAGAR as ActionAprovar;
+  expose I_CashPlanningGroupText as SearchHelpCashPlanningGroup;
+  expose ZC_FI_PROG_PAG_DOCN;
+}

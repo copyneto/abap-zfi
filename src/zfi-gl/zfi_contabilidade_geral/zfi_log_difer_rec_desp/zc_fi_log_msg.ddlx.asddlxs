@@ -1,0 +1,25 @@
+@Metadata.layer: #CORE
+annotate entity ZC_FI_LOG_MSG with
+{
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:       [ { position: 10 } ] }
+  Contador;
+
+  @UI: { lineItem:       [ { position: 20 } ] }
+  TipoBapi;
+
+  @UI: { lineItem:       [ { position: 30 } ] }
+  NumDocCont;
+
+  @UI: { lineItem:       [ { position: 40 } ] }
+  Text;
+  
+  @UI: { lineItem:       [ { position: 50 } ] }
+  NumcDocEst;
+
+
+
+
+}

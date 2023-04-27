@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_FI_RETPAGTO_SEGMENTOZ alias SegmentoZ
+use etag
+{
+
+}

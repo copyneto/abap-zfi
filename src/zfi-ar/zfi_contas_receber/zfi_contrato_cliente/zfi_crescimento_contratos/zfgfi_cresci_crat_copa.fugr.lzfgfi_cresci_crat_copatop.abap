@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGFI_CRESCI_CRAT_COPA.       "MESSAGE-ID ..
+
+* INCLUDE LZFGFI_CRESCI_CRAT_COPAD...        " Local class definition

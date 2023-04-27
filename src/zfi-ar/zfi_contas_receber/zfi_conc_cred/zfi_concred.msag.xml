@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_CONCRED</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Classe de mensagem GAP 066 - Concessão de Crédito</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>&amp;1/&amp;2/&amp;3 não atingiu dias mínimo</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>&amp;1/&amp;2/&amp;3 não atingiu mínimo residual</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Documento &amp;1/&amp;2/&amp;3 criado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Forn. &amp;1 não possui dados banc. Fat. &amp;2/&amp;3/&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Cliente &amp;1 Cadastrado App Retirar Clientes Concessão de Créditos!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Montante Total Fatura &amp;1/&amp;2/&amp;3/&amp;4 Consumida!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Crédito em processamento &amp;1/&amp;2/&amp;3/&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CONCRED</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Valor da fatura inferior ao valor do crédito &amp;1/&amp;2/&amp;3/&amp;4</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

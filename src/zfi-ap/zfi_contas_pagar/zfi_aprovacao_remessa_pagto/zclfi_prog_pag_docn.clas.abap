@@ -1,0 +1,5 @@
+CLASS zclfi_prog_pag_docn DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_prog_pag_docn.
+ENDCLASS.
+
+CLASS zclfi_prog_pag_docn IMPLEMENTATION.
+ENDCLASS.

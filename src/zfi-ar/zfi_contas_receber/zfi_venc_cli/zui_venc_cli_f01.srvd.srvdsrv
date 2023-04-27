@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def. Venc Mod Partidas de Cliente'
+define service ZUI_VENC_CLI_F01 {
+  expose ZC_FI_VENC_CLI_F01;
+  expose ZI_CA_VH_MANSP;
+}

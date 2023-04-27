@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PDTS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PDTS>
+    <SHORT_TEXT>ZFI_GET_DATA</SHORT_TEXT>
+    <PLVAR>01</PLVAR>
+    <WI_TEXT>Busca dados do documento &amp;IV_BELNR&amp;</WI_TEXT>
+    <METHOD>
+     <OTYPE>TS</OTYPE>
+     <OBJID>90000062</OBJID>
+     <CLSNAM>ZCLFI_DOC_PAGAR_WF</CLSNAM>
+     <CLSMET>GET_DATA</CLSMET>
+     <METHTYPE>CL</METHTYPE>
+     <BACKGROUND>X</BACKGROUND>
+     <SYNCHRON>X</SYNCHRON>
+     <TSKRELSTAT>R</TSKRELSTAT>
+    </METHOD>
+   </PDTS>
+   <CONTAINER>
+    <CONTAINER>
+     <PROPERTIES>
+      <OWN_ID>
+       <INSTID>TS90000062</INSTID>
+       <TYPEID>CL_SWF_CNT_HRS_PERSISTENCE</TYPEID>
+       <CATID>CL</CATID>
+      </OWN_ID>
+      <PROPSTRING>23000000000008</PROPSTRING>
+      <XMLVERSION>0002</XMLVERSION>
+      <INTERNAL>X</INTERNAL>
+      <EXDEFINITN>
+       <NAME>_DEF_EXT</NAME>
+       <POR>
+        <INSTID>DIALOG_STEP_CONTAINER</INSTID>
+        <TYPEID>CL_SWF_CNT_PERSISTENCE_DEF_EXT</TYPEID>
+        <CATID>CL</CATID>
+       </POR>
+      </EXDEFINITN>
+     </PROPERTIES>
+     <ELEMENTS>
+      <N NAME="IV_BELNR::" TYPE="::BELNR_D:C:10:0" PROPS="0C001001"/>
+      <O NAME="IV_BUKRS::" TYPE="::BUKRS:C:4:0" PROPS="0C001001"/>
+      <P NAME="IV_GJAHR::" TYPE="::GJAHR:N:4:0" PROPS="0C001001"/>
+      <Q NAME="ES_BKPF::" TYPE="::BKPF:u:0:0" PROPS="0C000881"/>
+      <R NAME="IV_BUZEI::" TYPE="::BUZEI:N:3:0" PROPS="0C001001"/>
+      <S NAME="ES_BSEG::" TYPE="::BSEG:u:0:0" PROPS="0C000A81"/>
+      <T NAME="EV_BUTXT::" TYPE="::BUTXT:C:25:0" PROPS="0C000A01"/>
+      <U NAME="ET_HTML::" TYPE="::SWL_HTML_T:h:0:0" PROPS="0C001A41"/>
+      <V NAME="ET_URL::" TYPE="::THCS_STRING:h:0:0" PROPS="0C001A41"/>
+      <W NAME="EV_URL::" TYPE="::W3_HTML:C:255:0" PROPS="0C000A01"/>
+      <X NAME="EV_URL2::" TYPE="::W3_HTML:C:255:0" PROPS="0C000A01"/>
+      <Y NAME="EV_URL3::" TYPE="::W3_HTML:C:255:0" PROPS="0C000A01"/>
+      <Z NAME="EV_URL4::" TYPE="::W3_HTML:C:255:0" PROPS="0C000A01"/>
+     </ELEMENTS>
+    </CONTAINER>
+   </CONTAINER>
+  </asx:values>
+ </asx:abap>
+</abapGit>

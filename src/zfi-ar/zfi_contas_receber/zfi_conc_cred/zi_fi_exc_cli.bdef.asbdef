@@ -1,0 +1,25 @@
+managed; // implementation in class zbp_i_fi_exc_cli unique;
+
+define behavior for ZI_FI_EXC_CLI //alias <alias_name>
+implementation in class zclfi_exc_cli unique
+persistent table ztfi_exc_cli
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  validation authorityCreate on save { create; }
+
+  mapping for ZTFI_EXC_CLI
+  {
+    kunnr = kunnr;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

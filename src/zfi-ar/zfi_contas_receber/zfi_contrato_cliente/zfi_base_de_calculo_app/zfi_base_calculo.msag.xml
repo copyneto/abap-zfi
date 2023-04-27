@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Formato de arquivo não suportado. Realizar nova carga com formato &quot;xlsx&quot;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Falha ao salvar dados de carga.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Insira um exercício para referenciar a aplicação do cálculo!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Informar Data de Lançamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Cálculo realizado com sucesso do(s) contrato(s)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Dados Gravados com Sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Não foram encontrados contratos válidos</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Ciclo &amp;1 incorreto para a periodicidade &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Documento &amp;1 Empresa &amp;2 Exercício &amp;3 possui mais de uma Divisão</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Calculado Crescimento Contrato/Aditivo &amp;1 com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Cálculo Crescimento Contrato/Aditivo &amp;1 não foi possível!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>STEP 1 Buscar Clientes.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>STEP 2 Buscar Contratos Válidos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>STEP 3 Buscar Periodicidade Exercício Referência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>STEP 4 Buscar Documentos Exercício Referência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>STEP 5 Buscar Documentos Exercício Comparação.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>STEP 6 Verificação da Família.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>STEP 7 Identificar Família no Centro de Lucro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>STEP 8 Identificar Faturas, Devoluções e Cancelamentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>STEP 9 Identificar Tipo Apuração, Devoluções e Impostos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>STEP 10 Identificar Documentos Versus Contratos DDE/DDF.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>STEP 11 Gravar tabela ZTFI_CALC_CRESCI.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>STEP 12 Gravar tabela ZTFI_BASE_COMPAR.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Simulação de Vigência Contrato/Aditivo &amp;1  não foi possível!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>STEP 1 Buscar Contrato</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>STEP 2 Buscar Documentos de Vigência</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>STEP 3 Buscar Valor de Nota Fiscal conforme Apuração Imposto</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>STEP 4 Buscar Condições de Desconto, Percentuais e Família</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>STEP 5 Identificar Família no Centro de Lucro</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>STEP 6 Gravar tabela ZTFI_SIMUL_CONTR</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Simulação de Vigência Contrato/Aditivo &amp;1 executada com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Documento já contabilizado: &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Crescimento ainda não foi calculado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Documento(s) de CO-PA contabilizado(s) com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Erro no lançamento COPA</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Erro no lançamento da contabilização</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Nº Doc. &amp;1 Empresa &amp;2 Exercício &amp;3 Contabilizado com Sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Crescimento do Contrato já contabilizado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Carga realizada com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Contrato desativado não pode calcular crescimento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Contrato com data fim inválida não pode calcular crescimento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Forma de desconto não pode calcular cresciimento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Não foi possivel localizar dados do contrato ou do crescimento cadastrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Parâmetros de exercicios não cadastrado. Favor verificar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Parâmetros tipo de documentos do crescimento não cadastrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Centro de custo nao configurado: &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Periodo não possui bônus para lançar &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BASE_CALCULO</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>Valor total do rateio não corresponde ao valor da Parcela.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

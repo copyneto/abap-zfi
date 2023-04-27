@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZMOVCAPRM</OBJECT>
+    <DOMLEN>NUMC10</DOMLEN>
+    <PERCENTAGE>90.0</PERCENTAGE>
+    <BUFFER>X</BUFFER>
+    <NOIVBUFFER>00000010</NOIVBUFFER>
+    <CHANGED_AT>20220511160657.410361</CHANGED_AT>
+    <CHANGED_BY>DLIMA</CHANGED_BY>
+    <ENAME>DLIMA</ENAME>
+    <EDATE>2021-12-27</EDATE>
+    <ETIME>07:50:49</ETIME>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZMOVCAPRM</OBJECT>
+    <TXT>RM Totvs Integração Documentos a Pagar</TXT>
+    <TXTSHORT>RM Totvs</TXTSHORT>
+    <ENAME>DLIMA</ENAME>
+    <EDATE>2021-12-27</EDATE>
+    <ETIME>07:50:49</ETIME>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

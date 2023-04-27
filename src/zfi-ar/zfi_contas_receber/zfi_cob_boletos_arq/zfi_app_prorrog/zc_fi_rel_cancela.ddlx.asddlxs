@@ -1,0 +1,118 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Relatório',
+    typeNamePlural: 'Relatório de Cancelamentos Prorrogações',
+    title: {  type: #STANDARD,  label: 'Relatório', value: 'Belnr' }
+  }}
+
+annotate view ZC_FI_REL_CANCELA with
+{
+
+  @UI.facet: [ { id:       'Relatorio',
+                 purpose:  #STANDARD,
+                 type:     #IDENTIFICATION_REFERENCE,
+                 label:    'Relatório de Cancelamentos Prorrogações',
+                 position: 10 } ]
+
+  @UI:{ lineItem:       [ { position: 10 } ],
+        identification: [ { position: 10 } ],
+       selectionField:  [ { position: 10 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+
+  Kunnr;
+  @UI:{ lineItem:       [ { position: 20 } ],
+        identification: [ { position: 20 } ],
+       selectionField:  [ { position: 20 } ]  }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+
+  Bukrs;
+  @UI:{ lineItem:       [ { position: 30, label: 'Exercício' } ],
+        identification: [ { position: 30, label: 'Exercício' } ],
+       selectionField:  [ { position: 30 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+
+  Gjhar;
+  @UI:{ lineItem:       [ { position: 40 } ],
+        identification: [ { position: 40 } ],
+       selectionField:  [ { position: 40 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+
+  Belnr;
+  @UI:{ lineItem:       [ { position: 50 } ],
+        identification: [ { position: 50 } ],
+       selectionField:  [ { position: 50 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8  
+  Buzei;
+  @UI:{ lineItem:       [ { position: 51 } ],
+        identification: [ { position: 51 } ],
+       selectionField:  [ { position: 51 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_USER', element: 'Bname' } }]
+  CreatedBy;  
+  
+  @UI:{ lineItem:       [ { position: 60, label: 'Data da Correção'  } ],
+        identification: [ { position: 60, label: 'Data da Correção' } ],
+       selectionField:  [ { position: 60 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+
+  Datac;
+  @UI:{ lineItem:       [ { position: 70, label: 'Hora da Correção'} ],
+        identification: [ { position: 70, label: 'Hora da Correção' } ] }
+  @Consumption.filter.hidden: true
+  Horac;
+  @UI:{ lineItem:       [ { position: 80 } ],
+        identification: [ { position: 80 } ] }
+  @Consumption.filter.hidden: true
+  Netdt;
+  @UI:{ lineItem:       [ { position: 90 } ],
+        identification: [ { position: 90 } ],
+       selectionField:  [ { position: 90 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Motivo;
+  @UI:{ lineItem:       [ { position: 100 } ],
+        identification: [ { position: 100 } ],
+       selectionField:  [ { position: 100 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Tipo;
+  @UI:{ lineItem:       [ { position: 110, label: 'Nº Documento Estorno' } ],
+        identification: [ { position: 110 } ] }
+  @Consumption.filter.hidden: true
+  Belnrestorno;
+  @UI:{ lineItem:       [ { position: 120, label: 'Item Estorno' } ],
+        identification: [ { position: 120 } ] }
+  @Consumption.filter.hidden: true
+  Buzeiestorno;
+  @UI:{ lineItem:       [ { position: 130, label: 'Exercício Estorno'  } ],
+        identification: [ { position: 130 } ] }
+  @Consumption.filter.hidden: true
+  Gjharestorno;
+  @UI:{ lineItem:       [ { position: 140 } ],
+        identification: [ { position: 140 } ] }
+  @Consumption.filter.hidden: true
+  Verzn;
+  @UI:{ lineItem:       [ { position: 150 } ],
+        identification: [ { position: 150 } ] }
+  Wrbtr;
+  @UI.hidden: true
+  Waers;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

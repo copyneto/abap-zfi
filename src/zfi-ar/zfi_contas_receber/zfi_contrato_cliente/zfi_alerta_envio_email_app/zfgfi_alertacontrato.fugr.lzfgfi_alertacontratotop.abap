@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGFI_ALERTACONTRATO.          "MESSAGE-ID ..
+
+* INCLUDE LZFGF_ALERTACONTRATOD...           " Local class definition

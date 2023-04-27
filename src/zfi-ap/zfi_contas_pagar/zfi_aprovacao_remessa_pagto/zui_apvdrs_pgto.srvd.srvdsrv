@@ -1,0 +1,4 @@
+@EndUserText.label: 'Gestão de Aprovadores de Pagamento'
+define service ZUI_APVDRS_PGTO {
+  expose ZC_FI_APVDRS_PGTO as Aprovadores;
+}

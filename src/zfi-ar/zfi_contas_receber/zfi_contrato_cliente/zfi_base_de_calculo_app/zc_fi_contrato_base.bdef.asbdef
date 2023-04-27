@@ -1,0 +1,16 @@
+projection;
+
+define behavior for ZC_FI_CONTRATO_BASE alias _Contrato
+{
+
+  use association _BASE;
+}
+
+define behavior for ZC_FI_BASE_DE_CALCULO alias _Base
+{
+  use update;
+
+  use association _Contrato;
+
+  use action apagaBase;
+}

@@ -1,0 +1,112 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Arquivo',
+        typeNamePlural: 'Arquivos',
+        title: {
+            type: #STANDARD,
+            label: 'Arquivo',
+            value: 'Arquivo'
+        }
+    }
+}
+annotate entity ZC_FI_AGRUPAFATURAS with
+{
+
+  @UI.facet: [{ id: 'StatusArquivo',
+                purpose: #HEADER,
+                type: #DATAPOINT_REFERENCE,
+                position: 10,
+                targetQualifier: 'StatusArq'
+                },
+
+              { id: 'Arquivo',
+                purpose: #STANDARD,
+                position: 10,
+                label: 'Arquivo',
+                type: #IDENTIFICATION_REFERENCE },
+
+              { id: 'Linhas',
+                purpose: #STANDARD,
+                position: 20,
+                label: 'Documentos',
+                type: #LINEITEM_REFERENCE,
+                targetElement: '_Linhas' }
+  ]
+
+  @UI: { lineItem: [{ position: 10, criticality: 'StatusCriticality' }],
+         dataPoint: { qualifier: 'StatusArq', title: 'Status', criticality: 'StatusCriticality'  },
+         selectionField: [{ position: 10 }]
+  }
+  @UI.textArrangement: #TEXT_ONLY
+  StatusProcessamento;
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI: { lineItem: [{ position: 20 }],
+         identification: [  { position: 20},
+                            { type: #FOR_ACTION, dataAction: 'selFaturas', label: 'Busca de faturas' },
+                            { type: #FOR_ACTION, dataAction: 'agrupaFaturas', label: 'Agrupar' }
+                         ],
+         selectionField: [{ position: 20 }]
+  }
+  Arquivo;
+
+  @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 30 }]
+  }
+  @EndUserText.label: 'Data Importação'
+  DataImportacao;
+
+  @UI.hidden: true
+  @EndUserText.label: 'Empresa'
+  selCompanyCode;
+
+  @UI.hidden: true
+  @EndUserText.label: 'Fornecedor Agrupador'
+  selFornAgrupa;
+
+  @EndUserText.label: 'Dt. Vencimento'
+  @UI.hidden: true
+  selDueDate;
+
+  @EndUserText.label: 'Referência'
+  @UI.hidden: true
+  selReference;
+
+  @EndUserText.label: 'Dt. Emissão'
+  @UI.hidden: true
+  selPostingDate;
+
+  @EndUserText.label: 'Dt. Documento'
+  @UI.hidden: true
+  selDocumentDate;
+
+  @EndUserText.label: 'Centro de Custo'
+  @UI.hidden: true
+  selCostCenter;
+
+  @EndUserText.label: 'Desconto (R$)'
+  @UI.hidden: true
+  selDesconto;
+
+  @UI.hidden: true
+  selCurrency;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

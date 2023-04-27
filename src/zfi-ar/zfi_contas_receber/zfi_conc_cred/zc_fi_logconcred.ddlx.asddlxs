@@ -1,0 +1,136 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeNamePlural: 'Parametros',
+    title: {
+      type: #STANDARD,
+      label: 'Parametros',
+      value: 'bukrs'
+    }
+  }}
+annotate view ZC_FI_LOGCONCRED with
+{
+  @UI.facet: [ { id:         'Parametros',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Parâmetros',
+                 position:      10 }]
+  @UI: { lineItem:        [ { position: 10, label: 'Empresa' } ],
+         identification:  [ { position: 10, label: 'Empresa' } ] }
+  bukrs;
+  @UI: { lineItem:        [ { position: 20, label: 'Cliente' } ],
+         identification:  [ { position: 20, label: 'Cliente' } ] }
+  kunnr;
+  @UI: { lineItem:        [ { position: 30, label: 'Doc. Concessão' } ],
+         identification:  [ { position: 30, label: 'Doc. Concessão' } ] }
+  zdoccon;
+  @UI: { lineItem:        [ { position: 40, label: 'Item Doc. Concessão' } ],
+         identification:  [ { position: 40, label: 'Item Doc. Concessão' } ] }
+  zitemdoccon;
+  @UI: { lineItem:        [ { position: 50, label: 'Exercicio Doc. Concessão' } ],
+         identification:  [ { position: 50, label: 'Exercicio Doc. Concessão' } ] }
+  zexerciciodoccon;  
+  @UI: { lineItem:        [ { position: 60, label: 'Doc. Fatura' } ],
+         identification:  [ { position: 60, label: 'Doc. Fatura' } ] }
+  zfatura;
+  @UI: { lineItem:        [ { position: 70, label: 'Item Fatura' } ],
+         identification:  [ { position: 70, label: 'Item Fatura' } ] }
+  zitemfatura;
+  @UI: { lineItem:        [ { position: 80, label: 'Exercício Fatura' } ],
+         identification:  [ { position: 80, label: 'Exercício Fatura' } ] }
+  zexerciciofatura;  
+  @UI: { lineItem:        [ { position: 90, label: 'Doc. Crédito' } ],
+         identification:  [ { position: 90, label: 'Doc. Crédito' } ] }
+  zcredito;
+  @UI: { lineItem:        [ { position: 100, label: 'Item Doc. Crédito' } ],
+         identification:  [ { position: 100, label: 'Item Doc. Crédito' } ] }
+  zitemcredito;
+  @UI: { lineItem:        [ { position: 110, label: 'Exercicio Doc. Crédito' } ],
+         identification:  [ { position: 110, label: 'Exercicio Doc. Crédito' } ] }
+  zexerciciocredito;  
+  @UI: { lineItem:        [ { position: 120, label: 'CNPJ' } ],
+         identification:  [ { position: 120, label: 'CNPJ' } ] }
+  stcd1;
+  @UI: { lineItem:        [ { position: 130, label: 'CPF' } ],
+         identification:  [ { position: 130, label: 'CPF' } ] }
+  stcd2;
+  @UI: { lineItem:        [ { position: 150, label: 'Montante MI' } ],
+         identification:  [ { position: 150, label: 'Montante MI' } ] }
+  wrbtr;
+  @UI: { lineItem:        [ { position: 160, label: 'Chave de Lançamento' } ],
+         identification:  [ { position: 160, label: 'Chave de Lançamento' } ] }
+  bschl;
+  @UI: { lineItem:        [ { position: 170, label: 'Vencimento em' } ],
+         identification:  [ { position: 170, label: 'Vencimento em' } ] }
+  netdt;
+  @UI: { lineItem:        [ { position: 180, label: 'Forma de Pagamento' } ],
+         identification:  [ { position: 180, label: 'Forma de Pagamento' } ] }
+  zlsch;
+  @UI: { lineItem:        [ { position: 190, label: 'Atribuição' } ],
+         identification:  [ { position: 190, label: 'Atribuição' } ] }
+  zuonr;
+  @UI: { lineItem:        [ { position: 200, label: 'Referência' } ],
+         identification:  [ { position: 200, label: 'Referência' } ] }
+  xblnr;
+  @UI: { lineItem:        [ { position: 210, label: 'Tipo de Documento' } ],
+         identification:  [ { position: 210, label: 'Tipo de Documento' } ] }
+  blart;
+  @UI: { lineItem:        [ { position: 220, label: 'ChvReferCabeç_1' } ],
+         identification:  [ { position: 220, label: 'ChvReferCabeç_1' } ] }
+  xref1_hd;
+  @UI: { lineItem:        [ { position: 230, label: 'ChvReferCabeç_2' } ],
+         identification:  [ { position: 230, label: 'ChvReferCabeç_2' } ] }
+  xref2_hd;
+  @UI: { lineItem:        [ { position: 240, label: 'Montante MI Doc. Crédito' } ],
+         identification:  [ { position: 240, label: 'Montante MI Doc. Crédito' } ] }
+  zwrbtr;
+  @UI: { lineItem:        [ { position: 250, label: 'Chave de Lançamento Doc. Crédito' } ],
+         identification:  [ { position: 250, label: 'Chave de Lançamento Doc. Crédito' } ] }
+  zbschl;
+  @UI: { lineItem:        [ { position: 260, label: 'Vencimento em Doc. Crédito' } ],
+         identification:  [ { position: 260, label: 'Vencimento em Doc. Crédito' } ] }
+  znetdt;
+  @UI: { lineItem:        [ { position: 270, label: 'Forma de Pagamento Doc. Crédito' } ],
+         identification:  [ { position: 270, label: 'Forma de Pagamento Doc. Crédito' } ] }
+  zzlsch;
+  @UI: { lineItem:        [ { position: 280, label: 'Atribuição Doc. Crédito' } ],
+         identification:  [ { position: 280, label: 'Atribuição Doc. Crédito' } ] }
+  zzuonr;
+  @UI: { lineItem:        [ { position: 290, label: 'Referência Doc. Crédito' } ],
+         identification:  [ { position: 290, label: 'Referência Doc. Crédito' } ] }
+  zxblnr;
+  @UI: { lineItem:        [ { position: 300, label: 'Tipo de Documento Doc. Crédito' } ],
+         identification:  [ { position: 300, label: 'Tipo de Documento Doc. Crédito' } ] }
+  zblart;
+  @UI: { lineItem:        [ { position: 310, label: 'ChvReferCabeç_1 Doc. Crédito' } ],
+         identification:  [ { position: 310, label: 'ChvReferCabeç_1 Doc. Crédito' } ] }
+  zxref1_hd;
+  @UI: { lineItem:        [ { position: 320, label: 'ChvReferCabeç_2 Doc. Crédito' } ],
+         identification:  [ { position: 320, label: 'ChvReferCabeç_2 Doc. Crédito' } ] }
+  zxref2_hd;
+  @UI: { lineItem:        [ { position: 330, label: 'Código RZE' } ],
+         identification:  [ { position: 330, label: 'Código RZE' } ] }
+  umskz;
+  @UI: { lineItem:        [ { position: 340, label: 'Residual Não Atingido' } ],
+         identification:  [ { position: 340, label: 'Residual Não Atingido' } ] }
+  zresidualnao;
+  @UI: { lineItem:        [ { position: 350, label: 'Vencimento Não Atingido' } ],
+         identification:  [ { position: 350, label: 'Vencimento Não Atingido' } ] }
+  zvencimentonao;
+  @UI: { lineItem:        [ { position: 360, label: 'Dados Banc.Fornecedor' } ],
+         identification:  [ { position: 360, label: 'Dados Banc.Fornecedor' } ] }
+  zdadosfor;
+
+  @UI: { lineItem:        [ { position: 370, label: 'Data' } ],
+         identification:  [ { position: 370, label: 'Data' } ] }
+  zdata;
+  @UI: { lineItem:        [ { position: 380, label: 'Hora' } ],
+         identification:  [ { position: 380, label: 'Hora' } ] }
+  zhora;
+  @UI: { lineItem:        [ { position: 390, label: 'Usuário' } ],
+         identification:  [ { position: 390, label: 'Usuário' } ] }
+  bname;
+  @UI.hidden: true
+  waers;
+
+}

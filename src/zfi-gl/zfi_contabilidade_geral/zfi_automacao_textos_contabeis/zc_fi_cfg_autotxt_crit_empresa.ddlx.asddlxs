@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Seleção de Empresa',
+        typeNamePlural: 'Empresas selecionadas',
+        title: { type: #STANDARD,
+                 label: 'Empresa',
+                 value: 'CritSelCompany' }
+    },
+
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'CritSelCompany',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+   }]
+}
+annotate entity ZC_FI_CFG_AUTOTXT_CRIT_EMPRESA with
+{
+
+  @UI.facet: [  { label: 'Informações Gerais',
+                   id: 'GeneralInfo',
+                   type: #COLLECTION,
+                   position: 10 },
+
+                 { purpose: #STANDARD,
+                   label: 'Geral',
+                   position: 10,
+                   type: #IDENTIFICATION_REFERENCE,
+                   parentId: 'GeneralInfo' },
+
+
+                 { purpose: #STANDARD,
+                   label: 'Empresas',
+                   position: 20,
+                   type: #FIELDGROUP_REFERENCE,
+                   parentId: 'GeneralInfo',
+                   targetQualifier: 'Empresa' } ]
+
+
+  @UI: { lineItem:       [{ position: 10,  label: 'Cód. Seleção' }],
+         identification: [{ position: 10,  label: 'Cód. Seleção' }]
+  }
+  CritSelCompany;
+
+  @UI: { lineItem:        [ { position: 20, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Empresa', position: 10 } ] }
+  SignCompany;
+
+  @UI: { lineItem:        [ { position: 30, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Empresa', position: 20 } ] }
+  OptCompany;
+
+  @UI: { lineItem:        [ { position: 40, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'Empresa', position: 30 } ] }
+  LowCompany;
+
+  @UI: { lineItem:        [ { position: 50, importance: #HIGH } ],
+           fieldGroup:      [ { qualifier: 'Empresa', position: 40 } ] }
+  HighCompany;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  //    SignTextCompany;
+  //    OptTextCompany;
+
+
+}

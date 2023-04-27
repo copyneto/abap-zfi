@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>ZFICFG_CONTA_DDA</TCODE>
+    <CINFO>Ag==</CINFO>
+   </TSTC>
+   <TSTCC>
+    <TCODE>ZFICFG_CONTA_DDA</TCODE>
+    <S_WEBGUI>1</S_WEBGUI>
+    <S_WIN32>X</S_WIN32>
+    <S_PLATIN>X</S_PLATIN>
+   </TSTCC>
+   <TSTCT>
+    <SPRSL>P</SPRSL>
+    <TCODE>ZFICFG_CONTA_DDA</TCODE>
+    <TTEXT>Config. conta pagtos DDA c/diferença</TTEXT>
+   </TSTCT>
+   <TSTCP>
+    <TCODE>ZFICFG_CONTA_DDA</TCODE>
+    <PARAM>/*SM30 VIEWNAME=ZTFI_CONTA_DDA;SHOW=X;</PARAM>
+   </TSTCP>
+  </asx:values>
+ </asx:abap>
+</abapGit>

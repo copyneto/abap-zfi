@@ -1,0 +1,5 @@
+@EndUserText.label: 'Log de Aprovações dos Pagamentos'
+define service ZUI_LOG_APV_PGTO {
+  expose ZC_FI_LOG_APV_PGTO as Log;
+  expose ZC_FI_LOG_APV_PGTO_ITEM as LogItem;
+}

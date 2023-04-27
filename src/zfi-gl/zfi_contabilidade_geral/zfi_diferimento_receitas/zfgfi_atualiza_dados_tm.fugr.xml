@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Atualiza dados TM</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_ATUALIZA_DADOS_TMTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_ATUALIZA_DADOS_TM</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_ATUALIZA_DADOS_TM</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Atualiza dados TM</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_UNID_FRETE</PARAMETER>
+       <TYP>VBELN</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_PREVENTR</PARAMETER>
+       <TYP>INT1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOC_DATE</PARAMETER>
+       <TYP>DATUM</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_UNID_FRETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Número do documento de vendas e distribuição</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_PREVENTR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº inteiro sem sinal 1 byte</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOC_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

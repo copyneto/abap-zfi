@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_REVERSAO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Classe de Mensagem GAP FI de Reversão</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Documento &amp;1 &amp;2 &amp;3 não é documento de compensação</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Existem partidas em período anterior ao atual</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Reversão do documento &amp;1 &amp;2 &amp;3 realizada com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao processar FB08! Doc. &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Erro ao processar FBRA! Doc. &amp;1 &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Execução concluída</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_REVERSAO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Não existem documentos para os parâmetros informados</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

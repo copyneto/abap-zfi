@@ -1,0 +1,17 @@
+managed implementation in class zclfi_contabdepre_bh unique;
+
+define behavior for ZI_FI_CONTABILIZAR alias _Depre
+persistent table ztfi_contab_log
+lock master
+etag master Bukrs
+{
+
+
+  action ( features : instance ) contab ;
+  action ( features : instance ) reav ;
+
+  mapping for ZTFI_CONTAB_LOG
+  {
+    Bukrs = bukrs;
+  }
+}

@@ -1,0 +1,87 @@
+unmanaged;
+
+define behavior for ZI_FI_CONTRATO_BASE alias Contrato
+//late numbering
+lock master
+etag master LocalLastChangedAt
+{
+  //  create;
+  //  update;
+  //  delete;
+  association _BASE;
+}
+
+define behavior for ZI_FI_BASE_DE_CALCULO alias Base
+implementation in class zclfi_base_de_calculo unique
+//late numbering
+lock dependent by _Contrato
+etag dependent by _Contrato
+{
+
+  update;
+
+  field ( readonly : update ) Contrato,
+  Aditivo,
+  Bukrs,
+  Belnr,
+  Gjahr,
+  Buzei,
+  AjusteAnual,
+  Gsber,
+  FamiliaCl,
+  ChaveManual;
+
+  action apagaBase parameter ZI_FI_BASE_CALCULO_POPUP;
+
+  mapping for ztfi_calc_cresci
+  {
+
+    Contrato = contrato;
+    Aditivo = aditivo;
+    Bukrs = bukrs;
+    Belnr = belnr;
+    Gjahr = gjahr;
+    Buzei = buzei;
+    AjusteAnual = ajuste_anual;
+    Gsber = gsber;
+    Wrbtr = wrbtr;
+    Bschl = bschl;
+    Blart = blart;
+    Zuonr = zuonr;
+    Kunnr = kunnr;
+    Zlsch = zlsch;
+    Sgtxt = sgtxt;
+    Netdt = netdt;
+    Xblnr = xblnr;
+    Budat = budat;
+    Bldat = bldat;
+    Augbl = augbl;
+    Augdt = augdt;
+    Vbeln = vbeln;
+    Posnr = posnr;
+    Vgbel = vgbel;
+    Vtweg = vtweg;
+    Spart = spart;
+    Bzirk = bzirk;
+    Katr2 = katr2;
+    Wwmt1 = wwmt1;
+    Prctr = prctr;
+    TipoEntrega = tipo_entrega;
+    Xref1Hd = xref1_hd;
+    StatusDde = status_dde;
+    TipoApuracao = tipo_apuracao;
+    TipoApImposto = tipo_ap_imposto;
+    TipoImposto = tipo_imposto;
+    ImpostDesconsid = impost_desconsid;
+    MontLiqTax = mont_liq_tax;
+    MontValido = mont_valido;
+    TipoDesconto = tipo_desconto;
+    CondDesconto = cond_desconto;
+    Kostl = kostl;
+    MontBonus = mont_bonus;
+    BonusCalculado = bonus_calculado;
+    ObsAjuste = obs_ajuste;
+
+  }
+  association _Contrato;
+}

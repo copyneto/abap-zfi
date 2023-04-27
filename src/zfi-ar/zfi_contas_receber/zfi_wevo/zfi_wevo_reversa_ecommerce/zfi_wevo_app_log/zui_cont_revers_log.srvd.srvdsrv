@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def for ZC_FI_CONT_REVERS_LOG'
+define service ZUI_cont_revers_log {
+  expose ZC_FI_CONT_REVERS_LOG;
+}

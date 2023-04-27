@@ -1,0 +1,4 @@
+@EndUserText.label: 'Contabilizar Depreciação'
+define service ZUI_FI_CONTAB_DEPRE {
+  expose ZC_FI_CONTABILIZAR as Depreciacao;
+}

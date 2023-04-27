@@ -1,0 +1,36 @@
+managed; // implementation in class zbp_i_fi_contratos13 unique;
+
+define behavior for ZI_FI_CONTRATOS13 alias _Contrato13
+implementation in class zclfi_valida_campos unique
+persistent table ztfi_contratos13
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+   field ( readonly, numbering : managed )
+  id;
+  field ( mandatory :create ) Empresa, LocalNegocio, Email;
+  field ( readonly : update ) Empresa, LocalNegocio;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  validation ValidaCampos on save { field Empresa; update; create; }
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_contratos13
+  {
+   Id                 = id;
+   Empresa            = empresa;
+   LocalNegocio       = local_negocio;
+   Email              = email;
+   CreatedBy          = created_by;
+   CreatedAt          = created_at;
+   LastChangedBy      = last_changed_by;
+   LastChangedAt      = last_changed_at;
+   LocalLastChangedAt = local_last_changed_at;
+
+  }
+}

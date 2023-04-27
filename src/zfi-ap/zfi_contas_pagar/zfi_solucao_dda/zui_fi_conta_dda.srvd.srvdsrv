@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Def. Config. Conta DDA'
+define service ZUI_FI_CONTA_DDA {
+  expose ZC_FI_CONTA_DDA;
+}

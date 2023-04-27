@@ -1,0 +1,4 @@
+@EndUserText.label: 'Configurar Níveis, Aprovação e Usuários'
+define service ZUI_FI_CADASTRO_DE_APROVADORES {
+  expose ZC_FI_CADASTRO_DE_APROVADORES as CadastroDeAprovadores;
+}

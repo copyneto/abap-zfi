@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def Critérios'
+define service ZUI_FI_DIFER_CRITERIOS {
+  expose ZC_FI_DEFRECE_CRI;
+}

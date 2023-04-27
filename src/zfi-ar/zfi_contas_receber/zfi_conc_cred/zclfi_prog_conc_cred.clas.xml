@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_PROG_CONC_CRED</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Programa Concessão Crédito</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <MSG_ID>ZFI_CONCRED</MSG_ID>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>M01</KEY>
+     <ENTRY>Vencimento Não Atingido</ENTRY>
+     <LENGTH>46</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>M02</KEY>
+     <ENTRY>Nenhum documento encontrado</ENTRY>
+     <LENGTH>54</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>M03</KEY>
+     <ENTRY>Documento</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>M04</KEY>
+     <ENTRY>criado com sucesso!</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>M05</KEY>
+     <ENTRY>Docs Não Contabilizados Cliente/Fornecedor</ENTRY>
+     <LENGTH>86</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>M06</KEY>
+     <ENTRY>NÃO possui dados bancários!</ENTRY>
+     <LENGTH>54</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CURRENCY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código da moeda</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_DEVOLUCAO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PDC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_RAZAO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SUB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log de aplicação: subobjeto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TCODE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: código de transação atual</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_LOG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Salvar mensagens processamento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_HEADER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Linha de cabeçalho</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_CURR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type for Structure ACID_BAPIACCR09</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_EXT2</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>PRICAT: tabela para parâmetro de usuário BAPI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_GL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de tabela para estrutura BAPIACGL09</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_LOGTAB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log Concessão Crédito</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_LOGTAB_DB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log Concessão Crédito Banco de Dados</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_PAY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de tabela para estrutura BAPIACAP09</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_REC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de tabela para estrutura BAPIACAR09</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.tabela para BAPIRET2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_DOCFORN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_DOC_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave referência</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_MESSAGE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_MESSAGE_V1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Variável mensagens</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_MESSAGE_V2</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Variável mensagens</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_MESSAGE_V3</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Variável mensagens</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_MESSAGE_V4</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Variável mensagens</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_NUMBER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MSG</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.mens.: S sucesso, E erro, W aviso, I inform., A cancel.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_DEVOL_FORN</CMPNAME>
+     <SCONAME>IV_PROC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MIN_DAYS_IS_VALID</CMPNAME>
+     <SCONAME>IV_NETDT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Vencimento líquido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MSG_DOC_CREATED</CMPNAME>
+     <SCONAME>IV_OBJ</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave referência</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MSG_NO_BANK_DATA</CMPNAME>
+     <SCONAME>IV_KUNNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_CRED</CMPNAME>
+     <SCONAME>IV_PROC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,18 @@
+unmanaged
+implementation in class zclfi_gerar_boleto_app unique;
+
+define behavior for ZI_FI_BOLETO alias Boleto
+//persistent table <???>
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+
+{
+  //create;
+  //update;
+  //delete;
+
+  //action ( features: instance ) enviar parameter zi_boleto_email result[1]$self;
+  //action enviar parameter zi_fi_boleto_email result[1]$self;
+
+}

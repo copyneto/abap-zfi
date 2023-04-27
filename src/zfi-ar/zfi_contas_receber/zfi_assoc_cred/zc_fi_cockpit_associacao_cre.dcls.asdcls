@@ -1,0 +1,10 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_FI_COCKPIT_ASSOCIACAO_CRE {
+    grant
+        select
+            on
+                ZC_FI_COCKPIT_ASSOCIACAO_CRE
+                    where
+                        inheriting conditions from entity ZI_FI_COCKPIT_ASSOCIACAO_CRE;
+}

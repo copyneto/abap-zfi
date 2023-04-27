@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition Cadastro Parâmetros RM'
+define service ZUI_FI_PARAM_RM {
+  expose ZC_FI_PARAM_RM;
+}

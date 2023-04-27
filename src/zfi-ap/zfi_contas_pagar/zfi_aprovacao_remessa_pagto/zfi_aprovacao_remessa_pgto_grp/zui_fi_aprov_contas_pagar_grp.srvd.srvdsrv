@@ -1,0 +1,7 @@
+@EndUserText.label: 'Serv Def para Aprovação contas a pagar'
+define service ZUI_FI_APROV_CONTAS_PAGAR_GRP {
+  expose ZC_FI_PGTO_GRP_TESOURARIA as ContasPagar;
+  expose ZC_FI_PROG_PAG_DOC_ITENS as ContasPagarItens;
+  expose ZC_FI_PROG_PAG_DOCN;
+  expose ZC_FI_APROV_DOC_PGTO as URL;
+}

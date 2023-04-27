@@ -1,0 +1,6 @@
+unmanaged implementation in class ZCLFI_APROV_CONTAS_PAGAR_BEHAV unique;
+
+define behavior for ZC_FI_APROV_CONTAS_PAGAR alias Aprovacao
+{
+  action approv;
+}

@@ -1,0 +1,10 @@
+@EndUserText.label: 'Autorização'
+@MappingRole: true
+define role ZI_FI_BANCO_EMPRESA_APP {
+    grant
+        select
+            on
+                ZI_FI_BANCO_EMPRESA_APP
+                    where
+                       ( Bukrs ) = aspect pfcg_auth( ZFIBUKRS, BUKRS, ACTVT = '03' );
+}

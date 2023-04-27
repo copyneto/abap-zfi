@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_BAPI_DDA</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Processamento das BAPIs do DDA</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>M01</KEY>
+     <ENTRY>Código barras associado por Conciliação Manual com diferença de valor</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DDA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Master Table for DDA_Brazil (Segment G)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DDAERROR_CP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento de compensação DDA</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_DDA_NEW</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Master Table for DDA_Brazil (Segment G)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Segmento do documento contabilidade financeira</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_BLNTAB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela interface de compensação</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_CHANGE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Changes in an FI Document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_FTCLEAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type for FTCLEAR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_FTPOST</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type FTPOST</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_FTTAX</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type FTTAX</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.tabela para BAPIRET2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_SUCESS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_TESTE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ALIGN_LEFT</CMPNAME>
+     <SCONAME>RV_VALUE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>30 caracteres</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DATE_OUT</CMPNAME>
+     <SCONAME>IV_DATUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DATE_OUT</CMPNAME>
+     <SCONAME>RV_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de caracteres do comprimento 10</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_AMOUNT</CMPNAME>
+     <SCONAME>IV_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valor nominal</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_AMOUNT</CMPNAME>
+     <SCONAME>RV_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante em moeda do documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_DATE</CMPNAME>
+     <SCONAME>IV_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data de vencimento, formato DDMMAAAA</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_DATE</CMPNAME>
+     <SCONAME>RV_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_ZUONR</CMPNAME>
+     <SCONAME>IV_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data de vencimento, formato DDMMAAAA</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_ZUONR</CMPNAME>
+     <SCONAME>RV_ZUONR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de texto (comprimento 14)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.tabela para BAPIRET2</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FTPOST_VALUE</CMPNAME>
+     <SCONAME>IV_COUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Numerador cabeç.doc./linha documento (interface contabiliz.)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FTPOST_VALUE</CMPNAME>
+     <SCONAME>IV_FNAM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome de campo BDC</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FTPOST_VALUE</CMPNAME>
+     <SCONAME>IV_FVAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valor do campo BDC</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_FTPOST_VALUE</CMPNAME>
+     <SCONAME>IV_STYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.de registro para interface de contabilização interna</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

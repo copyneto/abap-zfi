@@ -1,0 +1,91 @@
+managed implementation in class zclfi_agrupfaturas_app unique;
+
+define behavior for ZI_FI_AGRUPAFATURAS alias Arquivo
+persistent table ztfi_agrupfatura
+lock master
+etag master LocalLastChangedAt
+{
+  internal update;
+
+  association _Linhas;
+
+  field ( readonly, numbering : managed ) IdArquivo;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  action ( features : instance ) selFaturas parameter ZI_FI_BUSCA_FATURA_AGRUP_POPUP result [1] $self;
+  action ( features : instance ) agrupaFaturas parameter ZI_FI_AGRUPA_FATURAS_POPUP result [1] $self;
+
+  mapping for ztfi_agrupfatura control zsfi_agrupafaturas_x
+  {
+
+    IdArquivo = id_arquivo;
+    Arquivo = arquivo;
+    DataImportacao = data;
+    StatusProcessamento = status_proc;
+    CompanyCode = bukrs;
+    FornAgrupador = forn_agrupador;
+    Vencimento = vencimento;
+    Referencia = ref_agrupada;
+    HoraImportacao = hora;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}
+
+define behavior for ZI_FI_AGRUPALINHAS alias Linhas
+persistent table ztfi_agruplinhas
+lock dependent by _Arquivo
+etag master LocalLastChangedAt
+{
+
+  internal update;
+
+  field ( readonly, numbering : managed ) Id;
+  field ( readonly: update ) IdArquivo;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  association _Arquivo;
+
+  mapping for ztfi_agruplinhas control zsfi_agrupalinhas_x
+  {
+
+    IdArquivo = id_arquivo;
+    Id = id;
+    CompanyCode = bukrs;
+    Supplier = lifnr;
+    NotaFiscal = xblnr1;
+    DataArquivo = arq_data;
+    TipoNF = tipo_nf;
+    ChaveAcesso = chave_acesso;
+    Cnpj = cnpj;
+    DueDate = zfbdt;
+    ItemStatus = status_proc;
+    ValorNFArquivo = arq_dmbtr;
+    ValorNFFatura = doc_dmbtr;
+    CurrencyCode = waers;
+    AccountingDocument = belnr;
+    FiscalYear = gjahr;
+    AccountingItem = buzei;
+    DtEmissaoArquivo = arq_bldat;
+    DtEmissaoFatura = doc_bldat;
+    BusinessPlace = bupla;
+    Assignment = zuonr;
+    ItemText = sgtxt;
+    ProfitCenter = prctr;
+    Msg = msg;
+    FornAgrupador = forn_agrupador;
+    FaturaAgrupada = fatura_agrupada;
+    RefAgrupada = ref_agrupada;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

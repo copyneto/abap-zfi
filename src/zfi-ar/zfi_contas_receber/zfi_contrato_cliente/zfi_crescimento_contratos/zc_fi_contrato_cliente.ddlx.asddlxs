@@ -1,0 +1,116 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Contrato',
+    typeNamePlural: 'Contratos',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    }
+  } }
+annotate view ZC_FI_CONTRATO_CLIENTE with
+{
+  @UI.facet: [ { id:         'Contrato',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Contrato',
+               position:      10 },
+
+             { id:            'Log',
+               purpose:       #STANDARD,
+               type:          #LINEITEM_REFERENCE,
+               label:         'Resumo',
+               position:      20,
+               targetElement: '_LOG'}]
+
+  @UI: { lineItem:        [ { position: 20, label: 'Nº Contrato' } ],
+         identification:  [ { position: 20, label: 'Nº Contrato' } ] }
+  @UI : { selectionField: [ { position: 10 } ] }
+  Contrato;
+  @UI: { lineItem:        [ { position: 30, label: 'Nº Aditivo' } ],
+         identification:  [ { position: 30, label: 'Nº Aditivo' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  Aditivo;
+  @UI: { identification:  [ { position: 32, label: 'Razão Social' } ] }
+  RazaoSocial;
+  @UI: { identification:  [ { position: 34, label: 'Nome Fantasia' } ] }
+  NomeFantasia;
+  @UI: { lineItem:        [ { position: 40, label: 'Nº Contrato Próprio' } ],
+         identification:  [ { position: 40, label: 'Nº Contrato Próprio' } ] }
+  ContratoProprio;
+  @UI: { lineItem:        [ { position: 50, label: 'Empresa' } ],
+         identification:  [ { position: 50, label: 'Empresa' } ] }
+  @UI : { selectionField: [ { position: 30 } ] }
+  Empresa;
+  @UI: { lineItem:        [ { position: 60, label: 'Local de Negócio' } ],
+         identification:  [ { position: 60, label: 'Local de Negócio' } ] }
+  LocalNegocios;
+  @UI: { lineItem:       [ { position: 70, label: 'Data Início Validade' } ],
+         identification: [ { position: 70, label: 'Data Início Validade' } ] }
+  DataIniValid;
+  @UI: { lineItem:        [ { position: 80, label: 'Data Fim da Validade' } ],
+         identification:  [ { position: 80, label: 'Data Fim da Validade' } ] }
+  DataFinValid;
+  @UI : { selectionField: [ { position: 60 } ] }
+  Cliente;
+  @UI: { lineItem:        [ { position: 90, label: 'CNPJ' } ],
+         identification:  [ { position: 90, label: 'CNPJ' } ] }
+  @UI : { selectionField: [ { position: 80 } ] }
+  CNPJ;
+  //  @UI: { lineItem:        [ { position: 100, label: 'Razão Social' } ],
+  //         identification:  [ { position: 100, label: 'Razão Social' } ] }
+  @UI : { selectionField: [ { position: 70 } ] }
+  RazaoSoci;
+  @UI: { lineItem:        [ { position: 110, label: 'Produtos Contemplado' } ],
+         identification:  [ { position: 110, label: 'Produtos Contemplado' } ] }
+  ProdContemplado;
+  @UI: { lineItem:        [ { position: 120, label: 'Status do Contrato' } ],
+         identification:  [ { position: 120, label: 'Status do Contrato' } ] }
+  Status;
+  @UI: { lineItem:        [ { position: 130, label: 'Grupo Econômico' } ],
+         identification:  [ { position: 130, label: 'Grupo Econômico' } ] }
+  GrpEconomico;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Cálculo', criticality: 'CrescCriticality', criticalityRepresentation: #WITH_ICON } ],
+         identification:  [ { position: 10, label: 'Cálculo', criticality: 'CrescCriticality', criticalityRepresentation: #WITH_ICON } ] }
+  Crescimento;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Contabilizado', criticality: 'ContabilizadoCriti', criticalityRepresentation: #WITH_ICON } ],
+         identification:  [ { position: 10, label: 'Contabilizado', criticality: 'ContabilizadoCriti', criticalityRepresentation: #WITH_ICON } ] }
+  Contabilizado;
+
+  @UI.hidden: true
+  CrescCriticality;
+  @UI: { lineItem:        [ { position: 140, label: 'Ajuste Anual' } ],
+         identification:  [ { position: 140, label: 'Ajuste Anual' } ] }
+  @UI : { selectionField: [ { position: 40 } ] }
+  AjusteAnual;
+  //  @UI.hidden: true
+  @UI : { selectionField: [ { position: 50 } ] }
+  ExercAtual;
+
+  //  @UI : { lineItem:        [ { position: 142, label: 'Executado em' } ],
+  //         identification:  [ { position: 142, label: 'Executado em' } ] }
+  //  ExecutadoEm;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'calccresc', label: 'Calcular Crescimento' }]
+  Gjahr;
+  @UI.hidden: true
+  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'contabili', label: 'Contabilizar' }]
+  Budat;
+  //  /* Associations */
+  //  _LOG;
+
+}

@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_FI_CARGA_PENDENCIAS {
+    grant
+        select
+            on
+                ZC_FI_CARGA_PENDENCIAS
+                    where
+                        inheriting conditions from entity ZI_FI_CARGA_PENDENCIAS;
+                        
+}

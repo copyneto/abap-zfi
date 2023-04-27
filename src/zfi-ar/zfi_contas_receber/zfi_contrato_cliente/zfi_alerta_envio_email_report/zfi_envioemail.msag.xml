@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_ENVIOEMAIL</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ENVIOEMAIL</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Nenhum contrato com renovação automática encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ENVIOEMAIL</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Nenhum contrato para renovação encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ENVIOEMAIL</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Envio de e-mail contrato &amp;1 e aditivo &amp;2 executado com Sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ENVIOEMAIL</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Envio de e-mail realizado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_ENVIOEMAIL</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao enviar e-mail:contrato &amp;1 / aditivo &amp;2</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

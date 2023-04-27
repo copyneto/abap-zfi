@@ -1,0 +1,5 @@
+@EndUserText.label: 'Crescimento: Contratos Cliente'
+define service ZUI_FI_CONTRATO_CLIENTE {
+  expose ZC_FI_CONTRATO_CLIENTE as ContratosCliente;
+  expose ZC_FI_LOG_CALC_CRESCIMENTO as LogContratos;
+}

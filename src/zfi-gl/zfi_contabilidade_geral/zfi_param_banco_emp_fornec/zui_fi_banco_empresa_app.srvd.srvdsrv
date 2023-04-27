@@ -1,0 +1,4 @@
+@EndUserText.label: 'Denominação Coligadas por Empresa'
+define service ZUI_FI_BANCO_EMPRESA_APP {
+  expose ZC_FI_BANCO_EMPRESA_APP;
+}

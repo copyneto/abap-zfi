@@ -1,0 +1,32 @@
+managed;
+
+define behavior for ZI_FI_BL_TEXT_INSTRUCAO alias Texto
+implementation in class zclfiar_bl_text_instrucao unique
+persistent table ztfi_blt_txtinst
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create ) Bukrs, Hbkid;
+  field ( readonly : update ) Bukrs, Hbkid;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Bankl, Banks;
+
+  validation validateText on save { field Text; create; update; }
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_blt_txtinst
+  {
+    Bukrs = bukrs;
+    Hbkid = hbkid;
+    text = text;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

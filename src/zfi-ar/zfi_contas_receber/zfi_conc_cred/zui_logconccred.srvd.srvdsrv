@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Definition Log Concessão Crédito'
+define service ZUI_LOGCONCCRED {
+  expose ZC_FI_LOGCONCRED;
+}

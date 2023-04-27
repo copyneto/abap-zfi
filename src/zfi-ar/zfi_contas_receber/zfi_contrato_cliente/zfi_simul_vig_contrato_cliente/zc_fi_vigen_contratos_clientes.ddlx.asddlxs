@@ -1,0 +1,516 @@
+//@Metadata.layer: #CORE
+//@UI: {
+//  headerInfo: {
+//    typeName: 'Simulação de Vigência Contratos Cliente',
+//    typeNamePlural: 'Simulação de Vigência Contratos Cliente',
+//    title: {
+//      type: #STANDARD,
+//      label: 'Contrato',
+//      value: 'Contrato'
+//    }
+//  } }
+//annotate entity zc_fi_vigen_contratos_clientes with
+//{
+//
+//  @UI.facet: [ { id:         'Contrato',
+//               purpose:       #STANDARD,
+//               type:          #IDENTIFICATION_REFERENCE,
+//               label:         'Contrato',
+//               position:      10 }]
+//
+//  @UI: { lineItem:        [ { position: 20, label: 'Nº Contrato' } ],
+//         identification:  [ { position: 20, label: 'Nº Contrato' } ] }
+//  @UI : { selectionField: [ { position: 20 } ] }
+//  Contrato;
+//  @UI: { lineItem:        [ { position: 30, label: 'Nº Aditivo' } ],
+//         identification:  [ { position: 30, label: 'Nº Aditivo' } ] }
+//  @UI : { selectionField: [ { position: 30 } ] }
+//  Aditivo;
+//  @UI: { lineItem:        [ { position: 40 } ],
+//         identification:  [ { position: 40 } ] }
+//  @UI : { selectionField: [ { position: 40 } ] }
+//  Bukrs;
+//  @UI: { lineItem:        [ { position: 50 } ],
+//         identification:  [ { position: 50 } ] }
+//  @UI : { selectionField: [ { position: 50 } ] }
+//  belnr;
+//  @UI: { lineItem:        [ { position: 60 } ],
+//         identification:  [ { position: 60 } ] }
+//  @UI : { selectionField: [ { position: 60 } ] }
+//  buzei;
+//  @UI: { lineItem:        [ { position: 70 } ],
+//         identification:  [ { position: 70 } ] }
+//  @UI : { selectionField: [ { position: 70 } ] }
+//  gjahr;
+//  @UI: { lineItem:        [ { position: 80 } ],
+//         identification:  [ { position: 80 } ] }
+//  @UI : { selectionField: [ { position: 80 } ] }
+//  cliente;
+//  @UI: { lineItem:        [ { position: 90 } ],
+//         identification:  [ { position: 90 } ] }
+//  augdt;
+//  @UI: { lineItem:        [ { position: 100 } ],
+//         identification:  [ { position: 100 } ] }
+//  augbl;
+//  @UI: { lineItem:        [ { position: 110 } ],
+//         identification:  [ { position: 110 } ] }
+//  blart;
+//  @UI: { lineItem:        [ { position: 120 } ],
+//         identification:  [ { position: 120 } ] }
+//  bschl;
+//  @UI: { lineItem:        [ { position: 130 } ],
+//         identification:  [ { position: 130 } ] }
+//  budat;
+//  @UI: { lineItem:        [ { position: 140 } ],
+//         identification:  [ { position: 140 } ] }
+//  netdt;
+//  @UI: { lineItem:        [ { position: 150 } ],
+//         identification:  [ { position: 150 } ] }
+//  gsber;
+//  @UI: { lineItem:        [ { position: 160 } ],
+//         identification:  [ { position: 160 } ] }
+//  xref1hd;
+//  @UI: { lineItem:        [ { position: 170 } ],
+//         identification:  [ { position: 170 } ] }
+//  zbd1p;
+//  @UI: { lineItem:        [ { position: 180 } ],
+//         identification:  [ { position: 180 } ] }
+//  classifcnpj;
+//  @UI: { lineItem:        [ { position: 190 } ],
+//         identification:  [ { position: 190 } ] }
+//  Canal;
+//  @UI: { lineItem:        [ { position: 200 } ],
+//         identification:  [ { position: 200 } ] }
+//  setor;
+//  @UI: { lineItem:        [ { position: 210 } ],
+//         identification:  [ { position: 210 } ] }
+//  familiacl;
+//  @UI: { lineItem:        [ { position: 220 }, { label: 'Família CL Todos' } ],
+//         identification:  [ { position: 220 }, { label: 'Família CL Todos' } ] }
+//  flagfamtodos;
+//  @UI: { lineItem:        [ { position: 230 } ],
+//         identification:  [ { position: 230 } ] }
+//  tipodesconto;
+//  @UI: { lineItem:        [ { position: 240 } ],
+//         identification:  [ { position: 240 } ] }
+//  conddesconto;
+//  @UI: { lineItem:        [ { position: 250 } ],
+//         identification:  [ { position: 250 } ] }
+//  montante;
+//  @UI: { lineItem:        [ { position: 260 } ],
+//         identification:  [ { position: 260 } ] }
+//  montantecalculado;
+//  @UI: { lineItem:        [ { position: 270 } ],
+//         identification:  [ { position: 270 } ] }
+//  aplicadesconto;
+//  @UI: { lineItem:        [ { position: 280 } ],
+//         identification:  [ { position: 280 } ] }
+//  montantedesconto;
+//    @UI.lineItem  :  [{ type: #FOR_ACTION,
+//   dataAction: 'simularm', label: 'Simular Vigência'  }]
+//  @Consumption.filter.hidden: true
+//  @EndUserText.label      : 'Simulacao'
+//  Simulacao;
+//
+//
+//  @UI.hidden: true
+//  CreatedBy;
+//  @UI.hidden: true
+//  CreatedAt;
+//  @UI.hidden: true
+//  LastChangedBy;
+//  @UI.hidden: true
+//  LastChangedAt;
+//  @UI.hidden: true
+//  LocalLastChangedAt;
+//}
+
+
+
+
+
+
+@Metadata.layer: #CORE
+@UI: { 
+  headerInfo: { 
+    typeName: 'Simulação Contrato Cliente',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    },
+    typeNamePlural: 'Simulação Contratos Cliente'
+  }
+}
+annotate entity zc_fi_vigen_contratos_clientes with
+{
+  @UI.facet: [
+               { id:         'DescricaoHeader',
+                 purpose:    #HEADER,
+                 type:       #DATAPOINT_REFERENCE,
+                 targetQualifier: 'DescricaoHeader',
+                 position:      10 },
+
+                { id:         'StatusHeader',
+                 purpose:    #HEADER,
+                 type:       #DATAPOINT_REFERENCE,
+                 targetQualifier: 'StatusHeader',
+                 position:      20 },
+
+                { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 30 },
+
+                { id:           'geral',
+                 purpose:       #STANDARD,
+                 label:         'Dados Gerais',
+                 parentId:      'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'geral',
+                 position:      40 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       50 } ,
+
+             {  id:             'OBS',
+                purpose:        #STANDARD,
+                label:          'Observações',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'campoObs',
+                position:       60 }   ]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 10 } ],
+         dataPoint:        { qualifier: 'DescricaoHeader' } }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Contrato;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         selectionField:  [ { position: 20 } ],
+         dataPoint:       { qualifier: 'DescricaoHeader' } }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Aditivo;
+
+  @UI: { lineItem:        [ { position: 21 } ],
+         identification:  [ { position: 21 } ],
+         dataPoint:       { qualifier: 'DescricaoHeader' } }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+      cnpj_principal;  
+  @UI: { lineItem:        [ { position: 22 } ],
+         identification:  [ { position: 22 } ],
+         dataPoint:       { qualifier: 'DescricaoHeader' } }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+      razao_social;
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         fieldGroup:      [ { position: 30, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  ContratoProprio;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ],
+         fieldGroup:      [ { position: 40, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  ContratoJurid;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ],
+         fieldGroup:      [ { position: 50, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @EndUserText.label      : 'Data Início'
+  @Consumption.filter.hidden: true
+  DataIniValid;
+
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ],
+         fieldGroup:      [ { position: 60, qualifier: 'geral' } ]}
+  @EndUserText.label      : 'Data Fim'
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  DataFimValid;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ],
+         selectionField:  [ { position: 30 } ],
+         fieldGroup:      [ { position: 70, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Bukrs;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ],
+         fieldGroup:      [ { position: 80, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Branch;
+
+  @UI: { identification:  [ { position: 90 } ],
+         fieldGroup:      [ { position: 90, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  GrpContratos;
+
+  @UI: { identification:  [ { position: 100 } ],
+         fieldGroup:      [ { position: 100, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  GrpCond;
+
+  @UI: { identification:  [ { position: 110 } ],
+         fieldGroup:      [ { position: 110, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Chamado;
+
+  @UI: { identification:  [ { position: 120 } ],
+         fieldGroup:      [ { position: 120, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  PrazoPagto;
+
+  @UI: { identification:  [ { position: 130 } ],
+         fieldGroup:      [ { position: 130, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  FormaPagto;
+
+  @UI: { identification:  [ { position: 140 } ],
+         fieldGroup:      [ { position: 140, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  RespLegal;
+
+  @UI: { identification:  [ { position: 150 } ],
+         fieldGroup:      [ { position: 150, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  RespLegalGtcor;
+
+  @UI: { identification:  [ { position: 160 } ],
+         fieldGroup:      [ { position: 160, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  ProdContemplado;
+
+  @UI: { identification:  [ { position: 170 } ],
+         fieldGroup:      [ { position: 170, qualifier: 'campoObs' } ]}
+  @UI.multiLineText: true
+  @Consumption.filter.hidden: true
+  Observacao;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 180 } ],
+         dataPoint: { qualifier: 'StatusHeader', title: 'Status' },
+         fieldGroup:      [ { position: 180, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Status;
+
+  @UI: { identification:  [ { position: 190 } ] }
+    @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  StatusText;
+
+  @UI: { identification:  [ { position: 200 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Desativado;
+
+  @UI: { identification:  [ { position: 210 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Canal;
+
+  @UI: { identification:  [ { position: 220 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  CanalTxt;
+
+  @UI: { identification:  [ { position: 230 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  GrpEconomico;
+
+  @UI: { identification:  [ { position: 240 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Abrangencia;
+
+  @UI: { identification:  [ { position: 250 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Estrutura;
+
+  @UI: { identification:  [ { position: 260 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Canalpdv;
+
+  @UI: { identification:  [ { position: 270 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  TipoEntrega;
+
+  @UI: { identification:  [ { position: 280 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  DataEntrega;
+
+  @UI: { identification:  [ { position: 290 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  DataFatura;
+
+  @UI: { identification:  [ { position: 300 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Crescimento;
+
+  @UI: { identification:  [ { position: 310 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  AjusteAnual;
+
+  @UI: { identification:  [ { position: 320 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  DataAssinatura;
+
+  @UI: { identification:  [ { position: 330 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  Multas;
+
+  @UI: { identification:  [ { position: 340 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  RenovAut;
+
+  @UI: { identification:  [ { position: 350 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  AlertaVig;
+
+  @UI: { identification:  [ { position: 360 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  AlertaEnviado;
+
+  @UI: { identification:  [ { position: 370 } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  AlertaDataEnvio;
+
+  @UI: { identification:  [ { position: 380 } ] }
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar'} ]
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  CreatedBy;
+
+  @UI: { identification:  [ { position: 390 } ] }
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar'} ]
+  @Consumption.filter.hidden: true
+  CreatedAt;
+
+  @UI: { identification:  [ { position: 400 } ] }
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar'} ]
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.filter.hidden: true
+  LastChangedBy;
+
+  @UI: { identification:  [ { position: 410 } ] }
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar'} ]
+  @Consumption.filter.hidden: true
+  LastChangedAt;
+
+  @UI: { identification:  [ { position: 420 } ] }
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar'} ]
+  @Consumption.filter.hidden: true
+  LocalLastChangedAt;
+
+  @Consumption.filter.hidden: true
+  @EndUserText.label      : 'Simulacao'
+  @UI.lineItem  :  [{ type: #FOR_ACTION,
+  dataAction: 'simularm', label: 'Simular Vigência'  }]
+  Simulacao;
+
+//  @Consumption.filter.hidden: true    
+//  dataFim;
+//  @EndUserText.label      : 'Data Inicio'
+//  @Consumption.filter.hidden: true
+//  dataInicio;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  DocUuidH;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  CompanyCodeName;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  BusinessPlaceName;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  FormaPagtoTxt;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  GrpContratosTxt;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  AbrangenciaTxt;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  EstruturaTxt;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  CanalpdvTxt;
+  
+  
+}

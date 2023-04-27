@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Atualiza Log ztfi_log_dif</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_ZTFI_LOG_DIFTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_ZTFI_LOG_DIF</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_ZTFI_LOG_DIF</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Atualiza Log ZTFI_LOG_DIF</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_ZTFI_LOG_DIF</PARAMETER>
+       <TYP>ZCTGFI_ZTFI_LOG_DIF</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_ZTFI_LOG_DIF_MSG</PARAMETER>
+       <TYP>ZCTGFI_ZTFI_LOG_DIF_MSG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_ZTFI_LOG_DIF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Log de Diferimento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ZTFI_LOG_DIF_MSG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de tabela da tabela ZTFI_LOG_DIF_MSG</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

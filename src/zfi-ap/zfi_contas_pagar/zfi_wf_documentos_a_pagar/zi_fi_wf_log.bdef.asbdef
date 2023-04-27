@@ -1,0 +1,12 @@
+managed; // implementation in class zbp_i_fi_wf_log unique;
+
+define behavior for ZI_FI_WF_LOG //alias <alias_name>
+persistent table ztfi_wf_log
+lock master
+//authorization master ( instance )
+etag master uuid
+{
+  //create;
+  //update;
+  //delete;
+}

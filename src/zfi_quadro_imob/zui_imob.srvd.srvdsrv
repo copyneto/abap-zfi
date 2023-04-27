@@ -1,0 +1,4 @@
+@EndUserText.label: 'Quadro imobilizado'
+define service ZUI_IMOB {
+  expose ZC_FI_QUERY_IMOB;
+}

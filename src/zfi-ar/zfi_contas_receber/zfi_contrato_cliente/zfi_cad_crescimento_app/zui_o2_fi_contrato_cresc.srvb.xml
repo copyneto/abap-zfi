@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SRVB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SRVB>
+    <METADATA>
+     <NAME>ZUI_O2_FI_CONTRATO_CRESC</NAME>
+     <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service binding Contrato Cliente</DESCRIPTION>
+     <LINKS>
+      <item>
+       <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_FI_CONTRATO_CRESC</HREF>
+       <REL>http://www.sap.com/categories/odatav2</REL>
+       <TYPE>application/vnd.sap.adt.businessservices.odatav2.v2+xml</TYPE>
+       <TITLE>ODATAV2</TITLE>
+      </item>
+      <item>
+       <HREF>/sap/bc/adt/businessservices/testclass</HREF>
+       <REL>http://www.sap.com/categories/testclass</REL>
+       <TYPE>application/vnd.sap.adt.businessservices.testclass.v1+xml</TYPE>
+       <TITLE>TESTCLASS</TITLE>
+      </item>
+     </LINKS>
+     <RESPONSIBLE>VARAUJO</RESPONSIBLE>
+     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
+    </METADATA>
+    <CONTENT>
+     <BIND_TYPE_IMPL>
+      <NAME>ZUI_O2_FI_CONTRATO_CRESC</NAME>
+     </BIND_TYPE_IMPL>
+     <BIND_TYPE>ODATA</BIND_TYPE>
+     <BIND_TYPE_VERSION>V2</BIND_TYPE_VERSION>
+     <SERVICES>
+      <item>
+       <SERVICE_NAME>ZUI_O2_FI_CONTRATO_CRESC</SERVICE_NAME>
+       <SERVICE_CONTENT>
+        <item>
+         <SERVICE_VERSION>0001</SERVICE_VERSION>
+         <SRVD_REF>
+          <URI>/sap/bc/adt/ddic/srvd/sources/zui_fi_contrato_cresc</URI>
+          <TYPE>SRVD/SRV</TYPE>
+          <NAME>ZUI_FI_CONTRATO_CRESC</NAME>
+         </SRVD_REF>
+        </item>
+       </SERVICE_CONTENT>
+      </item>
+     </SERVICES>
+    </CONTENT>
+    <PUBLISHED>true</PUBLISHED>
+   </SRVB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

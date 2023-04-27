@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_CREDITOCLIENTE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>riação de Crédito ao Cliente</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>FI_DOCUMENT_CHANGE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>BAPI FI_DOCUMENT_CHANGE</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_HKONT_ENTRADA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave breve das coordenadas de uma conta</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>POSTING_INTERFACE_CLEARING</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>BAPI POSTING_INTERFACE_CLEARING</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CREDITOCLIENTE_MEMO</CMPNAME>
+     <SCONAME>CT_FTPOST</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cabeç.e itens de documento p/interface interno de contabil.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREDITOCLIENTE_MEMO</CMPNAME>
+     <SCONAME>IS_FEBKO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Registros de cabeçalho do extrato de conta eletrônico</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREDITOCLIENTE_MEMO</CMPNAME>
+     <SCONAME>IT_FTCLEAR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados de compensação p/interface interno de contabilização</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FI_DOCUMENT_CHANGE</CMPNAME>
+     <SCONAME>IT_RENEG_I</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo tabela ZTFSCM_RENEG_I</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POSTING_INTERFACE_CLEARING</CMPNAME>
+     <SCONAME>CT_FTPOST</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type FTPOST</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POSTING_INTERFACE_CLEARING</CMPNAME>
+     <SCONAME>IS_BSEG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Segmento do documento contabilidade financeira</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POSTING_INTERFACE_CLEARING</CMPNAME>
+     <SCONAME>IS_FTCLEAR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type for FTCLEAR</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>POSTING_INTERFACE_CLEARING</CMPNAME>
+     <SCONAME>IT_RENEG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo tabela ZTFSCM_RENEG_I</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv. Definition Exclusão de Clientes'
+define service ZUI_EXC_CLI {
+  expose ZC_FI_EXC_CLI;
+  expose ZI_CA_VH_CUSTOMER;
+}

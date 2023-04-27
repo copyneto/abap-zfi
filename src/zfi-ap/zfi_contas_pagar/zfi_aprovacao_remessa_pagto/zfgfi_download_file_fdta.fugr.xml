@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Efetua download FDTA</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_DOWNLOAD_FILE_FDTATOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_DOWNLOAD_FILE_FDTA</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_DOWNLOAD_FILE_FDTA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Efetua o download da FDTA</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_REGUT</PARAMETER>
+       <TYP>EPIC_T_REGUT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_REGUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>List of Payment Files/REGUT</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

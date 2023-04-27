@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Mercado Interno',
+                     typeNamePlural: 'Mercado Interno',
+                     title: { type: #STANDARD,  value: 'Empresa' } } }
+
+annotate entity ZC_FI_MERC_INT_H with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'Cabecalho',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 position:        10 },
+
+               { id:              'Itens',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Itens',
+                 position:        20,
+                 targetElement:   '_MercIntItem'
+               } ]
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  @UI.lineItem:         [ { position: 10, type: #FOR_ACTION, dataAction: 'diferir', label: 'Diferir', invocationGrouping: #CHANGE_SET },
+                          { position: 20, type: #FOR_ACTION, dataAction: 'simular', label: 'Simular', invocationGrouping: #CHANGE_SET },
+                          { position: 30, type: #FOR_ACTION, dataAction: 'contabilizar', label: 'Contabilizar', invocationGrouping: #CHANGE_SET } ]
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI.hidden: true
+  Moeda;
+
+  @UI: { lineItem:       [ { position: 10 } ],
+         identification: [ { position: 10 } ],
+         selectionField: [ { position: 10 } ] }
+  Empresa;
+
+  @UI: { lineItem:       [ { position: 20 } ],
+         identification: [ { position: 20 } ] }
+  NumDoc;
+
+  @UI: { lineItem:       [ { position: 30 } ],
+         identification: [ { position: 30 } ] }
+  Ano;
+
+  @UI: { lineItem:       [ { position: 40 } ],
+         identification: [ { position: 40 } ] }
+  DataDocumento;
+
+  @UI: { lineItem:       [ { position: 50 } ],
+         selectionField: [ { position: 20 } ],
+         identification: [ { position: 50 } ] }
+  DataLancamento;
+
+  @UI: { lineItem:       [ { position: 60 } ],
+         identification: [ { position: 60 } ] }
+  Mes;
+
+  @UI: { lineItem:       [ { position: 70 } ],
+         identification: [ { position: 70 } ] }
+  TipoDocumento;
+
+  @UI: { lineItem:       [ { position: 80 } ],
+         identification: [ { position: 80 } ] }
+  TotalDocument;
+
+  @UI: { lineItem:       [ { position: 90 } ],
+         identification: [ { position: 90 } ] }
+  TransactionCurrency;
+  
+ @UI.hidden: true
+  TotalNetAmount;
+
+  @UI: { lineItem:       [ { position: 110 } ],
+         identification: [ { position: 110 } ] }
+  AptoDiferimento;
+
+  @UI: { lineItem:       [ { position: 120 } ],
+         identification: [ { position: 120 } ] }
+  DataAtual;
+
+  @UI: { lineItem:       [ { position: 80 } ],
+         identification: [ { position: 80 } ] }
+  Referencia;
+
+  @UI: { lineItem:       [ { position: 90 } ],
+         identification: [ { position: 90 } ] }
+  TextoCab;
+
+}

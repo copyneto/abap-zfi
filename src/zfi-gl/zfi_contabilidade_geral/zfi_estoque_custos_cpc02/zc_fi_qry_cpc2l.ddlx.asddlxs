@@ -1,0 +1,98 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+    typeName: 'Movimento',
+    typeNamePlural: 'Movimentos',
+    title: {
+        type: #STANDARD,
+        value: 'Ktext'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'KategorieText' }
+}
+annotate view ZC_FI_QRY_CPC2L with
+{
+
+  @UI: { facet: [{ id: 'cpc', purpose: #STANDARD, position: 10, type: #IDENTIFICATION_REFERENCE }] }
+
+  @UI: { lineItem: [{ position: 10, type: #STANDARD }] }
+  ptyp_proc;
+
+  @UI: { lineItem: [{ position: 20, type: #STANDARD }] }
+  @Consumption.filter.hidden: true
+  kategorie;
+
+  @UI: {    lineItem: [{ position: 30, type: #STANDARD }],
+      identification: [{ position: 10, type: #STANDARD }] }
+  @Consumption.filter.selectionType: #RANGE
+  budat;
+
+  @UI: {    lineItem: [{ position: 40, type: #STANDARD }],
+      identification: [{ position: 40, type: #STANDARD }],
+      selectionField: [{ position: 60 }] }
+  matnr;
+
+  //@UI: { lineItem: [{ type: #AS_FIELDGROUP, valueQualifier: 'Lifnr', position: 50, label: 'Cliente/Fornecedor' }] }
+  @UI.hidden: true
+  lifnr;
+
+  //@UI.fieldGroup: [{ type: #STANDARD, qualifier: 'Lifnr', position: 1 }]
+  @UI.lineItem: [{ position: 50 }]
+  lifnr_mseg;
+
+  //@UI.fieldGroup: [{ type: #STANDARD, qualifier: 'Lifnr', position: 2 }]
+  @UI.lineItem: [{ position: 50 }]
+  kunnr_mseg;
+
+  @UI: {    lineItem: [{ position: 60, type: #STANDARD }],
+      identification: [{ position: 60, type: #STANDARD }] }
+  @EndUserText.label: 'Nota Fiscal'
+  xblnr;
+
+  @UI: {    lineItem: [{ position: 70, type: #STANDARD }],
+      identification: [{ position: 70, type: #STANDARD }],
+      selectionField: [{ position: 30 }] }
+  belnr;
+
+  @UI: {    lineItem: [{ position: 80, type: #STANDARD }],
+      identification: [{ position: 80, type: #STANDARD }] }
+  @EndUserText.label: 'Custo Real'
+  wrbtr;
+
+  @UI: {    lineItem: [{ position: 90, type: #STANDARD }],
+      identification: [{ position: 90, type: #STANDARD }] }
+  @EndUserText.label: 'Quantidade'
+  menge;
+
+  @UI: { selectionField: [{ position: 10 }] }
+  poper;
+
+  @UI: { selectionField: [{ position: 30 }] }
+  bdatj;
+
+  @UI: { selectionField: [{ position: 40 }] }
+  @EndUserText.label: 'Centro'
+  bwkey;
+
+  @UI: { selectionField: [{ position: 50 }] }
+  bwtar;
+
+  @UI.hidden: true
+  meins;
+
+  @UI.hidden: true
+  waers;
+
+  @UI.hidden: true
+  Cliente;
+
+  @UI.hidden: true
+  Fornecedor;
+
+  @UI.hidden: true
+  Ktext;
+
+  @UI.hidden: true
+  KategorieText;
+
+}

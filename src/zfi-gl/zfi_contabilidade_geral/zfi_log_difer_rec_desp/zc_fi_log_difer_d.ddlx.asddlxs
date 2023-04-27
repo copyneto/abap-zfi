@@ -1,0 +1,22 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_LOG_DIFER_D
+    with 
+{
+@UI.hidden: true
+  IdLog;
+@UI.hidden: true  
+  Empresa;
+@UI: { lineItem:       [ { position: 10 } ] }  
+  Gjahr;
+@UI: { lineItem:       [ { position: 20 } ] }  
+  Belnr;
+@UI: { lineItem:       [ { position: 30, label: 'Exe.DocRec' } ] }  
+  GjahrRec;
+@UI: { lineItem:       [ { position: 40, label: 'Doc.Receita' } ] }  
+  BelnrRec;
+@UI: { lineItem:       [ { position: 50, label: 'Exe.DocRaz' } ] }  
+  GjahrRaz;
+@UI: { lineItem:       [ { position: 60, label: 'Doc.Razão' } ] }  
+  BelnrRaz;
+
+}

@@ -1,0 +1,377 @@
+managed;
+
+define behavior for ZI_FI_CFG_AUTO_TEXTOS_REGRAS alias Regras
+implementation in class zclfi_cfg_auto_textos_regra unique
+persistent table ztfi_autotext
+authorization master ( instance )
+lock master
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+  association _Campos { create; }
+  association _Empresa { create; }
+  association _TipoDocumento { create; }
+  association _ContaContabil { create; }
+  association _ChaveLancto { create; }
+  association _TipoAtualizacao { create; }
+  association _TipoProduto { create; }
+
+  determination preencheRegra on modify { create; }
+  validation authorityCreate on save { create; }
+
+  field ( numbering : managed, readonly ) IdRegra;
+  field ( readonly ) Regra,
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  mapping for ZTFI_AUTOTEXT
+  {
+
+    IdRegra = id;
+    Regra = regra;
+    TextoFixo = texto_fixo;
+    Descricao = descricao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}
+
+define behavior for ZI_FI_CFG_AUTO_TEXTOS_CAMPOS alias Campos
+implementation in class zclfi_cfg_auto_textos_campo unique
+persistent table ztfi_autotxt_cmp
+authorization dependent by _Regras
+lock dependent by _Regras
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  validation validaCampo on save { create; }
+  validation validaOrdem on save { field Ordenacao; }
+
+  field ( numbering : managed, readonly ) Id;
+  field ( mandatory : create ) Campo, Ordenacao;
+  field ( readonly : update ) IdRegra, Campo,
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  association _Regras;
+
+  mapping for ztfi_autotxt_cmp
+  {
+    IdRegra = id_regra;
+    Id = id;
+    Campo = campo;
+    Ordenacao = ordenacao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}
+
+define behavior for ZI_FI_CFG_AUTOTXT_CRIT_EMPRESA alias SelEmpresa
+implementation in class zclfi_autotxt_crit_empresa unique
+persistent table ztfi_sel_empr
+authorization dependent by _Regras
+lock dependent by _Regras
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  determination preencheIdSelecao on modify
+  { create; }
+
+  validation buscaRegraConflitante on save { create; update; }
+
+  validation validaPreenchimento on save { create; update; }
+
+  field ( numbering : managed, readonly ) IdSelCompany;
+  field ( mandatory : create ) SignCompany, OptCompany, LowCompany;
+  field ( readonly ) IdRegra, CritSelCompany,
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  association _Regras;
+
+  mapping for ztfi_sel_empr
+  {
+    IdSelCompany = id;
+    IdRegra = id_regra;
+    CritSelCompany = cod_criterio;
+    SignCompany = sign;
+    OptCompany = opt;
+    LowCompany = low;
+    HighCompany = high;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_CFG_AUTOTXT_CRIT_TIPODOC alias SelTipoDoc
+implementation in class zclfi_autotxt_crit_tipodoc unique
+persistent table ztfi_sel_tpdoc
+authorization dependent by _Regras
+lock dependent by _Regras
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  validation buscaRegraConflitante on save { create; update; }
+
+  validation validaPreenchimento on save
+  { create; update; }
+
+  determination preencheIdSelecao on modify
+  { create; }
+
+    //  validation validaCampo on save { create; }
+    //  validation validaOrdem on save { field Ordenacao; }
+
+    field ( numbering : managed, readonly ) IdSelDocType;
+    field ( mandatory : create ) SignDocType, OptDocType, LowDocType;
+    field ( readonly ) IdRegra, CritSelDocType,
+    LastChangedAt,
+    LastChangedBy,
+    CreatedAt,
+    CreatedBy,
+    LocalLastChangedAt;
+
+    association _Regras;
+
+    mapping for ztfi_sel_tpdoc
+    {
+      IdSelDocType = id;
+      IdRegra = id_regra;
+      CritSelDocType = cod_criterio;
+      SignDocType = sign;
+      OptDocType = opt;
+      LowDocType = low;
+      HighDocType = high;
+      CreatedBy = created_by;
+      CreatedAt = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+
+  }
+
+
+  define behavior for ZI_FI_CFG_AUTOTXT_CRIT_CONTA alias SelConta
+  implementation in class zclfi_autotxt_crit_conta unique
+  persistent table ztfi_sel_conta
+  authorization dependent by _Regras
+  lock dependent by _Regras
+  etag master LocalLastChangedAt
+  {
+    update;
+    delete;
+
+    validation buscaRegraConflitante on save { create; update; }
+
+    validation validaPreenchimento on save
+    { create; update; }
+
+    determination preencheIdSelecao on modify
+    { create; }
+      //  validation validaCampo on save { create; }
+      //  validation validaOrdem on save { field Ordenacao; }
+
+      field ( numbering : managed, readonly ) IdSelAccount;
+      field ( mandatory : create ) SignAccount, OptAccount, LowAccount;
+      field ( readonly ) IdRegra, CritSelAccount,
+      LastChangedAt,
+      LastChangedBy,
+      CreatedAt,
+      CreatedBy,
+      LocalLastChangedAt;
+
+      association _Regras;
+
+      mapping for ztfi_sel_conta
+      {
+        IdSelAccount = id;
+        IdRegra = id_regra;
+        CritSelAccount = cod_criterio;
+        SignAccount = sign;
+        OptAccount = opt;
+        LowAccount = low;
+        HighAccount = high;
+        CreatedBy = created_by;
+        CreatedAt = created_at;
+        LastChangedBy = last_changed_by;
+        LastChangedAt = last_changed_at;
+        LocalLastChangedAt = local_last_changed_at;
+      }
+
+    }
+
+    define behavior for ZI_FI_CFG_AUTOTXT_CRIT_CHAVE alias SelChave
+    implementation in class zclfi_autotxt_crit_chave unique
+    persistent table ztfi_sel_chave
+    authorization dependent by _Regras
+    lock dependent by _Regras
+    etag master LocalLastChangedAt
+    {
+      update;
+      delete;
+
+      validation buscaRegraConflitante on save { create; update; }
+
+      validation validaPreenchimento on save
+      { create; update; }
+
+      determination preencheIdSelecao on modify
+      { create; }
+        //  validation validaCampo on save { create; }
+        //  validation validaOrdem on save { field Ordenacao; }
+
+        field ( numbering : managed, readonly ) IdSelPostingKey;
+        field ( mandatory : create ) SignPostingKey, OptPostingKey, LowPostingKey;
+        field ( readonly ) IdRegra, CritSelPostingKey,
+        LastChangedAt,
+        LastChangedBy,
+        CreatedAt,
+        CreatedBy,
+        LocalLastChangedAt;
+
+        association _Regras;
+
+        mapping for ztfi_sel_chave
+        {
+          IdSelPostingKey = id;
+          IdRegra = id_regra;
+          CritSelPostingKey = cod_criterio;
+          SignPostingKey = sign;
+          OptPostingKey = opt;
+          LowPostingKey = low;
+          HighPostingKey = high;
+          CreatedBy = created_by;
+          CreatedAt = created_at;
+          LastChangedBy = last_changed_by;
+          LastChangedAt = last_changed_at;
+          LocalLastChangedAt = local_last_changed_at;
+        }
+
+      }
+
+      define behavior for ZI_FI_CFG_AUTOTXT_CRIT_FLOWTP alias SelTipoAtualizacao
+      implementation in class zclfi_autotxt_crit_flowtp unique
+      persistent table ztfi_sel_flowtp
+      authorization dependent by _Regras
+      lock dependent by _Regras
+      etag master LocalLastChangedAt
+      {
+        update;
+        delete;
+
+        validation buscaRegraConflitante on save { create; update; }
+
+        validation validaPreenchimento on save
+        { create; update; }
+
+        determination preencheIdSelecao on modify
+        { create; }
+          //  validation validaCampo on save { create; }
+          //  validation validaOrdem on save { field Ordenacao; }
+
+          field ( numbering : managed, readonly ) IdSelTreasuryUpdateType;
+          field ( mandatory : create ) SignTreasuryUpdateType, OptTreasuryUpdateType, LowTreasuryUpdateType;
+          field ( readonly ) IdRegra, CritSelTreasuryUpdateType,
+          LastChangedAt,
+          LastChangedBy,
+          CreatedAt,
+          CreatedBy,
+          LocalLastChangedAt;
+
+          association _Regras;
+
+          mapping for ztfi_sel_flowtp
+          {
+            IdSelTreasuryUpdateType = id;
+            IdRegra = id_regra;
+            CritSelTreasuryUpdateType = cod_criterio;
+            SignTreasuryUpdateType = sign;
+            OptTreasuryUpdateType = opt;
+            LowTreasuryUpdateType = low;
+            HighTreasuryUpdateType = high;
+            CreatedBy = created_by;
+            CreatedAt = created_at;
+            LastChangedBy = last_changed_by;
+            LastChangedAt = last_changed_at;
+            LocalLastChangedAt = local_last_changed_at;
+          }
+
+        }
+
+        define behavior for ZI_FI_CFG_AUTOTXT_CRIT_PRODTP alias SelTipoProduto
+        implementation in class zclfi_autotxt_crit_prodtp unique
+        persistent table ztfi_sel_prodtp
+        authorization dependent by _Regras
+        lock dependent by _Regras
+        etag master LocalLastChangedAt
+        {
+          update;
+          delete;
+
+          validation buscaRegraConflitante on save { create; update; }
+
+          validation validaPreenchimento on save
+          { create; update; }
+
+          determination preencheIdSelecao on modify
+          { create; }
+            //  validation validaCampo on save { create; }
+            //  validation validaOrdem on save { field Ordenacao; }
+
+            field ( numbering : managed, readonly ) IdSelFIProdType;
+            field ( mandatory : create ) SignFIProdType, OptFIProdType, LowFIProdType;
+            field ( readonly ) IdRegra, CritSelFIProdType,
+            LastChangedAt,
+            LastChangedBy,
+            CreatedAt,
+            CreatedBy,
+            LocalLastChangedAt;
+
+            association _Regras;
+
+            mapping for ztfi_sel_prodtp
+            {
+              IdSelFIProdType = id;
+              IdRegra = id_regra;
+              CritSelFIProdType = cod_criterio;
+              SignFIProdType = sign;
+              OptFIProdType = opt;
+              LowFIProdType = low;
+              HighFIProdType = high;
+              CreatedBy = created_by;
+              CreatedAt = created_at;
+              LastChangedBy = last_changed_by;
+              LastChangedAt = last_changed_at;
+              LocalLastChangedAt = local_last_changed_at;
+            }
+
+          }

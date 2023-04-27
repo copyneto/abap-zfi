@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_FI_DOC_CANC_BANC alias Cancelar
+{
+
+  use action cancelar;
+}

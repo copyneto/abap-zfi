@@ -1,0 +1,3 @@
+sap.ui.define([],function(){"use strict";return{navegar:function(a){sap.ushell.Container.getService("CrossApplicationNavigation").isNavigationSupported([{target:{shellHash:"param_imob-manage"}}]).done(function(a){a.map(function(a,e){if(a.supported===true+
+){var i=sap.ushell&&sap.ushell.Container&&sap.ushell.Container.getService("CrossApplicationNavigation").hrefForExternal({target:{semanticObject:"param_imob",action:"manage"},params:{}})||"";sap.m.URLHelper.redirect(i,false)}else{alert("Usuário sem permis+
+são para acessar o link")}})}).fail(function(){alert("Falha ao acessar o link")})}}});                                                                                                                                                                         

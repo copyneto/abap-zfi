@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_CONTAB_REVERSA</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Contabilização Reversa</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>T01</KEY>
+     <ENTRY>Documento:</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T02</KEY>
+     <ENTRY>Ordem:</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T03</KEY>
+     <ENTRY>Doc Contab:</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T04</KEY>
+     <ENTRY>Erro:</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T05</KEY>
+     <ENTRY>Processado anteriormente.</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONTABILIZA_REVERSA</CMPNAME>
+     <SCONAME>ET_RETORNO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorno Contabilização Reversa - E-Commnerce</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONTABILIZA_REVERSA</CMPNAME>
+     <SCONAME>IT_CONTAB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documentos para realizar contabilização</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>ET_RETORNO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorno Contabilização Reversa - E-Commnerce</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IT_CONTAB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documentos para realizar contabilização</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_REVERSA</CMPNAME>
+     <SCONAME>CT_CONTAB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Referência do cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_REVERSA</CMPNAME>
+     <SCONAME>ET_RETORNO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorno Contabilização Reversa - E-Commnerce</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

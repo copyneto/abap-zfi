@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+annotate entity ZC_FI_MERC_INT_I with
+{
+  @UI: { lineItem:       [ { position: 10 } ] }
+  Item;
+
+  @UI: { lineItem:       [ { position: 20 } ] }
+  Cliente;
+
+  @UI: { lineItem:       [ { position: 30 } ] }
+  Conta;
+
+  @UI: { lineItem:       [ { position: 40 } ] }
+  Empresa;
+
+  @UI: { lineItem:       [ { position: 50 } ] }
+  Divisao;
+
+  @UI: { lineItem:       [ { position: 60 } ] }
+  Atribuicao;
+
+  @UI: { lineItem:       [ { position: 70 } ] }
+  LocalNegocio;
+
+  @UI: { lineItem:       [ { position: 80 } ] }
+  CentroCusto;
+
+  @UI: { lineItem:       [ { position: 90 } ] }
+  CentroLucro;
+
+  @UI: { lineItem:       [ { position: 100 } ] }
+  Segmento;
+
+  @UI: { lineItem:       [ { position: 110, criticality: 'ValorCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  Valor;
+
+  @UI: { lineItem:       [ { position: 120 } ] }
+  TextItem;
+
+  @UI.hidden: true
+  NumDoc;
+
+  @UI.hidden: true
+  Ano;
+
+//  @UI.hidden: true
+//  Moeda;
+
+  @UI.hidden: true
+  ValorCriticality;
+
+  @UI.hidden: true
+  CredDeb;
+
+}

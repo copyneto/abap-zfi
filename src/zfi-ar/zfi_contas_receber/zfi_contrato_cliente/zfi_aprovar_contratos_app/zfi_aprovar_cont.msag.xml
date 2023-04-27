@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Aprovação de Contrato</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Contrato Aprovado com Sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Contrato já aprovado no Nível ou Inexistente.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Objeto de Autorização Não Encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Você Não Possui Autorização Para Aprovar Contratos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Você Não Possui Autorização Para Aprovar Neste Nível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Não foi possivel atualizar a tabela.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Não foi possivel Atualizar o Nivel Atual.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Não foi possivel Recuperar o Proximo Nível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Não Foi Possivel Recuperar os Aprovadores.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Não Foi Possivel Enviar o E-mail.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Não existe um nível superior, Abortado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Verificar os E-mails Cadastrados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Contrato: &amp;1  Aprovado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Aditivo: &amp;1  Aprovado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Dados aprovador não atualizado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>&quot;Contrato/Aditivo &amp; Aprovação não foi possivel!&quot;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>&quot;Operação realizada.&quot;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_APROVAR_CONT</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Contrato/Aditivo &amp; Aprovado com sucesso!</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

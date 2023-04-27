@@ -1,0 +1,4 @@
+@EndUserText.label: 'Renovação de Contrato - Service Def.'
+define service ZUI_RENOVACAO_CONTRATO {
+  expose ZC_FI_RENOVACAO_CONTRATO;
+}

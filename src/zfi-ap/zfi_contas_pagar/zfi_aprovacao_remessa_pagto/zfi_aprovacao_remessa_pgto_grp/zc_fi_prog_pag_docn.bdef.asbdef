@@ -1,0 +1,6 @@
+projection;
+
+define behavior for ZC_FI_PROG_PAG_DOCN alias grupoTesouraria
+{
+  use action changeGroup;
+}

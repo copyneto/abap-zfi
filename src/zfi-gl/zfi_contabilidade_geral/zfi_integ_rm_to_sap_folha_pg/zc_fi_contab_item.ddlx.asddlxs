@@ -1,0 +1,88 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Item',
+                     typeNamePlural: 'Itens' } }
+annotate entity ZC_FI_CONTAB_ITEM with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'Itens',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Itens',
+                 position:        10 },
+                 
+                        { parentId:        'Itens',
+                          id:              'ContaRzao',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          label:           'Conta Razão',
+                          targetQualifier: 'ContaRzao' },
+                          
+                        { parentId:        'Itens',
+                          id:              'Moeda',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Moeda',
+                          position:        20,
+                          targetQualifier: 'Moeda' } ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI.hidden: true
+  Identificacao;
+
+  @UI: { lineItem:       [ { position: 10 } ],
+         fieldGroup:     [ { position: 10, qualifier: 'ContaRzao' } ] }
+  Item;
+  
+  @UI: { lineItem:       [ { position: 20 } ],
+         fieldGroup:     [ { position: 20, qualifier: 'ContaRzao' } ] }
+  Conta;
+
+  @UI: { lineItem:       [ { position: 30 } ],
+         fieldGroup:     [ { position: 30, qualifier: 'ContaRzao' } ] }
+  DebCred;
+
+  @UI: { lineItem:       [ { position: 40, criticality: 'ValorCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         fieldGroup:     [ { position: 10, qualifier: 'Moeda', criticality: 'ValorCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  Valor;
+  
+  @UI.hidden: true
+  ValorCriticality;
+
+//  @UI.hidden: true
+//  Moeda;
+
+  @UI: { lineItem:       [ { position: 50 } ],
+         fieldGroup:     [ { position: 40, qualifier: 'ContaRzao' } ] }
+  Atribuicao;
+
+  @UI: { lineItem:       [ { position: 60 } ],
+         fieldGroup:     [ { position: 50, qualifier: 'ContaRzao' } ] }
+  Divisao;
+
+  @UI: { lineItem:       [ { position: 70 } ],
+         fieldGroup:     [ { position: 60, qualifier: 'ContaRzao' } ] }
+  CentroCusto;
+
+  @UI: { lineItem:       [ { position: 80 } ],
+         fieldGroup:     [ { position: 70, qualifier: 'ContaRzao' } ] }
+  CentroLucro;
+
+  @UI: { lineItem:       [ { position: 90 } ],
+         fieldGroup:     [ { position: 80, qualifier: 'ContaRzao' } ] }
+  Segmento;
+
+  @UI: { lineItem:       [ { position: 100 } ],
+         fieldGroup:     [ { position: 90, qualifier: 'ContaRzao' } ] }
+  TextoItem;
+  
+  @UI: { lineItem:       [ { position: 110 } ] }  
+  TextoErro;
+
+
+}

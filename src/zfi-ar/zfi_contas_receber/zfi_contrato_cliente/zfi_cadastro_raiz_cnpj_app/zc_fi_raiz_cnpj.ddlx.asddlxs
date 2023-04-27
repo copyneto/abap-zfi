@@ -1,0 +1,76 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'CNPJ Raiz',
+                typeNamePlural: 'CNPJs Raiz',
+                title: { type: #STANDARD, label: 'Raiz', value: 'CnpjRaiz' } },
+  presentationVariant: [{ sortOrder: [{ by: 'LastChangedAt', direction:  #DESC }] }] }
+annotate view ZC_FI_RAIZ_CNPJ with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet:[
+             { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+             { id:              'geral',
+               purpose:         #STANDARD,
+               parentId:        'Facet',
+               type:            #FIELDGROUP_REFERENCE,
+               label:           'Dados Gerais',
+               targetQualifier: 'geral',
+               position:         20 } ,
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       30 } ,
+             { id:            'Clientes',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Clientes',
+                 position:      40,
+                 targetElement: '_Clientes'} ]
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:        [ { label: 'ID', hidden: true } ],
+         identification:  [ { label: 'ID' } ] }
+  @UI.hidden: true
+  DocUuidH;
+  @UI: { lineItem:        [ { label: 'ID Raiz', hidden: true } ],
+       identification:  [ { label: 'ID Raiz' } ] }
+  @UI.hidden: true
+  DocUuidRaiz;
+  @UI: { lineItem:        [ { position: 10, label: 'Contrato' },
+                            {   type: #FOR_ACTION, dataAction: 'atualizarClientes', label: 'Atualizar Clientes' } ],
+       identification:  [ { position: 10, label: 'Contrato' } ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  @UI.selectionField:  [ { position: 10 } ]
+  Contrato;
+  @UI: { lineItem:        [ { position: 20, label: 'Aditivo' } ],
+       identification:  [ { position: 20, label: 'Aditivo' } ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'geral' }]
+  @UI.selectionField:  [ { position: 20 } ]
+  Aditivo;
+  @UI: { lineItem:        [ { position: 30, label: 'Raiz CNPJ' } ],
+       identification:  [ { position: 30, label: 'Raiz CNPJ' } ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'geral' }]
+  @UI.selectionField:  [ { position: 30 } ]
+  CnpjRaiz;
+  @UI: { lineItem:        [ { position: 40, label: 'Razão social' } ],
+       identification:  [ { position: 40, label: 'Razão social' } ] }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'geral' }]
+  RazaoSoci;
+  @UI: { lineItem:        [ { position: 50, label: 'Nome Fantasia' } ],
+       identification:  [ { position: 50, label: 'Nome Fantasia' } ] }
+  @UI.fieldGroup: [{ position: 50, qualifier: 'geral' }]
+  NomeFanta;
+
+
+}

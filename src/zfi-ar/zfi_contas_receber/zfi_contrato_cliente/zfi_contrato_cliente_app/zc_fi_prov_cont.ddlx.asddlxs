@@ -1,0 +1,134 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Provisão',
+                     title: { value: 'GrupContrato' },
+                     typeNamePlural: 'Provisão'
+                   }
+     }
+annotate entity ZC_FI_PROV_CONT with
+{
+  @UI.facet: [
+              { id:              'DescricaoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'DescricaoHeader',
+                position:        10 },
+
+              { id:             'AditivoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'AditivoHeader',
+                position:        20 },
+
+              { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+              { id:           'geral',
+                 purpose:       #STANDARD,
+                 parentId:        'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 label:         'Dados Gerais',
+                 targetQualifier: 'geral',
+                 position:      10 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 } ,
+
+              { id:            'familias',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Famílias',
+                 position:      40,
+                 targetElement: '_Familia'}  ]
+
+  @UI: { dataPoint:        { qualifier: 'DescricaoHeader', title: 'N° Contrato' } }
+  Contrato;
+
+  @UI: { dataPoint:        { qualifier: 'AditivoHeader', title: 'N° Aditivo' } }
+  Aditivo;
+  
+  @UI: { lineItem:        [ { position: 10 } ],
+       identification:  [ { position: 10 } ] }
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'geral' } ]
+  GrupContrato;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+       identification:  [ { position: 20, label :'Tipo de Desconto' } ] }
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'geral' } ]
+  TipoDesconto;
+  //TipoDescTxt;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+       identification:  [ { position: 30 } ] }
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'geral' } ]
+  AplicaDesconto;
+  //AplicaTxt;
+
+  @UI: { lineItem:        [ { position: 40,  label :'Condição de Desconto' } ],
+       identification:  [ { position: 40,  label :'Condição de Desconto' } ] }
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'geral' } ]
+  CondDesconto;
+  //CondTxt;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+       identification:  [ { position: 50 } ] }
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'geral' } ]
+  ClassificCnpj;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+       identification:  [ { position: 70 } ] }
+  @UI.fieldGroup:      [ { position: 70, qualifier: 'geral' } ]
+  TipoApImposto;
+  //TipoApImpText;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+       identification:  [ { position: 80 } ] }
+  @UI.fieldGroup:      [ { position: 80, qualifier: 'geral' } ]
+  TipoImposto;
+  //TipoImpostoTxt;
+
+  @UI: { lineItem:        [ { position: 90, label: 'Percentual de Desconto' } ],
+       identification:  [ { position: 90, label: 'Percentual de Desconto' } ] }
+  @UI.fieldGroup:      [ { position: 90, qualifier: 'geral' } ]
+  PercCondDesc;
+
+  @UI: { lineItem:        [ { position: 100 } ],
+       identification:  [ { position: 100 } ] }
+  @UI.fieldGroup:      [ { position: 100, qualifier: 'geral' } ]
+  MesVigencia;
+
+  @UI: { lineItem:        [ { position: 110 } ],
+         identification:  [ { position: 110 } ] }
+  @UI.fieldGroup:      [ { position: 110, qualifier: 'geral' } ]
+  RecoAnualDesc;
+
+  @UI: { lineItem:        [ { position: 120 } ],
+         identification:  [ { position: 120 } ] }
+  @UI.fieldGroup:      [ { position: 120, qualifier: 'geral' } ]
+  TipoApuracao;
+  //TipoApuracaoTxt;
+
+
+  @UI: { identification:  [ { position: 130 } ]}
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI: { identification:  [ { position: 140 } ]}
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI: { identification:  [ { position: 150 } ]}
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar' } ]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 160 } ]}
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 170 } ]}
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar' } ]
+  LocalLastChangedAt;
+
+}

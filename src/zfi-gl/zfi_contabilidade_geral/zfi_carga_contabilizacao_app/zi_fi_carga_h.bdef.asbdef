@@ -1,0 +1,102 @@
+managed;
+
+define behavior for ZI_FI_CARGA_H alias _H
+implementation in class zclfi_carga_h unique
+persistent table ztfi_carga_h
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+{
+
+  association _Doc { create; }
+  association _Item { create; }
+
+  field ( numbering : managed ) DocUuidH;
+  field ( readonly ) DocUuidH, DataCarga, Status, DocumentNo, LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  action ( features : instance ) cancelar result [1] $self;
+  action ( features : instance ) lancar result [1] $self;
+  action ( features : instance ) message result [1] $self;
+
+  mapping for ztfi_carga_h
+  {
+    DocUuidH = doc_uuid_h;
+    Documentno = documentno;
+    DataCarga = data_carga;
+    Status = Status;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}
+
+define behavior for ZI_FI_CARGA_DOC alias _Doc
+persistent table ztfi_carga_doc
+lock dependent by _H
+etag master LastChangedAt
+{
+  association _H;
+  field ( numbering : managed ) DocUuidDoc;
+  field ( readonly : update ) DocUuidH;
+  field ( readonly ) DocUuidDoc, LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  mapping for ztfi_carga_doc
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidDoc = doc_uuid_doc;
+    NumeroDoc = numero_doc;
+    Bukrs = bukrs;
+    Blart = blart;
+    Bldat = bldat;
+    Budat = budat;
+    Monat = monat;
+    Gjahr = gjahr;
+    Xblnr = xblnr;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}
+
+define behavior for zi_fi_carga_item alias _Item
+persistent table ztfi_carga_item
+lock dependent by _H
+etag master LastChangedAt
+{
+  association _H;
+
+  field ( readonly : update ) DocUuidH;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  mapping for ztfi_carga_item
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidDoc = doc_uuid_doc;
+    NumeroDoc = numero_doc;
+    DocUuidItem = doc_uuid_item;
+    NumeroItem = numero_item;
+    Zuonr = zuonr;
+    Hkont = hkont;
+    Dmbtr = dmbtr;
+    Waers = waers;
+    Bupla = bupla;
+    Gsber = gsber;
+    Kostl = kostl;
+    Prctr = prctr;
+    Segment = segment;
+    Sgtxt = sgtxt;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}

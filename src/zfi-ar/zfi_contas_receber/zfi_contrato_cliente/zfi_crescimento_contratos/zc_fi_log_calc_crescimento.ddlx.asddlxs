@@ -1,0 +1,87 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Resumo',
+    typeNamePlural: 'Resumo',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    }
+  }
+}
+annotate view ZC_FI_LOG_CALC_CRESCIMENTO with
+{
+  @UI.facet: [ { id:         'Log',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Log',
+               position:      10 } ]
+
+  //  @UI: { lineItem:        [ { position: 10, label: 'Nº Contrato' } ],
+  //         identification:  [ { position: 10, label: 'Nº Contrato' } ]  }
+  @UI.hidden: true
+  Contrato;
+  //  @UI: { lineItem:        [ { position: 20, label: 'Nº Aditivo' } ],
+  //         identification:  [ { position: 20, label: 'Nº Aditivo' } ]  }
+  @UI.hidden: true
+  Aditivo;
+  @UI: { lineItem:        [ { position: 21, label: 'Última Execução' } ],
+         identification:  [ { position: 21, label: 'Última Execução' } ]  }
+  Timestamp;
+  @UI: { lineItem:        [ { position: 22, label: 'Executado Por' } ],
+         identification:  [ { position: 22, label: 'Executado Por' } ]  }
+  CreatedBy;
+  @UI: { lineItem:        [ { position: 30, label: 'Empresa' } ],
+         identification:  [ { position: 30, label: 'Empresa' } ]  }
+  Bukrs;
+  @UI: { lineItem:        [ { position: 40, label: 'Canal de Distribuição' } ],
+         identification:  [ { position: 40, label: 'Canal de Distribuição' } ]  }
+  Canal;
+  @UI: { lineItem:        [ { position: 50, label: 'Tipo Comparação' } ],
+         identification:  [ { position: 50, label: 'Tipo Comparação' } ]  }
+  TipoComparacao;
+  @UI: { lineItem:        [ { position: 60, label: 'Período Avaliado' } ],
+         identification:  [ { position: 60, label: 'Período Avaliado' } ]  }
+  PeridAvaliado;
+  @UI: { lineItem:        [ { position: 70, label: 'Exercício Atual' } ],
+         identification:  [ { position: 70, label: 'Exercício Atual' } ]  }
+  ExercAtual;
+  @UI: { lineItem:        [ { position: 80, label: 'Exercício Anterior' } ],
+         identification:  [ { position: 80, label: 'Exercício Anterior' } ]  }
+  ExercAnter;
+  @UI: { lineItem:        [ { position: 90, label: 'Montante Período Avaliado' } ],
+         identification:  [ { position: 90, label: 'Montante Período Avaliado' } ]  }
+  MontPeridAval;
+  @UI: { lineItem:        [ { position: 100, label: 'Montante Comparação' } ],
+         identification:  [ { position: 100, label: 'Montante Comparação' } ]  }
+  MontComparacao;
+  @UI: { lineItem:        [ { position: 110, label: 'Montante Crescimento' } ],
+         identification:  [ { position: 110, label: 'Montante Crescimento' } ]  }
+  MontCrescimento;
+  @UI: { lineItem:        [ { position: 120, label: '% Crescimento' } ],
+         identification:  [ { position: 120, label: '% Crescimento' } ]  }
+  PercCrescimento;
+  @UI: { lineItem:        [ { position: 130, label: '% Bônus' } ],
+         identification:  [ { position: 130, label: '% Bônus' } ]  }
+  PercBonus;
+  @UI: { lineItem:        [ { position: 140, label: 'Montante Bônus' } ],
+         identification:  [ { position: 140, label: 'Montante Bônus' } ]  }
+  MontBonus;
+  @UI: { lineItem:        [ { position: 150, label: 'Bônus Calculado' } ],
+         identification:  [ { position: 150, label: 'Bônus Calculado' } ]  }
+  BonusCalculado;
+  @UI: { lineItem:        [ { position: 160, label: 'Ajuste Anual' } ],
+         identification:  [ { position: 160, label: 'Ajuste Anual' } ]  }
+  AjusteAnual;
+
+  @UI: { lineItem:        [ { position: 170, label: 'Doc.Contabilização' } ],
+         identification:  [ { position: 170, label: 'Doc.Contabilização' } ]  }
+  Belnr;
+  @UI: { lineItem:        [ { position: 180, label: 'Exec.Contabilização' } ],
+         identification:  [ { position: 180, label: 'Exec.Contabilização' } ]  }
+  Gjahr;
+  //  /* Associations */
+  //  _Contrato;
+
+}

@@ -1,0 +1,42 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Aprovadores',
+                     title: { value: 'Bukrs' },
+                     typeNamePlural: 'Aprovadores'
+                   }
+     }
+annotate entity ZC_FI_NIVEIS_APROV_CONTRATO with
+{
+
+  @UI.hidden: true
+  DocUuidH;
+  @UI.hidden: true
+  DocUuidAprov;
+  @UI.hidden: true
+  Bukrs;
+  @UI.hidden: true
+  Branch;
+  @UI: { lineItem:        [ { position: 10, label: 'Nível' } ],
+       identification:  [ { position: 10, label: 'Nível' } ] }
+  Nivel;
+  @UI: { lineItem:        [ { position: 20, label: 'Descrição' } ],
+       identification:  [ { position: 20, label: 'Descrição' } ] }
+  DescNivel;
+  @UI: { lineItem:        [ { position: 22, label: 'Última aprovação' } ],
+       identification:  [ { position: 22, label: 'Última aprovação' } ] }
+  NivelAtual;
+  @UI: { lineItem:        [ { position: 30, label: 'Aprovador' } ],
+       identification:  [ { position: 30, label: 'Aprovador' } ] }
+  Aprovador;
+  @UI: { lineItem:        [ { position: 40, label: 'Data Aprovação' } ],
+       identification:  [ { position: 40, label: 'Data Aprovação' } ] }
+  DataAprov;
+  @UI: { lineItem:        [ { position: 45, label: 'Hora Aprovação' } ],
+       identification:  [ { position: 45, label: 'Hora Aprovação' } ] }
+  HoraAprov;
+  @UI: { lineItem:        [ { position: 50, label: 'Observação Aprovação' } ],
+       identification:  [ { position: 50, label: 'Observação Aprovação' } ] }
+  Obs;
+  /* Associations */
+  // _Contrato;;
+
+}

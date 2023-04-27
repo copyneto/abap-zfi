@@ -1,0 +1,38 @@
+managed;
+
+define behavior for ZI_FI_CONTA_DDA alias ConfigContaDDA
+implementation in class zclfi_conta_dda unique
+persistent table ztfi_conta_dda
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( mandatory : create ) CompanyCode, ValorTolerancia, ContaLow;
+  field ( readonly : update ) CompanyCode;
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_conta_dda
+  {
+
+    CompanyCode = bukrs;
+    ValorTolerancia = valor_tol;
+    ContaLow = conta_low;
+    ContaHig = conta_high;
+    DataTolerancia = data_tol;
+    PaymentMethod = zlsch;
+    DocumentType = blart;
+    CentroCusto = kostl;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

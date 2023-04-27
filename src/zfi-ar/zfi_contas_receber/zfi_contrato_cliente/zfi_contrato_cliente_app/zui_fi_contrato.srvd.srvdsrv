@@ -1,0 +1,13 @@
+@EndUserText.label: 'Contrato Cliente'
+define service ZUI_FI_CONTRATO {
+  expose ZC_FI_CONTRATO;
+  expose ZC_FI_RAIZ_CNPJ_CONT;
+  expose ZC_FI_CLIENTES_CONT;
+  expose ZC_FI_COND_CONT;
+  expose ZC_FI_ANEXOS;
+  expose ZC_FI_PROV_CONT;
+  expose ZC_FI_JANELA_CONT;
+  expose ZC_FI_PROV_FAMILIA;
+  expose ZC_FI_NIVEIS_APROV_CONTRATO;
+  expose ZC_FI_RETORNO_APROV;
+}

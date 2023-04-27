@@ -1,0 +1,18 @@
+@Metadata.layer: #CORE
+annotate entity ZI_FI_VENC_F01_POPUP
+    with 
+{
+
+  @EndUserText.label: 'Nova Data Vencimento'
+  novaDataVenc;
+  
+  @Consumption.valueHelpDefinition: [ { entity:  { name:    'ZI_CA_VH_MANSP',
+                                        element:            'BloqAdv' }
+  }]
+  
+  @EndUserText.label: 'Motivo Prorrogração'
+  motivoProrrog;
+  @EndUserText.label: 'Observações'  
+  observ;
+    
+}

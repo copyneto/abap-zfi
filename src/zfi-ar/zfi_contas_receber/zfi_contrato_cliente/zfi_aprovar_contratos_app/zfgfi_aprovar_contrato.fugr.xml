@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Aprovar Contrato</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_APROVAR_CONTRATOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_APROVAR_CONTRATO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_APROVAR_CONTRATO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Remoto - Aprovar Contrato.</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_OBSERVACAO</PARAMETER>
+       <TYP>ZE_OBS_APROV</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOC_UUID_H</PARAMETER>
+       <TYP>SYSUUID_X16</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_CONTRATO</PARAMETER>
+       <TYP>ZE_NUM_CONTRATO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ADITIVO</PARAMETER>
+       <TYP>ZE_NUM_ADITIVO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_OBSERVACAO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data Início validade</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOC_UUID_H</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_CONTRATO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>N° Contrato</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ADITIVO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Aditivo Contrato Cliente</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4 @@
+@EndUserText.label: 'CGC Coligadas por Empresa'
+define service ZUI_CGC_COLIG {
+  expose ZC_FI_CGC_COLIGADAS_EMPRES;
+}

@@ -1,0 +1,45 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Famílias da Provisão',
+                     title: { value: 'Familia' },
+                     typeNamePlural: 'Famílias da Provisão'
+                   }
+     }
+annotate view ZC_FI_PROV_FAMILIA with
+{
+  @UI.facet: [
+              { id:              'DescricaoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'DescricaoHeader',
+                position:        10 },
+
+              { id:             'AditivoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'AditivoHeader',
+                position:        20 },
+                
+             { id:            'geral',
+               purpose:         #STANDARD,
+               type:            #IDENTIFICATION_REFERENCE,
+               label:           'Dados Gerais',
+               position:        10 }]
+
+
+  @UI: { dataPoint:        { qualifier: 'DescricaoHeader', title: 'N° Contrato' } }
+  Contrato;
+
+  @UI: { dataPoint:        { qualifier: 'AditivoHeader', title: 'N° Aditivo' } }
+  Aditivo; 
+  
+  @UI.hidden: true
+  DocUuidH;
+  @UI.hidden: true
+  DocUuidProv;
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  Familia;
+  @UI.lineItem: [{ position: 20 }]
+  FamiliaClTxt;
+
+}

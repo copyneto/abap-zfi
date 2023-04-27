@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Dev for ZC_FI_BL_TEXT_INSTRUCAO'
+define service ZUI_TXT_INSTRUCAO_BOLETO {
+  expose ZC_FI_BL_TEXT_INSTRUCAO as Texto;
+}

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>DDA</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_CONCILIACAO_DDA2TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_CONCILIACAO_DDA2</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_CONCILIACAO_MANUAL_DDA_2</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Conciliação manual DDA</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_CONCILIACAO</PARAMETER>
+       <TYP>ZSFI_CONCILIACAO_MANUAL</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_XBLNR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XBLNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>GJAHR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUMER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BELNR_R</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_CONCILIACAO</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_XBLNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento de referência</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUMER</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

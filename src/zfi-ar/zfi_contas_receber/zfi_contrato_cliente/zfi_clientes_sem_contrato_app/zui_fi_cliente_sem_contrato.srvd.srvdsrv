@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition para Cliente Sem Contrato'
+define service ZUI_FI_CLIENTE_SEM_CONTRATO {
+  expose ZC_FI_CLIENTES_SEM_CONTRATO;
+}

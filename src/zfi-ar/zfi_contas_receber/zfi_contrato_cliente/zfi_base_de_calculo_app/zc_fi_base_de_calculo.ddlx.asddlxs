@@ -1,0 +1,296 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Base de Calculo',
+    typeNamePlural: 'Bases de Calculos'
+  }
+}
+annotate view ZC_FI_BASE_DE_CALCULO with
+{
+
+  @UI.facet: [
+               { id:               'Chave',
+                 purpose:          #STANDARD,
+                 type:              #FIELDGROUP_REFERENCE,
+                 label:            'Chave',
+                 targetQualifier:  'Chave',
+                 position:        10 },
+
+               { id:               'Modificar',
+                 purpose:          #STANDARD,
+
+                 label:            'Dados Chave Modificação',
+                 type:             #FIELDGROUP_REFERENCE,
+                 targetQualifier:  'Modificar',
+                 position:       20 } ,
+               { id:               'Base',
+                 purpose:          #STANDARD,
+                 label:            'Dados Gerais Modificação',
+                 type:             #FIELDGROUP_REFERENCE,
+                 targetQualifier:  'Base',
+                 position:       30 } ]
+
+
+  @UI: {
+         identification: [ { position: 10 } ],
+         selectionField: [ { position: 10 } ],
+         fieldGroup:     [ { position: 10, qualifier: 'Chave' }] }
+
+  Contrato;
+  @UI: {
+         identification: [ { position: 20 } ],
+         selectionField: [ { position: 20 } ],
+         fieldGroup:     [ { position: 20, qualifier: 'Chave' }] }
+  Aditivo;
+
+  @UI: {
+         lineItem:        [ { position: 10, label: 'Empresa' } ],
+         identification: [ { position: 30 } ],
+         selectionField: [ { position: 30 } ],
+         fieldGroup:     [ { position: 30, qualifier: 'Chave' }] }
+  Bukrs;
+  @UI: {
+         lineItem:        [ { position: 20, label: 'N° Documento' } ],
+         identification: [ { position: 40 } ],
+         selectionField: [ { position: 40 } ],
+         fieldGroup:     [ { position: 40, qualifier: 'Chave' }] }
+  Belnr;
+  @UI: {
+         lineItem:        [ { position: 30, label: 'Exercício' } ],
+         identification: [ { position: 50 } ],
+         selectionField: [ { position: 50 } ],
+         fieldGroup:     [ { position: 50, qualifier: 'Chave' }] }
+  Gjahr;
+  @UI: {
+         lineItem:        [ { position: 40, label: 'Item' } ],
+         identification: [ { position: 60 } ],
+         selectionField: [ { position: 60 } ],
+         fieldGroup:     [ { position: 60, qualifier: 'Chave' }] }
+  Buzei;
+  @UI: {
+         selectionField: [ { position: 70 } ],
+         fieldGroup:     [ { position: 70, qualifier: 'Chave' }] }
+  AjusteAnual;
+  @UI: {
+         lineItem:        [ { position: 50, label: 'Divisão' } ],
+         identification: [ { position: 80 } ],
+         selectionField: [ { position: 80 } ],
+         fieldGroup:     [ { position: 80, qualifier: 'Chave' }] }
+  Gsber;
+  @UI: {
+         lineItem:        [ { position: 60, label: 'Família' } ],
+         identification: [ { position: 90 } ],
+         selectionField: [ { position: 90 } ],
+         fieldGroup:     [ { position: 90, qualifier: 'Chave' }] }
+  FamiliaCl;
+
+  @UI: {
+         lineItem:        [ { position: 62, label: 'Tipo de Comparação' } ],
+         identification: [ { position: 100 , label: 'Tipo de Comparação'} ],
+         fieldGroup:     [ { position: 100, qualifier: 'Modificar' }] }
+  TipoComparacao;
+  @UI: {
+         lineItem:        [ { position: 64, label: 'Período Avaliado' } ],
+         identification: [ { position: 100 , label: 'Período Avaliado'} ],
+         fieldGroup:     [ { position: 100, qualifier: 'Modificar' }] }
+  PeridAvaliado;
+
+  @UI: { //lineItem:      [ { position: 10, label: 'Nova Empresa' } ],
+       identification: [ { position: 10 } ],
+       fieldGroup:     [ { position: 10, qualifier: 'Modificar' }] }
+
+  NewBukrs;
+  @UI: { //lineItem:       [ { position: 40, label: 'Nº documento' } ],
+         identification: [ { position: 40 } ],
+         selectionField: [ { position: 40 } ],
+         fieldGroup:     [ { position: 40, qualifier: 'Modificar' }] }
+  NewBelnr;
+  @UI: { // lineItem:       [ { position: 50, label: 'Exercício' } ],
+         identification: [ { position: 50 } ],
+         selectionField: [ { position: 50 } ],
+         fieldGroup:     [ { position: 50, qualifier: 'Modificar' }] }
+  NewGjahr;
+  @UI: { //lineItem:       [ { position: 60, label: 'Nº linha de lançamento' } ],
+         identification: [ { position: 60 } ],
+         selectionField: [ { position: 60 } ],
+         fieldGroup:     [ { position: 60, qualifier: 'Modificar' }] }
+  NewBuzei;
+  @UI: { // lineItem:       [ { position: 70, label: 'Ajuste Anual' } ],
+         identification: [ { position: 70 } ],
+         selectionField: [ { position: 70 } ],
+         fieldGroup:     [ { position: 70, qualifier: 'Modificar' }] }
+  NewAjusteAnual;
+  @UI: { //lineItem:       [ { position: 80, label: 'Divisão' } ],
+         identification: [ { position: 80 } ],
+         selectionField: [ { position: 80 } ],
+         fieldGroup:     [ { position: 80, qualifier: 'Modificar' }] }
+  NewGsber;
+  @UI: { //lineItem:       [ { position: 90, label: 'Família (CL)' } ],
+         identification: [ { position: 90 } ],
+         selectionField: [ { position: 90 } ],
+         fieldGroup:     [ { position: 90, qualifier: 'Modificar' }] }
+  NewFamiliaCl;
+  @UI: { lineItem:       [ { position: 100, label: 'Montante' } ],
+         identification: [ { position: 100 } ],
+         fieldGroup:     [ { position: 10, qualifier: 'Base' }] }
+  Wrbtr;
+  @UI: { lineItem:       [ { position: 110, label: 'Chave de lançamento' } ],
+         identification: [ { position: 110 } ],
+         fieldGroup:     [ { position: 20, qualifier: 'Base' }] }
+  Bschl;
+  @UI: { lineItem:       [ { position: 120, label: 'Tipo de documento' } ],
+     identification:     [ { position: 120 } ],
+     fieldGroup:         [ { position: 30, qualifier: 'Base' }] }
+  Blart;
+  @UI: { lineItem:       [ { position: 130, label: 'Nº atribuição' } ],
+        identification:  [ { position: 130 } ],
+        fieldGroup:      [ { position: 40, qualifier: 'Base' }] }
+  Zuonr;
+  @UI: { lineItem:       [ { position: 140, label: 'Nº cliente' } ],
+         identification: [ { position: 140 } ],
+         fieldGroup:     [ { position: 50, qualifier: 'Base' }] }
+  Kunnr;
+  @UI: { lineItem:       [ { position: 150 } ],
+         identification: [ { position: 150 } ],
+         fieldGroup:     [ { position: 60, qualifier: 'Base' }] }
+  Zlsch;
+  @UI: { lineItem:       [ { position: 120 , label: 'Texto do item' } ],
+         identification: [ { position: 120 } ],
+         fieldGroup:     [ { position: 70, qualifier: 'Base' }] }
+  Sgtxt;
+  @UI: { lineItem:       [ { position: 130, label: 'Vencimento líquido' } ],
+         identification: [ { position: 130 } ],
+         fieldGroup:     [ { position: 80, qualifier: 'Base' }] }
+  Netdt;
+  @UI: { lineItem:       [ { position: 140, label: 'Nº documento de referência' } ],
+         identification: [ { position: 140 } ],
+         fieldGroup:     [ { position: 90, qualifier: 'Base' }] }
+  Xblnr;
+  @UI: { lineItem:       [ { position: 150, label: 'Data de lançamento' } ],
+         identification: [ { position: 150 } ],
+         fieldGroup:     [ { position: 100, qualifier: 'Base' }] }
+  Budat;
+  @UI: { lineItem:       [ { position: 160, label: 'Data no documento' } ],
+         identification: [ { position: 160 } ],
+         fieldGroup:     [ { position: 110, qualifier: 'Base' }] }
+  Bldat;
+  @UI: { lineItem:       [ { position: 170, label: 'Nº documento de compensação' } ],
+         identification: [ { position: 170 } ],
+         fieldGroup:     [ { position: 120, qualifier: 'Base' }] }
+  Augbl;
+  @UI: { lineItem:       [ { position: 180, label: 'Data de compensação' } ],
+         identification: [ { position: 180 } ],
+         fieldGroup:     [ { position: 130, qualifier: 'Base' }] }
+  Augdt;
+  @UI: { lineItem:       [ { position: 190, label: 'Documento de faturamento' } ],
+         identification: [ { position: 190 } ],
+         fieldGroup:     [ { position: 140, qualifier: 'Base' }] }
+  Vbeln;
+  @UI: { lineItem:       [ { position: 200, label: 'Item do documento' } ],
+         identification: [ { position: 200 } ],
+         fieldGroup:     [ { position: 150, qualifier: 'Base' }] }
+  Posnr;
+  @UI: { lineItem:       [ { position: 210, label: 'Nº documento referência' } ],
+         identification: [ { position: 210 } ],
+         fieldGroup:     [ { position: 160, qualifier: 'Base' }] }
+  Vgbel;
+  @UI: { lineItem:       [ { position: 220, label: 'Canal de distribuição' } ],
+     identification:     [ { position: 220 } ],
+     fieldGroup:         [ { position: 170, qualifier: 'Base' }] }
+  Vtweg;
+  @UI: { lineItem:       [ { position: 230, label: 'Setor de atividade'} ],
+     identification:     [ { position: 230 } ],
+     fieldGroup:         [ { position: 180, qualifier: 'Base' }] }
+  Spart;
+  @UI: { lineItem:       [ { position: 240, label: 'Região de vendas'} ],
+         identification: [ { position: 240 } ],
+         fieldGroup:     [ { position: 190, qualifier: 'Base' }] }
+  Bzirk;
+  @UI: { lineItem:       [ { position: 250, label: 'Classsificação do CNPJ' } ],
+         identification: [ { position: 250 } ],
+         fieldGroup:     [ { position: 200, qualifier: 'Base' }] }
+  Katr2;
+  @UI: { lineItem:       [ { position: 260, label: 'Família (CL)' } ],
+         identification: [ { position: 260 } ],
+         fieldGroup:     [ { position: 210, qualifier: 'Base' }] }
+  Wwmt1;
+  @UI: { lineItem:       [ { position: 270, label: 'Centro de lucro' } ],
+         identification: [ { position: 270 } ],
+         fieldGroup:     [ { position: 220, qualifier: 'Base' }] }
+  Prctr;
+  @UI: { lineItem:       [ { position: 290, label: 'Tipo de Entrega' } ],
+         identification: [ { position: 290 } ],
+         fieldGroup:     [ { position: 230, qualifier: 'Base' }] }
+  TipoEntrega;
+  @UI: { lineItem:       [ { position: 300, label: 'Chave referência _1' } ],
+         identification: [ { position: 300 } ],
+         fieldGroup:     [ { position: 240, qualifier: 'Base' }] }
+  Xref1Hd;
+  @UI: { lineItem:       [ { position: 310, label: 'Stauts DDE' } ],
+         identification: [ { position: 310 } ],
+         fieldGroup:     [ { position: 250, qualifier: 'Base' }] }
+  StatusDde;
+  @UI: { lineItem:       [ { position: 320, label: 'Tipo de Apuração' } ],
+         identification: [ { position: 320 } ],
+         fieldGroup:     [ { position: 260, qualifier: 'Base' }] }
+  TipoApuracao;
+  @UI: { lineItem:       [ { position: 330, label: 'Tipo de Apuração de Imposto' } ],
+         identification: [ { position: 330 } ],
+         fieldGroup:     [ { position: 270, qualifier: 'Base' }] }
+  TipoApImposto;
+  @UI: { lineItem:       [ { position: 340, label: 'Tipo de Imposto' } ],
+         identification: [ { position: 340 } ],
+         fieldGroup:     [ { position: 280, qualifier: 'Base' }] }
+  TipoImposto;
+  @UI: { lineItem:       [ { position: 350, label: 'Montante do Imposto Desconsiderado' } ],
+         identification: [ { position: 350 } ],
+         fieldGroup:     [ { position: 290, qualifier: 'Base' }] }
+  ImpostDesconsid;
+  @UI: { lineItem:       [ { position: 360, label: 'Montante Líquido Impostos' } ],
+         identification: [ { position: 360 } ],
+         fieldGroup:     [ { position: 300, qualifier: 'Base' }] }
+  MontLiqTax;
+  @UI: { lineItem:       [ { position: 370, label: 'Montante Válido' } ],
+         identification: [ { position: 370 } ],
+         fieldGroup:     [ { position: 310, qualifier: 'Base' }] }
+  MontValido;
+  @UI: { lineItem:       [ { position: 380, label: 'Tipo de desconto' } ],
+         identification: [ { position: 380 } ],
+         fieldGroup:     [ { position: 320, qualifier: 'Base' }] }
+  TipoDesconto;
+  @UI: { lineItem:       [ { position: 390, label: 'Condição de Desconto' } ],
+         identification: [ { position: 390 } ],
+        fieldGroup:      [ { position: 330, qualifier: 'Base' }] }
+  CondDesconto;
+  @UI: { lineItem:       [ { position: 400, label: 'Centro de custo' } ],
+         identification: [ { position: 400 } ],
+         fieldGroup:     [ { position: 340, qualifier: 'Base' }] }
+  Kostl;
+  @UI: { lineItem:       [ { position: 410, label: 'Montante Bônus' } ],
+         identification: [ { position: 410 } ],
+         fieldGroup:     [ { position: 350, qualifier: 'Base' }] }
+  MontBonus;
+  @UI: { lineItem:       [ { position: 420, label: 'Bônus Calculado' } ],
+         identification: [ { position: 420 } ],
+         fieldGroup:     [ { position: 360, qualifier: 'Base' }] }
+  BonusCalculado;
+  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'apagaBase', label: 'Cancelar Base'  }]
+  @UI: { lineItem:       [ { position: 430 } ],
+         identification: [ { position: 430 } ],
+         fieldGroup:     [ { position: 370, qualifier: 'Base' }] }
+  ObsAjuste;
+
+  @UI: { lineItem:       [ { position: 440, label: 'Criado Em' } ],
+         identification: [ { position: 440 } ],
+         fieldGroup:     [ { position: 380, qualifier: 'Base' }] }
+  CreatedAt;
+
+  @UI: { lineItem:       [ { position: 450, label: 'Criado Por' } ],
+        identification: [ { position: 450 } ],
+        fieldGroup:     [ { position: 390, qualifier: 'Base' }] }
+  CreatedBy;
+
+  /* Associations */
+  //    _Contrato;
+
+}

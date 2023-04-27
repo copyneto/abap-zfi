@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_CONTRATOS_CONTAB</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>CLass Contabilização do Contrato via SD</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_CONTRATOS</CMPNAME>
+     <SCONAME>ET_CNPJ_CLIENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cadastro Raiz CNPJ</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_CONTRATOS</CMPNAME>
+     <SCONAME>IS_CVBRK</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento de faturamento: dados de cabeçalho</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALCULA_MONTANTE</CMPNAME>
+     <SCONAME>EV_WRBTR_40</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante em moeda do documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONTRATOS_ATIVOS</CMPNAME>
+     <SCONAME>ET_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONTRATOS_ATIVOS</CMPNAME>
+     <SCONAME>IT_CNPJ_CLIENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cadastro Raiz CNPJ</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTAR</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTAR</CMPNAME>
+     <SCONAME>IS_CVBRP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura de referência para XVBRP/YVBRP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PREENCHE_DADOS</CMPNAME>
+     <SCONAME>ET_DOC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Contratos Contabilizados</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PREENCHE_DADOS</CMPNAME>
+     <SCONAME>IS_CVBRK</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento de faturamento: dados de cabeçalho</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PREENCHE_DADOS</CMPNAME>
+     <SCONAME>IS_CVBRP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura de referência para XVBRP/YVBRP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PREENCHE_DADOS</CMPNAME>
+     <SCONAME>IT_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PREENCHE_DADOS</CMPNAME>
+     <SCONAME>IV_WRBTR_40</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante em moeda do documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SALVA_DADOS</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

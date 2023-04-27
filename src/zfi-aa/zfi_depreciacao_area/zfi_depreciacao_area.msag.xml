@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_DEPRECIACAO_AREA</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Depreciação de Área</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DEPRECIACAO_AREA</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Preencher campos de contas somente para área correspondente ao cadastro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DEPRECIACAO_AREA</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Áreas societária permitidas: 80, 82 ou 84.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DEPRECIACAO_AREA</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Áreas societária permitidas: 10 ou 11.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DEPRECIACAO_AREA</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Para essa área aval. não preencher esse campo</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DEPRECIACAO_AREA</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Necessário informar um valor para esse campo</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DEPRECIACAO_AREA</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Área de avalição não permitido informar</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

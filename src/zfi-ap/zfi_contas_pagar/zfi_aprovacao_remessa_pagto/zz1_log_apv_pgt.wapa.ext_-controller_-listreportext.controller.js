@@ -1,0 +1,3 @@
+sap.ui.controller("br.com.trescoracoes.logapvpgto.ext.controller.ListReportExt",{onInit:function(e){if(!this._sIdPrefix){this._sIdPrefix="br.com.trescoracoes.logapvpgto::sap.suite.ui.generic.template.ListReport.view.ListReport::Log--"}},onAfterRendering:+
+function(e){},_onBusyStateChanged:function(e){var t=e.getParameter("busy");if(!t&&!this._bColumnOptimizationDone){var o=e.getSource();var i=null;if(sap.ui.table.TablePointerExtension){i=new sap.ui.table.TablePointerExtension(o)}else{i=new sap.ui.table.ex+
+tensions.Pointer(o)}let t=o.getColumns();for(let e=0;e<t.length;e++){i.doAutoResizeColumn(e)}}}});                                                                                                                                                             

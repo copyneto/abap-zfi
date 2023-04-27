@@ -1,0 +1,59 @@
+managed implementation in class zclfi_renovacao_contrato unique;
+
+define behavior for ZI_FI_RENOVACAO_CONTRATO alias Contrato
+
+persistent table ztfi_contrato
+lock master
+etag master LocalLastChangedAt
+{
+
+  action renovarContrato parameter ZI_FI_RENOVAR_CONTRATO_POPUP;
+
+  field ( readonly, numbering : managed ) DocUuidH;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  mapping for ztfi_contrato
+  {
+    DocUuidH = doc_uuid_h;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    ContratoProprio = contrato_proprio;
+    Contratojurid = contrato_jurid;
+    DataIniValid = data_ini_valid;
+    DataFimValid = data_fim_valid;
+    Bukrs = bukrs;
+    Branch = branch;
+    GrpContratos = grp_contratos;
+    GrpCond = grp_cond;
+    Chamado = chamado;
+    PrazoPagto = prazo_pagto;
+    FormaPagto = forma_pagto;
+    RespLegal = resp_legal;
+    RespLegalGtcor = resp_legal_gtcor;
+    ProdContemplado = prod_contemplado;
+    Observacao = observacao;
+    Status = status;
+    Desativado = desativado;
+    Canal = canal;
+    GrpEconomico = grp_economico;
+    Abrangencia = abrangencia;
+    Estrutura = estrutura;
+    Canalpdv = canalpdv;
+    TipoEntrega = tipo_entrega;
+    DataEntrega = data_entrega;
+    DataFatura = data_fatura;
+    Crescimento = crescimento;
+    AjusteAnual = ajuste_anual;
+    DataAssinatura = data_assinatura;
+    Multas = multas;
+    RenovAut = renov_aut;
+    AlertaVig = alerta_vig;
+    AlertaEnviado = alerta_enviado;
+    AlertaDataEnvio = alerta_data_envio;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

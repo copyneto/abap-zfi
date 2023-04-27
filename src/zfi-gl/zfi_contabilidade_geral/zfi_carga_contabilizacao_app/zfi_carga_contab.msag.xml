@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens para processo carga contabilização</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Documento não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Documento já foi cancelado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Documento liberado, não é possível cancelar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Falha ao atualizar documento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Documento cancelado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Documento de inventário não foi encontrado para continuar com a contagem.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Falha ao salvar mensages.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Formato de arquivo não suportado. Realizar nova carga com formato &quot;xlsx&quot;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Somente um centro permitido no arquivo de carga.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Centro &amp; não existe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Somente uma data de contagem permitido no arquivo de carga.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Somente um depósito permitido no arquivo de carga.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Material &amp; não existe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Falha ao salvar dados de carga.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Valores recalculados com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Erro ao tentar criar lançamento: &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Lançamento sendo executado em background</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Não existem mensagens de processamento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_CARGA_CONTAB</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Usuário &amp;1 sem autorização para carregar arquivo.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

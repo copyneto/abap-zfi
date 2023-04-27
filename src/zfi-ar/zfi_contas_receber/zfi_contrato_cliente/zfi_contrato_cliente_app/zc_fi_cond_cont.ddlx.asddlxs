@@ -1,0 +1,95 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Condições',
+                     title: { value: 'TipoCond' },
+                     typeNamePlural: 'Condições'
+                   }
+     }
+annotate entity ZC_FI_COND_CONT with
+{
+  @UI.facet: [
+              { id:              'DescricaoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'DescricaoHeader',
+                position:        10 },
+
+              { id:             'AditivoHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'AditivoHeader',
+                position:        20 },
+
+              { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+              { id:           'geral',
+                 purpose:       #STANDARD,
+                 parentId:        'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 label:         'Dados Gerais',
+                 targetQualifier: 'geral',
+                 position:      10 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 }  ]
+
+
+  @UI: { dataPoint:        { qualifier: 'DescricaoHeader', title: 'N° Contrato' } }
+  Contrato;
+
+  @UI: { dataPoint:        { qualifier: 'AditivoHeader', title: 'N° Aditivo' } }
+  Aditivo;
+  
+  @UI: { lineItem:        [ { position: 10, label:'Condição de Desconto' } ],
+         identification:  [ { position: 10, label:'Condição de Desconto' } ] }
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'geral' } ]
+  TipoCond;
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ] }
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'geral' } ]
+  Percentual;
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ]}
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'geral' } ]
+  Montante;
+
+  @UI.hidden: true
+  Moeda;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ]}
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'geral' } ]
+  Aplicacao;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'geral' } ]
+  PerVigencia;
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ]}
+  @UI.fieldGroup:      [ { position: 60, qualifier: 'geral' } ]
+  RecorrenciaAnual;
+
+  @UI: { identification:  [ { position: 70 } ]}
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI: { identification:  [ { position: 80 } ]}
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI: { identification:  [ { position: 90 } ]}
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar' } ]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 100 } ]}
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 110 } ]}
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar' } ]
+  LocalLastChangedAt;
+
+}

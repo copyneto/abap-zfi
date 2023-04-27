@@ -1,0 +1,4 @@
+@EndUserText.label: 'Carga de Contratos'
+define service ZUI_FI_CARGA_CONTRATO {
+  expose ZC_FI_CARGA_CONTRATOH;
+}

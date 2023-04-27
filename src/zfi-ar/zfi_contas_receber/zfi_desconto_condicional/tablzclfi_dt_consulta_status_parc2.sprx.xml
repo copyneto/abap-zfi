@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLFI_DT_CONSULTA_STATUS_PARCE</OBJ_NAME_M>
+     <HASH_ID>692834C9372D1D18AB39E679FBE53BB3F809260E</HASH_ID>
+     <ID>&lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>RetornoStatusParcelasSAP</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/contasareceber/consultastatusparcelas</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/contasareceber/consultastatusparcelas</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLFI_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/contasareceber/consultastatusparcelas</X-ML_NSPCE>
+     <X-ML_NAME>RetornoStatusParcelasSAP</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>AUGDT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>AUGDT</OBJ_NAME2>
+     <ID>&lt;element&gt; AUGDT &lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>AUGDT</IFR_NAME>
+     <IFR_TEXT>Data da Compensação</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>AUGDT</R3_NAME>
+     <R3_TEXT>Data da Compensação</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BELNR_D</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BELNR_D</OBJ_NAME2>
+     <ID>&lt;element&gt; BELNR_D &lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BELNR_D</IFR_NAME>
+     <IFR_TEXT>Nº Documento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BELNR_D</R3_NAME>
+     <R3_TEXT>Nº Documento</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BUKRS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BUKRS</OBJ_NAME2>
+     <ID>&lt;element&gt; BUKRS &lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BUKRS</IFR_NAME>
+     <IFR_TEXT>Empresa</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BUKRS</R3_NAME>
+     <R3_TEXT>Empresa</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>GJHAR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>GJHAR</OBJ_NAME2>
+     <ID>&lt;element&gt; GJHAR &lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>GJHAR</IFR_NAME>
+     <IFR_TEXT>Exercício</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>GJHAR</R3_NAME>
+     <R3_TEXT>Exercício</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>XBLNR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>XBLNR</OBJ_NAME2>
+     <ID>&lt;element&gt; XBLNR &lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>XBLNR</IFR_NAME>
+     <IFR_TEXT>Referência</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>XBLNR</R3_NAME>
+     <R3_TEXT>Referência</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ZED_STATUS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ZED_STATUS</OBJ_NAME2>
+     <ID>&lt;element&gt; ZED_STATUS &lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ZED_STATUS</IFR_NAME>
+     <IFR_TEXT>Status</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ZED_STATUS</R3_NAME>
+     <R3_TEXT>Status</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ZED_TIPO_DOC</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ZED_TIPO_DOC</OBJ_NAME2>
+     <ID>&lt;element&gt; ZED_TIPO_DOC &lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ZED_TIPO_DOC</IFR_NAME>
+     <IFR_TEXT>Tipo de Documento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ZED_TIPO_DOC</R3_NAME>
+     <R3_TEXT>Tipo de Documento</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLFI_DT_CONSULTA_STATUS_PARC2</OBJ_NAME2>
+     <ID>&lt;type&gt; RetornoStatusParcelasSAP &lt;element&gt; RetornoStatusParcelasSAP &lt;type&gt; dtConsultaStatusParcelasResp http://trescoracoes.com.br/contasareceber/consultastatusparcelas http://trescoracoes.com.br/contasareceber/consultastatusparcelas</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>RetornoStatusParcelasSAP</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLFI_DT_CONSULTA_STATUS_PARC2</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

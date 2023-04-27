@@ -1,0 +1,8 @@
+unmanaged implementation in class zclfi_bp_i_aditivo_cont unique;
+
+define behavior for ZI_ADITIVO_CONT alias _Aditivo
+{
+
+  action aditivo;
+
+}

@@ -1,0 +1,84 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Fornecedor agrupador',
+        typeNamePlural: 'Lista de fornecedores',
+        title: {
+            type: #STANDARD,
+            label: 'Fornecedor Agrupador',
+            value: 'FornAgrupador'
+        },
+        description: {
+            type: #STANDARD,
+            value: 'FornAgrupadorNome'
+        }
+    }
+}
+annotate entity ZC_FI_FORN_AGRUPADOR with
+{
+
+  @UI.facet: [{ id: 'CamposHeader',
+                purpose: #HEADER,
+                position: 10,
+                type: #FIELDGROUP_REFERENCE,
+                targetQualifier: 'qualifierEmpresa' },
+
+              { id: 'FornAgrupador',
+                purpose: #STANDARD,
+                position: 10,
+                label: 'Fornecedor Agrupador',
+                type: #IDENTIFICATION_REFERENCE }  ]
+
+  @UI: { lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }]
+  }
+  @UI.selectionField: [{
+      position: 10
+  }]
+  @EndUserText.label: 'Fornecedor Agrupador'
+  FornAgrupador;
+
+  @UI: { lineItem: [{ position: 20 }],
+         fieldGroup: [{ qualifier: 'qualifierEmpresa', position: 10 }],
+         identification: [{ position: 20 }]
+  }
+  @UI.selectionField: [{
+      position: 20
+  }]
+  CompanyCode;
+
+  @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }]
+  }
+  DocumentType;
+
+  //  @UI: { lineItem: [{ position: 40 }],
+  //         identification: [{ position: 40 }]
+  //  }
+  //  @UI.selectionField: [{
+  //      position: 40
+  //  }]
+  //  CostCenter;
+
+  @UI: { lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }]
+  }
+  AccountNumber;
+
+  //  @UI: { lineItem: [{ position: 50 }],
+  //         identification: [{ position: 50 }]
+  //  }
+  //  PercentualDesconto;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

@@ -1,0 +1,91 @@
+projection;
+
+define behavior for ZC_FI_CONTRATO alias _Contrato
+{
+  use create;
+  use update;
+
+
+  use action desativar;
+  use action renovar;
+
+  use association _Raiz { create; }
+  use association _Cond { create; }
+  use association _Prov { create; }
+  use association _Janela { create; }
+  use association _Aprovadores { }
+  use association _RetAprov { }
+
+
+}
+
+define behavior for ZC_FI_RAIZ_CNPJ_CONT alias _Raiz
+{
+
+  use association _Contrato;
+  use update;
+  use delete;
+  use action buscaCliente;
+}
+
+define behavior for ZC_FI_CLIENTES_CONT alias _Clientes
+{
+
+  use association _Raiz;
+  use association _Contrato;
+}
+
+define behavior for ZC_FI_ANEXOS alias _Anexos
+{
+  use association _Contrato;
+  use action eliminar;
+}
+
+define behavior for ZC_FI_COND_CONT alias _Cond
+{
+
+  use association _Contrato;
+  use update;
+  use delete;
+}
+
+define behavior for ZC_FI_JANELA_CONT alias _Janela
+{
+
+  use association _Contrato;
+  use update;
+  use delete;
+}
+
+define behavior for ZC_FI_PROV_CONT alias _Prov
+{
+
+  use association _Contrato;
+  use association _Familia { create; }
+
+  use update;
+  use delete;
+}
+define behavior for ZC_FI_PROV_FAMILIA alias _ProvFamilia
+{
+
+  use association _Prov;
+  use association _Contrato;
+
+  use update;
+  use delete;
+}
+
+define behavior for ZC_FI_NIVEIS_APROV_CONTRATO alias _Aprovadores
+{
+
+  use association _Contrato;
+
+}
+
+define behavior for ZC_FI_RETORNO_APROV alias _RetAprov
+{
+
+  use association _Contrato;
+
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv. Def. Config. WF Documentos a Pagar'
+define service ZUI_FI_WF_DOCUMENTOS_A_PAGAR {
+  expose ZC_FI_WF_DOCPAGAR;
+  expose ZI_CA_VH_DOCTYPE;
+}

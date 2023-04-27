@@ -1,0 +1,24 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_EXC_CLI
+    with 
+{
+      @UI.facet: [ { id:         'Clientes',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Clientes',
+                 position:      10 }]
+                 
+  @UI: { lineItem:        [ { position: 10, label: 'Cliente' } ],
+         identification:  [ { position: 10, label: 'Cliente' } ] }
+  kunnr;    
+      @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

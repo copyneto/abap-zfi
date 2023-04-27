@@ -1,0 +1,73 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Dados do estorno', // Object Page
+                     typeNamePlural: 'Estorno de Solicitação LC - Log', // List Report
+                     title: { type: #STANDARD, label: 'teste' } } }
+
+annotate view ZC_FI_SOLICIT_CORRE with
+{
+  // ------------------------------------------------------
+  // Informações de cabeçalho
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'Estorno',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Dados do estorno', // Object page deploy
+                 position:        10 } ]
+  // ------------------------------------------------------
+  // Informações de campo
+  // ------------------------------------------------------
+  @UI: {  lineItem:       [ { position: 10, invocationGrouping: #CHANGE_SET } ],
+          identification: [ { position: 10 } ],
+          selectionField: [ { position: 10 } ] }
+  Bukrs;
+  @UI: {  lineItem:       [ { position: 20 } ],
+          identification: [ { position: 20 } ],
+          selectionField: [ { position: 20 } ] }
+  Kunnr;
+    @UI: {  lineItem:       [ { position: 30 } ],
+            identification: [ { position: 30 } ],
+            selectionField: [ { position: 30 } ] }
+  Belnr;
+    @UI: {  lineItem:       [ { position: 40 } ],
+            identification: [ { position: 40 } ],
+            selectionField: [ { position: 40 } ] }
+  Buzei;
+    @UI: {  lineItem:       [ { position: 50 } ],
+            identification: [ { position: 50 } ],
+            selectionField: [ { position: 50 } ] }
+  Gjhar;
+    @UI: {  lineItem:       [ { position: 60 } ],
+            identification: [ { position: 60 } ] }
+  Datac;
+    @UI: {  lineItem:       [ { position: 70 } ],
+            identification: [ { position: 70 } ] }
+  Horac;
+    @UI: {  lineItem:       [ { position: 80 } ],
+            identification: [ { position: 80 } ] }
+  Wrbtr;
+    @UI: {  lineItem:       [ { position: 90 } ],
+            identification: [ { position: 90 } ] }
+  Netdt;
+    @UI: {  lineItem:       [ { position: 100 } ],
+            identification: [ { position: 100 } ] }
+  Motivo;
+    @UI: {  lineItem:       [ { position: 110 } ],
+            identification: [ { position: 110 } ] }
+  Tipo;
+    @UI: {  lineItem:       [ { position: 120 } ],
+            identification: [ { position: 120 } ] }
+  Belnrestorno;
+    @UI: {  lineItem:       [ { position: 130 } ],
+            identification: [ { position: 130 } ] }
+  Buzeiestorno;
+    @UI: {  lineItem:       [ { position: 140 } ],
+            identification: [ { position: 140 } ] }
+  Gjharestorno;
+    @UI: {  lineItem:       [ { position: 150 } ],
+            identification: [ { position: 150 } ] }
+  Verzn;
+    @UI: {  lineItem:       [ { position: 160 } ],
+            identification: [ { position: 160 } ] }
+  Waers;
+
+}

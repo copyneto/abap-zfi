@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de autorização'
+@MappingRole: true
+define role ZI_FI_CARGA_CONTRATOH {
+    grant 
+        select
+            on
+                ZI_FI_CARGA_CONTRATOH
+                     where
+                        ( ) = aspect pfcg_auth( ZFICCONTRT, ACTVT = '60' );
+                        
+}

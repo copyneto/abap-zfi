@@ -1,0 +1,17 @@
+projection;
+
+define behavior for ZC_FI_MERC_INT_H //alias <alias_name>
+{
+
+  use action contabilizar;
+  use action diferir;
+  use action simular;
+
+  use association _MercIntItem;
+}
+
+define behavior for ZC_FI_MERC_INT_I //alias <alias_name>
+{
+
+  use association _MercIntHeader;
+}

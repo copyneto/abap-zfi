@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition de Log de Diferimento'
+define service Zui_log_difer {
+  expose zc_fi_log_difer;
+  expose I_CompanyCode;
+}

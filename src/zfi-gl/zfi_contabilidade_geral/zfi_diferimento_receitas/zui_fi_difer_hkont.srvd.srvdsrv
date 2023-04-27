@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def De Para Conta'
+define service ZUI_FI_DIFER_HKONT {
+  expose ZC_FI_DEFRECE_HKONT;
+  expose zc_fi_defrece_hkoncontra;
+}

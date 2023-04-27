@@ -1,0 +1,64 @@
+@Metadata.layer: #CORE
+ 
+@UI: {
+    headerInfo: {
+        typeName: 'Conta',
+        typeNamePlural: 'Contas',
+        title: { type: #STANDARD,
+          label: 'Manutenção de Contas',
+          value: 'Anlkl'} },
+
+ presentationVariant: [{ sortOrder: [{by: 'Anlkl', direction: #DESC }] }]}
+annotate view ZC_FI_MAN_CONTAS with
+{
+  @UI.facet: [ { id:              'Anlkl',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Classe',
+                 position:        10 }]
+  @UI: { lineItem: [{ position: 10 }],
+       identification: [{ position: 10 }],
+       selectionField: [{ position: 10 }]
+  }
+  Anlkl;
+  @UI: { lineItem: [{ position: 20 }],
+       identification: [{ position: 20 }],
+       selectionField: [{ position: 20 }]
+  }
+  Afaber;
+  @UI: { lineItem: [{ position: 30 }],
+       identification: [{ position: 30 }],
+       selectionField: [{ position: 30 }]
+  }
+  @EndUserText.label: 'Deprec Fiscal'
+  DeprecFiscal;
+  @UI: { lineItem: [{ position: 40 }],
+       identification: [{ position: 40 }],
+       selectionField: [{ position: 40 }]
+  }
+  @EndUserText.label: 'Despesa Fiscal'
+  DespesaFiscal;
+  @UI: { lineItem: [{ position: 50 }],
+       identification: [{ position: 50 }],
+       selectionField: [{ position: 50 }]
+  }
+  @EndUserText.label: 'Deprec Societária'
+  DeprecSocietaria;
+  @UI: { lineItem: [{ position: 60 }],
+       identification: [{ position: 60 }],
+       selectionField: [{ position: 60 }]
+  }
+  @EndUserText.label: 'Despesa Societária'
+  DespesaSocietaria;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

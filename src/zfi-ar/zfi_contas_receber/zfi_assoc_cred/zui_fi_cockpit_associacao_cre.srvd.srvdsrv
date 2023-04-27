@@ -1,0 +1,12 @@
+@EndUserText.label: 'Service Def Associação Créditos'
+define service ZUI_FI_COCKPIT_ASSOCIACAO_CRE {
+  expose ZC_FI_COCKPIT_ASSOCIACAO_CRE;
+  expose ZC_FI_COCKPIT_CREDITOS_CLI;
+  expose ZC_FI_COCKPIT_FATURA_CLI;
+  expose ZI_FI_SOMA_TOTAIS;
+  expose ZI_FI_SUM_FATURA_CLI;
+  expose ZI_CA_VH_BUKRS;
+  expose ZI_CA_VH_RAIZID;
+  expose ZI_CA_VH_RAIZCODID;
+  expose ZI_CA_VH_KUNNR;
+}

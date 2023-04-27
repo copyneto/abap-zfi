@@ -1,0 +1,142 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+annotate view ZC_FI_PROVISAO_CLI with
+{
+  @UI: {  lineItem:       [{ position: 10 }],
+          identification: [{ position: 10 }],
+          selectionField: [{ position: 30 }] }
+  @Search.defaultSearchElement: true
+  NumContrato;
+  @UI: {  lineItem:       [{ position: 20 }],
+          identification: [{ position: 20 }],
+          selectionField: [{ position: 40 }] }
+  @Search.defaultSearchElement: true
+  NumAditivo;
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 10 }] }
+  @Search.defaultSearchElement: true
+  Empresa;
+  @UI: { lineItem:       [{ position: 40 }],
+         identification: [{ position: 40 }],
+         selectionField: [{ position: 20 }] }
+  @Search.defaultSearchElement: true
+  Cliente;
+  @UI: { lineItem:       [{ position: 50 }],
+         identification: [{ position: 50 }],
+         selectionField: [{ position: 50  }] }
+  @Search.defaultSearchElement: true
+  NumDoc;
+  @UI: { lineItem:        [{ position: 60 }],
+         identification:  [{ position: 60 }],
+         selectionField:  [{ position: 60 }] }
+  @Search.defaultSearchElement: true
+  Item;
+  @UI: {  lineItem:       [{ position: 70 }],
+          identification: [{ position: 70 }],
+          selectionField: [{ position: 70 }] }
+  @Search.defaultSearchElement: true
+  Exercicio;
+  //  @UI: { lineItem:       [{ position: 80 }],
+  //    identification: [{ position: 80 }]}
+  //Referencia;
+  //  @UI: { lineItem:       [{ position: 90 }],
+  //     identification: [{ position: 90 }]}
+  //ChaveRef,
+  @UI: { lineItem:       [{ position: 100 }],
+         identification: [{ position: 100 }] }
+  DataLanc;
+  @UI: { lineItem:       [{ position: 110 }],
+         identification: [{ position: 110 }] }
+  Montante;
+  //@UI: { lineItem:       [{ position: 120 }],
+  //   identification: [{ position: 120 }] }
+  //FormaPgto;
+  // @UI: { lineItem:       [{ position: 130 }],
+  //    identification: [{ position: 130 }]}
+  //Bloqueio;
+  // @UI: { lineItem:       [{ position: 140}],
+  //    identification: [{ position: 140}]}
+  //Vencimento;
+  @UI: { lineItem:       [{ position: 150 }],
+         identification: [{ position: 150 }]}
+  RegVendas;
+  @UI: { lineItem:       [{ position: 160 }],
+         identification: [{ position: 160 }]}
+  CanalDist;
+  @UI: { lineItem:       [{ position: 170}],
+         identification: [{ position: 170}] }
+  SetorAtivid;
+  @UI: { lineItem:       [{ position: 180 }],
+         identification: [{ position: 180 }]}
+  OrgVendas;
+  @UI: { lineItem:       [{ position: 190 }],
+         identification: [{ position: 190 }],
+         selectionField: [{ position: 100 }] }
+  @Search.defaultSearchElement: true
+  StatusProv;
+  //  @UI: { lineItem:       [{ position: 200 }],
+  //      identification: [{ position: 200 }] }
+  //AplicDesc
+  @UI: { lineItem:       [{ position: 210 }],
+         identification: [{ position: 210 }] ,
+         selectionField: [{ position: 80 }] }
+  @Search.defaultSearchElement: true
+  DocProv;
+  @UI: { lineItem:       [{ position: 220 }],
+         identification: [{ position: 220 }] }
+  ExercProv;
+  @UI: { lineItem:       [{ position: 230 }],
+         identification: [{ position: 230 }] }
+  MontProv;
+  @UI: { lineItem:       [{ position: 240 }],
+         identification: [{ position: 240 }] ,
+         selectionField: [{ position: 90 }] }
+  DocLiq;
+  @UI: { lineItem:       [{ position: 250 }],
+         identification: [{ position: 250 }] }
+  ExercLiq;
+  @UI: { lineItem:       [{ position: 260 }],
+         identification: [{ position: 260 }] }
+  MontLiq;
+  @UI: { lineItem:       [{ position: 270 }],
+         identification: [{ position: 270 }] }
+  DocEstorno;
+  @UI: { lineItem:       [{ position: 280 }],
+         identification: [{ position: 280 }] }
+  ExcEstorno;
+  @UI: {  lineItem:       [ { position: 290 },
+                          { type: #FOR_ACTION, dataAction: 'estornar', label: 'Estorno' },
+                          { type: #FOR_ACTION, dataAction: 'liquidacao', label: 'Liquidação' },
+                          { type: #FOR_ACTION, dataAction: 'provisao', label: 'Provisão' }
+
+                        ],
+        identification: [ { position: 290 },
+                          { type: #FOR_ACTION, dataAction: 'estornar', label: 'Estorno' },
+                          { type: #FOR_ACTION, dataAction: 'liquidacao', label: 'Liquidação' },
+                          { type: #FOR_ACTION, dataAction: 'provisao', label: 'Provisão' }
+                        ] }
+  MontEstorno;
+  @UI: { lineItem:       [{ position: 300 }],
+         identification: [{ position: 300 }] ,
+         selectionField: [{ position: 120 }] }
+  @Search.defaultSearchElement: true
+  TipDesc;
+  @UI: { lineItem:       [{ position: 310 }],
+         identification: [{ position: 310 }],
+         selectionField: [{ position: 110 }] }
+  @Search.defaultSearchElement: true
+  TipDado;
+
+  @UI.hidden: true
+  Moeda;
+  
+  @EndUserText.label: 'Data Lançamento'
+  @UI.hidden: true  
+  venc_prov;  
+
+  @EndUserText.label: 'Data Lançamento'
+  @UI.hidden: true  
+  venc_liqui;  
+
+}

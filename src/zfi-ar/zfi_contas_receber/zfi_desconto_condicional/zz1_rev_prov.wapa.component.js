@@ -1,0 +1,1 @@
+sap.ui.define(["sap/suite/ui/generic/template/lib/AppComponent"],function(e){return e.extend("br.com.trescoracoes.reversaoprovisaopdc.zz1revprov.Component",{metadata:{manifest:"json"}})});                                                                   

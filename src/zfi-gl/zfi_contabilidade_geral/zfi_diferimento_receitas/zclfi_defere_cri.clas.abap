@@ -1,0 +1,5 @@
+CLASS zclfi_defere_cri DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_defrece_cri.
+ENDCLASS.
+
+CLASS zclfi_defere_cri IMPLEMENTATION.
+ENDCLASS.

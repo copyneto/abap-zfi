@@ -1,0 +1,13 @@
+projection;
+
+define behavior for ZC_FI_AGRUPAFATURAS alias Arquivo
+{
+use action selFaturas;
+use action agrupaFaturas;
+}
+
+
+define behavior for ZC_FI_AGRUPALINHAS alias Linhas
+{
+use association _Arquivo;
+}

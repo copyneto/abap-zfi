@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_APROVAR_CONTRATOS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Aprovar Contratos</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <RSTAT>K</RSTAT>
+    <MSG_ID>ZFI_APROVAR_CONT</MSG_ID>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Segue contrato Nº</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Aditivo Nº</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Pendente de aprovação</ENTRY>
+     <LENGTH>42</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>Contrato</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>Observações do contrato referente o nível</ENTRY>
+     <LENGTH>82</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>006</KEY>
+     <ENTRY>Razão Social</ENTRY>
+     <LENGTH>22</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>007</KEY>
+     <ENTRY>Prazo de Pagamento</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>008</KEY>
+     <ENTRY>Empresa</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>009</KEY>
+     <ENTRY>Local de negócios</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>010</KEY>
+     <ENTRY>Observações</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>APROVAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Aprova um Nível.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ATUALIZAR_CLIENTES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atualizar Clientes por Raiz CNPJ</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ATUALIZA_APROVADOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atualiza Dados do Aprovador</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECAR_AUTORIZACAO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Checa se o Usuário Possui Permissão Para Aprovar.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CRIAR_BACKUP_NIVEL_ATUAL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Criar Backup do Nível Atual</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ENVIAR_EMAIL_PROXIMO_NIVEL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Envia o E-mail para o Nivel Atual</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_BACKUP_APROVACAO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Aprovações do Contrato de Cliente</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_ADITIVO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Aditivo Contrato Cliente</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_CONTRATO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>N° Contrato</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_DOC_UUID_H</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PROXIMO_NIVEL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Recupera o Prox. Nível.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>RESETAR_NIVEL_AUTAL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Reseta o Nivel Atual de Todos Níveis</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>RESTAURAR_BACKUP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Restaurar BackUP.</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>APROVAR</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>APROVAR</CMPNAME>
+     <SCONAME>IV_OBSERVACAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Observação de aprovação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_ADITIVO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Aditivo Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>N° Contrato</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_DOC_UUID_H</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>ZCXFI_ERRO_APROVACAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Error Aprovação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_EMAIL_PROXIMO_NIVEL</CMPNAME>
+     <SCONAME>IV_ADITIVO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Aditivo Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_EMAIL_PROXIMO_NIVEL</CMPNAME>
+     <SCONAME>IV_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>N° Contrato</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_EMAIL_PROXIMO_NIVEL</CMPNAME>
+     <SCONAME>IV_DOC_UUID_H</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_EMAIL_PROXIMO_NIVEL</CMPNAME>
+     <SCONAME>IV_NIVEL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nivel de aprovação - Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_EMAIL_PROXIMO_NIVEL</CMPNAME>
+     <SCONAME>ZCXFI_ERRO_APROVACAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Error Aprovação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROXIMO_NIVEL</CMPNAME>
+     <SCONAME>RV_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nivel de aprovação - Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

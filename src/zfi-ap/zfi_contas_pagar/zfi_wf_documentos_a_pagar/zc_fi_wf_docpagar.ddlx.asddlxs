@@ -1,0 +1,45 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Tipo de documento e Departamento',
+        typeNamePlural: 'Departamentos',
+        title: {
+            type: #STANDARD,
+            label: 'Tipo de documento',
+            value: 'DocumentType'
+        },
+        description: {
+        type: #STANDARD,
+        value: 'DocTypeText'
+        }
+    }
+}
+annotate entity ZC_FI_WF_DOCPAGAR with
+{
+  @UI.facet: [{
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Tipo Documento x Departamento',
+      type: #IDENTIFICATION_REFERENCE
+  }]
+
+  @UI.selectionField: [{position: 10}]
+  @UI: { lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }]
+
+  }
+  DocumentType;
+  @UI: { lineItem: [{ position: 20 }],
+       identification: [{ position: 20 }]
+
+  }
+  @EndUserText.label: 'Contador'
+  @EndUserText.quickInfo: 'Preencha com um n° ainda não utilizado'
+  Counter;
+  @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }]
+
+  }
+  DocumentText;
+
+}

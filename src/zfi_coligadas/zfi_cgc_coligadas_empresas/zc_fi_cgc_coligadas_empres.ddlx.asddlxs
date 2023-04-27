@@ -1,0 +1,88 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_CGC_COLIGADAS_EMPRES with
+{
+  // ------------------------------------------------------
+  // Informações de cabeçalho
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'Cadastro',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'CGC Coligadas p/ Empresa',
+                 position:        10 },
+
+               { id:              'Dados',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Dados',
+                 position:        20,
+                 targetQualifier: 'DADOS' },
+
+               { id:              'Modific',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Modificações',
+                 position:        30,
+                 targetQualifier: 'MODIF' }
+              ]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }],
+         selectionField: [{ position: 10 }]}
+  Bukrs;
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }],
+         selectionField: [{ position: 20 }]}
+  Bupla;
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 30 }],
+         textArrangement: #TEXT_ONLY      }
+  Cgc;
+  @UI: { lineItem:       [{ position: 40 }],
+         fieldGroup:     [{ position: 10,  qualifier: 'DADOS' }] }
+  Kunnr;
+  @UI: { lineItem:       [{ position: 50 }],
+         fieldGroup:     [{ position: 20,  qualifier: 'DADOS' }] }
+  Lifnr;
+  @UI: { lineItem:       [{ position: 60 }],
+         fieldGroup:     [{ position: 30,  qualifier: 'DADOS' }] }
+  @EndUserText.label: 'Filial'
+  Filial;
+  @UI: { lineItem:       [{ position: 70 }],
+         fieldGroup:     [{ position: 40,  qualifier: 'DADOS' }] }
+  Vkorg;
+  @UI: { lineItem:       [{ position: 80 }],
+         fieldGroup:     [{ position: 50,  qualifier: 'DADOS' }] }
+  @EndUserText.label: 'Coligada (Saída Externa)'
+  ColCi;
+  @UI: { fieldGroup:     [{ position: 10,  qualifier: 'MODIF' }]}
+  CreatedBy;
+  @UI: { fieldGroup:     [{ position: 20,  qualifier: 'MODIF' }]}
+  CreatedAt;
+  @UI: { fieldGroup:     [{ position: 30,  qualifier: 'MODIF' }]}
+  LastChangedBy;
+  @UI: { fieldGroup:     [{ position: 40,  qualifier: 'MODIF' }]}
+  LastChangedAt;
+  @UI: { fieldGroup:     [{ position: 50,  qualifier: 'MODIF' }]}
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  CNPJText;
+  @UI.hidden: true
+  TextEmp;
+  @UI.hidden: true
+  TextBupl;
+  @UI.hidden: true
+  TextKunnr;
+  @UI.hidden: true
+  TextLifnr;
+  @UI.hidden: true
+  TextOrgv;
+  @UI.hidden: true
+  TextClient;
+  @UI.hidden: true
+  TextUserCrea;
+  @UI.hidden: true
+  TextUserMod;
+
+}

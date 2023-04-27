@@ -1,0 +1,67 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Nível de Aprovação',
+                typeNamePlural: 'Níveis de Aprovação',
+                title: { type: #STANDARD, label: 'Nível', value: 'Nivel' } },
+  presentationVariant: [{ sortOrder: [{ by: 'Nivel', direction:  #DESC }] }] }
+
+annotate view ZC_FI_NIVEIS_DE_APROVACAO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet:[
+             { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+             { id:              'geral',
+               purpose:         #STANDARD,
+               parentId:        'Facet',
+               type:            #FIELDGROUP_REFERENCE,
+               label:           'Dados Gerais',
+               targetQualifier: 'geral',
+               position:         20 } ,
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 } ]
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI: { lineItem:        [ { position: 10, label: 'Nível'} ],
+     identification:  [ { position: 10, label: 'Nível' } ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  Nivel;
+  @UI: { lineItem:        [ { position: 20, label: 'Denominação do Nível'} ],
+   identification:  [ { position: 20, label: 'Denominação do Nível' } ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'geral', label: 'Denominação do Nível' }]
+  DescNivel;
+  @UI: {  lineItem:        [ { position: 50, label: 'Criado Por' } ],
+  identification:  [ { position: 50, label: 'Criado Por' } ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Modificar' }]
+  CreatedBy;
+  @UI: {  lineItem:        [ { position: 60, label: 'Criado Em' } ],
+  identification:  [ { position: 60, label: 'Criado Em' } ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Modificar' }]
+  CreatedAt;
+  @UI: {  lineItem:        [ { position: 70, label: 'Alterado Por' } ],
+  identification:  [ { position: 70, label: 'Alterado Por' } ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Modificar' }]
+  LastChangedBy;
+  @UI: {  lineItem:        [ { position: 80, label: 'Alteardo Em' } ],
+  identification:  [ { position: 80, label: 'Alteardo Em' } ] }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Modificar' }]
+  LastChangedAt;
+  @UI: {  lineItem:        [ { position: 90, label: 'Registro hora ' } ],
+  identification:  [ { position: 90, label: 'Registro hora l' } ] }
+  @UI.fieldGroup: [{ position: 50, qualifier: 'Modificar' }]
+  LocalLastChangedAt;
+
+}

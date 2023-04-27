@@ -1,0 +1,23 @@
+managed; // implementation in class zbp_i_fi_carga_contratoh unique;
+
+define behavior for ZI_FI_CARGA_CONTRATOH //alias <alias_name>
+persistent table ZTFI_CARGA_CONTH
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+{
+  field ( numbering : managed ) DocUuidH;
+  field ( readonly ) DocUuidH, DataCarga, TipoCarga, DocumentNo, LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+    mapping for ZTFI_CARGA_CONTH
+  {
+    DocUuidH = doc_uuid_h;
+    Documentno = documentno;
+    DataCarga = data_carga;
+    TipoCarga = tipo_carga;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

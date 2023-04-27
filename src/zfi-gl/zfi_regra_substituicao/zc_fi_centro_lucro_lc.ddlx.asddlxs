@@ -1,0 +1,80 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Centro Lucro por Lançamento Contábil',
+                     typeNamePlural: 'Centros Lucro por Lançamento Contábil',
+                     title: {
+                        type: #STANDARD,
+                        label: 'Criar/Editar',
+                        value: 'ContaContabil'
+                     } // Defines the value shown in title section
+                     //description: { value: 'Werks' }
+                   },
+                   presentationVariant: [{ sortOrder: [{ by: 'CreatedAt', direction: #DESC } ] }]
+     }
+annotate view ZC_FI_CENTRO_LUCRO_LC
+    with 
+{
+
+
+@UI.facet: [{
+    id: 'BodyFacet',
+    purpose: #STANDARD,
+    type: #COLLECTION,
+    label: 'Dados',
+    position: 10 
+  },
+  { id: 'Fieldgroup',
+    type:            #FIELDGROUP_REFERENCE,
+    parentId:        'BodyFacet', // Referencia ao Facet #COLLECTION
+    targetQualifier: 'Fieldgroup:Elements', // No targetElement defined - Default target is the entity in which the facet is defined
+    position:         20 }]
+
+    @UI: { lineItem:       [ { position: 10,
+                         importance: #HIGH } ],
+     identification: [ { position: 10 } ],
+     selectionField: [ { position: 10 } ],
+     fieldGroup:     [ { qualifier: 'Fieldgroup:Elements',
+                        position: 10 } ]
+    }
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_BUKRS', element : 'Empresa' }}]
+    Empresa;
+    
+    
+    @UI: { lineItem:       [ { position: 20,
+                         importance: #HIGH } ],
+     identification: [ { position: 20 } ],
+     selectionField: [ { position: 20 } ],
+     fieldGroup:     [ { qualifier: 'Fieldgroup:Elements',
+                        position: 20 } ]
+     }
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_TRM_HD_ACC_GSBER', element : 'Divisao' }}]
+    Divisao;
+    
+    @UI: { lineItem:       [ { position: 30,
+                         importance: #HIGH } ],
+     identification: [ { position: 30 } ],
+     selectionField: [ { position: 30 } ],
+     fieldGroup:     [ { qualifier: 'Fieldgroup:Elements',
+                        position: 30 } ]
+     }
+     @EndUserText.label: 'Conta Contábil'
+    
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_CostElementVH', element : 'GLAccount' }}]
+    ContaContabil;
+    
+    @UI: { lineItem:       [ { position: 40,
+                         importance: #HIGH } ],
+     identification: [ { position: 40 } ],
+     selectionField: [ { position: 40 } ],
+     fieldGroup:     [ { qualifier: 'Fieldgroup:Elements',
+                        position: 40 } ]
+     }
+    CentroLucro;
+    
+//    CreatedBy;
+//    CreatedAt;
+//    LastChangedBy;
+//    LastChangedAt;
+//    LocalLastChangedAt;
+
+}

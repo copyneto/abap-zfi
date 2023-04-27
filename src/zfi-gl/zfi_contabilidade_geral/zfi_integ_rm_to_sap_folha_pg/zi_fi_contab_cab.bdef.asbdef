@@ -1,0 +1,57 @@
+managed implementation in class zclfi_contab_cab unique;
+
+define behavior for ZI_FI_CONTAB_CAB alias Header
+persistent table ztfi_contab_cab
+lock master
+{
+
+  //  action ( features : instance ) simular;
+  action simular;
+  action contabilizar;
+//  action eliminar;
+  //  action ( features : instance ) contabilizar;
+  //  action ( features : instance ) eliminar;
+
+//  association _Item
+//  { create; }
+
+  mapping for ztfi_contab_cab
+  {
+    Id = id;
+    Identificacao = identificacao;
+    StatusCode = status;
+    Empresa = empresa;
+    DataDocumento = data_documento;
+    DataLancamento = data_lancamento;
+    TipoDocumento = tipo_documento;
+    Referencia = referencia;
+    TextCab = text_cab;
+    TextStatus = text_status;
+  }
+}
+
+define behavior for ZI_FI_CONTAB_ITEM alias Item
+persistent table ztfi_contab_item
+lock dependent by _Header
+{
+  association _Header;
+
+  field ( readonly : update ) Id, Identificacao;
+
+  mapping for ztfi_contab_item
+  {
+    Id = id;
+    Identificacao = identificacao;
+    Item = item;
+    DebCred = deb_cred;
+    Atribuicao = atribuicao;
+    Conta = conta;
+    Divisao = divisao;
+    CentroCusto = centro_custo;
+    CentroLucro = centro_lucro;
+    Segmento = segmento;
+    TextoItem = texto_item;
+    Valor = valor;
+    Moeda = moeda;
+  }
+}

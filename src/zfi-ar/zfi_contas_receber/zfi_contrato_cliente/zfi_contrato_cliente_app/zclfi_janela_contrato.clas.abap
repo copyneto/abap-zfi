@@ -1,0 +1,7 @@
+CLASS zclfi_janela_contrato DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_contrato.
+ENDCLASS.
+
+
+
+CLASS zclfi_janela_contrato IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Aprovadores',
+                  title:          { value: 'TextoUsuario' },
+                  description:    { value: 'TextoEmpresa' } }
+annotate view ZC_FI_APVDRS_PGTO with
+{
+
+  @UI.facet: [{ id:       'Aprovador',
+                type:     #COLLECTION,
+                label:    'Aprovador',
+                purpose:  #STANDARD,
+                position: 10 },
+              { id:       'Controle',
+                type:     #COLLECTION,
+                label:    'Campos de Controle',
+                purpose:  #STANDARD,
+                position: 20 },
+              { id:       'AprovadorFieldgroup',
+                type:     #FIELDGROUP_REFERENCE,
+                label:    'Aprovador',
+                purpose:  #STANDARD,
+                position: 10,
+                parentId: 'Aprovador',
+                targetQualifier: 'AprovadorFieldgroup' },
+              { id:       'ValidadeFieldgroup',
+                type:     #FIELDGROUP_REFERENCE,
+                label:    'Validade',
+                purpose:  #STANDARD,
+                position: 20,
+                parentId: 'Aprovador',
+                targetQualifier: 'ValidadeFieldgroup' },
+              { id:       'ControleFieldgroup',
+                type:     #IDENTIFICATION_REFERENCE,
+                label:    'Controle',
+                purpose:  #STANDARD,
+                position: 10,
+                parentId: 'Controle' }]
+
+  @UI: { selectionField: [{ position: 10 }],
+         fieldGroup:     [{ position: 10, qualifier: 'AprovadorFieldgroup' }],
+         lineItem:       [{ position: 10 }],
+         textArrangement: #TEXT_FIRST }
+  Empresa;
+
+  @UI: { selectionField: [{ position: 25 }],
+         fieldGroup:     [{ position: 25, qualifier: 'AprovadorFieldgroup' }],
+         lineItem:       [{ position: 25 }],
+         textArrangement: #TEXT_FIRST }
+  Usuario;
+
+  @UI: { fieldGroup:     [{ position: 20, qualifier: 'AprovadorFieldgroup' }],
+         lineItem:       [{ position: 20 }],
+         textArrangement: #TEXT_LAST }
+  Nivel;
+
+  @UI: { fieldGroup:     [{ position: 10, qualifier: 'ValidadeFieldgroup' }],
+         lineItem:       [{ position: 40 }] }
+  DataInicio;
+
+  @UI: { fieldGroup:     [{ position: 20, qualifier: 'ValidadeFieldgroup' }],
+         lineItem:       [{ position: 50 }] }
+  DataFim;
+
+  @UI: { identification: [{ position: 10 }] }
+  CreatedBy;
+
+  @UI: { identification: [{ position: 20 }] }
+  CreatedAt;
+
+  @UI: { identification: [{ position: 30 }] }
+  LastChangedBy;
+
+  @UI: { identification: [{ position: 40 }] }
+  LastChangedAt;
+
+  @UI: { identification: [{ position: 50 }] }
+  LocalLastChangedAt;
+
+}

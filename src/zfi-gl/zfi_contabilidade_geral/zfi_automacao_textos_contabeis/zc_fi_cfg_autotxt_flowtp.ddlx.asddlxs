@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Seleção de Tipo de Atualização',
+        typeNamePlural: 'Tipos de Atualização',
+        title: { type: #STANDARD,
+                 label: 'Tipo Atualização',
+                 value: 'CritSelTreasuryUpdateType' }
+    },
+
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'CritSelTreasuryUpdateType',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+   }]
+}
+annotate entity ZC_FI_CFG_AUTOTXT_CRIT_FLOWTP with
+{
+
+  @UI.facet: [  { label: 'Informações Gerais',
+                   id: 'GeneralInfo',
+                   type: #COLLECTION,
+                   position: 10 },
+
+                 { purpose: #STANDARD,
+                   label: 'Geral',
+                   position: 10,
+                   type: #IDENTIFICATION_REFERENCE,
+                   parentId: 'GeneralInfo' },
+
+
+                 { purpose: #STANDARD,
+                   label: 'Tipos de Atualização',
+                   position: 20,
+                   type: #FIELDGROUP_REFERENCE,
+                   parentId: 'GeneralInfo',
+                   targetQualifier: 'TipoAtualizacao' } ]
+
+
+  @UI: { lineItem:       [{ position: 10,  label: 'Cód. Seleção' }],
+         identification: [{ position: 10,  label: 'Cód. Seleção' }]
+  }
+  CritSelTreasuryUpdateType;
+
+  @UI: { lineItem:        [ { position: 20, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'TipoAtualizacao', position: 10 } ] }
+  SignTreasuryUpdateType;
+
+  @UI: { lineItem:        [ { position: 30, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'TipoAtualizacao', position: 20 } ] }
+  OptTreasuryUpdateType;
+
+  @UI: { lineItem:        [ { position: 40, importance: #HIGH } ],
+         fieldGroup:      [ { qualifier: 'TipoAtualizacao', position: 30 } ] }
+  LowTreasuryUpdateType;
+
+  @UI: { lineItem:        [ { position: 50, importance: #HIGH } ],
+           fieldGroup:      [ { qualifier: 'TipoAtualizacao', position: 40 } ] }
+  HighTreasuryUpdateType;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  //    SignTextTreasuryUpdateType;
+  //    OptTextTreasuryUpdateType;
+
+
+}

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_VENC_ORIG</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Classe para implementação BAdI: ZFI_VENC_ORIG</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>EXT_VENC_ORIG</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Exercício</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXT_VENC_ORIG</CMPNAME>
+     <SCONAME>IV_NETDT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Vencimento líquido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXT_VENC_ORIG</CMPNAME>
+     <SCONAME>RV_VENC_ORIG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VENC_ORIG</CMPNAME>
+     <SCONAME>RV_VENC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_VENC_ORIG</CMPNAME>
+     <SCONAME>RV_VENC_ORIG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

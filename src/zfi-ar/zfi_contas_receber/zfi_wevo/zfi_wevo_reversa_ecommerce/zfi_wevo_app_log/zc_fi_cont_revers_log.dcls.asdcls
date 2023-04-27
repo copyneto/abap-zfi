@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control'
+@MappingRole: true
+define role ZC_FI_CONT_REVERS_LOG {
+    grant
+        select
+            on
+                ZC_FI_CONT_REVERS_LOG
+                    where
+                        inheriting conditions from entity ZI_FI_CONT_REVERS_LOG;
+                        
+}

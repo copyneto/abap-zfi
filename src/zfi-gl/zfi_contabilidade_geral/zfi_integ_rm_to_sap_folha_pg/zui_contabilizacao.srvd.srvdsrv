@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def para Contabilização'
+define service ZUI_CONTABILIZACAO {
+  expose ZC_FI_CONTAB_CAB as Header;
+  expose ZC_FI_CONTAB_ITEM as Item;
+}

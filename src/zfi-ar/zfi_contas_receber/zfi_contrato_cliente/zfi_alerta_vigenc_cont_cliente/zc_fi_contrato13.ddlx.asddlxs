@@ -1,0 +1,61 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Contrato13',
+                     title: { value: 'Empresa' },
+                     description: { value: 'Empresa' },
+                     typeNamePlural: 'Configurar E-mail :Contratos Cliente'
+                   }
+     }
+
+annotate view ZC_FI_CONTRATOS13
+    with 
+{
+
+// ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+ @UI.facet: [
+     { id:          'Contrato13',
+       purpose:       #STANDARD,
+       type:          #IDENTIFICATION_REFERENCE,
+       label:         'Contratos Cliente',
+       position:      10
+     } ]
+     
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------     
+
+//  @UI.hidden: true  
+//  Id;
+  @UI: { lineItem:        [ { position: 10, label: 'Empresa'} ],
+       identification:  [ { position: 10, label: 'Empresa' } ],
+       selectionField:  [ { position: 10 } ] }
+    Empresa;
+   @UI: { lineItem:        [ { position: 20, label: 'Local de Negócio' } ],
+   identification:  [ { position: 20, label: 'Local de Negócio' } ],
+   selectionField:  [ { position: 20 } ] }
+    LocalNegocio;
+    @UI.hidden: true
+      Nome;
+    @UI.hidden: true  
+      Name1;
+    @UI: {  lineItem:        [ { position: 30, label: 'E-mail' } ],
+    identification:  [ { position: 30, label: 'E-mail' } ] }
+    Email;
+    @UI: {  lineItem:        [ { position: 40, label: 'Criado Por' } ],
+    identification:  [ { position: 40, label: 'Criado Por' } ] }
+    CreatedBy;
+    @UI: {  lineItem:        [ { position: 50, label: 'Criado Em' } ],
+    identification:  [ { position: 50, label: 'Criado Em' } ] }
+    CreatedAt;
+    @UI: {  lineItem:        [ { position: 60, label: 'Alterado Por' } ],
+    identification:  [ { position: 60, label: 'Alterado Por' } ] }
+    LastChangedBy;
+    @UI: {  lineItem:        [ { position: 70, label: 'Alteardo Em' } ],
+    identification:  [ { position: 70, label: 'Alteardo Em' } ] }
+    LastChangedAt;
+    @UI: {  lineItem:        [ { position: 80, label: 'Registro hora ' } ],
+    identification:  [ { position: 80, label: 'Registro hora l' } ] }
+    LocalLastChangedAt;
+    
+}

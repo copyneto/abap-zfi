@@ -1,0 +1,77 @@
+managed; // implementation in class zbp_i_fi_raiz_cnpj unique;
+
+define behavior for ZI_FI_RAIZ_CNPJ alias Raiz
+implementation in class zclfi_raiz_cnpj unique
+persistent table ztfi_raiz_cnpj
+authorization master ( instance )
+lock master
+etag master LastChangedAt
+{
+  association _Clientes { create; }
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly, numbering : managed ) DocUuidH, DocUuidRaiz;
+  field ( mandatory ) CnpjRaiz;
+
+  update;
+
+  action AtualizarClientes;
+
+  mapping for ztfi_raiz_cnpj
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidRaiz = doc_uuid_raiz;
+
+    Aditivo = Aditivo;
+    CnpjRaiz = cnpj_raiz;
+    Contrato = Contrato;
+    NomeFanta = nome_fanta;
+    RazaoSoci = razao_soci;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+
+define behavior for ZI_FI_RAIZ_CLIENTES alias Clientes
+implementation in class zclfi_raiz_cnpj unique
+persistent table ztfi_cnpj_client
+authorization dependent by _Raiz
+lock dependent by _Raiz
+etag master LastChangedAt
+{
+  update;
+  association _Raiz;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato, CnpjRaiz;
+  field ( readonly ) Abrangencia, Atributo10, Bandeira, CanalDistribuicao, FormaPagamento, CanalPDV;
+  field ( readonly ) Centro, ClassifCnpj, Cnpj, CondPagamentos, Empresa, GruposCondicoes, Estrutura;
+  field ( readonly ) EquipeVendas, EscritorioVendas, Nome1, OrgVendas, RegiaoVendas, SetorAtividade, GrupoEconomico;
+  field ( readonly : update ) DocUuidRaiz, DocUuidH, Cliente;
+
+  validation validarDados on save { create; }
+
+  mapping for ztfi_cnpj_client
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidRaiz = doc_uuid_raiz;
+
+    Aditivo = aditivo;
+    Contrato = contrato;
+    Cliente = cliente;
+    ClassifCnpj = classif_cnpj;
+    Cnpj = cnpj;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}

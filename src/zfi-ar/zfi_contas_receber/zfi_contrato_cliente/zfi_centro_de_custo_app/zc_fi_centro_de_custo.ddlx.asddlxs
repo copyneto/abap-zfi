@@ -1,0 +1,64 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_CENTRO_DE_CUSTO with
+{
+  @UI.facet: [ { id:      'Facet',
+             purpose: #STANDARD,
+             type:    #COLLECTION,
+             label:   'Principal',
+             position: 10 },
+         { id:              'geral',
+           purpose:         #STANDARD,
+           parentId:        'Facet',
+           type:            #FIELDGROUP_REFERENCE,
+           label:           'Dados Gerais',
+           targetQualifier: 'geral',
+           position:         20 } ,
+         {  id:             'Modificar',
+            purpose:        #STANDARD,
+            label:          'Dados Modificação',
+            parentId:       'Facet',
+            type:           #FIELDGROUP_REFERENCE,
+            targetQualifier: 'Modificar',
+            position:       20 } ]
+
+  @UI.lineItem:        [ { position: 10, label: 'Região de Vendas'} ]
+  @UI.selectionField: [{  position: 10 }]
+  @UI.identification:  [ { position: 10, label: 'Região de Vendas'} ]
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'geral'} ]
+  Region;
+  @UI.selectionField: [{  position: 20 }]
+  @UI.lineItem:        [ { position: 20, label: 'Empresa'} ]
+  @UI.identification:  [ { position: 20, label: 'Empresa' } ]
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'geral' }]
+  Bukrs;
+  @UI.selectionField: [{  position: 30 }]
+  @UI.lineItem:        [ { position: 30, label: 'Divisão'} ]
+  @UI.identification:  [ { position: 30, label: 'Divisão' } ]
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'geral' }]
+  Gsber;
+  @UI.lineItem:        [ { position: 40, label: 'Centro de Custo'} ]
+  @UI.identification:  [ { position: 40, label: 'Centro de Custo' } ]
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'geral' }]
+  Kostl;
+  @UI.lineItem:        [ { position: 50, label: 'Criado Por' } ]
+  @UI.identification:  [ { position: 50, label: 'Criado Por' } ]
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI.lineItem:        [ { position: 60, label: 'Criado Em' } ]
+  @UI.identification:  [ { position: 60, label: 'Criado Em' } ]
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI.lineItem:        [ { position: 70, label: 'Alterado Por' } ]
+  @UI.identification:  [ { position: 70, label: 'Alterado Por' } ]
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar'} ]
+  LastChangedBy;
+  @UI.lineItem:        [ { position: 80, label: 'Alteardo Em' } ]
+  @UI.identification:  [ { position: 80, label: 'Alteardo Em' } ]
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI.lineItem:        [ { position: 90, label: 'Registro hora'} ]
+  @UI.identification:  [ { position: 90, label: 'Registro hora'} ]
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar'} ]
+  LocalLastChangedAt;
+
+}

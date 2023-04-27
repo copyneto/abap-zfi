@@ -1,0 +1,4 @@
+@EndUserText.label: 'Autom. textos contábeis-Execução manual'
+define service ZUI_FI_AUTOTXTCONTAB_EXEMANUAL {
+  expose ZC_FI_AUTOTXT_EXEC_MANUAL;
+}

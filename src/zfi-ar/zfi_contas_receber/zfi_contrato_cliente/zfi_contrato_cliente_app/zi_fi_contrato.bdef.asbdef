@@ -1,0 +1,430 @@
+
+managed;
+
+define behavior for ZI_FI_CONTRATO alias _Contrato
+implementation in class zclfi_contrato unique
+persistent table ztfi_contrato
+authorization master ( instance )
+lock master
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  association _Raiz { create; }
+  association _Cond { create; }
+  association _Prov { create; }
+  association _Janela { create; }
+  association _Anexos;
+  association _Aprovadores;
+  association _RetAprov;
+
+  field ( readonly, numbering : managed ) DocUuidH;
+
+  field ( mandatory ) CnpjPrincipal, RazaoSocial, NomeFantasia;
+  field ( readonly ) AlertaEnviado, AlertaDataEnvio, Status, StatusAnexo, StatusText, LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Nivel;
+  field ( readonly ) Desativado;
+
+  validation authorityCreate on save { create; }
+  validation validaCampos on save { create; update; }
+
+  determination calcularDocumentNo on save { create; }
+  determination updateStatus on modify { field Desativado; create; }
+  determination updateStatusData on modify { field DataFimValid; }
+
+  action ( features : instance ) desativar result [1] $self;
+  action ( features : instance ) renovar parameter ZI_FI_APROVACAO_POPUP;
+
+  mapping for ztfi_contrato
+  {
+    DocUuidH = doc_uuid_h;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    ContratoProprio = contrato_proprio;
+    Contratojurid = contrato_jurid;
+    DataIniValid = data_ini_valid;
+    DataFimValid = data_fim_valid;
+    Bukrs = bukrs;
+    Branch = branch;
+    GrpContratos = grp_contratos;
+    GrpCond = grp_cond;
+    Chamado = chamado;
+    CnpjPrincipal = cnpj_principal;
+    RazaoSocial = razao_social;
+    NomeFantasia = nome_fantasia;
+    PrazoPagto = prazo_pagto;
+    FormaPagto = forma_pagto;
+    RespLegal = resp_legal;
+    RespLegalGtcor = resp_legal_gtcor;
+    ProdContemplado = prod_contemplado;
+    Observacao = observacao;
+    Status = status;
+    Desativado = desativado;
+    Canal = canal;
+    GrpEconomico = grp_economico;
+    Abrangencia = abrangencia;
+    Estrutura = estrutura;
+    Canalpdv = canalpdv;
+    TipoEntrega = tipo_entrega;
+    DataEntrega = data_entrega;
+    DataFatura = data_fatura;
+    Crescimento = crescimento;
+    AjusteAnual = ajuste_anual;
+    DataAssinatura = data_assinatura;
+    Multas = multas;
+    RenovAut = renov_aut;
+    AlertaVig = alerta_vig;
+    AlertaEnviado = alerta_enviado;
+    AlertaDataEnvio = alerta_data_envio;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_RAIZ_CNPJ_CONT alias _Raiz
+implementation in class zclfi_contrato_raizcnpj unique
+persistent table ztfi_raiz_cnpj
+authorization dependent by _Contrato
+lock dependent by _Contrato
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  association _Contrato;
+
+  field ( readonly, numbering : managed ) DocUuidRaiz;
+  field ( mandatory ) CnpjRaiz, NomeFanta, RazaoSoci;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato;
+  field ( readonly : update ) DocUuidH;
+
+  validation validaCampos on save { create; update; }
+
+  determination numContrato on save { create; }
+
+  action ( features : instance ) buscaCliente;
+
+  mapping for ztfi_raiz_cnpj
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidRaiz = doc_uuid_raiz;
+    CnpjRaiz = cnpj_raiz;
+
+    Contrato = contrato;
+    Aditivo = aditivo;
+    RazaoSoci = razao_soci;
+    NomeFanta = nome_fanta;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_CLIENTES_CONT alias _Cliente
+persistent table ztfi_cnpj_client
+authorization dependent by _Contrato
+lock dependent by _Contrato
+etag master LocalLastChangedAt
+{
+
+  association _Raiz;
+  association _Contrato;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato;
+  field ( readonly ) Abrangencia, Atributo10, Bandeira, CanalDistribuicao, FormaPagamento, CanalPDV;
+  field ( readonly ) Centro, ClassifCnpj, Cnpj, CondPagamentos, Empresa, GruposCondicoes, Estrutura;
+  field ( readonly ) EquipeVendas, EscritorioVendas, Nome1, OrgVendas, RegiaoVendas, SetorAtividade, GrupoEconomico;
+  field ( readonly : update ) DocUuidRaiz, DocUuidH, Cliente;
+
+  mapping for ztfi_cnpj_client
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidRaiz = doc_uuid_raiz;
+    Cliente = cliente;
+
+    Contrato = contrato;
+    Aditivo = aditivo;
+    CnpjRaiz = cnpj_raiz;
+    ClassifCnpj = classif_cnpj;
+    Cnpj = cnpj;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+
+define behavior for ZI_FI_ANEXOS alias _Anexos
+implementation in class zclfi_cont_anexos unique
+persistent table ztfi_cont_anexo
+authorization dependent by _Contrato
+lock dependent by _Contrato
+etag master LocalLastChangedAt
+{
+
+  association _Contrato;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato;
+  field ( readonly : update ) DocUuidH;
+
+  action ( features : instance ) eliminar;
+
+  determination numContrato on save { create; }
+
+  mapping for ztfi_cont_anexo
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidDoc = doc_uuid_doc;
+
+    Aditivo = aditivo;
+    Contrato = contrato;
+    Filename = filename;
+    Mimetype = mimetype;
+    TipoDoc = tipo_doc;
+    Value = value;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+
+define behavior for ZI_FI_COND_CONT alias _Cond
+implementation in class zclfi_cond_contrato unique
+persistent table ztfi_cont_cond
+authorization dependent by _Contrato
+lock dependent by _Contrato
+etag master LocalLastChangedAt
+{
+
+  association _Contrato;
+  update;
+  delete;
+  field ( readonly, numbering : managed ) DocUuidCond;
+  field ( mandatory ) TipoCond, Aplicacao;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato;
+  field ( readonly : update ) DocUuidH;
+
+  validation validaCampos on save { create; update; }
+
+  determination updateCurrency on modify { field Montante; field Percentual; }
+  determination numContrato on save { create; }
+
+  mapping for ztfi_cont_cond
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidCond = doc_uuid_cond;
+
+    Aditivo = aditivo;
+    Contrato = contrato;
+    TipoCond = tipo_cond;
+    Percentual = percentual;
+    Montante = montante;
+    Moeda = koei1;
+    Aplicacao = aplicacao;
+    PerVigencia = per_vigencia;
+    RecorrenciaAnual = recorrencia_anual;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+
+define behavior for ZI_FI_JANELA_CONT alias _Janela
+implementation in class zclfi_janela_contrato unique
+persistent table ztfi_cont_janela
+authorization dependent by _Contrato
+lock dependent by _Contrato
+etag master LocalLastChangedAt
+{
+
+  association _Contrato;
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) DocUuidJanela;
+  field ( mandatory ) GrpCond, Prazo;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato;
+  field ( readonly : update ) DocUuidH;
+
+  validation validaCampos on save { create; update; }
+
+  determination numContrato on save { create; }
+
+  mapping for ztfi_cont_janela
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidJanela = doc_uuid_janela;
+
+    Aditivo = aditivo;
+    Contrato = contrato;
+    GrpCond = grp_cond;
+    Atributo2 = ATRIBUTO_2;
+    FamiliaCl = FAMILIA_CL;
+    Prazo = PRAZO;
+    Percentual = PERCENTUAL;
+    DiaMesFixo = DIA_MES_FIXO;
+    DiaSemana = DIA_SEMANA;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+
+define behavior for ZI_FI_PROV_CONT alias _Prov
+implementation in class zclfi_prov_contrato unique
+persistent table ztfi_cad_provi
+authorization dependent by _Contrato
+lock dependent by _Contrato
+etag master LocalLastChangedAt
+{
+
+  association _Contrato;
+  association _Familia { create; }
+
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) DocUuidProv;
+  field ( mandatory ) TipoDesconto, AplicaDesconto, CondDesconto, TipoApuracao, PercCondDesc, TipoApImposto;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato, GrupContrato;
+  field ( readonly : update ) DocUuidH;
+
+  validation validaCampos on save { create; update; }
+
+  determination numContrato on save { create; }
+
+  mapping for ztfi_cad_provi
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidProv = doc_uuid_prov;
+    GrupContrato = grup_contrato;
+
+    Aditivo = aditivo;
+    Contrato = contrato;
+    TipoDesconto = tipo_desconto;
+    AplicaDesconto = aplica_desconto;
+    CondDesconto = cond_desconto;
+    ClassificCnpj = classific_cnpj;
+    TipoApImposto = tipo_ap_imposto;
+    TipoImposto = tipo_imposto;
+    PercCondDesc = perc_cond_desc;
+    MesVigencia = mes_vigencia;
+    RecoAnualDesc = reco_anual_desc;
+    TipoApuracao = tipo_apuracao;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+define behavior for zi_fi_prov_familia alias _ProvFamilia
+implementation in class zclfi_prov_familia unique
+persistent table ztfi_prov_fam
+lock dependent by _Contrato
+authorization dependent by _Contrato
+etag master LocalLastChangedAt
+{
+
+  association _Contrato;
+  association _Prov;
+
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt, Aditivo, Contrato;
+  field ( mandatory : create ) Familia;
+  field ( readonly : update ) Familia, FamiliaClTxt, DocUuidH, DocUuidProv;
+
+  validation validaCampos on save { create; update; }
+
+  determination numContrato on save { create; }
+
+  mapping for ztfi_prov_fam
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidProv = doc_uuid_prov;
+    Familia = familia;
+
+    Aditivo = aditivo;
+    Contrato = contrato;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+
+define behavior for ZI_FI_NIVEIS_APROV_CONTRATO alias _Aprovadores
+persistent table ztfi_cont_aprov
+authorization dependent by _Contrato
+lock dependent by _Contrato
+{
+
+  association _Contrato;
+
+  field ( readonly ) Branch, Bukrs, Aprovador, Nivel, Obs, DataAprov, DescNivel;
+  field ( readonly : update ) DocUuidH;
+
+
+  mapping for ztfi_cont_aprov
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidAprov = doc_uuid_aprov;
+
+    Nivel = nivel;
+    Aprovador = aprovador;
+    DataAprov = data_aprov;
+    HoraAprov = hora_aprov;
+  }
+
+}
+
+define behavior for ZI_FI_RETORNO_APROV alias _RetAprov
+persistent table ztfi_ret_aprov
+authorization dependent by _Contrato
+lock dependent by _Contrato
+{
+
+  association _Contrato;
+
+  field ( readonly ) Aprovador, Nivel, Observacao, DataAprov, NivelAtual;
+  field ( readonly : update ) DocUuidH;
+
+
+  mapping for ztfi_ret_aprov
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidRet = doc_uuid_ret;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    Nivel = nivel;
+    Aprovador = aprovador;
+    DataAprov = data_aprov;
+    HoraAprov = hora_aprov;
+  }
+
+}

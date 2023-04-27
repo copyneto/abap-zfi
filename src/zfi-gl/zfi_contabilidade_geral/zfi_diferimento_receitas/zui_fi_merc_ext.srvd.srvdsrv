@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def para Mercado Externo'
+define service ZUI_FI_MERC_EXT {
+  expose ZC_FI_MERC_EXT_H;
+  expose ZC_FI_MERC_EXT_I;
+}

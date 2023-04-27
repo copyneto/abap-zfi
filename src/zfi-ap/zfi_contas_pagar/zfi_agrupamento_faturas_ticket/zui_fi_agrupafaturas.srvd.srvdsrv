@@ -1,0 +1,9 @@
+@EndUserText.label: 'Serv. Def. Agrupamento de faturas'
+define service ZUI_FI_AGRUPAFATURAS {
+  expose ZC_FI_AGRUPAFATURAS;
+  expose ZC_FI_AGRUPALINHAS;
+  expose ZI_CA_VH_COMPANY;
+  expose ZI_FI_VH_FORN_AGRUPADOR;
+  expose ZI_FI_VH_ARQUIVO_AGRUPA;
+  expose I_CostCenterText;
+}

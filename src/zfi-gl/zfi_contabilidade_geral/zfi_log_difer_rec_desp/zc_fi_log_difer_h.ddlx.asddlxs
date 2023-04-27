@@ -1,0 +1,91 @@
+@Metadata.layer: #CORE
+
+
+@UI: { headerInfo: { typeName: 'Log - Diferimento de Receitas e Deduções',
+                     title: { value: 'IdLog' },
+                     typeNamePlural: 'Execuções'
+                   }
+     }
+annotate entity  ZC_FI_LOG_DIFER_H
+    with 
+{
+
+  @UI.facet: [{ id:               'DADOS',
+                  isSummary:       true,
+                  type:            #COLLECTION,
+                  label:           'Execução',
+                  position:        10 },
+
+                         { parentId:        'DADOS',
+                           id:              'DADOS_PRINCIPAIS',
+                           type:            #FIELDGROUP_REFERENCE,
+                           position:        10,
+                           label: 'Parâmetros',
+                           targetQualifier: 'DADOS_PRINCIPAIS' },
+
+                         { parentId:        'DADOS',
+                           id:              'DADOS_CONTROLE',
+                           type:            #FIELDGROUP_REFERENCE,
+                           position:        10,
+                           label: 'Dados de controle',
+                           targetQualifier: 'DADOS_CONTROLE' },
+               { id:              'Itens_Doc',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Documentos Processados',
+                 position:        20,
+                 targetElement:   '_LOG_DIFER_D'
+               },
+               { id:              'Itens_Log',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Mensagens de Log',
+                 position:        30,
+                 targetElement:   '_LOG_DIFER_M'
+               }]
+
+
+
+@UI: { lineItem:        [ { position: 10, label: 'Identificador do Log' } ],
+       fieldGroup:      [ { position: 10, qualifier: 'DADOS_PRINCIPAIS' } ],
+       selectionField:  [ { position: 10 } ] }
+    IdLog;
+@UI: { lineItem:        [ { position: 20, label: 'Empresa' } ],
+       fieldGroup:      [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+       selectionField:  [ { position: 20 } ] }
+    Empresa;
+@UI: { lineItem:        [ { position: 20, label: 'Descrição' } ],
+       fieldGroup:      [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+       selectionField:  [ { position: 20 } ] }    
+    descricao;
+@UI: { lineItem:        [ { position: 30, label: 'Criado por' } ],
+       fieldGroup:     [  { position: 10, qualifier: 'DADOS_CONTROLE' } ],
+       selectionField:  [ { position: 30 } ] }       
+    CreatedBy;
+@UI: { lineItem:        [ { position: 40, label: 'Criado em' } ],
+       fieldGroup:     [  { position: 10, qualifier: 'DADOS_CONTROLE' } ],
+       selectionField:  [ { position: 40 } ] }    
+    CreatedAt;
+@UI: { lineItem:        [ { position: 50, label: 'Status', criticality: 'StCor'} ],
+       fieldGroup:      [ { position: 40, qualifier: 'DADOS_PRINCIPAIS', criticality: 'StCor' } ],
+       selectionField:  [ { position: 50 } ] }   
+@UI.textArrangement: #TEXT_ONLY       
+    Status;        
+@UI: { fieldGroup:      [ { position: 40, qualifier: 'DADOS_PRINCIPAIS' } ] }    
+    Datalanc;
+@UI: { fieldGroup:      [ { position: 50, qualifier: 'DADOS_PRINCIPAIS' } ] }    
+    Dataestorno;
+@UI: { fieldGroup:      [ { position: 60, qualifier: 'DADOS_PRINCIPAIS' } ] }    
+    Gjahr;
+@UI: { fieldGroup:      [ { position: 70, qualifier: 'DADOS_PRINCIPAIS' } ] }    
+    BelnrRecCli;
+@UI: { fieldGroup:      [ { position: 80, qualifier: 'DADOS_PRINCIPAIS' } ] }    
+    BelnrRazRaz;
+
+/*     Associations 
+    _CompanyCode;
+    _LOG_DIFER_D;
+    _LOG_DIFER_M; */
+    
+    
+}

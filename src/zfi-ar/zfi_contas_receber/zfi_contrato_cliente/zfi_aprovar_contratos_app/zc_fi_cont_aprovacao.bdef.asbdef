@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_CONT_APROVACAO alias _Contrato
+{
+
+  use action Aprovar;
+  use association _Aprovar;
+}

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_RETIRA_BLOQUEIOS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Retirada de Bloqueios das faturas para execução em JOB</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Dados não encontrados para a seleção informada.</ENTRY>
+     <LENGTH>94</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_HOURS_DIFF</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para verificar quais faturas devem ser desbloqueadas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método CONSTRUTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_LOG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para exibição de LOG em BACKGROUND</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EXEC_UNLOCK</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para desbloquear fatura</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FILL_BSEG_BAPI</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para preenchimento da estrutura BSEG</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FILL_BUZTAB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para preenchimento da tab BUZTAB</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FILL_FIELDS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para informar campos que serão alterados</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BLOQUEIO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CHAVE1</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 1</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CHAVE2</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_HORAS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MODULO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Módulo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TIPODOC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para seleção dos dados</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_REPORT_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para buscar dados para serem exibidos no report</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_TABLE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Basis Class for Simple Tables</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PROCESS_UNLOCK</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para busca e desbloqueio das faturas em BACKGROUND</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_HOURS_DIFF</CMPNAME>
+     <SCONAME>IT_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_HOURS_DIFF</CMPNAME>
+     <SCONAME>RT_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Diferença em horas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISPLAY_LOG</CMPNAME>
+     <SCONAME>CT_LOG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela saída Retirada de Bloqueio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXEC_UNLOCK</CMPNAME>
+     <SCONAME>IT_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela saída Retirada de Bloqueio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_BSEG_BAPI</CMPNAME>
+     <SCONAME>IS_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura saída Retirada de Bloqueio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_BSEG_BAPI</CMPNAME>
+     <SCONAME>RS_BSEG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Segmento do documento contabilidade financeira</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_BUZTAB</CMPNAME>
+     <SCONAME>IS_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura saída Retirada de Bloqueio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DATA</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela saída Retirada de Bloqueio</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REPORT_DATA</CMPNAME>
+     <SCONAME>RT_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de tabela saída Retirada de Bloqueio</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

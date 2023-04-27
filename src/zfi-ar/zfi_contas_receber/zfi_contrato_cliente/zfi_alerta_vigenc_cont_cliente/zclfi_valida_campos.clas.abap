@@ -1,0 +1,5 @@
+CLASS zclfi_valida_campos DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_contratos13.
+ENDCLASS.
+
+CLASS zclfi_valida_campos IMPLEMENTATION.
+ENDCLASS.

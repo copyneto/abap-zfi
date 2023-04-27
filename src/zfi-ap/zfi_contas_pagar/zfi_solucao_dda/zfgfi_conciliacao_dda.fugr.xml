@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Conciliação manual p/ DDA</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_CONCILIACAO_DDATOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_CONCILIACAO_DDA</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMFI_CONCILIACAO_MANUAL_DDA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Conciliação manual DDA</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_CONCILIACAO</PARAMETER>
+       <TYP>ZSFI_CONCILIACAO_MANUAL</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_XBLNR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XBLNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>GJAHR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUMER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BELNR_R</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_CONCILIACAO</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_XBLNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento de referência</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUMER</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMFI_DDA_ATRIB</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Realizar Atribuição manual - XBNLR</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_PROCESS_DDA</PARAMETER>
+       <TYP>J1B_ERROR_DDA</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BELNR</PARAMETER>
+       <TYP>BELNR_D</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BUZEI</PARAMETER>
+       <TYP>BUZEI</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_PROCESS_DDA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela processamento DDA</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BELNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BUZEI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº linha de lançamento no documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMFI_DDA_REPROCESSA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Reprocessamento DDA</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_PROCESS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZTT_J1B_ERROR_DDA</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_PROCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela processamento DDA</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMFI_DOC_CONTABIL</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Envio de remessa</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_SEGTO</PARAMETER>
+       <DBSTRUCT>ZTFI_DDA_SEGTO_G</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_HEADER</PARAMETER>
+       <DBSTRUCT>ZTFI_DDA_HEADER</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_SEGTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Segmento &quot;G&quot; de arquivo DDA</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabeçalho de arquivo DDA</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

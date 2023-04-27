@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Def. Fornecedor Agrupador'
+define service ZUI_FI_FORN_AGRUPADOR {
+  expose ZC_FI_FORN_AGRUPADOR;
+}

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_VALIDA_DOCPAGAR</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Validações documentos a pagar</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDA_U102</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Validar retirada de bloqueio doc. em aprovação</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_U102</CMPNAME>
+     <SCONAME>IV_BKPF</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cabeçalho do documento contábil</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_U102</CMPNAME>
+     <SCONAME>IV_BSEG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Segmento do documento contabilidade financeira</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

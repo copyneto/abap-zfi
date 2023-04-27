@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Texto Instrução Boleto',
+    typeNamePlural: 'Banco da empresa'
+  }}
+annotate view ZC_FI_BL_TEXT_INSTRUCAO with
+{
+
+  @UI.facet: [
+               { id:         'Banco',
+                 purpose:    #STANDARD,
+                 type:       #FIELDGROUP_REFERENCE,
+                 label:       'Informações',
+                 targetQualifier: 'Banco',
+                 position:      10 },
+
+                { id:             'Textos',
+                 type:          #FIELDGROUP_REFERENCE,
+                   label:           'Texto',
+                 targetQualifier: 'Textos1',
+                 position:      10 }]
+
+  @UI: { lineItem:        [ { position: 10, label: 'Empresa' } ],
+         identification:  [ { position: 10, label: 'Empresa' } ],
+         fieldGroup:      [ { position: 10, qualifier: 'Banco' }] }
+  Bukrs;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Banco' } ],
+         identification:  [ { position: 20, label: 'Banco' } ],
+         fieldGroup:      [ { position: 20, qualifier: 'Banco' }]  }
+  Hbkid;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Chave do Banco' } ],
+         identification:  [ { position: 30, label: 'Chave do Banco' } ],
+         fieldGroup:      [ { position: 30, qualifier: 'Banco' }] }
+  Bankl;
+
+  @UI: { lineItem:        [ { position: 40, label: 'País do Banco' } ],
+         identification:  [ { position: 40, label: 'País do Banco' } ],
+         fieldGroup:      [ { position: 40, qualifier: 'Banco' }] }
+  Banks;
+
+  @UI: { fieldGroup:      [ { position: 10, qualifier: 'Textos1' } ] }
+  @UI.multiLineText: true
+  Text;
+
+  //    /* Associations */
+  //    _banco;
+
+}

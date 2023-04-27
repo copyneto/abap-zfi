@@ -1,0 +1,142 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Pagamento DDA',
+                     title: {   type: #STANDARD,
+                                label: 'Referência',
+                                value: 'ReferenceNo' } } }
+
+@UI.selectionVariant: [
+    {   qualifier: 'Error',
+        text: 'DDA com divergências',
+        filter: 'StatusCheck EQ "E"'
+    },
+
+    {   qualifier: 'Success',
+        text: 'DDA processados',
+        filter: 'StatusCheck EQ "S"'
+    }
+]
+annotate entity ZC_FI_COCKPIT_DDA with
+{
+
+  @UI.facet: [{
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Pagamento DDA',
+      type: #IDENTIFICATION_REFERENCE
+  }]
+
+
+  @UI.selectionField: [{position: 10}]
+  @UI: { lineItem: [{ position: 10 }],
+         identification: [{ position: 10 }]
+  }
+  @EndUserText.label: 'Nº nota fiscal'
+  ReferenceNo;
+
+  @UI.selectionField: [{position: 20}]
+  @UI: { lineItem: [{ position: 20 }],
+         identification: [{ position: 20 }]
+  }
+  CompanyCode;
+
+  @UI.selectionField: [{position: 30}]
+  @UI: { lineItem: [{ position: 30 }],
+         identification: [{ position: 30 }]
+  }
+  FiscalYear;
+
+  @UI.selectionField: [{position: 40}]
+  @UI: { lineItem: [{ position: 40 }],
+         identification: [{ position: 40 }]
+  }
+  @EndUserText.label: 'Data execução DDA'
+  PostingDate;
+
+  @UI.selectionField: [{position: 50}]
+  @UI: { lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }]
+  }
+  @EndUserText.label: 'Data vencimento'
+  DueDateConverted;
+
+  @UI.selectionField: [{position: 60}]
+  @UI: { lineItem: [{ position: 60 }],
+         identification: [{ position: 60 }]
+  }
+  @EndUserText.label: 'Fatura DDA'
+  DocNumber;
+
+  @UI.selectionField: [{position: 62}]
+  @UI: { lineItem: [{ position: 62 }],
+         identification: [{ position: 62 }]
+  }
+  @EndUserText.label: 'Vencimento Fatura DDA'
+  DueDateDoc;
+
+  @UI.selectionField: [{position: 70}]
+  @UI: { lineItem: [{ position: 70 }],
+         identification: [{ position: 70 }]
+  }
+  @EndUserText.label: 'Fatura'
+  @UI.hidden: true
+  MiroInvoice;
+
+  @UI.selectionField: [{position: 80}]
+  @UI: { lineItem: [{ position: 80 }],
+         identification: [{ position: 80 }]
+  }
+  @EndUserText.label: 'Fatura DDA Ajustada'
+  DocComp;
+
+  @UI: { lineItem: [{ position: 90 }],
+         identification: [{ position: 90 }]
+  }
+  Amount;
+
+  @UI.selectionField: [{position: 70}]
+  @UI: { lineItem: [{ position: 92 }],
+         identification: [{ position: 92 }]
+  }
+  @EndUserText.label: 'Nota Fiscal Divergente'
+  ErrorXblnr;
+
+  @UI.selectionField: [{position: 100}]
+  @UI: { lineItem: [{ position: 100 , type: #FOR_ACTION,  dataAction: 'notadiv', label: 'NF Divergente' , invocationGrouping: #CHANGE_SET }],
+         identification: [{ position: 100 }]
+  }
+  Supplier;
+
+
+  @UI: { lineItem: [{ position: 101, type: #FOR_ACTION,  dataAction: 'reprocessar', label: 'Reprocessar'}]}
+  @UI.hidden: true
+  Cnpj;
+
+  @UI: { selectionField: [{position: 110}],
+         lineItem: [{ position: 110 }],
+         identification: [{ position: 110 }]
+  }
+  @EndUserText.label: 'Motivo erro'
+  ErrReason;
+
+  @UI: { selectionField: [{position: 120}],
+         lineItem: [{ position: 120 }],
+         identification: [{ position: 120 }]
+  }
+  @EndUserText.label: 'CNPJ'
+  CNPJFormat;
+
+  @UI.hidden: true
+  SupplierCNPJ;
+  @UI: { lineItem: [{ type: #FOR_ACTION,  dataAction: 'notaDivergente', label: 'Nota Fiscal Divergente'}]}
+  @UI.hidden: true
+  SupplierCPF;
+
+  @UI.hidden: true
+  @EndUserText.label: 'Nº Documento'
+  nfdiv_belnr;
+  @UI.hidden: true
+  @EndUserText.label: 'Item'
+  nfdiv_buzei;
+
+}

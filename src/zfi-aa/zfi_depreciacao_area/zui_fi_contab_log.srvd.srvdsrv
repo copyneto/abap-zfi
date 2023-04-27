@@ -1,0 +1,4 @@
+@EndUserText.label: 'UI - Log'
+define service ZUI_FI_CONTAB_LOG {
+  expose ZC_FI_CONTAB_LOG as Log;
+}

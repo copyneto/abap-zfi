@@ -1,0 +1,11 @@
+@EndUserText.label: 'ZC_FI_CGC_COLIGADAS_EMPRES'
+@MappingRole: true
+define role ZC_FI_CGC_COLIGADAS_EMPRES {
+    grant
+        select
+            on
+                ZC_FI_CGC_COLIGADAS_EMPRES
+                    where
+                        inheriting conditions from entity ZI_FI_CGC_COLIGADAS_EMPRES;
+                        
+}

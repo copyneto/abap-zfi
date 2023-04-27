@@ -1,0 +1,5 @@
+CLASS zclfi_reversao_app DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_reversao_app.
+ENDCLASS.
+
+CLASS zclfi_reversao_app IMPLEMENTATION.
+ENDCLASS.

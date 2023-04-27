@@ -1,0 +1,38 @@
+managed;
+
+define behavior for ZI_FI_CGC_COLIGADAS_EMPRES alias CGC
+implementation in class zclfi_cgc_coligadas_empres unique
+persistent table ztfi_cgc_coligad
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+
+  field ( mandatory : create ) Bukrs, Bupla, Cgc;
+  field ( readonly : update ) Bukrs, Bupla, Cgc;
+  field ( readonly ) LastChangedAt, LastChangedBy, LocalLastChangedAt, CreatedAt, CreatedBy;
+
+  create;
+  update;
+  delete;
+
+  validation authorityCreate on save { create; }
+  validation mandatoryfields on save { create; }
+
+  mapping for ztfi_cgc_coligad
+  {
+    Bukrs = bukrs;
+    Bupla = bupla;
+    Cgc = cgc;
+    Kunnr = kunnr;
+    Lifnr = lifnr;
+    Filial = filial;
+    Vkorg = vkorg;
+    ColCi = col_ci;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

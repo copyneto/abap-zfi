@@ -1,0 +1,4 @@
+@EndUserText.label: 'Simulação de Vigência Contratos Cliente'
+define service zui_fi_simul_contratos_cliente {
+  expose zi_fi_simul_contratos_cliente;
+}

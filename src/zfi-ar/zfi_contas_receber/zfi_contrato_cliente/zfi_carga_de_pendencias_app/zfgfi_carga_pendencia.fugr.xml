@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Grupo para App Carga de \pendencias</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_CARGA_PENDENCIATOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_CARGA_PENDENCIA</SOBJ_NAME>
+   </INCLUDES>
+  </asx:values>
+ </asx:abap>
+</abapGit>

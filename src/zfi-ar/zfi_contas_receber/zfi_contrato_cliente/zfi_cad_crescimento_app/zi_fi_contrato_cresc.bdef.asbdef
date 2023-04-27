@@ -1,0 +1,218 @@
+managed implementation in class zclfi_contrato_cresc unique;
+
+define behavior for ZI_FI_CONTRATO_CRESC alias _Crescimento
+implementation in class zclfi_contrato_cresc unique
+persistent table ztfi_contrato
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  //  create;
+  update ( features : instance );
+  //  delete;
+
+  association _CadCresci { create; }
+  association _CompCresci { create; }
+  association _FaixaCresc { create; }
+  association _FamiliaCresc { create; }
+
+  field ( readonly, numbering : managed ) DocUuidH;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  mapping for ztfi_contrato
+  {
+    DocUuidH = doc_uuid_h;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    Contrato_proprio = contrato_proprio;
+    Contrato_jurid = contrato_jurid;
+    Data_ini_valid = data_ini_valid;
+    Data_fim_valid = data_fim_valid;
+    Bukrs = bukrs;
+    Branch = branch;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_CAD_CRESCI alias _CadCrescrimento
+implementation in class zclfi_cad_cresci_bh unique
+persistent table ztfi_cad_cresci
+lock dependent by _Crescimento
+authorization dependent by _Crescimento
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  association _Crescimento;
+
+  field ( readonly, numbering : managed ) DocUuidCresc;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) DocUuidH, Contrato;
+
+  determination calcDocNo on save { create; }
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_cad_cresci
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidCresc = doc_uuid_cresc;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    FamiliaCl = familia_cl;
+    TipoImposto = tipo_imposto;
+    TipoApDevoluc = tipo_ap_devoluc;
+    TipoApImposto = tipo_ap_imposto;
+    FormaDescont = forma_descont;
+    AjusteAnual = ajuste_anual;
+    Periodicidade = periodicidade;
+    InicioPeriodic = inicio_periodic;
+    ClassificCnpj = classific_cnpj;
+    FlagTdAtribut = flag_td_atribut;
+    TipoComparacao = tipo_comparacao;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_COMP_CRESCI alias _CompCrescimento
+implementation in class ZCLFI_COMP_CRESCI_BH unique
+persistent table ztfi_comp_cresci
+lock dependent by _Crescimento
+authorization dependent by _Crescimento
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  association _Crescimento;
+
+  field ( readonly, numbering : managed ) DocUuidCiclo;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) DocUuidH, Contrato;
+
+  determination calcDocNo on save { create; }
+  determination updateCurrency on modify { field MontComp; }
+
+  validation authorityCreate on save { create; }
+  validation validaciclo on save { create; update; }
+
+  mapping for ztfi_comp_cresci
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidCiclo = doc_uuid_ciclo;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    Ciclos = ciclos;
+    MontComp = mont_comp;
+    Waers = waers;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_FAIXA_CRESC alias _FaixaCrescimento
+implementation in class ZCLFI_FAIXA_CRESC unique
+persistent table ztfi_faixa_cresc
+lock dependent by _Crescimento
+authorization dependent by _Crescimento
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) DocUuidFaixa;
+
+  //  validation valid_codfaixa on save { field VlrFaixaIni, VlrMontIni, VlrBonusIni, VlrMontbonusIni, VlrFaixaFim, VlrMontFim, VlrBonusFim, VlrMontbonusFim; }
+  validation valid_codfaixa on save { field VlrFaixaIni, VlrMontIni, VlrBonusIni, VlrMontbonusIni, VlrFaixaFim, VlrMontFim; }
+  validation authorityCreate on save { create; }
+
+  determination calcDocNo on save { create; }
+
+  association _Crescimento;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) DocUuidH, Contrato;
+
+  //  determination updateCurrency on modify { field VlrMontIni, VlrMontFim, VlrMontbonusIni, VlrMontbonusFim; }
+  determination updateCurrency on modify { field VlrMontIni, VlrMontFim, VlrMontbonusIni; }
+
+
+  mapping for ztfi_faixa_cresc
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidFaixa = doc_uuid_faixa;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    Moeda = moeda;
+    CodFaixa = cod_faixa;
+    VlrFaixaIni = vlr_faixa_ini;
+    VlrFaixaFim = vlr_faixa_fim;
+    CodMontante = cod_montante;
+    VlrMontIni = vlr_mont_ini;
+    VlrMontFim = vlr_mont_fim;
+    //    CodBonus = cod_bonus;
+    VlrBonusIni = vlr_bonus_ini;
+    //    VlrBonusFim = vlr_bonus_fim;
+    //    CodMbonus = cod_mbonus;
+    VlrMontbonusIni = vlr_montbonus_ini;
+    //    VlrMontbonusFim = vlr_montbonus_fim;
+
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_FI_FAMILIA_CRESC alias _FamiliaCrescimento
+implementation in class ZCLFI_FAMILIA_CRESC unique
+persistent table ztfi_cresc_famil
+lock dependent by _Crescimento
+authorization dependent by _Crescimento
+etag master LocalLastChangedAt
+{
+
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) DocUuidFamilia;
+
+  association _Crescimento;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) DocUuidH, Contrato;
+
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_cresc_famil
+  {
+    DocUuidH = doc_uuid_h;
+    DocUuidFamilia = doc_uuid_familia;
+    FamiliaCl = familia_cl;
+    Contrato = contrato;
+    Aditivo = aditivo;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}

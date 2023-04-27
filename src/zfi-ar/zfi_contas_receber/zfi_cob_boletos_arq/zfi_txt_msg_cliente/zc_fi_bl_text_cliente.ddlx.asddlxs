@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Mensagem do Cliente no Boleto',
+    typeNamePlural: 'Clientes'
+//    title: {
+//      type: #STANDARD,
+//      label: 'Cliente',
+//      value: 'Kunnr'
+//    }
+  }}
+annotate view ZC_FI_BL_TEXT_CLIENTE with
+{
+  @UI.facet: [
+               { id:         'Cliente',
+                 purpose:    #STANDARD,
+                 type:       #FIELDGROUP_REFERENCE,
+                 label:       'Informações',
+                 targetQualifier: 'Cliente',
+                 position:      10 },
+
+                { id:             'Textos',
+                 type:          #FIELDGROUP_REFERENCE,
+                   label:         'Texto',
+                 targetQualifier: 'Textos1',
+                 position:      10 }]
+
+  @UI: { lineItem:        [ { position: 20, label: 'Empresa' } ],
+         identification:  [ { position: 20, label: 'Empresa' } ],
+         fieldGroup:      [ { position: 20, qualifier: 'Cliente' }] }
+  Bukrs;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Cliente' } ],
+         identification:  [ { position: 10, label: 'Cliente' } ],
+         fieldGroup:      [ { position: 10, qualifier: 'Cliente' }] }
+  Kunnr;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Banco' } ],
+         identification:  [ { position: 30, label: 'Banco' } ],
+         fieldGroup:      [ { position: 30, qualifier: 'Cliente' }] }
+  Hbkid;
+
+  @UI: { fieldGroup:      [ { position: 10, qualifier: 'Textos1' }] }
+  @UI.multiLineText: true
+  Text;
+
+}

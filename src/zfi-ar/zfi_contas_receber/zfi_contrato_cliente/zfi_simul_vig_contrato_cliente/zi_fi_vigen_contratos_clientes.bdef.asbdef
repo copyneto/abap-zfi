@@ -1,0 +1,8 @@
+unmanaged implementation in class zclfi_vigen_contratos_clientes unique;
+
+define behavior for zi_fi_vigen_contratos_clientes
+lock master
+{
+  action simularm parameter zc_fi_simular_contrato_cliente  result  [1] $self ;
+  static function DefaultForCreate result  [1] zc_fi_simular_contrato_cliente ;// $self;
+}

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_BOLETO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens Sistemas Legados</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>A descrição deve conter pelo menos 5 caracteres</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Usuário inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Status atualizado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Nenhum dado encontrado para os parâmetros informados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Relatório &amp;1 indisponível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Houveram erros durante geração do relatório.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Relatório gerado! Nº spool: &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Sem dados para processamento!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Erro ao tentar abrir o formulário do boleto !</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Boleto(s) gerado(s)!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Erro ao gerar o(s) boleto(s)!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Erro ao gerar PDF!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Email inválido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Erro ao enviar o email!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Mais de um cliente existente. Impossível enviar email!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Documento(s) &amp;1 Empresa &amp;2 Exercicio &amp;3 modificado com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_BOLETO</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Sol.LC Branco Fatura &amp; &amp; &amp; Não houve modificações.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,78 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.lineItem: [{criticality: 'ItemStatus'}]
+
+@UI.presentationVariant: [{
+    initialExpansionLevel: 3,
+    includeGrandTotal: false,
+    groupBy: ['PaymentRunID', 'Supplier'],
+    totalBy: ['PaymentRunID', 'Supplier', 'CashPlanningGroup', 'PaymentMethod', 'HouseBank'],
+    requestAtLeast: ['PaymentRunID', 'HouseBank', 'PaymentMethod', 'PaidAmountInPaytCurrency', 'OpenAmount', 'BlockedAmount', 'CompanyCode', 'NetDueDate', 'RepType', 'RepTypeText',
+                     'CompanyCodeName', 'SupplierFullName', 'CashPlanningGroupName', 'DocTypeText', 'BranchText', 'HouseBankText', 'FormaPagamentoText', 'ItemStatus']
+}]
+
+annotate view ZC_FI_PROG_PAG_DOC_ITENS with
+{
+
+  @UI.facet: [{ purpose: #STANDARD, type: #LINEITEM_REFERENCE, position: 10 }]
+
+  //  @UI.lineItem: [{ position: 20 }]
+  @UI.hidden: true
+  CompanyCode;
+
+  @UI.lineItem: [{ position: 15 }]
+  PaymentRunID;
+
+  @UI.lineItem: [{ position: 10 }]
+  NetDueDate;
+
+  @UI.lineItem: [{ position: 40 }]
+  CashPlanningGroup;
+
+  @UI.lineItem: [{ position: 30 }]
+  Supplier;
+
+  @UI.lineItem: [{ position: 60 }]
+  PaymentDocument;
+
+  @UI.lineItem: [{ position: 70 }]
+  AccountingDocument;
+
+  @UI.lineItem: [{ position: 80 }]
+  AccountingDocumentItem;
+
+  @UI.lineItem: [{ position: 50 }]
+  FiscalYear;
+
+  @UI.lineItem: [{ position: 90 }]
+  Amount;
+
+  @UI.lineItem: [{ position: 20 }]
+  DocType;
+  @UI.lineItem: [{ position: 25 }]
+  Branch;
+  @UI.lineItem: [{ position: 100 }]
+  Reference;
+
+  @UI.hidden: true
+  PaidAmountInPaytCurrency;
+
+  @UI.hidden: true
+  PaymentCurrency;
+
+  @UI.hidden: true
+  RepType;
+
+  //  @UI.lineItem: [{ position: 100 }]
+  @UI.hidden: true
+  OpenAmount;
+
+  //  @UI.lineItem: [{ position: 110 }]
+  @UI.hidden: true
+  BlockedAmount;
+
+  @UI.lineItem: [{ position: 52 }]
+  HouseBank;
+  @UI.lineItem: [{ position: 51 }]
+  PaymentMethod;
+}

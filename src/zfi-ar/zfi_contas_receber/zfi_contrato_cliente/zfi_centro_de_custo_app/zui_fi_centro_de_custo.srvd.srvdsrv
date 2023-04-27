@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Centro de custo'
+define service ZUI_FI_CENTRO_DE_CUSTO {
+  expose ZC_FI_CENTRO_DE_CUSTO;
+}

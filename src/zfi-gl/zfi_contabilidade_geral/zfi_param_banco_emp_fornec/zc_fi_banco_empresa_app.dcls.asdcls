@@ -1,0 +1,10 @@
+@EndUserText.label: 'Autorização'
+@MappingRole: true
+define role ZC_FI_BANCO_EMPRESA_APP {
+    grant
+        select
+            on
+                ZC_FI_BANCO_EMPRESA_APP
+                    where
+                        inheriting conditions from entity ZI_FI_BANCO_EMPRESA_APP;
+}

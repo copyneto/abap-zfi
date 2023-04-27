@@ -1,0 +1,28 @@
+managed implementation in class zclfi_man_contas unique;
+
+define behavior for ZI_FI_MAN_CONTAS alias Contas
+persistent table ztfi_cont_depre
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  validation areaOnsave     on save { field DeprecSocietaria, DespesaSocietaria, DeprecFiscal, DespesaFiscal; create; update; }
+  validation areaSocietaria on save { field Afaber, DeprecSocietaria, DespesaSocietaria; create; update; }
+  validation areaFiscal     on save { field Afaber, DeprecFiscal, DespesaFiscal; create; update; }
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_cont_depre
+  {
+    Anlkl             = anlkl;
+    Afaber            = afaber;
+    DeprecFiscal      = deprec_fiscal;
+    DespesaFiscal     = despesa_fiscal;
+    DeprecSocietaria  = deprec_societaria;
+    DespesaSocietaria = despesa_societaria;
+  }
+
+}

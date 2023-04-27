@@ -1,0 +1,7 @@
+unmanaged implementation in class zclfi_doc_canc_banc unique;
+
+define behavior for ZI_FI_DOC_CANC_BANC alias Cancelar
+
+{
+  action ( features : instance ) cancelar;// parameter zc_fi_dias_atrasados;
+}

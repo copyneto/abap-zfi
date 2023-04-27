@@ -1,0 +1,4 @@
+@EndUserText.label: 'Denominação Coligadas por Empresa'
+define service ZUI_DENM_COLIG {
+  expose ZC_FI_DENM_COLIGADA_EMPRESA;
+}

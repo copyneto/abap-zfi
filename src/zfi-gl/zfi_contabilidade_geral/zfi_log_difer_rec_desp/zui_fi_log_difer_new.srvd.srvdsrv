@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def LOG'
+define service ZUI_FI_LOG_DIFER_NEW {
+  expose ZC_FI_LOG_DIF;
+  expose ZC_FI_LOG_MSG;
+}

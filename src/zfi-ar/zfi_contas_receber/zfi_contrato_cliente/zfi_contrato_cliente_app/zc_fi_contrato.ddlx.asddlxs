@@ -1,0 +1,403 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Contrato Cliente',
+                     title: { value: 'Contrato' },
+                     typeNamePlural: 'Contratos Cliente'
+                   }
+     }
+annotate entity ZC_FI_CONTRATO with
+{
+  @UI.facet: [
+               { id:         'DescricaoHeader',
+                 purpose:    #HEADER,
+                 type:       #DATAPOINT_REFERENCE,
+                 targetQualifier: 'DescricaoHeader',
+                 position:      10 },
+
+                { id:         'StatusHeader',
+                 purpose:    #HEADER,
+                 type:       #DATAPOINT_REFERENCE,
+                 targetQualifier: 'StatusHeader',
+                 position:      20 },
+
+                { id:        'AditivoHeader',
+                 purpose:    #HEADER,
+                 type:       #DATAPOINT_REFERENCE,
+                 targetQualifier: 'AditivoHeader',
+                 position:      11 },
+
+                { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 30 },
+
+                { id:           'geral',
+                 purpose:       #STANDARD,
+                 label:         'Dados Gerais',
+                 parentId:      'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'geral',
+                 position:      40 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       50 } ,
+
+             {  id:             'aprovar',
+                purpose:        #STANDARD,
+                label:          'Aprovação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'aprovar',
+                position:       50 } ,
+
+             {  id:             'OBS',
+                purpose:        #STANDARD,
+                label:          'Observações',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'campoObs',
+                position:       60 },
+
+              {  id:             'cnpj',
+                purpose:        #STANDARD,
+                label:          'Raiz CNPJ',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Raiz',
+                position:       70 } ,
+
+              {  id:             'Cond',
+                purpose:        #STANDARD,
+                label:          'Condições Desconto',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Cond',
+                position:       80 } ,
+
+             {  id:             'anexo',
+                purpose:        #STANDARD,
+                label:          'Anexos',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Anexos',
+                position:       90 },
+
+             {  id:             'Provisao',
+                purpose:        #STANDARD,
+                label:          'Provisão',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Prov',
+                position:       100 } ,
+
+             {  id:             'Janela',
+                purpose:        #STANDARD,
+                label:          'Janela de Pagamento',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Janela',
+                position:       100 } ,
+
+             {  id:             'Aprovadores',
+                purpose:        #STANDARD,
+                label:          'Aprovadores',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Aprovadores',
+                position:       100 } ,
+
+                {  id:             'RetAprov',
+                purpose:        #STANDARD,
+                label:          'Retorno Aprovação',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_RetAprov',
+                position:       110 }   ]
+
+  @UI: { lineItem:        [ { position: 10 }],
+         identification:  [ { position: 10 },
+                            {   type: #FOR_ACTION, dataAction: 'desativar', label: 'Desativar' }  ],
+         selectionField:  [ { position: 10 } ],
+         dataPoint:        { qualifier: 'DescricaoHeader' } }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Contrato;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         selectionField:  [ { position: 20 } ],
+         dataPoint:       { qualifier: 'AditivoHeader' } }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Aditivo;
+ 
+
+  @UI: { lineItem:        [ { position: 22 } ],
+         identification:  [ { position: 500 } ],
+         selectionField:  [ { position: 22 } ],
+         fieldGroup:      [ { position: 500, qualifier: 'geral' } ]}
+  Nivel;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         fieldGroup:      [ { position: 30, qualifier: 'geral' } ]}
+  ContratoProprio;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ],
+         fieldGroup:      [ { position: 40, qualifier: 'geral' } ]}
+  ContratoJurid;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ],
+         fieldGroup:      [ { position: 50, qualifier: 'geral' } ]}
+  DataIniValid;
+
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ],
+         fieldGroup:      [ { position: 60, qualifier: 'geral' } ]}
+  DataFimValid;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ],
+         selectionField:  [ { position: 30 } ],
+         fieldGroup:      [ { position: 70, qualifier: 'geral' } ]}
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  Bukrs;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ],
+         fieldGroup:      [ { position: 80, qualifier: 'geral' } ]}
+  Branch;
+
+  @UI: { identification:  [ { position: 90 } ],
+         fieldGroup:      [ { position: 90, qualifier: 'geral' } ]}
+  GrpContratos;
+
+  @UI: { identification:  [ { position: 100 } ],
+         fieldGroup:      [ { position: 100, qualifier: 'geral' } ]}
+  GrpCond;
+
+  @UI: { identification:  [ { position: 110, label: 'N° Chamado Jurídico' } ],
+         fieldGroup:      [ { position: 110, qualifier: 'geral' } ]}
+  Chamado;
+
+  @UI: { identification:  [ { position: 120 } ],
+         fieldGroup:      [ { position: 120, qualifier: 'geral' } ]}
+  PrazoPagto;
+
+  @UI: { identification:  [ { position: 130 } ],
+         fieldGroup:      [ { position: 130, qualifier: 'geral' } ]}
+  FormaPagto;
+
+  @UI: { identification:  [ { position: 140 } ],
+         fieldGroup:      [ { position: 140, qualifier: 'geral' } ]}
+  RespLegal;
+
+  @UI: { identification:  [ { position: 150 } ],
+         fieldGroup:      [ { position: 150, qualifier: 'geral' } ]}
+  RespLegalGtcor;
+
+  @UI: { identification:  [ { position: 160 } ],
+         fieldGroup:      [ { position: 160, qualifier: 'geral' } ]}
+  ProdContemplado;
+
+  @UI: { identification:  [ { position: 170 } ],
+         fieldGroup:      [ { position: 170, qualifier: 'campoObs' } ]}
+  @UI.multiLineText: true
+  Observacao;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 180 } ],
+  //         dataPoint: { qualifier: 'StatusHeader', title: 'Status' },
+         fieldGroup:      [ { position: 180, qualifier: 'geral' } ]}
+  Status;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+        identification:  [ { position: 180 } ],
+  //        dataPoint: { qualifier: 'StatusHeader', title: 'Status Anexo' },
+        fieldGroup:      [ { position: 180, qualifier: 'geral' } ]}
+  StatusAnexo;
+
+
+  @UI: { identification:  [ { position: 190 } ] }
+  StatusText;
+
+  @UI: { identification:  [ { position: 200 }  ],
+         fieldGroup:      [ { position: 200, qualifier: 'geral' } ]}
+  Desativado;
+
+
+
+  //  @UI: { identification:  [ { position: 220 } ],
+  //         fieldGroup:      [ { position: 220, qualifier: 'geral' } ]}
+  //  CanalTxt;
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 220 } ],
+         selectionField:  [ { position: 40 } ],
+         fieldGroup:      [ { position: 220, qualifier: 'geral' } ]}
+  CnpjPrincipal;
+
+  @UI: { lineItem:        [ { position: 91 } ],
+       identification:  [ { position: 221 } ],
+       selectionField:  [ { position: 50 } ],
+       fieldGroup:      [ { position: 221, qualifier: 'geral' } ],
+       dataPoint:       { qualifier: 'StatusHeader' }}
+  RazaoSocial;
+
+  @UI: { lineItem:        [ { position: 91 } ],
+         identification:  [ { position: 222 } ],
+         selectionField:  [ { position: 60 } ],
+         fieldGroup:      [ { position: 222, qualifier: 'geral' } ]}
+  NomeFantasia;
+
+  @UI: { identification:  [ { position: 230 } ],
+         fieldGroup:      [ { position: 230, qualifier: 'geral' } ]}
+  GrpEconomico;
+
+  @UI: { identification:  [ { position: 240 } ],
+         fieldGroup:      [ { position: 240, qualifier: 'geral' } ]}
+  Abrangencia;
+
+  @UI: { identification:  [ { position: 250 } ],
+         fieldGroup:      [ { position: 250, qualifier: 'geral' } ]}
+  Estrutura;
+
+  @UI: { identification:  [ { position: 260 } ],
+       fieldGroup:      [ { position: 260, qualifier: 'geral' } ]}
+  Canal;
+
+  @UI: { identification:  [ { position: 262 } ],
+         fieldGroup:      [ { position: 262, qualifier: 'geral' } ]}
+  Canalpdv;
+
+  @UI: { identification:  [ { position: 270 } ],
+         fieldGroup:      [ { position: 270, qualifier: 'geral' } ]}
+  TipoEntrega;
+
+  //  @UI: { identification:  [ { position: 280 } ],
+  //         fieldGroup:      [ { position: 280, qualifier: 'geral' } ]}
+  //  DataEntrega;
+  //
+  //  @UI: { identification:  [ { position: 290 } ],
+  //         fieldGroup:      [ { position: 290, qualifier: 'geral' } ]}
+  //  DataFatura;
+
+  @UI: { identification:  [ { position: 280 } ],
+         fieldGroup:      [ { position: 280, qualifier: 'geral' } ]}
+  Crescimento;
+
+  @UI: { identification:  [ { position: 290 } ],
+         fieldGroup:      [ { position: 290, qualifier: 'geral' } ]}
+  AjusteAnual;
+
+  @UI: { identification:  [ { position: 300 } ],
+         fieldGroup:      [ { position: 300, qualifier: 'geral' } ]}
+  DataAssinatura;
+
+  @UI: { identification:  [ { position: 310 } ],
+         fieldGroup:      [ { position: 310, qualifier: 'geral' } ]}
+  Multas;
+
+  @UI: { identification:  [ { position: 320 } ],
+         fieldGroup:      [ { position: 320, qualifier: 'geral' } ]}
+  RenovAut;
+
+  @UI: { identification:  [ { position: 330 } ],
+         fieldGroup:      [ { position: 330, qualifier: 'geral' } ]}
+  AlertaVig;
+
+  @UI: { identification:  [ { position: 340 } ],
+         fieldGroup:      [ { position: 340, qualifier: 'geral' } ]}
+  AlertaEnviado;
+
+  @UI: { identification:  [ { position: 350 } ],
+         fieldGroup:      [ { position: 350, qualifier: 'geral' } ]}
+  AlertaDataEnvio;
+
+
+
+  @UI: { identification:  [ { position: 380 } ] }
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar'} ]
+  CreatedBy;
+
+  @UI: { identification:  [ { position: 410 } ] }
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar'} ]
+  CreatedAt;
+
+  @UI: { identification:  [ { position: 420 } ] }
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar'} ]
+  LastChangedBy;
+
+  @UI: { identification:  [ { position: 430 } ] }
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar'} ]
+  LastChangedAt;
+
+  @UI: { identification:  [ { position: 440 } ] }
+
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  @UI: { identification:  [ { position: 430, dataAction: 'renovar' , type: #FOR_ACTION,  label: 'Retornar Aprovação'} ] }
+  DocUuidH;
+
+  @UI.hidden: false
+  Aprov1;
+  @UI.hidden: false
+  Dataaprov1;
+  @UI.hidden: false
+  HoraAprov1;
+  @UI.hidden: false
+  Aprov2;
+  @UI.hidden: false
+  Dataaprov2;
+  @UI.hidden: false
+  HoraAprov2;
+  @UI.hidden: false
+  Aprov3;
+  @UI.hidden: false
+  Dataaprov3;
+  @UI.hidden: false
+  HoraAprov3;
+  @UI.hidden: false
+  Aprov4;
+  @UI.hidden: false
+  Dataaprov4;
+  @UI.hidden: false
+  HoraAprov4;
+  @UI.hidden: false
+  Aprov5;
+  @UI.hidden: false
+  Dataaprov5;
+  @UI.hidden: false
+  HoraAprov5;
+  @UI.hidden: false
+  Aprov6;
+  @UI.hidden: false
+  Dataaprov6;
+  @UI.hidden: false
+  HoraAprov6;
+  @UI.hidden: false
+  Aprov7;
+  @UI.hidden: false
+  Dataaprov7;
+  @UI.hidden: false
+  HoraAprov7;
+  @UI.hidden: false
+  Aprov8;
+  @UI.hidden: false
+  Dataaprov8;
+  @UI.hidden: false
+  HoraAprov8;
+  @UI.hidden: false
+  Aprov9;
+  @UI.hidden: false
+  Dataaprov9;
+  @UI.hidden: false
+  HoraAprov9;
+  @UI.hidden: false
+  Aprov10;
+  @UI.hidden: false
+  Dataaprov10;
+  @UI.hidden: false
+  HoraAprov10;
+
+}

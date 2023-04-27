@@ -1,0 +1,5 @@
+projection;
+
+define behavior for ZC_FI_MOV_LEDGER alias _Mov
+{
+}

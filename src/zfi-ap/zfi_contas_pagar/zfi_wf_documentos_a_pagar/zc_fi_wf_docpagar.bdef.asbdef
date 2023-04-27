@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_FI_WF_DOCPAGAR //alias <alias_name>
+use etag {
+  use create;
+  use update;
+  use delete;
+}

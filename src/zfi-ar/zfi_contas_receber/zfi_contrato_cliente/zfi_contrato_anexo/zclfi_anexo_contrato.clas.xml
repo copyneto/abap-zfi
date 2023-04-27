@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_ANEXO_CONTRATO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Controle de Anexo de Contratos</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Contrato Assinado</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Minuta</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Outros</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>Parecer</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Anexar o Binario Recebido.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_TODOS_ARQUIVOS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Informação de todos os Arquivos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_NOVO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Verifica se Não foi criado nenhuma linha ainda</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LISTAR_ARQUIVOS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Recupera a lista de Arquivos Anexado pela Chave</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>RECUPERAR_ARQUIVO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Recupera um arquivo para upload</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SALVAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Salva o Binario na Tabela.</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>EV_NEW_DOCID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>IS_MEDIA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Media Resource information</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>IV_TIPO_DOC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo do Anexo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>CX_CNV_00001_ENTRY_NOT_FOUND</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Corresponding entry was not found</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_ADITIVO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Aditivo Contrato Cliente</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_CONTRATO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>N° Contrato</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_DOC_UUID_H</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECUPERAR_ARQUIVO</CMPNAME>
+     <SCONAME>IV_DOCID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>16 Byte UUID in 16 Bytes (Raw Format)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SALVAR</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

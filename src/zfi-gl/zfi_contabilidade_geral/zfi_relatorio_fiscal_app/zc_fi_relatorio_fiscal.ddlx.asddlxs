@@ -1,0 +1,129 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Relatório Fiscal',
+        typeNamePlural: 'Relatório Fiscal',
+        title: { type: #STANDARD,
+          label: 'Relatório Fiscal',
+          value: 'Docnum'} }}
+
+// presentationVariant: [{ sortOrder: [{by: 'Docnum', direction: #DESC }] }]}
+
+annotate entity ZI_FI_RELATORIO_FISCAL with
+{
+  @UI.facet: [ { id:              'Documento',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Documento',
+  //                 targetQualifier: 'Doc',
+                 position:        10 }]
+
+
+  @UI: { selectionField: [ { position: 20  } ]}
+  @UI: { lineItem:       [ { position: 999 } ]}
+  Docnum;
+  //  @UI: { lineItem:       [ { position: 1000 } ]}
+  @UI.hidden: true
+  Itmnum;
+  @UI: { lineItem:       [ { position: 10 } ],
+         identification: [ { position: 10 } ],
+         selectionField: [ { position: 100 } ]}
+  Vkorg;
+  @UI: { lineItem:       [ { position: 20 } ],
+         identification: [ { position: 20 } ],
+         selectionField: [ { position: 50 } ]}
+  Material;
+  //    @UI.hidden: true
+  @UI: { lineItem:       [ { position: 25 } ],
+         identification: [ { position: 25 } ]}
+  MaterialName;
+  @UI: { lineItem:       [ { position: 40 } ],
+         identification: [ { position: 40 } ]}
+  NCMCode;
+  //  @UI.hidden: true
+  //  CFOPCode;
+  @UI: { lineItem:       [ { position: 50 } ],
+         identification: [ { position: 50 } ]}
+  @UI: { selectionField: [ { position: 80 } ]}
+  CFOP;
+  @UI: { lineItem:       [ { position: 60 } ],
+         identification: [ { position: 60 } ]}
+  QtdUnit;
+  @UI: { lineItem:       [ { position: 70 } ],
+         identification: [ { position: 70 } ]}
+  BaseUnit;
+
+  @UI: { lineItem:       [ { position: 80 } ]}
+  Quantidade2;
+
+  @UI: { lineItem:       [ { position: 90 } ]}
+  UnitKG;
+  @UI: { lineItem:       [ { position: 100 } ]}
+  Frete;
+  //  @UI: { lineItem:       [ { position: 80 } ],
+
+  //  @UI: { selectionField: [ { position: 160 } ]}
+  //  UnitKG;
+  @UI: { selectionField: [ { position: 160 } ]}
+  Printd;
+  @UI: { selectionField: [ { position: 170 } ]}
+  TpDoc;
+  @UI: { selectionField: [ { position: 180 } ]}
+  TpNF;
+  @UI: { lineItem:       [ { position: 110 } ]}
+  VlrSemFrete;
+  @UI.hidden: true
+  Waerk;
+  @UI: { lineItem:       [ { position: 120 } ]}
+  ICMS_Base;
+  @UI: { lineItem:       [ { position: 130 } ]}
+  ICMS_Valor;
+  @UI: { lineItem:       [ { position: 140 } ]}
+  IPI_Base;
+  @UI: { lineItem:       [ { position: 150 } ]}
+  IPI_Valor;
+  @UI: { lineItem:       [ { position: 160 } ]}
+  SUBST_Base;
+  @UI: { lineItem:       [ { position: 170 } ]}
+  SUBS_Valor;
+  @UI: { lineItem:       [ { position: 180 } ]}
+  PIS_Valor;
+  @UI: { lineItem:       [ { position: 190 } ]}
+  COFINS_Valor;
+  @UI: { lineItem:       [ { position: 200 } ],
+         selectionField: [ { position: 60  } ]}
+  ValuationArea;
+  @UI: { lineItem:       [ { position: 210 } ],
+         selectionField: [ { position: 70  } ]}
+  ValuationType;
+  @UI: { lineItem:       [ { position: 220 } ]}
+  Segment;
+  @UI: { lineItem:       [ { position: 240 } ]}
+  sakn1;
+  @UI: { lineItem:       [ { position: 250 } ]}
+  SaknText;
+  //    @Consumption.filter:{ mandatory:true }
+  @UI: { selectionField: [ { position: 10 } ]}
+  @Consumption.filter.selectionType: #INTERVAL
+  Pstdat;
+  @UI: { selectionField: [ { position: 30 } ]}
+  Nfnum;
+  @UI: { selectionField: [ { position: 40 } ]}
+  Nfenum;
+  @UI: { selectionField: [ { position: 90 } ]}
+  Bukrs;
+  @UI: { selectionField: [ { position: 110 } ]}
+  Vtweg;
+  @UI: { selectionField: [ { position: 120 } ]}
+  Spart;
+  @UI: { lineItem:       [ { position: 05 } ]}
+  Branch;
+  @UI: { selectionField: [ { position: 140 } ]}
+  Txjcd;
+  @UI: { selectionField: [ { position: 150 } ]}
+  Parid;
+  @UI.hidden: true
+  OrgVendasText;
+
+}

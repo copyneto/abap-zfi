@@ -1,0 +1,33 @@
+managed;
+
+define behavior for ZI_FI_PARAM_RM alias _ParamRM
+implementation in class zclfi_param_rm unique
+persistent table ztfi_param_rm
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) Bukrs, Bupla, Gsber;
+
+  validation verificarMatriz on save { create; update;}
+  validation authorityCreate on save { create; }
+
+  mapping for ztfi_param_rm
+  {
+
+    Bukrs = bukrs;
+    Gsber = gsber;
+    Bupla = bupla;
+    Zmatriz = zmatriz;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

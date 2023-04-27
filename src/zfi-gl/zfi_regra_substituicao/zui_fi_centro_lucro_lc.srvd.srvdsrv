@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition ZC_FI_CENTRO_LUCRO_LC'
+define service ZUI_FI_CENTRO_LUCRO_LC {
+  expose ZC_FI_CENTRO_LUCRO_LC;
+}

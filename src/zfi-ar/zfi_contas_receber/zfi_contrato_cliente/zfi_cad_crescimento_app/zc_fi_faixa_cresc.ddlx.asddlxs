@@ -1,0 +1,125 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Faixa e Bônus',
+    typeNamePlural: 'Faixa e Bônus',
+    title: {
+      type: #STANDARD,
+      label: 'Contrato',
+      value: 'Contrato'
+    }
+  }}
+annotate view ZC_FI_FAIXA_CRESC with
+{
+  @UI.facet: [
+
+                { id:      'Facet',
+                   purpose: #STANDARD,
+                   type:    #COLLECTION,
+                   label:   'Principal',
+                   position: 10 },
+                   
+                { id:           'faixacresc',
+                   purpose:       #STANDARD,
+                   parentId:        'Facet',
+                   type:          #FIELDGROUP_REFERENCE,
+                   label:         'Faixa de Crescimento',
+                   targetQualifier: 'faixacresc',
+                   position:      10 },
+                   
+                 { id:           'mont_faixacresc',
+                   purpose:       #STANDARD,
+                   parentId:        'Facet',
+                   type:          #FIELDGROUP_REFERENCE,
+                   label:         'Montante Faixa de Crescimento',
+                   targetQualifier: 'mont_faixacresc',
+                   position:      20 },
+                   
+                 { id:           'bonuscresc',
+                   purpose:       #STANDARD,
+                   parentId:        'Facet',
+                   type:          #FIELDGROUP_REFERENCE,
+                   label:         'Bônus de Crescimento',
+                   targetQualifier: 'bonuscresc',
+                   position:      30 },
+                   
+                 { id:           'mont_bonuscresc',
+                   purpose:       #STANDARD,
+                   parentId:        'Facet',
+                   type:          #FIELDGROUP_REFERENCE,
+                   label:         'Montante Bonus de Crescimento',
+                   targetQualifier: 'mont_bonuscresc',
+                   position:      40 },
+
+                 { id:             'Modificar',
+                   purpose:        #STANDARD,
+                   label:          'Dados Modificação',
+                   parentId:       'Facet',
+                   type:           #FIELDGROUP_REFERENCE,
+                   targetQualifier: 'Modificar',
+                   position:       50 } ]
+
+
+  @UI.hidden: true
+  DocUuidH;
+  @UI.hidden: true
+  DocUuidFaixa;
+  @UI.hidden: true
+  Contrato;
+  @UI.hidden: true
+  Aditivo;
+  @UI.hidden: true
+  Moeda;
+  @UI: { lineItem:    [ { position: 30, label: 'Código Faixa de Crescimento' } ],
+     identification:  [ { position: 30, label: 'Código Faixa de Crescimento' } ] }
+  @UI.fieldGroup:     [ { position: 30, qualifier: 'faixacresc' } ]
+  CodFaixa;
+  @UI: { lineItem:    [ { position: 40, label: '% Faixa de Crescimento Início' } ],
+     identification:  [ { position: 40, label: '% Faixa de Crescimento Início' } ] }
+  @UI.fieldGroup:     [ { position: 40, qualifier: 'faixacresc' } ]
+  VlrFaixaIni;
+  @UI: { lineItem:    [ { position: 50, label: '% Faixa de Crescimento Início' } ],
+     identification:  [ { position: 50, label: '% Faixa de Crescimento Início' } ] }
+  @UI.fieldGroup:     [ { position: 50, qualifier: 'faixacresc' } ]
+  VlrFaixaFim;
+  @UI: { lineItem:    [ { position: 60, label: 'Código Montante Faixa de Crescimento' } ],
+     identification:  [ { position: 60, label: 'Código Montante Faixa de Crescimento' } ] }
+  @UI.fieldGroup:     [ { position: 60, qualifier: 'mont_faixacresc' } ]
+  CodMontante;
+  @UI: { lineItem:    [ { position: 70, label: 'Montante Faixa de Crescimento Início' } ],
+     identification:  [ { position: 70, label: 'Montante Faixa de Crescimento Início' } ] }
+  @UI.fieldGroup:     [ { position: 70, qualifier: 'mont_faixacresc' } ]
+  VlrMontIni;
+  @UI: { lineItem:    [ { position: 80, label: 'Montante Faixa de Crescimento Fim ' } ],
+     identification:  [ { position: 80, label: 'Montante Faixa de Crescimento Fim ' } ] }
+  @UI.fieldGroup:     [ { position: 80, qualifier: 'mont_faixacresc' } ]
+  VlrMontFim;
+  @UI: { lineItem:    [ { position: 90, label: '% Bonus de Crescimento' } ],
+     identification:  [ { position: 90, label: '% Bonus de Crescimento' } ] }
+  @UI.fieldGroup:     [ { position: 90, qualifier: 'bonuscresc' } ]
+  VlrBonusIni;
+  @UI: { lineItem:    [ { position: 100, label: 'Montante Bonus de Crescimento' } ],
+     identification:  [ { position: 100, label: 'Montante Bonus de Crescimento' } ] }
+  @UI.fieldGroup:     [ { position: 100, qualifier: 'mont_bonuscresc' } ]
+  VlrMontbonusIni;
+ 
+  @UI: { identification:  [ { position: 150 } ]}
+  @UI.fieldGroup:      [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI: { identification:  [ { position: 160 } ]}
+  @UI.fieldGroup:      [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI: { identification:  [ { position: 170 } ]}
+  @UI.fieldGroup:      [ { position: 30, qualifier: 'Modificar' } ]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 180 } ]}
+  @UI.fieldGroup:      [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 190 } ]}
+  @UI.fieldGroup:      [ { position: 50, qualifier: 'Modificar' } ]
+  LocalLastChangedAt;
+
+  /* Associations */
+  //    _Sistema;;
+
+}
