@@ -1276,6 +1276,7 @@ CLASS ZCLFI_GERAR_BOLETO IMPLEMENTATION.
 
       ENDIF.
 
+      CLEAR: lt_otf.
       INSERT LINES OF ls_job_output_info-otfdata[] INTO TABLE lt_otf[].
 
 * ----------------------------------------------------------------------
@@ -1322,6 +1323,8 @@ CLASS ZCLFI_GERAR_BOLETO IMPLEMENTATION.
     DATA lv_pdf_filesize       TYPE i.
 
     gt_otf = it_otf[].
+
+    CLEAR: gv_pdf_file.
 
     CALL FUNCTION 'CONVERT_OTF'
       EXPORTING
