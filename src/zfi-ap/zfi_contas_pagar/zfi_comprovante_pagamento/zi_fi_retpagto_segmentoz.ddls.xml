@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_RETPAGTO_SEGMENTOZ</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Retorno de pagto. Segmento Z</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

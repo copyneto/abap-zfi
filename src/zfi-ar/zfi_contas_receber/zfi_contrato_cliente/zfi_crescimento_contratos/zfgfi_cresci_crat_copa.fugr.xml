@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_CRESCI_CRAT_COPA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Crescimento Contrato - CO-PA</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_KEY</PARAMETER>
@@ -29,7 +28,6 @@
       <RSFDO>
        <PARAMETER>IS_KEY</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Update COPA - Crescimento Contrato</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>

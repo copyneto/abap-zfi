@@ -5,7 +5,7 @@
    <PDTS>
     <SHORT_TEXT>ZFI_REENVIO</SHORT_TEXT>
     <PLVAR>01</PLVAR>
-    <WI_TEXT>Decidir entre as alternativas propostas</WI_TEXT>
+    <WI_TEXT>Decide between the alternatives available</WI_TEXT>
     <METHOD>
      <OTYPE>TS</OTYPE>
      <OBJID>90000073</OBJID>
@@ -20,24 +20,24 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>Selecione uma das alternativas de decisão listadas. Com isto, você</TLINE>
+      <TLINE>Select one of the available decision options. This completes the</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>encerra o processamento desta etapa.</TLINE>
+      <TLINE>processing of this step.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000003</TABSEQNR>
       <TFORMAT>*</TFORMAT>
@@ -45,67 +45,67 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000004</TABSEQNR>
-      <TLINE>Antes da sua decisão, você pode exibir os anexos e objetos que foram</TLINE>
+      <TLINE>Before you make a decision, you can display the attachments and objects</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000005</TABSEQNR>
-      <TLINE>inseridos na decisão do usuário. Você também pode inserir anexos</TLINE>
+      <TLINE>which have been attached to the user decision. You can also add your own</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000006</TABSEQNR>
-      <TLINE>próprios.</TLINE>
+      <TLINE>attachments.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000007</TABSEQNR>
-      <TLINE>Se você selecionar &lt;H&gt;Cancelar&lt;/&gt;, a decisão do usuário permanece na sua</TLINE>
+      <TLINE>If you choose &lt;H&gt;Cancel&lt;/&gt;, the user decision remains in your inbox for</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000008</TABSEQNR>
-      <TLINE>caixa de entrada para ser processada novamente.</TLINE>
+      <TLINE>processing.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0121</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>O usuário &amp;_Workitem.ExecutedByUser.Name&amp; executou a decisão do usuário.</TLINE>
+      <TLINE>User &amp;_Workitem.ExecutedByUser.Name&amp; made the user decision.</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0122</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>O prazo determinado na definição de workflow para a decisão expirou.</TLINE>
+      <TLINE>The latest end set in the workflow definition for the decision has</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0122</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
       <TLINE>passed.</TLINE>
@@ -113,36 +113,36 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0123</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>A data/hora determinada na definição de workflow para o fim desejado da</TLINE>
+      <TLINE>The deadline set in the workflow definition for the requested end for</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0123</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>decisão foi excedida.</TLINE>
+      <TLINE>the decision has been missed.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0124</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>A data/hora definida na definição de workflow para o último início da</TLINE>
+      <TLINE>The deadline set in the workflow definition for the latest start for the</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000073</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0124</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>determinação de decisão foi excedida.</TLINE>
+      <TLINE>decision has been missed.</TLINE>
      </HRS1002>
     </DESCRIPTIONS>
    </PDTS>

@@ -10,7 +10,6 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMFI_BASE_DE_CALCULO</FUNCNAME>
-     <SHORT_TEXT>Base de Calculo</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_CONTRATO</PARAMETER>
@@ -64,47 +63,38 @@
       <RSFDO>
        <PARAMETER>IV_CONTRATO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>N° Contrato</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ADITIVO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Aditivo Contrato Cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BELNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GJAHR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUZEI</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº linha de lançamento no documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_AJUSTE_ANUAL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Ajuste Anual</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_OBS_AJUSTE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Observação do Ajuste</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

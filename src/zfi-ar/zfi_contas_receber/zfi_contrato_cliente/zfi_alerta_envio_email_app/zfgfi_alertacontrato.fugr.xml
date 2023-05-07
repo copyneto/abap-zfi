@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_ENVIO_EMAILAPP</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Função para envio de email</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_ENVIO</PARAMETER>
@@ -32,17 +31,14 @@
       <RSFDO>
        <PARAMETER>IT_ENVIO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>RFC envio de email APP</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>RFC envio de email APP</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

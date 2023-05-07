@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_VH_NF_IMPRESSA</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>NF Impressa</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

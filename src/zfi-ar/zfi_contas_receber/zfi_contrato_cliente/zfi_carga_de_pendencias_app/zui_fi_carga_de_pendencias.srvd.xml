@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_FI_CARGA_DE_PENDENCIAS</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Serv Definition para Carga de Pendencias</DESCRIPTION>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_fi_carga_de_pendencias/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

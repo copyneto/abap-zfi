@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_GRUPO_TESOURARIA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Atualiza Grupo de Tesouraria</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_DOC_FDGRV</PARAMETER>

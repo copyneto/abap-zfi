@@ -5,7 +5,8 @@
    <SRVD>
     <NAME>ZUI_FI_CADASTRO_DE_APROVADORES</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <LANGUAGE>PT</LANGUAGE>
+    <DESCRIPTION>Configurar Níveis, Aprovação e Usuários</DESCRIPTION>
+    <LANGUAGE>EN</LANGUAGE>
     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_fi_cadastro_de_aprovadores/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

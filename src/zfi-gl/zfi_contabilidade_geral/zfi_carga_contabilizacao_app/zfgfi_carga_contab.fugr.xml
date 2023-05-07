@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_CARGA_CONTAB_LANCAR</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Lançar documentos - Carga Contabilização</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOC_UUID_H</PARAMETER>
@@ -28,12 +27,10 @@
       <RSFDO>
        <PARAMETER>IV_DOC_UUID_H</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

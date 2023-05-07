@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>Consumption da ZI_FI_CONT_REVERS_LOG</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zc_fi_cont_revers_log/source/main</HREF>

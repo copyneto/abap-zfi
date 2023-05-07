@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_PGTO_BCO_EMPRESA</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Odata V2 Serv. pgto bco empresa</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_PGTO_BCO_EMPRESA</HREF>

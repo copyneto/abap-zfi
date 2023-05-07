@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>Behavior for ZC_FI_VENC_CLI_F01</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zc_fi_venc_cli_f01/source/main</HREF>

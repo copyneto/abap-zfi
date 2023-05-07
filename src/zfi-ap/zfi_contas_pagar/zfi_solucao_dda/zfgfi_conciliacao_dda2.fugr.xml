@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_CONCILIACAO_MANUAL_DDA_2</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Conciliação manual DDA</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_CONCILIACAO</PARAMETER>
@@ -47,7 +46,6 @@
       <RSFDO>
        <PARAMETER>IV_XBLNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº documento de referência</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_FISCALYEAR</PARAMETER>
@@ -60,7 +58,6 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

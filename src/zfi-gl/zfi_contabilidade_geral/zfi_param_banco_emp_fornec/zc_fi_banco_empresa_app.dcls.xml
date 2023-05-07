@@ -4,8 +4,7 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZC_FI_BANCO_EMPRESA_APP</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
-    <DDTEXT>Autorização</DDTEXT>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
    </DCLS>
   </asx:values>
  </asx:abap>

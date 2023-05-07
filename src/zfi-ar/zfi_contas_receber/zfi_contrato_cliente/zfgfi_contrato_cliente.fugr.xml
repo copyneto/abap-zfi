@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_CONTAB_CRESCIMENTO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Contabilizar Crescimento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_KEY</PARAMETER>
@@ -29,19 +28,16 @@
       <RSFDO>
        <PARAMETER>IS_KEY</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave de contabilização de contrato</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_CONTROLE_ANEXO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Rotina para anexos</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_UUID</PARAMETER>
@@ -64,23 +60,19 @@
       <RSFDO>
        <PARAMETER>IV_UUID</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ANEXO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo do Anexo</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_CRESCIMENTO_CICLO</FUNCNAME>
-     <SHORT_TEXT>Ciclo de crescimento família</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_CONTRATO</PARAMETER>
@@ -144,7 +136,6 @@
     <item>
      <FUNCNAME>ZFMFI_DESATIVAR_CONTRATO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Desativar o contrato</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOC_UUID_H</PARAMETER>
@@ -155,14 +146,12 @@
       <RSFDO>
        <PARAMETER>IV_DOC_UUID_H</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_REPLICAR_APROV</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Replicar cadastro aprovadores</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_APROV</PARAMETER>
@@ -187,19 +176,16 @@
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_RETOMAR_APROVACAO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Retormar aprovação</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_OBSERVACAO</PARAMETER>
@@ -228,17 +214,14 @@
       <RSFDO>
        <PARAMETER>IV_CONTRATO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>N° Contrato</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ADITIVO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Aditivo Contrato Cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_VH_REVERSAO_PDC</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Tipo de reversão</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

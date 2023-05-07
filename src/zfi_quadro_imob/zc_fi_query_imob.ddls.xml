@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_QUERY_IMOB</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Relatório imobilizados</DDTEXT>
     <SOURCE_TYPE>Q</SOURCE_TYPE>
    </DDLS>
   </asx:values>

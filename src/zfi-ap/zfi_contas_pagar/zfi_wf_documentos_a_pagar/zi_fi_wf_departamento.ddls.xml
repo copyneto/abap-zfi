@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_WF_DEPARTAMENTO</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>WF - Responsabilidades -&gt; Departamento</DDTEXT>
     <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>

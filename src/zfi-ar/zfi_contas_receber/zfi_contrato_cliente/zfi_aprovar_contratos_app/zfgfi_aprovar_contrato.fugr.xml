@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_APROVAR_CONTRATO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Remoto - Aprovar Contrato.</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_OBSERVACAO</PARAMETER>
@@ -40,27 +39,22 @@
       <RSFDO>
        <PARAMETER>IV_OBSERVACAO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Data Início validade</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOC_UUID_H</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_CONTRATO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>N° Contrato</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ADITIVO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Aditivo Contrato Cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

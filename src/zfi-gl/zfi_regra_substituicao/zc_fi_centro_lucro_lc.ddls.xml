@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_CENTRO_LUCRO_LC</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Relação de centro de lucros para lançamentos contabeis</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

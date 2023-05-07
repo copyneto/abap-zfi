@@ -4,8 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_ERROR_DDA</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Log de erros DDA</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

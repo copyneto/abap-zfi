@@ -5,7 +5,7 @@
    <PDTS>
     <SHORT_TEXT>ZFI_DECISION</SHORT_TEXT>
     <PLVAR>01</PLVAR>
-    <WI_TEXT>Decidir entre as alternativas propostas</WI_TEXT>
+    <WI_TEXT>Decide between the alternatives available</WI_TEXT>
     <METHOD>
      <OTYPE>TS</OTYPE>
      <OBJID>90000068</OBJID>
@@ -20,97 +20,92 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>MAIL_HTML</TLINE>
-      <TFORMAT>/:</TFORMAT>
+      <TLINE>Select one of the available decision options. This completes the</TLINE>
+      <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>&lt;a href=&quot;&amp;EV_URL&amp;&amp;EV_URL2&amp;&amp;EV_URL3&amp;&amp;EV_URL4&amp;&quot;</TLINE>
-      <TFORMAT>/*</TFORMAT>
+      <TLINE>processing of this step.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000003</TABSEQNR>
-      <TLINE>Clique aqui para acessar o documento</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000004</TABSEQNR>
-      <TLINE>&lt;/a&gt;</TLINE>
-      <TFORMAT>/*</TFORMAT>
+      <TLINE>Before you make a decision, you can display the attachments and objects</TLINE>
+      <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000005</TABSEQNR>
-      <TLINE>Dados do Cabeçalho</TLINE>
-      <TFORMAT>*</TFORMAT>
+      <TLINE>which have been attached to the user decision. You can also add your own</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000006</TABSEQNR>
-      <TLINE>Empresa &amp;ES_BKPF.BUKRS&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
+      <TLINE>attachments.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000007</TABSEQNR>
-      <TLINE>Nº Documento &amp;ES_BKPF.BELNR&amp;</TLINE>
+      <TLINE>If you choose &lt;H&gt;Cancel&lt;/&gt;, the user decision remains in your inbox for</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000008</TABSEQNR>
-      <TLINE>Exercício &amp;ES_BKPF.GJAHR&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
+      <TLINE>processing.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0121</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>O usuário &amp;_Workitem.ExecutedByUser.Name&amp; executou a decisão do usuário.</TLINE>
+      <TLINE>User &amp;_Workitem.ExecutedByUser.Name&amp; made the user decision.</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0122</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>O prazo determinado na definição de workflow para a decisão expirou.</TLINE>
+      <TLINE>The latest end set in the workflow definition for the decision has</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0122</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
       <TLINE>passed.</TLINE>
@@ -118,143 +113,36 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0123</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>A data/hora determinada na definição de workflow para o fim desejado da</TLINE>
+      <TLINE>The deadline set in the workflow definition for the requested end for</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0123</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>decisão foi excedida.</TLINE>
+      <TLINE>the decision has been missed.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0124</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>A data/hora definida na definição de workflow para o último início da</TLINE>
+      <TLINE>The deadline set in the workflow definition for the latest start for the</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
+      <LANGU>E</LANGU>
       <SUBTY>0124</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>determinação de decisão foi excedida.</TLINE>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000009</TABSEQNR>
-      <TLINE>Tipo de Documento &amp;ES_BKPF.BLART&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000010</TABSEQNR>
-      <TLINE>Referência &amp;ES_BKPF.XBLNR&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000011</TABSEQNR>
-      <TLINE>Data de Lançamento &amp;ES_BKPF.BUDAT&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000012</TABSEQNR>
-      <TLINE>Criado Por &amp;ES_BKPF.USNAM&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000013</TABSEQNR>
-      <TLINE>Moeda &amp;ES_BKPF.WAERS&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000014</TABSEQNR>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000015</TABSEQNR>
-      <TLINE>Dados do Item</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000016</TABSEQNR>
-      <TLINE>Item &amp;ES_BSEG.BUZEI&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000017</TABSEQNR>
-      <TLINE>Montante em Moeda Documento &amp;ES_BSEG.WRBTR&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000018</TABSEQNR>
-      <TLINE>Vencimento em &amp;ES_BSEG.NETDT&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000019</TABSEQNR>
-      <TLINE>FrmPgto &amp;ES_BSEG.ZLSCH&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0120</SUBTY>
-      <TABSEQNR>000020</TABSEQNR>
-      <TLINE>Atribuição &amp;ES_BSEG.ZUONR&amp;</TLINE>
-      <TFORMAT>*</TFORMAT>
+      <TLINE>decision has been missed.</TLINE>
      </HRS1002>
     </DESCRIPTIONS>
    </PDTS>

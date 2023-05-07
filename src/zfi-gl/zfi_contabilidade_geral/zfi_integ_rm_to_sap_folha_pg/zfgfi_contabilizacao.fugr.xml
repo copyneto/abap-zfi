@@ -48,17 +48,14 @@
       <RSFDO>
        <PARAMETER>IS_DOCUMENTHEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Linha de cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ACCOUNTGL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de tabela para estrutura BAPIACGL09</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_CURRENCYAMOUNT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de tabela para estrutura BAPIACCR09</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ACCOUNTRECEIVABLE</PARAMETER>
@@ -71,7 +68,6 @@
       <RSFDO>
        <PARAMETER>T_MENSAGENS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -90,7 +86,6 @@
       <RSFDO>
        <PARAMETER>IV_SIMULAR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Simular?</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

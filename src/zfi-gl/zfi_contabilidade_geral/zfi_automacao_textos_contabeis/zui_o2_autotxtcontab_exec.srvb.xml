@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_AUTOTXTCONTAB_EXEC</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service bind Autom. textos contábeis exec. manual</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_AUTOTXTCONTAB_EXEC</HREF>

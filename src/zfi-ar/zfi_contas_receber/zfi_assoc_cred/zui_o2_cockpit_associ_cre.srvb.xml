@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_COCKPIT_ASSOCI_CRE</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service Bind Associação Créditos</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_COCKPIT_ASSOCI_CRE</HREF>

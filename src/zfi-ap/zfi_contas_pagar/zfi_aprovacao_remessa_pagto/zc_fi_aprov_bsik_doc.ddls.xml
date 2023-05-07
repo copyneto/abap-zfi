@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_APROV_BSIK_DOC</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>BSIK Docs</DDTEXT>
     <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>

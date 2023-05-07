@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>Difer Rec e Deduções (Critério de Seleção)</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zc_fi_defrece_cri/source/main</HREF>

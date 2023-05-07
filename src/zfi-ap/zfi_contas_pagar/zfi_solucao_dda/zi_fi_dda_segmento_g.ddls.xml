@@ -4,8 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_DDA_SEGMENTO_G</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Segmento &quot;G&quot; de arquivo DDA</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

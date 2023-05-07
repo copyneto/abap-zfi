@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_FI_CONTA_DDA</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service bind para ZUI_FI_CONTA_DDA</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_FI_CONTA_DDA</HREF>

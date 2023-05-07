@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMSD_HISTO_PGTO_CLIENTE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Carga Histórico de pagamentos do cliente</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_S_ZKNB4</PARAMETER>
@@ -28,12 +27,10 @@
       <RSFDO>
        <PARAMETER>IV_S_ZKNB4</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Histórico de pagamentos do cliente - Histórico do ECC</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_S_RETUNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>Movimentos Material Ledger</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zi_fi_mov_ledger/source/main</HREF>

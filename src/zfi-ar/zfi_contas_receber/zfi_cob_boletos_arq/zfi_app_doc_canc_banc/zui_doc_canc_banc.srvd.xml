@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_DOC_CANC_BANC</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Service def. - Canc. Banc. Faturas de Devoluções</DESCRIPTION>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_doc_canc_banc/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

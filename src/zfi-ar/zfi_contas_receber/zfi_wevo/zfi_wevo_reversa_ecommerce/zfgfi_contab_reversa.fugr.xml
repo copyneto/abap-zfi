@@ -10,7 +10,6 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMFI_CONTAB_REVERSA</FUNCNAME>
-     <SHORT_TEXT>Função para e-commerce</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_CENARIO</PARAMETER>
@@ -219,218 +218,175 @@
       <RSFDO>
        <PARAMETER>IV_CENARIO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Cenário - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BSTKD</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Referência do cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUPLA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Local de negócios</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ZLSCH</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Forma de Pagamento  - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TIPO_CENARIO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Tipo Cenário - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ORDEM</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Ordem - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_PAGAMENTO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Pagamento - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESSARCIMENTO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Ressarcimento - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_MERCADORIA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Mercadoria - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ORDEM_VENDA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento de vendas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_LIFNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº conta do fornecedor</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_VOUCHER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Voucher - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ZVOU</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Montante ou porcentagem da condição</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_VLR_RESTITUIR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Montante ou porcentagem da condição</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ID_PEDIDO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>ID Pedido VTEX - Contab Reversa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DIAS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Dias</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ADM</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Número Administradora</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NSU</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>NSU / TID</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DT_VENDA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Data da Venda</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ENCERRAR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Encerrar recursividade</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_LCTO_PENDENTE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Executar Rotina de Lcto Incomp</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TX_PERC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Percentual Estorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ID_SALES_FORCE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>ID do SalesForce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_1</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 1</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_2</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 2</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_3</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 3</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_4</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 4</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_5</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 5</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_6</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 6</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_7</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 7</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_8</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 8</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_9</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 9</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_10</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 10</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo do sistema ABAP: código de retorno de instruções ABAP</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_MSG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Texto de mensagem</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_BELNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_GJAHR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_BELNR_F</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_GJAHR_F</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_BUKRS_F</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_CONTAB_REVERSA_PEND</FUNCNAME>
-     <SHORT_TEXT>Função para e-commerce</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_CENARIO</PARAMETER>
@@ -627,82 +583,66 @@
       <RSFDO>
        <PARAMETER>IV_CENARIO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Cenário - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BSTKD</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº pedido do cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUPLA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Local de negócios</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ZLSCH</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Lista de formas de pagamentos a considerar</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TIPO_CENARIO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Tipo Cenário - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ORDEM</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Ordem - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_PAGAMENTO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Pagamento - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESSARCIMENTO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Ressarcimento - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_MERCADORIA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código Mercadoria - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ORDEM_VENDA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento de vendas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_LIFNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº conta do fornecedor</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_VOUCHER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Voucher - Cont Reversa - e-Commerce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ZVOU</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Montante ou porcentagem da condição</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_VLR_RESTITUIR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Montante ou porcentagem da condição</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ID_PEDIDO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>ID Pedido VTEX - Contab Reversa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DIAS</PARAMETER>
@@ -711,112 +651,90 @@
       <RSFDO>
        <PARAMETER>IV_ADM</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Número Administradora</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NSU</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>NSU / TID</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DT_VENDA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Data da Venda</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ENCERRAR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Encerrar recursividade</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_LCTO_PENDENTE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Executar Rotina de Lcto Incomp</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TX_PERC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Percentual Estorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ID_SALES_FORCE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>ID do SalesForce</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_1</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 1</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_2</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 2</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_3</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 3</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_4</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 4</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_5</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 5</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_6</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 6</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_7</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 7</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_8</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 8</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_9</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 9</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESERVADO_10</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo reservado 10</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo do sistema ABAP: código de retorno de instruções ABAP</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_MSG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Texto de mensagem</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_BELNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_GJAHR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

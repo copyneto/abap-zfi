@@ -10,7 +10,6 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMFI_WF_DOCPAGAR</FUNCNAME>
-     <SHORT_TEXT>Schnittstellenbeschreibung zum Event 00001030</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_BKDF</PARAMETER>
@@ -76,73 +75,59 @@
       <RSFDO>
        <PARAMETER>I_BKDF</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Dauerbuchungsdaten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_UF05A</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Hilfsfelder für temporäre Belege</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_XVBUP</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Kennzeichen: Verbuchung in update task</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_AUSZ1</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Auszugleichende Positionen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_AUSZ2</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Ausgleichsaktionen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_AUSZ3</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Ausgleichsaktionen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BKP1</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Zusatzinformationen pro Belegkopf</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BKPF</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Belegköpfe</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSEC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>CPD-Daten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSED</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Wechseldaten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSEG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Belegzeilen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSET</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Steuerdaten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSEU</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Verbuchungsinformation pro Belegzeile</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_WF_DOCPAGAR_APP</FUNCNAME>
-     <SHORT_TEXT>NOTRANSL: Beschreibung der Prozeß-Schnittstelle 00005010</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_CHGTYPE</PARAMETER>
@@ -256,17 +241,14 @@
       <RSFDO>
        <PARAMETER>I_CHGTYPE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>DE-EN-LANG-SWITCH-NO-TRANSLATION</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_ORIGIN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Data Source (Program Form Routine)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_TABNAME</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Table Name</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_STRUCTURE</PARAMETER>
@@ -275,57 +257,46 @@
       <RSFDO>
        <PARAMETER>I_WHERE_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Company Code</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_KUNNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Customer Number</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_LIFNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Account Number of Vendor</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_UMSKS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Special G/L Transaction Type</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_UMSKZ</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Special G/L Indicator</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_AUGDT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Clearing Date</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_AUGBL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Document Number of the Clearing Document</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_ZUONR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Assignment Number</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_GJAHR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Fiscal Year</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_BELNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Accounting Document Number</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_WHERE_BUZEI</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Line Item Number Within the Accounting Document</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_STRUCTURE</PARAMETER>
@@ -340,7 +311,6 @@
     <item>
      <FUNCNAME>ZFMFI_WF_DOCPAGAR_APP_UPD</FUNCNAME>
      <UPDATE_TASK>1</UPDATE_TASK>
-     <SHORT_TEXT>WF via Update Task</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_BELNR</PARAMETER>
@@ -363,22 +333,18 @@
       <RSFDO>
        <PARAMETER>IV_BELNR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GJAHR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUZEI</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº linha de lançamento no documento contábil</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

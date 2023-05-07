@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_CONT_REVERS_LOG</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Serv Bind for ZC_FI_CONT_REVERS_LOG</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_CONT_REVERS_LOG</HREF>

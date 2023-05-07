@@ -4,8 +4,7 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZC_FI_QRY_CPC2L</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
-    <DDTEXT>CDS de Autorização</DDTEXT>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
    </DCLS>
   </asx:values>
  </asx:abap>

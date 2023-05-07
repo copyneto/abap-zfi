@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_RETPAGTO_SEGMENTOZ</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Serv. bind. para ZUI_FI_RETPAGTO_SEGMENTOZ</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_RETPAGTO_SEGMENTOZ</HREF>

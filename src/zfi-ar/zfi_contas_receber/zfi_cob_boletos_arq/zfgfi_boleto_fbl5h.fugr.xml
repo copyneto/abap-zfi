@@ -12,7 +12,6 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMFI_BOLETO_FBL5H</FUNCNAME>
-     <SHORT_TEXT>Impressão boleto FBL5H</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_KEY</PARAMETER>
@@ -24,7 +23,6 @@
       <RSFDO>
        <PARAMETER>IS_KEY</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Segmento do documento contabilidade financeira</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_ALERTA_VIGENC_CONTR</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>OData Alerta de Vigência Contratos APP</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_ALERTA_VIGENC_CONTR</HREF>

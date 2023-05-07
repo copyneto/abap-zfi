@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_RETORNO_APROV</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Historico retorno de aprovação</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_EXEC_ACC_DOC_POST</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Lançamento BAPI_ACC_DOCUMENT_POST</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_DOCHEADER</PARAMETER>
@@ -65,59 +64,48 @@
       <RSFDO>
        <PARAMETER>IS_DOCHEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Linha de cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ACCOUNTGL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de tabela para estrutura BAPIACGL09</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ACCOUNTRECEIVABLE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de tabela para estrutura BAPIACAR09</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ACCOUNTPAYABLE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de tabela para estrutura BAPIACAP09</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_CURRENCYAMOUNT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de tabela para estrutura BAPIACCR09</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_EXTENSION2</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Table Type for Ref. Structure of BAPI Enhancement Parameters</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_TYPE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Operação de referência</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_KEY</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave referência</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SYS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Sistema lógico do documento de origem</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_EXEC_COMPENSA_UPD_DOC</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Executa ZFMFI_BATCH_COMPENSAR e FI_DOCUMENT_CHANGE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_COMPENSA_UPD_DOC</PARAMETER>
@@ -138,17 +126,14 @@
       <RSFDO>
        <PARAMETER>IS_COMPENSA_UPD_DOC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Linha de cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_COMPENSA_UPD_DOC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Parâmetros EXEC_COMPENSA_UPD_DOC</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

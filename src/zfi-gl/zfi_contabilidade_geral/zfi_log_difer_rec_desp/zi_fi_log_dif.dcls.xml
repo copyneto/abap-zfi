@@ -4,8 +4,7 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_FI_LOG_DIF</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
-    <DDTEXT>CDS de Autorização</DDTEXT>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
    </DCLS>
   </asx:values>
  </asx:abap>

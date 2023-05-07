@@ -4,8 +4,7 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_FI_PROVISAO_CLI</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
-    <DDTEXT>CDS de Autorização</DDTEXT>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
    </DCLS>
   </asx:values>
  </asx:abap>

@@ -4,7 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_CADASTRO_DE_APROVADORES</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>Configurar Níveis Aprovação e Usuário</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>
