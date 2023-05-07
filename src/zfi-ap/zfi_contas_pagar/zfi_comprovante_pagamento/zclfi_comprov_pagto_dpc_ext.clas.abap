@@ -16,15 +16,22 @@ CLASS zclfi_comprov_pagto_dpc_ext DEFINITION
         REDEFINITION .
     METHODS pdffileset_get_entity
         REDEFINITION .
-  PRIVATE SECTION.
+private section.
+
+  constants GC_FI type ZTCA_PARAM_VAL-MODULO value 'FI' ##NO_TEXT.
+  constants GC_WF type ZTCA_PARAM_VAL-CHAVE1 value 'WF' ##NO_TEXT.
+  constants GC_URL type ZTCA_PARAM_VAL-CHAVE2 value 'URL' ##NO_TEXT.
 
     "! Prepara o arquivo PDF do comprovante de pagto para visualização/download
     "! @parameter iv_pdf_file       | PDF em formato XSTRING
     "! @parameter is_campos_chave   | Campos chave da tabela ZTFI_RETPAG_SEGZ
     "! @parameter co_stream         | Arquivo PDF a ser exportado pelo serviço
-    METHODS build_pdf IMPORTING !iv_pdf_file     TYPE xstring
-                                !is_campos_chave TYPE zsfi_comprov_pagto_chave
-                      CHANGING  !co_stream       TYPE REF TO data.
+  methods BUILD_PDF
+    importing
+      !IV_PDF_FILE type XSTRING
+      !IS_CAMPOS_CHAVE type ZSFI_COMPROV_PAGTO_CHAVE
+    changing
+      !CO_STREAM type ref to DATA .
 ENDCLASS.
 
 

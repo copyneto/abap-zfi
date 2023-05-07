@@ -824,6 +824,7 @@ FORM dme_brazil.
               j_1bdmexa-a07 = '09'.
               IF reguh-rzawe = 'R'.
                 j_1bdmexa-a08 = '018'.
+                PERFORM f_trata_city_a16 CHANGING j_1bdmexa-a16.
               ELSEIF reguh-rzawe = 'T'.
                 CLEAR: j_1bdmexa-a11,j_1bdmexa-a13.
                 j_1bdmexa-a08 = '018'.

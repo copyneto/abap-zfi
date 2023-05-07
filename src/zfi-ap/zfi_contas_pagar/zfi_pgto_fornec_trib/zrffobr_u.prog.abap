@@ -299,3 +299,27 @@ END-OF-SELECTION.
 *----------------------------------------------------------------------*
   INCLUDE rffori99.
   INCLUDE rfforiy9.                                  "Subroutines Brazil
+
+*&---------------------------------------------------------------------*
+*& Form f_trata_city_a16
+*&---------------------------------------------------------------------*
+*& text
+*&---------------------------------------------------------------------*
+*&      <-- J_1BDMEXA_A16
+*&---------------------------------------------------------------------*
+FORM f_trata_city_a16  CHANGING cg_a16.
+
+  DATA: lv_number(15) TYPE n,
+        lv_spaces(5)  TYPE c.
+
+  IF regup-xblnr CS '-'.
+
+    SPLIT regup-xblnr AT '-' INTO DATA(lv_part1) DATA(lv_part2).
+    lv_number = lv_part1.
+  ELSE.
+    lv_number = regup-xblnr.
+  ENDIF.
+
+  CONCATENATE lv_number lv_spaces INTO cg_a16.
+
+ENDFORM.

@@ -93,6 +93,66 @@
       <OTYPE>TS</OTYPE>
       <OBJID>90000068</OBJID>
       <LANGU>P</LANGU>
+      <SUBTY>0121</SUBTY>
+      <TABSEQNR>000001</TABSEQNR>
+      <TLINE>O usuário &amp;_Workitem.ExecutedByUser.Name&amp; executou a decisão do usuário.</TLINE>
+      <TFORMAT>*</TFORMAT>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000068</OBJID>
+      <LANGU>P</LANGU>
+      <SUBTY>0122</SUBTY>
+      <TABSEQNR>000001</TABSEQNR>
+      <TLINE>O prazo determinado na definição de workflow para a decisão expirou.</TLINE>
+      <TFORMAT>*</TFORMAT>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000068</OBJID>
+      <LANGU>P</LANGU>
+      <SUBTY>0122</SUBTY>
+      <TABSEQNR>000002</TABSEQNR>
+      <TLINE>passed.</TLINE>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000068</OBJID>
+      <LANGU>P</LANGU>
+      <SUBTY>0123</SUBTY>
+      <TABSEQNR>000001</TABSEQNR>
+      <TLINE>A data/hora determinada na definição de workflow para o fim desejado da</TLINE>
+      <TFORMAT>*</TFORMAT>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000068</OBJID>
+      <LANGU>P</LANGU>
+      <SUBTY>0123</SUBTY>
+      <TABSEQNR>000002</TABSEQNR>
+      <TLINE>decisão foi excedida.</TLINE>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000068</OBJID>
+      <LANGU>P</LANGU>
+      <SUBTY>0124</SUBTY>
+      <TABSEQNR>000001</TABSEQNR>
+      <TLINE>A data/hora definida na definição de workflow para o último início da</TLINE>
+      <TFORMAT>*</TFORMAT>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000068</OBJID>
+      <LANGU>P</LANGU>
+      <SUBTY>0124</SUBTY>
+      <TABSEQNR>000002</TABSEQNR>
+      <TLINE>determinação de decisão foi excedida.</TLINE>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000068</OBJID>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000009</TABSEQNR>
       <TLINE>Tipo de Documento &amp;ES_BKPF.BLART&amp;</TLINE>
@@ -195,66 +255,6 @@
       <TABSEQNR>000020</TABSEQNR>
       <TLINE>Atribuição &amp;ES_BSEG.ZUONR&amp;</TLINE>
       <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0121</SUBTY>
-      <TABSEQNR>000001</TABSEQNR>
-      <TLINE>O usuário &amp;_Workitem.ExecutedByUser.Name&amp; executou a decisão do usuário.</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0122</SUBTY>
-      <TABSEQNR>000001</TABSEQNR>
-      <TLINE>O prazo determinado na definição de workflow para a decisão expirou.</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0122</SUBTY>
-      <TABSEQNR>000002</TABSEQNR>
-      <TLINE>passed.</TLINE>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0123</SUBTY>
-      <TABSEQNR>000001</TABSEQNR>
-      <TLINE>A data/hora determinada na definição de workflow para o fim desejado da</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0123</SUBTY>
-      <TABSEQNR>000002</TABSEQNR>
-      <TLINE>decisão foi excedida.</TLINE>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0124</SUBTY>
-      <TABSEQNR>000001</TABSEQNR>
-      <TLINE>A data/hora definida na definição de workflow para o último início da</TLINE>
-      <TFORMAT>*</TFORMAT>
-     </HRS1002>
-     <HRS1002>
-      <OTYPE>TS</OTYPE>
-      <OBJID>90000068</OBJID>
-      <LANGU>P</LANGU>
-      <SUBTY>0124</SUBTY>
-      <TABSEQNR>000002</TABSEQNR>
-      <TLINE>determinação de decisão foi excedida.</TLINE>
      </HRS1002>
     </DESCRIPTIONS>
    </PDTS>

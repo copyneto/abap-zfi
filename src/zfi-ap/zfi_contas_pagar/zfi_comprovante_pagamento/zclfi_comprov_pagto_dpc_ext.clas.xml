@@ -11,6 +11,23 @@
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_FI</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Módulo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_URL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_WF</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>
