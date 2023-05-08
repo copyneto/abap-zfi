@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_PARAM_RM</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>CDS de projeção - Cadastro de Parâmetros RM</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

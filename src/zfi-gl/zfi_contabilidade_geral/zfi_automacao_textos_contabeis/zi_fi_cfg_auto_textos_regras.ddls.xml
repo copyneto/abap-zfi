@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_CFG_AUTO_TEXTOS_REGRAS</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Config. Automação textos contábeis</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

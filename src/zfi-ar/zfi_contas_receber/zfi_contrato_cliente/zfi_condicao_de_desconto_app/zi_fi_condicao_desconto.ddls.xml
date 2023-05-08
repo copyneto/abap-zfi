@@ -4,8 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_CONDICAO_DESCONTO</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>Codição de Deconto</DDTEXT>
+    <DDLANGUAGE>P</DDLANGUAGE>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

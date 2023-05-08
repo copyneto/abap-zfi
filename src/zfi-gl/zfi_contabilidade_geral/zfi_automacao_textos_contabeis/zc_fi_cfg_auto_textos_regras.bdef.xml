@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>Proj. Config. Regras Automação textos contábeis</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>EN</LANGUAGE>
+    <LANGUAGE>PT</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zc_fi_cfg_auto_textos_regras/source/main</HREF>

@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_SIMULAR_POPUP</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>CDS Abstrata - Pop-up simular</DDTEXT>
     <SOURCE_TYPE>A</SOURCE_TYPE>
    </DDLS>
   </asx:values>

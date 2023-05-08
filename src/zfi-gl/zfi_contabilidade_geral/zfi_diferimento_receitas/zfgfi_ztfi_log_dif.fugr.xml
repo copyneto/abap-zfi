@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_ZTFI_LOG_DIF</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Atualiza Log ZTFI_LOG_DIF</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_ZTFI_LOG_DIF</PARAMETER>
@@ -25,10 +26,12 @@
       <RSFDO>
        <PARAMETER>IT_ZTFI_LOG_DIF</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Log de Diferimento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ZTFI_LOG_DIF_MSG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tipo de tabela da tabela ZTFI_LOG_DIF_MSG</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_REVERSAO_PROVISAO_PDC</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Reversão da Provisão PDC</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_REVERSAO</PARAMETER>
@@ -39,6 +40,7 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>Buscar dados DDE</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>EN</LANGUAGE>
+    <LANGUAGE>PT</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zc_fi_venc_dde_busca/source/main</HREF>

@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_APROV_DOC_PGTO</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>CDS Custom - Aprovação de Contas a Pagar</DDTEXT>
     <SOURCE_TYPE>Q</SOURCE_TYPE>
    </DDLS>
   </asx:values>

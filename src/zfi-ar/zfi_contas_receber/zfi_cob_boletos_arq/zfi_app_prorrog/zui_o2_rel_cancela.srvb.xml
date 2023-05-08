@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_REL_CANCELA</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Serv. Odata V2</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_REL_CANCELA</HREF>

@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_CONCILIACAO_MANUAL_DDA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Conciliação manual DDA</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_CONCILIACAO</PARAMETER>
@@ -46,6 +47,7 @@
       <RSFDO>
        <PARAMETER>IV_XBLNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento de referência</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_FISCALYEAR</PARAMETER>
@@ -58,12 +60,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_DDA_ATRIB</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Realizar Atribuição manual - XBNLR</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_PROCESS_DDA</PARAMETER>
@@ -88,24 +92,29 @@
       <RSFDO>
        <PARAMETER>IS_PROCESS_DDA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela processamento DDA</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BELNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUZEI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº linha de lançamento no documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_DDA_REPROCESSA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Reprocessamento DDA</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_PROCESS</PARAMETER>
@@ -123,16 +132,19 @@
       <RSFDO>
        <PARAMETER>IT_PROCESS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela processamento DDA</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_DOC_CONTABIL</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Envio de remessa</SHORT_TEXT>
      <TABLES>
       <RSTBL>
        <PARAMETER>IT_SEGTO</PARAMETER>
@@ -147,10 +159,12 @@
       <RSFDO>
        <PARAMETER>IT_SEGTO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Segmento &quot;G&quot; de arquivo DDA</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_HEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Cabeçalho de arquivo DDA</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

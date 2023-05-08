@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_DOWNLOAD_FILE_FDTA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Efetua o download da FDTA</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_REGUT</PARAMETER>
@@ -21,6 +22,7 @@
       <RSFDO>
        <PARAMETER>IT_REGUT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>List of Payment Files/REGUT</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

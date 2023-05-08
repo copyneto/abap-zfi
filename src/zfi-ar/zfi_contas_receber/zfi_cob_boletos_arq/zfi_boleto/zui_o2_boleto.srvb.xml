@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_BOLETO</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service binding para o boleto</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_BOLETO</HREF>

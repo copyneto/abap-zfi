@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>CDS Consumo - Canc. banc. de faturas com base em devoluções</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>EN</LANGUAGE>
+    <LANGUAGE>PT</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zc_fi_doc_canc_banc/source/main</HREF>

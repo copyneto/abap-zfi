@@ -7,7 +7,7 @@
     <TYPE>BDEF/BDO</TYPE>
     <DESCRIPTION>Programa de Pagamento DOC</DESCRIPTION>
     <DESCRIPTION_TEXT_LIMIT>60</DESCRIPTION_TEXT_LIMIT>
-    <LANGUAGE>EN</LANGUAGE>
+    <LANGUAGE>PT</LANGUAGE>
     <LINKS>
      <item>
       <HREF>./zi_fi_prog_pag_docn/source/main</HREF>

@@ -4,7 +4,8 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZC_FI_CONTRATO_CLIENTE</DCLNAME>
-    <DCLLANGUAGE>E</DCLLANGUAGE>
+    <DCLLANGUAGE>P</DCLLANGUAGE>
+    <DDTEXT>CDS de Autorização</DDTEXT>
    </DCLS>
   </asx:values>
  </asx:abap>

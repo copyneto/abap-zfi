@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_FI_WF_DOC_PAGAR</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Serv. bind. ZUI_FI_WF_DOCUMENTOS_A_PAGAR</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_FI_WF_DOC_PAGAR</HREF>

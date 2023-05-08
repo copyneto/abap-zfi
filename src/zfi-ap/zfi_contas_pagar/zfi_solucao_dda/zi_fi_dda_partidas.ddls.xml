@@ -4,7 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_DDA_PARTIDAS</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Partidas em aberto para conciliação DDA</DDTEXT>
     <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>

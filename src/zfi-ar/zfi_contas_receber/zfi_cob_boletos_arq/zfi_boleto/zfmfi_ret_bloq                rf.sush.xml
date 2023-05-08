@@ -6,6 +6,7 @@
     <NAME>ZFMFI_RET_BLOQ</NAME>
     <TYPE>RF</TYPE>
     <DISPLAY_NAME>ZFMFI_RET_BLOQ</DISPLAY_NAME>
+    <STEXT>Retirar bloqueio</STEXT>
    </HEAD>
    <USOBX>
     <USOBX>
@@ -18,13 +19,13 @@
    <USOBX_EXT>
     <item>
      <OBJECT>S_RFC</OBJECT>
-     <TTEXT>Authorization Check for RFC Access</TTEXT>
+     <TTEXT>Verificação de autorização para acesso RFC</TTEXT>
      <OCLSS>AAAB</OCLSS>
      <OKFLAG>X</OKFLAG>
      <PS_POSID>BC-MID-RFC</PS_POSID>
-     <CI_TEXT>Check</CI_TEXT>
-     <CH_TEXT>Check</CH_TEXT>
-     <PR_TEXT>No</PR_TEXT>
+     <CI_TEXT>verificar</CI_TEXT>
+     <CH_TEXT>verificar</CH_TEXT>
+     <PR_TEXT>Não</PR_TEXT>
      <EXCEP>3</EXCEP>
      <EXCEP_TX>Okay</EXCEP_TX>
      <EXCEP_ICON>@08@</EXCEP_ICON>

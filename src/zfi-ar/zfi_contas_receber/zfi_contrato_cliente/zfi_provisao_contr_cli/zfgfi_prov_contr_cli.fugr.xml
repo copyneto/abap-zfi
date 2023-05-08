@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_ESTORNO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Estorno Liquidação Contratos Cliente</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_APP</PARAMETER>
@@ -33,12 +34,14 @@
       <RSFDO>
        <PARAMETER>CT_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_LIQUIDACAO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Liquidação Contratos Cliente</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_APP</PARAMETER>
@@ -60,12 +63,14 @@
       <RSFDO>
        <PARAMETER>CT_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_PROVISAO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Provisão de Contratos Cliente</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_APP</PARAMETER>
@@ -86,6 +91,7 @@
       <RSFDO>
        <PARAMETER>CT_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_VENC_DDE_BUSCA</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Buscar dados DDE</DDTEXT>
     <SOURCE_TYPE>Q</SOURCE_TYPE>
    </DDLS>
   </asx:values>

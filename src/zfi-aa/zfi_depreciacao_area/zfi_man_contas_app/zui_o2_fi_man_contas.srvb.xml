@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_FI_MAN_CONTAS</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Manutenção de Contas</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_FI_MAN_CONTAS</HREF>

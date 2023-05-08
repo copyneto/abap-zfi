@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_MODVENCIMENTO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Modifica Vencimento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_BSEG</PARAMETER>
@@ -31,6 +32,7 @@
       <RSFDO>
        <PARAMETER>IS_BSEG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Segmento do documento contabilidade financeira</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_PARAM</PARAMETER>
@@ -39,6 +41,7 @@
       <RSFDO>
        <PARAMETER>CT_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

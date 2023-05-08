@@ -19,7 +19,7 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000072</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
       <TLINE>O Nº Documento &amp;GV_BELNR&amp;, Empresa &amp;GV_BUKRS&amp; - &amp;EV_BUTXT&amp;, Exercício</TLINE>
@@ -28,7 +28,7 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000072</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
       <TLINE>&amp;GV_GJAHR&amp; e Item &amp;GV_BUZEI&amp; foi aprovado com sucesso.</TLINE>
@@ -36,7 +36,7 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000072</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000003</TABSEQNR>
       <TFORMAT>*</TFORMAT>
@@ -44,7 +44,7 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000072</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000004</TABSEQNR>
       <TLINE>Comentários:</TLINE>
@@ -53,7 +53,7 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000072</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000005</TABSEQNR>
       <TLINE>&amp;ET_TEXT##&amp;</TLINE>

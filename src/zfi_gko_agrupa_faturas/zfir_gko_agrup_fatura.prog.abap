@@ -79,12 +79,36 @@ START-OF-SELECTION.
     RETURN.
   ENDIF.
 
+
+  "Recupera o nome do programa sendo executado no job
+  SELECT SINGLE
+         tbtco~jobname,
+         tbtco~jobcount,
+         tbtcp~stepcount,
+         tbtcp~progname
+    FROM tbtco
+    INNER JOIN tbtcp
+      ON  tbtcp~jobname  = tbtco~jobname
+      AND tbtcp~jobcount = tbtco~jobcount
+    INTO @DATA(ls_job)
+    WHERE tbtco~jobname   = @gv_jobname
+      AND tbtco~jobcount  = @gv_jobcount
+      AND tbtcp~stepcount = @gv_stepcount.
+
+  IF sy-subrc NE 0.
+    CLEAR ls_job.
+  ENDIF.
+
   "Verifica se possui outro Job em execução
   SELECT COUNT(*)
     FROM tbtco
-    WHERE jobname  =  gv_jobname
-      AND jobcount <> gv_jobcount
-      AND status   =  'R'.
+    INNER JOIN tbtcp
+      ON  tbtcp~jobname  = tbtco~jobname
+      AND tbtcp~jobcount = tbtco~jobcount
+    WHERE tbtco~jobcount <> gv_jobcount
+      AND tbtco~status   = 'R'
+      AND tbtcp~progname = ls_job-progname.
+
   IF sy-subrc IS INITIAL.
 
     "Já existe um Job em execução.

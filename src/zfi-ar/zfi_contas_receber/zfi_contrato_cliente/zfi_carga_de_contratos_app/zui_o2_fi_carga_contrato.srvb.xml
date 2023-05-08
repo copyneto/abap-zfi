@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_FI_CARGA_CONTRATO</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Carga de Contratos</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_FI_CARGA_CONTRATO</HREF>

@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_FI_CONDICAO_DE_DESCONTO</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Serv Definition para Condição de Desconto</DESCRIPTION>
-    <LANGUAGE>EN</LANGUAGE>
+    <LANGUAGE>PT</LANGUAGE>
     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_fi_condicao_de_desconto/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

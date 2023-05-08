@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_BL_TEXT_CLIENTE</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Serv Bind for ZUI_TXT_CLIENTE_BOLETO</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_BL_TEXT_CLIENTE</HREF>

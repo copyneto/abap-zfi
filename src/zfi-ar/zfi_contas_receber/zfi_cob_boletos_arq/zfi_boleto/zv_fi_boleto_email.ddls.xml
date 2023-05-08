@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZV_FI_BOLETO_EMAIL</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Dados para preencher o boleto</DDTEXT>
     <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>

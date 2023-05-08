@@ -10,6 +10,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMFI_AUTBANC_GRAVA_ARQREMESSA</FUNCNAME>
+     <SHORT_TEXT>Grava arquivo de remessa na pasta de saida</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_REGUT</PARAMETER>

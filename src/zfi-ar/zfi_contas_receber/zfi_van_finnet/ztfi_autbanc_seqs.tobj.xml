@@ -13,6 +13,7 @@
     <LANGUAGE>P</LANGUAGE>
     <OBJECTNAME>ZTFI_AUTBANC_SEQ</OBJECTNAME>
     <OBJECTTYPE>S</OBJECTTYPE>
+    <DDTEXT>Automatização Bancária - Sequencial arquivo remessa</DDTEXT>
    </OBJT>
    <OBJS>
     <OBJS>

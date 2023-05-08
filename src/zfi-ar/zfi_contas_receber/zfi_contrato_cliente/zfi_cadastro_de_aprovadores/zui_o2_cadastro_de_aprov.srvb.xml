@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_CADASTRO_DE_APROV</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Configurar Níveis, Aprovação e Usuários</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_CADASTRO_DE_APROV</HREF>

@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_AGRUPA_FATURAS</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Agrupamento e compensação de faturas</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_USER</PARAMETER>
@@ -71,6 +72,7 @@
     <item>
      <FUNCNAME>ZFMFI_UPD_ARQ_AGRUPA_FATURAS</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Atualiza arquivo de agrupamento de fatura</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_AGRUPA_FATURA</PARAMETER>
@@ -95,6 +97,7 @@
       <RSFDO>
        <PARAMETER>IT_AGRUPA_LINHAS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Categ. tabela ztfi_agruplinhas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_MENSAGENS</PARAMETER>

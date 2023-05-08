@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_DOC_CANC_BANC</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service def. - Cancelamento Bancário</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_DOC_CANC_BANC</HREF>

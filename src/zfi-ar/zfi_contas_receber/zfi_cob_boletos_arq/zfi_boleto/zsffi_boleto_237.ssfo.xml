@@ -3,6 +3,7 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFFI_BOLETO_237</FORMNAME>
+   <CAPTION>Boleto 237 - Bradesco</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -589,6 +590,7 @@
            <NAME>
             <INAME>PAGINA1</INAME>
            </NAME>
+           <CAPTION>Página FIRST</CAPTION>
            <NEXTPAGE>
             <INAME>PAGINA1</INAME>
            </NEXTPAGE>
@@ -609,6 +611,7 @@
              <NAME>
               <INAME>%GRAPHIC1</INAME>
              </NAME>
+             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
               <BTYPE>BMON</BTYPE>
@@ -647,6 +650,7 @@
               <NAME>
                <INAME>LOGO_BRADESCO</INAME>
               </NAME>
+              <CAPTION>Logo Banco</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -669,6 +673,7 @@
                      <NAME>
                       <INAME>LOGO_BRA02</INAME>
                      </NAME>
+                     <CAPTION>Logo BRADESCO</CAPTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
                       <OBJECT>GRAPHICS</OBJECT>
@@ -794,6 +799,7 @@
               <NAME>
                <INAME>DADOS_CEDENTE</INAME>
               </NAME>
+              <CAPTION>Cedente</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -816,6 +822,7 @@
                      <NAME>
                       <INAME>CEDENTE</INAME>
                      </NAME>
+                     <CAPTION>Padrão CEDENTE</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -2589,7 +2596,18 @@
                         <NAME>
                          <INAME>CED_CEDENTE</INAME>
                         </NAME>
+                        <CAPTION>Cedente</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Beneficiário</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GS_CEDENTE&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2712,7 +2730,22 @@
                         <NAME>
                          <INAME>CED_VENCIMENTO</INAME>
                         </NAME>
+                        <CAPTION>Vencimento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Vencimento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VENCIMENTO+6(2)&amp;/&amp;GT_DADOS_BOLETO-VENCIMENTO+4(2)&amp;/</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>=</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VENCIMENTO(4)&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2844,7 +2877,18 @@
                         <NAME>
                          <INAME>CED_VALORDOC</INAME>
                         </NAME>
+                        <CAPTION>Valor doc.</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Valor do documento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VALOR_CD&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2967,7 +3011,17 @@
                         <NAME>
                          <INAME>CED_DESCONTOS</INAME>
                         </NAME>
+                        <CAPTION>Desconto</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(-) desconto</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T1</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3089,7 +3143,17 @@
                         <NAME>
                          <INAME>CED_OUTRASDED</INAME>
                         </NAME>
+                        <CAPTION>Outras deduções</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(-) outras deduções</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T1</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3211,7 +3275,17 @@
                         <NAME>
                          <INAME>CED_JUROS_MULTA</INAME>
                         </NAME>
+                        <CAPTION>Juros / multa</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(+) mora / multa</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3333,7 +3407,17 @@
                         <NAME>
                          <INAME>CED_OUTROSACRESC</INAME>
                         </NAME>
+                        <CAPTION>Outros acréscimos</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(+) outros acréscimos</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T1</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3455,7 +3539,17 @@
                         <NAME>
                          <INAME>CED_VALORCOB</INAME>
                         </NAME>
+                        <CAPTION>Valor cobrado</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(=) Valor cobrado</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T1</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3577,7 +3671,18 @@
                         <NAME>
                          <INAME>CED_DATADOC</INAME>
                         </NAME>
+                        <CAPTION>Data documento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Data de Emissão</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T2</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-DATAPROC&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3700,7 +3805,18 @@
                         <NAME>
                          <INAME>CED_CODCEDENTE</INAME>
                         </NAME>
+                        <CAPTION>Agencia/Cod cedente</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Agência / Código beneficiário</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T2</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-AGENCIACOD&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3823,6 +3939,7 @@
                         <NAME>
                          <INAME>CONDICAO_NOSSON_CEDENTE</INAME>
                         </NAME>
+                        <CAPTION>Nosso número</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -3851,6 +3968,7 @@
                            <NAME>
                             <INAME>%EVENT9</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -3872,7 +3990,18 @@
                               <NAME>
                                <INAME>CED_NOSSONUM</INAME>
                               </NAME>
+                              <CAPTION>Nosso número</CAPTION>
                               <APPMODE>P</APPMODE>
+                              <TEXT>
+                               <item>
+                                <TDFORMAT>EM</TDFORMAT>
+                                <TDLINE>Nosso número</TDLINE>
+                               </item>
+                               <item>
+                                <TDFORMAT>T2</TDFORMAT>
+                                <TDLINE>&amp;GT_DADOS_BOLETO-NOSSONUM&amp;</TDLINE>
+                               </item>
+                              </TEXT>
                               <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -3998,6 +4127,7 @@
                            <NAME>
                             <INAME>%EVENT10</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -4019,7 +4149,18 @@
                               <NAME>
                                <INAME>CED_NOSSONUM_BRAD</INAME>
                               </NAME>
+                              <CAPTION>Nosso número</CAPTION>
                               <APPMODE>P</APPMODE>
+                              <TEXT>
+                               <item>
+                                <TDFORMAT>EM</TDFORMAT>
+                                <TDLINE>Carteira / Nosso Número</TDLINE>
+                               </item>
+                               <item>
+                                <TDFORMAT>T1</TDFORMAT>
+                                <TDLINE>&amp;GT_DADOS_BOLETO-CARTEIRA&amp;/&amp;GT_DADOS_BOLETO-NOSSONUM&amp;-&amp;GV_DIGV_NN&amp;</TDLINE>
+                               </item>
+                              </TEXT>
                               <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -4235,6 +4376,7 @@
               <NAME>
                <INAME>DADOS_SACADO</INAME>
               </NAME>
+              <CAPTION>Sacado</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -4257,6 +4399,7 @@
                      <NAME>
                       <INAME>PA_SACADO</INAME>
                      </NAME>
+                     <CAPTION>Padrão CEDENTE</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -5703,7 +5846,14 @@
                         <NAME>
                          <INAME>DADOSSACADO</INAME>
                         </NAME>
+                        <CAPTION>Dados do Sacado</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>TH</TDFORMAT>
+                          <TDLINE>Dados do Pagador</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5817,7 +5967,18 @@
                         <NAME>
                          <INAME>TX_SACADO_NOME</INAME>
                         </NAME>
+                        <CAPTION>Nome do SACADO</CAPTION>
                         <APPMODE>L</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Nome</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-NOME&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5940,7 +6101,18 @@
                         <NAME>
                          <INAME>TX_SACADO_NUMDOC</INAME>
                         </NAME>
+                        <CAPTION>Número documento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Nº documento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-NUMDOC&amp;-&amp;GT_DADOS_BOLETO-SACADO-CODIGO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6063,7 +6235,18 @@
                         <NAME>
                          <INAME>TX_SACADO_ENDERECO</INAME>
                         </NAME>
+                        <CAPTION>Endereço do SACADO</CAPTION>
                         <APPMODE>L</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Endereço</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-RUA&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6186,7 +6369,18 @@
                         <NAME>
                          <INAME>TX_SACADO_BAIRRO</INAME>
                         </NAME>
+                        <CAPTION>Bairro do SACADO</CAPTION>
                         <APPMODE>L</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Bairro</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-BAIRRO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6309,7 +6503,18 @@
                         <NAME>
                          <INAME>TX_SACADO_CIDADE</INAME>
                         </NAME>
+                        <CAPTION>Cidade do SACADO</CAPTION>
                         <APPMODE>L</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Município</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-CIDADE&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6432,7 +6637,18 @@
                         <NAME>
                          <INAME>TX_SACADO_UF</INAME>
                         </NAME>
+                        <CAPTION>UF do SACADO</CAPTION>
                         <APPMODE>L</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>UF</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-UF&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6555,7 +6771,18 @@
                         <NAME>
                          <INAME>TX_SACADO_CEP</INAME>
                         </NAME>
+                        <CAPTION>CEP do SACADO</CAPTION>
                         <APPMODE>L</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>CEP</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-CEP&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6765,6 +6992,7 @@
               <NAME>
                <INAME>MSG_GERAL</INAME>
               </NAME>
+              <CAPTION>Mensagem Geral</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -6787,7 +7015,17 @@
                      <NAME>
                       <INAME>%TEXT1</INAME>
                      </NAME>
+                     <CAPTION>Texto novo 1</CAPTION>
                      <APPMODE>P</APPMODE>
+                     <TEXT>
+                      <item>
+                       <TDFORMAT>TH</TDFORMAT>
+                       <TDLINE>Mensagem:</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>TH</TDFORMAT>
+                      </item>
+                     </TEXT>
                      <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -6835,6 +7073,7 @@
                      <NAME>
                       <INAME>TITULO_MENSAGEM_002</INAME>
                      </NAME>
+                     <CAPTION>Mensagem</CAPTION>
                      <SECTTYPE>L</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>LT_BOLETO_MSG</TABNAME>
@@ -6871,6 +7110,7 @@
                         <NAME>
                          <INAME>TX_MENSAGEM</INAME>
                         </NAME>
+                        <CAPTION>Mensagem</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -6994,6 +7234,7 @@
               <NAME>
                <INAME>MSG_FATURA</INAME>
               </NAME>
+              <CAPTION>Mensagem Fatura</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -7016,6 +7257,7 @@
                      <NAME>
                       <INAME>FOR_MENSAGEM_FATURA</INAME>
                      </NAME>
+                     <CAPTION>For para mensagem cliente</CAPTION>
                      <SECTTYPE>L</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>LT_FATURA_MSG</TABNAME>
@@ -7052,6 +7294,7 @@
                         <NAME>
                          <INAME>MENSAGEM_FATURA_TX</INAME>
                         </NAME>
+                        <CAPTION>Mensagem</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -7246,6 +7489,7 @@
               <NAME>
                <INAME>MSG_CLIENTE</INAME>
               </NAME>
+              <CAPTION>Mensagem Cliente</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -7268,6 +7512,7 @@
                      <NAME>
                       <INAME>FOR_MENSAGEM_CLIENTE</INAME>
                      </NAME>
+                     <CAPTION>For para mensagem cliente</CAPTION>
                      <SECTTYPE>L</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>LT_BOLETO_MSG</TABNAME>
@@ -7304,6 +7549,7 @@
                         <NAME>
                          <INAME>MENSAGEM_CLIENTE_TX</INAME>
                         </NAME>
+                        <CAPTION>Mensagem</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -7498,6 +7744,7 @@
               <NAME>
                <INAME>MSG_3C</INAME>
               </NAME>
+              <CAPTION>Mensagem 3corações</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -7520,7 +7767,57 @@
                      <NAME>
                       <INAME>MSG_BOLETO</INAME>
                      </NAME>
+                     <CAPTION>Mensagem informativa</CAPTION>
                      <APPMODE>P</APPMODE>
+                     <TEXT>
+                      <item>
+                       <TDFORMAT>*</TDFORMAT>
+                       <TDLINE>&lt;TM&gt;&lt;TM&gt;&lt;TM&gt;Sobre a 3Corações&lt;/&gt;&lt;/&gt;&lt;/&gt;</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                       <TDLINE>&lt;NO&gt;-  O Grupo &lt;BO&gt;3corações&lt;/&gt; não envia boleto por e-mail, a não ser</TDLINE>
+                      </item>
+                      <item>
+                       <TDLINE>que seja solicitado pelo cliente;&lt;/&gt;</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                       <TDLINE>-  O domínio de email da &lt;BO&gt;&lt;BI&gt;3corações&lt;/&gt; &lt;/&gt;é: @3coracoes.com.br</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                       <TDLINE>-  Desconfie de mensagens inesperadas ou que tenham um tom de urgência.</TDLINE>
+                      </item>
+                      <item>
+                       <TDLINE>Na dúvida, tente entrar em</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                       <TDLINE>   contato com o seu consultor de vendas;</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                       <TDLINE>-  Se você está em dúvida se um boleto é falso, a melhor alternativa é</TDLINE>
+                      </item>
+                      <item>
+                       <TDLINE>entrar em contato com o remetente</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                       <TDLINE>   antes de efetuar o pagamento, assim, você pode evitar ser vítima de</TDLINE>
+                      </item>
+                      <item>
+                       <TDLINE>uma cobrança ilegítima.</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>MR</TDFORMAT>
+                       <TDLINE>   O SAC Clientes da &lt;BI&gt;3corações &lt;/&gt;é &lt;BO&gt;0800 5910232&lt;/&gt;</TDLINE>
+                      </item>
+                     </TEXT>
                      <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -7747,6 +8044,7 @@
               <NAME>
                <INAME>MAIN</INAME>
               </NAME>
+              <CAPTION>Janela principal</CAPTION>
               <WTYPE>M</WTYPE>
               <T_CAPTION>
                <item>
@@ -7850,6 +8148,7 @@
               <NAME>
                <INAME>AUTENTICA_SACADO</INAME>
               </NAME>
+              <CAPTION>Autenticação recibo sacado</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -7872,6 +8171,7 @@
                      <NAME>
                       <INAME>PA_AUTENTICA_SACADO</INAME>
                      </NAME>
+                     <CAPTION>Autenticação recibo sacado</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -8134,7 +8434,14 @@
                         <NAME>
                          <INAME>TX_AUTENTICA_SACADO</INAME>
                         </NAME>
+                        <CAPTION>Texto autenticação sacado</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>LN</TDFORMAT>
+                          <TDLINE>   Autenticação mecânica</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8248,7 +8555,14 @@
                         <NAME>
                          <INAME>TX_AUTENTICA_RECIBO</INAME>
                         </NAME>
+                        <CAPTION>Texto autenticação sacado</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>TR</TDFORMAT>
+                          <TDLINE>-  Recibo do Pagador</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8449,6 +8763,7 @@
               <NAME>
                <INAME>MONTA_BOLETO</INAME>
               </NAME>
+              <CAPTION>Dados Boleto</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -8471,6 +8786,7 @@
                      <NAME>
                       <INAME>LINHA_PONTO</INAME>
                      </NAME>
+                     <CAPTION>Linha pontilhada</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -8565,6 +8881,7 @@
                         <NAME>
                          <INAME>TX_LINHA_PONTO</INAME>
                         </NAME>
+                        <CAPTION>Linha pontilhada</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -8686,6 +9003,7 @@
                      <NAME>
                       <INAME>PA_BOLETO</INAME>
                      </NAME>
+                     <CAPTION>Padrão CEDENTE</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -12659,6 +12977,7 @@
                         <NAME>
                          <INAME>CONDICAO_LOGO_BOLETO</INAME>
                         </NAME>
+                        <CAPTION>Logo do banco</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -12687,6 +13006,7 @@
                            <NAME>
                             <INAME>%EVENT3</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -12710,6 +13030,7 @@
                            <NAME>
                             <INAME>%EVENT4</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -12731,6 +13052,7 @@
                               <NAME>
                                <INAME>LOGO_BOLETO_BRAD</INAME>
                               </NAME>
+                              <CAPTION>Logo BRADESCO</CAPTION>
                               <GTYPE>B</GTYPE>
                               <GKEYBDS>
                                <OBJECT>GRAPHICS</OBJECT>
@@ -12772,7 +13094,17 @@
                               <NAME>
                                <INAME>CAMPO_BANCO_BRA</INAME>
                               </NAME>
+                              <CAPTION>BANCO e DV do Boleto</CAPTION>
                               <APPMODE>P</APPMODE>
+                              <TEXT>
+                               <item>
+                                <TDFORMAT>EM</TDFORMAT>
+                               </item>
+                               <item>
+                                <TDFORMAT>TI</TDFORMAT>
+                                <TDLINE>&amp;GT_DADOS_BOLETO-BANCO&amp;-2</TDLINE>
+                               </item>
+                              </TEXT>
                               <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -12900,6 +13232,7 @@
                         <NAME>
                          <INAME>CAMPO_LINHA_DIG</INAME>
                         </NAME>
+                        <CAPTION>LInha digitável</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -13013,7 +13346,18 @@
                         <NAME>
                          <INAME>TITULO_LOCALPAG</INAME>
                         </NAME>
+                        <CAPTION>Local pagamento</CAPTION>
                         <APPMODE>L</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Local de Pagamento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-LOCAL_PAGTO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13136,7 +13480,22 @@
                         <NAME>
                          <INAME>CAMPO_VENCIMENTO</INAME>
                         </NAME>
+                        <CAPTION>Vencimento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Vencimento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VENCIMENTO+6(2)&amp;/&amp;GT_DADOS_BOLETO-VENCIMENTO+4(2)&amp;/</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>=</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VENCIMENTO(4)&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13268,7 +13627,22 @@
                         <NAME>
                          <INAME>CAMPO_CEDENTE</INAME>
                         </NAME>
+                        <CAPTION>Cedente</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Beneficiário</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TS</TDFORMAT>
+                          <TDLINE>&amp;GS_CEDENTE&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TS</TDFORMAT>
+                          <TDLINE>&amp;GS_CEDENTE_ENDERECO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13400,7 +13774,18 @@
                         <NAME>
                          <INAME>CAMPO_AGENCIA</INAME>
                         </NAME>
+                        <CAPTION>Agencia/Cod cedente</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Agência/Código beneficiário</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T1</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-AGENCIACOD&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13523,7 +13908,22 @@
                         <NAME>
                          <INAME>CAMPO_DTDOC</INAME>
                         </NAME>
+                        <CAPTION>Data documento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Data do documento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-DATADOC+6(2)&amp;/&amp;GT_DADOS_BOLETO-DATADOC+4(2)&amp;/</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>=</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-DATADOC(4)&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13655,7 +14055,18 @@
                         <NAME>
                          <INAME>CAMPO_NUMDOC</INAME>
                         </NAME>
+                        <CAPTION>Número documento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Nº documento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-NUMDOC&amp;-&amp;GT_DADOS_BOLETO-SACADO-CODIGO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13778,7 +14189,18 @@
                         <NAME>
                          <INAME>CAMPO_ESPECIEDOC</INAME>
                         </NAME>
+                        <CAPTION>Espécie doc.</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Espécie</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T2</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-ESPECIEDOC&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZEBOLETO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13901,7 +14323,18 @@
                         <NAME>
                          <INAME>CAMPO_ACEITE</INAME>
                         </NAME>
+                        <CAPTION>Aceite</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Aceite</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T2</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-ACEITE&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14024,7 +14457,18 @@
                         <NAME>
                          <INAME>CAMPO_DTPROC</INAME>
                         </NAME>
+                        <CAPTION>Data processamento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Data  proces.</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-DATAPROC&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14147,6 +14591,7 @@
                         <NAME>
                          <INAME>CONDICAO_NN_BOLETO</INAME>
                         </NAME>
+                        <CAPTION>Nosso número</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -14175,6 +14620,7 @@
                            <NAME>
                             <INAME>%EVENT5</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -14196,7 +14642,18 @@
                               <NAME>
                                <INAME>CAMPO_NOSSONUM_BB</INAME>
                               </NAME>
+                              <CAPTION>Nosso número</CAPTION>
                               <APPMODE>P</APPMODE>
+                              <TEXT>
+                               <item>
+                                <TDFORMAT>EM</TDFORMAT>
+                                <TDLINE>Nosso Número</TDLINE>
+                               </item>
+                               <item>
+                                <TDFORMAT>T2</TDFORMAT>
+                                <TDLINE>&amp;GT_DADOS_BOLETO-NOSSONUM&amp;</TDLINE>
+                               </item>
+                              </TEXT>
                               <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -14322,6 +14779,7 @@
                            <NAME>
                             <INAME>%EVENT6</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -14343,7 +14801,18 @@
                               <NAME>
                                <INAME>CAMPO_NOSSONUM_BRAD</INAME>
                               </NAME>
+                              <CAPTION>Nosso número</CAPTION>
                               <APPMODE>P</APPMODE>
+                              <TEXT>
+                               <item>
+                                <TDFORMAT>EM</TDFORMAT>
+                                <TDLINE>Carteira / Nosso Número</TDLINE>
+                               </item>
+                               <item>
+                                <TDFORMAT>T1</TDFORMAT>
+                                <TDLINE>&amp;GT_DADOS_BOLETO-CARTEIRA&amp;/&amp;GT_DADOS_BOLETO-NOSSONUM&amp;-&amp;GV_DIGV_NN&amp;</TDLINE>
+                               </item>
+                              </TEXT>
                               <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -14472,7 +14941,18 @@
                         <NAME>
                          <INAME>CAMPO_USOBANCO</INAME>
                         </NAME>
+                        <CAPTION>Uso banco</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Uso do banco</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-USOBANCO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14595,7 +15075,18 @@
                         <NAME>
                          <INAME>CAMPO_CARTEIRA</INAME>
                         </NAME>
+                        <CAPTION>Carteira</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Carteira</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T2</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-CARTEIRA(2)&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14718,7 +15209,18 @@
                         <NAME>
                          <INAME>CAMPO_ESPECIE</INAME>
                         </NAME>
+                        <CAPTION>Espécie</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Espécie</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T2</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-ESPECIE&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14841,7 +15343,18 @@
                         <NAME>
                          <INAME>CAMPO_QUANTIDADE</INAME>
                         </NAME>
+                        <CAPTION>Quantidade</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Quantidade</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-QUANTIDADE&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14964,7 +15477,18 @@
                         <NAME>
                          <INAME>CAMPO_VALOR</INAME>
                         </NAME>
+                        <CAPTION>Valor</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Valor</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>TT</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VALOR&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -15087,7 +15611,18 @@
                         <NAME>
                          <INAME>CAMPO_VALORDOC</INAME>
                         </NAME>
+                        <CAPTION>Valor doc.</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(=) Valor do documento</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VALORDOC&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -15210,7 +15745,17 @@
                         <NAME>
                          <INAME>CAMPO_INSTR_TITULO</INAME>
                         </NAME>
+                        <CAPTION>Instrução 1</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>T5</TDFORMAT>
+                          <TDLINE>Instruções</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T5</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -15332,7 +15877,18 @@
                         <NAME>
                          <INAME>CAMPO_DESCONTO</INAME>
                         </NAME>
+                        <CAPTION>Desconto</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(-) Desconto / Abatimentos</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VALORABAT&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -15455,6 +16011,7 @@
                         <NAME>
                          <INAME>CAMPO_INSTR01</INAME>
                         </NAME>
+                        <CAPTION>Instrução 1</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -15569,7 +16126,17 @@
                         <NAME>
                          <INAME>CAMPO_OUTRASDED</INAME>
                         </NAME>
+                        <CAPTION>Outras deduções</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(-) Outras deduções</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T1</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -15691,6 +16258,7 @@
                         <NAME>
                          <INAME>CAMPO_INSTR02</INAME>
                         </NAME>
+                        <CAPTION>Instrução 2</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -15805,7 +16373,17 @@
                         <NAME>
                          <INAME>CAMPO_MULTA</INAME>
                         </NAME>
+                        <CAPTION>Juros / multa</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(+) Juros / Multa</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -15927,6 +16505,7 @@
                         <NAME>
                          <INAME>CAMPO_INSTR03</INAME>
                         </NAME>
+                        <CAPTION>Instrução 3</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -16041,7 +16620,17 @@
                         <NAME>
                          <INAME>CAMPO_OUTROSACRESC</INAME>
                         </NAME>
+                        <CAPTION>Outros acréscimos</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(+) Outros acréscimos</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T1</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16163,6 +16752,7 @@
                         <NAME>
                          <INAME>CAMPO_INSTR04</INAME>
                         </NAME>
+                        <CAPTION>Instrução 4</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -16277,7 +16867,18 @@
                         <NAME>
                          <INAME>CAMPO_VALORCOBRADO</INAME>
                         </NAME>
+                        <CAPTION>Valor cobrado</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>(=) Valor cobrado</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>T4</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-VALORCOB&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16400,6 +17001,7 @@
                         <NAME>
                          <INAME>MONTA_CGC</INAME>
                         </NAME>
+                        <CAPTION>CGC / CPF ou Inscrição</CAPTION>
                         <PLIST>
                          <item>
                           <OPD>GT_DADOS_BOLETO-CGC</OPD>
@@ -16473,7 +17075,33 @@
                         <NAME>
                          <INAME>CAMPO_SACADO</INAME>
                         </NAME>
+                        <CAPTION>Dados do Sacado</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Pagador</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>SA</TDFORMAT>
+                          <TDLINE>&amp;gv_pagador&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>SA</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-RUA&amp; &amp;GT_DADOS_BOLETO-SACADO-BAIRRO&amp;&lt;(&gt;,&lt;)&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>SA</TDFORMAT>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-CIDADE&amp; - &amp;GT_DADOS_BOLETO-SACADO-UF&amp; CEP:</TDLINE>
+                         </item>
+                         <item>
+                          <TDLINE>&amp;GT_DADOS_BOLETO-SACADO-CEP&amp; ,,</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>EM</TDFORMAT>
+                          <TDLINE>Pagador / Avalista</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16631,7 +17259,14 @@
                         <NAME>
                          <INAME>CAMPO_AUTENTICACAO</INAME>
                         </NAME>
+                        <CAPTION>Autenticação mecanica</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>AM</TDFORMAT>
+                          <TDLINE>Autenticação mecânica / Ficha de Compensação</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSTFI_BOLETO_237</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16745,6 +17380,7 @@
                         <NAME>
                          <INAME>CAMPO_CODBARRA</INAME>
                         </NAME>
+                        <CAPTION>Código de barra</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>

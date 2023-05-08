@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_POPUP_NFDIV</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Nota Fiscal Divergente</DDTEXT>
     <SOURCE_TYPE>A</SOURCE_TYPE>
    </DDLS>
   </asx:values>

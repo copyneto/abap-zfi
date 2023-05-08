@@ -12,6 +12,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMFI_SOL_CORRECAO</FUNCNAME>
+     <SHORT_TEXT>Tela: Solicitar correção</SHORT_TEXT>
      <TABLES>
       <RSTBL>
        <PARAMETER>IT_ITENS</PARAMETER>
@@ -22,6 +23,7 @@
       <RSFDO>
        <PARAMETER>IT_ITENS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Itens: Solicitar correção</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

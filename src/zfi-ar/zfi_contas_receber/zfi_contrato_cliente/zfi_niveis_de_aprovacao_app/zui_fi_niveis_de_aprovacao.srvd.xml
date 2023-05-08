@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_FI_NIVEIS_DE_APROVACAO</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Serv Definition para Níveis de Aprovação</DESCRIPTION>
-    <LANGUAGE>EN</LANGUAGE>
+    <LANGUAGE>PT</LANGUAGE>
     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_fi_niveis_de_aprovacao/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

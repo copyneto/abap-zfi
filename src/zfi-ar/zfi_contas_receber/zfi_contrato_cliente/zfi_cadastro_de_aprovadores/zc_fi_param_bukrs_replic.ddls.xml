@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_FI_PARAM_BUKRS_REPLIC</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Empresa para replicar</DDTEXT>
     <SOURCE_TYPE>A</SOURCE_TYPE>
    </DDLS>
   </asx:values>

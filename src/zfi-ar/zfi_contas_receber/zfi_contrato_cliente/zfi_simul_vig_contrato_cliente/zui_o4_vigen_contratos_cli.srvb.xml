@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O4_VIGEN_CONTRATOS_CLI</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Odata 4 VIGEN_CONTRATOS_CLI</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav4/ZUI_O4_VIGEN_CONTRATOS_CLI</HREF>

@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_ESTORNO_DOC</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Estorno documento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_EMPRESA</PARAMETER>
@@ -55,34 +56,42 @@
       <RSFDO>
        <PARAMETER>IV_EMPRESA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOC</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ANO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DTESTORNO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Data</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_PERIODO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mês do exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_COD</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Motivo para estorno ou lançamento inverso</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CV_DOC_REV</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CV_ANO_REV</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CT_MENSAGENS</PARAMETER>

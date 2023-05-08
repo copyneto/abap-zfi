@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_BUSCA_FATURA_AGRUP_POPUP</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Popup para busca de faturas</DDTEXT>
     <SOURCE_TYPE>A</SOURCE_TYPE>
    </DDLS>
   </asx:values>

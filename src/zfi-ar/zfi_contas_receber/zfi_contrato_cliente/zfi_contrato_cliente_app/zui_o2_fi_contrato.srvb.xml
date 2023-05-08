@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_FI_CONTRATO</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Contrato Cliente - O2</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_FI_CONTRATO</HREF>

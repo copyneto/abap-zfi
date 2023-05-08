@@ -5,7 +5,8 @@
    <SRVD>
     <NAME>ZUI_FI_APROVAR_CONTRATOS</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <LANGUAGE>EN</LANGUAGE>
+    <DESCRIPTION>Serv Definition para Aprovação de Contratos</DESCRIPTION>
+    <LANGUAGE>PT</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_fi_aprovar_contratos/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

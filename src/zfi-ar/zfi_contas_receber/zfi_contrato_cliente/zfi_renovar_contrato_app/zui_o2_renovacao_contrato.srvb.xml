@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_RENOVACAO_CONTRATO</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Renovação de Contrato  - Service Binding</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_RENOVACAO_CONTRATO</HREF>

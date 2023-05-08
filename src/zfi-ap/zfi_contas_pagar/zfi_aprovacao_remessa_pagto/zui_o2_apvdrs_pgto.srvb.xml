@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_APVDRS_PGTO</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Gestão de Aprovadores de Pagamento</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_APVDRS_PGTO</HREF>

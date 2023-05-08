@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_CONTROLE_RAIZ_CNPJ</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Rotinas para o Controle do Raiz de CNPJ</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_CNPJ_RAIZ</PARAMETER>
@@ -33,6 +34,7 @@
       <RSFDO>
        <PARAMETER>IV_CNPJ_RAIZ</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>CNPJ principal</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_UUID</PARAMETER>
@@ -41,6 +43,7 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_BATCH_COMPENSAR</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Batch Input - Compensar Cliente</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_KUNNR</PARAMETER>
@@ -106,54 +107,67 @@
       <RSFDO>
        <PARAMETER>IV_KUNNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_WAERS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código da moeda</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUDAT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Data de lançamento no documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ANFBN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento da solicitação de letra de câmbio</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_CTU</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_MODE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GROUP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nome grupo: nome de uma pasta batch input</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_USER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Fila ID usuário / por razões históricas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_KEEP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de eliminação fila para pastas processadas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_HOLDDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Fila data de início</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NODATA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERRO</PARAMETER>
@@ -180,6 +194,7 @@
     <item>
      <FUNCNAME>ZFMFI_BATCH_COMPENSAR_REM</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Batch Input - Compensar Cliente</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_KUNNR</PARAMETER>
@@ -257,54 +272,67 @@
       <RSFDO>
        <PARAMETER>IV_KUNNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_WAERS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código da moeda</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUDAT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Data de lançamento no documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ANFBN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento da solicitação de letra de câmbio</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_CTU</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_MODE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GROUP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nome grupo: nome de uma pasta batch input</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_USER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Fila ID usuário / por razões históricas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_KEEP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de eliminação fila para pastas processadas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_HOLDDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Fila data de início</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NODATA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Queue Putq Active Flag</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CT_MSG</PARAMETER>
@@ -315,6 +343,7 @@
     <item>
      <FUNCNAME>ZFMFI_DOCUMENT_CHANGE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Modificar documento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_BUZEI</PARAMETER>
@@ -347,32 +376,39 @@
       <RSFDO>
        <PARAMETER>IV_BUZEI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº linha de lançamento no documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BUKRS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Empresa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BELNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GJAHR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_ACCHG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Modificações de docs.FI</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RET</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMFI_RET_BLOQ</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Retirar bloqueio</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_LINHA</PARAMETER>
@@ -390,10 +426,12 @@
       <RSFDO>
        <PARAMETER>IS_LINHA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura saída Retirada de Bloqueio</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Mensagens de erro</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

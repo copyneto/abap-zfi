@@ -14,6 +14,7 @@
     <LANGUAGE>P</LANGUAGE>
     <OBJECTNAME>ZTFI_CONTA_DDA</OBJECTNAME>
     <OBJECTTYPE>S</OBJECTTYPE>
+    <DDTEXT>Config. conta para pagamentos DDA c/ diferença de valor</DDTEXT>
    </OBJT>
    <OBJS>
     <OBJS>

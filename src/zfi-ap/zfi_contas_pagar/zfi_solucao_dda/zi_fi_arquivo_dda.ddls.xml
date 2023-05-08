@@ -4,7 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_FI_ARQUIVO_DDA</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Modelo para arquivo DDA</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

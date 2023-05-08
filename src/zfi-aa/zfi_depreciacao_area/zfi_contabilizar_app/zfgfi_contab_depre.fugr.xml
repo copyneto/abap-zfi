@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMFI_CONTAB_DEPRE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Contabilizar Depreciação</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_LINHAS</PARAMETER>
@@ -37,6 +38,7 @@
     <item>
      <FUNCNAME>ZFMFI_CONTAB_REAV</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Contabilizar Depreciação</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_LINHAS</PARAMETER>
