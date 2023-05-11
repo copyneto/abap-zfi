@@ -59,11 +59,20 @@ define view ZI_FI_PROG_PAGAMENTO
       case tims_is_valid(_Regut.tstim)
       when 1 then _Regut.tstim else '000000' end                             as dataConv,
 
+      // pferraz 10.05.23 - Valores credito/debito - inicio
+      //      cast( case when _PaymentItem.vblnr is initial
+      //                 then 0
+      //                 else abs( _PaymentItem.wrbtr )
+      //            end as rwbtr )                                                   as PaidAmountInPaytCurrency,
 
-      cast( case when _PaymentItem.vblnr is initial
-                 then 0
-                 else abs( _PaymentItem.wrbtr )
-            end as rwbtr )                                                   as PaidAmountInPaytCurrency,
+      case _PaymentItem.shkzg
+        when 'H'
+            then cast(  _PaymentItem.wrbtr   as rwbtr )
+        else
+            cast(  ( -1 * _PaymentItem.wrbtr )   as rwbtr )  end             as PaidAmountInPaytCurrency,
+
+      //     cast(  _Payment.PaidAmountInPaytCurrency   as rwbtr )                                 as PaidAmountInPaytCurrency,
+      // pferraz 10.05.23 - Valores credito/debito - fim
       //      cast( abs( _Payment.PaidAmountInPaytCurrency ) as rwbtr )                as PaidAmountInPaytCurrency,
 
       cast( _PaymentItem.waers  as waers )                                   as PaymentCurrency,
@@ -113,8 +122,8 @@ define view ZI_FI_PROG_PAGAMENTO
 
 }
 where
-  _Payment.PaymentDocument <> '' and 
-  _Payment.PaymentMethod <> 'G'
+      _Payment.PaymentDocument <> ''
+  and _Payment.PaymentMethod   <> 'G'
 
 union select distinct from ZC_FI_APROV_BSIK  as _bsik
 

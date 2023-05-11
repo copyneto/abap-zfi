@@ -1,77 +1,87 @@
 "!<p><h2>Gravação dos dados de Retorno de Pagamento segmento Z</h2></p>
 "!<p><strong>Autor:</strong> Anderson Miazato</p>
 "!<p><strong>Data:</strong> 10 de set de 2021</p>
-class ZCLFI_RETORNO_PAGTO_SEGZ definition
-  public
-  final
-  create public .
+CLASS zclfi_retorno_pagto_segz DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  types:
-      "! Categ. Tabela Segmento Z extraído do arquivo de retorno de pagamento
-    tt_segmento_z    TYPE STANDARD TABLE OF j_1bdmexz WITH KEY z01 z02 z04 .
-  types:
-      "! Categ. Tabela Registro do segmento Z com dados complementares
-    tt_retpagto_segz TYPE STANDARD TABLE OF ztfi_retpag_segz WITH DEFAULT KEY .
+    TYPES:
+        "! Categ. Tabela Segmento Z extraído do arquivo de retorno de pagamento
+      tt_segmento_z    TYPE STANDARD TABLE OF j_1bdmexz WITH KEY z01 z02 z04 .
+    TYPES:
+        "! Categ. Tabela Registro do segmento Z com dados complementares
+      tt_retpagto_segz TYPE STANDARD TABLE OF ztfi_retpag_segz WITH DEFAULT KEY .
 
-  constants:
+    CONSTANTS:
       "! Códigos dos bancos
-    BEGIN OF gc_multibanco,
+      BEGIN OF gc_multibanco,
         banco_brasil TYPE ze_banco VALUE '001', "Banco do Brasil
         bradesco     TYPE ze_banco VALUE '237', "Banco do Bradesco
         itau         TYPE ze_banco VALUE '341', "Banco do itaú
         safra        TYPE ze_banco VALUE '422', "Banco do Safra
         santander    TYPE ze_banco VALUE '033', "Banco do Santander
         citibank     TYPE ze_banco VALUE '745', "Banco do Citibank
+        modulo       TYPE ztca_param_par-modulo VALUE 'FI-AP',
+        chave1       TYPE ztca_param_par-chave1 VALUE 'COMPROVANTE',
+        chave2       TYPE ztca_param_par-chave2 VALUE 'BANCO',
       END OF gc_multibanco .
 
-      "! Inicializa dados do objeto referenciado
-      "! @parameter it_dados_arquivo | Dados do Retorno de pagamento
-  methods CONSTRUCTOR
-    importing
-      !IT_DADOS_ARQUIVO type ZCTGFI_RETPAGTO_SEGZ_DADOS .
-      "! Armazena dados relacionados para gravação do Segmento Z
-      "! @parameter is_segmento_a    | Segmento A
-      "! @parameter is_segmento_j    | Segmento J
-      "! @parameter is_febko         | Cabeçalho extrato conta eletrônico
-      "! @parameter is_febep         | Itens extrato conta eletrônico
-  methods SET_DATA
-    importing
-      !IS_SEGMENTO_A type J_1BDMEXA
-      !IS_SEGMENTO_J type J_1BDMEXJ
-      !IS_SEGMENTO_OZ type ZSFI_ITEMS_P_OZ
-      !IS_FEBKO type FEBKO
-      !IS_FEBEP type FEBEP .
-      "! Grava dados relacionados ao Segmento Z no banco de dados
-  methods SAVE_DATA .
+    "! Inicializa dados do objeto referenciado
+    "! @parameter it_dados_arquivo | Dados do Retorno de pagamento
+    METHODS constructor
+      IMPORTING
+        !it_dados_arquivo TYPE zctgfi_retpagto_segz_dados .
+    "! Armazena dados relacionados para gravação do Segmento Z
+    "! @parameter is_segmento_a    | Segmento A
+    "! @parameter is_segmento_j    | Segmento J
+    "! @parameter is_febko         | Cabeçalho extrato conta eletrônico
+    "! @parameter is_febep         | Itens extrato conta eletrônico
+    METHODS set_data
+      IMPORTING
+        !is_segmento_a  TYPE j_1bdmexa
+        !is_segmento_j  TYPE j_1bdmexj
+        !is_segmento_oz TYPE zsfi_items_p_oz
+        !is_febko       TYPE febko
+        !is_febep       TYPE febep .
+    "! Grava dados relacionados ao Segmento Z no banco de dados
+    METHODS save_data .
   PROTECTED SECTION.
 
-  PRIVATE SECTION.
+private section.
 
-    DATA:
-      "! Segmento Z extraído do arquivo de retorno de pagamento
-      gt_segmento_z    TYPE tt_segmento_z,
+  "! Segmento Z extraído do arquivo de retorno de pagamento
+  data GT_SEGMENTO_Z type TT_SEGMENTO_Z .
+  data:
       "! Registro do segmento Z com dados complementares
-      gt_retpagto_segz TYPE STANDARD TABLE OF ztfi_retpag_segz.
+    gt_retpagto_segz TYPE STANDARD TABLE OF ztfi_retpag_segz .
+  data:
+    gr_bank_aut_banc TYPE RANGE OF ze_banco_favorecido .
 
-    METHODS:
-      "! Recupera Segmento Z
-      "! @parameter rt_result | Segmento Z
-      get_segmento_z RETURNING VALUE(rt_result) TYPE tt_segmento_z,
 
-      "! Importa dados do arquivo Retorno de pagamento para obter segmento Z
-      "! @parameter it_dados_arquivo | Arquivo Retorno de pagamento
-      set_segmento_z IMPORTING it_dados_arquivo TYPE zctgfi_retpagto_segz_dados,
-
-      "! Recupera os dados completos do retorno de pagamento Segmento Z
-      "! @parameter rt_result | Retorno de pagamento Segmento Z (completo)
-      get_retpagto_segz RETURNING VALUE(rt_result) TYPE tt_retpagto_segz,
-
-      "! Armazena os dados completos do retorno de pagamento Segmento Z
-      "! @parameter is_retpagto_segz | Retorno de pagamento Segmento Z (completo)
-      append_retpagto_segz IMPORTING is_retpagto_segz TYPE ztfi_retpag_segz.
-
+  "! Recupera Segmento Z
+  "! @parameter rt_result | Segmento Z
+  methods GET_SEGMENTO_Z
+    returning
+      value(RT_RESULT) type TT_SEGMENTO_Z .
+  "! Importa dados do arquivo Retorno de pagamento para obter segmento Z
+  "! @parameter it_dados_arquivo | Arquivo Retorno de pagamento
+  methods SET_SEGMENTO_Z
+    importing
+      !IT_DADOS_ARQUIVO type ZCTGFI_RETPAGTO_SEGZ_DADOS .
+  "! Recupera os dados completos do retorno de pagamento Segmento Z
+  "! @parameter rt_result | Retorno de pagamento Segmento Z (completo)
+  methods GET_RETPAGTO_SEGZ
+    returning
+      value(RT_RESULT) type TT_RETPAGTO_SEGZ .
+  "! Armazena os dados completos do retorno de pagamento Segmento Z
+  "! @parameter is_retpagto_segz | Retorno de pagamento Segmento Z (completo)
+  methods APPEND_RETPAGTO_SEGZ
+    importing
+      !IS_RETPAGTO_SEGZ type ZTFI_RETPAG_SEGZ .
+  methods GET_BANK_AUT_BANK .
 ENDCLASS.
 
 
@@ -214,16 +224,24 @@ CLASS ZCLFI_RETORNO_PAGTO_SEGZ IMPLEMENTATION.
 
             <fs_retpagto_segmento_z>-kukey_eb        = is_febko-kukey.
 
+            IF ls_dados_bancarios-bankl(3) IN gr_bank_aut_banc.
 
-            <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z06 }|
-                                                                      && |{ <fs_segmento_z>-z07 }|
-                                                                      && |{ <fs_segmento_z>-z08 }|
-                                                                      && |{ <fs_segmento_z>-z09 }|
-                                                                      && |{ <fs_segmento_z>-z10 }|
-                                                                      && |{ <fs_segmento_z>-z11 }|
-                                                                      && |{ <fs_segmento_z>-z12(1) }|
-                                                               from = ` `
-                                                               to   = `` ).
+              <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z12 }|
+                                                                        && |{ <fs_segmento_z>-z13 }|
+                                                                 from = ` `
+                                                                 to   = `` ).
+
+            ELSE.
+              <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z06 }|
+                                                                        && |{ <fs_segmento_z>-z07 }|
+                                                                        && |{ <fs_segmento_z>-z08 }|
+                                                                        && |{ <fs_segmento_z>-z09 }|
+                                                                        && |{ <fs_segmento_z>-z10 }|
+                                                                        && |{ <fs_segmento_z>-z11 }|
+                                                                        && |{ <fs_segmento_z>-z12(1) }|
+                                                                 from = ` `
+                                                                 to   = `` ).
+            ENDIF.
 
 
             <fs_retpagto_segmento_z>-zcontroleban = condense( <fs_segmento_z>-z13 ).
@@ -310,15 +328,24 @@ CLASS ZCLFI_RETORNO_PAGTO_SEGZ IMPLEMENTATION.
                                                                                                                         len = 4 ) ).
             <fs_retpagto_segmento_z>-zcontafav = ls_dados_fornecedor-bankaccount.
 
-            <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z06 }|
-                                                                      && |{ <fs_segmento_z>-z07 }|
-                                                                      && |{ <fs_segmento_z>-z08 }|
-                                                                      && |{ <fs_segmento_z>-z09 }|
-                                                                      && |{ <fs_segmento_z>-z10 }|
-                                                                      && |{ <fs_segmento_z>-z11 }|
-                                                                      && |{ <fs_segmento_z>-z12(1) }|
-                                                               from = ` `
-                                                               to   = `` ).
+            IF ls_dados_bancarios-bankl(3) IN gr_bank_aut_banc.
+
+              <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z12 }|
+                                                                        && |{ <fs_segmento_z>-z13 }|
+                                                                 from = ` `
+                                                                 to   = `` ).
+
+            ELSE.
+              <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z06 }|
+                                                                        && |{ <fs_segmento_z>-z07 }|
+                                                                        && |{ <fs_segmento_z>-z08 }|
+                                                                        && |{ <fs_segmento_z>-z09 }|
+                                                                        && |{ <fs_segmento_z>-z10 }|
+                                                                        && |{ <fs_segmento_z>-z11 }|
+                                                                        && |{ <fs_segmento_z>-z12(1) }|
+                                                                 from = ` `
+                                                                 to   = `` ).
+            ENDIF.
 
             <fs_retpagto_segmento_z>-zcontroleban = condense( <fs_segmento_z>-z13 ).
 
@@ -405,15 +432,24 @@ CLASS ZCLFI_RETORNO_PAGTO_SEGZ IMPLEMENTATION.
                                                                                                                         len = 4 ) ).
             <fs_retpagto_segmento_z>-zcontafav = ls_dados_fornecedor-bankaccount.
 
-            <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z06 }|
-                                                                      && |{ <fs_segmento_z>-z07 }|
-                                                                      && |{ <fs_segmento_z>-z08 }|
-                                                                      && |{ <fs_segmento_z>-z09 }|
-                                                                      && |{ <fs_segmento_z>-z10 }|
-                                                                      && |{ <fs_segmento_z>-z11 }|
-                                                                      && |{ <fs_segmento_z>-z12(1) }|
-                                                               from = ` `
-                                                               to   = `` ).
+            IF ls_dados_bancarios-bankl(3) IN gr_bank_aut_banc.
+
+              <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z12 }|
+                                                                        && |{ <fs_segmento_z>-z13 }|
+                                                                 from = ` `
+                                                                 to   = `` ).
+
+            ELSE.
+              <fs_retpagto_segmento_z>-zautenticaban = condense( val  = |{ <fs_segmento_z>-z06 }|
+                                                                        && |{ <fs_segmento_z>-z07 }|
+                                                                        && |{ <fs_segmento_z>-z08 }|
+                                                                        && |{ <fs_segmento_z>-z09 }|
+                                                                        && |{ <fs_segmento_z>-z10 }|
+                                                                        && |{ <fs_segmento_z>-z11 }|
+                                                                        && |{ <fs_segmento_z>-z12(1) }|
+                                                                 from = ` `
+                                                                 to   = `` ).
+            ENDIF.
 
             <fs_retpagto_segmento_z>-zcontroleban = condense( <fs_segmento_z>-z13 ).
 
@@ -451,6 +487,8 @@ CLASS ZCLFI_RETORNO_PAGTO_SEGZ IMPLEMENTATION.
 
     me->set_segmento_z( it_dados_arquivo ).
 
+    me->get_bank_aut_bank( ).
+
   ENDMETHOD.
 
 
@@ -482,5 +520,24 @@ CLASS ZCLFI_RETORNO_PAGTO_SEGZ IMPLEMENTATION.
 
   METHOD append_retpagto_segz.
     APPEND is_retpagto_segz TO me->gt_retpagto_segz.
+  ENDMETHOD.
+
+
+  METHOD get_bank_aut_bank.
+
+    CLEAR: gr_bank_aut_banc.
+
+    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+
+    TRY.
+        lo_param->m_get_range( EXPORTING iv_modulo = gc_multibanco-modulo
+                                         iv_chave1 = gc_multibanco-chave1
+                                         iv_chave2 = gc_multibanco-chave2
+                               IMPORTING et_range  = gr_bank_aut_banc ).
+
+      CATCH zcxca_tabela_parametros INTO DATA(lo_cx).
+        WRITE lo_cx->get_text( ).
+    ENDTRY.
+
   ENDMETHOD.
 ENDCLASS.

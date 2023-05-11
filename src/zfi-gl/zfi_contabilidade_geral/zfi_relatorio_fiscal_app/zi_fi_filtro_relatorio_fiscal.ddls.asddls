@@ -87,7 +87,7 @@ define view entity ZI_FI_FILTRO_RELATORIO_FISCAL
       //            else cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) + cast(_NFtax.IPI_Valor  as abap.dec( 15, 2 ) ) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 ) ) end as VlrSemFrete,
       //      cast(_Lin.NetValueAmount as abap.dec( 15, 2 )) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 ) ) as VlrSemFrete,
 
-      cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 )) + _NFtax_frete.Taxval as VlrSemFrete,
+      cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 )) + _NFtax_frete.Taxval as VlrSemFrete, 
       _Doc.SalesDocumentCurrency                                                                                                   as Waerk,
       _Tax_ICMS.BR_NFItemBaseAmount                                                                                                as ICMS_Base,
       _Tax_ICMS.BR_NFItemTaxAmount                                                                                                 as ICMS_Valor,

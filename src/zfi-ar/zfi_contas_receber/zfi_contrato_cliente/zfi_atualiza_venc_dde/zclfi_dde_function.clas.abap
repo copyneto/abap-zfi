@@ -24,7 +24,11 @@ CLASS zclfi_dde_function DEFINITION
     TYPES:
       ty_t_ctr TYPE TABLE OF zi_fi_dde_contrato WITH DEFAULT KEY .
 
+    TYPES:
+        ty_t_doc_lc TYPE TABLE OF zi_fi_dde_doc_lc WITH DEFAULT KEY .
+
     DATA gt_ctr TYPE ty_t_ctr .
+    DATA gt_doc_lc TYPE ty_t_doc_lc .
     DATA gs_venc TYPE zc_fi_venc_dde_busca .
     DATA gs_semctr TYPE ty_semctr .
     CONSTANTS gc_contrato TYPE char1 VALUE '1' ##NO_TEXT.
@@ -68,11 +72,12 @@ CLASS zclfi_dde_function DEFINITION
         VALUE(rv_return) TYPE abap_bool .
     METHODS get_contrato .
     METHODS get_sem_contrato .
+    METHODS baixa_lc.
 ENDCLASS.
 
 
 
-CLASS ZCLFI_DDE_FUNCTION IMPLEMENTATION.
+CLASS zclfi_dde_function IMPLEMENTATION.
 
 
   METHOD calcula_novo_venc.
@@ -113,6 +118,14 @@ CLASS ZCLFI_DDE_FUNCTION IMPLEMENTATION.
   METHOD constructor.
 
     gs_venc = is_venc.
+
+    CLEAR: gt_doc_lc.
+    SELECT *
+    FROM zi_fi_dde_doc_lc
+    INTO TABLE @gt_doc_lc
+    WHERE belnr = @gs_venc-belnr
+      AND gjahr = @gs_venc-gjahr
+      AND bukrs = @gs_venc-bukrs.
 
   ENDMETHOD.
 
@@ -350,6 +363,8 @@ CLASS ZCLFI_DDE_FUNCTION IMPLEMENTATION.
 
     update_doc_cont( gv_venc ).
 
+    baixa_lc(  ).
+
   ENDMETHOD.
 
 
@@ -531,4 +546,37 @@ CLASS ZCLFI_DDE_FUNCTION IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
+
+  METHOD baixa_lc.
+
+    DATA: lt_msg TYPE bapiret2_tab.
+
+    LOOP AT gt_doc_lc ASSIGNING FIELD-SYMBOL(<fs_doc_lc>).
+
+      CALL FUNCTION 'ZFMFI_BATCH_COMPENSAR'
+        EXPORTING
+          iv_kunnr = gs_venc-kunnr
+          iv_waers = 'BRL'
+          iv_budat = <fs_doc_lc>-budat
+          iv_bukrs = <fs_doc_lc>-bukrs
+          iv_anfbn = <fs_doc_lc>-anfbn
+*        IMPORTING
+*         ev_erro  =
+*         ev_doc_est  =
+*         ev_item_est =
+*         ev_ano_est  =
+        CHANGING
+          ct_msg   = lt_msg.
+
+      IF NOT line_exists( lt_msg[ type = 'E' ] ).
+        APPEND INITIAL LINE TO gt_return ASSIGNING FIELD-SYMBOL(<fs_return>).
+        <fs_return>-id         = 'ZFI_DDE'.
+        <fs_return>-type       = 'S'.
+        <fs_return>-number     = '005'.
+        <fs_return>-message_v1 = <fs_doc_lc>-anfbn.
+      ENDIF.
+    ENDLOOP.
+
+  ENDMETHOD.
+
 ENDCLASS.

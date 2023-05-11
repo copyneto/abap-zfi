@@ -74,6 +74,7 @@ FORM dme_brazil.
     j_1bdmexh2,                        "lot header
     j_1bdmexa,                         "details, segment A
     j_1bdmexb,                         "details, segment B
+    zsfi_j_1bdmex5, "Segment 5
     j_1bdmexj,                         "details, segment J
     j_1bdmexo,                         "details, segment O
     zsfi_segmento_o,                   "details, segment O
@@ -792,6 +793,17 @@ FORM dme_brazil.
                 PERFORM fill_bradesco240_segment_b USING reguh.
                 PERFORM store_on_file USING j_1bdmexb.
                 PERFORM cr_lf.
+
+                "Risco sacado
+                IF reguh-rzawe = 'R'.
+
+                  PERFORM fill_bradesco_5 USING j_1bdmexb.
+                  PERFORM store_on_file USING zsfi_j_1bdmex5.
+                  PERFORM cr_lf.
+
+                ENDIF.
+
+
               ENDIF.
             ENDIF.
           ELSE.
@@ -4356,3 +4368,25 @@ FORM fill_febr_segment_j52 .
       cs_j_1bdfebj52 = j_1bdfebj52.
 
 ENDFORM.                    " FILL_FEBR_SEGMENT_J52
+
+*&---------------------------------------------------------------------*
+*& Form fill_bradesco_5
+*&---------------------------------------------------------------------*
+*& text
+*&---------------------------------------------------------------------*
+*&      --> J_1BDMEXB
+*&---------------------------------------------------------------------*
+FORM fill_bradesco_5  USING p_1bdmexb TYPE j_1bdmexb.
+
+  CLEAR: zsfi_j_1bdmex5.
+
+  zsfi_j_1bdmex5-501 = p_1bdmexb-b01.
+  zsfi_j_1bdmex5-502 = p_1bdmexb-b02.
+  zsfi_j_1bdmex5-503 = p_1bdmexb-b03 + 1.
+  zsfi_j_1bdmex5-504 = '5'.
+  zsfi_j_1bdmex5-509 = '001'.
+  PERFORM f_trata_city_a16 CHANGING zsfi_j_1bdmex5-510.
+
+  zsfi_j_1bdmex5-513 = regup-bldat+6(2) &&  regup-bldat+4(2) &&  regup-bldat(4).
+
+ENDFORM.

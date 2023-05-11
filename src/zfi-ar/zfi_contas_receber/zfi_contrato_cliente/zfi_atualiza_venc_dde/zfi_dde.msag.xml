@@ -38,6 +38,12 @@
      <MSGNR>004</MSGNR>
      <TEXT>Execução Concluída</TEXT>
     </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZFI_DDE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Documento LC baixado &amp;1</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

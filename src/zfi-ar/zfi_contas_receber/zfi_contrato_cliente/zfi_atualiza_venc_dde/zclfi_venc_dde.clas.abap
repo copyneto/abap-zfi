@@ -1,64 +1,67 @@
-class ZCLFI_VENC_DDE definition
-  public
-  final
-  create public .
+CLASS zclfi_venc_dde DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  types:
-    BEGIN OF ty_bseg,
+    TYPES:
+      BEGIN OF ty_bseg,
         buzei TYPE bseg-buzei,
         bukrs TYPE bseg-bukrs,
         belnr TYPE bseg-belnr,
         gjahr TYPE bseg-gjahr,
       END OF ty_bseg .
-  types:
-    ty_t_venc TYPE TABLE OF zc_fi_venc_dde_busca WITH DEFAULT KEY .
-  types:
-    ty_t_ctr TYPE TABLE OF zi_fi_dde_contrato WITH DEFAULT KEY .
 
-  methods CONSTRUCTOR
-    importing
-      !IT_VENCIMENTO type TY_T_VENC .
-  methods PROCESS_BY_APP
-    importing
-      !IV_CLIENTE type ZI_FI_VENC_DDE_APP-CLIENTE
-      !IV_DOCUMENTO type ZI_FI_VENC_DDE_APP-DOCUMENTO
-      !IV_EMPRESA type ZI_FI_VENC_DDE_APP-EMPRESA
-      !IV_EXERCICIO type ZI_FI_VENC_DDE_APP-EXERCICIO
-      !IV_FATURA type ZI_FI_VENC_DDE_APP-FATURA
-      !IV_REMESSA type ZI_FI_VENC_DDE_APP-REMESSA
-    returning
-      value(RT_RETURN) type BAPIRET2_TAB .
-  methods PROCESS_BY_JOB
-    importing
-      !IV_CLIENTE type ZI_FI_VENC_DDE_APP-CLIENTE
-      !IV_DOCUMENTO type ZI_FI_VENC_DDE_APP-DOCUMENTO
-      !IV_EMPRESA type ZI_FI_VENC_DDE_APP-EMPRESA
-      !IV_EXERCICIO type ZI_FI_VENC_DDE_APP-EXERCICIO
-      !IV_FATURA type ZI_FI_VENC_DDE_APP-FATURA
-      !IV_REMESSA type ZI_FI_VENC_DDE_APP-REMESSA
-      !IV_ITEM type BUZEI optional
-    returning
-      value(RT_RETURN) type BAPIRET2_TAB .
-  methods TASK_FINISH
-    importing
-      !P_TASK type CLIKE .
+    TYPES:
+      ty_t_venc TYPE TABLE OF zc_fi_venc_dde_busca WITH DEFAULT KEY .
+    TYPES:
+      ty_t_ctr TYPE TABLE OF zi_fi_dde_contrato WITH DEFAULT KEY .
+
+
+    METHODS constructor
+      IMPORTING
+        !it_vencimento TYPE ty_t_venc .
+    METHODS process_by_app
+      IMPORTING
+        !iv_cliente      TYPE zi_fi_venc_dde_app-cliente
+        !iv_documento    TYPE zi_fi_venc_dde_app-documento
+        !iv_empresa      TYPE zi_fi_venc_dde_app-empresa
+        !iv_exercicio    TYPE zi_fi_venc_dde_app-exercicio
+        !iv_fatura       TYPE zi_fi_venc_dde_app-fatura
+        !iv_remessa      TYPE zi_fi_venc_dde_app-remessa
+      RETURNING
+        VALUE(rt_return) TYPE bapiret2_tab .
+    METHODS process_by_job
+      IMPORTING
+        !iv_cliente      TYPE zi_fi_venc_dde_app-cliente
+        !iv_documento    TYPE zi_fi_venc_dde_app-documento
+        !iv_empresa      TYPE zi_fi_venc_dde_app-empresa
+        !iv_exercicio    TYPE zi_fi_venc_dde_app-exercicio
+        !iv_fatura       TYPE zi_fi_venc_dde_app-fatura
+        !iv_remessa      TYPE zi_fi_venc_dde_app-remessa
+        !iv_item         TYPE buzei OPTIONAL
+      RETURNING
+        VALUE(rt_return) TYPE bapiret2_tab .
+    METHODS task_finish
+      IMPORTING
+        !p_task TYPE clike .
   PROTECTED SECTION.
-private section.
+  PRIVATE SECTION.
 
-  data GT_VENC type TY_T_VENC .
-  data GT_RETURN type BAPIRET2_TAB .
-  data GT_CTR type TY_T_CTR .
+    DATA gt_venc TYPE ty_t_venc .
+    DATA gt_return TYPE bapiret2_tab .
+    DATA gt_ctr TYPE ty_t_ctr .
 
-  methods GET_CONTRATO
-    returning
-      value(RT_CTR) type TY_T_CTR .
+    METHODS get_contrato
+      RETURNING
+        VALUE(rt_ctr) TYPE ty_t_ctr .
+
 ENDCLASS.
 
 
 
-CLASS ZCLFI_VENC_DDE IMPLEMENTATION.
+CLASS zclfi_venc_dde IMPLEMENTATION.
 
 
   METHOD process_by_app.
@@ -155,4 +158,6 @@ CLASS ZCLFI_VENC_DDE IMPLEMENTATION.
       WHERE cnpjroot = @gt_venc-cnpjroot.
 
   ENDMETHOD.
+
+
 ENDCLASS.

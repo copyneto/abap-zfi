@@ -553,9 +553,9 @@ CLASS ZCLFI_AUTOMATIZACAO_BANCARIA IMPLEMENTATION.
       WRITE sy-datum TO lv_nome.
       REPLACE ALL OCCURRENCES OF lc_dot IN lv_nome WITH space.
       lv_bank = lv_bankl_t012(3). "ls_reguh-ubnkl(3).
-      lv_cc = ls_bankl_t012k-bankn && ls_bankl_t012k-bkont.
-*      lv_cc = ls_reguh-ubknt && get_digit_account( iv_ubknt = ls_reguh-ubknt
-*                                                   iv_ubkon = ls_reguh-ubkon ).
+**      lv_cc = ls_bankl_t012k-bankn && ls_bankl_t012k-bkont.
+      lv_cc = ls_reguh-ubknt && get_digit_account( iv_ubknt = ls_reguh-ubknt
+                                                   iv_ubkon = ls_reguh-ubkon ).
       CONDENSE lv_cc.
       SHIFT lv_cc LEFT DELETING LEADING lc_zero.
       CONDENSE lv_cc.
