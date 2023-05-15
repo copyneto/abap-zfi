@@ -771,8 +771,17 @@ FORM dme_brazil.
                   IF reguh-zbnkn(3) EQ '237'.
                     CLEAR: j_1bdmexa-a26+6(5), j_1bdmexa-a26+11(2).
                   ELSE.
+                    j_1bdmexa-a07 = '09'.
                     j_1bdmexa-a26+6(5) = '00010'.
                     j_1bdmexa-a26+11(2) = 'CC'.
+                  ENDIF.
+
+                  IF reguh-zbnky(3) = '237'.
+                    j_1bdmexa-a07 = '09'.
+                    j_1bdmexa-a08 = '000'.
+                    CLEAR: j_1bdmexa-a26, j_1bdmexa-a27.
+                  ELSE.
+                    j_1bdmexa-a07 = '09'.
                   ENDIF.
 
                 ELSE.
@@ -4380,10 +4389,15 @@ FORM fill_bradesco_5  USING p_1bdmexb TYPE j_1bdmexb.
 
   CLEAR: zsfi_j_1bdmex5.
 
+  cnt_rec_perlot = cnt_rec_perlot + 1.
+  cnt_records    = cnt_records    + 1.
+  cnt_rec_detail = cnt_rec_detail + 1.
+
   zsfi_j_1bdmex5-501 = p_1bdmexb-b01.
   zsfi_j_1bdmex5-502 = p_1bdmexb-b02.
-  zsfi_j_1bdmex5-503 = p_1bdmexb-b03 + 1.
-  zsfi_j_1bdmex5-504 = '5'.
+  zsfi_j_1bdmex5-503 = '3'.
+  zsfi_j_1bdmex5-504 = p_1bdmexb-b03.
+  zsfi_j_1bdmex5-505 = '5'.
   zsfi_j_1bdmex5-509 = '001'.
   PERFORM f_trata_city_a16 CHANGING zsfi_j_1bdmex5-510.
 

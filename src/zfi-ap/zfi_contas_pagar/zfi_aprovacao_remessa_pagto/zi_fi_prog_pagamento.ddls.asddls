@@ -66,10 +66,10 @@ define view ZI_FI_PROG_PAGAMENTO
       //            end as rwbtr )                                                   as PaidAmountInPaytCurrency,
 
       case _PaymentItem.shkzg
-        when 'H'
-            then cast(  _PaymentItem.wrbtr   as rwbtr )
+        when 'S'
+            then cast(  abs( _PaymentItem.wrbtr )   as rwbtr )
         else
-            cast(  ( -1 * _PaymentItem.wrbtr )   as rwbtr )  end             as PaidAmountInPaytCurrency,
+            cast(  ( -1 * abs( _PaymentItem.wrbtr ) )  as rwbtr )  end       as PaidAmountInPaytCurrency,
 
       //     cast(  _Payment.PaidAmountInPaytCurrency   as rwbtr )                                 as PaidAmountInPaytCurrency,
       // pferraz 10.05.23 - Valores credito/debito - fim

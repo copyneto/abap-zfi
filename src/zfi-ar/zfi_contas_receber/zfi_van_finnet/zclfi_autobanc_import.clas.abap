@@ -915,10 +915,10 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD GET_DIR_POST_PROCESS.
+  METHOD get_dir_post_process.
 
     DATA:
-      lr_tipos_validos TYPE RANGE OF zi_fi_autobanc_diretorios-Tipo.
+      lr_tipos_validos TYPE RANGE OF zi_fi_autobanc_diretorios-tipo.
 
     lr_tipos_validos = VALUE #( sign   = rsmds_c_sign-including
                                 option = rsmds_c_option-equal
@@ -933,21 +933,25 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
                        ).
 
     "Seleciona os diretórios para mover arquivos processados/não processados
-    SELECT  CompanyCode,
-            Tipo,
-            Diretorio,
-            CreatedBy,
-            CreatedAt,
-            LastChangedBy,
-            LastChangedAt,
-            LocalLastChangedAt
+    SELECT  companycode,
+            tipo,
+            diretorio,
+            createdby,
+            createdat,
+            lastchangedby,
+            lastchangedat,
+            locallastchangedat
       FROM zi_fi_autobanc_diretorios
-      WHERE Tipo IN @lr_tipos_validos
+      WHERE tipo IN @lr_tipos_validos
          INTO TABLE @rt_directory.
 
     IF sy-subrc IS INITIAL.
 
       SORT rt_directory ASCENDING BY diretorio.
+      "pferraz - 12.05.23 - inicio
+      "Ajustes van finnet- campo empresa esta multiplicando a quantidade de jobs
+      DELETE ADJACENT DUPLICATES FROM rt_directory COMPARING diretorio.
+      "pferraz - 12.05.23 - Fim
 
     ENDIF.
 

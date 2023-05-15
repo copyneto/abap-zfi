@@ -17,111 +17,126 @@ CLASS zclfi_interface_proc_proposta DEFINITION
         zcxca_erro_interface .
     METHODS constructor .
   PROTECTED SECTION.
-private section.
+PRIVATE SECTION.
 
-  types:
+  TYPES:
     BEGIN OF ty_infos_aux,
-             coscen  TYPE string,
-             kostl   TYPE kostl,
-             gsber   TYPE gsber,
-             prctr   TYPE prctr,
-             segment TYPE fb_segment,
-           END OF ty_infos_aux .
-  types:
+      coscen  TYPE string,
+      kostl   TYPE kostl,
+      gsber   TYPE gsber,
+      prctr   TYPE prctr,
+      segment TYPE fb_segment,
+    END OF ty_infos_aux .
+  TYPES:
     tt_infos_aux TYPE TABLE OF ty_infos_aux .
-  types:
+  TYPES:
     BEGIN OF ty_j_1bbranch,
-             bukrs  TYPE j_1bbranch-bukrs,
-             branch TYPE j_1bbranch-branch,
-           END OF ty_j_1bbranch .
-  types:
+      bukrs  TYPE j_1bbranch-bukrs,
+      branch TYPE j_1bbranch-branch,
+    END OF ty_j_1bbranch .
+  TYPES:
     tt_j_1bbranch TYPE TABLE OF ty_j_1bbranch .
-  types TY_REVERSAO type ZI_FI_REVERSAO_PROVISAO_PDC .
-  types TY_REVERSAO_POPUP type ZI_FI_REVERSAO_PROVISAO_POPUP .
+  TYPES ty_reversao TYPE zi_fi_reversao_provisao_pdc .
+  TYPES ty_reversao_popup TYPE zi_fi_reversao_provisao_popup .
 
-  constants:
+  CONSTANTS:
     BEGIN OF gc_erros,
-        interface TYPE string VALUE 'ZCLFI_CL_SI_RECEBER_CRIAR_PROP',
-        metodo    TYPE string VALUE 'executar'                             ##NO_TEXT,
-        classe    TYPE string VALUE 'ZCLFI_INTERFACE_PROC_PROPOSTA'        ##NO_TEXT,
-      END OF gc_erros .
-  constants:
+      interface TYPE string VALUE 'ZCLFI_CL_SI_RECEBER_CRIAR_PROP',
+      metodo    TYPE string VALUE 'executar'                             ##NO_TEXT,
+      classe    TYPE string VALUE 'ZCLFI_INTERFACE_PROC_PROPOSTA'        ##NO_TEXT,
+    END OF gc_erros .
+  CONSTANTS:
     BEGIN OF gc_param,
-        modulo  TYPE ztca_param_par-modulo VALUE 'FI-AR',
-        chave1  TYPE ztca_param_par-chave1 VALUE 'PDC',
-        chave2  TYPE ztca_param_par-chave2 VALUE 'CRIARPROP',
-        tipodoc TYPE ztca_param_par-chave3 VALUE 'TIPODOC',
-        chave40 TYPE ztca_param_par-chave3 VALUE 'CHAVE40',
-      END OF gc_param .
-  data:
+      modulo  TYPE ztca_param_par-modulo VALUE 'FI-AR',
+      chave1  TYPE ztca_param_par-chave1 VALUE 'PDC',
+      chave2  TYPE ztca_param_par-chave2 VALUE 'CRIARPROP',
+      tipodoc TYPE ztca_param_par-chave3 VALUE 'TIPODOC',
+      chave40 TYPE ztca_param_par-chave3 VALUE 'CHAVE40',
+    END OF gc_param .
+  DATA:
     gt_dados_cab TYPE TABLE OF ztfi_contratocab .
-  data:
+  DATA:
     gt_dados_par TYPE TABLE OF ztfi_contratopar .
-  data GT_BRANCH type TT_J_1BBRANCH .
-  data GT_INFO type TT_INFOS_AUX .
-  data GV_TIPO_DOC type BLART .
-  data GV_SAKNR type SAKNR .
-  constants GC_ERROR_ID type SYST_MSGID value 'ZFI_CONTAB' ##NO_TEXT.
-  constants GC_MSG_NO_002 type SYST_MSGNO value '002' ##NO_TEXT.
-  constants GC_ERROR type SYST_MSGTY value 'E' ##NO_TEXT.
-  data GT_DADOS_PAR_RATEIO TYPE TABLE OF zsfi_contratopar .
+  DATA gt_branch TYPE tt_j_1bbranch .
+  DATA gt_info TYPE tt_infos_aux .
+  DATA gv_tipo_doc TYPE blart .
+  DATA gv_saknr TYPE saknr .
+  CONSTANTS gc_error_id TYPE syst_msgid VALUE 'ZFI_CONTAB' ##NO_TEXT.
+  CONSTANTS gc_msg_no_002 TYPE syst_msgno VALUE '002' ##NO_TEXT.
+  CONSTANTS gc_error TYPE syst_msgty VALUE 'E' ##NO_TEXT.
+  DATA:
+    gt_dados_par_rateio TYPE TABLE OF zsfi_contratopar .
 
-    "! Return error raising
-  methods ERROR_RAISE
-    importing
-      !IS_RET type SCX_T100KEY
-    raising
-      ZCXCA_ERRO_INTERFACE .
-  methods GET_DATA
-    importing
-      !IS_INPUT type ZCLFI_MT_CRIAR_PROPOSTA .
-  methods SAVE_DATA .
-  methods PROCESS_DATA
-    exporting
-      !ES_OUTPUT type ZCLFI_MT_CRIAR_PROPOSTA_RESP .
-  methods GET_DATA_HEADER
-    importing
-      !IS_DADOS_PAR type ZTFI_CONTRATOPAR
-      !IS_DADOS_CAB type ZTFI_CONTRATOCAB
-    exporting
-      !ES_DOCHEADER type BAPIACHE09 .
-  methods SELECT_DATA .
-  methods ADD_DATA_ACCOUNTGL
-    importing
-      !IV_ITEM_NO type POSNR_ACC
-      !IS_DADOS_PAR type ZTFI_CONTRATOPAR
-    exporting
-      !ET_ACCOUNTGL type BAPIACGL09_TAB .
-  methods ADD_DATA_ACCOUNTRECEIVABLE
-    importing
-      !IV_ITEM_NO type POSNR_ACC
-      !IS_DADOS_PAR type ZTFI_CONTRATOPAR
-      !IS_DOCHEADER type BAPIACHE09
-    exporting
-      !ET_ACCOUNTRECEIVABLE type BAPIACAR09_TAB .
-  methods ADD_DATA_CURRENCYAMOUNT
-    importing
-      !IV_ITEM_NO type POSNR_ACC
-      !IV_SHKZG type SHKZG
-      !IS_DADOS_PAR type ZTFI_CONTRATOPAR
-    changing
-      !CT_CURRENCYAMOUNT type BAPIACCR09_TAB .
-  methods GET_DATA_PROVISAO
-    importing
-      !IS_DOCHEADER type BAPIACHE09
-      !IS_DADOS_PAR type ZTFI_CONTRATOPAR
-    exporting
-      !ES_REVERSAO type ZI_FI_REVERSAO_PROVISAO_PDC .
-  methods ADD_DATA_EXTENSION2
-    importing
-      !IV_ITEM_NO type POSNR_ACC
-      !IS_DADOS_PAR type ZTFI_CONTRATOPAR
-    changing
-      !CT_EXTENSION2 type BAPIAPOPAREX_TAB .
-  methods UPDATE_DOCUMENT
-    importing
-      !IS_DADOS_PAR type ZTFI_CONTRATOPAR
-      !IV_KEY type BAPIACHE09-OBJ_KEY .
+
+
+  TYPES:
+    BEGIN OF ty_ref_info,
+      bukrs TYPE bkpf-bukrs,
+      belnr TYPE bkpf-belnr,
+      gjahr TYPE bkpf-gjahr,
+      xblnr TYPE bkpf-xblnr,
+    END OF ty_ref_info .
+  TYPES:
+    tt_ty_ref_info TYPE TABLE OF ty_ref_info .
+
+  DATA gt_ref_part TYPE tt_ty_ref_info .
+
+  "! Return error raising
+  METHODS error_raise
+    IMPORTING
+      !is_ret TYPE scx_t100key
+    RAISING
+      zcxca_erro_interface .
+  METHODS get_data
+    IMPORTING
+      !is_input TYPE zclfi_mt_criar_proposta .
+  METHODS save_data .
+  METHODS process_data
+    EXPORTING
+      !es_output TYPE zclfi_mt_criar_proposta_resp .
+  METHODS get_data_header
+    IMPORTING
+      !is_dados_par TYPE ztfi_contratopar
+      !is_dados_cab TYPE ztfi_contratocab
+    EXPORTING
+      !es_docheader TYPE bapiache09 .
+  METHODS select_data .
+  METHODS add_data_accountgl
+    IMPORTING
+      !iv_item_no   TYPE posnr_acc
+      !is_dados_par TYPE ztfi_contratopar
+    EXPORTING
+      !et_accountgl TYPE bapiacgl09_tab .
+  METHODS add_data_accountreceivable
+    IMPORTING
+      !iv_item_no           TYPE posnr_acc
+      !is_dados_par         TYPE ztfi_contratopar
+      !is_docheader         TYPE bapiache09
+    EXPORTING
+      !et_accountreceivable TYPE bapiacar09_tab .
+  METHODS add_data_currencyamount
+    IMPORTING
+      !iv_item_no        TYPE posnr_acc
+      !iv_shkzg          TYPE shkzg
+      !is_dados_par      TYPE ztfi_contratopar
+    CHANGING
+      !ct_currencyamount TYPE bapiaccr09_tab .
+  METHODS get_data_provisao
+    IMPORTING
+      !is_docheader TYPE bapiache09
+      !is_dados_par TYPE ztfi_contratopar
+    EXPORTING
+      !es_reversao  TYPE zi_fi_reversao_provisao_pdc .
+  METHODS add_data_extension2
+    IMPORTING
+      !iv_item_no    TYPE posnr_acc
+      !is_dados_par  TYPE ztfi_contratopar
+    CHANGING
+      !ct_extension2 TYPE bapiapoparex_tab .
+  METHODS update_document
+    IMPORTING
+      !is_dados_par TYPE ztfi_contratopar
+      !iv_key       TYPE bapiache09-obj_key .
 ENDCLASS.
 
 
@@ -342,85 +357,105 @@ CLASS ZCLFI_INTERFACE_PROC_PROPOSTA IMPLEMENTATION.
             lt_return[],
             lt_return_rever[].
 
+
       READ TABLE gt_dados_cab ASSIGNING FIELD-SYMBOL(<fs_dados_cab>) INDEX 1.
       IF sy-subrc = 0.
 
-        me->get_data_header( EXPORTING is_dados_par = <fs_dados_par>
-                                       is_dados_cab = <fs_dados_cab>
-                             IMPORTING es_docheader = ls_docheader ).
+        DATA(lv_parcela) = |{ <fs_dados_cab>-zproposta }-{ <fs_dados_par>-parcela }|.
+        READ TABLE gt_ref_part ASSIGNING FIELD-SYMBOL(<fs_ref_part>) WITH KEY
+                    xblnr = lv_parcela
+                    BINARY SEARCH.
+        IF sy-subrc = 0.
 
-        me->add_data_accountreceivable( EXPORTING iv_item_no           = '1'
-                                                  is_dados_par         = <fs_dados_par>
-                                                  is_docheader         = ls_docheader
-                                        IMPORTING et_accountreceivable = lt_accountreceivable ) .
+          CONCATENATE 'Parcela existe Documento' <fs_ref_part>-belnr
+                                                 <fs_ref_part>-bukrs
+                                                 <fs_ref_part>-gjahr INTO lv_msg SEPARATED BY space.
 
-        me->add_data_currencyamount( EXPORTING iv_item_no       = '1'
-                                               iv_shkzg         = 'H'
-                                               is_dados_par     = <fs_dados_par>
-                                     CHANGING ct_currencyamount = lt_currencyamount ).
+          lt_respost = VALUE #( BASE lt_respost ( erro      = lv_msg
+                                                  parcela   = <fs_dados_par>-parcela
+                                                  zcontrato = <fs_dados_par>-zproposta
+                                                  proposta  = <fs_dados_par>-zproposta
+                                                  rateio    = <fs_dados_par>-rateio
+                                                  kunnr     = <fs_dados_par>-kunnr ) ).
 
-        me->add_data_extension2( EXPORTING iv_item_no        = '1'
-                                           is_dados_par      = <fs_dados_par>
-                                 CHANGING  ct_extension2     = lt_extension2 ).
+        ELSE.
 
-        me->add_data_accountgl( EXPORTING iv_item_no   = '2'
-                                          is_dados_par = <fs_dados_par>
-                                IMPORTING et_accountgl = lt_accountgl ) .
+          me->get_data_header( EXPORTING is_dados_par = <fs_dados_par>
+                                         is_dados_cab = <fs_dados_cab>
+                               IMPORTING es_docheader = ls_docheader ).
 
-        me->add_data_currencyamount( EXPORTING iv_item_no        = '2'
-                                               iv_shkzg          = 'S'
-                                               is_dados_par      = <fs_dados_par>
-                                     CHANGING  ct_currencyamount = lt_currencyamount ).
+          me->add_data_accountreceivable( EXPORTING iv_item_no           = '1'
+                                                    is_dados_par         = <fs_dados_par>
+                                                    is_docheader         = ls_docheader
+                                          IMPORTING et_accountreceivable = lt_accountreceivable ) .
 
-        me->add_data_extension2( EXPORTING iv_item_no        = '2'
-                                           is_dados_par      = <fs_dados_par>
-                                 CHANGING  ct_extension2     = lt_extension2 ).
+          me->add_data_currencyamount( EXPORTING iv_item_no       = '1'
+                                                 iv_shkzg         = 'H'
+                                                 is_dados_par     = <fs_dados_par>
+                                       CHANGING ct_currencyamount = lt_currencyamount ).
 
-        NEW zclfi_exec_lancamento_desconto( )->executar(
-             EXPORTING
-               iv_commit            = space
-               is_docheader         = ls_docheader
-               it_accountgl         = lt_accountgl
-               it_accountreceivable = lt_accountreceivable
-               it_extension2        = lt_extension2
-               it_currencyamount    = lt_currencyamount
-             IMPORTING
-               ev_type           = DATA(lv_type)
-               ev_key            = DATA(lv_key)
-               ev_sys            = DATA(lv_sys)
-             RECEIVING
-               rt_return         = lt_return ).
+          me->add_data_extension2( EXPORTING iv_item_no        = '1'
+                                             is_dados_par      = <fs_dados_par>
+                                   CHANGING  ct_extension2     = lt_extension2 ).
 
-        IF NOT line_exists( lt_return[ type = 'E' ] ).
-          me->get_data_provisao( EXPORTING is_docheader = ls_docheader
-                                           is_dados_par = <fs_dados_par>
-                                 IMPORTING es_reversao = ls_reversao ).
+          me->add_data_accountgl( EXPORTING iv_item_no   = '2'
+                                            is_dados_par = <fs_dados_par>
+                                  IMPORTING et_accountgl = lt_accountgl ) .
 
-          READ TABLE gt_dados_par_rateio ASSIGNING FIELD-SYMBOL(<fs_dados_par_rateio>)
-                                          WITH KEY branch       = <fs_dados_par>-branch
-                                                   kunnr        = <fs_dados_par>-kunnr
-                                                   zproposta    = <fs_dados_par>-zproposta
-                                                   zqtdparcelas = <fs_dados_par>-zqtdparcelas
-                                          BINARY SEARCH.
-          IF sy-subrc IS INITIAL.
+          me->add_data_currencyamount( EXPORTING iv_item_no        = '2'
+                                                 iv_shkzg          = 'S'
+                                                 is_dados_par      = <fs_dados_par>
+                                       CHANGING  ct_currencyamount = lt_currencyamount ).
 
-            READ TABLE gt_info ASSIGNING FIELD-SYMBOL(<fs_info>)
-                                WITH KEY kostl = <fs_dados_par_rateio>-kostl
-                                BINARY SEARCH.
+          me->add_data_extension2( EXPORTING iv_item_no        = '2'
+                                             is_dados_par      = <fs_dados_par>
+                                   CHANGING  ct_extension2     = lt_extension2 ).
 
+          NEW zclfi_exec_lancamento_desconto( )->executar(
+               EXPORTING
+                 iv_commit            = space
+                 is_docheader         = ls_docheader
+                 it_accountgl         = lt_accountgl
+                 it_accountreceivable = lt_accountreceivable
+                 it_extension2        = lt_extension2
+                 it_currencyamount    = lt_currencyamount
+               IMPORTING
+                 ev_type           = DATA(lv_type)
+                 ev_key            = DATA(lv_key)
+                 ev_sys            = DATA(lv_sys)
+               RECEIVING
+                 rt_return         = lt_return ).
+
+          IF NOT line_exists( lt_return[ type = 'E' ] ).
+            me->get_data_provisao( EXPORTING is_docheader = ls_docheader
+                                             is_dados_par = <fs_dados_par>
+                                   IMPORTING es_reversao = ls_reversao ).
+
+            READ TABLE gt_dados_par_rateio ASSIGNING FIELD-SYMBOL(<fs_dados_par_rateio>)
+                                            WITH KEY branch       = <fs_dados_par>-branch
+                                                     kunnr        = <fs_dados_par>-kunnr
+                                                     zproposta    = <fs_dados_par>-zproposta
+                                                     zqtdparcelas = <fs_dados_par>-zqtdparcelas
+                                            BINARY SEARCH.
             IF sy-subrc IS INITIAL.
 
-              <fs_dados_par_rateio>-gsber = <fs_info>-gsber.
+              READ TABLE gt_info ASSIGNING FIELD-SYMBOL(<fs_info>)
+                                  WITH KEY kostl = <fs_dados_par_rateio>-kostl
+                                  BINARY SEARCH.
 
-            ENDIF.
+              IF sy-subrc IS INITIAL.
 
-            NEW zclfi_reversao_provisao_events(  )->create_copa_post_cost_list(
-                EXPORTING
-                  is_reversao       = ls_reversao
-                  is_reversao_popup = ls_reversao_popup
-                  is_contratopar    = <fs_dados_par_rateio>                " Cadastro de Parcelas
-                IMPORTING
-                  et_return         = lt_return_rever ).
+                <fs_dados_par_rateio>-gsber = <fs_info>-gsber.
+
+              ENDIF.
+
+              NEW zclfi_reversao_provisao_events(  )->create_copa_post_cost_list(
+                  EXPORTING
+                    is_reversao       = ls_reversao
+                    is_reversao_popup = ls_reversao_popup
+                    is_contratopar    = <fs_dados_par_rateio>                " Cadastro de Parcelas
+                  IMPORTING
+                    et_return         = lt_return_rever ).
 
 *          ELSE.
 
@@ -431,7 +466,7 @@ CLASS ZCLFI_INTERFACE_PROC_PROPOSTA IMPLEMENTATION.
 *                IMPORTING
 *                  et_return         = lt_return_rever ).
 
-          ENDIF.
+            ENDIF.
 
 *          es_output-mt_criar_proposta_resp-kunnr     = <fs_dados_par>-kunnr.
 *          es_output-mt_criar_proposta_resp-zcontrato = <fs_dados_par>-zproposta.
@@ -439,15 +474,68 @@ CLASS ZCLFI_INTERFACE_PROC_PROPOSTA IMPLEMENTATION.
 *          es_output-mt_criar_proposta_resp-parcela   = <fs_dados_par>-parcela.
 *          es_output-mt_criar_proposta_resp-rateio    = <fs_dados_par>-rateio.
 
-          IF line_exists( lt_return_rever[ type = 'E' ] ).
+            IF line_exists( lt_return_rever[ type = 'E' ] ).
 
-            IF lines( lt_return_rever ) > 1.
-              READ TABLE lt_return_rever INTO DATA(ls_return) INDEX 2.
+              IF lines( lt_return_rever ) > 1.
+                READ TABLE lt_return_rever INTO DATA(ls_return) INDEX 2.
+              ELSE.
+                ls_return = lt_return_rever[ type = 'E' ].
+              ENDIF.
+
+              FREE: lt_return_rever[].
+
+              IF ls_return-message IS INITIAL.
+                CALL FUNCTION 'BAPI_MESSAGE_GETDETAIL'
+                  EXPORTING
+                    id         = ls_return-id
+                    number     = ls_return-number
+                    language   = sy-langu
+                    textformat = 'ASC'
+                    message_v1 = ls_return-message_v1
+                    message_v2 = ls_return-message_v2
+                    message_v3 = ls_return-message_v3
+                    message_v4 = ls_return-message_v4
+                  IMPORTING
+                    message    = lv_msg.
+              ELSE.
+                lv_msg = ls_return-message.
+              ENDIF.
+
+              lt_respost = VALUE #( BASE lt_respost ( kunnr     = <fs_dados_par>-kunnr
+                                                      zcontrato = <fs_dados_par>-zproposta
+                                                      proposta  = <fs_dados_par>-zproposta
+                                                      parcela   = <fs_dados_par>-parcela
+                                                      rateio    = <fs_dados_par>-rateio
+                                                      erro      = lv_msg ) ).
+
             ELSE.
-              ls_return = lt_return_rever[ type = 'E' ].
+
+              update_document( EXPORTING is_dados_par = <fs_dados_par>
+                                         iv_key       = lv_key ).
+
+              lt_respost = VALUE #( BASE lt_respost ( kunnr     = <fs_dados_par>-kunnr
+                                                      zcontrato = <fs_dados_par>-zproposta
+                                                      proposta  = <fs_dados_par>-zproposta
+                                                      parcela   = <fs_dados_par>-parcela
+                                                      rateio    = <fs_dados_par>-rateio
+                                                      belnr     = lv_key(10) ) ).
+
+*            es_output-mt_criar_proposta_resp-belnr = lv_key(10).
             ENDIF.
 
-            FREE: lt_return_rever[].
+          ELSE.
+
+            IF lines( lt_return ) > 1.
+              READ TABLE lt_return INTO ls_return INDEX 2.
+
+              IF ls_return-type = 'W' AND ls_return-id = 'FICUSTOM'.
+                DELETE lt_return WHERE type = 'E' AND number = '609'. "#EC CI_STDSEQ
+                READ TABLE lt_return INTO ls_return WITH KEY type = 'E'. "#EC CI_STDSEQ
+              ENDIF.
+
+            ELSE.
+              ls_return = lt_return[ type = 'E' ].
+            ENDIF.
 
             IF ls_return-message IS INITIAL.
               CALL FUNCTION 'BAPI_MESSAGE_GETDETAIL'
@@ -466,68 +554,16 @@ CLASS ZCLFI_INTERFACE_PROC_PROPOSTA IMPLEMENTATION.
               lv_msg = ls_return-message.
             ENDIF.
 
-            lt_respost = VALUE #( BASE lt_respost ( kunnr     = <fs_dados_par>-kunnr
+            lt_respost = VALUE #( BASE lt_respost ( erro      = lv_msg
+                                                    parcela   = <fs_dados_par>-parcela
                                                     zcontrato = <fs_dados_par>-zproposta
                                                     proposta  = <fs_dados_par>-zproposta
-                                                    parcela   = <fs_dados_par>-parcela
                                                     rateio    = <fs_dados_par>-rateio
-                                                    erro      = lv_msg ) ).
-
-          ELSE.
-
-            update_document( EXPORTING is_dados_par = <fs_dados_par>
-                                       iv_key       = lv_key ).
-
-            lt_respost = VALUE #( BASE lt_respost ( kunnr     = <fs_dados_par>-kunnr
-                                                    zcontrato = <fs_dados_par>-zproposta
-                                                    proposta  = <fs_dados_par>-zproposta
-                                                    parcela   = <fs_dados_par>-parcela
-                                                    rateio    = <fs_dados_par>-rateio
-                                                    belnr     = lv_key(10) ) ).
-
-*            es_output-mt_criar_proposta_resp-belnr = lv_key(10).
-          ENDIF.
-
-        ELSE.
-
-          IF lines( lt_return ) > 1.
-            READ TABLE lt_return INTO ls_return INDEX 2.
-
-            IF ls_return-type = 'W' AND ls_return-id = 'FICUSTOM'.
-              DELETE lt_return WHERE type = 'E' AND number = '609'. "#EC CI_STDSEQ
-              READ TABLE lt_return INTO ls_return WITH KEY type = 'E'. "#EC CI_STDSEQ
-            ENDIF.
-
-          ELSE.
-            ls_return = lt_return[ type = 'E' ].
-          ENDIF.
-
-          IF ls_return-message IS INITIAL.
-            CALL FUNCTION 'BAPI_MESSAGE_GETDETAIL'
-              EXPORTING
-                id         = ls_return-id
-                number     = ls_return-number
-                language   = sy-langu
-                textformat = 'ASC'
-                message_v1 = ls_return-message_v1
-                message_v2 = ls_return-message_v2
-                message_v3 = ls_return-message_v3
-                message_v4 = ls_return-message_v4
-              IMPORTING
-                message    = lv_msg.
-          ELSE.
-            lv_msg = ls_return-message.
-          ENDIF.
-
-          lt_respost = VALUE #( BASE lt_respost ( erro      = lv_msg
-                                                  parcela   = <fs_dados_par>-parcela
-                                                  zcontrato = <fs_dados_par>-zproposta
-                                                  proposta  = <fs_dados_par>-zproposta
-                                                  rateio    = <fs_dados_par>-rateio
-                                                  kunnr     = <fs_dados_par>-kunnr ) ).
+                                                    kunnr     = <fs_dados_par>-kunnr ) ).
 
 *            es_output-mt_criar_proposta_resp-erro = lv_msg.
 
+          ENDIF.
         ENDIF.
       ENDIF.
     ENDLOOP.
@@ -571,9 +607,38 @@ CLASS ZCLFI_INTERFACE_PROC_PROPOSTA IMPLEMENTATION.
 
 
   METHOD select_data.
+
+    DATA lr_ref_doc TYPE RANGE OF bkpf-xblnr.
+
+    READ TABLE gt_dados_cab ASSIGNING FIELD-SYMBOL(<fs_dados_cab>) INDEX 1.
+
+    lr_ref_doc = VALUE #( FOR ls_dados_par IN gt_dados_par
+                          ( sign = 'I'
+                            option = 'EQ'
+                            low = |{ <fs_dados_cab>-zproposta }-{ ls_dados_par-parcela }| ) ).
+
+
+    IF lr_ref_doc IS NOT INITIAL.
+
+      CLEAR: gt_ref_part.
+      SELECT bukrs,
+             belnr,
+             gjahr,
+             xblnr
+            FROM bkpf
+        INTO TABLE @gt_ref_part
+        WHERE xblnr IN @lr_ref_doc.
+
+      SORT: gt_ref_part BY xblnr.
+      DELETE ADJACENT DUPLICATES FROM gt_ref_part COMPARING xblnr.
+
+    ENDIF.
+
+
+
     IF gt_dados_cab[] IS NOT INITIAL.
-      SELECT  bukrs
-               branch
+      SELECT bukrs
+             branch
          FROM j_1bbranch
          INTO TABLE gt_branch
          FOR ALL ENTRIES IN gt_dados_cab
