@@ -7,16 +7,16 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-define view entity ZI_FI_CREDITOS_CLI_CDCLI 
-  as select from ZI_FI_CREDITOS_CLI_BSID   as bsid
-    //inner join   ZI_FI_PARAM_CHAVE_LANC_CREDITO as _Param on _Param.ChaveLancamento = bsid.bschl
-  association [0..1] to ztfi_creditoscli as _CreditCli on  _CreditCli.empresa   = $projection.Empresa
-                                                       and _CreditCli.documento = $projection.Documento
-                                                       and _CreditCli.ano       = $projection.Ano
-                                                       and _CreditCli.linha     = $projection.Linha  
-                                                       and _CreditCli.cliente   = $projection.Cliente  
-  association [0..1] to ZI_FI_CLIENTE_RAIZ as _RaizCnpj on  _RaizCnpj.Cliente   = $projection.CodCliente  
-                                                       
+define view entity ZI_FI_CREDITOS_CLI_CDCLI
+  as select from ZI_FI_CREDITOS_CLI_BSID as bsid
+  //inner join   ZI_FI_PARAM_CHAVE_LANC_CREDITO as _Param on _Param.ChaveLancamento = bsid.bschl
+  association [0..1] to ztfi_creditoscli   as _CreditCli on  _CreditCli.empresa   = $projection.Empresa
+                                                         and _CreditCli.documento = $projection.Documento
+                                                         and _CreditCli.ano       = $projection.Ano
+                                                         and _CreditCli.linha     = $projection.Linha
+                                                         and _CreditCli.cliente   = $projection.Cliente
+  association [0..1] to ZI_FI_CLIENTE_RAIZ as _RaizCnpj  on  _RaizCnpj.Cliente = $projection.CodCliente
+
 {
   key bsid.bukrs                       as Empresa,
   key bsid.belnr                       as Documento,
@@ -41,7 +41,7 @@ define view entity ZI_FI_CREDITOS_CLI_CDCLI
       //NETDT    as Vencimento,
       @Semantics.amount.currencyCode: 'Moeda'
       bsid.dmbtr                       as Montante,
-      bsid.zbd1p                       as Desconto,    
+      bsid.zbd1p                       as Desconto,
       @Semantics.user.createdBy: true
       _CreditCli.created_by            as CreatedBy,
       @Semantics.systemDateTime.createdAt: true

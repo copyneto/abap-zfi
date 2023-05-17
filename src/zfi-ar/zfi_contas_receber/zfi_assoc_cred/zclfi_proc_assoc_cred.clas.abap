@@ -2189,7 +2189,7 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
     es_docheader-fisc_year    = es_docheader-pstng_date(4).
     es_docheader-fis_period   = es_docheader-pstng_date+4(2).
     es_docheader-comp_code    = is_creditos-empresa .
-    es_docheader-ref_doc_no   = is_creditos-Referencia.
+    es_docheader-ref_doc_no   = is_creditos-referencia.
     es_docheader-header_txt   = is_documento-bktxt.
     es_docheader-doc_type     = gv_tp_doc_associ.
 
@@ -2204,7 +2204,8 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
                      bus_area   = lv_bus_area_cred
                      alloc_nmbr = is_documento-zuonr
                      item_text  = is_documento-sgtxt
-                     profit_ctr = is_documento-prctr )
+                     profit_ctr = is_documento-prctr
+                     pymt_meth  = is_documento-zlsch )
            TO et_accountreceivable.
 
     APPEND VALUE #( itemno_acc = lv_item_no
@@ -2236,7 +2237,7 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
 
 *   Lançamento 19
 
-    lv_montante = is_creditos-montante - is_documento-resid.
+*    lv_montante = is_creditos-montante - is_documento-resid.
 
     APPEND VALUE #(  itemno_acc = lv_item_no
                      customer   = is_creditos-cliente
@@ -2252,7 +2253,8 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
 
     APPEND VALUE #( itemno_acc = lv_item_no
                      currency   = is_creditos-moeda
-                     amt_doccur = lv_montante * -1 )
+                     amt_doccur = is_documento-resid * -1 )
+*                     amt_doccur = lv_montante * -1 )
            TO et_currencyamount.
 
     APPEND VALUE #( structure  = 'BSCHL'
@@ -2269,6 +2271,8 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
 
 *   Lançamento 17
 
+    lv_montante = is_creditos-montante - is_documento-resid.
+
     APPEND VALUE #(  itemno_acc = lv_item_no
                      customer   = is_fatura-kunnr
 *                     bus_area   = is_fatura-gsber
@@ -2284,7 +2288,8 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
 
     APPEND VALUE #( itemno_acc = lv_item_no
                      currency   = is_creditos-moeda
-                     amt_doccur = is_documento-resid * -1 )
+                     amt_doccur = lv_montante * -1 )
+*                     amt_doccur = is_documento-resid * -1 )
            TO et_currencyamount.
 
     APPEND VALUE #( structure  = 'BSCHL'
@@ -2329,7 +2334,7 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
 
     APPEND VALUE #( itemno_acc = lv_item_no
                      currency   = is_creditos-moeda
-                     amt_doccur = is_creditos-montante ) "is_documento-resid
+                     amt_doccur = lv_montante ) "is_documento-resid
            TO et_currencyamount.
 
     APPEND VALUE #( structure  = 'BUPLA'
@@ -2354,7 +2359,7 @@ CLASS ZCLFI_PROC_ASSOC_CRED IMPLEMENTATION.
 
     APPEND VALUE #( itemno_acc = lv_item_no
                       currency   = is_creditos-moeda
-                      amt_doccur = is_creditos-montante * -1 ) "is_documento-resid * -1
+                      amt_doccur = lv_montante * -1 ) "is_documento-resid * -1
             TO et_currencyamount.
 
     APPEND VALUE #( structure  = 'BUPLA'

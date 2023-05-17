@@ -20,19 +20,19 @@ CLASS zclfi_autobanc_import DEFINITION
     CONSTANTS:
       "! Diretórios por tipo de processamento
       BEGIN OF gc_tipo_diretorio,
-        Cobranca_nao_proc       TYPE ztfi_autbanc_dir-tipo VALUE '00',
-        Contas_pagar_saida      TYPE ztfi_autbanc_dir-tipo VALUE '01',
-        Cobranca_saida          TYPE ztfi_autbanc_dir-tipo VALUE '02',
-        Contas_pagar_retorno    TYPE ztfi_autbanc_dir-tipo VALUE '03',
-        Cobranca_retorno        TYPE ztfi_autbanc_dir-tipo VALUE '04',
-        Contas_pagar_proc       TYPE ztfi_autbanc_dir-tipo VALUE '05',
-        Cobranca_proc           TYPE ztfi_autbanc_dir-tipo VALUE '06',
-        Contas_pagar_DDA        TYPE ztfi_autbanc_dir-tipo VALUE '07',
-        DDA_proc                TYPE ztfi_autbanc_dir-tipo VALUE '08',
-        Contas_pagar_nao_proc   TYPE ztfi_autbanc_dir-tipo VALUE '09',
-        Extrato_Eletro          TYPE ztfi_autbanc_dir-tipo VALUE '10',
-        Extrato_Eletro_proc     TYPE ztfi_autbanc_dir-tipo VALUE '11',
-        Extrato_Eletro_nao_proc TYPE ztfi_autbanc_dir-tipo VALUE '12',
+        cobranca_nao_proc       TYPE ztfi_autbanc_dir-tipo VALUE '00',
+        contas_pagar_saida      TYPE ztfi_autbanc_dir-tipo VALUE '01',
+        cobranca_saida          TYPE ztfi_autbanc_dir-tipo VALUE '02',
+        contas_pagar_retorno    TYPE ztfi_autbanc_dir-tipo VALUE '03',
+        cobranca_retorno        TYPE ztfi_autbanc_dir-tipo VALUE '04',
+        contas_pagar_proc       TYPE ztfi_autbanc_dir-tipo VALUE '05',
+        cobranca_proc           TYPE ztfi_autbanc_dir-tipo VALUE '06',
+        contas_pagar_dda        TYPE ztfi_autbanc_dir-tipo VALUE '07',
+        dda_proc                TYPE ztfi_autbanc_dir-tipo VALUE '08',
+        contas_pagar_nao_proc   TYPE ztfi_autbanc_dir-tipo VALUE '09',
+        extrato_eletro          TYPE ztfi_autbanc_dir-tipo VALUE '10',
+        extrato_eletro_proc     TYPE ztfi_autbanc_dir-tipo VALUE '11',
+        extrato_eletro_nao_proc TYPE ztfi_autbanc_dir-tipo VALUE '12',
       END OF gc_tipo_diretorio.
 
     DATA:
@@ -94,7 +94,7 @@ CLASS zclfi_autobanc_import DEFINITION
       "! @parameter iv_tipo_proc | Tipo de processo
       "! @parameter rv_result    | Descrição tipo de processo
       busca_tipos_proc
-        IMPORTING iv_tipo_proc     TYPE zi_fi_autobanc_diretorios-Tipo OPTIONAL
+        IMPORTING iv_tipo_proc     TYPE zi_fi_autobanc_diretorios-tipo OPTIONAL
         RETURNING VALUE(rv_result) TYPE val_text,
 
       "! Inicia o log
@@ -167,13 +167,13 @@ ENDCLASS.
 
 
 
-CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
+CLASS zclfi_autobanc_import IMPLEMENTATION.
 
 
   METHOD get_directory_to_import.
 
     DATA:
-      lr_tipos_validos TYPE RANGE OF zi_fi_autobanc_diretorios-Tipo.
+      lr_tipos_validos TYPE RANGE OF zi_fi_autobanc_diretorios-tipo.
 
     lr_tipos_validos = VALUE #( sign   = rsmds_c_sign-including
                                 option = rsmds_c_option-equal
@@ -183,16 +183,16 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
                        ).
 
     "Seleciona os diretórios para importação
-    SELECT  CompanyCode,
-            Tipo,
-            Diretorio,
-            CreatedBy,
-            CreatedAt,
-            LastChangedBy,
-            LastChangedAt,
-            LocalLastChangedAt
+    SELECT  companycode,
+            tipo,
+            diretorio,
+            createdby,
+            createdat,
+            lastchangedby,
+            lastchangedat,
+            locallastchangedat
       FROM zi_fi_autobanc_diretorios
-      WHERE Tipo IN @lr_tipos_validos
+      WHERE tipo IN @lr_tipos_validos
          INTO TABLE @rt_directory.
 
     IF sy-subrc IS NOT INITIAL.
@@ -218,6 +218,10 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
     ELSE.
 
       SORT rt_directory ASCENDING BY diretorio.
+      "pferraz - 12.05.23 - inicio
+      "Ajustes van finnet- campo empresa esta multiplicando a quantidade de jobs
+      DELETE ADJACENT DUPLICATES FROM rt_directory COMPARING diretorio.
+      "pferraz - 12.05.23 - Fim
 
     ENDIF.
 
@@ -235,7 +239,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
       lv_msgv2 TYPE sy-msgv2,
       lv_msgv3 TYPE sy-msgv3.
 
-    lv_dir = is_dir-Diretorio.
+    lv_dir = is_dir-diretorio.
 
     FREE: rt_files.
 
@@ -274,7 +278,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
         CLEAR: lv_msgv1, lv_msgv2, lv_msgv3.
       ENDIF.
 
-      DATA(lv_tipo_proc_desc) = me->busca_tipos_proc( is_dir-Tipo ).
+      DATA(lv_tipo_proc_desc) = me->busca_tipos_proc( is_dir-tipo ).
 
       CASE lv_dir_subrc.
 
@@ -434,10 +438,10 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
             ev_param  = lv_gap_ativo
         ).
       CATCH zcxca_tabela_parametros.
-        lv_gap_ativo = abap_False.
+        lv_gap_ativo = abap_false.
     ENDTRY.
 
-    IF lv_gap_ativo EQ abap_False.
+    IF lv_gap_ativo EQ abap_false.
       RETURN.
     ENDIF.
 
@@ -467,7 +471,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
     me->busca_tipos_proc(  ).
 
     DATA(lt_dir_post_process) = me->get_dir_post_process( ).
-    SORT lt_dir_post_process BY CompanyCode Tipo.
+    SORT lt_dir_post_process BY companycode tipo.
 
     "Obtém arquivos para importação
     DATA(lt_import_files) = me->get_import_files( EXPORTING it_directory = lt_directory ).
@@ -538,7 +542,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
               it_dir_types   = lt_dir_post_process
           ).
 
-          DATA(lv_processa_bi) = abap_True.
+          DATA(lv_processa_bi) = abap_true.
 
         CATCH zcxfi_autobanc_import INTO DATA(lo_cx_erro).
 
@@ -579,7 +583,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
       ENDTRY.
     ENDLOOP.
 
-    IF lv_processa_bi EQ abap_True.
+    IF lv_processa_bi EQ abap_true.
 
       IF lo_bank_file IS INITIAL.
         lo_bank_file = zclfi_autobanc_bank_file=>create_instance( me->go_log ).
@@ -589,7 +593,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
 
     ENDIF.
 
-    IF sy-batch EQ abap_False.
+    IF sy-batch EQ abap_false.
 
       MESSAGE ID zclfi_autobanc_import_log=>gc_msgid
         TYPE if_xo_const_message=>success
@@ -614,14 +618,14 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
 
           rt_result = VALUE #( BASE rt_result
                                     FOR ls_files IN lt_files
-                                      ( CompanyCode         = <fs_s_directory>-companycode
-                                        Tipo                = <fs_s_directory>-Tipo
-                                        Diretorio           = <fs_s_directory>-Diretorio
-                                        CreatedBy           = <fs_s_directory>-CREATEDby
-                                        CreatedAt           = <fs_s_directory>-createdat
-                                        LastChangedBy       = <fs_s_directory>-lastchangedby
-                                        LastChangedAt       = <fs_s_directory>-lastchangedat
-                                        LocalLastChangedAt  = <fs_s_directory>-locallastchangedat
+                                      ( companycode         = <fs_s_directory>-companycode
+                                        tipo                = <fs_s_directory>-tipo
+                                        diretorio           = <fs_s_directory>-diretorio
+                                        createdby           = <fs_s_directory>-createdby
+                                        createdat           = <fs_s_directory>-createdat
+                                        lastchangedby       = <fs_s_directory>-lastchangedby
+                                        lastchangedat       = <fs_s_directory>-lastchangedat
+                                        locallastchangedat  = <fs_s_directory>-locallastchangedat
                                         name                = ls_files-name
                                         size                = ls_files-size
                                         mtim                = ls_files-mtim
@@ -649,7 +653,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
     DATA: lv_fileread TYPE string,
           lv_fileproc TYPE string,
           lv_file     TYPE string,
-          lv_tipo     TYPE zi_fi_autobanc_diretorios-Tipo.
+          lv_tipo     TYPE zi_fi_autobanc_diretorios-tipo.
 
 
     DATA: lt_file     TYPE STANDARD TABLE OF x.
@@ -689,7 +693,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
     DATA: lv_fileread TYPE string,
           lv_fileproc TYPE string,
           lv_file     TYPE string,
-          lv_tipo     TYPE zi_fi_autobanc_diretorios-Tipo.
+          lv_tipo     TYPE zi_fi_autobanc_diretorios-tipo.
 
     DATA(lv_tam) = strlen( is_import_file-diretorio ) - 1.
 
@@ -727,13 +731,13 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
                           ELSE lc_tipo_dir-outros ) .
 
       READ TABLE it_dir_types ASSIGNING FIELD-SYMBOL(<fs_dir_type>)
-        WITH KEY CompanyCode = is_import_file-CompanyCode
-                 tipo = lv_tipo
+        WITH KEY tipo = lv_tipo
+*                CompanyCode = is_import_file-CompanyCode
         BINARY SEARCH.
 
       IF sy-subrc EQ 0.
 
-        lv_fileproc = <fs_dir_type>-Diretorio.
+        lv_fileproc = <fs_dir_type>-diretorio.
 
         IF is_import_file-diretorio+lv_tam CS lc_separador_dir.
           lv_fileproc = |{ lv_fileproc }{ is_import_file-name }|.
@@ -765,9 +769,9 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
 
     CONSTANTS:
       BEGIN OF lc_tipo_dir,
-        cobranca TYPE ZTFI_AUTBANC_DIR-tipo VALUE '00',
-        extrato  TYPE ZTFI_AUTBANC_DIR-tipo VALUE '12',
-        outros   TYPE ZTFI_AUTBANC_DIR-tipo VALUE '09',
+        cobranca TYPE ztfi_autbanc_dir-tipo VALUE '00',
+        extrato  TYPE ztfi_autbanc_dir-tipo VALUE '12',
+        outros   TYPE ztfi_autbanc_dir-tipo VALUE '09',
       END OF lc_tipo_dir.
 
 
@@ -778,7 +782,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
     DATA: lv_fileread TYPE string,
           lv_fileproc TYPE string,
           lv_file     TYPE string,
-          lv_tipo     TYPE zi_fi_autobanc_diretorios-Tipo.
+          lv_tipo     TYPE zi_fi_autobanc_diretorios-tipo.
 
     DATA(lv_tam_aux) = strlen( is_import_file-diretorio ) - 1.
     IF is_import_file-diretorio+lv_tam_aux CS lc_separador_dir.
@@ -808,12 +812,12 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
                           ELSE lc_tipo_dir-outros ) .
 
       READ TABLE it_dir_types ASSIGNING FIELD-SYMBOL(<fs_dir_type>)
-        WITH KEY CompanyCode = is_import_file-CompanyCode
+        WITH KEY companycode = is_import_file-companycode
                  tipo = lv_tipo
         BINARY SEARCH.
       IF sy-subrc EQ 0.
 
-        lv_fileproc = <fs_dir_type>-Diretorio.
+        lv_fileproc = <fs_dir_type>-diretorio.
 
         IF is_import_file-diretorio+lv_tam_aux CS lc_separador_dir.
           lv_fileproc = |{ lv_fileproc }{ is_import_file-name }|.

@@ -536,6 +536,8 @@ CLASS ZCLFI_PROG_CONC_CRED IMPLEMENTATION.
 
     DATA lt_billing TYPE ty_t_billing.
 
+    data lv_residual type dmbtr.
+
     SORT gt_doccred BY rebzg rebzj rebzz.
     SORT gt_root_main BY cliente.
 
@@ -601,7 +603,9 @@ CLASS ZCLFI_PROG_CONC_CRED IMPLEMENTATION.
 
           IF <fs_billing>-dmbtr >= is_cds-dmbtr.
 
-            IF <fs_billing>-dmbtr >= <fs_billing>-minres.
+            lv_residual = <fs_billing>-dmbtr - is_cds-dmbtr.
+
+            IF lv_residual >= <fs_billing>-minres.
 
               IF iv_proc EQ gc_pdc.
 

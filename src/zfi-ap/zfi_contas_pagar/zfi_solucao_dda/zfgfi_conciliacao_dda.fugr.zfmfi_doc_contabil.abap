@@ -39,7 +39,7 @@ FUNCTION zfmfi_doc_contabil.
         lt_bsik_item     TYPE TABLE OF ty_bsik_item.
 
 
-  WAIT UP TO 7 SECONDS.
+  WAIT UP TO 30 SECONDS.
 
 *  DATA(lv_data) = VALUE #( it_header[ 1 ]-data_arq  OPTIONAL ).
   DATA(lv_data) = VALUE #( it_segto[ 1 ]-data_arq  OPTIONAL ).

@@ -780,6 +780,7 @@ FORM dme_brazil.
                     j_1bdmexa-a07 = '09'.
                     j_1bdmexa-a08 = '000'.
                     CLEAR: j_1bdmexa-a26, j_1bdmexa-a27.
+                    j_1bdmexa-a27 = '0'.
                   ELSE.
                     j_1bdmexa-a07 = '09'.
                   ENDIF.

@@ -8,12 +8,12 @@ define root view entity ZC_FI_COCKPIT_ASSOCIACAO_CRE
   key Empresa,
       @Consumption.valueHelpDefinition: [{entity: {name: 'ZI_CA_VH_KUNNR', element: 'Kunnr' }}]
   key Cliente,
-//      @Consumption.valueHelpDefinition: [{entity: {name: 'ZI_CA_VH_RAIZCODID', element: 'RaizId' }}]
+      //      @Consumption.valueHelpDefinition: [{entity: {name: 'ZI_CA_VH_RAIZCODID', element: 'RaizId' }}]
       @EndUserText.label: 'Raiz ID'
-  key RaizId,
+      RaizId,
       @EndUserText.label: 'Raiz ID Sim/Não'
       @Consumption.filter:{ mandatory:true, defaultValue: ' ', selectionType: #SINGLE }
-  key RaizSn,
+      RaizSn,
       _Empresa.EmpresaText as EmpresaText,
       _RaizId.Nome         as Nome,
       Montante,
@@ -24,8 +24,8 @@ define root view entity ZC_FI_COCKPIT_ASSOCIACAO_CRE
       TotalizadorDetalhe4,
 
       /* Associations */
-      _Creditos     : redirected to composition child ZC_FI_COCKPIT_CREDITOS_CLI,
-      _Fatura       : redirected to composition child ZC_FI_COCKPIT_FATURA_CLI
-      
+      _Creditos : redirected to composition child ZC_FI_COCKPIT_CREDITOS_CLI,
+      _Fatura   : redirected to composition child ZC_FI_COCKPIT_FATURA_CLI
+
 
 }
