@@ -24,7 +24,7 @@ CLASS lcl_aprovacao IMPLEMENTATION.
         ( name = 'NETDUEDATE'        range = VALUE #( ( sign = 'I' option = 'EQ' low = <fs_key>-netduedate ) ) )
         ( name = 'REPTYPE'           range = VALUE #( ( sign = 'I' option = 'EQ' low = <fs_key>-reptype ) ) )
         ( name = 'CASHPLANNINGGROUP' range = VALUE #( ( sign = 'I' option = 'EQ' low = <fs_key>-cashplanninggroup ) ) )
-        ( name = 'RUNHOURTO'         range = VALUE #( ( sign = 'I' option = 'EQ' low = <fs_key>-RUNHOURTO ) ) )
+        ( name = 'RUNHOURTO'         range = VALUE #( ( sign = 'I' option = 'EQ' low = <fs_key>-runhourto ) ) )
 *        ( name = 'RZAWE'             range = VALUE #( ( sign = 'I' option = 'EQ' low = <fs_key>-rzawe ) ) )
         ).
     ENDLOOP.
@@ -68,9 +68,21 @@ CLASS lcl_aprovacao IMPLEMENTATION.
 *                                  FOR ls_message IN lt_message
 *                                    ( %tky = CORRESPONDING #( ls_entity )
 *                                      %msg = new_message( id = ls_message-id number = ls_message-number severity = CONV #( ls_message-type ) v1 = ls_message-message_v1 v2 = ls_message-message_v2 ) ) ).
-    LOOP AT lt_entity ASSIGNING FIELD-SYMBOL(<fs_entity>).
-      NEW zclfi_aprov_contas_pagar_util(  )->approve( CORRESPONDING #( <fs_entity> ) ).
-    ENDLOOP.
+
+* pferraz - 18.05.23 - inicio
+
+    DATA: lt_aprov_remessa TYPE zctgfi_aprov_remessa.
+
+    lt_aprov_remessa = VALUE #( BASE lt_aprov_remessa FOR ls_entity IN lt_entity
+                                    ( CORRESPONDING #( ls_entity ) )  ).
+
+*    LOOP AT lt_entity ASSIGNING FIELD-SYMBOL(<fs_entity>).
+    NEW zclfi_aprov_contas_pagar_util(  )->approve( CHANGING ct_entity = lt_aprov_remessa ) .
+*      NEW zclfi_aprov_contas_pagar_util(  )->approve( CHANGING ct_entity =  CORRESPONDING #( <fs_entity> ) ).
+*    ENDLOOP.
+
+    MOVE-CORRESPONDING lt_aprov_remessa TO lt_entity.
+* pferraz - 18.05.23 - fim
 
 *    result = VALUE #( FOR ls_entity IN lt_entity
 *      LET ls_result = NEW zclfi_aprov_contas_pagar_util(  )->approve( CORRESPONDING #( ls_entity ) )

@@ -83,11 +83,11 @@ CLASS zclfi_aprov_contas_pagar_util DEFINITION PUBLIC
         VALUE(rt_return) LIKE gt_aprov_doc_pgto.
 
     "! <p class="shorttext synchronized">Método para Aprovação</p>
-    "! @parameter is_entity | <p class="shorttext synchronized">Entidade de entrada</p>
-    "! @parameter rs_return | <p class="shorttext synchronized">Entidade de saída</p>
+    "! @parameter ct_entity | <p class="shorttext synchronized">Entidade de entrada</p>
     METHODS approve
-      IMPORTING is_entity        TYPE zc_fi_aprov_contas_pagar
-      RETURNING VALUE(rs_return) TYPE zc_fi_aprov_contas_pagar.
+*      IMPORTING is_entity        TYPE zc_fi_aprov_contas_pagar
+      CHANGING ct_entity TYPE zctgfi_aprov_remessa.
+*      RETURNING VALUE(rs_return) TYPE zc_fi_aprov_contas_pagar.
 
     "! <p class="shorttext synchronized">Atualizada grupo tesouraria</p>
     "! @parameter it_doc_fdgrv | <p class="shorttext synchronized">Entidade de entrada</p>
@@ -107,8 +107,6 @@ CLASS zclfi_aprov_contas_pagar_util DEFINITION PUBLIC
     CLASS-METHODS get_features IMPORTING iv_bukrs         TYPE bukrs
                                          iv_nivel         TYPE ze_nivel_aprov
                                RETURNING VALUE(rv_return) TYPE ty_xflag.
-
-
   PROTECTED SECTION.
 
     DATA: gt_approver TYPE SORTED TABLE OF ty_approver WITH UNIQUE KEY bukrs uname nivel.
@@ -132,9 +130,11 @@ CLASS zclfi_aprov_contas_pagar_util DEFINITION PUBLIC
         VALUE(rt_retorno) TYPE if_rap_query_filter=>tt_range_option.
 
     "! <p class="shorttext synchronized">Método para fazer o download do arquivo</p>
-    "! @parameter is_entity | <p class="shorttext synchronized">Estrutura da entidade</p>
-    METHODS download_file IMPORTING is_entity         TYPE zc_fi_aprov_contas_pagar
-                          RETURNING VALUE(rs_message) TYPE bapiret2.
+    "! @parameter it_entity | <p class="shorttext synchronized">Estrutura da entidade</p>
+    METHODS download_file
+*    IMPORTING is_entity         TYPE zc_fi_aprov_contas_pagar
+      IMPORTING it_entity TYPE zctgfi_aprov_remessa.
+*                          RETURNING VALUE(rs_message) TYPE bapiret2.
 
     "! <p class="shorttext synchronized">Método Busca Aprovadores.</p>
     METHODS get_aprovadores IMPORTING ir_bukrs        TYPE if_rap_query_filter=>tt_range_option
@@ -820,98 +820,202 @@ CLASS ZCLFI_APROV_CONTAS_PAGAR_UTIL IMPLEMENTATION.
 
   METHOD approve.
 
-    rs_return = is_entity.
+    DATA: lv_download TYPE boolean.
 
-    DATA(ls_table) = VALUE ztfi_log_apv_pgt( bukrs   = rs_return-companycode
-                                             fdgrv   = rs_return-cashplanninggroup
-                                             data    = rs_return-netduedate
+    LOOP AT ct_entity ASSIGNING FIELD-SYMBOL(<fs_entity>).
+
+
+      DATA(ls_table) = VALUE ztfi_log_apv_pgt( bukrs   = <fs_entity>-companycode
+                                               fdgrv   = <fs_entity>-cashplanninggroup
+                                               data    = <fs_entity>-netduedate
 *                                             hora    = rs_return-runhourto
-                                             tiporel = rs_return-reptype
-                                             valor   = rs_return-paidamountinpaytcurrency
-                                             hbkid   = rs_return-hbkid ).
+                                               tiporel = <fs_entity>-reptype
+                                               valor   = <fs_entity>-paidamountinpaytcurrency
+                                               hbkid   = <fs_entity>-hbkid ).
 
-    SELECT SINGLE *
-      FROM ztfi_log_apv_pgt
-     WHERE bukrs   = @ls_table-bukrs
-       AND fdgrv   = @ls_table-fdgrv
-       AND data    = @ls_table-data
+      SELECT SINGLE *
+        FROM ztfi_log_apv_pgt
+       WHERE bukrs   = @ls_table-bukrs
+         AND fdgrv   = @ls_table-fdgrv
+         AND data    = @ls_table-data
 *       AND hora    = @ls_table-hora
-       AND tiporel = @ls_table-tiporel
-      INTO @ls_table.                              "#EC CI_SROFC_NESTED
+         AND tiporel = @ls_table-tiporel
+        INTO @ls_table.                            "#EC CI_SROFC_NESTED
 
-    IF sy-subrc EQ 0.
-      ls_table-hbkid = rs_return-hbkid.
-    ENDIF.
+      IF sy-subrc EQ 0.
+        ls_table-hbkid = <fs_entity>-hbkid.
+      ENDIF.
 
-    SELECT SINGLE paidamountinpaytcurrency
-      FROM zi_fi_aprov_temse
-     WHERE companycode       = @ls_table-bukrs
-       AND netduedate        = @ls_table-data
-       AND cashplanninggroup = @ls_table-fdgrv
-       AND reptype           = @ls_table-tiporel
-      INTO @DATA(lv_val).
+      SELECT SINGLE paidamountinpaytcurrency
+        FROM zi_fi_aprov_temse
+       WHERE companycode       = @ls_table-bukrs
+         AND netduedate        = @ls_table-data
+         AND cashplanninggroup = @ls_table-fdgrv
+         AND reptype           = @ls_table-tiporel
+        INTO @DATA(lv_val).
 
-    IF sy-subrc IS INITIAL.
-      ls_table-valor = lv_val.
-    ENDIF.
+      IF sy-subrc IS INITIAL.
+        ls_table-valor = lv_val.
+      ENDIF.
 
-    ls_table-nao_pago = COND #( WHEN rs_return-paidamountinpaytcurrency = 0
-                                  THEN abap_true
-                                  ELSE abap_false
-                              ).
+      ls_table-nao_pago = COND #( WHEN <fs_entity>-paidamountinpaytcurrency = 0
+                                    THEN abap_true
+                                    ELSE abap_false
+                                ).
 
-    CASE abap_false.
-      WHEN rs_return-encerrador.
-        ls_table-encerrador = abap_true.
-        ls_table-enc_user   = sy-uname.
-        ls_table-enc_data   = sy-datum.
-        ls_table-enc_hora   = sy-uzeit.
+      CASE abap_false.
+        WHEN <fs_entity>-encerrador.
+          ls_table-encerrador = abap_true.
+          ls_table-enc_user   = sy-uname.
+          ls_table-enc_data   = sy-datum.
+          ls_table-enc_hora   = sy-uzeit.
 *        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 1 message_v2 = sy-uname ) ).
-      WHEN rs_return-aprov1.
-        ls_table-aprov1   = abap_true.
-        ls_table-ap1_user = sy-uname.
-        ls_table-ap1_data = sy-datum.
-        ls_table-ap1_hora = sy-uzeit.
+        WHEN <fs_entity>-aprov1.
+          ls_table-aprov1   = abap_true.
+          ls_table-ap1_user = sy-uname.
+          ls_table-ap1_data = sy-datum.
+          ls_table-ap1_hora = sy-uzeit.
 *        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 2 message_v2 = sy-uname ) ).
-      WHEN rs_return-aprov2.
-        ls_table-aprov2   = abap_true.
-        ls_table-ap2_user = sy-uname.
-        ls_table-ap2_data = sy-datum.
-        ls_table-ap2_hora = sy-uzeit.
+        WHEN <fs_entity>-aprov2.
+          ls_table-aprov2   = abap_true.
+          ls_table-ap2_user = sy-uname.
+          ls_table-ap2_data = sy-datum.
+          ls_table-ap2_hora = sy-uzeit.
 *        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 3 message_v2 = sy-uname ) ).
-      WHEN rs_return-aprov3.
-        ls_table-aprov3   = abap_true.
-        ls_table-ap3_user = sy-uname.
-        ls_table-ap3_data = sy-datum.
-        ls_table-ap3_hora = sy-uzeit.
+        WHEN <fs_entity>-aprov3.
+          ls_table-aprov3   = abap_true.
+          ls_table-ap3_user = sy-uname.
+          ls_table-ap3_data = sy-datum.
+          ls_table-ap3_hora = sy-uzeit.
 *        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 4 message_v2 = sy-uname ) ).
 
+          lv_download = abap_true.
 *        IF is_entity-rzawe NA 'RCNVXP'.
-          download_file( is_entity ).
+
 *        ENDIF.
 
-    ENDCASE.
+      ENDCASE.
 
 *    ls_table-valor = rs_return-paidamountinpaytcurrency.
 *    ls_table-valor = rs_return-OpenAmount.
-    MODIFY ztfi_log_apv_pgt FROM ls_table.          "#EC CI_IMUD_NESTED
-    IF sy-subrc EQ 0.
-      rs_return-encerrador = ls_table-encerrador.
-      rs_return-encerradorcrit = COND #( WHEN rs_return-encerrador = abap_true THEN 3        ELSE 0 ).
-      rs_return-encerradortext = COND #( WHEN rs_return-encerrador = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+      MODIFY ztfi_log_apv_pgt FROM ls_table.        "#EC CI_IMUD_NESTED
+      IF sy-subrc EQ 0.
+        <fs_entity>-encerrador = ls_table-encerrador.
+        <fs_entity>-encerradorcrit = COND #( WHEN <fs_entity>-encerrador = abap_true THEN 3        ELSE 0 ).
+        <fs_entity>-encerradortext = COND #( WHEN <fs_entity>-encerrador = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
 
-      rs_return-aprov1     = ls_table-aprov1.
-      rs_return-aprov1crit = COND #( WHEN rs_return-aprov1 = abap_true THEN 3        ELSE 0 ).
-      rs_return-aprov1text = COND #( WHEN rs_return-aprov1 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+        <fs_entity>-aprov1     = ls_table-aprov1.
+        <fs_entity>-aprov1crit = COND #( WHEN <fs_entity>-aprov1 = abap_true THEN 3        ELSE 0 ).
+        <fs_entity>-aprov1text = COND #( WHEN <fs_entity>-aprov1 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
 
-      rs_return-aprov2     = ls_table-aprov2.
-      rs_return-aprov2crit = COND #( WHEN rs_return-aprov2 = abap_true THEN 3        ELSE 0 ).
-      rs_return-aprov2text = COND #( WHEN rs_return-aprov2 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+        <fs_entity>-aprov2     = ls_table-aprov2.
+        <fs_entity>-aprov2crit = COND #( WHEN <fs_entity>-aprov2 = abap_true THEN 3        ELSE 0 ).
+        <fs_entity>-aprov2text = COND #( WHEN <fs_entity>-aprov2 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
 
-      rs_return-aprov3     = ls_table-aprov3.
-      rs_return-aprov3crit = COND #( WHEN rs_return-aprov3 = abap_true THEN 3        ELSE 0 ).
-      rs_return-aprov3text = COND #( WHEN rs_return-aprov3 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+        <fs_entity>-aprov3     = ls_table-aprov3.
+        <fs_entity>-aprov3crit = COND #( WHEN <fs_entity>-aprov3 = abap_true THEN 3        ELSE 0 ).
+        <fs_entity>-aprov3text = COND #( WHEN <fs_entity>-aprov3 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+      ENDIF.
+
+
+    ENDLOOP.
+
+    IF lv_download = abap_true.
+      download_file( ct_entity ).
     ENDIF.
+
+*    rs_return = is_entity.
+*
+*    DATA(ls_table) = VALUE ztfi_log_apv_pgt( bukrs   = rs_return-companycode
+*                                             fdgrv   = rs_return-cashplanninggroup
+*                                             data    = rs_return-netduedate
+**                                             hora    = rs_return-runhourto
+*                                             tiporel = rs_return-reptype
+*                                             valor   = rs_return-paidamountinpaytcurrency
+*                                             hbkid   = rs_return-hbkid ).
+*
+*    SELECT SINGLE *
+*      FROM ztfi_log_apv_pgt
+*     WHERE bukrs   = @ls_table-bukrs
+*       AND fdgrv   = @ls_table-fdgrv
+*       AND data    = @ls_table-data
+**       AND hora    = @ls_table-hora
+*       AND tiporel = @ls_table-tiporel
+*      INTO @ls_table.                              "#EC CI_SROFC_NESTED
+*
+*    IF sy-subrc EQ 0.
+*      ls_table-hbkid = rs_return-hbkid.
+*    ENDIF.
+*
+*    SELECT SINGLE paidamountinpaytcurrency
+*      FROM zi_fi_aprov_temse
+*     WHERE companycode       = @ls_table-bukrs
+*       AND netduedate        = @ls_table-data
+*       AND cashplanninggroup = @ls_table-fdgrv
+*       AND reptype           = @ls_table-tiporel
+*      INTO @DATA(lv_val).
+*
+*    IF sy-subrc IS INITIAL.
+*      ls_table-valor = lv_val.
+*    ENDIF.
+*
+*    ls_table-nao_pago = COND #( WHEN rs_return-paidamountinpaytcurrency = 0
+*                                  THEN abap_true
+*                                  ELSE abap_false
+*                              ).
+*
+*    CASE abap_false.
+*      WHEN rs_return-encerrador.
+*        ls_table-encerrador = abap_true.
+*        ls_table-enc_user   = sy-uname.
+*        ls_table-enc_data   = sy-datum.
+*        ls_table-enc_hora   = sy-uzeit.
+**        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 1 message_v2 = sy-uname ) ).
+*      WHEN rs_return-aprov1.
+*        ls_table-aprov1   = abap_true.
+*        ls_table-ap1_user = sy-uname.
+*        ls_table-ap1_data = sy-datum.
+*        ls_table-ap1_hora = sy-uzeit.
+**        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 2 message_v2 = sy-uname ) ).
+*      WHEN rs_return-aprov2.
+*        ls_table-aprov2   = abap_true.
+*        ls_table-ap2_user = sy-uname.
+*        ls_table-ap2_data = sy-datum.
+*        ls_table-ap2_hora = sy-uzeit.
+**        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 3 message_v2 = sy-uname ) ).
+*      WHEN rs_return-aprov3.
+*        ls_table-aprov3   = abap_true.
+*        ls_table-ap3_user = sy-uname.
+*        ls_table-ap3_data = sy-datum.
+*        ls_table-ap3_hora = sy-uzeit.
+**        et_message = VALUE #( BASE et_message ( id = gc_mg_id number = gc_msg_no-m_001 type = CONV #( if_abap_behv_message=>severity-success ) message_v1 = 4 message_v2 = sy-uname ) ).
+*
+**        IF is_entity-rzawe NA 'RCNVXP'.
+*        download_file( is_entity ).
+**        ENDIF.
+*
+*    ENDCASE.
+*
+**    ls_table-valor = rs_return-paidamountinpaytcurrency.
+**    ls_table-valor = rs_return-OpenAmount.
+*    MODIFY ztfi_log_apv_pgt FROM ls_table.          "#EC CI_IMUD_NESTED
+*    IF sy-subrc EQ 0.
+*      rs_return-encerrador = ls_table-encerrador.
+*      rs_return-encerradorcrit = COND #( WHEN rs_return-encerrador = abap_true THEN 3        ELSE 0 ).
+*      rs_return-encerradortext = COND #( WHEN rs_return-encerrador = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+*
+*      rs_return-aprov1     = ls_table-aprov1.
+*      rs_return-aprov1crit = COND #( WHEN rs_return-aprov1 = abap_true THEN 3        ELSE 0 ).
+*      rs_return-aprov1text = COND #( WHEN rs_return-aprov1 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+*
+*      rs_return-aprov2     = ls_table-aprov2.
+*      rs_return-aprov2crit = COND #( WHEN rs_return-aprov2 = abap_true THEN 3        ELSE 0 ).
+*      rs_return-aprov2text = COND #( WHEN rs_return-aprov2 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+*
+*      rs_return-aprov3     = ls_table-aprov3.
+*      rs_return-aprov3crit = COND #( WHEN rs_return-aprov3 = abap_true THEN 3        ELSE 0 ).
+*      rs_return-aprov3text = COND #( WHEN rs_return-aprov3 = abap_true THEN TEXT-apv ELSE TEXT-pdt ).
+*    ENDIF.
 
   ENDMETHOD.
 
@@ -936,12 +1040,15 @@ CLASS ZCLFI_APROV_CONTAS_PAGAR_UTIL IMPLEMENTATION.
 
   METHOD download_file.
 
+    DATA lr_zlcsh TYPE RANGE OF regup-zlsch.
+
     SELECT DISTINCT companycode, netduedate, paymentrunid
       FROM zi_fi_prog_pagamento_p
-      WHERE companycode     = @is_entity-companycode
-      AND netduedate        = @is_entity-netduedate
-      AND cashplanninggroup = @is_entity-cashplanninggroup
-      AND reptype           = @is_entity-reptype
+      FOR ALL ENTRIES IN @it_entity
+      WHERE companycode     = @it_entity-companycode
+      AND netduedate        = @it_entity-netduedate
+      AND cashplanninggroup = @it_entity-cashplanninggroup
+      AND reptype           = @it_entity-reptype
       INTO TABLE @DATA(lt_paymentrunid).
     IF sy-subrc = 0.
       SELECT * FROM regut
@@ -971,6 +1078,20 @@ CLASS ZCLFI_APROV_CONTAS_PAGAR_UTIL IMPLEMENTATION.
       ENDIF.
     ENDIF.
 
+    TRY.
+        NEW  zclca_tabela_parametros( )->m_get_range(
+          EXPORTING
+            iv_modulo = 'FI-AP'
+            iv_chave1 = 'NAOARQUIVO'
+            iv_chave2 = 'FORMAPGTO'
+          IMPORTING
+            et_range  = lr_zlcsh
+        ).
+      CATCH zcxca_tabela_parametros INTO DATA(lo_erro).
+*        rs_message-message = lo_erro->get_text( ).
+    ENDTRY.
+
+
     DATA lt_regut_aux TYPE epic_t_regut.
     LOOP AT lt_regut ASSIGNING FIELD-SYMBOL(<fs_regut>).
       READ TABLE lt_regup ASSIGNING FIELD-SYMBOL(<fs_regup>)
@@ -979,10 +1100,26 @@ CLASS ZCLFI_APROV_CONTAS_PAGAR_UTIL IMPLEMENTATION.
                                                  laufi = <fs_regut>-laufi
                                                  xvorl = <fs_regut>-xvorl
                                                  BINARY SEARCH.
-      IF sy-subrc = 0 AND <fs_regup>-zlsch NA 'RCNVXP'.
+      IF sy-subrc = 0 AND <fs_regup>-zlsch NOT IN lr_zlcsh .
         APPEND <fs_regut> TO lt_regut_aux.
       ENDIF.
     ENDLOOP.
+
+    SORT: lt_regut_aux BY zbukr
+                          banks
+                          laufd
+                          laufi
+                          xvorl
+                          dtkey
+                          lfdnr.
+
+    DELETE ADJACENT DUPLICATES FROM lt_regut_aux COMPARING zbukr
+                          banks
+                          laufd
+                          laufi
+                          xvorl
+                          dtkey
+                          lfdnr.
 
     IF lt_regut_aux IS NOT INITIAL.
       CALL FUNCTION 'ZFMFI_DOWNLOAD_FILE_FDTA'
@@ -990,6 +1127,79 @@ CLASS ZCLFI_APROV_CONTAS_PAGAR_UTIL IMPLEMENTATION.
         EXPORTING
           it_regut = lt_regut_aux.
     ENDIF.
+
+** DATA lr_zlcsh TYPE RANGE OF regup-zlsch.
+**
+**    SELECT DISTINCT companycode, netduedate, paymentrunid
+**      FROM zi_fi_prog_pagamento_p
+**      FOR ALL ENTRIES IN @ct_entity
+**      WHERE companycode     = @is_entity-companycode
+**      AND netduedate        = @is_entity-netduedate
+**      AND cashplanninggroup = @is_entity-cashplanninggroup
+**      AND reptype           = @is_entity-reptype
+**      INTO TABLE @DATA(lt_paymentrunid).
+**    IF sy-subrc = 0.
+**      SELECT * FROM regut
+**        FOR ALL ENTRIES IN @lt_paymentrunid
+**        WHERE zbukr = @lt_paymentrunid-companycode
+**         AND laufd  = @lt_paymentrunid-netduedate
+**         AND laufi  = @lt_paymentrunid-paymentrunid
+**         AND status <> '010'
+**         INTO TABLE @DATA(lt_regut).
+**      IF sy-subrc = 0.
+**        SELECT DISTINCT zbukr,laufd, laufi,xvorl, zlsch
+**          FROM regup
+**          FOR ALL ENTRIES IN @lt_regut
+**          WHERE zbukr = @lt_regut-zbukr
+**            AND laufd = @lt_regut-laufd
+**            AND laufi = @lt_regut-laufi
+**            AND xvorl = @lt_regut-xvorl
+**          INTO TABLE @DATA(lt_regup).
+**
+**        IF sy-subrc IS INITIAL.
+**          SORT lt_regup BY zbukr
+**                           laufd
+**                           laufi
+**                           xvorl.
+**        ENDIF.
+**
+**      ENDIF.
+**    ENDIF.
+**
+**    TRY.
+**        NEW  zclca_tabela_parametros( )->m_get_range(
+**          EXPORTING
+**            iv_modulo = 'FI-AP'
+**            iv_chave1 = 'NAOARQUIVO'
+**            iv_chave2 = 'FORMAPGTO'
+**          IMPORTING
+**            et_range  = lr_zlcsh
+**        ).
+**      CATCH zcxca_tabela_parametros INTO DATA(lo_erro).
+**        rs_message-message = lo_erro->get_text( ).
+**    ENDTRY.
+**
+**
+**    DATA lt_regut_aux TYPE epic_t_regut.
+**    LOOP AT lt_regut ASSIGNING FIELD-SYMBOL(<fs_regut>).
+**      READ TABLE lt_regup ASSIGNING FIELD-SYMBOL(<fs_regup>)
+**                                        WITH KEY zbukr = <fs_regut>-zbukr
+**                                                 laufd = <fs_regut>-laufd
+**                                                 laufi = <fs_regut>-laufi
+**                                                 xvorl = <fs_regut>-xvorl
+**                                                 BINARY SEARCH.
+**      IF sy-subrc = 0 AND <fs_regup>-zlsch NOT IN lr_zlcsh .
+**        APPEND <fs_regut> TO lt_regut_aux.
+**      ENDIF.
+**    ENDLOOP.
+**
+**    IF lt_regut_aux IS NOT INITIAL.
+**      WAIT UP TO 1 SECONDS.
+**      CALL FUNCTION 'ZFMFI_DOWNLOAD_FILE_FDTA'
+**        STARTING NEW TASK 'BACKGROUND'
+**        EXPORTING
+**          it_regut = lt_regut_aux.
+**    ENDIF.
   ENDMETHOD.
 
 

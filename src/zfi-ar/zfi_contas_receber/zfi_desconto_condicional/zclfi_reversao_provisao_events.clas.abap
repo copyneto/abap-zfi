@@ -517,6 +517,7 @@ CLASS ZCLFI_REVERSAO_PROVISAO_EVENTS IMPLEMENTATION.
 
     SPLIT is_reversao-accountingdocumentheadertext AT '-' INTO lv_bzirk DATA(lv_text).
 
+
     lt_inputdata[] = VALUE #( BASE lt_inputdata ( record_id = lv_record_id
                                                   fieldname = 'BUKRS'
                                                   value     = is_reversao-companycode
