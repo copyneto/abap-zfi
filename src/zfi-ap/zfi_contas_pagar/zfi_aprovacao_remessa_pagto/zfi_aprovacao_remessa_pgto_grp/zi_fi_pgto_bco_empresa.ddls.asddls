@@ -44,12 +44,12 @@ define root view entity ZI_FI_PGTO_BCO_EMPRESA
       @Aggregation.default: #SUM
       @Semantics.amount.currencyCode: 'PaymentCurrency'
       cast( sum( _Pgto.PaidAmountInPaytCurrency ) as rwbtr ) as PaidAmountInPaytCurrency,
-//      @Aggregation.default: #SUM
-//      @Semantics.amount.currencyCode: 'PaymentCurrency'
-//      cast( sum( OpenAmount ) as ze_aberto )                 as OpenAmount,
-//      @Aggregation.default: #SUM
-//      @Semantics.amount.currencyCode: 'PaymentCurrency'
-//      cast( sum( BlockedAmount ) as ze_bloqueado )           as BlockedAmount,
+      //      @Aggregation.default: #SUM
+      //      @Semantics.amount.currencyCode: 'PaymentCurrency'
+      //      cast( sum( OpenAmount ) as ze_aberto )                 as OpenAmount,
+      //      @Aggregation.default: #SUM
+      //      @Semantics.amount.currencyCode: 'PaymentCurrency'
+      //      cast( sum( BlockedAmount ) as ze_bloqueado )           as BlockedAmount,
       _Pgto.PaymentCurrency,
       _Bank.BancoEmpresaText                                 as BankName,
       _PmntMtd.FormaPagamentoText                            as PaymentMethodName,
@@ -69,7 +69,9 @@ define root view entity ZI_FI_PGTO_BCO_EMPRESA
 
 }
 where
-  Status = 3
+      Status                   =  3
+
+  and PaidAmountInPaytCurrency <> 0
 group by
   Bank,
   PaymentMethod,

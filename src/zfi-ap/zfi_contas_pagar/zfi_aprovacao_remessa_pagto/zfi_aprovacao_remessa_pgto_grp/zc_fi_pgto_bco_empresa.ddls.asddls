@@ -53,5 +53,5 @@ define root view entity ZC_FI_PGTO_BCO_EMPRESA
 
       //      _DocItens
 }
-where
-  PaidAmountInPaytCurrency > 0
+//where
+//  PaidAmountInPaytCurrency > 0

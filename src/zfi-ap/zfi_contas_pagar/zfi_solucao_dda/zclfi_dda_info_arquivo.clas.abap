@@ -389,31 +389,35 @@ CLASS ZCLFI_DDA_INFO_ARQUIVO IMPLEMENTATION.
 
   METHOD save_data.
 
-    IF gt_dda_header IS NOT INITIAL.
-      MODIFY ztfi_dda_header FROM TABLE gt_dda_header.
-    ENDIF.
+    IF lines( gt_dda_segto_g ) > 0.
 
-    IF gt_dda_lote IS NOT INITIAL.
-      MODIFY ztfi_dda_lote FROM TABLE gt_dda_lote.
-    ENDIF.
+      IF gt_dda_header IS NOT INITIAL.
+        MODIFY ztfi_dda_header FROM TABLE gt_dda_header.
+      ENDIF.
 
-    IF gt_dda_segto_g IS NOT INITIAL.
-      MODIFY ztfi_dda_segto_g FROM TABLE gt_dda_segto_g.
-    ENDIF.
+      IF gt_dda_lote IS NOT INITIAL.
+        MODIFY ztfi_dda_lote FROM TABLE gt_dda_lote.
+      ENDIF.
 
-    IF gt_dda_segto_h IS NOT INITIAL.
-      MODIFY ztfi_dda_segto_h FROM TABLE gt_dda_segto_h.
-    ENDIF.
+      IF gt_dda_segto_g IS NOT INITIAL.
+        MODIFY ztfi_dda_segto_g FROM TABLE gt_dda_segto_g.
+      ENDIF.
 
-    IF gt_dda_tr_file IS NOT INITIAL.
-      MODIFY ztfi_dda_tr_file FROM TABLE gt_dda_tr_file.
-    ENDIF.
+      IF gt_dda_segto_h IS NOT INITIAL.
+        MODIFY ztfi_dda_segto_h FROM TABLE gt_dda_segto_h.
+      ENDIF.
 
-    IF gt_dda_trail IS NOT INITIAL.
-      MODIFY ztfi_dda_trail FROM TABLE gt_dda_trail.
-    ENDIF.
+      IF gt_dda_tr_file IS NOT INITIAL.
+        MODIFY ztfi_dda_tr_file FROM TABLE gt_dda_tr_file.
+      ENDIF.
 
-    me->changedoc(  ).
+      IF gt_dda_trail IS NOT INITIAL.
+        MODIFY ztfi_dda_trail FROM TABLE gt_dda_trail.
+      ENDIF.
+
+      me->changedoc(  ).
+
+    ENDIF.
 
   ENDMETHOD.
 

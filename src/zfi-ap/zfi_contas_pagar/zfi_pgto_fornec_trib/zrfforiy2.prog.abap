@@ -861,6 +861,16 @@ FORM dme_brazil.
                 ELSEIF reguh-zbnkl(3) = '033'.
                   j_1bdmexa-a08 = '000'.
                 ENDIF.
+
+                IF reguh-ubnkl(3) = '033'.
+                  DATA: lv_char10 TYPE c LENGTH 10.
+
+                  j_1bdmexa-a07 = '09'.
+                  PERFORM f_trata_city_a16 CHANGING lv_char10.
+                  CONCATENATE lv_char10 regup-vblnr INTO j_1bdmexa-a16.
+
+                ENDIF.
+
               ENDIF.
             ELSEIF reguh-ubnkl(3) = '422'. "Safra
               j_1bdmexa-a07 = '00'.
