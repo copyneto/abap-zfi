@@ -4160,6 +4160,7 @@ FORM f_valor_abatimento USING uv_regup TYPE regup
            vblnr TYPE regup-vblnr,
            belnr TYPE regup-belnr,
            rebzg TYPE regup-rebzg,
+           rebzz TYPE regup-rebzz,
            wrbtr TYPE regup-wrbtr,
          END OF ty_regup,
 
@@ -4189,11 +4190,13 @@ FORM f_valor_abatimento USING uv_regup TYPE regup
          vblnr
          belnr
          rebzg
+         rebzz
          wrbtr
     FROM regup
     INTO TABLE lt_regup1
    WHERE laufd = uv_regup-laufd
      AND laufi = uv_regup-laufi
+     AND vblnr = uv_regup-vblnr
      AND xvorl NE abap_true
      AND rebzg NE space.
 
@@ -4205,19 +4208,21 @@ FORM f_valor_abatimento USING uv_regup TYPE regup
     IF lt_regup1[] IS NOT INITIAL.
 
       SELECT laufd
-             laufi
-             xvorl
-             vblnr
-             belnr
-             rebzg
-             wrbtr
+         laufi
+         xvorl
+         vblnr
+         belnr
+         rebzg
+         rebzz
+         wrbtr
         FROM regup
         INTO TABLE lt_regup2
         FOR ALL ENTRIES IN lt_regup1
        WHERE laufd = lt_regup1-laufd
          AND laufi = lt_regup1-laufi
          AND xvorl NE abap_true
-         AND belnr = lt_regup1-rebzg.
+         AND belnr = lt_regup1-rebzg
+         AND buzei = lt_regup1-rebzz.
 
       IF sy-subrc IS INITIAL.
 

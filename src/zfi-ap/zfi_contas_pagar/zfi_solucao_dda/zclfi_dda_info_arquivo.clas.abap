@@ -188,7 +188,7 @@ CLASS ZCLFI_DDA_INFO_ARQUIVO IMPLEMENTATION.
               APPEND INITIAL LINE TO me->gt_dda_segto_g ASSIGNING FIELD-SYMBOL(<fs_dda_segto_g>).
 
               <fs_dda_segto_g>-bukrs        = lv_bukrs.
-              <fs_dda_segto_g>-data_arq     = <fs_file_240>-campo+107(8).
+              <fs_dda_segto_g>-data_arq     = sy-datum.
               <fs_dda_segto_g>-hbkid        = <fs_file_240>-campo(3).
               <fs_dda_segto_g>-cod_lote     = <fs_file_240>-campo+3(4).
               <fs_dda_segto_g>-num_reg      = <fs_file_240>-campo+8(5).

@@ -26,7 +26,7 @@ IF bseg-koart EQ 'K' OR
    bseg-koart EQ 'D'.
 
   IF sy-tcode   EQ 'FB01' AND
-     bkpf-blart EQ 'TF'.
+     bkpf-blart EQ 'TF' OR bkpf-blart EQ 'TZ'.
 
     SELECT SINGLE bukrs rfha kontrh rbusa bupla
       FROM vtbfha

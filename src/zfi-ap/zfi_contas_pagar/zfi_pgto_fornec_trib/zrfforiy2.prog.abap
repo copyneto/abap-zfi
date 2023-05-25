@@ -866,7 +866,7 @@ FORM dme_brazil.
                   DATA: lv_char10 TYPE c LENGTH 10.
 
                   j_1bdmexa-a07 = '09'.
-                  PERFORM f_trata_city_a16 CHANGING lv_char10.
+                  PERFORM f_trata_033_a16 CHANGING lv_char10.
                   CONCATENATE lv_char10 regup-vblnr INTO j_1bdmexa-a16.
 
                 ENDIF.
@@ -4413,5 +4413,30 @@ FORM fill_bradesco_5  USING p_1bdmexb TYPE j_1bdmexb.
   PERFORM f_trata_city_a16 CHANGING zsfi_j_1bdmex5-510.
 
   zsfi_j_1bdmex5-513 = regup-bldat+6(2) &&  regup-bldat+4(2) &&  regup-bldat(4).
+
+ENDFORM.
+*&---------------------------------------------------------------------*
+*& Form f_trata_033_a16
+*&---------------------------------------------------------------------*
+*& text
+*&---------------------------------------------------------------------*
+*&      <-- LV_CHAR10
+*&---------------------------------------------------------------------*
+FORM f_trata_033_a16  CHANGING p_char10.
+
+  DATA: lv_number(10) TYPE n,
+        lv_spaces(5)  TYPE c.
+
+  IF regup-xblnr CS '-'.
+    SPLIT regup-xblnr AT '-' INTO DATA(lv_part1) DATA(lv_part2).
+    lv_number = lv_part1.
+  ELSEIF regup-xblnr CS '/'.
+    SPLIT regup-xblnr AT '/' INTO DATA(lv_part1a) DATA(lv_part2a).
+    lv_number = lv_part1a.
+  ELSE.
+    lv_number = regup-xblnr.
+  ENDIF.
+
+  p_char10 = lv_number .
 
 ENDFORM.

@@ -44,10 +44,13 @@ TYPES: BEGIN OF ty_vtbfha,
               ( koart EQ 'K' OR koart EQ 'D' ).
 
         IF sy-subrc   EQ 0      AND
-           sy-tcode   EQ 'FB01' AND
-           <fs_blart> EQ 'TF'.
-          i_lifnr = ls_vtbfha-kontrh.
-        ENDIF.
+           sy-tcode   EQ 'FB01'.
 
+          IF <fs_blart> IS ASSIGNED.
+             IF <fs_blart> EQ 'TF' OR <fs_blart> EQ 'TZ'.
+              i_lifnr = ls_vtbfha-kontrh.
+             ENDIF.
+            ENDIF.
+        ENDIF.
     ENDIF.
 ENDENHANCEMENT.
