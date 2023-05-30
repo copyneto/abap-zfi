@@ -218,7 +218,9 @@ CLASS ZCLFI_DDA_INFO_ARQUIVO IMPLEMENTATION.
               <fs_dda_segto_g>-cod_moeda = <fs_file_240>-campo+145(2).
               <fs_dda_segto_g>-num_doc = <fs_file_240>-campo+147(10).
               <fs_dda_segto_g>-belnr = <fs_file_240>+147(10). " COND #(  WHEN <fs_file_240>-campo+147(10) CO lc_numbers THEN <fs_file_240>-campo+147(10) ).
+              CONDENSE <fs_dda_segto_g>-belnr NO-GAPS.
               <fs_dda_segto_g>-xblnr = <fs_file_240>+147(15). " COND #(  WHEN <fs_file_240>-campo+147(10) CO lc_numbers THEN <fs_file_240>-campo+147(10) ).
+              CONDENSE <fs_dda_segto_g>-xblnr NO-GAPS.
               <fs_dda_segto_g>-gjahr = <fs_file_240>-campo+111(4).
 
               <fs_dda_segto_g>-ag_cobr = <fs_file_240>-campo+162(5).

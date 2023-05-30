@@ -79,6 +79,25 @@ CLASS ZCLFI_IMPRESSAO_DDA IMPLEMENTATION.
               dataarquivo       = @ls_chave_dda-data_arq
            INTO TABLE @DATA(lt_documentos).
 
+    IF sy-subrc <> 0 .
+
+      "ler os dados para impressão do boleto
+      SELECT empresa, banco, dataarquivo, nomeempresa, cnpjcedente, fornecedor, documentocontabil, ano,
+             datavencimento, agenciacedente, nomecedente, datadocumento, numerodocumento, especietitulo, nossonum,
+             carteira, valortitulo, jurosmora, valorabatimento, nomeavalista, valorcobrado, instrucao01, instrucao02,
+             codigomoedabr, digitoagencia, fatorvencimento, campolivre, codigoprotesto, prazoprotesto, numeroinscricao
+          FROM zi_fi_arquivo_dda
+          WHERE
+*               fornecedor        = @ls_chave_dda-lifnr AND
+                empresa           = @ls_chave_dda-bukrs AND
+                documentocontabil = @ls_chave_dda-num_doc AND
+                ano               = @ls_chave_dda-gjahr AND
+                dataarquivo       = @ls_chave_dda-data_arq
+             INTO TABLE @lt_documentos.
+
+    ENDIF.
+
+
     " Busca o registro mais recente
     SORT lt_documentos BY dataarquivo DESCENDING.
 
@@ -130,15 +149,33 @@ CLASS ZCLFI_IMPRESSAO_DDA IMPLEMENTATION.
     CONDENSE lv_valor_br NO-GAPS.
 
     lv_valor_aux = lv_valor_br.
-    CONCATENATE ls_documento-banco ls_documento-codigomoedabr
-                ls_documento-digitoagencia ls_documento-fatorvencimento
-                lv_valor_aux        ls_documento-campolivre
-      INTO lv_barcode.
 
-    CONDENSE lv_barcode NO-GAPS.
+    SELECT SINGLE barcode
+      FROM j1b_error_dda
+      INTO @DATA(lv_barcode_dda)
+      WHERE reference_no = @ls_documento-documentocontabil
+         AND bukrs = @ls_documento-empresa
+         AND posting_date = @ls_documento-dataarquivo.
+
+    IF sy-subrc = 0.
+
+      lv_barcode  = lv_barcode_dda.
+      ls_dados_boleto-banco = lv_barcode_dda(3).
+
+    ELSE.
+
+      CONCATENATE ls_documento-banco ls_documento-codigomoedabr
+            ls_documento-digitoagencia ls_documento-fatorvencimento
+            lv_valor_aux        ls_documento-campolivre
+            INTO lv_barcode.
+
+      CONDENSE lv_barcode NO-GAPS.
+
+    ENDIF.
+
 
     "Determinar o logotipo do banco
-    determinar_logotipo( EXPORTING io_doc    = REF #( ls_documento )
+    determinar_logotipo( EXPORTING io_doc    = REF #( ls_dados_boleto )
                          CHANGING  cs_boleto = ls_dados_boleto ).
 
     "Formatar o Código de Barras
@@ -210,7 +247,7 @@ CLASS ZCLFI_IMPRESSAO_DDA IMPLEMENTATION.
     ENDCASE.
 
 
-      ls_dados_boleto-instrucao02 = |BOLETO REF. NF { ls_documento-numerodocumento }|.
+    ls_dados_boleto-instrucao02 = |BOLETO REF. NF { ls_documento-numerodocumento }|.
     DATA: lv_cnpj_cpf3 TYPE char20.
 
 *cedente
@@ -284,7 +321,8 @@ CLASS ZCLFI_IMPRESSAO_DDA IMPLEMENTATION.
                                    WHEN <fs_banco> = '033' THEN 'SANTANDER'
                                    WHEN <fs_banco> = '422' THEN 'SAFRA'
                                    WHEN <fs_banco> = '001' THEN 'BANCOBRASIL'
-                                   WHEN <fs_banco> = '745' THEN 'CITIBANK' ).
+                                   WHEN <fs_banco> = '745' THEN 'CITIBANK'
+                                   ELSE 'BANCO' ).
       cs_boleto-logotipo = |Z_LOGO_{ cs_boleto-logotipo }|.
     ENDIF.
   ENDMETHOD.
@@ -293,292 +331,303 @@ CLASS ZCLFI_IMPRESSAO_DDA IMPLEMENTATION.
   METHOD formatar_barcode.
     cs_boleto-barcode   = iv_barcode.
 * Área para receber codigo digitado (tamanho: 44)
-  DATA: BEGIN OF ls_entrada,
-          c1(3)  TYPE c,
-          c2(1)  TYPE c,
-          c3(1)  TYPE c,
-          c4(4)  TYPE c,
-          c5(10) TYPE c,
-          c6(1)  TYPE c,
-          c7(4)  TYPE c,
-          c8(10) TYPE c,
-          c9(10) TYPE c,
-        END OF ls_entrada.
+    DATA: BEGIN OF ls_entrada,
+            c1(3)  TYPE c,
+            c2(1)  TYPE c,
+            c3(1)  TYPE c,
+            c4(4)  TYPE c,
+            c5(10) TYPE c,
+            c6(1)  TYPE c,
+            c7(4)  TYPE c,
+            c8(10) TYPE c,
+            c9(10) TYPE c,
+          END OF ls_entrada.
 * Área de calculo do digito verificador para campo com tamanho 9.
-  DATA: BEGIN OF ls_digito9,
-        d1(1)  TYPE n,
-        d2(1)  TYPE n,
-        d3(1)  TYPE n,
-        d4(1)  TYPE n,
-        d5(1)  TYPE n,
-        d6(1)  TYPE n,
-        d7(1)  TYPE n,
-        d8(1)  TYPE n,
-        d9(1)  TYPE n,
-        END OF ls_digito9.
+    DATA: BEGIN OF ls_digito9,
+            d1(1) TYPE n,
+            d2(1) TYPE n,
+            d3(1) TYPE n,
+            d4(1) TYPE n,
+            d5(1) TYPE n,
+            d6(1) TYPE n,
+            d7(1) TYPE n,
+            d8(1) TYPE n,
+            d9(1) TYPE n,
+          END OF ls_digito9.
 
 * Área de calculo do digito verificador para campo com tamanho 10.
-  DATA: BEGIN OF ls_digito10,
-        d21(1)  TYPE n,
-        d22(1)  TYPE n,
-        d23(1)  TYPE n,
-        d24(1)  TYPE n,
-        d25(1)  TYPE n,
-        d26(1)  TYPE n,
-        d27(1)  TYPE n,
-        d28(1)  TYPE n,
-        d29(1)  TYPE n,
-        d210(1)  TYPE n,
-        END OF ls_digito10.
+    DATA: BEGIN OF ls_digito10,
+            d21(1)  TYPE n,
+            d22(1)  TYPE n,
+            d23(1)  TYPE n,
+            d24(1)  TYPE n,
+            d25(1)  TYPE n,
+            d26(1)  TYPE n,
+            d27(1)  TYPE n,
+            d28(1)  TYPE n,
+            d29(1)  TYPE n,
+            d210(1) TYPE n,
+          END OF ls_digito10.
 
 * Áreas de trabalho.
-  DATA: lv_digver(2) TYPE n.
-  DATA: lv_digx(1)   TYPE n.
-  DATA: lv_dwrk(2)   TYPE n.
-  DATA: lv_dezena(3) TYPE n.
-  DATA: lv_valor(1)  TYPE c.
+    DATA: lv_digver(2) TYPE n.
+    DATA: lv_digx(1)   TYPE n.
+    DATA: lv_dwrk(2)   TYPE n.
+    DATA: lv_dezena(3) TYPE n.
+    DATA: lv_valor(1)  TYPE c.
 
-  DATA:
-    gc_sgtxt type sgtxt,
-    lv_esrre type  bseg-esrre,
-    lv_esrnr type bseg-esrnr,
-    lv_brcde type rf05l-brcde,
-    lv_zlsch type bseg-zlsch.
+    DATA:
+      gc_sgtxt TYPE sgtxt,
+      lv_esrre TYPE  bseg-esrre,
+      lv_esrnr TYPE bseg-esrnr,
+      lv_brcde TYPE rf05l-brcde,
+      lv_zlsch TYPE bseg-zlsch.
 
 *-----------------------------------------------------------------------
 * Inicio dos procedimentos.
 *-----------------------------------------------------------------------
 * Se alguma coisa tiver sido digitada
 * move codigo digitado para campo de ls_entrada
-  ls_entrada = iv_barcode.
+***  ls_entrada = iv_barcode.
+***
+**** Só converte se código digitado contiver apenas números,
+***  IF ls_entrada-c1 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c2 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c3 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c4 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c5 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c6 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c7 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c8 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
+***     ls_entrada-c9 CA 'abcdefghijklmnopqrstuvwxyz.-'.
+***  ELSE.
+***
+***
+**** Monta area para calculo do dígito do primeiro campo.
+***    CONCATENATE   ls_entrada-c1
+***                  ls_entrada-c2
+***                  ls_entrada-c6
+***                  ls_entrada-c7
+***    INTO lv_esrnr.
+***
+**** Calcula dígito verificador do primeiro campo.
+***    ls_digito9 = lv_esrnr.
+***    lv_dwrk = ls_digito9-d1 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito9-d1 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito9-d1 = lv_dwrk.
+***    ENDIF.
+***    lv_dwrk = ls_digito9-d3 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito9-d3 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito9-d3 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito9-d5 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito9-d5 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito9-d5 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito9-d7 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito9-d7 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito9-d7 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito9-d9 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito9-d9 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito9-d9 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_digver = ls_digito9-d1 +
+***             ls_digito9-d2 +
+***             ls_digito9-d3 +
+***             ls_digito9-d4 +
+***             ls_digito9-d5 +
+***             ls_digito9-d6 +
+***             ls_digito9-d7 +
+***             ls_digito9-d8 +
+***             ls_digito9-d9.
+***
+***    lv_dezena = ( lv_digver / 10 ).
+***    lv_dezena = lv_dezena * 10.
+***    IF lv_dezena < lv_digver.
+***      lv_dezena = lv_dezena + 10.
+***    ENDIF.
+***    lv_digver = lv_dezena - lv_digver.
+***    lv_digx = lv_digver.
+***
+**** Monta primeiro campo da saida.
+***    CONCATENATE   lv_esrnr lv_digx
+***    INTO lv_esrnr.
+***
+***    ls_digito10 = ls_entrada-c8.
+***    lv_dwrk = ls_digito10-d22 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d22 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d22 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito10-d24 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d24 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d24 = lv_dwrk.
+***    ENDIF.
+***    lv_dwrk = ls_digito10-d26 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d26 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d26 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito10-d28 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d28 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d28 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito10-d210 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d210 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d210 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_digver = ls_digito10-d21 +
+***             ls_digito10-d22 +
+***             ls_digito10-d23 +
+***             ls_digito10-d24 +
+***             ls_digito10-d25 +
+***             ls_digito10-d26 +
+***             ls_digito10-d27 +
+***             ls_digito10-d28 +
+***             ls_digito10-d210 +
+***             ls_digito10-d29.
+***    lv_dezena = ( lv_digver / 10 ).
+***    lv_dezena = lv_dezena * 10.
+***    IF lv_dezena < lv_digver.
+***      lv_dezena = lv_dezena + 10.
+***    ENDIF.
+***    lv_digver = lv_dezena - lv_digver.
+***    lv_digx = lv_digver.
+***
+**** Monta segundo campo na saida.
+***    CONCATENATE   ls_entrada-c8 lv_digx
+***    INTO lv_esrre.
+***
+**** Calcula dígito verificador do terceiro campo.
+***    ls_digito10 = ls_entrada-c9.
+***    lv_dwrk = ls_digito10-d22 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d22 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d22 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito10-d24 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d24 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d24 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito10-d26 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d26 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d26 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito10-d28 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d28 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d28 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_dwrk = ls_digito10-d210 * 2.
+***    IF lv_dwrk > 9.
+***      ls_digito10-d210 = ( lv_dwrk - 10 ) + 1.
+***    ELSE.
+***      ls_digito10-d210 = lv_dwrk.
+***    ENDIF.
+***
+***    lv_digver = ls_digito10-d21 +
+***             ls_digito10-d22 +
+***             ls_digito10-d23 +
+***             ls_digito10-d24 +
+***             ls_digito10-d25 +
+***             ls_digito10-d26 +
+***             ls_digito10-d27 +
+***             ls_digito10-d28 +
+***             ls_digito10-d210 +
+***             ls_digito10-d29.
+***
+***    lv_dezena = ( lv_digver / 10 ).
+***    lv_dezena = lv_dezena * 10.
+***    IF lv_dezena < lv_digver.
+***      lv_dezena = lv_dezena + 10.
+***    ENDIF.
+***    lv_digver = lv_dezena - lv_digver.
+***    lv_digx = lv_digver.
+***
+**** Monta terceiro campo na saida.
+***    CONCATENATE   lv_esrre ls_entrada-c9 lv_digx
+***    INTO lv_esrre.
+***
+**** Monta quarto campo na saida.
+***    CONCATENATE   lv_esrre ls_entrada-c3
+***    INTO lv_esrre.
+***
+***    IF NOT ( ls_entrada-c4 = space OR
+***             ls_entrada-c4 CO '0' ).
+***      CONCATENATE   lv_esrre ls_entrada-c4
+***      INTO lv_esrre.
+***
+***    ENDIF.
+***
+***    IF ls_entrada-c5 <> '0000000000'.
+***      CONCATENATE
+***      lv_esrnr
+***      lv_esrre
+***      ls_entrada-c5
+***    INTO lv_brcde.
+***    ELSE.
+***      CONCATENATE
+***      lv_esrre
+***      '000'
+***      INTO lv_esrre.
+***      CONCATENATE
+***      lv_esrnr
+***      lv_esrre
+***      INTO lv_brcde.
+***    ENDIF.
+***  ENDIF.
+***
+*** WRITE lv_brcde TO cs_boleto-codbarras USING EDIT MASK '_____._____ _____.______ _____.______ _ ______________'.
+***
+*** cs_boleto-barcode = iv_barcode.
 
-* Só converte se código digitado contiver apenas números,
-  IF ls_entrada-c1 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c2 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c3 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c4 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c5 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c6 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c7 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c8 CA 'abcdefghijklmnopqrstuvwxyz.-' OR
-     ls_entrada-c9 CA 'abcdefghijklmnopqrstuvwxyz.-'.
-  ELSE.
+    WRITE iv_barcode TO cs_boleto-codbarras USING EDIT MASK '_____._____ _____.______ _____.______ _ ______________'.
 
+    CLEAR cs_boleto-barcode.
+    cs_boleto-barcode(4)     = iv_barcode(4).
+    cs_boleto-barcode+4(15)  = iv_barcode+32(15).
+    cs_boleto-barcode+19(5)  = iv_barcode+4(5).
+    cs_boleto-barcode+24(10) = iv_barcode+10(10).
+    cs_boleto-barcode+34(10) = iv_barcode+21(10).
 
-* Monta area para calculo do dígito do primeiro campo.
-    CONCATENATE   ls_entrada-c1
-                  ls_entrada-c2
-                  ls_entrada-c6
-                  ls_entrada-c7
-    INTO lv_esrnr.
-
-* Calcula dígito verificador do primeiro campo.
-    ls_digito9 = lv_esrnr.
-    lv_dwrk = ls_digito9-d1 * 2.
-    IF lv_dwrk > 9.
-      ls_digito9-d1 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito9-d1 = lv_dwrk.
-    ENDIF.
-    lv_dwrk = ls_digito9-d3 * 2.
-    IF lv_dwrk > 9.
-      ls_digito9-d3 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito9-d3 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito9-d5 * 2.
-    IF lv_dwrk > 9.
-      ls_digito9-d5 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito9-d5 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito9-d7 * 2.
-    IF lv_dwrk > 9.
-      ls_digito9-d7 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito9-d7 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito9-d9 * 2.
-    IF lv_dwrk > 9.
-      ls_digito9-d9 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito9-d9 = lv_dwrk.
-    ENDIF.
-
-    lv_digver = ls_digito9-d1 +
-             ls_digito9-d2 +
-             ls_digito9-d3 +
-             ls_digito9-d4 +
-             ls_digito9-d5 +
-             ls_digito9-d6 +
-             ls_digito9-d7 +
-             ls_digito9-d8 +
-             ls_digito9-d9.
-
-    lv_dezena = ( lv_digver / 10 ).
-    lv_dezena = lv_dezena * 10.
-    IF lv_dezena < lv_digver.
-      lv_dezena = lv_dezena + 10.
-    ENDIF.
-    lv_digver = lv_dezena - lv_digver.
-    lv_digx = lv_digver.
-
-* Monta primeiro campo da saida.
-    CONCATENATE   lv_esrnr lv_digx
-    INTO lv_esrnr.
-
-    ls_digito10 = ls_entrada-c8.
-    lv_dwrk = ls_digito10-d22 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d22 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d22 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito10-d24 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d24 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d24 = lv_dwrk.
-    ENDIF.
-    lv_dwrk = ls_digito10-d26 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d26 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d26 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito10-d28 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d28 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d28 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito10-d210 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d210 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d210 = lv_dwrk.
-    ENDIF.
-
-    lv_digver = ls_digito10-d21 +
-             ls_digito10-d22 +
-             ls_digito10-d23 +
-             ls_digito10-d24 +
-             ls_digito10-d25 +
-             ls_digito10-d26 +
-             ls_digito10-d27 +
-             ls_digito10-d28 +
-             ls_digito10-d210 +
-             ls_digito10-d29.
-    lv_dezena = ( lv_digver / 10 ).
-    lv_dezena = lv_dezena * 10.
-    IF lv_dezena < lv_digver.
-      lv_dezena = lv_dezena + 10.
-    ENDIF.
-    lv_digver = lv_dezena - lv_digver.
-    lv_digx = lv_digver.
-
-* Monta segundo campo na saida.
-    CONCATENATE   ls_entrada-c8 lv_digx
-    INTO lv_esrre.
-
-* Calcula dígito verificador do terceiro campo.
-    ls_digito10 = ls_entrada-c9.
-    lv_dwrk = ls_digito10-d22 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d22 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d22 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito10-d24 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d24 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d24 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito10-d26 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d26 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d26 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito10-d28 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d28 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d28 = lv_dwrk.
-    ENDIF.
-
-    lv_dwrk = ls_digito10-d210 * 2.
-    IF lv_dwrk > 9.
-      ls_digito10-d210 = ( lv_dwrk - 10 ) + 1.
-    ELSE.
-      ls_digito10-d210 = lv_dwrk.
-    ENDIF.
-
-    lv_digver = ls_digito10-d21 +
-             ls_digito10-d22 +
-             ls_digito10-d23 +
-             ls_digito10-d24 +
-             ls_digito10-d25 +
-             ls_digito10-d26 +
-             ls_digito10-d27 +
-             ls_digito10-d28 +
-             ls_digito10-d210 +
-             ls_digito10-d29.
-
-    lv_dezena = ( lv_digver / 10 ).
-    lv_dezena = lv_dezena * 10.
-    IF lv_dezena < lv_digver.
-      lv_dezena = lv_dezena + 10.
-    ENDIF.
-    lv_digver = lv_dezena - lv_digver.
-    lv_digx = lv_digver.
-
-* Monta terceiro campo na saida.
-    CONCATENATE   lv_esrre ls_entrada-c9 lv_digx
-    INTO lv_esrre.
-
-* Monta quarto campo na saida.
-    CONCATENATE   lv_esrre ls_entrada-c3
-    INTO lv_esrre.
-
-    IF NOT ( ls_entrada-c4 = space OR
-             ls_entrada-c4 CO '0' ).
-      CONCATENATE   lv_esrre ls_entrada-c4
-      INTO lv_esrre.
-
-    ENDIF.
-
-    IF ls_entrada-c5 <> '0000000000'.
-      CONCATENATE
-      lv_esrnr
-      lv_esrre
-      ls_entrada-c5
-    INTO lv_brcde.
-    ELSE.
-      CONCATENATE
-      lv_esrre
-      '000'
-      INTO lv_esrre.
-      CONCATENATE
-      lv_esrnr
-      lv_esrre
-      INTO lv_brcde.
-    ENDIF.
-  ENDIF.
-
- WRITE lv_brcde TO cs_boleto-codbarras USING EDIT MASK '_____._____ _____.______ _____.______ _ ______________'.
-
- cs_boleto-barcode = iv_barcode.
+*    cs_boleto-barcode = iv_barcode.
 
   ENDMETHOD.
 ENDCLASS.
