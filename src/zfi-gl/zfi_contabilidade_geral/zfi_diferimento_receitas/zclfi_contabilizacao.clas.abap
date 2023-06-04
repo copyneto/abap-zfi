@@ -451,32 +451,32 @@ CLASS ZCLFI_CONTABILIZACAO IMPLEMENTATION.
         cliente TYPE kunnr,
       END OF ty_kunnr_belnr,
       BEGIN OF ty_conta,
-        conta   type hkont,
-      end of ty_conta,
+        conta TYPE hkont,
+      END OF ty_conta,
       BEGIN OF ty_doc,
         empresa TYPE bukrs,
         numdoc  TYPE belnr_d,
         ano     TYPE gjahr,
-      end of ty_doc.      .
+      END OF ty_doc.      .
 
     DATA: lt_kunnr_belnr         TYPE SORTED TABLE OF ty_kunnr_belnr WITH UNIQUE KEY empresa numdoc ano cliente,
           ls_kunnr_belnr         TYPE ty_kunnr_belnr,
           ls_sum_razao           TYPE ty_razao,
           ls_sum_cliente_receita TYPE ty_cliente_receita,
-          lt_conta               TYPE table of ty_conta,
-          lt_doc                 type TABLE of ty_doc.
+          lt_conta               TYPE TABLE OF ty_conta,
+          lt_doc                 TYPE TABLE OF ty_doc.
 
     IF gt_item IS NOT INITIAL.
-       clear: lt_conta, lt_doc.
-       loop at gt_item ASSIGNING FIELD-SYMBOL(<fs_item>).
-          APPEND value #( conta = <fs_item>-conta ) to lt_conta.
-          append VALUE #( empresa = <fs_item>-empresa
-                          numdoc  = <fs_item>-numdoc
-                          ano     = <fs_item>-ano ) to lt_doc.
-       ENDLOOP.
+      CLEAR: lt_conta, lt_doc.
+      LOOP AT gt_item ASSIGNING FIELD-SYMBOL(<fs_item>).
+        APPEND VALUE #( conta = <fs_item>-conta ) TO lt_conta.
+        APPEND VALUE #( empresa = <fs_item>-empresa
+                        numdoc  = <fs_item>-numdoc
+                        ano     = <fs_item>-ano ) TO lt_doc.
+      ENDLOOP.
 
-       sort lt_conta. delete ADJACENT DUPLICATES FROM lt_conta.
-       sort lt_doc. delete ADJACENT DUPLICATES FROM lt_doc.
+      SORT lt_conta. DELETE ADJACENT DUPLICATES FROM lt_conta.
+      SORT lt_doc. DELETE ADJACENT DUPLICATES FROM lt_doc.
 
       SELECT *
         FROM ztfi_defrece_dep
@@ -507,31 +507,31 @@ CLASS ZCLFI_CONTABILIZACAO IMPLEMENTATION.
           INTO TABLE @DATA(lt_bkpf).
 
 
-     SELECT rbukrs, docnr, ryear, buzei, bschl, racct, rbusa, prctr, wsl, docln
-      FROM faglflexa
-      FOR ALL ENTRIES IN  @lt_doc
-        WHERE ryear = @lt_doc-ano
-          AND docnr = @lt_doc-numdoc
-          AND rldnr = '0L'
-          AND rbukrs = @lt_doc-empresa
-          INTO TABLE @DATA(lt_faglflexa).
+      SELECT rbukrs, docnr, ryear, buzei, bschl, racct, rbusa, prctr, wsl, docln
+       FROM faglflexa
+       FOR ALL ENTRIES IN  @lt_doc
+         WHERE ryear = @lt_doc-ano
+           AND docnr = @lt_doc-numdoc
+           AND rldnr = '0L'
+           AND rbukrs = @lt_doc-empresa
+           INTO TABLE @DATA(lt_faglflexa).
 
-      clear: lt_conta.
+      CLEAR: lt_conta.
 
-      loop at lt_faglflexa ASSIGNING FIELD-SYMBOL(<fs_fagl>).
-         CHECK not line_exists( gt_de_para_hkont[ hkont_from = <fs_fagl>-racct ] ).
-         append <fs_fagl>-racct to lt_conta.
+      LOOP AT lt_faglflexa ASSIGNING FIELD-SYMBOL(<fs_fagl>).
+        CHECK NOT line_exists( gt_de_para_hkont[ hkont_from = <fs_fagl>-racct ] ).
+        APPEND <fs_fagl>-racct TO lt_conta.
       ENDLOOP.
 
-      sort lt_conta. delete ADJACENT DUPLICATES FROM lt_conta.
+      SORT lt_conta. DELETE ADJACENT DUPLICATES FROM lt_conta.
 
-      if lt_conta is not INITIAL.
+      IF lt_conta IS NOT INITIAL.
         SELECT *
         FROM ztfi_defrece_dep
         APPENDING TABLE gt_de_para_hkont
         FOR ALL ENTRIES IN lt_conta
         WHERE hkont_from = lt_conta-conta.
-      endif.
+      ENDIF.
 
 *      DELETE ADJACENT DUPLICATES FROM gt_de_para_hkont COMPARING ALL FIELDS.
 
@@ -570,11 +570,11 @@ CLASS ZCLFI_CONTABILIZACAO IMPLEMENTATION.
                                                                     belnr       = <fs_faglflexa>-docnr
                                                                     gjahr       = <fs_faglflexa>-ryear
                                                                     buzei       = <fs_faglflexa>-buzei BINARY SEARCH.
-      if <fs_bseg> is not ASSIGNED.
-            READ TABLE lt_bseg ASSIGNING <fs_bseg> WITH KEY bukrs       = <fs_faglflexa>-rbukrs
-                                                            belnr       = <fs_faglflexa>-docnr
-                                                            gjahr       = <fs_faglflexa>-ryear BINARY SEARCH.
-      endif.
+      IF <fs_bseg> IS NOT ASSIGNED.
+        READ TABLE lt_bseg ASSIGNING <fs_bseg> WITH KEY bukrs       = <fs_faglflexa>-rbukrs
+                                                        belnr       = <fs_faglflexa>-docnr
+                                                        gjahr       = <fs_faglflexa>-ryear BINARY SEARCH.
+      ENDIF.
 
 
       TRY.
@@ -607,25 +607,25 @@ CLASS ZCLFI_CONTABILIZACAO IMPLEMENTATION.
 *                           kursf     = <fs_bkpf>-kursf ) to gt_agrup.
 *      else.
 
-              ls_sum_razao-moeda        = <fs_bkpf>-waers.
-              ls_sum_razao-kursf        = <fs_bkpf>-kursf.
-              ls_sum_razao-bukrs        = <fs_bkpf>-bukrs.
-              ls_sum_razao-hkont_to     = gt_de_para_hkont[ hkont_from = <fs_faglflexa>-racct ]-hkont_to.
-              ls_sum_razao-gsber        = <fs_faglflexa>-rbusa.
-              ls_sum_razao-bupla        = <fs_bseg>-bupla.
-              ls_sum_razao-prctr        = <fs_faglflexa>-prctr.
-              ls_sum_razao-dmbtr        = <fs_faglflexa>-wsl.
-              COLLECT ls_sum_razao INTO gt_sum_razao.
+          ls_sum_razao-moeda        = <fs_bkpf>-waers.
+          ls_sum_razao-kursf        = <fs_bkpf>-kursf.
+          ls_sum_razao-bukrs        = <fs_bkpf>-bukrs.
+          ls_sum_razao-hkont_to     = gt_de_para_hkont[ hkont_from = <fs_faglflexa>-racct ]-hkont_to.
+          ls_sum_razao-gsber        = <fs_faglflexa>-rbusa.
+          ls_sum_razao-bupla        = <fs_bseg>-bupla.
+          ls_sum_razao-prctr        = <fs_faglflexa>-prctr.
+          ls_sum_razao-dmbtr        = <fs_faglflexa>-wsl.
+          COLLECT ls_sum_razao INTO gt_sum_razao.
 
-              APPEND VALUE #( moeda     = <fs_bkpf>-waers
-                           kursf     = <fs_bkpf>-kursf
-                           bukrs     = <fs_bkpf>-bukrs
-                           gjahr      = <fs_bkpf>-gjahr
-                           belnr      = <fs_bkpf>-belnr
-                            ) TO gt_doc_proc.
+          APPEND VALUE #( moeda     = <fs_bkpf>-waers
+                       kursf     = <fs_bkpf>-kursf
+                       bukrs     = <fs_bkpf>-bukrs
+                       gjahr      = <fs_bkpf>-gjahr
+                       belnr      = <fs_bkpf>-belnr
+                        ) TO gt_doc_proc.
 
-              append value #( moeda     = <fs_bkpf>-waers
-                           kursf     = <fs_bkpf>-kursf ) to gt_agrup.
+          APPEND VALUE #( moeda     = <fs_bkpf>-waers
+                       kursf     = <fs_bkpf>-kursf ) TO gt_agrup.
 
 *      endif.
         CATCH cx_sy_itab_line_not_found.

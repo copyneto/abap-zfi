@@ -1,24 +1,24 @@
-CLASS lcl_Header DEFINITION INHERITING FROM cl_abap_behavior_handler.
+CLASS lcl_header DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
 
     METHODS read FOR READ
-      IMPORTING keys FOR READ Header RESULT result.
+      IMPORTING keys FOR READ header RESULT result.
 
-    METHODS rba_MercIntItem FOR READ
-      IMPORTING keys_rba FOR READ Header\_MercIntItem FULL result_requested RESULT result LINK association_links.
+    METHODS rba_mercintitem FOR READ
+      IMPORTING keys_rba FOR READ header\_mercintitem FULL result_requested RESULT result LINK association_links.
 
     METHODS contabilizar FOR MODIFY
-      IMPORTING keys FOR ACTION Header~contabilizar.
+      IMPORTING keys FOR ACTION header~contabilizar.
 
     METHODS simular FOR MODIFY
-      IMPORTING keys FOR ACTION Header~simular.
+      IMPORTING keys FOR ACTION header~simular.
 
     METHODS diferir FOR MODIFY
-      IMPORTING keys FOR ACTION Header~diferir.
+      IMPORTING keys FOR ACTION header~diferir.
 
 ENDCLASS.
 
-CLASS lcl_Header IMPLEMENTATION.
+CLASS lcl_header IMPLEMENTATION.
 
   METHOD read.
 * ---------------------------------------------------------------------------
@@ -29,9 +29,9 @@ CLASS lcl_Header IMPLEMENTATION.
       SELECT *
         FROM zi_fi_merc_int_h
         FOR ALL ENTRIES IN @keys
-        WHERE Empresa = @keys-Empresa
-          AND NumDoc  = @keys-NumDoc
-          AND Ano     = @keys-Ano
+        WHERE empresa = @keys-empresa
+          AND numdoc  = @keys-numdoc
+          AND ano     = @keys-ano
         INTO CORRESPONDING FIELDS OF TABLE @result.     "#EC CI_SEL_DEL
 
       IF sy-subrc NE 0.
@@ -40,15 +40,18 @@ CLASS lcl_Header IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
-  METHOD rba_MercIntItem.
+  METHOD rba_mercintitem.
     RETURN.
   ENDMETHOD.
 
   METHOD contabilizar.
+
     DATA: lt_header_aux TYPE TABLE OF zsfi_mercado_header WITH EMPTY KEY,
           lt_item_aux   TYPE TABLE OF zsfi_mercado_item,
-          lv_data(8)    type c.
+          lv_data(8)    TYPE c.
 
+    DATA: ls_header_aux LIKE LINE OF lt_header_aux,
+          ls_item_aux   LIKE LINE OF lt_item_aux.
 
     TRY .
         DATA(ls_param) = keys[ 1 ]-%param.
@@ -76,66 +79,130 @@ CLASS lcl_Header IMPLEMENTATION.
     ENDIF.
 
     READ ENTITIES OF zi_fi_merc_int_h IN LOCAL MODE
-        ENTITY Header
+        ENTITY header
         ALL FIELDS WITH CORRESPONDING #( keys )
         RESULT DATA(lt_header).
 
     IF lt_header IS NOT INITIAL.
 
-    data(lv_skip) = abap_false.
+      DATA(lv_skip) = abap_false.
 
-    loop at lt_header assigning field-symbol(<fs_header>).
-     check <fs_header>-AptoDiferimento <> 'Sim'.
+      LOOP AT lt_header ASSIGNING FIELD-SYMBOL(<fs_header>).
+        CHECK <fs_header>-aptodiferimento <> 'Sim'.
 
-      reported-header = VALUE #(  ( %tky = <fs_header>-%tky
-                                    %msg = new_message_with_text(
-                                                                    severity = if_abap_behv_message=>severity-error
-                                                                    text     = TEXT-003
-                                          ) ) ).
-     lv_skip = abap_true.
-    endloop.
+        reported-header = VALUE #(  ( %tky = <fs_header>-%tky
+                                      %msg = new_message_with_text(
+                                                                      severity = if_abap_behv_message=>severity-error
+                                                                      text     = TEXT-003
+                                            ) ) ).
+        lv_skip = abap_true.
+      ENDLOOP.
 
-    check lv_skip = abap_false.
+      CHECK lv_skip = abap_false.
 
       READ ENTITIES OF zi_fi_merc_int_h IN LOCAL MODE
-          ENTITY Item
+          ENTITY item
           ALL FIELDS WITH CORRESPONDING #( keys )
           RESULT DATA(lt_item).
 
-      MOVE-CORRESPONDING lt_header TO lt_header_aux.
-      MOVE-CORRESPONDING lt_item   TO lt_item_aux.
+      SORT lt_item BY empresa
+                      numdoc
+                      ano.
 
-      DATA(lo_contab) = zclfi_contabilizacao=>get_instance(  ).
+*      MOVE-CORRESPONDING lt_header TO lt_header_aux.
+*      MOVE-CORRESPONDING lt_item   TO lt_item_aux.
 
-      lo_contab->set_ref_data( iv_app       = abap_true
-                               it_header    = lt_header_aux
-                               it_item      = lt_item_aux
-                               iv_dtlanc    = ls_param-datalanc
-                               iv_dtestorno = ls_param-dataestorno ).
+      LOOP AT lt_header ASSIGNING <fs_header>.
 
-      DATA(lt_menagens) = lo_contab->build( iv_merc_int = abap_true ).
+        MOVE-CORRESPONDING <fs_header> TO ls_header_aux.
+        APPEND ls_header_aux TO lt_header_aux.
 
-      reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
-                                 ( %tky = keys[ sy-index ]-%tky
+        READ TABLE lt_item TRANSPORTING NO FIELDS
+                                         WITH KEY empresa = <fs_header>-empresa
+                                                  numdoc  = <fs_header>-numdoc
+                                                  ano     = <fs_header>-ano
+                                                  BINARY SEARCH.
 
-                                   %msg = new_message(
-                                                       id       = ls_mensagem-id
-                                                       number   = ls_mensagem-number
-                                                       severity = CONV #( ls_mensagem-type )
-                                                       v1       = ls_mensagem-message_v1
-                                                       v2       = ls_mensagem-message_v2
-                                                       v3       = ls_mensagem-message_v3
-                                                       v4       = ls_mensagem-message_v4  ) ) ).
+        IF sy-subrc IS INITIAL.
+          LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<fs_item>) FROM sy-tabix.
+            IF <fs_item>-empresa NE <fs_header>-empresa
+            OR <fs_item>-numdoc  NE <fs_header>-numdoc
+            OR <fs_item>-ano     NE <fs_header>-ano.
+              EXIT.
+            ENDIF.
 
+            MOVE-CORRESPONDING <fs_item> TO ls_item_aux.
+            APPEND ls_item_aux TO lt_item_aux.
+
+          ENDLOOP.
+        ENDIF.
+
+        IF lines( lt_header_aux[] ) EQ 20.
+          DATA(lo_contab) = zclfi_contabilizacao=>get_instance(  ).
+
+          lo_contab->set_ref_data( iv_app       = abap_true
+                                   it_header    = lt_header_aux
+                                   it_item      = lt_item_aux
+                                   iv_dtlanc    = ls_param-datalanc
+                                   iv_dtestorno = ls_param-dataestorno ).
+
+          DATA(lt_menagens) = lo_contab->build( iv_merc_int = abap_true ).
+
+          reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
+                                     ( %tky = keys[ sy-index ]-%tky
+
+                                       %msg = new_message(
+                                                           id       = ls_mensagem-id
+                                                           number   = ls_mensagem-number
+                                                           severity = CONV #( ls_mensagem-type )
+                                                           v1       = ls_mensagem-message_v1
+                                                           v2       = ls_mensagem-message_v2
+                                                           v3       = ls_mensagem-message_v3
+                                                           v4       = ls_mensagem-message_v4  ) ) ).
+
+          FREE: lt_header_aux[],
+                lt_item_aux[],
+                lt_menagens[].
+
+          CLEAR lo_contab.
+        ENDIF.
+
+      ENDLOOP.
+
+      IF lt_header_aux[] IS NOT INITIAL.
+        lo_contab = zclfi_contabilizacao=>get_instance(  ).
+
+        lo_contab->set_ref_data( iv_app       = abap_true
+                                 it_header    = lt_header_aux
+                                 it_item      = lt_item_aux
+                                 iv_dtlanc    = ls_param-datalanc
+                                 iv_dtestorno = ls_param-dataestorno ).
+
+        lt_menagens = lo_contab->build( iv_merc_int = abap_true ).
+
+        reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
+                                   ( %tky = keys[ sy-index ]-%tky
+
+                                     %msg = new_message(
+                                                         id       = ls_mensagem-id
+                                                         number   = ls_mensagem-number
+                                                         severity = CONV #( ls_mensagem-type )
+                                                         v1       = ls_mensagem-message_v1
+                                                         v2       = ls_mensagem-message_v2
+                                                         v3       = ls_mensagem-message_v3
+                                                         v4       = ls_mensagem-message_v4  ) ) ).
+      ENDIF.
     ENDIF.
-
 
   ENDMETHOD.
 
   METHOD simular.
+
     DATA: lt_header_aux TYPE TABLE OF zsfi_mercado_header WITH EMPTY KEY,
           lt_item_aux   TYPE TABLE OF zsfi_mercado_item.
 
+    DATA: ls_header_aux LIKE LINE OF lt_header_aux,
+          ls_item_aux   LIKE LINE OF lt_item_aux.
 
     TRY .
         DATA(ls_param) = keys[ 1 ]-%param.
@@ -153,56 +220,120 @@ CLASS lcl_Header IMPLEMENTATION.
     ENDIF.
 
     READ ENTITIES OF zi_fi_merc_int_h IN LOCAL MODE
-        ENTITY Header
+        ENTITY header
         ALL FIELDS WITH CORRESPONDING #( keys )
         RESULT DATA(lt_header).
 
-    data(lv_skip) = abap_false.
+    DATA(lv_skip) = abap_false.
 
-    loop at lt_header assigning field-symbol(<fs_header>).
-     check <fs_header>-AptoDiferimento <> 'Sim'.
+    LOOP AT lt_header ASSIGNING FIELD-SYMBOL(<fs_header>).
+      CHECK <fs_header>-aptodiferimento <> 'Sim'.
 
       reported-header = VALUE #(  ( %tky = <fs_header>-%tky
                                     %msg = new_message_with_text(
                                                                     severity = if_abap_behv_message=>severity-error
                                                                     text     = TEXT-003
                                           ) ) ).
-     lv_skip = abap_true.
-    endloop.
+      lv_skip = abap_true.
+    ENDLOOP.
 
-    check lv_skip = abap_false.
+    CHECK lv_skip = abap_false.
 
     IF lt_header IS NOT INITIAL.
 
       READ ENTITIES OF zi_fi_merc_int_h IN LOCAL MODE
-          ENTITY Item
+          ENTITY item
           ALL FIELDS WITH CORRESPONDING #( keys )
           RESULT DATA(lt_item).
 
-      MOVE-CORRESPONDING lt_header TO lt_header_aux.
-      MOVE-CORRESPONDING lt_item   TO lt_item_aux.
+      SORT lt_item BY empresa
+                      numdoc
+                      ano.
 
-      DATA(lo_contab) = zclfi_contabilizacao=>get_instance(  ).
+      LOOP AT lt_header ASSIGNING <fs_header>.
 
-      lo_contab->set_ref_data( iv_app       = abap_true
-                               it_header    = lt_header_aux
-                               it_item      = lt_item_aux
-                               iv_dtlanc    = ls_param-datalanc ).
+        MOVE-CORRESPONDING <fs_header> TO ls_header_aux.
+        APPEND ls_header_aux TO lt_header_aux.
 
-      DATA(lt_menagens) = lo_contab->build( iv_merc_int = abap_true
-                                            iv_simular  = abap_true ).
+        READ TABLE lt_item TRANSPORTING NO FIELDS
+                                         WITH KEY empresa = <fs_header>-empresa
+                                                  numdoc  = <fs_header>-numdoc
+                                                  ano     = <fs_header>-ano
+                                                  BINARY SEARCH.
+        IF sy-subrc IS INITIAL.
+          LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<fs_item>) FROM sy-tabix.
+            IF <fs_item>-empresa NE <fs_header>-empresa
+            OR <fs_item>-numdoc  NE <fs_header>-numdoc
+            OR <fs_item>-ano     NE <fs_header>-ano.
+              EXIT.
+            ENDIF.
 
-      reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
-                                 ( %tky = keys[ sy-index ]-%tky
+            MOVE-CORRESPONDING <fs_item> TO ls_item_aux.
+            APPEND ls_item_aux TO lt_item_aux.
 
-                                   %msg = new_message(
-                                                       id       = ls_mensagem-id
-                                                       number   = ls_mensagem-number
-                                                       severity = CONV #( ls_mensagem-type )
-                                                       v1       = ls_mensagem-message_v1
-                                                       v2       = ls_mensagem-message_v2
-                                                       v3       = ls_mensagem-message_v3
-                                                       v4       = ls_mensagem-message_v4  ) ) ).
+          ENDLOOP.
+        ENDIF.
+
+        IF lines( lt_header_aux[] ) EQ 20.
+
+          DATA(lo_contab) = zclfi_contabilizacao=>get_instance(  ).
+
+          lo_contab->set_ref_data( iv_app       = abap_true
+                                   it_header    = lt_header_aux
+                                   it_item      = lt_item_aux
+                                   iv_dtlanc    = ls_param-datalanc ).
+
+          DATA(lt_menagens) = lo_contab->build( iv_merc_int = abap_true
+                                                iv_simular  = abap_true ).
+
+          reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
+                                     ( %tky = keys[ sy-index ]-%tky
+
+                                       %msg = new_message(
+                                                           id       = ls_mensagem-id
+                                                           number   = ls_mensagem-number
+                                                           severity = CONV #( ls_mensagem-type )
+                                                           v1       = ls_mensagem-message_v1
+                                                           v2       = ls_mensagem-message_v2
+                                                           v3       = ls_mensagem-message_v3
+                                                           v4       = ls_mensagem-message_v4  ) ) ).
+
+          FREE: lt_header_aux[],
+                lt_item_aux[],
+                lt_menagens[].
+
+          CLEAR lo_contab.
+
+        ENDIF.
+
+      ENDLOOP.
+
+*      MOVE-CORRESPONDING lt_header TO lt_header_aux.
+*      MOVE-CORRESPONDING lt_item   TO lt_item_aux.
+
+      IF lt_header_aux[] IS NOT INITIAL.
+        lo_contab = zclfi_contabilizacao=>get_instance(  ).
+
+        lo_contab->set_ref_data( iv_app       = abap_true
+                                 it_header    = lt_header_aux
+                                 it_item      = lt_item_aux
+                                 iv_dtlanc    = ls_param-datalanc ).
+
+        lt_menagens = lo_contab->build( iv_merc_int = abap_true
+                                        iv_simular  = abap_true ).
+
+        reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
+                                   ( %tky = keys[ sy-index ]-%tky
+
+                                     %msg = new_message(
+                                                         id       = ls_mensagem-id
+                                                         number   = ls_mensagem-number
+                                                         severity = CONV #( ls_mensagem-type )
+                                                         v1       = ls_mensagem-message_v1
+                                                         v2       = ls_mensagem-message_v2
+                                                         v3       = ls_mensagem-message_v3
+                                                         v4       = ls_mensagem-message_v4  ) ) ).
+      ENDIF.
 
     ENDIF.
 
@@ -214,27 +345,27 @@ CLASS lcl_Header IMPLEMENTATION.
           lt_item_aux   TYPE TABLE OF zsfi_mercado_item.
 
     READ ENTITIES OF zi_fi_merc_int_h IN LOCAL MODE
-        ENTITY Header
+        ENTITY header
         ALL FIELDS WITH CORRESPONDING #( keys )
         RESULT DATA(lt_header).
 
-    loop at lt_header assigning field-symbol(<fs_header>).
-     check <fs_header>-AptoDiferimento is not initial.
+    LOOP AT lt_header ASSIGNING FIELD-SYMBOL(<fs_header>).
+      CHECK <fs_header>-aptodiferimento IS NOT INITIAL.
 
       reported-header = VALUE #(  ( %tky = <fs_header>-%tky
                                     %msg = new_message_with_text(
                                                                     severity = if_abap_behv_message=>severity-error
                                                                     text     = TEXT-003
                                           ) ) ).
-     data(lv_skip) = abap_true.
-    endloop.
+      DATA(lv_skip) = abap_true.
+    ENDLOOP.
 
-    check lv_skip = abap_false.
+    CHECK lv_skip = abap_false.
 
     IF lt_header IS NOT INITIAL.
 
       READ ENTITIES OF zi_fi_merc_int_h IN LOCAL MODE
-          ENTITY Item
+          ENTITY item
           ALL FIELDS WITH CORRESPONDING #( keys )
           RESULT DATA(lt_item).
 
@@ -267,22 +398,22 @@ CLASS lcl_Header IMPLEMENTATION.
 
     ENDIF.
 
-ENDMETHOD.
+  ENDMETHOD.
 
 ENDCLASS.
 
-CLASS lcl_Item DEFINITION INHERITING FROM cl_abap_behavior_handler.
+CLASS lcl_item DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
 
     METHODS read FOR READ
-      IMPORTING keys FOR READ Item RESULT result.
+      IMPORTING keys FOR READ item RESULT result.
 
-    METHODS rba_MercIntHeader FOR READ
-      IMPORTING keys_rba FOR READ Item\_MercIntHeader FULL result_requested RESULT result LINK association_links.
+    METHODS rba_mercintheader FOR READ
+      IMPORTING keys_rba FOR READ item\_mercintheader FULL result_requested RESULT result LINK association_links.
 
 ENDCLASS.
 
-CLASS lcl_Item IMPLEMENTATION.
+CLASS lcl_item IMPLEMENTATION.
 
   METHOD read.
 * ---------------------------------------------------------------------------
@@ -290,27 +421,74 @@ CLASS lcl_Item IMPLEMENTATION.
 * ---------------------------------------------------------------------------
     IF keys[] IS NOT INITIAL.
 
-      SELECT *
-        FROM zi_fi_merc_int_i
-        FOR ALL ENTRIES IN @keys
-        WHERE Empresa = @keys-Empresa
-          AND NumDoc  = @keys-NumDoc
-          AND Ano     = @keys-Ano
-        INTO CORRESPONDING FIELDS OF TABLE @result.     "#EC CI_SEL_DEL
+*      SELECT *
+*      SELECT empresa,
+*             numdoc,
+*             ano,
+*             item,
+*             cliente,
+*             conta,
+*             divisao,
+*             atribuicao,
+*             textitem,
+*             creddeb,
+*             localnegocio,
+*             centrolucro,
+*             centrocusto,
+*             segmento,
+*             moeda,
+*             valor,
+*             valorcriticality
+*        FROM zi_fi_merc_int_i
+*         FOR ALL ENTRIES IN @keys
+*       WHERE empresa = @keys-empresa
+*         AND numdoc  = @keys-numdoc
+*         AND ano     = @keys-ano
+**        INTO CORRESPONDING FIELDS OF TABLE @result.     "#EC CI_SEL_DEL
+*        INTO TABLE @DATA(lt_merc_i).
 
-      IF sy-subrc NE 0.
-        FREE result.
+      SELECT a~bukrs AS empresa,
+             a~belnr AS numdoc,
+             a~gjahr AS ano,
+             a~buzei AS item,
+             a~kunnr AS cliente,
+             a~hkont AS conta,
+             a~gsber AS divisao,
+             a~zuonr AS atribuicao,
+             a~sgtxt AS textitem,
+             a~shkzg AS creddeb,
+             a~bupla AS localnegocio,
+             a~prctr AS centrolucro,
+             a~kostl AS centrocusto,
+             a~segment AS segmento,
+             b~waers AS moeda,
+             a~dmbtr AS valor
+        FROM bseg AS a
+       INNER JOIN p_bkpf_com AS b ON b~bukrs = a~bukrs
+                                 AND b~belnr = a~belnr
+                                 AND b~gjahr = a~gjahr
+         FOR ALL ENTRIES IN @keys
+       WHERE a~bukrs = @keys-empresa
+         AND a~belnr = @keys-numdoc
+         AND a~gjahr = @keys-ano
+*        INTO CORRESPONDING FIELDS OF TABLE @result.     "#EC CI_SEL_DEL
+        INTO TABLE @DATA(lt_merc_i).
+
+      IF sy-subrc IS INITIAL.
+
+        result = CORRESPONDING #( lt_merc_i ).
+
       ENDIF.
     ENDIF.
   ENDMETHOD.
 
-  METHOD rba_MercIntHeader.
+  METHOD rba_mercintheader.
     RETURN.
   ENDMETHOD.
 
 ENDCLASS.
 
-CLASS lcl_ZI_FI_MERC_INT_H DEFINITION INHERITING FROM cl_abap_behavior_saver.
+CLASS lcl_zi_fi_merc_int_h DEFINITION INHERITING FROM cl_abap_behavior_saver.
   PROTECTED SECTION.
 
     METHODS check_before_save REDEFINITION.
@@ -321,7 +499,7 @@ CLASS lcl_ZI_FI_MERC_INT_H DEFINITION INHERITING FROM cl_abap_behavior_saver.
 
 ENDCLASS.
 
-CLASS lcl_ZI_FI_MERC_INT_H IMPLEMENTATION.
+CLASS lcl_zi_fi_merc_int_h IMPLEMENTATION.
 
   METHOD check_before_save.
     RETURN.

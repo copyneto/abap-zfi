@@ -93,6 +93,8 @@ CLASS ZCLFI_BOLETO_DDA_DPC_EXT IMPLEMENTATION.
 
     ENDIF.
 
+    REPLACE 'Z' WITH '/' INTO ls_campos_chave-num_doc .
+
     " Gera o boleto DDA
     NEW zclfi_impressao_dda( )->gerar_boleto(
       EXPORTING
@@ -210,19 +212,19 @@ CLASS ZCLFI_BOLETO_DDA_DPC_EXT IMPLEMENTATION.
 
     CONSTANTS:
       BEGIN OF lc_chave,
-        lifnr   TYPE /iwbep/s_mgw_tech_pair-name VALUE 'LIFNR',
-        bukrs   TYPE /iwbep/s_mgw_tech_pair-name VALUE 'BUKRS',
-        belnr   TYPE /iwbep/s_mgw_tech_pair-name VALUE 'BELNR',
-        gjahr   TYPE /iwbep/s_mgw_tech_pair-name VALUE 'GJAHR',
-        barcode TYPE /iwbep/s_mgw_tech_pair-name VALUE 'BARCODE',
+        lifnr    TYPE /iwbep/s_mgw_tech_pair-name VALUE 'LIFNR',
+        bukrs    TYPE /iwbep/s_mgw_tech_pair-name VALUE 'BUKRS',
+        belnr    TYPE /iwbep/s_mgw_tech_pair-name VALUE 'BELNR',
+        gjahr    TYPE /iwbep/s_mgw_tech_pair-name VALUE 'GJAHR',
+        barcode  TYPE /iwbep/s_mgw_tech_pair-name VALUE 'BARCODE',
         data_arq TYPE /iwbep/s_mgw_tech_pair-name VALUE 'DATA_ARQ',
-        NUM_DOC TYPE /iwbep/s_mgw_tech_pair-name VALUE 'NUM_DOC',
+        num_doc  TYPE /iwbep/s_mgw_tech_pair-name VALUE 'NUM_DOC',
       END OF lc_chave.
 
     DATA: lt_sorted_keys TYPE SORTED TABLE OF /iwbep/s_mgw_tech_pair  WITH UNIQUE KEY name,
           lt_return      TYPE bapiret2_t.
 
-    DATA: ls_campos_Chave TYPE zsfi_arquivo_dda.
+    DATA: ls_campos_chave TYPE zsfi_arquivo_dda.
 
     DATA: lv_pdf_file TYPE xstring.
 
@@ -252,13 +254,15 @@ CLASS ZCLFI_BOLETO_DDA_DPC_EXT IMPLEMENTATION.
         num_doc = lt_sorted_keys[ name = lc_chave-num_doc ]-value
     ).
 
+    REPLACE 'Z' WITH '/' INTO ls_campos_chave-num_doc .
+
     IF lt_sorted_keys[ name = lc_chave-barcode ]-value EQ lc_indefinido.
 
-      SELECT SINGLE Barcode
+      SELECT SINGLE barcode
        FROM zi_fi_error_dda
-       WHERE  DocNumber   EQ @ls_campos_chave-belnr
-          AND CompanyCode EQ @ls_campos_chave-bukrs
-          AND FiscalYear  EQ @ls_campos_chave-gjahr
+       WHERE  docnumber   EQ @ls_campos_chave-belnr
+          AND companycode EQ @ls_campos_chave-bukrs
+          AND fiscalyear  EQ @ls_campos_chave-gjahr
           INTO @ls_campos_chave-barcode.
 
     ENDIF.

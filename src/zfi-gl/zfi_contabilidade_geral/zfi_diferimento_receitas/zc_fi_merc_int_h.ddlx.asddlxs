@@ -53,6 +53,7 @@ annotate entity ZC_FI_MERC_INT_H with
   @UI: { lineItem:       [ { position: 50 } ],
          selectionField: [ { position: 20 } ],
          identification: [ { position: 50 } ] }
+  @Consumption.filter.selectionType: #RANGE
   DataLancamento;
 
   @UI: { lineItem:       [ { position: 60 } ],
@@ -70,12 +71,13 @@ annotate entity ZC_FI_MERC_INT_H with
   @UI: { lineItem:       [ { position: 90 } ],
          identification: [ { position: 90 } ] }
   TransactionCurrency;
-  
- @UI.hidden: true
+
+  @UI.hidden: true
   TotalNetAmount;
 
   @UI: { lineItem:       [ { position: 110 } ],
-         identification: [ { position: 110 } ] }
+         identification: [ { position: 110 } ],
+         selectionField: [ { position: 30 } ] }
   AptoDiferimento;
 
   @UI: { lineItem:       [ { position: 120 } ],
