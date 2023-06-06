@@ -14,98 +14,100 @@ CLASS zclfi_contab_depre_util DEFINITION
       EXPORTING et_return TYPE bapiret2_t.
 
   PROTECTED SECTION.
-  PRIVATE SECTION.
+private section.
 
-    CONSTANTS gc_currency TYPE waers VALUE 'BRL' ##NO_TEXT.
-    CONSTANTS gc_doc_type TYPE char2 VALUE 'AA' ##NO_TEXT.
-    CONSTANTS gc_e TYPE char1 VALUE 'E' ##NO_TEXT.
+  constants GC_CURRENCY type WAERS value 'BRL' ##NO_TEXT.
+  constants GC_DOC_TYPE type CHAR2 value 'AA' ##NO_TEXT.
+  constants GC_E type CHAR1 value 'E' ##NO_TEXT.
+  data GS_HEADER type BAPIACHE09 .
+  data GT_ACC_GL type BAPIACGL09_TAB .
+  data GT_ACC_REC type BAPIACAR09_TAB .
+  data GT_CURRENCY type BAPIACCR09_TAB .
+  data GT_RETURN type BAPIRET2_T .
+  data GT_MSG_EX type BAPIRET2_T .
+  data GV_DUMMY type STRING .
+  data:
+    gt_items_sum TYPE TABLE OF zsfi_contab_depre_item_lanc .
+  data GV_DATA_LANC type DATUM .
 
-    DATA gs_header TYPE bapiache09 .
-    DATA gt_acc_gl TYPE bapiacgl09_tab .
-    DATA gt_acc_rec TYPE bapiacar09_tab .
-    DATA gt_currency TYPE bapiaccr09_tab .
-    DATA gt_return TYPE bapiret2_t .
-    DATA gt_msg_ex TYPE bapiret2_t .
-    DATA gv_dummy TYPE string.
-    DATA gt_items_sum TYPE TABLE OF zsfi_contab_depre_item_lanc.
-
-    DATA gv_data_lanc TYPE datum.
-
-    METHODS append_msg.
-    METHODS fill_bapi
-      IMPORTING it_linhas TYPE zctgfi_contab_depre.
-    METHODS fill_header
-      IMPORTING it_linhas TYPE zctgfi_contab_depre.
-    METHODS fill_items
-      IMPORTING it_linhas TYPE zctgfi_contab_depre.
-    METHODS get_centro_lucro
-      IMPORTING
-        is_linha         TYPE zsfi_contab_depre_item_lanc
-      RETURNING
-        VALUE(rv_result) TYPE bapiacgl09-profit_ctr .
-    METHODS exec_bapi
-      IMPORTING
-        iv_reav   TYPE boolean OPTIONAL
-        it_linhas TYPE zctgfi_contab_depre.
-    METHODS save_log_sucess
-      IMPORTING
-        it_linhas TYPE zctgfi_contab_depre
-        iv_belnr  TYPE belnr_d.
-    METHODS fill_item_80
-      IMPORTING
-        is_linha TYPE zsfi_contab_depre.
-    METHODS fill_item_82
-      IMPORTING
-        is_linha TYPE zsfi_contab_depre.
-    METHODS fill_item_84
-      IMPORTING
-        is_linha TYPE zsfi_contab_depre.
-    METHODS fill_item_01_reav
-      IMPORTING
-        is_linha TYPE zsfi_contab_depre.
-    METHODS fill_item_10_reav
-      IMPORTING
-        is_linha TYPE zsfi_contab_depre.
-    METHODS fill_item_11_reav
-      IMPORTING
-        is_linha TYPE zsfi_contab_depre.
-    METHODS fill_item_bapi
-      IMPORTING
-        iv_reav TYPE boolean OPTIONAL.
-
-    METHODS fill_bapi_reav
-      IMPORTING
-        it_linhas TYPE zctgfi_contab_depre.
-    METHODS fill_header_reav
-      IMPORTING
-        it_linhas TYPE zctgfi_contab_depre.
-    METHODS fill_items_reav
-      IMPORTING
-        it_linhas TYPE zctgfi_contab_depre.
-    METHODS save_log_sucess_reav
-      IMPORTING
-        it_linhas TYPE zctgfi_contab_depre
-        iv_belnr  TYPE belnr_d.
-
-
+  methods APPEND_MSG .
+  methods FILL_BAPI
+    changing
+      !CT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+  methods FILL_HEADER
+    importing
+      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+  methods FILL_ITEMS
+    changing
+      !CT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+  methods GET_CENTRO_LUCRO
+    importing
+      !IS_LINHA type ZSFI_CONTAB_DEPRE_ITEM_LANC
+    returning
+      value(RV_RESULT) type BAPIACGL09-PROFIT_CTR .
+  methods EXEC_BAPI
+    importing
+      !IV_REAV type BOOLEAN optional
+      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+  methods SAVE_LOG_SUCESS
+    importing
+      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE
+      !IV_BELNR type BELNR_D .
+  methods FILL_ITEM_80
+    importing
+      !IS_LINHA type ZSFI_CONTAB_DEPRE .
+  methods FILL_ITEM_82
+    importing
+      !IS_LINHA type ZSFI_CONTAB_DEPRE .
+  methods FILL_ITEM_84
+    importing
+      !IS_LINHA type ZSFI_CONTAB_DEPRE .
+  methods FILL_ITEM_01_REAV
+    importing
+      !IS_LINHA type ZSFI_CONTAB_DEPRE .
+  methods FILL_ITEM_10_REAV
+    importing
+      !IS_LINHA type ZSFI_CONTAB_DEPRE .
+  methods FILL_ITEM_11_REAV
+    importing
+      !IS_LINHA type ZSFI_CONTAB_DEPRE .
+  methods FILL_ITEM_BAPI
+    importing
+      !IV_REAV type BOOLEAN optional .
+  methods FILL_BAPI_REAV
+    importing
+      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+  methods FILL_HEADER_REAV
+    importing
+      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+  methods FILL_ITEMS_REAV
+    importing
+      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+  methods SAVE_LOG_SUCESS_REAV
+    importing
+      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE
+      !IV_BELNR type BELNR_D .
 ENDCLASS.
 
 
 
-CLASS zclfi_contab_depre_util IMPLEMENTATION.
+CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
 
   METHOD executa.
 
     CLEAR: gt_msg_ex.
 
-    fill_bapi( it_linhas  ).
+    DATA(lt_linhas) = it_linhas[].
 
-    exec_bapi( it_linhas ).
+    fill_bapi( CHANGING ct_linhas = lt_linhas  ).
+
+    exec_bapi( lt_linhas ).
 
     et_return = gt_msg_ex.
 
   ENDMETHOD.
+
 
   METHOD executa_reav.
 
@@ -120,15 +122,16 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD append_msg.
 
-    DATA(ls_message) = VALUE bapiret2( type = sy-msgty
-                                        id   = sy-msgid
-                                        number = sy-msgno
-                                        message_v1 = sy-msgv1
-                                        message_v2 = sy-msgv2
-                                        message_v3 = sy-msgv3
-                                        message_v4 = sy-msgv4    ).
+    DATA(ls_message) = VALUE bapiret2( type       = sy-msgty
+                                       id         = sy-msgid
+                                       number     = sy-msgno
+                                       message_v1 = sy-msgv1
+                                       message_v2 = sy-msgv2
+                                       message_v3 = sy-msgv3
+                                       message_v4 = sy-msgv4 ).
     APPEND ls_message TO gt_msg_ex.
 
   ENDMETHOD.
@@ -136,9 +139,9 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
   METHOD fill_bapi.
 
-    fill_header( it_linhas ).
+*    fill_header( ct_linhas ).
 
-    fill_items( it_linhas ).
+    fill_items( CHANGING ct_linhas = ct_linhas ).
 
   ENDMETHOD.
 
@@ -170,15 +173,15 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
       gv_data_lanc = lv_last_day.
 
 
-      me->gs_header-pstng_date  = lv_last_day.
-      me->gs_header-doc_date    = lv_last_day.
+      me->gs_header-pstng_date = lv_last_day.
+      me->gs_header-doc_date   = lv_last_day.
 *      me->gs_header-fisc_year   = lv_last_day(4).
 *      me->gs_header-fis_period  = lv_last_day+4(2).
-      me->gs_header-comp_code   = <fs_linha>-bukrs.
-      me->gs_header-ref_doc_no   = lv_last_day+4(2) && '/' && lv_last_day(4).
-      me->gs_header-header_txt   = lv_last_day+4(2) && '/' && lv_last_day(4).
-      me->gs_header-doc_type    = me->gc_doc_type.
-      me->gs_header-username    = sy-uname.
+      me->gs_header-comp_code  = <fs_linha>-bukrs.
+      me->gs_header-ref_doc_no = lv_last_day+4(2) && '/' && lv_last_day(4).
+      me->gs_header-header_txt = lv_last_day+4(2) && '/' && lv_last_day(4).
+      me->gs_header-doc_type   = me->gc_doc_type.
+      me->gs_header-username   = sy-uname.
     ENDIF.
 
   ENDMETHOD.
@@ -186,19 +189,26 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
   METHOD fill_items.
 
-    LOOP AT it_linhas ASSIGNING FIELD-SYMBOL(<fs_linha>).
+    DATA: lt_linhas	TYPE zctgfi_contab_depre.
 
-      IF <fs_linha>-ajust80_01 IS INITIAL AND
-         <fs_linha>-ajust82_10 IS INITIAL AND
-         <fs_linha>-ajust84_11 IS INITIAL.
+    LOOP AT ct_linhas ASSIGNING FIELD-SYMBOL(<fs_linha>).
 
-        "Valores de ajustes zerados. &1 &2
-        MESSAGE w004(zfi_contab_depre) WITH <fs_linha>-anlkl <fs_linha>-anln1 <fs_linha>-anln2 INTO gv_dummy.
+      IF <fs_linha>-ajust80_01 IS INITIAL
+     AND <fs_linha>-ajust82_10 IS INITIAL
+     AND <fs_linha>-ajust84_11 IS INITIAL.
+
+        " Valores de ajustes zerados. &1 &2
+        MESSAGE w004(zfi_contab_depre) WITH <fs_linha>-anlkl
+                                            <fs_linha>-anln1
+                                            <fs_linha>-anln2
+                                       INTO gv_dummy.
         append_msg( ).
 
         CONTINUE.
 
       ENDIF.
+
+      APPEND <fs_linha> TO lt_linhas.
 
       fill_item_80( <fs_linha> ).
       fill_item_82( <fs_linha> ).
@@ -206,9 +216,12 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
     ENDLOOP.
 
-    fill_item_bapi(  ).
+    ct_linhas = lt_linhas.
+
+*    fill_item_bapi(  ).
 
   ENDMETHOD.
+
 
   METHOD get_centro_lucro.
 
@@ -222,53 +235,343 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
   ENDMETHOD.
 
 
-
   METHOD exec_bapi.
 
-    DATA: lv_obj_key TYPE bapiache09-obj_key.
+    DATA: lt_linhas_aux   TYPE zctgfi_contab_depre,
+          lt_linhas_prc   TYPE zctgfi_contab_depre,
+          lt_acc_gl_aux   TYPE bapiacgl09_tab,
+          lt_currency_aux	TYPE bapiaccr09_tab.
 
-    CALL FUNCTION 'BAPI_ACC_DOCUMENT_POST'
-      EXPORTING
-        documentheader = me->gs_header
-      IMPORTING
-        obj_key        = lv_obj_key
-      TABLES
-        accountgl      = me->gt_acc_gl
-        currencyamount = me->gt_currency
-        return         = me->gt_return.
+    DATA: lv_obj_key TYPE bapiache09-obj_key,
+          lv_texto   TYPE char50,
+          lv_item_no TYPE bapiacgl09-itemno_acc.
 
-    "Erro no lançamento
-    IF line_exists( me->gt_return[ type = gc_e ] )."#EC CI_STDSEQ
-      "Error ao tentar criar lançamento: &1 &2 &3 &4
-      ##MG_MISSING
-      MESSAGE e001(zfi_contab_depre) WITH gs_header-comp_code gs_header-doc_type INTO gv_dummy.
-      append_msg( ).
+    SELECT kokrs,
+           kostl,
+           prctr
+      FROM csks
+       FOR ALL ENTRIES IN @gt_items_sum
+     WHERE kokrs = @gt_items_sum-bukrs
+       AND kostl = @gt_items_sum-kostl
+      INTO TABLE @DATA(lt_result).
 
-      APPEND LINES OF me->gt_return TO me->gt_msg_ex.
+    IF sy-subrc IS INITIAL.
+      SORT lt_result BY kokrs
+                        kostl.
+    ENDIF.
 
-    ELSE.
+    CLEAR lv_item_no.
 
-      CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
-        EXPORTING
-          wait = abap_true.
+    SORT gt_items_sum BY bukrs
+                         gsber
+                         kostl
+                         gjahr.
 
-      "Documento criado com sucesso: &1 &2 &3
-      MESSAGE s002(zfi_contab_depre) WITH lv_obj_key(10) lv_obj_key+10(4) lv_obj_key+14(4) INTO gv_dummy.
-      append_msg( ).
+    DATA(lt_itens_key) = gt_items_sum[].
 
-      IF iv_reav = abap_true.
-        save_log_sucess_reav(
-          EXPORTING
-              it_linhas = it_linhas
-              iv_belnr = lv_obj_key(10)  ).
-      ELSE.
-        save_log_sucess(
-          EXPORTING
-              it_linhas = it_linhas
-              iv_belnr = lv_obj_key(10)  ).
+    DELETE ADJACENT DUPLICATES FROM lt_itens_key COMPARING bukrs
+                                                           gsber
+                                                           kostl
+                                                           gjahr.
+
+    DATA(lt_linhas) = it_linhas[].
+    SORT lt_linhas BY bukrs
+                      gsber
+                      kostl
+                      gjahr.
+
+    LOOP AT lt_itens_key ASSIGNING FIELD-SYMBOL(<fs_itens_key>).
+
+      READ TABLE lt_linhas TRANSPORTING NO FIELDS
+                                         WITH KEY bukrs = <fs_itens_key>-bukrs
+                                                  gsber = <fs_itens_key>-gsber
+                                                  kostl = <fs_itens_key>-kostl
+                                                  gjahr = <fs_itens_key>-gjahr
+                                                  BINARY SEARCH.
+      IF sy-subrc IS INITIAL.
+        LOOP AT lt_linhas ASSIGNING FIELD-SYMBOL(<fs_linhas>) FROM sy-tabix.
+          IF <fs_linhas>-bukrs NE <fs_itens_key>-bukrs
+          OR <fs_linhas>-gsber NE <fs_itens_key>-gsber
+          OR <fs_linhas>-kostl NE <fs_itens_key>-kostl
+          OR <fs_linhas>-gjahr NE <fs_itens_key>-gjahr.
+            EXIT.
+          ENDIF.
+
+          APPEND <fs_linhas> TO lt_linhas_aux.
+
+        ENDLOOP.
       ENDIF.
 
+      READ TABLE gt_items_sum TRANSPORTING NO FIELDS
+                                            WITH KEY bukrs = <fs_itens_key>-bukrs
+                                                     gsber = <fs_itens_key>-gsber
+                                                     kostl = <fs_itens_key>-kostl
+                                                     gjahr = <fs_itens_key>-gjahr
+                                                     BINARY SEARCH.
+      IF sy-subrc IS INITIAL.
+        LOOP AT gt_items_sum ASSIGNING FIELD-SYMBOL(<fs_item>).
+          IF <fs_item>-bukrs NE <fs_itens_key>-bukrs
+          OR <fs_item>-gsber NE <fs_itens_key>-gsber
+          OR <fs_item>-kostl NE <fs_itens_key>-kostl
+          OR <fs_item>-gjahr NE <fs_itens_key>-gjahr.
+            EXIT.
+          ENDIF.
+
+          lv_item_no = lv_item_no + 1.
+
+          APPEND INITIAL LINE TO lt_acc_gl_aux ASSIGNING FIELD-SYMBOL(<fs_gl>).
+          <fs_gl>-itemno_acc = lv_item_no.
+          <fs_gl>-comp_code  = <fs_item>-bukrs.
+          <fs_gl>-gl_account = <fs_item>-conta.
+          <fs_gl>-bus_area   = <fs_item>-gsber.
+          <fs_gl>-costcenter = <fs_item>-kostl.
+
+          READ TABLE lt_result ASSIGNING FIELD-SYMBOL(<fs_result>)
+                                             WITH KEY kokrs = <fs_item>-bukrs
+                                                      kostl = <fs_item>-kostl
+                                                      BINARY SEARCH.
+          IF sy-subrc IS INITIAL.
+            <fs_gl>-profit_ctr = <fs_result>-prctr.
+          ENDIF.
+
+          IF iv_reav = abap_true.
+            CONCATENATE 'VR REF DEPR REAV' gv_data_lanc+4(2) '/' gv_data_lanc(4) INTO <fs_gl>-item_text SEPARATED BY space.
+          ELSE.
+            CONCATENATE 'VR REF DEPR SOC ' gv_data_lanc+4(2) '/' gv_data_lanc(4) INTO <fs_gl>-item_text SEPARATED BY space.
+          ENDIF.
+
+          APPEND INITIAL LINE TO lt_currency_aux ASSIGNING FIELD-SYMBOL(<fs_curr>).
+          <fs_curr>-itemno_acc   = lv_item_no.
+          <fs_curr>-currency_iso = gc_currency.
+          <fs_curr>-amt_doccur   = <fs_item>-valor.
+
+        ENDLOOP.
+
+        IF ( lines( me->gt_acc_gl ) + lines( lt_acc_gl_aux ) ) LE 900.
+
+          APPEND LINES OF lt_acc_gl_aux TO me->gt_acc_gl.
+          APPEND LINES OF lt_currency_aux TO me->gt_currency.
+          APPEND LINES OF lt_linhas_aux TO lt_linhas_prc.
+
+          FREE: lt_acc_gl_aux[],
+                lt_currency_aux[],
+                lt_linhas_aux[].
+
+        ELSE.
+
+          fill_header( lt_linhas ).
+
+          CALL FUNCTION 'BAPI_ACC_DOCUMENT_POST'
+            EXPORTING
+              documentheader = me->gs_header
+            IMPORTING
+              obj_key        = lv_obj_key
+            TABLES
+              accountgl      = me->gt_acc_gl
+              currencyamount = me->gt_currency
+              return         = me->gt_return.
+
+          " Erro no lançamento
+          IF line_exists( me->gt_return[ type = gc_e ] ). "#EC CI_STDSEQ
+            " Error ao tentar criar lançamento: &1 &2 &3 &4
+            MESSAGE e001(zfi_contab_depre) WITH gs_header-comp_code
+                                                gs_header-doc_type
+                                                INTO gv_dummy.
+            append_msg( ).
+
+            APPEND LINES OF me->gt_return TO me->gt_msg_ex.
+
+          ELSE.
+
+            CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+              EXPORTING
+                wait = abap_true.
+
+            " Documento criado com sucesso: &1 &2 &3
+            MESSAGE s002(zfi_contab_depre) WITH lv_obj_key(10)
+                                                lv_obj_key+10(4)
+                                                lv_obj_key+14(4)
+                                                INTO gv_dummy.
+            append_msg( ).
+
+            IF iv_reav = abap_true.
+              save_log_sucess_reav( EXPORTING it_linhas = lt_linhas_prc
+                                              iv_belnr  = lv_obj_key(10) ).
+            ELSE.
+              save_log_sucess( EXPORTING it_linhas = lt_linhas_prc
+                                         iv_belnr  = lv_obj_key(10) ).
+            ENDIF.
+
+          ENDIF.
+
+          FREE: me->gt_acc_gl[],
+                me->gt_currency[],
+                me->gt_return[],
+                lt_linhas_prc[].
+
+          CLEAR: me->gs_header,
+                 lv_obj_key.
+
+          CLEAR lv_item_no.
+          APPEND LINES OF lt_acc_gl_aux TO me->gt_acc_gl.
+          LOOP AT me->gt_acc_gl[] ASSIGNING FIELD-SYMBOL(<fs_acc_gl>).
+            ADD 1 TO lv_item_no.
+            <fs_acc_gl>-itemno_acc = lv_item_no.
+          ENDLOOP.
+
+          CLEAR lv_item_no.
+          APPEND LINES OF lt_currency_aux TO me->gt_currency.
+          LOOP AT me->gt_currency[] ASSIGNING FIELD-SYMBOL(<fs_currency>).
+            ADD 1 TO lv_item_no.
+            <fs_currency>-itemno_acc = lv_item_no.
+          ENDLOOP.
+
+          APPEND LINES OF lt_linhas_aux TO lt_linhas_prc.
+
+          CLEAR lv_item_no.
+
+          FREE: lt_acc_gl_aux[],
+                lt_currency_aux[],
+                lt_linhas_aux[].
+
+        ENDIF.
+      ENDIF.
+
+    ENDLOOP.
+
+    IF me->gt_acc_gl[] IS NOT INITIAL.
+
+      fill_header( lt_linhas ).
+
+      CALL FUNCTION 'BAPI_ACC_DOCUMENT_POST'
+        EXPORTING
+          documentheader = me->gs_header
+        IMPORTING
+          obj_key        = lv_obj_key
+        TABLES
+          accountgl      = me->gt_acc_gl
+          currencyamount = me->gt_currency
+          return         = me->gt_return.
+
+      " Erro no lançamento
+      IF line_exists( me->gt_return[ type = gc_e ] ).    "#EC CI_STDSEQ
+        " Error ao tentar criar lançamento: &1 &2 &3 &4
+        MESSAGE e001(zfi_contab_depre) WITH gs_header-comp_code
+                                            gs_header-doc_type
+                                            INTO gv_dummy.
+        append_msg( ).
+
+        APPEND LINES OF me->gt_return TO me->gt_msg_ex.
+
+      ELSE.
+
+        CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+          EXPORTING
+            wait = abap_true.
+
+        " Documento criado com sucesso: &1 &2 &3
+        MESSAGE s002(zfi_contab_depre) WITH lv_obj_key(10)
+                                            lv_obj_key+10(4)
+                                            lv_obj_key+14(4)
+                                            INTO gv_dummy.
+        append_msg( ).
+
+        IF iv_reav = abap_true.
+          save_log_sucess_reav( EXPORTING it_linhas = lt_linhas_prc
+                                          iv_belnr  = lv_obj_key(10) ).
+        ELSE.
+          save_log_sucess( EXPORTING it_linhas = lt_linhas_prc
+                                     iv_belnr  = lv_obj_key(10) ).
+        ENDIF.
+
+      ENDIF.
+
+      FREE: me->gt_acc_gl[],
+            me->gt_currency[],
+            me->gt_return[],
+            lt_linhas_prc[].
+
+      CLEAR: me->gs_header,
+             lv_obj_key.
+
     ENDIF.
+
+*    LOOP AT gt_items_sum ASSIGNING FIELD-SYMBOL(<fs_item>).
+*
+*      lv_item_no = lv_item_no + 1.
+*
+*      APPEND INITIAL LINE TO me->gt_acc_gl ASSIGNING FIELD-SYMBOL(<fs_gl>).
+*      <fs_gl>-itemno_acc = lv_item_no.
+*      <fs_gl>-comp_code  = <fs_item>-bukrs.
+*      <fs_gl>-gl_account = <fs_item>-conta.
+*      <fs_gl>-bus_area   = <fs_item>-gsber.
+*      <fs_gl>-costcenter = <fs_item>-kostl.
+*
+*      READ TABLE lt_result ASSIGNING FIELD-SYMBOL(<fs_result>)
+*                                         WITH KEY kokrs = <fs_item>-bukrs
+*                                                  kostl = <fs_item>-kostl
+*                                                  BINARY SEARCH.
+*      IF sy-subrc IS INITIAL.
+*        <fs_gl>-profit_ctr = <fs_result>-prctr.
+*      ENDIF.
+*
+*      IF iv_reav = abap_true.
+*        CONCATENATE 'VR REF DEPR REAV' gv_data_lanc+4(2) '/' gv_data_lanc(4) INTO <fs_gl>-item_text SEPARATED BY space.
+*      ELSE.
+*        CONCATENATE 'VR REF DEPR SOC ' gv_data_lanc+4(2) '/' gv_data_lanc(4) INTO <fs_gl>-item_text SEPARATED BY space.
+*      ENDIF.
+*
+*      APPEND INITIAL LINE TO me->gt_currency ASSIGNING FIELD-SYMBOL(<fs_curr>).
+*      <fs_curr>-itemno_acc   = lv_item_no.
+*      <fs_curr>-currency_iso = gc_currency.
+*      <fs_curr>-amt_doccur   = <fs_item>-valor.
+*
+*    ENDLOOP.
+*
+*    CHECK me->gt_acc_gl IS NOT INITIAL.
+*
+*    CALL FUNCTION 'BAPI_ACC_DOCUMENT_POST'
+*      EXPORTING
+*        documentheader = me->gs_header
+*      IMPORTING
+*        obj_key        = lv_obj_key
+*      TABLES
+*        accountgl      = me->gt_acc_gl
+*        currencyamount = me->gt_currency
+*        return         = me->gt_return.
+*
+*    "Erro no lançamento
+*    IF line_exists( me->gt_return[ type = gc_e ] ).      "#EC CI_STDSEQ
+*      "Error ao tentar criar lançamento: &1 &2 &3 &4
+*      ##MG_MISSING
+*      MESSAGE e001(zfi_contab_depre) WITH gs_header-comp_code gs_header-doc_type INTO gv_dummy.
+*      append_msg( ).
+*
+*      APPEND LINES OF me->gt_return TO me->gt_msg_ex.
+*
+*    ELSE.
+*
+*      CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+*        EXPORTING
+*          wait = abap_true.
+*
+*      " Documento criado com sucesso: &1 &2 &3
+*      MESSAGE s002(zfi_contab_depre) WITH lv_obj_key(10) lv_obj_key+10(4) lv_obj_key+14(4) INTO gv_dummy.
+*      append_msg( ).
+*
+*      IF iv_reav = abap_true.
+*        save_log_sucess_reav(
+*          EXPORTING
+*              it_linhas = it_linhas
+*              iv_belnr = lv_obj_key(10)  ).
+*      ELSE.
+*        save_log_sucess(
+*          EXPORTING
+*              it_linhas = it_linhas
+*              iv_belnr = lv_obj_key(10)  ).
+*      ENDIF.
+*
+*    ENDIF.
 
   ENDMETHOD.
 
@@ -328,23 +631,39 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD save_log_sucess_reav.
 
     DATA lt_log TYPE TABLE OF ztfi_contab_log.
 
-    SELECT *
-    FROM ztfi_contab_log
-    INTO TABLE @DATA(lt_log_table)
-    FOR ALL ENTRIES IN @it_linhas
-    WHERE bukrs = @it_linhas-bukrs AND
-          anln1 = @it_linhas-anln1 AND
-          anln2 = @it_linhas-anln2 AND
-          anlkl = @it_linhas-anlkl AND
-          gsber = @it_linhas-gsber AND
-          kostl = @it_linhas-kostl AND
-          gjahr = @it_linhas-gjahr AND
-          peraf = @it_linhas-peraf."#EC CI_FAE_LINES_ENSURED
-
+    SELECT mandt,
+           bukrs,
+           anln1,
+           anln2,
+           anlkl,
+           gsber,
+           kostl,
+           gjahr,
+           peraf,
+           belnr,
+           belnr_reav,
+           contab,
+           reav,
+           cpudt,
+           cputm,
+           cpudt_reav,
+           cputm_reav
+      FROM ztfi_contab_log
+      INTO TABLE @DATA(lt_log_table)
+       FOR ALL ENTRIES IN @it_linhas
+     WHERE bukrs = @it_linhas-bukrs
+       AND anln1 = @it_linhas-anln1
+       AND anln2 = @it_linhas-anln2
+       AND anlkl = @it_linhas-anlkl
+       AND gsber = @it_linhas-gsber
+       AND kostl = @it_linhas-kostl
+       AND gjahr = @it_linhas-gjahr
+       AND peraf = @it_linhas-peraf.          "#EC CI_FAE_LINES_ENSURED
 
     LOOP AT it_linhas ASSIGNING FIELD-SYMBOL(<fs_linha>).
 
@@ -357,7 +676,7 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
                                                                   gsber = <fs_linha>-gsber
                                                                   kostl = <fs_linha>-kostl
                                                                   gjahr = <fs_linha>-gjahr
-                                                                  peraf = <fs_linha>-peraf."#EC CI_STDSEQ
+                                                                  peraf = <fs_linha>-peraf. "#EC CI_STDSEQ
       IF sy-subrc = 0.
         MOVE-CORRESPONDING <fs_log_table> TO <fs_log>.
       ENDIF.
@@ -384,7 +703,6 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 
 
   METHOD fill_item_80.
@@ -419,8 +737,8 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
     ls_item_sum-conta = lv_conta80_02.
     COLLECT ls_item_sum INTO gt_items_sum.
 
-
   ENDMETHOD.
+
 
   METHOD fill_item_82.
 
@@ -498,21 +816,44 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
   METHOD fill_item_bapi.
 
-    DATA: lv_texto TYPE char50.
-    DATA: lv_item_no   TYPE bapiacgl09-itemno_acc.
+    DATA: lv_texto   TYPE char50,
+          lv_item_no TYPE bapiacgl09-itemno_acc.
 
-    lv_item_no = 1.
+    SELECT kokrs,
+           kostl,
+           prctr
+      FROM csks
+       FOR ALL ENTRIES IN @gt_items_sum
+     WHERE kokrs = @gt_items_sum-bukrs
+       AND kostl = @gt_items_sum-kostl
+      INTO TABLE @DATA(lt_result).
+
+    IF sy-subrc IS INITIAL.
+      SORT lt_result BY kokrs
+                        kostl.
+    ENDIF.
+
+    CLEAR lv_item_no.
+
     LOOP AT gt_items_sum ASSIGNING FIELD-SYMBOL(<fs_item>).
+
+      lv_item_no = lv_item_no + 1.
 
       APPEND INITIAL LINE TO me->gt_acc_gl ASSIGNING FIELD-SYMBOL(<fs_gl>).
       <fs_gl>-itemno_acc = lv_item_no.
-      <fs_gl>-comp_code = <fs_item>-bukrs.
-*      <fs_gl>-fisc_year = lv_day_peraf(4).
-*      <fs_gl>-pstng_date = lv_day_peraf.
+      <fs_gl>-comp_code  = <fs_item>-bukrs.
       <fs_gl>-gl_account = <fs_item>-conta.
-      <fs_gl>-bus_area = <fs_item>-gsber.
+      <fs_gl>-bus_area   = <fs_item>-gsber.
       <fs_gl>-costcenter = <fs_item>-kostl.
-      <fs_gl>-profit_ctr = get_centro_lucro( <fs_item> ).
+
+      READ TABLE lt_result ASSIGNING FIELD-SYMBOL(<fs_result>)
+                                         WITH KEY kokrs = <fs_item>-bukrs
+                                                  kostl = <fs_item>-kostl
+                                                  BINARY SEARCH.
+      IF sy-subrc IS INITIAL.
+        <fs_gl>-profit_ctr = <fs_result>-prctr.
+      ENDIF.
+
       IF iv_reav = abap_true.
         CONCATENATE 'VR REF DEPR REAV' gv_data_lanc+4(2) '/' gv_data_lanc(4) INTO <fs_gl>-item_text SEPARATED BY space.
       ELSE.
@@ -520,11 +861,9 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
       ENDIF.
 
       APPEND INITIAL LINE TO me->gt_currency ASSIGNING FIELD-SYMBOL(<fs_curr>).
-      <fs_curr>-itemno_acc = lv_item_no.
+      <fs_curr>-itemno_acc   = lv_item_no.
       <fs_curr>-currency_iso = gc_currency.
-      <fs_curr>-amt_doccur = <fs_item>-valor.
-
-      lv_item_no = lv_item_no + 1.
+      <fs_curr>-amt_doccur   = <fs_item>-valor.
 
     ENDLOOP.
 
@@ -606,6 +945,7 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD fill_item_01_reav.
 
     DATA: ls_item_sum TYPE zsfi_contab_depre_item_lanc.
@@ -641,6 +981,7 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
 
   ENDMETHOD.
+
 
   METHOD fill_item_10_reav.
 
@@ -678,6 +1019,7 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD fill_item_11_reav.
 
     DATA: ls_item_sum TYPE zsfi_contab_depre_item_lanc.
@@ -714,5 +1056,4 @@ CLASS zclfi_contab_depre_util IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.

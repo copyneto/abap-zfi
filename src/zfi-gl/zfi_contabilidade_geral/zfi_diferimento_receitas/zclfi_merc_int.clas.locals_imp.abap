@@ -151,8 +151,7 @@ CLASS lcl_header IMPLEMENTATION.
           reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
                                      ( %tky = keys[ sy-index ]-%tky
 
-                                       %msg = new_message(
-                                                           id       = ls_mensagem-id
+                                       %msg = new_message( id       = ls_mensagem-id
                                                            number   = ls_mensagem-number
                                                            severity = CONV #( ls_mensagem-type )
                                                            v1       = ls_mensagem-message_v1
@@ -182,9 +181,7 @@ CLASS lcl_header IMPLEMENTATION.
 
         reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
                                    ( %tky = keys[ sy-index ]-%tky
-
-                                     %msg = new_message(
-                                                         id       = ls_mensagem-id
+                                     %msg = new_message( id       = ls_mensagem-id
                                                          number   = ls_mensagem-number
                                                          severity = CONV #( ls_mensagem-type )
                                                          v1       = ls_mensagem-message_v1
@@ -212,10 +209,9 @@ CLASS lcl_header IMPLEMENTATION.
     IF ls_param-datalanc IS INITIAL.
 
       reported-header = VALUE #(  ( %tky = ls_param-datalanc
-                                    %msg = new_message_with_text(
-                                                                    severity = if_abap_behv_message=>severity-information
-                                                                    text     = TEXT-001
-                                          ) ) ).
+                                    %msg = new_message_with_text( severity = if_abap_behv_message=>severity-information
+                                                                  text     = TEXT-001 )
+                                  ) ).
       RETURN.
     ENDIF.
 
@@ -230,9 +226,8 @@ CLASS lcl_header IMPLEMENTATION.
       CHECK <fs_header>-aptodiferimento <> 'Sim'.
 
       reported-header = VALUE #(  ( %tky = <fs_header>-%tky
-                                    %msg = new_message_with_text(
-                                                                    severity = if_abap_behv_message=>severity-error
-                                                                    text     = TEXT-003
+                                    %msg = new_message_with_text( severity = if_abap_behv_message=>severity-error
+                                                                  text     = TEXT-003
                                           ) ) ).
       lv_skip = abap_true.
     ENDLOOP.
@@ -246,95 +241,34 @@ CLASS lcl_header IMPLEMENTATION.
           ALL FIELDS WITH CORRESPONDING #( keys )
           RESULT DATA(lt_item).
 
-      SORT lt_item BY empresa
-                      numdoc
-                      ano.
+      MOVE-CORRESPONDING lt_header TO lt_header_aux.
+      MOVE-CORRESPONDING lt_item   TO lt_item_aux.
 
-      LOOP AT lt_header ASSIGNING <fs_header>.
+      IF lt_item_aux[] IS NOT INITIAL.
 
-        MOVE-CORRESPONDING <fs_header> TO ls_header_aux.
-        APPEND ls_header_aux TO lt_header_aux.
+        DATA(lo_contab) = zclfi_contabilizacao=>get_instance(  ).
 
-        READ TABLE lt_item TRANSPORTING NO FIELDS
-                                         WITH KEY empresa = <fs_header>-empresa
-                                                  numdoc  = <fs_header>-numdoc
-                                                  ano     = <fs_header>-ano
-                                                  BINARY SEARCH.
-        IF sy-subrc IS INITIAL.
-          LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<fs_item>) FROM sy-tabix.
-            IF <fs_item>-empresa NE <fs_header>-empresa
-            OR <fs_item>-numdoc  NE <fs_header>-numdoc
-            OR <fs_item>-ano     NE <fs_header>-ano.
-              EXIT.
-            ENDIF.
+        lo_contab->set_ref_data( iv_app    = abap_true
+                                 it_header = lt_header_aux
+                                 it_item   = lt_item_aux
+                                 iv_dtlanc = ls_param-datalanc ).
 
-            MOVE-CORRESPONDING <fs_item> TO ls_item_aux.
-            APPEND ls_item_aux TO lt_item_aux.
-
-          ENDLOOP.
-        ENDIF.
-
-        IF lines( lt_header_aux[] ) EQ 20.
-
-          DATA(lo_contab) = zclfi_contabilizacao=>get_instance(  ).
-
-          lo_contab->set_ref_data( iv_app       = abap_true
-                                   it_header    = lt_header_aux
-                                   it_item      = lt_item_aux
-                                   iv_dtlanc    = ls_param-datalanc ).
-
-          DATA(lt_menagens) = lo_contab->build( iv_merc_int = abap_true
-                                                iv_simular  = abap_true ).
-
-          reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
-                                     ( %tky = keys[ sy-index ]-%tky
-
-                                       %msg = new_message(
-                                                           id       = ls_mensagem-id
-                                                           number   = ls_mensagem-number
-                                                           severity = CONV #( ls_mensagem-type )
-                                                           v1       = ls_mensagem-message_v1
-                                                           v2       = ls_mensagem-message_v2
-                                                           v3       = ls_mensagem-message_v3
-                                                           v4       = ls_mensagem-message_v4  ) ) ).
-
-          FREE: lt_header_aux[],
-                lt_item_aux[],
-                lt_menagens[].
-
-          CLEAR lo_contab.
-
-        ENDIF.
-
-      ENDLOOP.
-
-*      MOVE-CORRESPONDING lt_header TO lt_header_aux.
-*      MOVE-CORRESPONDING lt_item   TO lt_item_aux.
-
-      IF lt_header_aux[] IS NOT INITIAL.
-        lo_contab = zclfi_contabilizacao=>get_instance(  ).
-
-        lo_contab->set_ref_data( iv_app       = abap_true
-                                 it_header    = lt_header_aux
-                                 it_item      = lt_item_aux
-                                 iv_dtlanc    = ls_param-datalanc ).
-
-        lt_menagens = lo_contab->build( iv_merc_int = abap_true
-                                        iv_simular  = abap_true ).
+        DATA(lt_menagens) = lo_contab->build( iv_merc_int = abap_true
+                                              iv_simular  = abap_true ).
 
         reported-header = VALUE #( FOR ls_mensagem IN lt_menagens
                                    ( %tky = keys[ sy-index ]-%tky
-
-                                     %msg = new_message(
-                                                         id       = ls_mensagem-id
+                                     %msg = new_message( id       = ls_mensagem-id
                                                          number   = ls_mensagem-number
-                                                         severity = CONV #( ls_mensagem-type )
+*                                                         severity = CONV #( ls_mensagem-type )
+                                                         severity = COND #( WHEN ls_mensagem-type = 'E'
+                                                                              THEN CONV #( 'I' )
+                                                                            ELSE CONV #( ls_mensagem-type ) )
                                                          v1       = ls_mensagem-message_v1
                                                          v2       = ls_mensagem-message_v2
                                                          v3       = ls_mensagem-message_v3
                                                          v4       = ls_mensagem-message_v4  ) ) ).
       ENDIF.
-
     ENDIF.
 
   ENDMETHOD.

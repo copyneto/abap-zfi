@@ -89,23 +89,22 @@ CLASS zclfi_contabilizacao DEFINITION
 
     METHODS save.
   PROTECTED SECTION.
-  PRIVATE SECTION.
+private section.
 
+  types:
 *    DATA gs_documentheader TYPE bapiache09.
 *    DATA gt_accountgl      TYPE bapiacgl09_tab.
 *    DATA gt_currencyamount TYPE bapiaccr09_tab.
 *    DATA gt_accountreceivable TYPE bapiacar09_tab.
-
-    TYPES:
-      BEGIN OF ty_param,
+    BEGIN OF ty_param,
         bukrs     TYPE ty_rang_bukrs,
         budat     TYPE ty_rang_budat,
         belnr     TYPE belnr_d,
         dtlanc    TYPE datum,
         dtestorno TYPE datum,
         app       TYPE abap_bool,
-      END OF ty_param,
-
+      END OF ty_param .
+  types:
 *      BEGIN OF ty_log,
 *        bukrs    TYPE bukrs,
 *        belnr    TYPE belnr_d,
@@ -114,10 +113,9 @@ CLASS zclfi_contabilizacao DEFINITION
 *        tp_bapi  TYPE char20,
 *        text     TYPE ze_descricao_status,
 *      END OF ty_log,
-
-      ty_t_log TYPE TABLE OF ztfi_log_dif_msg,
-
-      BEGIN OF ty_log_impostos,
+    ty_t_log TYPE TABLE OF ztfi_log_dif_msg .
+  types:
+    BEGIN OF ty_log_impostos,
         bukrs      TYPE bukrs,
         hkont_from TYPE hkont,
         gsber      TYPE gsber,
@@ -125,9 +123,9 @@ CLASS zclfi_contabilizacao DEFINITION
         prctr      TYPE prctr,
         gjahr      TYPE gjahr,
         log        TYPE ztfi_log_dif_msg,
-      END OF ty_log_impostos,
-
-      BEGIN OF ty_log_receita,
+      END OF ty_log_impostos .
+  types:
+    BEGIN OF ty_log_receita,
         bukrs    TYPE bukrs,
         gjahr    TYPE gjahr,
         kunnr    TYPE kunnr,
@@ -136,9 +134,9 @@ CLASS zclfi_contabilizacao DEFINITION
         bupla    TYPE bupla,
         prctr    TYPE prctr,
         log      TYPE ztfi_log_dif_msg,
-      END OF ty_log_receita,
-
-      BEGIN OF ty_cliente_receita,
+      END OF ty_log_receita .
+  types:
+    BEGIN OF ty_cliente_receita,
         moeda    TYPE waers,
         kursf    TYPE char20,
         bukrs    TYPE bukrs,
@@ -148,8 +146,9 @@ CLASS zclfi_contabilizacao DEFINITION
         bupla    TYPE bupla,
         prctr    TYPE prctr,
         dmbtr    TYPE dmbtr,
-      END OF ty_cliente_receita,
-      BEGIN OF ty_razao,
+      END OF ty_cliente_receita .
+  types:
+    BEGIN OF ty_razao,
         moeda    TYPE waers,
         kursf    TYPE char20,
         bukrs    TYPE bukrs,
@@ -158,8 +157,9 @@ CLASS zclfi_contabilizacao DEFINITION
         bupla    TYPE bupla,
         prctr    TYPE prctr,
         dmbtr    TYPE dmbtr,
-      END OF ty_razao,
-      BEGIN OF ty_cliente_receita_doc,
+      END OF ty_razao .
+  types:
+    BEGIN OF ty_cliente_receita_doc,
         moeda     TYPE waers,
         kursf     TYPE kursf,
         bukrs     TYPE bukrs,
@@ -171,8 +171,9 @@ CLASS zclfi_contabilizacao DEFINITION
         belnr     TYPE belnr_d,
         gjahr_rec TYPE gjahr,
         belnr_rec TYPE belnr_d,
-      END OF ty_cliente_receita_doc,
-      BEGIN OF ty_razao_doc,
+      END OF ty_cliente_receita_doc .
+  types:
+    BEGIN OF ty_razao_doc,
         moeda      TYPE waers,
         kursf      TYPE kursf,
         bukrs      TYPE bukrs,
@@ -184,8 +185,9 @@ CLASS zclfi_contabilizacao DEFINITION
         belnr      TYPE belnr_d,
         gjahr_raz  TYPE gjahr,
         belnr_raz  TYPE belnr_d,
-      END OF ty_razao_doc,
-      BEGIN OF ty_cliente_receita_ret,
+      END OF ty_razao_doc .
+  types:
+    BEGIN OF ty_cliente_receita_ret,
         bukrs     TYPE bukrs,
         kunnr     TYPE kunnr,
         gsber     TYPE gsber,
@@ -193,8 +195,9 @@ CLASS zclfi_contabilizacao DEFINITION
         prctr     TYPE prctr,
         gjahr_rec TYPE gjahr,
         belnr_rec TYPE belnr_d,
-      END OF ty_cliente_receita_ret,
-      BEGIN OF ty_razao_ret,
+      END OF ty_cliente_receita_ret .
+  types:
+    BEGIN OF ty_razao_ret,
         bukrs      TYPE bukrs,
         hkont_from TYPE hkont,
         gsber      TYPE gsber,
@@ -202,157 +205,160 @@ CLASS zclfi_contabilizacao DEFINITION
         prctr      TYPE prctr,
         gjahr_raz  TYPE gjahr,
         belnr_raz  TYPE belnr_d,
-      END OF ty_razao_ret,
-      BEGIN OF ty_sum_doc,
+      END OF ty_razao_ret .
+  types:
+    BEGIN OF ty_sum_doc,
         bukrs TYPE bukrs,
         belnr TYPE belnr_d,
         gjahr TYPE gjahr,
-      END OF ty_sum_doc,
-      BEGIN OF ty_doc_proc,
+      END OF ty_sum_doc .
+  types:
+    BEGIN OF ty_doc_proc,
         bukrs TYPE bukrs,
         belnr TYPE belnr_d,
         gjahr TYPE gjahr,
         moeda TYPE waers,
         kursf TYPE kursf,
-      END OF ty_doc_proc,
-      BEGIN OF ty_agrup,
+      END OF ty_doc_proc .
+  types:
+    BEGIN OF ty_agrup,
         moeda      TYPE waers,
         kursf      TYPE kursf,
-      end of ty_agrup.
+      end of ty_agrup .
 
-    CLASS-DATA gs_param TYPE ty_param.
-    CLASS-DATA go_instance TYPE REF TO zclfi_contabilizacao .
-    CLASS-DATA gt_de_para_hkont TYPE SORTED TABLE OF ztfi_defrece_dep WITH UNIQUE KEY hkont_from.
-    CLASS-DATA gt_de_para_hkont_con TYPE SORTED TABLE OF ztfi_defrece_con WITH UNIQUE KEY hkont_from hkont_contra.
+  class-data GS_PARAM type TY_PARAM .
+  class-data GO_INSTANCE type ref to ZCLFI_CONTABILIZACAO .
+  class-data:
+    gt_de_para_hkont TYPE SORTED TABLE OF ztfi_defrece_dep WITH UNIQUE KEY hkont_from .
+  class-data:
+    gt_de_para_hkont_con TYPE SORTED TABLE OF ztfi_defrece_con WITH UNIQUE KEY hkont_from hkont_contra .
+  data GT_HEADER type TY_T_HEADER .
+  data GT_ITEM type TY_T_ITEM .
+  data GT_LOG_MSG type TY_T_LOG .
+  data:
+    gt_log_impostos TYPE TABLE OF ty_log_impostos .
+  data:
+    gt_log_receita  TYPE TABLE OF ty_log_receita .
+  data GT_RETURN type BAPIRET2_TAB .
+  data GT_RAZAO_RETURN type BAPIRET2_TAB .
+  data GT_RECEITA_RETURN type BAPIRET2_TAB .
+  data GT_ESTORNO_RETURN type BAPIRET2_TAB .
+  data:
+    gt_sum_cliente_receita TYPE TABLE OF ty_cliente_receita .
+  data:
+    gt_sum_razao           TYPE TABLE OF ty_razao .
+  data:
+    gt_sum_doc             TYPE TABLE OF ty_sum_doc .
+  data:
+    gt_cliente_receita_ret TYPE TABLE OF ty_cliente_receita_ret .
+  data:
+    gt_razao_ret           TYPE TABLE OF ty_razao_ret .
+  data:
+    gt_doc_proc            TYPE TABLE OF ty_doc_proc .
+  data:
+    gt_agrup               type table of ty_agrup .
+  data GT_MSG_RETORNO type BAPIRET2_TAB .
+  data GV_DOC_REV type BELNR_D .
+  data GV_ANO_REV type GJAHR .
 
-    DATA gt_header TYPE ty_t_header.
-    DATA gt_item TYPE ty_t_item.
-    DATA gt_log_msg TYPE ty_t_log.
-    DATA gt_log_impostos TYPE TABLE OF ty_log_impostos.
-    DATA gt_log_receita  TYPE TABLE OF ty_log_receita.
-    DATA gt_return TYPE  bapiret2_tab.
-    DATA gt_razao_return   TYPE bapiret2_tab.
-    DATA gt_receita_return TYPE bapiret2_tab.
-    DATA gt_estorno_return TYPE bapiret2_tab.
-    DATA: gt_sum_cliente_receita TYPE TABLE OF ty_cliente_receita,
-          gt_sum_razao           TYPE TABLE OF ty_razao,
-          gt_sum_doc             TYPE TABLE OF ty_sum_doc,
-          gt_cliente_receita_ret TYPE TABLE OF ty_cliente_receita_ret,
-          gt_razao_ret           TYPE TABLE OF ty_razao_ret,
-          gt_doc_proc            TYPE TABLE OF ty_doc_proc,
-          gt_agrup               type table of ty_agrup,
-          gt_msg_retorno         TYPE bapiret2_tab.
-
-    DATA gv_doc_rev TYPE belnr_d.
-    DATA gv_ano_rev TYPE gjahr.
     "! Seleciona dados do mercado externo
-    METHODS get_data_merc_ext.
-
-
+  methods GET_DATA_MERC_EXT .
     "! Seleciona dados do mercado interno
-    METHODS get_data_merc_int.
-
+  methods GET_DATA_MERC_INT .
     "! Sumariza itens
     "! @parameter rt_mensagens | Retorna mensagens
-    METHODS sumariza
-      RETURNING VALUE(rt_mensagens) TYPE bapiret2_tab.
-
+  methods SUMARIZA
+    returning
+      value(RT_MENSAGENS) type BAPIRET2_TAB .
     "! Processa contabilização
     "! @parameter iv_simular   | Botão simular?
     "! @parameter rt_mensagens | Retorna mensagens
-    METHODS processa_contabilizacao
-      IMPORTING
-        iv_simular          TYPE abap_bool OPTIONAL
-      RETURNING
-        VALUE(rt_mensagens) TYPE bapiret2_tab.
-
+  methods PROCESSA_CONTABILIZACAO
+    importing
+      !IV_SIMULAR type ABAP_BOOL optional
+    returning
+      value(RT_MENSAGENS) type BAPIRET2_TAB .
     "! Verifica se BAPI esta com erros
     "! @parameter is_documentheader    | Estrutura do header
     "! @parameter ct_accountgl         | Tabela inf. conta
     "! @parameter it_currencyamount    | Tabela inf. valor
     "! @parameter it_accountreceivable | Tabela inf. conta a receber
     "! @parameter ct_mensagens         | Retorna mensagens
-    METHODS check_bapi
-      IMPORTING
-        is_documentheader    TYPE bapiache09
-        it_currencyamount    TYPE bapiaccr09_tab
-        it_accountreceivable TYPE bapiacar09_tab
-      CHANGING
-        ct_accountgl         TYPE bapiacgl09_tab
-        ct_mensagens         TYPE bapiret2_tab
-        ct_extension2        TYPE t_bapiparex.
-
+  methods CHECK_BAPI
+    importing
+      !IS_DOCUMENTHEADER type BAPIACHE09 optional
+      !IT_CURRENCYAMOUNT type BAPIACCR09_TAB optional
+      !IT_ACCOUNTRECEIVABLE type BAPIACAR09_TAB optional
+    changing
+      !CT_ACCOUNTGL type BAPIACGL09_TAB optional
+      !CT_MENSAGENS type BAPIRET2_TAB optional
+      !CT_EXTENSION2 type T_BAPIPAREX optional .
     "! Processa BAPI document post
     "! @parameter is_documentheader    | Estrutura do header
     "! @parameter it_accountgl         | Tabela inf. conta
     "! @parameter it_currencyamount    | Tabela inf. valor
     "! @parameter it_accountreceivable | Tabela inf. conta a receber
-    METHODS processa_bapi_document
-      IMPORTING
-        is_documentheader    TYPE bapiache09
-        it_accountgl         TYPE bapiacgl09_tab OPTIONAL
-        it_currencyamount    TYPE bapiaccr09_tab
-        it_accountreceivable TYPE bapiacar09_tab OPTIONAL
-        it_extension2        TYPE t_bapiparex OPTIONAL
-      EXPORTING
-        et_mensagens         TYPE bapiret2_tab.
-
+  methods PROCESSA_BAPI_DOCUMENT
+    importing
+      !IS_DOCUMENTHEADER type BAPIACHE09
+      !IT_ACCOUNTGL type BAPIACGL09_TAB optional
+      !IT_CURRENCYAMOUNT type BAPIACCR09_TAB
+      !IT_ACCOUNTRECEIVABLE type BAPIACAR09_TAB optional
+      !IT_EXTENSION2 type T_BAPIPAREX optional
+    exporting
+      !ET_MENSAGENS type BAPIRET2_TAB .
     "! Processa BAPI retorno
     "! @parameter iv_empresa   | Empresa
     "! @parameter iv_doc       | Documento
     "! @parameter iv_ano       | Ano
     "! @parameter iv_dtestorno | Data estorno
     "! @parameter iv_periodo   | Periodo
-    METHODS processa_bapi_estorno
-      IMPORTING
-        iv_empresa   TYPE bukrs
-        iv_doc       TYPE belnr_d
-        iv_ano       TYPE gjahr
-        iv_dtestorno TYPE datum
-        iv_periodo   TYPE monat
-      EXPORTING
-        ev_doc_rev   TYPE belnr_d
-        ev_ano_rev   TYPE gjahr.
-
+  methods PROCESSA_BAPI_ESTORNO
+    importing
+      !IV_EMPRESA type BUKRS
+      !IV_DOC type BELNR_D
+      !IV_ANO type GJAHR
+      !IV_DTESTORNO type DATUM
+      !IV_PERIODO type MONAT
+    exporting
+      !EV_DOC_REV type BELNR_D
+      !EV_ANO_REV type GJAHR .
     "! Prepara dados para execução das BAPI's
     "! @parameter iv_simular   | Botão Simular?
     "! @parameter rt_mensagens | Retorna mensagens
-    METHODS prepara_dados
-      IMPORTING
-        iv_simular          TYPE abap_bool OPTIONAL
-        iv_moeda      TYPE waers
-        iv_kursf      TYPE kursf
-      RETURNING
-        VALUE(rt_mensagens) TYPE bapiret2_tab.
-
-    METHODS agrupador
-      IMPORTING
-        iv_simular          TYPE abap_bool OPTIONAL
-      RETURNING
-        VALUE(rt_mensagens) TYPE bapiret2_tab.
-
+  methods PREPARA_DADOS
+    importing
+      !IV_SIMULAR type ABAP_BOOL optional
+      !IV_MOEDA type WAERS
+      !IV_KURSF type KURSF
+    returning
+      value(RT_MENSAGENS) type BAPIRET2_TAB .
+  methods AGRUPADOR
+    importing
+      !IV_SIMULAR type ABAP_BOOL optional
+    returning
+      value(RT_MENSAGENS) type BAPIRET2_TAB .
     "! Salva Log
-    METHODS save_log.
-
+  methods SAVE_LOG .
     "! Busca unidade de frete
     "! @parameter rt_return | Retorna tabela com unidades de frete
-    METHODS get_unid_frete
-      RETURNING VALUE(rt_return) TYPE zctgfi_rem_unid_frete.
-
+  methods GET_UNID_FRETE
+    returning
+      value(RT_RETURN) type ZCTGFI_REM_UNID_FRETE .
     "! Cadastra deferimento
     "! @parameter iv_unid_frete |Unidade de frete
     "! @parameter iv_preventr   |Dias
     "! @parameter iv_doc_date   |Data do documento
-    METHODS set_deferimento
-      IMPORTING
-        iv_unid_frete TYPE vbeln
-        iv_preventr   TYPE int1
-        iv_doc_date   TYPE datum.
-
+  methods SET_DEFERIMENTO
+    importing
+      !IV_UNID_FRETE type VBELN
+      !IV_PREVENTR type INT1
+      !IV_DOC_DATE type DATUM .
     "! Formata as mensages de retorno
     "! @parameter ct_return | Mensagens de retorno
-    METHODS format_message
-      CHANGING ct_return TYPE bapiret2_t.
+  methods FORMAT_MESSAGE
+    changing
+      !CT_RETURN type BAPIRET2_T .
 ENDCLASS.
 
 
@@ -727,11 +733,6 @@ CLASS ZCLFI_CONTABILIZACAO IMPLEMENTATION.
 
 
   METHOD prepara_dados.
-    CONSTANTS: lc_id_rw(2)       TYPE c VALUE 'RW',
-               lc_msg_rw(3)      TYPE c VALUE '605',
-               lc_doc_type_ab(2) TYPE c VALUE 'AB',
-               lc_doc_type_SA(2) TYPE c VALUE 'SA',
-               lc_curr_type      TYPE curtp VALUE '10'.
 
     TYPES: BEGIN OF ty_log_int,
              moeda      TYPE waers,
@@ -746,243 +747,523 @@ CLASS ZCLFI_CONTABILIZACAO IMPLEMENTATION.
              text       TYPE ze_descricao_status,
            END OF ty_log_int.
 
+    DATA: lt_accountgl         TYPE bapiacgl09_tab,
+          lt_currencyamount    TYPE bapiaccr09_tab,
+          lt_accountreceivable TYPE bapiacar09_tab,
+          lt_log_aux           TYPE ty_t_log,
+          lt_extension2        TYPE t_bapiparex,
+          lt_mensagens         TYPE bapiret2_tab,
+          lt_log_int           TYPE TABLE OF ty_log_int.
 
+    DATA: lt_accouable_aux  TYPE bapiacar09_tab,
+          lt_curramount_aux TYPE bapiaccr09_tab,
+          lt_accountgl_aux  TYPE bapiacgl09_tab.
 
-    DATA ls_documentheader    TYPE bapiache09.
-    DATA lt_accountgl         TYPE bapiacgl09_tab.
-    DATA lt_currencyamount    TYPE bapiaccr09_tab.
-    DATA lt_accountreceivable TYPE bapiacar09_tab.
-    DATA lv_itemno_acc        TYPE posnr_acc.
-    DATA lt_log_aux           TYPE ty_t_log.
-    DATA ls_log               TYPE ztfi_log_dif_msg.
-    DATA lt_extension2        TYPE t_bapiparex.
-    DATA lt_mensagens         TYPE bapiret2_tab.
-    DATA: lt_log_int TYPE TABLE OF ty_log_int,
-          ls_log_int TYPE ty_log_int.
+    DATA: ls_documentheader TYPE bapiache09,
+          ls_log            TYPE ztfi_log_dif_msg,
+          ls_log_int        TYPE ty_log_int,
+          ls_currencyamount TYPE bapiaccr09,
+          ls_header_aux     TYPE bapiache09.
 
-    DATA lv_msg_ret TYPE char50.
-
-
-    DATA: lv_empresa   TYPE bukrs,
-          lv_doc       TYPE belnr_d,
-          lv_ano       TYPE gjahr,
-          lv_dtestorno TYPE datum,
-          lv_periodo   TYPE monat,
-          lv_moeda     TYPE waers,
-          lv_kursf     TYPE kursf,
+    DATA: lv_itemno_acc TYPE posnr_acc,
+          lv_msg_ret    TYPE char50,
+          lv_empresa    TYPE bukrs,
+          lv_doc        TYPE belnr_d,
+          lv_ano        TYPE gjahr,
+          lv_dtestorno  TYPE datum,
+          lv_periodo    TYPE monat,
+          lv_moeda      TYPE waers,
+          lv_kursf      TYPE kursf,
           lv_error.
 
-    SORT gt_sum_cliente_receita BY moeda kursf.
-    SORT gt_sum_razao BY moeda kursf.
+    CONSTANTS: lc_id_rw(2)       TYPE c     VALUE 'RW',
+               lc_msg_rw(3)      TYPE c     VALUE '605',
+               lc_doc_type_ab(2) TYPE c     VALUE 'AB',
+               lc_doc_type_sa(2) TYPE c     VALUE 'SA',
+               lc_curr_type      TYPE curtp VALUE '10'.
 
-    data(lt_sum_cliente_receita) = gt_sum_cliente_receita.
-    data(lt_sum_razao)           = gt_sum_razao.
+    SORT gt_sum_cliente_receita BY moeda
+                                   kursf.
+    SORT gt_sum_razao BY moeda
+                         kursf.
 
-*    delete lt_sum_cliente_receita where moeda <> iv_moeda or kursf <> iv_kursf.
-*    delete lt_sum_razao where moeda <> iv_moeda or kursf <> iv_kursf.
+*    DATA(lt_sum_cliente_receita) = gt_sum_cliente_receita.
+    DATA(lt_sum_razao)           = gt_sum_razao.
 
     CLEAR: me->gt_return,
            rt_mensagens.
 
-    CLEAR: ls_documentheader,
-           lt_accountgl,
-           lt_currencyamount,
-           lt_accountreceivable,
-           lv_itemno_acc,
-           lt_extension2,
+    CLEAR: "lt_extension2[],
+           lt_accountgl[],
+           lt_currencyamount[],
+           lt_accountreceivable[],
+           ls_documentheader,
            ls_log,
            me->gv_ano_rev,
            me->gv_doc_rev,
+           lv_itemno_acc,
            lv_msg_ret,
            lv_moeda,
            lv_kursf,
-           lv_error,
-           lv_itemno_acc.
+           lv_error.
 
-    CLEAR lv_itemno_acc.
+*    LOOP AT lt_sum_cliente_receita ASSIGNING FIELD-SYMBOL(<fs_sum_cliente_receita>).
+*
+*      CHECK <fs_sum_cliente_receita>-moeda = iv_moeda
+*        AND <fs_sum_cliente_receita>-kursf = iv_kursf.
+*
+*      IF ls_documentheader IS INITIAL.
+*        ls_documentheader = VALUE bapiache09( comp_code  = gt_sum_cliente_receita[ 1 ]-bukrs
+*                                              doc_date   = gs_param-dtlanc
+*                                              pstng_date = gs_param-dtlanc
+*                                              doc_type   = lc_doc_type_sa
+*                                              username   = sy-uname
+*                                               "ref_doc_no  =
+*                                              header_txt = TEXT-t01 ). " Rateio Assis. Médica
+*      ENDIF.
+*
+*      ADD 1 TO lv_itemno_acc.
+*      APPEND VALUE #( itemno_acc = lv_itemno_acc
+*                      customer   = <fs_sum_cliente_receita>-kunnr
+*                      comp_code  = <fs_sum_cliente_receita>-bukrs
+*                      bus_area   = <fs_sum_cliente_receita>-gsber
+*                      item_text  = TEXT-t02
+*                      profit_ctr = <fs_sum_cliente_receita>-prctr
+*                    ) TO lt_accountreceivable.
+*
+*      APPEND VALUE #( itemno_acc = lv_itemno_acc
+*                      currency   = <fs_sum_cliente_receita>-moeda
+*                      amt_doccur = <fs_sum_cliente_receita>-dmbtr * -1
+*                      exch_rate  = <fs_sum_cliente_receita>-kursf
+*                    ) TO lt_currencyamount.
+*
+*      APPEND VALUE #( structure  = 'BUPLA'
+*                      valuepart1 = lv_itemno_acc
+*                      valuepart2 = <fs_sum_cliente_receita>-bupla ) TO lt_extension2.
+*
+*    ENDLOOP.
 
-    LOOP AT lt_sum_cliente_receita ASSIGNING FIELD-SYMBOL(<fs_sum_cliente_receita>).
-       CHECK <fs_sum_cliente_receita>-moeda = iv_moeda and  <fs_sum_cliente_receita>-kursf = iv_kursf.
-        IF ls_documentheader IS INITIAL.
-        ls_documentheader = VALUE bapiache09(  comp_code = gt_sum_cliente_receita[ 1 ]-bukrs
-                                                 doc_date  = gs_param-dtlanc
-                                                 pstng_date = gs_param-dtlanc
-                                                 doc_type   = lc_doc_type_SA
-                                                 username   = sy-uname
-                                                 "ref_doc_no  =
-                                                 header_txt   = TEXT-t01 ). "Rateio Assis. Médica
+    SORT lt_sum_razao BY bukrs
+                         prctr
+                         gsber.
+
+    DATA(lt_sum_key) = lt_sum_razao[].
+
+    DELETE ADJACENT DUPLICATES FROM lt_sum_key COMPARING bukrs
+                                                         prctr
+                                                         gsber.
+
+    LOOP AT lt_sum_key ASSIGNING FIELD-SYMBOL(<fs_sum_key>).
+
+      CHECK <fs_sum_key>-moeda = iv_moeda
+        AND <fs_sum_key>-kursf = iv_kursf.
+
+      IF ls_documentheader IS INITIAL.
+        ls_documentheader = VALUE bapiache09( comp_code  = <fs_sum_key>-bukrs
+                                              doc_date   = gs_param-dtlanc
+                                              pstng_date = gs_param-dtlanc
+                                              doc_type   = lc_doc_type_sa
+                                              username   = sy-uname
+                                              header_txt = COND #( WHEN gs_param-app = abap_true
+                                                                     THEN TEXT-t06
+                                                                   ELSE TEXT-t05  ) ). " Rateio Assis. Médica'
       ENDIF.
 
+      READ TABLE lt_sum_razao TRANSPORTING NO FIELDS
+                                            WITH KEY bukrs = <fs_sum_key>-bukrs
+                                                     prctr = <fs_sum_key>-prctr
+                                                     gsber = <fs_sum_key>-gsber
+                                                     BINARY SEARCH.
+      IF sy-subrc IS INITIAL.
+        LOOP AT lt_sum_razao ASSIGNING FIELD-SYMBOL(<fs_sum_razao>) FROM sy-tabix.
+          IF <fs_sum_razao>-bukrs NE <fs_sum_key>-bukrs
+          OR <fs_sum_razao>-prctr NE <fs_sum_key>-prctr
+          OR <fs_sum_razao>-gsber NE <fs_sum_key>-gsber.
+            EXIT.
+          ENDIF.
 
-      ADD 1 TO lv_itemno_acc.
-      APPEND VALUE #( itemno_acc    = lv_itemno_acc
-                  customer           = <fs_sum_cliente_receita>-kunnr
-                  comp_code          = <fs_sum_cliente_receita>-bukrs
-                  bus_area           = <fs_sum_cliente_receita>-gsber
-                  item_text          = TEXT-t02
-                  profit_ctr         = <fs_sum_cliente_receita>-prctr
-                ) TO lt_accountreceivable.
+          CHECK <fs_sum_key>-moeda = iv_moeda
+            AND <fs_sum_key>-kursf = iv_kursf.
 
-      APPEND VALUE #(
-      itemno_acc = lv_itemno_acc
-      currency   = <fs_sum_cliente_receita>-moeda
-      amt_doccur = <fs_sum_cliente_receita>-dmbtr * -1
-      exch_rate  = <fs_sum_cliente_receita>-kursf
-       ) TO lt_currencyamount.
+          ADD 1 TO lv_itemno_acc.
+          APPEND VALUE #( itemno_acc = lv_itemno_acc
+                          alloc_nmbr = COND #( WHEN gs_param-app = abap_true
+                                                 THEN TEXT-t06
+                                               ELSE TEXT-t05  )
+                          gl_account = <fs_sum_razao>-hkont_to
+                          bus_area   = <fs_sum_razao>-gsber
+                          profit_ctr = <fs_sum_razao>-prctr " COSTCENTER
+                          item_text  = COND #( WHEN gs_param-app = abap_true
+                                                 THEN TEXT-t06
+                                               ELSE TEXT-t05  )
+                         ) TO lt_accountgl_aux.
 
-      APPEND VALUE #(
-       structure = 'BUPLA'
-       valuepart1 = lv_itemno_acc
-       valuepart2 = <fs_sum_cliente_receita>-bupla ) TO lt_extension2.
+          APPEND VALUE #( itemno_acc = lv_itemno_acc
+                          currency   = <fs_sum_razao>-moeda
+                          amt_doccur = <fs_sum_razao>-dmbtr * -1
+                          exch_rate  = <fs_sum_razao>-kursf
+                         ) TO lt_curramount_aux.
 
-    ENDLOOP.
+        ENDLOOP.
 
+        IF lt_accountgl_aux[] IS NOT INITIAL.
 
-    LOOP AT lt_sum_razao ASSIGNING FIELD-SYMBOL(<fs_sum_razao>).
-        CHECK <fs_sum_razao>-moeda = iv_moeda and <fs_sum_razao>-kursf = iv_kursf.
-        IF ls_documentheader IS INITIAL.
-        ls_documentheader = VALUE bapiache09(  comp_code = <fs_sum_razao>-bukrs
-                                               doc_date  = gs_param-dtlanc
-                                               pstng_date = gs_param-dtlanc
-*                                               fis_period =  sy-datum+4(2)
-*                                               fisc_year =  sy-datum(4)
-                                               doc_type   = lc_doc_type_SA
-                                               username   = sy-uname
-                                               "ref_doc_no  =
-                                               header_txt   = cond #( when gs_param-app = abap_true then TEXT-t06 else TEXT-t05  ) ). "Rateio Assis. Médica'
+          IF ( lines( lt_accountgl ) + lines( lt_accountgl_aux ) ) LE 900.
+
+            APPEND LINES OF lt_accountgl_aux TO lt_accountgl.
+            APPEND LINES OF lt_curramount_aux TO lt_currencyamount.
+
+            FREE: lt_accountgl_aux[],
+                  lt_curramount_aux[].
+
+          ELSE.
+
+            IF ls_documentheader IS NOT INITIAL.
+
+              FREE lt_mensagens[].
+
+              IF iv_simular = abap_true.
+
+                me->check_bapi( EXPORTING is_documentheader    = ls_documentheader
+                                          it_currencyamount    = lt_currencyamount
+                                 CHANGING ct_accountgl         = lt_accountgl
+                                          ct_mensagens         = lt_mensagens ).
+
+                APPEND LINES OF lt_mensagens TO rt_mensagens.
+
+              ELSE.
+
+                me->processa_bapi_document( EXPORTING is_documentheader    = ls_documentheader
+                                                      it_accountgl         = lt_accountgl
+                                                      it_currencyamount    = lt_currencyamount
+                                            IMPORTING et_mensagens         = lt_mensagens ).
+
+                APPEND LINES OF lt_mensagens TO rt_mensagens.
+
+                TRY.
+                    lv_msg_ret =  lt_mensagens[ id     = lc_id_rw
+                                                number = lc_msg_rw ]-message_v2.
+                  CATCH cx_sy_itab_line_not_found.
+                ENDTRY.
+
+                " Executa BAPI Estorno
+                me->processa_bapi_estorno( EXPORTING iv_empresa   = lv_msg_ret+10(4)
+                                                     iv_doc       = lv_msg_ret(10)
+                                                     iv_ano       = CONV #( lv_msg_ret+14(4) )
+                                                     iv_dtestorno = gs_param-dtestorno
+                                                     iv_periodo   = lv_periodo ).
+
+                LOOP AT me->gt_msg_retorno ASSIGNING FIELD-SYMBOL(<fs_msg_retorno>).
+
+                  APPEND VALUE #( message_v1 = <fs_msg_retorno>-message_v1
+                                  message_v2 = <fs_msg_retorno>-message_v2
+                                  message_v3 = <fs_msg_retorno>-message_v3
+                                  message_v4 = <fs_msg_retorno>-message_v4
+                                  type       = <fs_msg_retorno>-type
+                                  id         = <fs_msg_retorno>-id
+                                  number     = <fs_msg_retorno>-number ) TO rt_mensagens.
+                ENDLOOP.
+
+                IF sy-subrc = 4.
+                  rt_mensagens = VALUE #( BASE rt_mensagens ( message_v1 = |{ me->gv_doc_rev  }{ <fs_sum_razao>-bukrs }{ me->gv_ano_rev }| type = 'S' id = 'ZFI_DEFERIMENTO' number = '003' ) ).
+                ENDIF.
+
+                ls_log_int-moeda      = iv_moeda.
+                ls_log_int-kursf      = iv_kursf.
+                ls_log_int-tp_bapi    = 2. "Imposto
+                ls_log_int-bukrs_cont = lv_msg_ret+10(4).
+                ls_log_int-belnr_cont = lv_msg_ret(10).
+                ls_log_int-gjahr_cont = lv_msg_ret+14(4).
+                ls_log_int-bukrs_est  = lv_msg_ret+10(4).
+                ls_log_int-belnr_est  = me->gv_doc_rev.
+                ls_log_int-gjahr_est  = me->gv_ano_rev.
+                APPEND ls_log_int TO lt_log_int.
+                CLEAR ls_log_int.
+
+              ENDIF.
+            ENDIF.
+
+            IF iv_simular IS NOT SUPPLIED
+            OR iv_simular IS INITIAL.
+
+              SORT gt_doc_proc. DELETE ADJACENT DUPLICATES FROM gt_doc_proc.
+              SORT lt_log_int BY moeda
+                                 kursf
+                                 tp_bapi.
+
+              LOOP AT gt_doc_proc ASSIGNING FIELD-SYMBOL(<fs_doc_proc>).
+
+                DATA(ls_log_dif_msg) = VALUE ztfi_log_dif_msg( bukrs = <fs_doc_proc>-bukrs
+                                                               belnr = <fs_doc_proc>-belnr
+                                                               gjahr = <fs_doc_proc>-gjahr ).
+
+                ls_log_dif_msg-contador = 0.
+
+                READ TABLE lt_log_int INTO ls_log_int WITH KEY moeda   = <fs_doc_proc>-moeda
+                                                               kursf   = <fs_doc_proc>-kursf
+                                                               tp_bapi = 2 BINARY SEARCH.
+
+                IF sy-subrc = 0.
+                  ls_log_dif_msg-tp_bapi    =  TEXT-002.
+                  ls_log_dif_msg-bukrs_cont = ls_log_int-bukrs_cont.
+                  ls_log_dif_msg-belnr_cont = ls_log_int-belnr_cont.
+                  ls_log_dif_msg-gjahr_cont = ls_log_int-gjahr_cont.
+                  ls_log_dif_msg-bukrs_est  = ls_log_int-bukrs_est.
+                  ls_log_dif_msg-belnr_est  = ls_log_int-belnr_est.
+                  ls_log_dif_msg-gjahr_est  = ls_log_int-gjahr_est.
+                  ADD 1 TO ls_log_dif_msg-contador.
+                  APPEND ls_log_dif_msg TO gt_log_msg.
+                ENDIF.
+              ENDLOOP.
+            ENDIF.
+
+            CLEAR: lv_itemno_acc,
+                   ls_documentheader,
+                   lv_msg_ret.
+
+            FREE: lt_currencyamount[],
+                  lt_accountgl[],
+                  lt_log_int[].
+
+            APPEND LINES OF lt_accountgl_aux TO lt_accountgl.
+            APPEND LINES OF lt_curramount_aux TO lt_currencyamount.
+
+            FREE: lt_accountgl_aux[],
+                  lt_curramount_aux[].
+
+          ENDIF.
+
+        ENDIF.
       ENDIF.
-
-
-      ADD 1 TO lv_itemno_acc.
-      APPEND VALUE #(
-      itemno_acc = lv_itemno_acc
-      alloc_nmbr =  cond #( when gs_param-app = abap_true then TEXT-t06 else TEXT-t05  )
-      gl_account =  <fs_sum_razao>-hkont_to
-      bus_area   = <fs_sum_razao>-gsber
-      "COSTCENTER
-      profit_ctr = <fs_sum_razao>-prctr
-      item_text  = cond #( when gs_param-app = abap_true then TEXT-t06 else TEXT-t05  )
-      "SEGMENT    =
-      ) TO lt_accountgl.
-
-      APPEND VALUE #(
-      itemno_acc = lv_itemno_acc
-      currency   = <fs_sum_razao>-moeda
-      amt_doccur = <fs_sum_razao>-dmbtr * -1
-      exch_rate  = <fs_sum_razao>-kursf
-       ) TO lt_currencyamount.
-
     ENDLOOP.
 
-    CHECK lv_error = abap_false.
+    IF lt_accountgl[] IS NOT INITIAL.
 
-    CLEAR lt_mensagens.
-
-    IF ls_documentheader IS NOT INITIAL.
-      CLEAR lt_mensagens.
+      FREE lt_mensagens[].
 
       IF iv_simular = abap_true.
 
         me->check_bapi( EXPORTING is_documentheader    = ls_documentheader
                                   it_currencyamount    = lt_currencyamount
-                                  it_accountreceivable = lt_accountreceivable
-                        CHANGING  ct_accountgl         = lt_accountgl
-                                  ct_mensagens         = lt_mensagens
-                                  ct_extension2        = lt_extension2 ).
+                         CHANGING ct_accountgl         = lt_accountgl
+                                  ct_mensagens         = lt_mensagens ).
 
         APPEND LINES OF lt_mensagens TO rt_mensagens.
-
-        IF  line_exists( rt_mensagens[ type = 'E' ] ).   "#EC CI_STDSEQ
-          lv_error = abap_true.
-          EXIT.
-        ENDIF.
 
       ELSE.
 
         me->processa_bapi_document( EXPORTING is_documentheader    = ls_documentheader
                                               it_accountgl         = lt_accountgl
                                               it_currencyamount    = lt_currencyamount
-                                              it_accountreceivable = lt_accountreceivable
-                                              it_extension2        = lt_extension2
                                     IMPORTING et_mensagens         = lt_mensagens ).
 
         APPEND LINES OF lt_mensagens TO rt_mensagens.
 
         TRY.
-            lv_msg_ret =  lt_mensagens[ id = lc_id_rw number = lc_msg_rw ]-message_v2.
+            lv_msg_ret =  lt_mensagens[ id     = lc_id_rw
+                                        number = lc_msg_rw ]-message_v2.
           CATCH cx_sy_itab_line_not_found.
         ENDTRY.
 
-        "EXECUTA BAPI ESTORNO
-*        lv_periodo = gs_param-dtestorno+4(2).
-        me->processa_bapi_estorno(
-          EXPORTING
-            iv_empresa   = lv_msg_ret+10(4)
-            iv_doc       = lv_msg_ret(10)
-            iv_ano       = CONV #( lv_msg_ret+14(4) )
-            iv_dtestorno = gs_param-dtestorno
-            iv_periodo   = lv_periodo ).
+        " Executa BAPI Estorno
+        me->processa_bapi_estorno( EXPORTING iv_empresa   = lv_msg_ret+10(4)
+                                             iv_doc       = lv_msg_ret(10)
+                                             iv_ano       = CONV #( lv_msg_ret+14(4) )
+                                             iv_dtestorno = gs_param-dtestorno
+                                             iv_periodo   = lv_periodo ).
 
+        LOOP AT me->gt_msg_retorno ASSIGNING <fs_msg_retorno>.
 
-        loop at me->gt_msg_retorno assigning field-symbol(<fs_msg_retorno>).
+          APPEND VALUE #( message_v1 = <fs_msg_retorno>-message_v1
+                          message_v2 = <fs_msg_retorno>-message_v2
+                          message_v3 = <fs_msg_retorno>-message_v3
+                          message_v4 = <fs_msg_retorno>-message_v4
+                          type       = <fs_msg_retorno>-type
+                          id         = <fs_msg_retorno>-id
+                          number     = <fs_msg_retorno>-number ) TO rt_mensagens.
+        ENDLOOP.
 
-           append VALUE #( message_v1 = <fs_msg_retorno>-message_v1
-                                                        message_v2 = <fs_msg_retorno>-message_v2
-                                                        message_v3 = <fs_msg_retorno>-message_v3
-                                                        message_v4 = <fs_msg_retorno>-message_v4
-                                                        type = <fs_msg_retorno>-type
-                                                        id = <fs_msg_retorno>-id
-                                                        number = <fs_msg_retorno>-number ) to rt_mensagens.
-        endloop.
+        IF sy-subrc = 4.
+          rt_mensagens = VALUE #( BASE rt_mensagens ( message_v1 = |{ me->gv_doc_rev  }{ <fs_sum_razao>-bukrs }{ me->gv_ano_rev }| type = 'S' id = 'ZFI_DEFERIMENTO' number = '003' ) ).
+        ENDIF.
 
-        if sy-subrc = 4.
-           rt_mensagens = VALUE #( BASE rt_mensagens ( message_v1 = |{ me->gv_doc_rev  }{ <fs_sum_razao>-bukrs }{ me->gv_ano_rev }| type = 'S' id = 'ZFI_DEFERIMENTO' number = '003' ) ).
-        endif.
-
-        ls_log_int-moeda   =  iv_moeda.
-        ls_log_int-kursf   =  iv_kursf.
-        ls_log_int-tp_bapi =  2. "Imposto
+        ls_log_int-moeda      = iv_moeda.
+        ls_log_int-kursf      = iv_kursf.
+        ls_log_int-tp_bapi    = 2. "Imposto
         ls_log_int-bukrs_cont = lv_msg_ret+10(4).
         ls_log_int-belnr_cont = lv_msg_ret(10).
         ls_log_int-gjahr_cont = lv_msg_ret+14(4).
-        ls_log_int-bukrs_est = lv_msg_ret+10(4).
-        ls_log_int-belnr_est = me->gv_doc_rev.
-        ls_log_int-gjahr_est = me->gv_ano_rev.
+        ls_log_int-bukrs_est  = lv_msg_ret+10(4).
+        ls_log_int-belnr_est  = me->gv_doc_rev.
+        ls_log_int-gjahr_est  = me->gv_ano_rev.
         APPEND ls_log_int TO lt_log_int.
+        CLEAR ls_log_int.
 
       ENDIF.
+
+      IF iv_simular IS NOT SUPPLIED
+      OR iv_simular IS INITIAL.
+
+        SORT gt_doc_proc. DELETE ADJACENT DUPLICATES FROM gt_doc_proc.
+        SORT lt_log_int BY moeda
+                           kursf
+                           tp_bapi.
+
+        LOOP AT gt_doc_proc ASSIGNING <fs_doc_proc>.
+
+          ls_log_dif_msg = VALUE ztfi_log_dif_msg( bukrs = <fs_doc_proc>-bukrs
+                                                   belnr = <fs_doc_proc>-belnr
+                                                   gjahr = <fs_doc_proc>-gjahr ).
+
+          ls_log_dif_msg-contador = 0.
+
+          READ TABLE lt_log_int INTO ls_log_int WITH KEY moeda   = <fs_doc_proc>-moeda
+                                                         kursf   = <fs_doc_proc>-kursf
+                                                         tp_bapi = 2 BINARY SEARCH.
+
+          IF sy-subrc = 0.
+            ls_log_dif_msg-tp_bapi    =  TEXT-002.
+            ls_log_dif_msg-bukrs_cont = ls_log_int-bukrs_cont.
+            ls_log_dif_msg-belnr_cont = ls_log_int-belnr_cont.
+            ls_log_dif_msg-gjahr_cont = ls_log_int-gjahr_cont.
+            ls_log_dif_msg-bukrs_est  = ls_log_int-bukrs_est.
+            ls_log_dif_msg-belnr_est  = ls_log_int-belnr_est.
+            ls_log_dif_msg-gjahr_est  = ls_log_int-gjahr_est.
+            ADD 1 TO ls_log_dif_msg-contador.
+            APPEND ls_log_dif_msg TO gt_log_msg.
+          ENDIF.
+        ENDLOOP.
+      ENDIF.
+
+      CLEAR: lv_itemno_acc,
+             ls_documentheader,
+             lv_msg_ret.
+
+      FREE: lt_currencyamount[],
+            lt_accountgl[],
+            lt_log_int[].
+
+      APPEND LINES OF lt_accountgl_aux TO lt_accountgl.
+      APPEND LINES OF lt_curramount_aux TO lt_currencyamount.
+
+      FREE: lt_accountgl_aux[],
+            lt_curramount_aux[].
+
     ENDIF.
 
-    CHECK iv_simular IS NOT SUPPLIED OR iv_simular IS INITIAL.
+*    CLEAR lt_mensagens.
+*
+*    IF ls_documentheader IS NOT INITIAL.
+*
+*      CLEAR lt_mensagens.
+*
+*      IF iv_simular = abap_true.
+*
+*        me->check_bapi( EXPORTING is_documentheader    = ls_documentheader
+*                                  it_currencyamount    = lt_currencyamount
+*                                  it_accountreceivable = lt_accountreceivable
+*                         CHANGING ct_accountgl         = lt_accountgl
+*                                  ct_mensagens         = lt_mensagens
+*                                  ct_extension2        = lt_extension2 ).
+*
+*        APPEND LINES OF lt_mensagens TO rt_mensagens.
+*
+*        IF  line_exists( rt_mensagens[ type = 'E' ] ).   "#EC CI_STDSEQ
+*          lv_error = abap_true.
+*          EXIT.
+*        ENDIF.
+*
+*      ELSE.
+*
+*        me->processa_bapi_document( EXPORTING is_documentheader    = ls_documentheader
+*                                              it_accountgl         = lt_accountgl
+*                                              it_currencyamount    = lt_currencyamount
+*                                              it_accountreceivable = lt_accountreceivable
+*                                              it_extension2        = lt_extension2
+*                                    IMPORTING et_mensagens         = lt_mensagens ).
+*
+*        APPEND LINES OF lt_mensagens TO rt_mensagens.
+*
+*        TRY.
+*            lv_msg_ret =  lt_mensagens[ id = lc_id_rw number = lc_msg_rw ]-message_v2.
+*          CATCH cx_sy_itab_line_not_found.
+*        ENDTRY.
+*
+*        "EXECUTA BAPI ESTORNO
+**        lv_periodo = gs_param-dtestorno+4(2).
+*        me->processa_bapi_estorno( EXPORTING iv_empresa   = lv_msg_ret+10(4)
+*                                             iv_doc       = lv_msg_ret(10)
+*                                             iv_ano       = CONV #( lv_msg_ret+14(4) )
+*                                             iv_dtestorno = gs_param-dtestorno
+*                                             iv_periodo   = lv_periodo ).
+*
+*
+*        LOOP AT me->gt_msg_retorno ASSIGNING FIELD-SYMBOL(<fs_msg_retorno>).
+*
+*          APPEND VALUE #( message_v1 = <fs_msg_retorno>-message_v1
+*                          message_v2 = <fs_msg_retorno>-message_v2
+*                          message_v3 = <fs_msg_retorno>-message_v3
+*                          message_v4 = <fs_msg_retorno>-message_v4
+*                          type       = <fs_msg_retorno>-type
+*                          id         = <fs_msg_retorno>-id
+*                          number     = <fs_msg_retorno>-number ) TO rt_mensagens.
+*        ENDLOOP.
+*
+*        IF sy-subrc = 4.
+*          rt_mensagens = VALUE #( BASE rt_mensagens ( message_v1 = |{ me->gv_doc_rev  }{ <fs_sum_razao>-bukrs }{ me->gv_ano_rev }| type = 'S' id = 'ZFI_DEFERIMENTO' number = '003' ) ).
+*        ENDIF.
+*
+*        ls_log_int-moeda   =  iv_moeda.
+*        ls_log_int-kursf   =  iv_kursf.
+*        ls_log_int-tp_bapi =  2. "Imposto
+*        ls_log_int-bukrs_cont = lv_msg_ret+10(4).
+*        ls_log_int-belnr_cont = lv_msg_ret(10).
+*        ls_log_int-gjahr_cont = lv_msg_ret+14(4).
+*        ls_log_int-bukrs_est = lv_msg_ret+10(4).
+*        ls_log_int-belnr_est = me->gv_doc_rev.
+*        ls_log_int-gjahr_est = me->gv_ano_rev.
+*        APPEND ls_log_int TO lt_log_int.
+*
+*      ENDIF.
+*    ENDIF.
+*
+*    CHECK iv_simular IS NOT SUPPLIED
+*       OR iv_simular IS INITIAL.
+*
+*    SORT gt_doc_proc. DELETE ADJACENT DUPLICATES FROM gt_doc_proc.
+*    SORT lt_log_int BY moeda
+*                       kursf
+*                       tp_bapi.
+*
+*    LOOP AT gt_doc_proc ASSIGNING FIELD-SYMBOL(<fs_doc_proc>).
+*
+*      DATA(ls_log_dif_msg) = VALUE ztfi_log_dif_msg( bukrs = <fs_doc_proc>-bukrs
+*                                                     belnr = <fs_doc_proc>-belnr
+*                                                     gjahr = <fs_doc_proc>-gjahr ).
+*
+*      ls_log_dif_msg-contador = 0.
+*
+*      READ TABLE lt_log_int INTO ls_log_int WITH KEY moeda   = <fs_doc_proc>-moeda
+*                                                     kursf   = <fs_doc_proc>-kursf
+*                                                     tp_bapi = 2 BINARY SEARCH.
+*
+*      IF sy-subrc = 0.
+*        ls_log_dif_msg-tp_bapi    =  TEXT-002.
+*        ls_log_dif_msg-bukrs_cont = ls_log_int-bukrs_cont.
+*        ls_log_dif_msg-belnr_cont = ls_log_int-belnr_cont.
+*        ls_log_dif_msg-gjahr_cont = ls_log_int-gjahr_cont.
+*        ls_log_dif_msg-bukrs_est  = ls_log_int-bukrs_est.
+*        ls_log_dif_msg-belnr_est  = ls_log_int-belnr_est.
+*        ls_log_dif_msg-gjahr_est  = ls_log_int-gjahr_est.
+*        ADD 1 TO ls_log_dif_msg-contador.
+*        APPEND ls_log_dif_msg TO gt_log_msg.
+*      ENDIF.
+*    ENDLOOP.
 
-    SORT gt_doc_proc. DELETE ADJACENT DUPLICATES FROM gt_doc_proc.
-    SORT lt_log_int BY moeda kursf tp_bapi.
-
-    LOOP AT gt_doc_proc ASSIGNING FIELD-SYMBOL(<fs_doc_proc>).
-      DATA(ls_log_dif_msg) = VALUE ztfi_log_dif_msg( bukrs = <fs_doc_proc>-bukrs
-                                                     belnr = <fs_doc_proc>-belnr
-                                                     gjahr = <fs_doc_proc>-gjahr ).
-
-      ls_log_dif_msg-contador = 0.
-
-      READ TABLE lt_log_int INTO ls_log_int WITH KEY moeda = <fs_doc_proc>-moeda
-                                                     kursf = <fs_doc_proc>-kursf
-                                                     tp_bapi = 2 BINARY SEARCH.
-
-      IF sy-subrc = 0.
-        ls_log_dif_msg-tp_bapi =  text-002.
-        ls_log_dif_msg-bukrs_cont = ls_log_int-bukrs_cont.
-        ls_log_dif_msg-belnr_cont = ls_log_int-belnr_cont.
-        ls_log_dif_msg-gjahr_cont = ls_log_int-gjahr_cont.
-        ls_log_dif_msg-bukrs_est  = ls_log_int-bukrs_est.
-        ls_log_dif_msg-belnr_est  = ls_log_int-belnr_est.
-        ls_log_dif_msg-gjahr_est  = ls_log_int-gjahr_est.
-        ADD 1 TO ls_log_dif_msg-contador.
-        APPEND ls_log_dif_msg TO gt_log_msg.
-      ENDIF.
-    ENDLOOP.
-
-    me->save_log( ).
+    IF iv_simular IS NOT SUPPLIED
+    OR iv_simular IS INITIAL.
+      me->save_log( ).
+    ENDIF.
 
   ENDMETHOD.
 

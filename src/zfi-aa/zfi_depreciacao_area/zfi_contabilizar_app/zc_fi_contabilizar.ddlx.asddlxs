@@ -89,16 +89,22 @@ annotate view ZC_FI_CONTABILIZAR with
   @Search.fuzzinessThreshold: 0.8
   peraf;
 
+  //  @UI: {  lineItem:        [ { position: 105 } ],
+  //          identification:  [ { position: 105 } ]}
+  //  ANSWL_80;
+  //  @UI: {  lineItem:        [ { position: 106 } ],
+  //          identification:  [ { position: 106 } ]}
+  //  NAFAG_80;
+  //  @UI: {  lineItem:        [ { position: 107 } ],
+  //          identification:  [ { position: 107 } ]}
+  //  Valorcont80;
+
   @UI: {  lineItem:        [ { position: 105 } ],
           identification:  [ { position: 105 } ]}
-  ANSWL_80;
+  Afabg_80;
   @UI: {  lineItem:        [ { position: 106 } ],
           identification:  [ { position: 106 } ]}
-  NAFAG_80;
-  @UI: {  lineItem:        [ { position: 107 } ],
-          identification:  [ { position: 107 } ]}
-  Valorcont80;
-
+  Afabg_01;
 
   //  @UI: {  lineItem:        [ { position: 110 } ],
   //          identification:  [ { position: 110 } ]}

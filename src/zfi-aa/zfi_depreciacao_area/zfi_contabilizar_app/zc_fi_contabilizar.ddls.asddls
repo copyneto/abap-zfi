@@ -21,25 +21,29 @@ define root view entity ZC_FI_CONTABILIZAR
       Moeda,
       @EndUserText.label: 'Depreciação Plan. Fiscal_01'
       Nafag01,
-       @EndUserText.label: 'Depreciação Plan. Fiscal_10'
+      @EndUserText.label: 'Depreciação Plan. Fiscal_10'
       Nafag10,
-       @EndUserText.label: 'Depreciação Plan. Fiscal_11'
+      @EndUserText.label: 'Depreciação Plan. Fiscal_11'
       Nafag11,
       Nafag80,
       Nafag82,
       Nafag84,
 
-      @EndUserText.label: 'Valor aquisição 80'
-      ANSWL_80,
-      @EndUserText.label: 'Depreciação acumulada 80'
-      NAFAG_80,
-      @EndUserText.label: 'Valor Contab. 80'
-      Valorcont80,
-      
+      //      @EndUserText.label: 'Valor aquisição 80'
+      //      ANSWL_80,
+      //      @EndUserText.label: 'Depreciação acumulada 80'
+      //      NAFAG_80,
+      //      @EndUserText.label: 'Valor Contab. 80'
+      //      Valorcont80,
+      @EndUserText.label: 'Dt. Início Depreciação 80'
+      Afabg_80,
+      @EndUserText.label: 'Dt. Início Depreciação 01'
+      Afabg_01,
+
       @EndUserText.label: 'Contabilizado Societário'
       Belnr,
       StatusCriticality,
-        
+
       BelnrReav,
       StatusCriticalityReav,
 
