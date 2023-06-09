@@ -75,14 +75,14 @@ private section.
     importing
       !IV_REAV type BOOLEAN optional .
   methods FILL_BAPI_REAV
-    importing
-      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+    changing
+      !CT_LINHAS type ZCTGFI_CONTAB_DEPRE .
   methods FILL_HEADER_REAV
     importing
       !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
   methods FILL_ITEMS_REAV
-    importing
-      !IT_LINHAS type ZCTGFI_CONTAB_DEPRE .
+    changing
+      !CT_LINHAS type ZCTGFI_CONTAB_DEPRE .
   methods SAVE_LOG_SUCESS_REAV
     importing
       !IT_LINHAS type ZCTGFI_CONTAB_DEPRE
@@ -113,10 +113,12 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
     CLEAR: gt_msg_ex.
 
-    fill_bapi_reav( it_linhas ).
+    DATA(lt_linhas) = it_linhas[].
 
-    exec_bapi( iv_reav = abap_true
-               it_linhas = it_linhas ).
+    fill_bapi_reav( CHANGING ct_linhas = lt_linhas ).
+
+    exec_bapi( iv_reav   = abap_true
+               it_linhas = lt_linhas ).
 
     et_return = gt_msg_ex.
 
@@ -139,7 +141,7 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
   METHOD fill_bapi.
 
-*    fill_header( ct_linhas ).
+    fill_header( ct_linhas ).
 
     fill_items( CHANGING ct_linhas = ct_linhas ).
 
@@ -246,18 +248,20 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
           lv_texto   TYPE char50,
           lv_item_no TYPE bapiacgl09-itemno_acc.
 
-    SELECT kokrs,
-           kostl,
-           prctr
-      FROM csks
-       FOR ALL ENTRIES IN @gt_items_sum
-     WHERE kokrs = @gt_items_sum-bukrs
-       AND kostl = @gt_items_sum-kostl
-      INTO TABLE @DATA(lt_result).
+    IF gt_items_sum[] IS NOT INITIAL.
+      SELECT kokrs,
+             kostl,
+             prctr
+        FROM csks
+         FOR ALL ENTRIES IN @gt_items_sum
+       WHERE kokrs = @gt_items_sum-bukrs
+         AND kostl = @gt_items_sum-kostl
+        INTO TABLE @DATA(lt_result).
 
-    IF sy-subrc IS INITIAL.
-      SORT lt_result BY kokrs
-                        kostl.
+      IF sy-subrc IS INITIAL.
+        SORT lt_result BY kokrs
+                          kostl.
+      ENDIF.
     ENDIF.
 
     CLEAR lv_item_no.
@@ -309,7 +313,7 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
                                                      gjahr = <fs_itens_key>-gjahr
                                                      BINARY SEARCH.
       IF sy-subrc IS INITIAL.
-        LOOP AT gt_items_sum ASSIGNING FIELD-SYMBOL(<fs_item>).
+        LOOP AT gt_items_sum ASSIGNING FIELD-SYMBOL(<fs_item>) FROM sy-tabix.
           IF <fs_item>-bukrs NE <fs_itens_key>-bukrs
           OR <fs_item>-gsber NE <fs_itens_key>-gsber
           OR <fs_item>-kostl NE <fs_itens_key>-kostl
@@ -359,7 +363,11 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
         ELSE.
 
-          fill_header( lt_linhas ).
+          IF iv_reav IS INITIAL.
+            fill_header( lt_linhas ).
+          ELSE.
+            fill_header_reav( lt_linhas ).
+          ENDIF.
 
           CALL FUNCTION 'BAPI_ACC_DOCUMENT_POST'
             EXPORTING
@@ -376,6 +384,8 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
             " Error ao tentar criar lançamento: &1 &2 &3 &4
             MESSAGE e001(zfi_contab_depre) WITH gs_header-comp_code
                                                 gs_header-doc_type
+                                                space
+                                                space
                                                 INTO gv_dummy.
             append_msg( ).
 
@@ -441,7 +451,11 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
     IF me->gt_acc_gl[] IS NOT INITIAL.
 
-      fill_header( lt_linhas ).
+      IF iv_reav IS INITIAL.
+        fill_header( lt_linhas ).
+      ELSE.
+        fill_header_reav( lt_linhas ).
+      ENDIF.
 
       CALL FUNCTION 'BAPI_ACC_DOCUMENT_POST'
         EXPORTING
@@ -458,6 +472,8 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
         " Error ao tentar criar lançamento: &1 &2 &3 &4
         MESSAGE e001(zfi_contab_depre) WITH gs_header-comp_code
                                             gs_header-doc_type
+                                            space
+                                            space
                                             INTO gv_dummy.
         append_msg( ).
 
@@ -819,18 +835,20 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
     DATA: lv_texto   TYPE char50,
           lv_item_no TYPE bapiacgl09-itemno_acc.
 
-    SELECT kokrs,
-           kostl,
-           prctr
-      FROM csks
-       FOR ALL ENTRIES IN @gt_items_sum
-     WHERE kokrs = @gt_items_sum-bukrs
-       AND kostl = @gt_items_sum-kostl
-      INTO TABLE @DATA(lt_result).
+    IF gt_items_sum[] IS NOT INITIAL.
+      SELECT kokrs,
+             kostl,
+             prctr
+        FROM csks
+         FOR ALL ENTRIES IN @gt_items_sum
+       WHERE kokrs = @gt_items_sum-bukrs
+         AND kostl = @gt_items_sum-kostl
+        INTO TABLE @DATA(lt_result).
 
-    IF sy-subrc IS INITIAL.
-      SORT lt_result BY kokrs
-                        kostl.
+      IF sy-subrc IS INITIAL.
+        SORT lt_result BY kokrs
+                          kostl.
+      ENDIF.
     ENDIF.
 
     CLEAR lv_item_no.
@@ -872,9 +890,9 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
   METHOD fill_bapi_reav.
 
-    fill_header_reav( it_linhas ).
+    fill_header_reav( ct_linhas ).
 
-    fill_items_reav( it_linhas ).
+    fill_items_reav( CHANGING ct_linhas = ct_linhas ).
 
   ENDMETHOD.
 
@@ -922,18 +940,25 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
   METHOD fill_items_reav.
 
-    LOOP AT it_linhas ASSIGNING FIELD-SYMBOL(<fs_linha>).
+    DATA: lt_linhas	TYPE zctgfi_contab_depre.
 
-      IF <fs_linha>-nafag10 IS INITIAL AND
-         <fs_linha>-nafag11 IS INITIAL.
+    LOOP AT ct_linhas ASSIGNING FIELD-SYMBOL(<fs_linha>).
 
-        "Valores de ajustes zerados. &1 &2
-        MESSAGE w004(zfi_contab_depre) WITH <fs_linha>-anlkl <fs_linha>-anln1 <fs_linha>-anln2 INTO gv_dummy.
+      IF <fs_linha>-nafag10 IS INITIAL
+     AND <fs_linha>-nafag11 IS INITIAL.
+
+        " Valores de ajustes zerados. &1 &2
+        MESSAGE w004(zfi_contab_depre) WITH <fs_linha>-anlkl
+                                            <fs_linha>-anln1
+                                            <fs_linha>-anln2
+                                            INTO gv_dummy.
         append_msg( ).
 
         CONTINUE.
 
       ENDIF.
+
+      APPEND <fs_linha> TO lt_linhas.
 
 *      fill_item_01_reav( <fs_linha> ).
       fill_item_10_reav( <fs_linha> ).
@@ -941,7 +966,9 @@ CLASS ZCLFI_CONTAB_DEPRE_UTIL IMPLEMENTATION.
 
     ENDLOOP.
 
-    fill_item_bapi( iv_reav = abap_true  ).
+    ct_linhas = lt_linhas.
+
+*    fill_item_bapi( iv_reav = abap_true  ).
 
   ENDMETHOD.
 

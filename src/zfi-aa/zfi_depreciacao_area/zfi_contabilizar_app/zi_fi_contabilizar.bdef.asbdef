@@ -6,9 +6,8 @@ lock master
 etag master Bukrs
 {
 
-
-  action ( features : instance ) contab ;
-  action ( features : instance ) reav ;
+  action ( features : instance ) contab;
+  action ( features : instance ) reav;
 
   mapping for ZTFI_CONTAB_LOG
   {

@@ -34,6 +34,8 @@ CLASS lcl_depre IMPLEMENTATION.
 *        RESULT DATA(lt_depre)
 *        FAILED failed.
 
+    CHECK keys[] IS NOT INITIAL.
+
     SELECT bukrs,
            anln1,
            anln2,
@@ -123,55 +125,110 @@ CLASS lcl_depre IMPLEMENTATION.
 
     WAIT UNTIL gv_wait_async = abap_true.
 
-    LOOP AT lt_depre ASSIGNING FIELD-SYMBOL(<fs_depre2>).
-*    READ TABLE lt_depre ASSIGNING FIELD-SYMBOL(<fs_depre2>) INDEX 1.
+*    LOOP AT lt_depre ASSIGNING FIELD-SYMBOL(<fs_depre2>).
+*    IF sy-tabix = 1.
 
-      IF sy-tabix = 1.
-        IF line_exists( gt_messages[ type = 'E' ] ).     "#EC CI_STDSEQ
-*          APPEND VALUE #(  %tky = <fs_depre2>-%tky ) TO failed-_depre.
-          APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
-                          anln1  = <fs_depre2>-anln1
-                          anln2  = <fs_depre2>-anln2
-                          anlkl  = <fs_depre2>-anlkl
-                          gsber  = <fs_depre2>-gsber
-                          kostl  = <fs_depre2>-kostl
-                          gjahr  = <fs_depre2>-gjahr
-                          peraf  = <fs_depre2>-peraf ) TO failed-_depre.
+*    READ TABLE lt_depre ASSIGNING FIELD-SYMBOL(<fs_depre2>) INDEX 1.
+*    IF line_exists( gt_messages[ type = 'E' ] ).         "#EC CI_STDSEQ
+**          APPEND VALUE #(  %tky = <fs_depre2>-%tky ) TO failed-_depre.
+*      APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
+*                      anln1  = <fs_depre2>-anln1
+*                      anln2  = <fs_depre2>-anln2
+*                      anlkl  = <fs_depre2>-anlkl
+*                      gsber  = <fs_depre2>-gsber
+*                      kostl  = <fs_depre2>-kostl
+*                      gjahr  = <fs_depre2>-gjahr
+*                      peraf  = <fs_depre2>-peraf ) TO failed-_depre.
+*    ENDIF.
+*
+*    LOOP AT gt_messages INTO DATA(ls_message).           "#EC CI_NESTED
+*
+**      APPEND VALUE #( %tky        = <fs_depre2>-%tky
+*      APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
+**                      anln1  = <fs_depre2>-anln1
+**                      anln2  = <fs_depre2>-anln2
+**                      anlkl  = <fs_depre2>-anlkl
+**                      gsber  = <fs_depre2>-gsber
+**                      kostl  = <fs_depre2>-kostl
+**                      gjahr  = <fs_depre2>-gjahr
+**                      peraf  = <fs_depre2>-peraf
+*                      %msg   = new_message( id       = ls_message-id
+*                                            number   = ls_message-number
+*                                            v1       = ls_message-message_v1
+*                                            v2       = ls_message-message_v2
+*                                            v3       = ls_message-message_v3
+*                                            v4       = ls_message-message_v4
+*                                            severity = SWITCH #( ls_message-type WHEN 'W' OR 'E'
+*                                                                                  THEN CONV #( 'I' )
+*                                                                                 ELSE CONV #( ls_message-type ) )
+*                      ) )
+*       TO reported-_depre.
+*
+*    ENDLOOP.
+
+    READ TABLE lt_depre ASSIGNING FIELD-SYMBOL(<fs_depre2>) INDEX 1.
+
+    IF line_exists( gt_messages[ type = 'E' ] ).
+
+      LOOP AT gt_messages ASSIGNING FIELD-SYMBOL(<fs_message>).
+        IF <fs_message>-type NE 'E'.
+          CONTINUE.
         ENDIF.
 
-        LOOP AT gt_messages INTO DATA(ls_message).       "#EC CI_NESTED
+        APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
+                        anln1  = <fs_depre2>-anln1
+                        anln2  = <fs_depre2>-anln2
+                        anlkl  = <fs_depre2>-anlkl
+                        gsber  = <fs_depre2>-gsber
+                        kostl  = <fs_depre2>-kostl
+                        gjahr  = <fs_depre2>-gjahr
+                        peraf  = <fs_depre2>-peraf
+                        %msg   = new_message( id       = <fs_message>-id
+                                              number   = <fs_message>-number
+                                              v1       = <fs_message>-message_v1
+                                              v2       = <fs_message>-message_v2
+                                              v3       = <fs_message>-message_v3
+                                              v4       = <fs_message>-message_v4
+                                              severity = CONV #( 'I' )
+                       ) ) TO reported-_depre.
 
-*          APPEND VALUE #( %tky        = <fs_depre2>-%tky
-          APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
-                         anln1  = <fs_depre2>-anln1
-                         anln2  = <fs_depre2>-anln2
-                         anlkl  = <fs_depre2>-anlkl
-                         gsber  = <fs_depre2>-gsber
-                         kostl  = <fs_depre2>-kostl
-                         gjahr  = <fs_depre2>-gjahr
-                         peraf  = <fs_depre2>-peraf
-                         %msg   = new_message( id       = ls_message-id
-                                               number   = ls_message-number
-                                               v1       = ls_message-message_v1
-                                               v2       = ls_message-message_v2
-                                               v3       = ls_message-message_v3
-                                               v4       = ls_message-message_v4
-                                               severity = SWITCH  #( ls_message-type WHEN 'W' OR 'E'
-                                                                                       THEN CONV #( 'I' )
-                                                                                     ELSE CONV #( ls_message-type )  )
-                          ) )
-           TO reported-_depre.
+      ENDLOOP.
 
-        ENDLOOP.
-*
+    ELSE.
+
+      LOOP AT gt_messages ASSIGNING <fs_message>.
+
+        APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
+                        anln1  = <fs_depre2>-anln1
+                        anln2  = <fs_depre2>-anln2
+                        anlkl  = <fs_depre2>-anlkl
+                        gsber  = <fs_depre2>-gsber
+                        kostl  = <fs_depre2>-kostl
+                        gjahr  = <fs_depre2>-gjahr
+                        peraf  = <fs_depre2>-peraf
+                        %msg   = new_message( id       = <fs_message>-id
+                                              number   = <fs_message>-number
+                                              v1       = <fs_message>-message_v1
+                                              v2       = <fs_message>-message_v2
+                                              v3       = <fs_message>-message_v3
+                                              v4       = <fs_message>-message_v4
+                                              severity = SWITCH #( <fs_message>-type WHEN 'W'
+                                                                                      THEN CONV #( 'I' )
+                                                                                     ELSE CONV #( <fs_message>-type ) )
+                        ) ) TO reported-_depre.
+
+      ENDLOOP.
+
+    ENDIF.
+
 *      ELSE.
 *
 *        APPEND VALUE #( %tky        = <fs_depre2>-%tky )
 *        TO reported-_depre.
 
-      ENDIF.
+*    ENDIF.
 
-    ENDLOOP.
+*    ENDLOOP.
 
 
   ENDMETHOD.
@@ -184,12 +241,8 @@ CLASS lcl_depre IMPLEMENTATION.
       RESULT DATA(lt_header)
       FAILED failed.
 
-    result =
-         VALUE #(
-         FOR ls_header IN lt_header
-             ( %tky              = ls_header-%tky
-              ) ).
-
+    result = VALUE #( FOR ls_header IN lt_header
+                    ( %tky = ls_header-%tky ) ).
 
   ENDMETHOD.
 
@@ -252,26 +305,81 @@ CLASS lcl_depre IMPLEMENTATION.
 
     READ TABLE lt_depre ASSIGNING FIELD-SYMBOL(<fs_depre2>) INDEX 1.
 
-    IF line_exists( gt_messages[ type = 'E' ] ).         "#EC CI_STDSEQ
-      APPEND VALUE #(  %tky = <fs_depre2>-%tky ) TO failed-_depre.
+    IF line_exists( gt_messages[ type = 'E' ] ).
+
+      LOOP AT gt_messages ASSIGNING FIELD-SYMBOL(<fs_message>).
+        IF <fs_message>-type NE 'E'.
+          CONTINUE.
+        ENDIF.
+
+        APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
+                        anln1  = <fs_depre2>-anln1
+                        anln2  = <fs_depre2>-anln2
+                        anlkl  = <fs_depre2>-anlkl
+                        gsber  = <fs_depre2>-gsber
+                        kostl  = <fs_depre2>-kostl
+                        gjahr  = <fs_depre2>-gjahr
+                        peraf  = <fs_depre2>-peraf
+                        %msg   = new_message( id       = <fs_message>-id
+                                              number   = <fs_message>-number
+                                              v1       = <fs_message>-message_v1
+                                              v2       = <fs_message>-message_v2
+                                              v3       = <fs_message>-message_v3
+                                              v4       = <fs_message>-message_v4
+                                              severity = CONV #( 'I' )
+                       ) ) TO reported-_depre.
+
+      ENDLOOP.
+
+    ELSE.
+
+      LOOP AT gt_messages ASSIGNING <fs_message>.
+
+        APPEND VALUE #( bukrs  = <fs_depre2>-bukrs
+                        anln1  = <fs_depre2>-anln1
+                        anln2  = <fs_depre2>-anln2
+                        anlkl  = <fs_depre2>-anlkl
+                        gsber  = <fs_depre2>-gsber
+                        kostl  = <fs_depre2>-kostl
+                        gjahr  = <fs_depre2>-gjahr
+                        peraf  = <fs_depre2>-peraf
+                        %msg   = new_message( id       = <fs_message>-id
+                                              number   = <fs_message>-number
+                                              v1       = <fs_message>-message_v1
+                                              v2       = <fs_message>-message_v2
+                                              v3       = <fs_message>-message_v3
+                                              v4       = <fs_message>-message_v4
+                                              severity = SWITCH #( <fs_message>-type WHEN 'W'
+                                                                                      THEN CONV #( 'I' )
+                                                                                     ELSE CONV #( <fs_message>-type ) )
+                        ) ) TO reported-_depre.
+
+      ENDLOOP.
+
     ENDIF.
 
-    LOOP AT gt_messages INTO DATA(ls_message).           "#EC CI_NESTED
-
-      APPEND VALUE #( %tky        = <fs_depre2>-%tky
-                      %msg        = new_message( id       = ls_message-id
-                                                 number   = ls_message-number
-                                                 v1       = ls_message-message_v1
-                                                 v2       = ls_message-message_v2
-                                                 v3       = ls_message-message_v3
-                                                 v4       = ls_message-message_v4
-                                                 severity = SWITCH  #( ls_message-type
-                                                                                WHEN 'W' THEN CONV #( 'I' )
-                                                                                ELSE CONV #( ls_message-type )  )
-                       ) )
-        TO reported-_depre.
-
-    ENDLOOP.
+*    READ TABLE lt_depre ASSIGNING FIELD-SYMBOL(<fs_depre2>) INDEX 1.
+*
+*    IF line_exists( gt_messages[ type = 'E' ] ).         "#EC CI_STDSEQ
+*      APPEND VALUE #(  %tky = <fs_depre2>-%tky ) TO failed-_depre.
+*    ENDIF.
+*
+*    LOOP AT gt_messages INTO DATA(ls_message).           "#EC CI_NESTED
+*
+*      APPEND VALUE #( %tky        = <fs_depre2>-%tky
+*                      %msg        = new_message( id       = ls_message-id
+*                                                 number   = ls_message-number
+*                                                 v1       = ls_message-message_v1
+*                                                 v2       = ls_message-message_v2
+*                                                 v3       = ls_message-message_v3
+*                                                 v4       = ls_message-message_v4
+*                                                 severity = SWITCH  #( ls_message-type
+*                                                                                WHEN 'W' THEN CONV #( 'I' )
+*                                                                                ELSE CONV #( ls_message-type )  )
+*                       ) )
+*        TO reported-_depre.
+*
+*    ENDLOOP.
 
 
   ENDMETHOD.
