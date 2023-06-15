@@ -955,6 +955,12 @@ CLASS ZCLFI_GERAR_BOLETO IMPLEMENTATION.
 
     ENDLOOP.
 
+* LSCHEPP - 8000008253 - Erro impressão em massa pagamento boleto - 14.06.2023 Início
+    IF lines( it_key ) NE lines( lt_key ).
+      lt_key = it_key.
+    ENDIF.
+* LSCHEPP - 8000008253 - Erro impressão em massa pagamento boleto - 14.06.2023 Fim
+
     IF lines( lt_key ) > 0.
 
       LOOP AT lt_key ASSIGNING FIELD-SYMBOL(<fs_key>).
