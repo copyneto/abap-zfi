@@ -1,4 +1,4 @@
-@EndUserText.label: 'Def. Serviço'
+@EndUserText.label: 'Parâmetro Imobilizado'
 define service ZUI_QUADRO_IMOB {
   expose ZC_FI_PARAM_IMOB;
 }

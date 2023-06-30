@@ -16,20 +16,25 @@ annotate view ZC_FI_LOGCONCRED with
                  label:         'Parâmetros',
                  position:      10 }]
   @UI: { lineItem:        [ { position: 10, label: 'Empresa' } ],
-         identification:  [ { position: 10, label: 'Empresa' } ] }
+         identification:  [ { position: 10, label: 'Empresa' } ],
+         selectionField:  [ { position: 10 } ]  }
   bukrs;
   @UI: { lineItem:        [ { position: 20, label: 'Cliente' } ],
-         identification:  [ { position: 20, label: 'Cliente' } ] }
+         identification:  [ { position: 20, label: 'Cliente' } ],
+         selectionField:  [ { position: 20 } ]  }
   kunnr;
   @UI: { lineItem:        [ { position: 30, label: 'Doc. Concessão' } ],
-         identification:  [ { position: 30, label: 'Doc. Concessão' } ] }
+         identification:  [ { position: 30, label: 'Doc. Concessão' } ],
+         selectionField:  [ { position: 30 } ]  }
   zdoccon;
   @UI: { lineItem:        [ { position: 40, label: 'Item Doc. Concessão' } ],
-         identification:  [ { position: 40, label: 'Item Doc. Concessão' } ] }
+         identification:  [ { position: 40, label: 'Item Doc. Concessão' } ],
+         selectionField:  [ { position: 40 } ]  }
   zitemdoccon;
   @UI: { lineItem:        [ { position: 50, label: 'Exercicio Doc. Concessão' } ],
-         identification:  [ { position: 50, label: 'Exercicio Doc. Concessão' } ] }
-  zexerciciodoccon;  
+         identification:  [ { position: 50, label: 'Exercicio Doc. Concessão' } ],
+         selectionField:  [ { position: 50 } ]  }
+  zexerciciodoccon;
   @UI: { lineItem:        [ { position: 60, label: 'Doc. Fatura' } ],
          identification:  [ { position: 60, label: 'Doc. Fatura' } ] }
   zfatura;
@@ -38,7 +43,7 @@ annotate view ZC_FI_LOGCONCRED with
   zitemfatura;
   @UI: { lineItem:        [ { position: 80, label: 'Exercício Fatura' } ],
          identification:  [ { position: 80, label: 'Exercício Fatura' } ] }
-  zexerciciofatura;  
+  zexerciciofatura;
   @UI: { lineItem:        [ { position: 90, label: 'Doc. Crédito' } ],
          identification:  [ { position: 90, label: 'Doc. Crédito' } ] }
   zcredito;
@@ -47,7 +52,7 @@ annotate view ZC_FI_LOGCONCRED with
   zitemcredito;
   @UI: { lineItem:        [ { position: 110, label: 'Exercicio Doc. Crédito' } ],
          identification:  [ { position: 110, label: 'Exercicio Doc. Crédito' } ] }
-  zexerciciocredito;  
+  zexerciciocredito;
   @UI: { lineItem:        [ { position: 120, label: 'CNPJ' } ],
          identification:  [ { position: 120, label: 'CNPJ' } ] }
   stcd1;
