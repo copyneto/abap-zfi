@@ -5,7 +5,7 @@
 *&---------------------------------------------------------------------*
 REPORT zsdr_validacao_estoq_saldo.
 
-TABLES: mseg.
+TABLES: mseg, acdoca.
 
 TYPES: BEGIN OF ty_result,
          empresa               TYPE mseg-bukrs,
@@ -91,7 +91,8 @@ SELECTION-SCREEN: BEGIN OF BLOCK b1 WITH FRAME TITLE teste.
     s_tpmov   FOR mseg-bwart NO INTERVALS,      "*Tipo de Movimento (MSEG-BWART)
     s_docmat  FOR mseg-mblnr NO INTERVALS,      "*Documento de Material (MSEG-MBLNR)
     s_anodoc  FOR mseg-mjahr,                   "*Ano Doc. Material (MSEG-MJAHR)
-    s_usu     FOR mseg-usnam_mkpf NO INTERVALS. "*Usuário (MSEG-USNAM_MKPF)
+    s_usu     FOR mseg-usnam_mkpf NO INTERVALS, "*Usuário (MSEG-USNAM_MKPF)
+    s_blart   FOR acdoca-blart NO INTERVALS.    "Tipo de documento (somente para ACDOCA)
 
 SELECTION-SCREEN: END OF BLOCK b1.
 
@@ -150,6 +151,7 @@ FORM f_obter_dados.
       WHERE awref = @gt_mseg-mblnr
         AND gjahr = @gt_mseg-mjahr
         AND rldnr = '0L'
+        AND blart IN @s_blart
      INTO CORRESPONDING FIELDS OF TABLE @gt_acdoca.
 
     IF sy-subrc IS INITIAL.

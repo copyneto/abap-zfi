@@ -1,10 +1,10 @@
 @Metadata.layer: #CORE
-@UI.headerInfo: { title:{ label: 'Retirar Blqueios', value: 'bukrs' },
+@UI.headerInfo: { title:{ label: 'Retirar Bloqueios', value: 'belnr' },
                   description: {
     type: #STANDARD,
-    value: 'bukrs' },
-                  typeName: 'Retirar Blqueios',
-                  typeNamePlural: 'Retirar Blqueios' }
+    value: 'belnr' },
+                  typeName: 'Retirar Bloqueios',
+                  typeNamePlural: 'Retirar Bloqueios' }
 annotate entity ZC_RET_BLOQ with
 {
   @UI.lineItem: [{ position: 10 },

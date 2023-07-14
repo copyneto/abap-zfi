@@ -110,16 +110,20 @@ FUNCTION zfmfi_ret_bloq.
       bdc_errors = 1
       OTHERS     = 2.
 
-  IF sy-subrc IS INITIAL
-    AND sy-batch IS NOT INITIAL.
+  IF sy-subrc IS NOT INITIAL.
 
     "Erro ao tentar retirar bloqueio: &1 &2 &3
-    et_return = VALUE #( (  id       = gc_zfi_cont_rcb
-                            number   = 013
-                            type = gc_e )
-                          (  id       = gc_zfi_cont_rcb
-                            number   = 014
-                            type = gc_s ) ).
+    et_return = VALUE #( (  id       = sy-msgid
+                            number   = sy-msgno
+                            type = gc_e
+                            message_v1 = sy-msgv1
+                            message_v2 = sy-msgv2
+                            message_v3 = sy-msgv3
+                            message_v4 = sy-msgv4 )
+**                          (  id       = gc_zfi_cont_rcb
+**                            number   = 014
+**                            type = gc_s )
+                             ).
   ELSE.
 
     "Documento &1 &2 &3 retirado bloqueio.
@@ -129,9 +133,10 @@ FUNCTION zfmfi_ret_bloq.
                             message_v1 = is_linha-bukrs
                             message_v2 = is_linha-belnr
                             message_v3 = is_linha-gjahr )
-                          (  id       = gc_zfi_cont_rcb
-                            number   = 014
-                            type = gc_s ) ).
+**                          (  id       = gc_zfi_cont_rcb
+**                            number   = 014
+**                            type = gc_s )
+                             ).
   ENDIF.
 
   CLEAR:  lt_fldtab,  lt_buztab, ls_bseg, lt_errtab.

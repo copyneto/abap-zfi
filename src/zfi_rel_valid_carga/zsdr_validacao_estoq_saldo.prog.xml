@@ -29,6 +29,12 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>S_BLART</KEY>
+     <ENTRY>Tipo de Documento</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>S_DOCMAT</KEY>
      <ENTRY>Doc. Material</ENTRY>
      <LENGTH>21</LENGTH>

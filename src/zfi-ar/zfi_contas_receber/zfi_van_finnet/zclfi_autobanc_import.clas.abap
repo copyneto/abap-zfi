@@ -167,7 +167,7 @@ ENDCLASS.
 
 
 
-CLASS zclfi_autobanc_import IMPLEMENTATION.
+CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
 
 
   METHOD get_directory_to_import.
@@ -686,7 +686,9 @@ CLASS zclfi_autobanc_import IMPLEMENTATION.
         outros   TYPE ztfi_autbanc_dir-tipo VALUE '05',
       END OF lc_tipo_dir.
 
-    DATA: lt_file     TYPE STANDARD TABLE OF x.
+    DATA: lt_file      TYPE STANDARD TABLE OF x,
+          lt_dir_types TYPE zclfi_autobanc_import=>tt_directory.
+
 
     DATA: ls_file     LIKE LINE OF lt_file.
 
@@ -694,6 +696,7 @@ CLASS zclfi_autobanc_import IMPLEMENTATION.
           lv_fileproc TYPE string,
           lv_file     TYPE string,
           lv_tipo     TYPE zi_fi_autobanc_diretorios-tipo.
+
 
     DATA(lv_tam) = strlen( is_import_file-diretorio ) - 1.
 
@@ -724,13 +727,17 @@ CLASS zclfi_autobanc_import IMPLEMENTATION.
     ENDIF.
 
     IF NOT lt_file IS INITIAL.
+* pferraz - Ajustes ordenação diretorios - 13.07.23 - inicio
+      lt_dir_types = it_dir_types.
+      SORT: lt_dir_types BY tipo.
+* pferraz - Ajustes ordenação diretorios - 13.07.23 - fim
 
       lv_tipo = SWITCH #( is_import_file-name(3)
                           WHEN gc_tipo_arq-cobranca THEN lc_tipo_dir-cobranca
                           WHEN gc_tipo_arq-ext THEN lc_tipo_dir-extrato
                           ELSE lc_tipo_dir-outros ) .
 
-      READ TABLE it_dir_types ASSIGNING FIELD-SYMBOL(<fs_dir_type>)
+      READ TABLE lt_dir_types ASSIGNING FIELD-SYMBOL(<fs_dir_type>)
         WITH KEY tipo = lv_tipo
 *                CompanyCode = is_import_file-CompanyCode
         BINARY SEARCH.
@@ -775,7 +782,8 @@ CLASS zclfi_autobanc_import IMPLEMENTATION.
       END OF lc_tipo_dir.
 
 
-    DATA: lt_file     TYPE STANDARD TABLE OF x.
+    DATA: lt_file      TYPE STANDARD TABLE OF x,
+          lt_dir_types TYPE zclfi_autobanc_import=>tt_directory.
 
     DATA: ls_file     LIKE LINE OF lt_file.
 
@@ -806,13 +814,18 @@ CLASS zclfi_autobanc_import IMPLEMENTATION.
 
     IF NOT lt_file IS INITIAL.
 
+* pferraz - Ajustes ordenação diretorios - 13.07.23 - inicio
+      lt_dir_types = it_dir_types.
+      SORT: lt_dir_types BY tipo.
+* pferraz - Ajustes ordenação diretorios - 13.07.23 - fim
+
       lv_tipo = SWITCH #( is_import_file-name(3)
                           WHEN gc_tipo_arq-cobranca THEN lc_tipo_dir-cobranca
                           WHEN gc_tipo_arq-ext THEN lc_tipo_dir-extrato
                           ELSE lc_tipo_dir-outros ) .
 
-      READ TABLE it_dir_types ASSIGNING FIELD-SYMBOL(<fs_dir_type>)
-        WITH KEY companycode = is_import_file-companycode
+      READ TABLE lt_dir_types ASSIGNING FIELD-SYMBOL(<fs_dir_type>)
+        WITH KEY "companycode = is_import_file-companycode
                  tipo = lv_tipo
         BINARY SEARCH.
       IF sy-subrc EQ 0.
