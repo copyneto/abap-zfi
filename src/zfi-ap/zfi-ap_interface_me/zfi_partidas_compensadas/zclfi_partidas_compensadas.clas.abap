@@ -218,7 +218,7 @@ CLASS ZCLFI_PARTIDAS_COMPENSADAS IMPLEMENTATION.
           IF sy-subrc EQ 0.
 
             TRY.
-                NEW zclca_tabela_parametros( )->m_get_single(
+                zclca_tabela_parametros=>get_instance( )->m_get_single( " CHANGE - LSCHEPP - 20.07.2023
                             EXPORTING
                               iv_modulo = gc_values-fiap
                               iv_chave1 = gc_values-deducoes

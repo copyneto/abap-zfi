@@ -66,6 +66,12 @@ INCLUDE: rfforib3.
 *----------------------------------------------------------------------*
 FORM dme_brazil.
 
+* pferraz - Ajustes split lote bradesco - 20.07.23 - inicio
+*    AT NEW regud-xeinz.
+  DATA lv_zbnkl_trailer TYPE c LENGTH 3.
+  DATA lv_zbnkl TYPE c LENGTH 3.
+* pferraz - Ajustes split lote bradesco - 20.07.23 - fim
+
   TABLES:
     bsec,
     t012a,
@@ -283,7 +289,18 @@ FORM dme_brazil.
 *---Begin of Lot header-------------------------------------------------
 *   Payment form: CC, DOC, OP, Titulo Itau or Titulo outro banco-----
 *   If payment or credit note
-    AT NEW regud-xeinz.
+* pferraz - Ajustes split lote bradesco - 20.07.23 - inicio
+*    AT NEW regud-xeinz.
+
+    IF lv_zbnkl <> reguh-zbnkl(3).
+
+      IF lv_zbnkl IS NOT INITIAL.
+        PERFORM f_trailer_lote.
+      ENDIF.
+
+      lv_zbnkl = reguh-zbnkl(3).
+
+* pferraz - Ajustes split lote bradesco - 20.07.23 - fim
       CASE reguh-ubnkl(3).
         WHEN '237'.
           IF par_brla EQ '240'.
@@ -654,7 +671,10 @@ FORM dme_brazil.
 *---------End of Lot header---------------------------------------------
 
       ENDCASE.
-    ENDAT.
+* pferraz - Ajustes split lote bradesco - 20.07.23 - inicio
+*    ENDAT.
+    ENDIF.
+* pferraz - Ajustes split lote bradesco - 20.07.23 - FIM
 
 *-- Neue Empfängerbank -------------------------------------------------
     AT NEW reguh-zbnkl.
@@ -841,7 +861,19 @@ FORM dme_brazil.
               j_1bdmexa-a07 = '00'.
               IF reguh-rzawe = 'U'.
                 j_1bdmexa-a08 = '000'.
+* pferraz - ajustes BB risco sacado - 21.07.23 - inicio
+              ELSEIF reguh-rzawe = 'R'.
+
+                IF reguh-zbnkl(3) <> '001'
+                  AND j_1bdmexh2-h206 = '03'.
+                  j_1bdmexa-a08 = '018'.
+                ENDIF.
+
+* pferraz - ajustes BB risco sacado - 21.07.23 - fim
               ENDIF.
+
+
+
             ELSEIF reguh-ubnkl(3) = '745'.
               j_1bdmexa-a07 = '09'.
               IF reguh-rzawe = 'R'.
@@ -1033,6 +1065,7 @@ FORM dme_brazil.
     ENDAT.
 *---END SINGLE ITEMS----------------------------------------------------
 
+* pferraz - Ajustes split lote bradesco - 20.07.23 - inicio
     AT END OF regud-xeinz.
 
       CASE reguh-ubnkl(3).
@@ -1071,6 +1104,7 @@ FORM dme_brazil.
 *  ---End lot trailer--------------------------------------------------
       ENDCASE.
     ENDAT.
+* pferraz - Ajustes split lote bradesco - 20.07.23 - fim
 
 *-- end of account of house bank----------------------------------------
     AT END OF reguh-ubknt.
@@ -4407,7 +4441,7 @@ FORM fill_bradesco_5  USING p_1bdmexb TYPE j_1bdmexb.
   zsfi_j_1bdmex5-501 = p_1bdmexb-b01.
   zsfi_j_1bdmex5-502 = p_1bdmexb-b02.
   zsfi_j_1bdmex5-503 = '3'.
-  zsfi_j_1bdmex5-504 = p_1bdmexb-b03.
+  zsfi_j_1bdmex5-504 = cnt_rec_detail.
   zsfi_j_1bdmex5-505 = '5'.
   zsfi_j_1bdmex5-509 = '001'.
   PERFORM f_trata_city_a16 CHANGING zsfi_j_1bdmex5-510.
@@ -4440,3 +4474,60 @@ FORM f_trata_033_a16  CHANGING p_char10.
   p_char10 = lv_number .
 
 ENDFORM.
+
+* pferraz - Ajustes split lote bradesco - 20.07.23 - inicio
+*&---------------------------------------------------------------------*
+*& Form f_trailer_lote
+*&---------------------------------------------------------------------*
+*& text
+*&---------------------------------------------------------------------*
+*& -->  p1        text
+*& <--  p2        text
+*&---------------------------------------------------------------------*
+FORM f_trailer_lote .
+
+*  IF lv_zbnkl_trailer <> reguh-zbnkl(3).
+*    lv_zbnkl_trailer = reguh-zbnkl(3).
+
+  CASE reguh-ubnkl(3).
+    WHEN '237'.
+      IF par_brla EQ '240'.
+        PERFORM fill_lot_trailer_bradesco240.
+      ENDIF.
+    WHEN OTHERS.                   "Itau, Febraban
+*---Fill lot trailer----------------------------------------------------
+
+*         J_1BDMEXT2-J_1BCRLF = UP_CRLF.
+*          j_1bdmext2-j_1bcrlf = cr_lf.
+      j_1bdmext2-t201   = reguh-ubnkl(3).          " '341' for ITAU
+      j_1bdmext2-t202   = cnt_lot.
+      j_1bdmext2-t203   = '5'.
+      j_1bdmext2-t204   = space.
+
+*         Count record number per lot plus lot header and trailer
+      j_1bdmext2-t205   = cnt_rec_perlot + 2.
+
+*         Total per lot
+      j_1bdmext2-t206   = total_perlot.              "t206 is num18
+
+**        CLEAR: nlstr.
+**        j_1bdmext2-t207   = nlstr.
+      CLEAR: j_1bdmext2-t207.
+
+      IF reguh-ubnkl(3) NE '341'. "AND PAR_FBLA = '030'. note 2729322
+        j_1bdmext2-t208(6) = '000000'.            "note 0391260
+      ENDIF.                                      "note 0391260
+
+      CLEAR:
+      "j_1bdmext2-t208, note 2729322
+      j_1bdmext2-t209.
+
+      PERFORM store_on_file USING j_1bdmext2.
+      PERFORM cr_lf.
+*  ---End lot trailer--------------------------------------------------
+  ENDCASE.
+*  ENDIF.
+
+
+ENDFORM.
+* pferraz - Ajustes split lote bradesco - 20.07.23 - fim

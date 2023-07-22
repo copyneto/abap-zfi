@@ -409,7 +409,7 @@ CLASS ZCLFI_AUTOMATIZACAO_BANCARIA IMPLEMENTATION.
 
   METHOD gravar_saida.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     DATA(lv_gap_ativo) = VALUE abap_bool(  ).
 
@@ -844,7 +844,7 @@ CLASS ZCLFI_AUTOMATIZACAO_BANCARIA IMPLEMENTATION.
 
   METHOD exec_proposal.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     DATA(lv_gap_ativo) = VALUE abap_bool(  ).
 

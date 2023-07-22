@@ -328,7 +328,7 @@ CLASS ZCLFI_DIFERIMENTO_RECEITA IMPLEMENTATION.
 
     DATA: lr_range TYPE RANGE OF i.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = me->gc_modulo "#EC CI_SROFC_NESTED

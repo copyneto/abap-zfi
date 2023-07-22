@@ -91,7 +91,8 @@ ENDCLASS.
 
 
 
-CLASS zclfi_variacao_cambial_refhd IMPLEMENTATION.
+CLASS ZCLFI_VARIACAO_CAMBIAL_REFHD IMPLEMENTATION.
+
 
   METHOD execute.
 
@@ -139,6 +140,7 @@ CLASS zclfi_variacao_cambial_refhd IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD tratar_aval_cliente.
 
     SELECT SINGLE
@@ -168,12 +170,13 @@ CLASS zclfi_variacao_cambial_refhd IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD tratar_conta_razao.
 
     DATA:
       lr_contas_validas TYPE RANGE OF bseg-hkont.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range(
@@ -221,6 +224,7 @@ CLASS zclfi_variacao_cambial_refhd IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD constructor.
 
     CONSTANTS:
@@ -245,5 +249,4 @@ CLASS zclfi_variacao_cambial_refhd IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
-
 ENDCLASS.

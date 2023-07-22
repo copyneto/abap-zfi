@@ -1185,7 +1185,7 @@ CLASS ZCLFI_PROG_CONC_CRED IMPLEMENTATION.
                lc_docpdc  TYPE ztca_param_par-chave2 VALUE 'TIPODOC_PDC',
                lc_docdev  TYPE ztca_param_par-chave2 VALUE 'TIPODOC_DEVOLUCAO'.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
 

@@ -29,7 +29,7 @@ ENDCLASS.
 
 
 
-CLASS zclfi_retomar_aprovacao IMPLEMENTATION.
+CLASS ZCLFI_RETOMAR_APROVACAO IMPLEMENTATION.
 
 
   METHOD checar_autorizacao.
@@ -150,10 +150,11 @@ CLASS zclfi_retomar_aprovacao IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD check_status_contrato.
 
     DATA lv_nivel TYPE ze_nivel_aprov_cc.
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
     TRY.
         lo_param->m_get_single(
           EXPORTING
@@ -180,5 +181,4 @@ CLASS zclfi_retomar_aprovacao IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
-
 ENDCLASS.

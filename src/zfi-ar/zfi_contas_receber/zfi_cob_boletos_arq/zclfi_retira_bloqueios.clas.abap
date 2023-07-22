@@ -152,7 +152,7 @@ CLASS ZCLFI_RETIRA_BLOQUEIOS IMPLEMENTATION.
           lr_BLART TYPE RANGE OF blart.
 
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = me->gc_modulo
@@ -230,7 +230,7 @@ CLASS ZCLFI_RETIRA_BLOQUEIOS IMPLEMENTATION.
 
     DATA lv_dif TYPE fahztd.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     DATA lr_horas TYPE RANGE OF fahztd.
 

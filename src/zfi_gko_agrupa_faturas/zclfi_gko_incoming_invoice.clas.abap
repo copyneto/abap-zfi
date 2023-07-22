@@ -1606,7 +1606,7 @@ CLASS ZCLFI_GKO_INCOMING_INVOICE IMPLEMENTATION.
 
   METHOD get_document_type.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_single( EXPORTING iv_modulo = 'FI-AP'
@@ -1623,7 +1623,7 @@ CLASS ZCLFI_GKO_INCOMING_INVOICE IMPLEMENTATION.
 
   METHOD get_account_discount.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_single( EXPORTING iv_modulo = 'FI-AP'

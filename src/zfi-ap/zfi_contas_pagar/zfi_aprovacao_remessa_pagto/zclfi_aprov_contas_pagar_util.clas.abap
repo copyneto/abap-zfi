@@ -1079,7 +1079,7 @@ CLASS ZCLFI_APROV_CONTAS_PAGAR_UTIL IMPLEMENTATION.
     ENDIF.
 
     TRY.
-        NEW  zclca_tabela_parametros( )->m_get_range(
+        zclca_tabela_parametros=>get_instance( )->m_get_range( " CHANGE - LSCHEPP - 20.07.2023
           EXPORTING
             iv_modulo = 'FI-AP'
             iv_chave1 = 'NAOARQUIVO'

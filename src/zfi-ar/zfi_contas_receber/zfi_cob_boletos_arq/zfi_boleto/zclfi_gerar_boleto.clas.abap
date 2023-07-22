@@ -591,7 +591,7 @@ CLASS ZCLFI_GERAR_BOLETO IMPLEMENTATION.
 
     DATA lr_banco TYPE RANGE OF hbkid.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     DATA lv_operacao.
     DATA: lv_digv(2), lv_agencia(5).

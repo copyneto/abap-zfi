@@ -400,7 +400,7 @@ CLASS ZCLFI_VENC_ORIG IMPLEMENTATION.
 
     DATA: lr_tcode TYPE RANGE OF sy-tcode.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
 

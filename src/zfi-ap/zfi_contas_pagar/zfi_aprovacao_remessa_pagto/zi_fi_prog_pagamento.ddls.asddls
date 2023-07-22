@@ -127,15 +127,27 @@ where
 
 union select distinct from ZC_FI_APROV_BSIK  as _bsik
 
-  inner join               I_CompanyCode     as _Bukrs    on _Bukrs.CompanyCode = _bsik.bukrs
+  inner join               I_CompanyCode     as _Bukrs       on _Bukrs.CompanyCode = _bsik.bukrs
 
-  inner join               I_SupplierCompany as _Supplier on  _Supplier.Supplier    = _bsik.lifnr
-                                                          and _Supplier.CompanyCode = _bsik.bukrs
+  inner join               I_SupplierCompany as _Supplier    on  _Supplier.Supplier    = _bsik.lifnr
+                                                             and _Supplier.CompanyCode = _bsik.bukrs
 
-  left outer join          ZI_FI_DOC_FDGRV   as _Fdgrv    on  _bsik.bukrs = _Fdgrv.Bukrs
-                                                          and _bsik.gjahr = _Fdgrv.Gjahr
-                                                          and _bsik.belnr = _Fdgrv.Belnr
-                                                          and _bsik.buzei = _Fdgrv.Buzei
+//pferraz 18.07.23 - Documentos em aberto duplicados - inicio
+
+  left outer join          regup             as _PaymentItem on  _PaymentItem.zbukr = _bsik.bukrs
+                                                             and _PaymentItem.belnr = _bsik.belnr
+                                                             and _PaymentItem.gjahr = _bsik.gjahr
+                                                             and _PaymentItem.buzei = _bsik.buzei
+
+//pferraz 18.07.23 - Documentos em aberto duplicados - fim
+
+  left outer join          ZI_FI_DOC_FDGRV   as _Fdgrv       on  _bsik.bukrs = _Fdgrv.Bukrs
+                                                             and _bsik.gjahr = _Fdgrv.Gjahr
+                                                             and _bsik.belnr = _Fdgrv.Belnr
+                                                             and _bsik.buzei = _Fdgrv.Buzei
+
+
+
 {
   key _bsik.bukrs                                                            as CompanyCode,
   key cast( '' as laufi )                                                    as PaymentRunID,
@@ -201,7 +213,10 @@ union select distinct from ZC_FI_APROV_BSIK  as _bsik
 
 
 }
-
+//pferraz 18.07.23 - Documentos em aberto duplicados - inicio
+where
+  _PaymentItem.vblnr = ''
+//pferraz 18.07.23 - Documentos em aberto duplicados - Fim
 
 union select distinct from ZC_FI_APROV_BSIK  as _bsik
 

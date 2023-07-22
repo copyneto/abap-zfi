@@ -15,6 +15,9 @@ CLASS zclfi_autobanc_import DEFINITION
         ext(3)       TYPE c VALUE 'EXT',
         pagamento(3) TYPE c VALUE 'PAG',
         pagfinal(3)  TYPE c VALUE 'PGF',
+*pferraz - 19.07.23 - incluir DDA - inicio
+        dda(3)       TYPE c VALUE 'DDA',
+*pferraz - 19.07.23 - incluir DDA - fim
       END OF gc_tipo_arq.
 
     CONSTANTS:
@@ -180,6 +183,8 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
                                 ( low = gc_tipo_diretorio-contas_pagar_retorno )
                                 ( low = gc_tipo_diretorio-cobranca_retorno )
                                 ( low = gc_tipo_diretorio-extrato_eletro )
+                                "pferraz - 19.07.23 - Inclusao diretorio DDA
+                                ( low = gc_tipo_diretorio-contas_pagar_dda )
                        ).
 
     "Seleciona os diretórios para importação
@@ -425,7 +430,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
   METHOD main.
 
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     DATA(lv_gap_ativo) = VALUE abap_bool(  ).
 
@@ -484,7 +489,10 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
           IF <fs_s_file>-name(3) NE gc_tipo_arq-ext AND
              <fs_s_file>-name(3) NE gc_tipo_arq-cobranca AND
              <fs_s_file>-name(3) NE gc_tipo_arq-pagamento AND
-             <fs_s_file>-name(3) NE gc_tipo_arq-pagfinal.
+             <fs_s_file>-name(3) NE gc_tipo_arq-pagfinal AND
+* pferraz - 19.07.23 - incluir DDA - inicio
+            <fs_s_file>-name(3) NE gc_tipo_arq-dda.
+* pferraz - 19.07.23 - incluir DDA - fim
 
             DATA(ls_msg) = VALUE bapiret2(
                   id          = zclfi_autobanc_import_log=>gc_msgid
@@ -684,6 +692,7 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
         cobranca TYPE ztfi_autbanc_dir-tipo VALUE '06',
         extrato  TYPE ztfi_autbanc_dir-tipo VALUE '11',
         outros   TYPE ztfi_autbanc_dir-tipo VALUE '05',
+        dda      TYPE ztfi_autbanc_dir-tipo VALUE '08',
       END OF lc_tipo_dir.
 
     DATA: lt_file      TYPE STANDARD TABLE OF x,
@@ -735,6 +744,9 @@ CLASS ZCLFI_AUTOBANC_IMPORT IMPLEMENTATION.
       lv_tipo = SWITCH #( is_import_file-name(3)
                           WHEN gc_tipo_arq-cobranca THEN lc_tipo_dir-cobranca
                           WHEN gc_tipo_arq-ext THEN lc_tipo_dir-extrato
+* pferraz - inclusao DDA - 19.07.23 - inicio
+                          WHEN gc_tipo_arq-dda THEN lc_tipo_dir-dda
+* pferraz - inclusao DDA - 19.07.23 - fim
                           ELSE lc_tipo_dir-outros ) .
 
       READ TABLE lt_dir_types ASSIGNING FIELD-SYMBOL(<fs_dir_type>)

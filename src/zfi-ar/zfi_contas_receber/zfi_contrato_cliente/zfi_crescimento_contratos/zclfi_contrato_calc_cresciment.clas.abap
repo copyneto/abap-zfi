@@ -156,7 +156,7 @@ ENDCLASS.
 
 
 
-CLASS zclfi_contrato_calc_cresciment IMPLEMENTATION.
+CLASS ZCLFI_CONTRATO_CALC_CRESCIMENT IMPLEMENTATION.
 
 
   METHOD execute.
@@ -379,7 +379,7 @@ CLASS zclfi_contrato_calc_cresciment IMPLEMENTATION.
 
     IF sy-subrc IS INITIAL.
 
-      DATA(lo_param) = NEW zclca_tabela_parametros( ).
+      DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
       TRY.
           lo_param->m_get_range( EXPORTING iv_modulo = gc_prm_modulo
@@ -1377,7 +1377,7 @@ CLASS zclfi_contrato_calc_cresciment IMPLEMENTATION.
     DATA: lr_tp_docs TYPE RANGE OF bkpf-blart,
           lr_budat   TYPE RANGE OF bkpf-budat.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = gc_prm_modulo
@@ -2455,7 +2455,7 @@ CLASS zclfi_contrato_calc_cresciment IMPLEMENTATION.
 
     CLEAR: gv_gjahr_inicio, gv_gjahr_fim.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_single(

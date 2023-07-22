@@ -167,7 +167,7 @@ CLASS zclfi_venc_dde_data IMPLEMENTATION.
     DATA: lv_dias     TYPE i,
           lv_data_ini TYPE datum.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
 

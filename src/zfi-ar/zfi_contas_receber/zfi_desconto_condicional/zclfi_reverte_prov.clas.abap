@@ -699,7 +699,7 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
     DATA: lr_conta  TYPE RANGE OF hkont,
           lr_tp_doc TYPE RANGE OF blart.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = me->gc_modulo

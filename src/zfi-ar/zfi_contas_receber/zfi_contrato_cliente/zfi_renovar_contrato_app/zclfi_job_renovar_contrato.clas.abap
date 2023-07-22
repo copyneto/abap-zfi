@@ -97,7 +97,7 @@ CLASS ZCLFI_JOB_RENOVAR_CONTRATO IMPLEMENTATION.
 
   METHOD get_parameters.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
 

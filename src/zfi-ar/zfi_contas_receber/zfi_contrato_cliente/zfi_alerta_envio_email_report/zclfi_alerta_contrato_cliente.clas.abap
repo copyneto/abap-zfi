@@ -94,7 +94,7 @@ CLASS ZCLFI_ALERTA_CONTRATO_CLIENTE IMPLEMENTATION.
                  chave2 TYPE zi_ca_param_par-chave2 VALUE 'QUANTIDADE_DIAS',
                END OF lc_param.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
     DATA(lv_dias) = VALUE char10(  ).
     DATA: lt_cont TYPE STANDARD TABLE OF ty_contrato .
 
@@ -230,7 +230,7 @@ ENDMETHOD.
                  chave2 TYPE zi_ca_param_par-chave2 VALUE 'ALERTA',
                END OF lc_param.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
     DATA(lv_automatico) = VALUE abap_bool(  ).
 
     TRY.
@@ -326,7 +326,7 @@ ENDMETHOD.
 
     CLEAR:gt_contrato.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
     DATA(lv_recorrencia) = VALUE char10(  ).
 
     TRY.

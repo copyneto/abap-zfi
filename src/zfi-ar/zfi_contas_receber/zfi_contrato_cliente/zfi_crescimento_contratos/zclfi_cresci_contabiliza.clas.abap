@@ -233,7 +233,7 @@ CLASS ZCLFI_CRESCI_CONTABILIZA IMPLEMENTATION.
                    ).
 
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = gc_prm_modulo
@@ -394,7 +394,7 @@ CLASS ZCLFI_CRESCI_CONTABILIZA IMPLEMENTATION.
 
     DATA lr_blart  TYPE RANGE OF blart.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = gc_prm_modulo

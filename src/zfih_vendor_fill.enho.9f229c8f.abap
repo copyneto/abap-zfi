@@ -37,18 +37,22 @@ TYPES: BEGIN OF ty_vtbfha,
     IF sy-subrc NE 0.
       CLEAR ls_vtbfha.
     ELSE.
-      SELECT SINGLE koart
-        INTO lv_koart
-        FROM bseg
-        WHERE lifnr EQ ls_vtbfha-kontrh AND
-              ( koart EQ 'K' OR koart EQ 'D' ).
+*      SELECT SINGLE koart
+*        INTO lv_koart
+*        FROM bseg
+*        WHERE lifnr EQ ls_vtbfha-kontrh AND
+*              ( koart EQ 'K' OR koart EQ 'D' ).
 
-        IF sy-subrc   EQ 0      AND
-           sy-tcode   EQ 'FB01'.
+*        IF sy-subrc   EQ 0      AND
+         IF sy-tcode EQ 'FB01'.
 
           IF <fs_blart> IS ASSIGNED.
-             IF <fs_blart> EQ 'TF' OR <fs_blart> EQ 'TZ'.
+
+             IF <fs_blart> EQ 'TF'
+             OR <fs_blart> EQ 'TZ'.
+
               i_lifnr = ls_vtbfha-kontrh.
+
              ENDIF.
             ENDIF.
         ENDIF.

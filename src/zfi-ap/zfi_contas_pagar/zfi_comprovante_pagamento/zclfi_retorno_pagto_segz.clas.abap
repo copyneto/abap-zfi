@@ -527,7 +527,7 @@ CLASS ZCLFI_RETORNO_PAGTO_SEGZ IMPLEMENTATION.
 
     CLEAR: gr_bank_aut_banc.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = gc_multibanco-modulo

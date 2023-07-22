@@ -72,7 +72,7 @@ CLASS ZCLFI_CONSULTAR_STATUS_PDC IMPLEMENTATION.
 
 
   METHOD constructor.
-      DATA(lo_param) = NEW zclca_tabela_parametros( ).
+      DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
       TRY.
           lo_param->m_get_range( EXPORTING iv_modulo = gc_param-modulo

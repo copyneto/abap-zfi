@@ -124,7 +124,7 @@ CLASS ZCLFI_CREDITOCLIENTE IMPLEMENTATION.
 
   METHOD fi_document_change.
 
-    DATA(lo_config_tab_parametros) = NEW zclca_tabela_parametros( ).
+    DATA(lo_config_tab_parametros) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 20.07.2023
 
     CONSTANTS: BEGIN OF lc_param_1,
                  modulo TYPE zi_ca_param_mod-modulo VALUE 'FI-AR',

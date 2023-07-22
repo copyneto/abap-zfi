@@ -339,7 +339,7 @@ CLASS ZCLFI_SIMULAR_CONTRATO_CLIENTE IMPLEMENTATION.
   METHOD step2.
     DATA: lr_tp_docs TYPE RANGE OF bkpf-blart.
     TRY.
-        NEW zclca_tabela_parametros( )->m_get_range(
+        zclca_tabela_parametros=>get_instance( )->m_get_range(  " CHANGE - LSCHEPP - 20.07.2023
           EXPORTING
             iv_modulo = gc_prm_modulo
             iv_chave1 = gc_chv1_simul_vig
