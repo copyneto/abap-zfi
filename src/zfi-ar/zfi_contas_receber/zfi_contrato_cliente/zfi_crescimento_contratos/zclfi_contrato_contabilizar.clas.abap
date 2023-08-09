@@ -201,7 +201,7 @@ CLASS ZCLFI_CONTRATO_CONTABILIZAR IMPLEMENTATION.
                                                fis_period = is_key-budat_screen+4(2)
                                                ref_doc_no = ls_cresci-periodicidade
                                                username   = sy-uname
-                                               header_txt = text-001 ).
+                                               header_txt = TEXT-001 ).
 
 
 
@@ -287,9 +287,9 @@ CLASS ZCLFI_CONTRATO_CONTABILIZAR IMPLEMENTATION.
                                    message_v2 = lv_obj_key+10(4)
                                    message_v3 = lv_obj_key+14(4) ) ).
 
-            DATA(ls_key) = VALUE zsfi_cresc_copa_key( contrato = is_key-contrato
-                                                      aditivo  = is_key-aditivo
-                                                      mont_crescimento = is_key-mont_crescimento ).
+            DATA(ls_key) = VALUE zi_fi_log_calc_crescimento( contrato = is_key-contrato       " CHANGE - JWSILVA - 24.07.2023
+                                                             aditivo  = is_key-aditivo
+                                                             montcrescimento = is_key-mont_crescimento ).
 
             CALL FUNCTION 'ZFMFI_CRESCI_CRAT_COPA'
               EXPORTING

@@ -10,12 +10,12 @@ define view ZI_FI_AREA_AVA_ALL
     left outer join       anlz     as _Z on  _A.bukrs = _Z.bukrs
                                          and _A.anln1 = _Z.anln1
                                          and _A.anln2 = _Z.anln2
+                                         and _Z.adatu <= $session.user_date
+                                         and _Z.bdatu >= $session.user_date
 
     left outer join       Faa_Anlp as _P on  _A.bukrs = _P.bukrs
                                          and _A.anln1 = _P.anln1
                                          and _A.anln2 = _P.anln2
-
-
 
 {
 

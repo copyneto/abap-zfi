@@ -27,7 +27,7 @@ FUNCTION zfmfi_ret_bloq.
   DATA lv_dif TYPE fahztd.
   DATA lr_horas TYPE RANGE OF fahztd.
 
-  DATA(lo_param) = NEW zclca_tabela_parametros( ).
+  DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
   TRY.
       lo_param->m_get_range( EXPORTING iv_modulo = 'FI'

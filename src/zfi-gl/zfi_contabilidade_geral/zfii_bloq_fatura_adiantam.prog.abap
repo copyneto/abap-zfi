@@ -30,7 +30,7 @@
   CHECK bseg-belnr IS INITIAL "Documento vazio (novo).
      OR lv_belnr IS INITIAL.  "Documento não encontrado na BSEG (considerando cenários onde novos documentos iniciam com código $00001, por exemplo).
 
-  DATA(lo_object) = NEW zclca_tabela_parametros( ).
+  DATA(lo_object) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
   TRY.
       lo_object->m_get_range( EXPORTING iv_modulo = gc_param-modulo

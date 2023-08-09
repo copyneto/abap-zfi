@@ -9,10 +9,16 @@ define view ZI_FI_PROG_PAGAMENTO_GRP2
 {
   key CompanyCode,
   key NetDueDate,
-  key RunHourTo,
+ // pferraz - 01.08.23 - ajustes relatorio por grupo de tesouraria - inicio
+  key cast( '000000' as abap.tims )                    as RunHourTo,
+      //  key RunHourTo,
+  // pferraz - 01.08.23 - ajustes relatorio por grupo de tesouraria - fim      
   key CashPlanningGroup,
   key RepType,
-  key PaymentRunID,
+ // pferraz - 01.08.23 - ajustes relatorio por grupo de tesouraria - inicio  
+  key cast( '000000' as abap.char( 6 ) ) as PaymentRunID, 
+//  key PaymentRunID,
+ // pferraz - 01.08.23 - ajustes relatorio por grupo de tesouraria - fim
       @Semantics.amount.currencyCode: 'PaymentCurrency'
       cast( sum( PaidAmountInPaytCurrency ) as rwbtr ) as PaidAmountInPaytCurrency,
       PaymentCurrency,

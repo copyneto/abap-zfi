@@ -51,7 +51,10 @@ FUNCTION zfmfi_doc_contabil.
   CHECK it_segto[] IS NOT INITIAL.
 
   lt_tab_bsik_key = VALUE #( FOR ls_segto IN it_segto
-                             ( xblnr = ls_segto-belnr
+* pferraz - Ajustes xblnr maior que 10 posicoes - 07.08.23 - inicio
+*                             ( xblnr = ls_segto-belnr
+                             ( xblnr = ls_segto-xblnr
+* pferraz - Ajustes xblnr maior que 10 posicoes - 07.08.23 - fim
                                belnr = ls_segto-belnr
                                bukrs = ls_segto-bukrs
                                gjahr = ls_segto-gjahr ) ).

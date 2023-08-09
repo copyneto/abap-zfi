@@ -12,7 +12,10 @@ define view entity ZI_FI_FILTRO_RELATORIO_FISCAL
 
     inner join      vbrk                      as _Vbrk                on  _Vbrk.belnr = _Lin.BR_NFSourceDocumentNumber
                                                                       and _Vbrk.belnr is not initial
-    inner join      I_BR_NFDocument           as _Doc                 on _Doc.BR_NotaFiscal = _Lin.BR_NotaFiscal
+    inner join      I_BR_NFDocument           as _Doc                 on  _Doc.BR_NotaFiscal      =  _Lin.BR_NotaFiscal
+                                                                      and _Doc.BR_NFSituationCode <> '02'
+                                                                      and _Doc.BR_NFIsCanceled    <> 'X'
+                                                                      and _Doc.BR_NFDocumentType  <> '5'
     left outer join VC_INTEGRATION_VBAK       as _Vbak                on _Vbak.VBELN = _Lin.BR_NotaFiscal
     left outer join ZI_FI_FILTRO_TAX_ENTDSAID as _Tax_ICMS            on  _Tax_ICMS.BR_NotaFiscal     = _Lin.BR_NotaFiscal
                                                                       and _Tax_ICMS.BR_NotaFiscalItem = _Lin.BR_NotaFiscalItem
@@ -48,18 +51,18 @@ define view entity ZI_FI_FILTRO_RELATORIO_FISCAL
 
 {
 
-  key _Lin.BR_NotaFiscal                                                                                                           as Docnum,
-  key _Lin.BR_NotaFiscalItem                                                                                                       as Itmnum,
-      _Vbrk.vkorg                                                                                                                  as Vkorg,
-      _Lin.Material                                                                                                                as Material,
-      _Lin.MaterialName                                                                                                            as MaterialName,
-      _Lin.NCMCode                                                                                                                 as NCMCode,
+  key _Lin.BR_NotaFiscal                                             as Docnum,
+  key _Lin.BR_NotaFiscalItem                                         as Itmnum,
+      _Vbrk.vkorg                                                    as Vkorg,
+      _Lin.Material                                                  as Material,
+      _Lin.MaterialName                                              as MaterialName,
+      _Lin.NCMCode                                                   as NCMCode,
       case when _Lin.BR_CFOPCode is initial then ''
             else concat( substring(_Lin.BR_CFOPCode, 1, 4),
                 concat( '/', substring(_Lin.BR_CFOPCode, 5, 2) ) )
-            end                                                                                                                    as CFOP,
-      cast(_Lin.QuantityInBaseUnit as abap.dec( 13, 2 )  )                                                                         as QtdUnit,
-      _Lin.BaseUnit                                                                                                                as BaseUnit,
+            end                                                      as CFOP,
+      cast(_Lin.QuantityInBaseUnit as abap.dec( 13, 2 )  )           as QtdUnit,
+      _Lin.BaseUnit                                                  as BaseUnit,
       //      fltp_to_dec((_ConverteUM.ValorConvUN *  cast(_ConverteUM.FatorConversao as abap.fltp)) / cast(_ConverteUM.FatorConversaoUN as abap.fltp ) as abap.dec(15,2))             as Quantidade2,
       //      fltp_to_dec((cast(_Lin.QuantityInBaseUnit as abap.fltp) *  cast(_mara_uni_to_default.umrez as abap.fltp)) / cast(_marm.umren as abap.fltp ) as abap.dec(15,2))             as Quantidade2,
 
@@ -75,45 +78,58 @@ define view entity ZI_FI_FILTRO_RELATORIO_FISCAL
       *
       cast(_mara_uni_to_kg .umren as abap.fltp )
 
-      as abap.dec(15,2))                                                                                                           as Quantidade2,
-      _ConverteUM.UnidadePeso                                                                                                      as UnitKG,
-      cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 ) )                                                                       as Frete,
-      _Doc.BR_NFIsPrinted                                                                                                          as Printd,
-      _Doc.BR_NFIsCreatedManually                                                                                                  as TpDoc,
-      _Doc.BR_NFIsIncomingIssdByCust                                                                                               as TpNF,
+      as abap.dec(15,2))                                             as Quantidade2,
+      _ConverteUM.UnidadePeso                                        as UnitKG,
+      cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 ) )         as Frete,
+      _Doc.BR_NFIsPrinted                                            as Printd,
+      _Doc.BR_NFIsCreatedManually                                    as TpDoc,
+      _Doc.BR_NFIsIncomingIssdByCust                                 as TpNF,
       //      case
       //            when _NFtax.SUBS_Valor is not null
       //            then cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) + cast(_NFtax.IPI_Valor  as abap.dec( 15, 2 ) ) + cast(_NFtax.SUBS_Valor as abap.dec( 15, 2 ) ) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 ) )
       //            else cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) + cast(_NFtax.IPI_Valor  as abap.dec( 15, 2 ) ) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 ) ) end as VlrSemFrete,
       //      cast(_Lin.NetValueAmount as abap.dec( 15, 2 )) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 ) ) as VlrSemFrete,
 
-      cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 )) + _NFtax_frete.Taxval as VlrSemFrete, 
-      _Doc.SalesDocumentCurrency                                                                                                   as Waerk,
-      _Tax_ICMS.BR_NFItemBaseAmount                                                                                                as ICMS_Base,
-      _Tax_ICMS.BR_NFItemTaxAmount                                                                                                 as ICMS_Valor,
-      cast(_NFtax.IPI_Base as abap.dec( 15, 2 ) )                                                                                  as IPI_Base,
-      cast(_NFtax.IPI_Valor  as abap.dec( 15, 2 ) )                                                                                as IPI_Valor,
-      cast(_NFtax.SUBST_Base as abap.dec( 15, 2 ) )                                                                                as SUBST_Base,
-      cast(_NFtax.SUBS_Valor as abap.dec( 15, 2 ) )                                                                                as SUBS_Valor,
-      cast(_NFtax.PIS_Valor  as abap.dec( 15, 2 ) )                                                                                as PIS_Valor,
-      cast(_NFtax.COFINS_Valor as abap.dec( 15, 2 ) )                                                                              as COFINS_Valor,
-      _Lin.ValuationArea                                                                                                           as ValuationArea,
-      _Lin.ValuationType                                                                                                           as ValuationType,
-      _Cepc.segment                                                                                                                as Segment,
-      _Lin.GLAccount                                                                                                               as sakn1,
-      _GLText.DescSaknr                                                                                                            as SaknText,
-      _Doc.BR_NFPostingDate                                                                                                        as Pstdat,
-      _Doc.BR_NFNumber                                                                                                             as Nfnum,
-      _Doc.BR_NFeNumber                                                                                                            as Nfenum,
-      _Doc.CompanyCode                                                                                                             as Bukrs,
-      _Vbrk.vtweg                                                                                                                  as Vtweg,
-      _Vbrk.spart                                                                                                                  as Spart,
-      _Doc.BusinessPlace                                                                                                           as Branch,
+      //      cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) - cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 )) + _NFtax_frete.Taxval as VlrSemFrete,
+
+      case when _Lin.BR_NFTotalAmount is null or _Lin.BR_NFTotalAmount is initial
+              then cast( '0' as abap.dec( 15, 2 ))
+             else cast(_Lin.BR_NFTotalAmount as abap.dec( 15, 2 )) end
+           -
+        case when _Lin.BR_NFNetFreightAmount is null or _Lin.BR_NFNetFreightAmount is initial
+              then cast( '0' as abap.dec( 15, 2 ))
+             else cast(_Lin.BR_NFNetFreightAmount as abap.dec( 15, 2 )) end
+           +
+           case when _NFtax_frete.Taxval is null or _NFtax_frete.Taxval = 0
+              then cast( '0' as abap.dec( 15, 2 ))
+             else cast(_NFtax_frete.Taxval as abap.dec( 15, 2 )) end as VlrSemFrete,
+
+      _Doc.SalesDocumentCurrency                                     as Waerk,
+      _Tax_ICMS.BR_NFItemBaseAmount                                  as ICMS_Base,
+      _Tax_ICMS.BR_NFItemTaxAmount                                   as ICMS_Valor,
+      cast(_NFtax.IPI_Base as abap.dec( 15, 2 ) )                    as IPI_Base,
+      cast(_NFtax.IPI_Valor  as abap.dec( 15, 2 ) )                  as IPI_Valor,
+      cast(_NFtax.SUBST_Base as abap.dec( 15, 2 ) )                  as SUBST_Base,
+      cast(_NFtax.SUBS_Valor as abap.dec( 15, 2 ) )                  as SUBS_Valor,
+      cast(_NFtax.PIS_Valor  as abap.dec( 15, 2 ) )                  as PIS_Valor,
+      cast(_NFtax.COFINS_Valor as abap.dec( 15, 2 ) )                as COFINS_Valor,
+      _Lin.ValuationArea                                             as ValuationArea,
+      _Lin.ValuationType                                             as ValuationType,
+      _Cepc.segment                                                  as Segment,
+      _Lin.GLAccount                                                 as sakn1,
+      _GLText.DescSaknr                                              as SaknText,
+      _Doc.BR_NFPostingDate                                          as Pstdat,
+      _Doc.BR_NFNumber                                               as Nfnum,
+      _Doc.BR_NFeNumber                                              as Nfenum,
+      _Doc.CompanyCode                                               as Bukrs,
+      _Vbrk.vtweg                                                    as Vtweg,
+      _Vbrk.spart                                                    as Spart,
+      _Doc.BusinessPlace                                             as Branch,
       case when _Kna1.TXJCD is not initial
                  then _Kna1.TXJCD
-                 else _Lfa1.TXJCD end                                                                                              as Txjcd,
-      _Doc.BR_NFPartner                                                                                                            as Parid,
-      _OrgVendas.OrgVendasText                                                                                                     as OrgVendasText,
+                 else _Lfa1.TXJCD end                                as Txjcd,
+      _Doc.BR_NFPartner                                              as Parid,
+      _OrgVendas.OrgVendasText                                       as OrgVendasText,
 
       //      _NFtax,
       _OrgVendas

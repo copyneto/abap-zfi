@@ -45,7 +45,7 @@ FUNCTION zfmfi_liquidacao.
   FIELD-SYMBOLS: <fs_ret> LIKE LINE OF ct_return,
                  <fs_ext> LIKE LINE OF lt_ext2.
 
-  DATA(lo_param) = NEW zclca_tabela_parametros( ).
+  DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
   TRY.
       CALL METHOD lo_param->m_get_single

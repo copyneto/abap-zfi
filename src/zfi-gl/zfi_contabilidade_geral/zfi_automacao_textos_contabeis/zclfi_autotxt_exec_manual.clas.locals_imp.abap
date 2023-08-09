@@ -257,34 +257,39 @@ CLASS lcl_Job IMPLEMENTATION.
       ENDIF.
 
       "Chama o programa
-      SUBMIT zfir_automacao_txt_contab
-          WITH s_bukrs IN lr_bukrs
-          WITH s_gjahr IN lr_gjahr
-          WITH s_budat IN lr_budat
-          VIA JOB <fs_screen_info>-JobName
-              NUMBER lv_jobcount
-          AND RETURN.
-
-      "Inicia JOB
-      CALL FUNCTION 'JOB_CLOSE'
-        EXPORTING
-          jobcount             = lv_jobcount
-          jobname              = <fs_screen_info>-JobName
-          strtimmed            = abap_true
-        EXCEPTIONS
-          cant_start_immediate = 1
-          invalid_startdate    = 2
-          jobname_missing      = 3
-          job_close_failed     = 4
-          job_nosteps          = 5
-          job_notex            = 6
-          lock_failed          = 7
-          invalid_target       = 8
-          OTHERS               = 9.
-
-      IF sy-subrc NE 0.
-        RETURN.
-      ENDIF.
+      NEW zclfi_submit_job(  )->execute( exporting iv_jobname   = <fs_screen_info>-JobName
+                                                   iv_jobcount  = lv_jobcount
+                                                   ir_bukrs     = lr_bukrs
+                                                   ir_gjahr     = lr_gjahr
+                                                   ir_budat     = lr_budat ).
+*      SUBMIT zfir_automacao_txt_contab
+*          WITH s_bukrs IN lr_bukrs
+*          WITH s_gjahr IN lr_gjahr
+*          WITH s_budat IN lr_budat
+*          VIA JOB <fs_screen_info>-JobName
+*              NUMBER lv_jobcount
+*          AND RETURN.
+*
+*      "Inicia JOB
+*      CALL FUNCTION 'JOB_CLOSE'
+*        EXPORTING
+*          jobcount             = lv_jobcount
+*          jobname              = <fs_screen_info>-JobName
+*          strtimmed            = abap_true
+*        EXCEPTIONS
+*          cant_start_immediate = 1
+*          invalid_startdate    = 2
+*          jobname_missing      = 3
+*          job_close_failed     = 4
+*          job_nosteps          = 5
+*          job_notex            = 6
+*          lock_failed          = 7
+*          invalid_target       = 8
+*          OTHERS               = 9.
+*
+*      IF sy-subrc NE 0.
+*        RETURN.
+*      ENDIF.
 
     ENDIF.
 
@@ -411,34 +416,39 @@ CLASS lcl_Job IMPLEMENTATION.
       ENDIF.
 
       "Chama o programa
-      SUBMIT zfir_automacao_txt_contab
-          WITH s_bukrs IN lr_bukrs
-          WITH s_gjahr IN lr_gjahr
-          WITH s_budat IN lr_budat
-          VIA JOB <fs_screen_info>-JobName
-              NUMBER lv_jobcount
-          AND RETURN.
-
-      "Inicia JOB
-      CALL FUNCTION 'JOB_CLOSE'
-        EXPORTING
-          jobcount             = lv_jobcount
-          jobname              = <fs_screen_info>-JobName
-          strtimmed            = abap_true
-        EXCEPTIONS
-          cant_start_immediate = 1
-          invalid_startdate    = 2
-          jobname_missing      = 3
-          job_close_failed     = 4
-          job_nosteps          = 5
-          job_notex            = 6
-          lock_failed          = 7
-          invalid_target       = 8
-          OTHERS               = 9.
-
-      IF sy-subrc NE 0.
-        CLEAR lv_jobcount.
-      ENDIF.
+      NEW zclfi_submit_job(  )->execute( exporting iv_jobname   = <fs_screen_info>-JobName
+                                                   iv_jobcount  = lv_jobcount
+                                                   ir_bukrs     = lr_bukrs
+                                                   ir_gjahr     = lr_gjahr
+                                                   ir_budat     = lr_budat ).
+*      SUBMIT zfir_automacao_txt_contab
+*          WITH s_bukrs IN lr_bukrs
+*          WITH s_gjahr IN lr_gjahr
+*          WITH s_budat IN lr_budat
+*          VIA JOB <fs_screen_info>-JobName
+*              NUMBER lv_jobcount
+*          AND RETURN.
+*
+*      "Inicia JOB
+*      CALL FUNCTION 'JOB_CLOSE'
+*        EXPORTING
+*          jobcount             = lv_jobcount
+*          jobname              = <fs_screen_info>-JobName
+*          strtimmed            = abap_true
+*        EXCEPTIONS
+*          cant_start_immediate = 1
+*          invalid_startdate    = 2
+*          jobname_missing      = 3
+*          job_close_failed     = 4
+*          job_nosteps          = 5
+*          job_notex            = 6
+*          lock_failed          = 7
+*          invalid_target       = 8
+*          OTHERS               = 9.
+*
+*      IF sy-subrc NE 0.
+*        CLEAR lv_jobcount.
+*      ENDIF.
 
     ENDIF.
 

@@ -9,10 +9,8 @@
 }
 define view entity ZI_FI_AUTOTXT_NF
   as select from view_sdi_items_p as FaturaItem
-    inner join   I_BR_NFItem      as NFItem
-      on FaturaItem.vbeln = NFItem.BR_NFSourceDocumentNumber
-    inner join   I_BR_NFDocument  as NFHeader
-      on NFItem.BR_NotaFiscal = NFHeader.BR_NotaFiscal
+    inner join   I_BR_NFItem      as NFItem   on FaturaItem.vbeln = NFItem.BR_NFSourceDocumentNumber
+    inner join   I_BR_NFDocument  as NFHeader on NFItem.BR_NotaFiscal = NFHeader.BR_NotaFiscal
 
 {
   key FaturaItem.vgbel,
@@ -20,3 +18,8 @@ define view entity ZI_FI_AUTOTXT_NF
       NFHeader.BR_NotaFiscal,
       NFHeader.BR_NFeNumber
 }
+group by
+  FaturaItem.vgbel,
+  FaturaItem.vbeln,
+  NFHeader.BR_NotaFiscal,
+  NFHeader.BR_NFeNumber

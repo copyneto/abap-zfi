@@ -70,6 +70,8 @@ FORM dme_brazil.
 *    AT NEW regud-xeinz.
   DATA lv_zbnkl_trailer TYPE c LENGTH 3.
   DATA lv_zbnkl TYPE c LENGTH 3.
+  DATA lv_barcode TYPE bseg-glo_ref1.
+  DATA lr_rzawe_split TYPE RANGE OF reguh-rzawe.
 * pferraz - Ajustes split lote bradesco - 20.07.23 - fim
 
   TABLES:
@@ -140,6 +142,12 @@ FORM dme_brazil.
 
 
   cnt_filenr = 0.                      "# erstellter Dateien
+
+
+  lr_rzawe_split = VALUE #( ( sign = 'I' option = 'EQ' low = 'R' )
+                            ( sign = 'I' option = 'EQ' low = 'U' )
+                            ( sign = 'I' option = 'EQ' low = 'T' ) ).
+
 
 *----------------------------------------------------------------------*
 * Abarbeiten der extrahierten Daten                                    *
@@ -292,13 +300,28 @@ FORM dme_brazil.
 * pferraz - Ajustes split lote bradesco - 20.07.23 - inicio
 *    AT NEW regud-xeinz.
 
-    IF lv_zbnkl <> reguh-zbnkl(3).
+
+    "@@ Busca codigo de barra digitado
+    SELECT SINGLE glo_ref1
+      FROM bseg
+      INTO ( lv_barcode )
+      WHERE belnr = regup-belnr
+        AND bukrs = regup-bukrs
+        AND gjahr = regup-gjahr
+        AND buzei = regup-buzei.
+
+    IF ( lv_zbnkl <> reguh-zbnkl(3) AND reguh-rzawe IN lr_rzawe_split ) OR
+      ( lv_zbnkl <> lv_barcode(3) AND reguh-rzawe NOT IN lr_rzawe_split ).
 
       IF lv_zbnkl IS NOT INITIAL.
         PERFORM f_trailer_lote.
       ENDIF.
 
-      lv_zbnkl = reguh-zbnkl(3).
+      IF reguh-rzawe IN lr_rzawe_split .
+        lv_zbnkl = reguh-zbnkl(3).
+      ELSE.
+        lv_zbnkl = lv_barcode(3).
+      ENDIF.
 
 * pferraz - Ajustes split lote bradesco - 20.07.23 - fim
       CASE reguh-ubnkl(3).
@@ -872,8 +895,16 @@ FORM dme_brazil.
 * pferraz - ajustes BB risco sacado - 21.07.23 - fim
               ENDIF.
 
+* pferraz - ajustes itau - 28.07.23 - inicio
+            ELSEIF reguh-ubnkl(3) = '341'.
 
+              IF reguh-rzawe = 'U'.
+                IF HLP_STKZN = '2'.
+                  j_1bdmexa-a07 = '03'.
+                ENDIF.
+              ENDIF.
 
+* pferraz - ajustes BB risco sacado - 28.07.23 - Fim
             ELSEIF reguh-ubnkl(3) = '745'.
               j_1bdmexa-a07 = '09'.
               IF reguh-rzawe = 'R'.

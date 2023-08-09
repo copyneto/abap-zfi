@@ -4057,12 +4057,17 @@ FORM f_nosso_numero USING us_reguh     TYPE reguh
                           us_regup     TYPE regup
                  CHANGING cv_j_1bdmeza TYPE j_1bdmeza.
 
+  DATA: lv_digito TYPE char1.
   DATA: lv_hlp_chect TYPE regud-chect.
 
   CLEAR cv_j_1bdmeza-a11.
-  cv_j_1bdmeza-a11(8)   = us_regup-belnr+2(8).
-  cv_j_1bdmeza-a11+8(1) = us_regup-buzei+2(1).
-  cv_j_1bdmeza-a11+9(2) = us_regup-gjahr+2(2).
+* pferraz - Ajustes Nosso numero - 25.07.23 - inicio
+**  cv_j_1bdmeza-a11(8)   = us_regup-belnr+2(8).
+**  cv_j_1bdmeza-a11+8(1) = us_regup-buzei+2(1).
+**  cv_j_1bdmeza-a11+9(2) = us_regup-gjahr+2(2).
+
+  cv_j_1bdmeza-a11(11)   = us_regup-xref3(11).
+* pferraz - Ajustes Nosso numero - 25.07.23 - Fim
 
   lv_hlp_chect = cv_j_1bdmeza-a11.
 
@@ -4074,7 +4079,14 @@ FORM f_nosso_numero USING us_reguh     TYPE reguh
       nos_numero = lv_hlp_chect
       docdate    = us_regup-bldat
     IMPORTING
-      nos_check  = cv_j_1bdmeza-a11+11(1).
+      nos_check  = lv_digito.
+
+  IF lv_digito = 'P'.
+    cv_j_1bdmeza-a11+11(1) = 0.
+  ELSE.
+    cv_j_1bdmeza-a11+11(1) = lv_digito.
+  ENDIF.
+
 
 ENDFORM.
 *&---------------------------------------------------------------------*
@@ -4095,7 +4107,11 @@ FORM f_ocorrencia USING us_reguh TYPE reguh
    WHERE laufd = us_reguh-laufd
      AND laufi = us_reguh-laufi
      AND zbukr = us_reguh-zbukr
-     AND xvorl = abap_true.
+* pferraz - Ajustes busca ocorrencia - 26.07.23 - inicio
+*     AND xvorl = abap_true.
+     AND xvorl = abap_false
+     AND vblnr = us_reguh-vblnr.
+* pferraz - Ajustes busca ocorrencia - 26.07.23 - fim
 
   IF sy-subrc IS INITIAL.
 

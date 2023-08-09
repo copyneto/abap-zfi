@@ -8,48 +8,53 @@
     dataClass: #MIXED
 }
 define view entity ZI_FI_AUTOTXT_DOCUMENTOS
-  as select from P_BSEG_COM1 as DocumentItem
-  association [0..1] to P_GLAccountText                as _GLAccountText  on  _GLAccountText.ChartOfAccounts = 'PC3C'
-                                                                          and $projection.hkont              = _GLAccountText.GLAccount
+  as select from P_BSEG_COM1               as DocumentItem
 
-  association [0..1] to ZI_FI_AUTOTXT_DOCCONTABIL_1ITM as _DocumentItem1  on  $projection.bukrs = _DocumentItem1.bukrs
-                                                                          and $projection.belnr = _DocumentItem1.belnr
-                                                                          and $projection.gjahr = _DocumentItem1.gjahr
+    inner join   ZI_FI_AUTOTXT_DOCCONTABIL as _DocumentHeader on  DocumentItem.bukrs = _DocumentHeader.bukrs
+                                                              and DocumentItem.belnr = _DocumentHeader.belnr
+                                                              and DocumentItem.gjahr = _DocumentHeader.gjahr
 
-  association [1]    to ZI_FI_AUTOTXT_DOCCONTABIL      as _DocumentHeader on  $projection.bukrs = _DocumentHeader.bukrs
-                                                                          and $projection.belnr = _DocumentHeader.belnr
-                                                                          and $projection.gjahr = _DocumentHeader.gjahr
+  association [0..1] to P_GLAccountText                as _GLAccountText on  _GLAccountText.ChartOfAccounts = 'PC3C'
+                                                                         and $projection.hkont              = _GLAccountText.GLAccount
 
-  association [0..1] to I_Supplier                     as _Supplier       on  $projection.lifnr = _Supplier.Supplier
+  association [0..1] to ZI_FI_AUTOTXT_DOCCONTABIL_1ITM as _DocumentItem1 on  $projection.bukrs = _DocumentItem1.bukrs
+                                                                         and $projection.belnr = _DocumentItem1.belnr
+                                                                         and $projection.gjahr = _DocumentItem1.gjahr
 
-  association [0..1] to I_Customer                     as _Customer       on  $projection.kunnr = _Customer.Customer
+  //  association [1]    to ZI_FI_AUTOTXT_DOCCONTABIL      as _DocumentHeader on  $projection.bukrs = _DocumentHeader.bukrs
+  //                                                                          and $projection.belnr = _DocumentHeader.belnr
+  //                                                                          and $projection.gjahr = _DocumentHeader.gjahr
 
-  association        to ZI_FI_AUTOTXT_TREASURY         as _Treasury       on  $projection.bukrs = _Treasury.CompanyCode
-                                                                          and $projection.belnr = _Treasury.AccountingDocument
-                                                                          and $projection.gjahr = _Treasury.FiscalYear
-                                                                          and $projection.buzei = _Treasury.AccountingItemBuzei
+  association [0..1] to I_Supplier                     as _Supplier      on  $projection.lifnr = _Supplier.Supplier
+
+  association [0..1] to I_Customer                     as _Customer      on  $projection.kunnr = _Customer.Customer
+
+  association        to ZI_FI_AUTOTXT_TREASURY         as _Treasury      on  $projection.bukrs = _Treasury.CompanyCode
+                                                                         and $projection.belnr = _Treasury.AccountingDocument
+                                                                         and $projection.gjahr = _Treasury.FiscalYear
+                                                                         and $projection.buzei = _Treasury.AccountingItemBuzei
 
 {
 
-  key bukrs,
-  key belnr,
-  key gjahr,
-  key buzei,
-      h_blart                                        as blart,
-      hkont,
-      bschl,
-      h_monat                                        as monat,
-      kostl,
-      lifnr,
-      kunnr,
-      awkey,
-      sgtxt,
-      ebeln,
+  key DocumentItem.bukrs                             as bukrs,
+  key DocumentItem.belnr                             as belnr,
+  key DocumentItem.gjahr                             as gjahr,
+  key DocumentItem.buzei,
+      DocumentItem.h_blart                           as blart,
+      DocumentItem.hkont,
+      DocumentItem.bschl,
+      DocumentItem.h_monat                           as monat,
+      DocumentItem.kostl,
+      DocumentItem.lifnr,
+      DocumentItem.kunnr,
+      DocumentItem.awkey,
+      DocumentItem.sgtxt,
+      DocumentItem.ebeln,
       _Supplier.SupplierName                         as LifnrName,
       _Customer.CustomerName                         as KunnrName,
       _GLAccountText.GLAccountName                   as HkontTxt,
 
-      case when h_blart = 'WL' then _DocumentHeader.BR_NFeNumber
+      case when DocumentItem.h_blart = 'WL' then _DocumentHeader.BR_NFeNumber
       else _DocumentHeader.xblnr end                 as Xblnr,
 
       _DocumentHeader.budat,
@@ -67,7 +72,7 @@ define view entity ZI_FI_AUTOTXT_DOCUMENTOS
       _DocumentItem1.aufnr                           as aufnr,
 
       /*Associations*/
-      _DocumentHeader,
+      //      _DocumentHeader,
       _GLAccountText,
       _Supplier,
       _Customer,

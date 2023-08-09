@@ -49,7 +49,7 @@ FUNCTION zfmfi_provisao.
              lc_conta40 TYPE ztca_param_par-chave3 VALUE 'CHAVE40',
              lc_conta50 TYPE ztca_param_par-chave3 VALUE 'CHAVE50'.
 
-  DATA(lo_param) = NEW zclca_tabela_parametros( ).
+  DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
   TRY.
       CALL METHOD lo_param->m_get_single

@@ -20,7 +20,7 @@
      <CATEGORY>ifmtypedef</CATEGORY>
      <X-ML_NSPCE>http://trescoracoes.com.br/contasareceber/criarproposta</X-ML_NSPCE>
      <X-ML_NAME>dtCriarProposta</X-ML_NAME>
-     <VERSION_ID>e098c10095d711eda2e800000085a0cb</VERSION_ID>
+     <VERSION_ID>53260a98361611ee9f4300000085a0cd</VERSION_ID>
     </item>
    </PROXY_HEADER>
    <PROXY_DATA>
@@ -154,12 +154,12 @@
      <IFR_MINOCC>1</IFR_MINOCC>
      <IFR_MAXOCC>1</IFR_MAXOCC>
      <IFR_XSDTYP>string</IFR_XSDTYP>
-     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_MAXLEN>18</IFR_MAXLEN>
      <IFR_SCALE>-2</IFR_SCALE>
      <R3_TYPE>FIEL</R3_TYPE>
      <R3_NAME>ZACORDO</R3_NAME>
      <R3_DATATYP>CHAR</R3_DATATYP>
-     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_LENGTH>000018</R3_LENGTH>
      <R3_SEQNUM>000009</R3_SEQNUM>
     </item>
     <item>

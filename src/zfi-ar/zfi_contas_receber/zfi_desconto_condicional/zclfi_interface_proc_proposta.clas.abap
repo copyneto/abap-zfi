@@ -678,7 +678,8 @@ CLASS ZCLFI_INTERFACE_PROC_PROPOSTA IMPLEMENTATION.
                      sp_gl_ind  = 'C'
                      ref_key_1  = is_dados_par-werks
 *                     alloc_nmbr = |PONTUAL-{ is_dados_par-zproposta }|
-                     alloc_nmbr = |AC-{ is_dados_par-zacordo }|
+*                     alloc_nmbr = |AC-{ is_dados_par-zacordo }|
+                     alloc_nmbr = is_dados_par-zacordo
                      item_text  = |PROP PONTUAL-{ is_dados_par-zacordo }-{ is_dados_par-parcela }|
                      bus_area   = lv_gsber )
            TO et_accountreceivable.
@@ -712,7 +713,8 @@ CLASS ZCLFI_INTERFACE_PROC_PROPOSTA IMPLEMENTATION.
                      gl_account = gv_saknr
                      item_text  = |PROP PONTUAL-{ is_dados_par-zacordo }-{ is_dados_par-parcela }|
 *                     alloc_nmbr = |PONTUAL-{ is_dados_par-zproposta }|
-                     alloc_nmbr = |AC-{ is_dados_par-zacordo }|
+*                     alloc_nmbr = |AC-{ is_dados_par-zacordo }|
+                     alloc_nmbr = is_dados_par-zacordo
                      plant      = is_dados_par-werks
                      costcenter = is_dados_par-kostl
                      bus_area   = lv_gsber

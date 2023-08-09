@@ -72,7 +72,7 @@
      <SPRSL>P</SPRSL>
      <ARBGB>ZFI_DESCONTO_COND</ARBGB>
      <MSGNR>010</MSGNR>
-     <TEXT>Documento criado com sucesso! &amp;1/&amp;2/&amp;3</TEXT>
+     <TEXT>Doc. Rev. com Sucesso! &amp;1/&amp;2/&amp;3 Prov. &amp;4</TEXT>
     </T100>
     <T100>
      <SPRSL>P</SPRSL>

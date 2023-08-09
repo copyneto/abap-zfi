@@ -9,8 +9,10 @@ CLASS zclfi_reverte_prov DEFINITION
     "! Necessário informar BUKRS, BELNR, GJAHR e BLART
     METHODS constructor IMPORTING it_bukrs TYPE bukrs_ran_itab
                                   it_belnr TYPE belnr_ran_tab
-                                  it_gjahr TYPE mmda_im_tty_gjahr
-                                  it_blart TYPE fud_t_blart_range.
+                                  it_gjahr TYPE mmda_im_tty_gjahr.
+* pferraz - Ajustes reversao PDC - 02.08.23 - inicio
+*                                  it_blart TYPE fud_t_blart_range.
+* pferraz - Ajustes reversao PDC - 02.08.23 - fim
 
     "! Método para execução e processamento
     "! da Reversão da Provisão PDC
@@ -18,10 +20,10 @@ CLASS zclfi_reverte_prov DEFINITION
   PROTECTED SECTION.
 
 
-private section.
+  PRIVATE SECTION.
 
-  types:
-    BEGIN OF ty_bkpf,
+    TYPES:
+      BEGIN OF ty_bkpf,
         bukrs    TYPE bkpf-bukrs,
         belnr    TYPE bkpf-belnr,
         gjahr    TYPE bkpf-gjahr,
@@ -32,8 +34,8 @@ private section.
         augbl    TYPE bseg-augbl,
         augdt    TYPE bseg-augdt,
       END OF  ty_bkpf .
-  types:
-    BEGIN OF ty_bkpf_bseg,
+    TYPES:
+      BEGIN OF ty_bkpf_bseg,
         bukrs    TYPE bkpf-bukrs,
         belnr    TYPE bkpf-belnr,
         gjahr    TYPE bkpf-gjahr,
@@ -60,95 +62,103 @@ private section.
         zlsch    TYPE bseg-zlsch,
       END OF ty_bkpf_bseg .
 
-  constants GC_MODULO type ZTCA_PARAM_PAR-MODULO value 'FI-AR' ##NO_TEXT.
-  constants GC_CHAVE1 type ZTCA_PARAM_PAR-CHAVE1 value 'PDC' ##NO_TEXT.
-  constants GC_CHAVE2 type ZTCA_PARAM_PAR-CHAVE2 value 'REVERSAO' ##NO_TEXT.
-  constants GC_CHAVE2_B type ZTCA_PARAM_PAR-CHAVE2 value 'STATUSAGENDADO' ##NO_TEXT.
-  constants GC_CHAVE2_C type ZTCA_PARAM_PAR-CHAVE2 value 'STATUSPROVISIONADO' ##NO_TEXT.
-  constants GC_CHAVE3 type ZTCA_PARAM_PAR-CHAVE3 value 'CONCH50' ##NO_TEXT.
-  constants GC_CHAVE3_B type ZTCA_PARAM_PAR-CHAVE3 value 'TIPODOC' ##NO_TEXT.
-  constants GC_CURR type CHAR3 value 'BRL' ##NO_TEXT.
-  constants GC_CHAVE_LANC_09 type CHAR2 value '09' ##NO_TEXT.
-  constants GC_CODIGO_DEBITO_S type BSEG-SHKZG value 'S' ##NO_TEXT.
-  data GV_HKONT type HKONT .
-  data GV_DOC_TYPE type BLART .
-  data:
-    gr_blart01 TYPE RANGE OF blart .
-  data:
-    gr_blart02 TYPE RANGE OF blart .
-  data:
-    gr_belnr TYPE RANGE OF bkpf-belnr .
-  data:
-    gr_bukrs TYPE RANGE OF bkpf-bukrs .
-  data:
-    gr_gjahr TYPE RANGE OF bkpf-gjahr .
-  data:
-    gt_bkpf_bseg TYPE TABLE OF ty_bkpf_bseg .
-  data:
-    gt_bkpf      TYPE TABLE OF ty_bkpf .
-  data GT_RETURN type BAPIRET2_TT .
-  data GO_LOG type ref to ZCLCA_SAVE_LOG .
-  constants GC_TCODE type SYTCODE value 'ZFIREVERSAO_PDC' ##NO_TEXT.
-  constants GC_SUB type BALSUBOBJ value 'LOG_JOB' ##NO_TEXT.
+    CONSTANTS gc_modulo TYPE ztca_param_par-modulo VALUE 'FI-AR' ##NO_TEXT.
+    CONSTANTS gc_chave1 TYPE ztca_param_par-chave1 VALUE 'PDC' ##NO_TEXT.
+    CONSTANTS gc_chave2 TYPE ztca_param_par-chave2 VALUE 'REVERSAO' ##NO_TEXT.
+    CONSTANTS gc_chave2_b TYPE ztca_param_par-chave2 VALUE 'STATUSAGENDADO' ##NO_TEXT.
+    CONSTANTS gc_chave2_c TYPE ztca_param_par-chave2 VALUE 'STATUSPROVISIONADO' ##NO_TEXT.
+    CONSTANTS gc_chave3 TYPE ztca_param_par-chave3 VALUE 'CONCH50' ##NO_TEXT.
+    CONSTANTS gc_chave3_b TYPE ztca_param_par-chave3 VALUE 'TIPODOC' ##NO_TEXT.
+    CONSTANTS gc_curr TYPE char3 VALUE 'BRL' ##NO_TEXT.
+    CONSTANTS gc_chave_lanc_09 TYPE char2 VALUE '09' ##NO_TEXT.
+    CONSTANTS gc_codigo_debito_s TYPE bseg-shkzg VALUE 'S' ##NO_TEXT.
+    DATA gv_hkont TYPE hkont .
+    DATA gv_doc_type TYPE blart .
+
+    DATA:
+      gr_blart01 TYPE RANGE OF blart .
+
+    DATA:
+      gr_blart02 TYPE RANGE OF blart .
+    DATA:
+      gr_belnr TYPE RANGE OF bkpf-belnr .
+    DATA:
+      gr_bukrs TYPE RANGE OF bkpf-bukrs .
+    DATA:
+      gr_gjahr TYPE RANGE OF bkpf-gjahr .
+    DATA:
+      gt_bkpf_bseg TYPE TABLE OF ty_bkpf_bseg .
+    DATA:
+      gt_bkpf      TYPE TABLE OF ty_bkpf .
+    DATA gt_return TYPE bapiret2_tt .
+    DATA go_log TYPE REF TO zclca_save_log .
+    CONSTANTS gc_tcode TYPE sytcode VALUE 'ZFIREVERSAO_PDC' ##NO_TEXT.
+    CONSTANTS gc_sub TYPE balsubobj VALUE 'LOG_JOB' ##NO_TEXT.
 
     "! Método para seleção dos dados
     "!
-  methods GET_DATA .
+    METHODS get_data .
     "! Método para buscar documentos da BKPF
-  methods GET_BKPF .
+    METHODS get_bkpf .
     "!Método para seleção de documento da BKPF e BSEG
-  methods GET_BKPF_BSEG .
+    METHODS get_bkpf_bseg .
     "! Método para verificar se o pagamento já foi efetuado
-  methods CHECK_PAYMENT .
+    METHODS check_payment .
     "! Método para execução da Reversão via BAPI
-  methods EXEC_REVERT .
+    METHODS exec_revert .
     "! Método para preenchimento do Header da BAPI
-  methods FILL_HEADER
-    importing
-      !IS_BKPF type TY_BKPF_BSEG
-    returning
-      value(RS_HEADER) type BAPIACHE09 .
+    METHODS fill_header
+      IMPORTING
+        !is_bkpf         TYPE ty_bkpf_bseg
+      RETURNING
+        VALUE(rs_header) TYPE bapiache09 .
     "! Método para preenchimento do accountgl da BAPI
-  methods FILL_ACCOUNTGL
-    importing
-      !IS_BKPF type TY_BKPF_BSEG
-      !IV_ITEMNO_ACC type BAPIACGL09-ITEMNO_ACC
-      !IV_GL_ACCOUNT type BAPIACGL09-GL_ACCOUNT
-      !IV_STAT_CON type BAPIACGL09-STAT_CON
-    returning
-      value(RT_ACCOUNTGL) type BAPIACGL09_TAB .
+    METHODS fill_accountgl
+      IMPORTING
+        !is_bkpf            TYPE ty_bkpf_bseg
+        !iv_itemno_acc      TYPE bapiacgl09-itemno_acc
+        !iv_gl_account      TYPE bapiacgl09-gl_account
+        !iv_stat_con        TYPE bapiacgl09-stat_con
+      RETURNING
+        VALUE(rt_accountgl) TYPE bapiacgl09_tab .
     "! Método para preenchimento do accountreceivable da BAPI
-  methods FILL_ACCOUNTRECEIVABLE
-    importing
-      !IS_BKPF type TY_BKPF_BSEG
-      !IV_ITEMNO_ACC type BAPIACGL09-ITEMNO_ACC
-      !IV_PMNT_BLOCK type BAPIACAR09-PMNT_BLOCK
-      !IV_SP_GL_IND type BAPIACAR09-SP_GL_IND
-    returning
-      value(RT_ACCOUNTRECEIVABLE) type BAPIACAR09_TAB .
+    METHODS fill_accountreceivable
+      IMPORTING
+        !is_bkpf                    TYPE ty_bkpf_bseg
+        !iv_itemno_acc              TYPE bapiacgl09-itemno_acc
+        !iv_pmnt_block              TYPE bapiacar09-pmnt_block
+        !iv_sp_gl_ind               TYPE bapiacar09-sp_gl_ind
+      RETURNING
+        VALUE(rt_accountreceivable) TYPE bapiacar09_tab .
     "! Método para preenchimento do currencyamount da BAPI
-  methods FILL_CURRENCYAMOUNT
-    importing
-      !IS_BKPF type TY_BKPF_BSEG
-      !IV_ITEMNO_ACC type BAPIACGL09-ITEMNO_ACC
-    returning
-      value(RT_CURRENCYAMOUNT) type BAPIACCR09_TAB .
-  methods FILL_EXTENSION2
-    importing
-      !IS_BKPF type TY_BKPF_BSEG
-      !IV_ITEMNO_ACC type BAPIACGL09-ITEMNO_ACC
-      !IV_DEB_CRED type CHAR1
-    returning
-      value(RT_EXTENSION2) type TT_BAPIPAREX .
-  methods FILL_ACCOUNTPAYABLE
-    importing
-      !IS_BKPF type TY_BKPF_BSEG
-      !IV_GL_ACCOUNT type BAPIACGL09-GL_ACCOUNT
-      !IV_ITEMNO_ACC type BAPIACGL09-ITEMNO_ACC
-    returning
-      value(RT_ACCOUNTPAYABLE) type BAPIACAP09_TAB .
+    METHODS fill_currencyamount
+      IMPORTING
+        !is_bkpf                 TYPE ty_bkpf_bseg
+        !iv_itemno_acc           TYPE bapiacgl09-itemno_acc
+      RETURNING
+        VALUE(rt_currencyamount) TYPE bapiaccr09_tab .
+    METHODS fill_extension2
+      IMPORTING
+        !is_bkpf             TYPE ty_bkpf_bseg
+        !iv_itemno_acc       TYPE bapiacgl09-itemno_acc
+        !iv_deb_cred         TYPE char1
+      RETURNING
+        VALUE(rt_extension2) TYPE tt_bapiparex .
+    METHODS fill_extension2_h
+      IMPORTING
+        !is_bkpf             TYPE ty_bkpf_bseg
+        !iv_itemno_acc       TYPE bapiacgl09-itemno_acc
+      RETURNING
+        VALUE(rt_extension2) TYPE tt_bapiparex .
+    METHODS fill_accountpayable
+      IMPORTING
+        !is_bkpf                 TYPE ty_bkpf_bseg
+        !iv_gl_account           TYPE bapiacgl09-gl_account
+        !iv_itemno_acc           TYPE bapiacgl09-itemno_acc
+      RETURNING
+        VALUE(rt_accountpayable) TYPE bapiacap09_tab .
     "! Método busca de dados na tabela de parâmetro
-  methods GET_PARAM .
+    METHODS get_param .
 ENDCLASS.
 
 
@@ -161,7 +171,9 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
     gr_belnr = it_belnr.
     gr_bukrs = it_bukrs.
     gr_gjahr = it_gjahr.
-    gr_blart01 = it_blart.
+* pferraz - Ajustes reversao PDC - 02.08.23 - inicio
+*    gr_blart01 = it_blart.
+* pferraz - Ajustes reversao PDC - 02.08.23 - fim
 
     go_log = NEW zclca_save_log( gc_tcode ).
 
@@ -173,7 +185,6 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
   METHOD main_process.
 
     get_data(  ).
-    exec_revert(  ).
 
     go_log->add_msgs( gt_return ).
     go_log->save( ).
@@ -213,7 +224,12 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
            WHERE a~bukrs IN gr_bukrs
              AND a~belnr IN gr_belnr
              AND a~gjahr IN gr_gjahr
-             AND a~blart IN gr_blart01.
+* pferraz - Ajustes reversao PDC - 02.08.23 - inicio
+             AND a~blart IN gr_blart01
+             AND koart = 'K'
+             AND bschl = '31'
+             AND b~augbl <> space.
+* pferraz - Ajustes reversao PDC - 02.08.23 - fim
 
     SORT gt_bkpf BY bukrs
                     belnr
@@ -228,6 +244,11 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
     DATA: lr_gjahr TYPE RANGE OF bkpf-gjahr,
           lr_belnr TYPE RANGE OF bkpf-belnr,
           lr_bukrs TYPE RANGE OF bkpf-bukrs.
+* pferraz - Ajustes reversao PDC - 02.08.23 - inicio
+    DATA: lv_gjahr TYPE bkpf-gjahr,
+          lv_belnr TYPE bkpf-belnr,
+          lv_bukrs TYPE bkpf-bukrs.
+* pferraz - Ajustes reversao PDC - 02.08.23 - fim
 
     lr_gjahr = VALUE #(  FOR ls_bkpf IN gt_bkpf ( sign = 'I'
                                                  option = 'EQ'
@@ -237,99 +258,90 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
 
       IF <fs_bkpf>-xref1_hd(1) NE 'R'.
 
-        APPEND VALUE #( sign = 'I' option = 'EQ' low = <fs_bkpf>-xref1_hd+14(4)   ) TO lr_gjahr.
-        APPEND VALUE #( sign = 'I' option = 'EQ' low = <fs_bkpf>-xref1_hd(10)  )    TO lr_belnr.
-        APPEND VALUE #( sign = 'I' option = 'EQ' low = <fs_bkpf>-xref1_hd+10(4)  )  TO lr_bukrs.
+        lv_gjahr = <fs_bkpf>-xref1_hd+14(4).
+        lv_belnr = <fs_bkpf>-xref1_hd(10).
+        lv_bukrs = <fs_bkpf>-xref1_hd+10(4) .
+
+        SELECT a~bukrs
+               a~belnr
+               a~gjahr
+               b~buzei
+               a~awkey
+               a~xref1_hd
+               a~xref2_hd
+               a~xblnr
+               a~bktxt
+               b~augbl
+               b~augdt
+               b~dmbtr
+               b~werks
+               b~zuonr
+               b~sgtxt
+               b~bupla
+               b~kostl
+               b~gsber
+               b~prctr
+               b~segment
+               b~kunnr
+               b~xref1
+               b~zlsch
+               FROM bkpf AS a
+               INNER JOIN bseg AS b
+                  ON b~bukrs EQ a~bukrs
+                 AND b~belnr EQ a~belnr
+                 AND b~gjahr EQ a~gjahr
+               INTO TABLE gt_bkpf_bseg
+               WHERE a~bukrs = lv_bukrs
+                 AND a~belnr = lv_belnr
+                 AND a~gjahr = lv_gjahr
+                 AND a~blart IN gr_blart02.          "#EC CI_SEL_NESTED
+
+        IF sy-subrc = 0.
+
+          SORT: gt_bkpf_bseg BY kunnr DESCENDING.      "#EC CI_SORTLOOP
+
+          exec_revert(  ).
+          CLEAR: gt_bkpf_bseg.
+
+        ELSE.
+
+          APPEND VALUE #(  type       = 'E'
+                           id         = 'ZFI_DESCONTO_COND'
+                           number     = 009
+                           message_v1 = <fs_bkpf>-belnr  ) TO gt_return.
+
+
+        ENDIF.
 
       ENDIF.
 
     ENDLOOP.
-
-    SORT : lr_gjahr BY low,
-           lr_belnr BY low,
-           lr_bukrs BY low.
-
-    DELETE ADJACENT DUPLICATES FROM : lr_gjahr, lr_belnr, lr_bukrs COMPARING low.
-
-    CHECK NOT lr_gjahr[]  IS INITIAL AND NOT lr_belnr[]  IS INITIAL AND NOT lr_bukrs[] IS INITIAL.
-
-    SELECT a~bukrs
-           a~belnr
-           a~gjahr
-           b~buzei
-           a~awkey
-           a~xref1_hd
-           a~xref2_hd
-           a~xblnr
-           a~bktxt
-
-           b~augbl
-           b~augdt
-           b~dmbtr
-           b~werks
-           b~zuonr
-           b~sgtxt
-           b~bupla
-           b~kostl
-           b~gsber
-           b~prctr
-           b~segment
-           b~kunnr
-           b~xref1
-           b~zlsch
-           FROM bkpf AS a
-           INNER JOIN bseg AS b
-              ON b~bukrs EQ a~bukrs
-             AND b~belnr EQ a~belnr
-             AND b~gjahr EQ a~gjahr
-           INTO TABLE gt_bkpf_bseg
-           WHERE a~bukrs IN lr_bukrs
-             AND a~belnr IN lr_belnr
-             AND a~gjahr IN lr_gjahr
-             AND a~blart IN gr_blart02.
-
-    IF sy-subrc EQ 0.
-
-      SORT gt_bkpf_bseg BY bukrs
-                     belnr
-                     gjahr
-                     buzei.
-
-    ELSE.
-
-      gt_return = VALUE #( ( type       = 'E'
-                             id         = 'ZFI_DESCONTO_COND'
-                             number     = 009
-                             message_v1 = <fs_bkpf>-belnr  ) ).
-
-    ENDIF.
 
   ENDMETHOD.
 
 
   METHOD check_payment.
 
-    DATA(lo_verif_pag) = NEW zclfi_verificar_pag_efetuado(  ).
-
     DATA lt_bkpf_new TYPE TABLE OF ty_bkpf_bseg.
 
     DATA(lt_bkpf_aux) = gt_bkpf.
     SORT lt_bkpf_aux BY augbl.
-
-    DELETE lt_bkpf_aux WHERE augbl IS INITIAL.
 
     SORT lt_bkpf_aux BY belnr gjahr bukrs.
 
     LOOP AT lt_bkpf_aux ASSIGNING FIELD-SYMBOL(<fs_bkpf>).
 
       IF <fs_bkpf>-augdt IS NOT INITIAL
-      AND <fs_bkpf>-augbl IS NOT INITIAL.
+        AND <fs_bkpf>-augbl IS NOT INITIAL.
 
-        DATA(lv_pag_efetuado) = lo_verif_pag->verifica( iv_bukrs = <fs_bkpf>-bukrs
-                                                        iv_belnr = <fs_bkpf>-belnr
-                                                        iv_gjahr = <fs_bkpf>-gjahr ).
+        SELECT COUNT(*)
+         FROM bseg
+             WHERE bukrs = @<fs_bkpf>-bukrs
+               AND belnr = @<fs_bkpf>-augbl
+               AND gjahr = @<fs_bkpf>-augdt(4)
+               AND hkont LIKE '111023%'.             "#EC CI_SEL_NESTED
 
-        IF lv_pag_efetuado IS NOT INITIAL.
+        IF sy-subrc = 0.
 
           LOOP AT gt_bkpf ASSIGNING FIELD-SYMBOL(<fs_bkpf_append>) FROM line_index( gt_bkpf[ bukrs = <fs_bkpf>-bukrs
                                                                                              belnr = <fs_bkpf>-belnr
@@ -351,6 +363,52 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
     ENDLOOP.
 
     gt_bkpf = lt_bkpf_new.
+
+
+*    DATA(lo_verif_pag) = NEW zclfi_verificar_pag_efetuado(  ).
+*
+*    DATA lt_bkpf_new TYPE TABLE OF ty_bkpf_bseg.
+*
+*    DATA(lt_bkpf_aux) = gt_bkpf.
+*    SORT lt_bkpf_aux BY augbl.
+*
+** pferraz - Ajustes reversao PDC - 02.08.23 - inicio
+**    DELETE lt_bkpf_aux WHERE augbl IS INITIAL.
+** pferraz - Ajustes reversao PDC - 02.08.23 - inicio
+*
+*    SORT lt_bkpf_aux BY belnr gjahr bukrs.
+*
+*    LOOP AT lt_bkpf_aux ASSIGNING FIELD-SYMBOL(<fs_bkpf>).
+*
+*      IF <fs_bkpf>-augdt IS NOT INITIAL
+*      AND <fs_bkpf>-augbl IS NOT INITIAL.
+*
+*        DATA(lv_pag_efetuado) = lo_verif_pag->verifica( iv_bukrs = <fs_bkpf>-bukrs
+*                                                        iv_belnr = <fs_bkpf>-augbl
+*                                                        iv_gjahr = <fs_bkpf>-gjahr ).
+*
+*        IF lv_pag_efetuado IS NOT INITIAL.
+*
+*          LOOP AT gt_bkpf ASSIGNING FIELD-SYMBOL(<fs_bkpf_append>) FROM line_index( gt_bkpf[ bukrs = <fs_bkpf>-bukrs
+*                                                                                             belnr = <fs_bkpf>-belnr
+*                                                                                             gjahr = <fs_bkpf>-gjahr ] ).
+*            IF <fs_bkpf_append>-bukrs NE <fs_bkpf>-bukrs
+*            OR <fs_bkpf_append>-belnr NE <fs_bkpf>-belnr
+*            OR <fs_bkpf_append>-gjahr NE <fs_bkpf>-gjahr.
+*              EXIT.
+*            ENDIF.
+*
+*            APPEND <fs_bkpf_append> TO lt_bkpf_new.
+*
+*          ENDLOOP.
+*
+*        ENDIF.
+*
+*      ENDIF.
+*
+*    ENDLOOP.
+*
+*    gt_bkpf = lt_bkpf_new.
 
   ENDMETHOD.
 
@@ -378,7 +436,8 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
           lv_itemno_acc   TYPE bapiacgl09-itemno_acc.
 
     DATA(lv_lines) = lines( gt_bkpf_bseg ).
-*    BREAK dpina.
+
+
     LOOP AT gt_bkpf_bseg ASSIGNING FIELD-SYMBOL(<fs_bkpf_bseg>).
 
       DATA(lv_tabix) = sy-tabix.
@@ -387,6 +446,10 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
        OR lv_belnr NE <fs_bkpf_bseg>-belnr.
 
         DATA(ls_header) = fill_header( <fs_bkpf_bseg> ).
+*        DATA(lt_extension2_aux) = fill_extension2_h( is_bkpf = <fs_bkpf_bseg>
+*                                                   iv_itemno_acc =  lv_itemno_acc ).
+*
+*        APPEND LINES OF lt_extension2_aux  TO lt_extension2 .
 
         lv_belnr = <fs_bkpf_bseg>-belnr.
         lv_itemno_acc = 1.
@@ -399,23 +462,9 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
 
       IF <fs_bkpf_bseg>-kunnr IS INITIAL.
 
-
-
-*        DATA(lt_accountgl_aux) = fill_accountgl( is_bkpf = <fs_bkpf_bseg>
-*                                                 iv_gl_account = gv_hkont
-*                                                 iv_itemno_acc = lv_itemno_acc
-*                                                 iv_stat_con = space "CONV #( '50' )
-*                                                ).
-
         DATA(lt_accountpayable) = fill_accountpayable( is_bkpf = <fs_bkpf_bseg>
                                                        iv_gl_account = gv_hkont
                                                        iv_itemno_acc = lv_itemno_acc ).
-
-*        DATA(lt_accountreceivable_aux) = fill_accountreceivable( is_bkpf = <fs_bkpf_bseg>
-*                                                                 iv_itemno_acc =  CONV #( <fs_bkpf_bseg>-buzei )
-*                                                                 iv_pmnt_block = space
-*                                                                 iv_sp_gl_ind = space ).
-
 
         DATA(lt_currencyamount_aux) = fill_currencyamount( is_bkpf = <fs_bkpf_bseg>
                                                             iv_itemno_acc =  lv_itemno_acc ) .
@@ -427,12 +476,6 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
       ENDIF.
 
       IF <fs_bkpf_bseg>-kunnr IS NOT INITIAL.
-
-*        lt_accountgl_aux = fill_accountgl( is_bkpf = <fs_bkpf_bseg>
-*                                           iv_gl_account = space
-*                                           iv_itemno_acc =  CONV #( <fs_bkpf_bseg>-buzei )
-*                                           iv_stat_con = space "CONV #( '09' )
-*                                         ).
 
         DATA(lt_accountreceivable_aux) = fill_accountreceivable( is_bkpf = <fs_bkpf_bseg>
                                                            iv_itemno_acc =  lv_itemno_acc
@@ -451,9 +494,6 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
 
       ENDIF.
 
-*      IF lt_accountgl_aux IS NOT INITIAL.
-*        APPEND LINES OF lt_accountgl_aux TO lt_accountgl.
-*      ENDIF.
 
       IF lt_accountreceivable_aux IS NOT INITIAL.
         APPEND LINES OF lt_accountreceivable_aux TO lt_accountreceivable.
@@ -481,29 +521,16 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
         CALL FUNCTION 'BAPI_ACC_DOCUMENT_POST'
           EXPORTING
             documentheader    = ls_header
-*           customercpd       =
-*           contractheader    =
           IMPORTING
             obj_type          = lv_obj_type
             obj_key           = lv_obj_key
             obj_sys           = lv_obj_sys
           TABLES
-*           accountgl         = lt_accountgl
             accountreceivable = lt_accountreceivable
             accountpayable    = lt_accountpayable
-*           accounttax        =
             currencyamount    = lt_currencyamount
-*           criteria          =
-*           valuefield        =
-*           extension1        =
             return            = lt_return
-*           paymentcard       =
-*           contractitem      =
-            extension2        = lt_extension2
-*           realestate        =
-*           accountwt         =
-          .
-
+            extension2        = lt_extension2.
 
         IF lv_obj_key IS NOT INITIAL
         AND lv_obj_key NE '$'.
@@ -544,20 +571,15 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
             CATCH cx_sy_itab_line_not_found.
           ENDTRY.
 
-
           CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'.
-
-*      gt_return = VALUE #( ( type       = 'I'
-*                             id         = 'ZFI_DESCONTO_COND'
-*                             number     = 009
-*                             message_v1 = ''  ) ).
 
           APPEND VALUE #( type    = 'S'
                           id      = 'ZFI_DESCONTO_COND'
                           number  = 010
                           message_v1 = lv_obj_key(10)
                           message_v2 = lv_obj_key+10(4)
-                          message_v3 = lv_obj_key+14(4) ) TO gt_return.
+                          message_v3 = lv_obj_key+14(4)
+                          message_v4 = <fs_bkpf_bseg>-belnr ) TO gt_return.
 
         ELSE.
 
@@ -569,26 +591,24 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
             ENDIF.
           ENDLOOP.
 
-*          READ TABLE gt_bkpf ASSIGNING FIELD-SYMBOL(<fs_bkpf>) WITH KEY xref1_hd = <fs_bkpf_bseg>-awkey.
           IF line_exists( gt_bkpf[ xref1_hd = <fs_bkpf_bseg>-awkey ] ).
-
-*            IF <fs_bkpf> IS ASSIGNED.
 
             APPEND VALUE #( type       = 'E'
                             id         = 'ZFI_DESCONTO_COND'
                             number     = 011
                             message_v1 = gt_bkpf[ xref1_hd = <fs_bkpf_bseg>-awkey ]-belnr ) TO gt_return.
-*                            message_v1 = <fs_bkpf>-belnr ) TO gt_return.
 
           ENDIF.
 
         ENDIF.
 
         CLEAR: ls_header,
-
                lv_obj_type,
                lv_obj_key,
                lv_obj_sys,
+               lt_accountreceivable,
+               lt_accountpayable,
+               lt_extension2,
                lv_bukrs_change,
                lv_belnr_change,
                lv_gjahr_change,
@@ -597,7 +617,6 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
                lt_currencyamount,
                lt_return,
                lt_acc.
-
 
       ENDIF.
 
@@ -624,13 +643,8 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
     rs_header-comp_code = is_bkpf-bukrs.
     rs_header-ref_doc_no = is_bkpf-xblnr.
     rs_header-header_txt = is_bkpf-bktxt.
-*    rs_header-xref2_hd = is_bkpf-xref2_hd.
-
-
-
-
-
-
+*    rs_header-glo_ref1_hd = is_bkpf-xref1_hd.
+*    rs_header-glo_ref2_hd = is_bkpf-xref2_hd.
 
   ENDMETHOD.
 
@@ -681,7 +695,7 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
     DATA: lv_dmbtr TYPE dmbrt.
 
     IF iv_itemno_acc EQ 1.
-      lv_dmbtr = is_bkpf-dmbtr.
+      lv_dmbtr = is_bkpf-dmbtr .
     ELSE.
       lv_dmbtr = is_bkpf-dmbtr * -1.
     ENDIF.
@@ -731,20 +745,20 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
       CATCH zcxca_tabela_parametros.
     ENDTRY.
 
-*    TRY.
-*        CLEAR lr_tp_doc.
-*        lo_param->m_get_range( EXPORTING iv_modulo = me->gc_modulo
-*                                         iv_chave1 = me->gc_chave1
-*                                         iv_chave2 = me->gc_chave2_b
-*                                         iv_chave3 = me->gc_chave3_b
-*                               IMPORTING et_range  = lr_tp_doc ).
-*
-*        IF lr_tp_doc IS NOT INITIAL.
-*          gr_blart01 = lr_tp_doc.
-*        ENDIF.
-*
-*      CATCH zcxca_tabela_parametros.
-*    ENDTRY.
+    TRY.
+        CLEAR lr_tp_doc.
+        lo_param->m_get_range( EXPORTING iv_modulo = me->gc_modulo
+                                         iv_chave1 = me->gc_chave1
+                                         iv_chave2 = me->gc_chave2_b
+                                         iv_chave3 = me->gc_chave3_b
+                               IMPORTING et_range  = lr_tp_doc ).
+
+        IF lr_tp_doc IS NOT INITIAL.
+          gr_blart01 = lr_tp_doc.
+        ENDIF.
+
+      CATCH zcxca_tabela_parametros.
+    ENDTRY.
 
     TRY.
         CLEAR lr_tp_doc.
@@ -820,6 +834,10 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
 
     IF iv_deb_cred EQ gc_codigo_debito_s.
 
+      APPEND VALUE #( structure  = 'BUPLA'
+                      valuepart1 = iv_itemno_acc
+                      valuepart2 = is_bkpf-bupla ) TO  rt_extension2 .
+
       APPEND VALUE #( structure  = 'BSCHL'
                       valuepart1 = iv_itemno_acc
                       valuepart2 = gc_chave_lanc_09  ) TO  rt_extension2 .
@@ -836,6 +854,10 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
       APPEND VALUE #( structure  = 'XREF2_HD'
                       valuepart1 = iv_itemno_acc
                       valuepart2 = is_bkpf-xref2_hd  ) TO  rt_extension2 .
+
+      APPEND VALUE #( structure  = 'XREF1_HD'
+                       valuepart1 = iv_itemno_acc
+                       valuepart2 = is_bkpf-xref1_hd  ) TO  rt_extension2 .
 
     ELSE.
 
@@ -878,6 +900,19 @@ CLASS ZCLFI_REVERTE_PROV IMPLEMENTATION.
 
     ENDIF.
 
+
+  ENDMETHOD.
+
+
+  METHOD fill_extension2_h.
+
+    APPEND VALUE #( structure  = 'XREF1_HD'
+          valuepart1 = iv_itemno_acc
+          valuepart2 = is_bkpf-xref1_hd ) TO  rt_extension2 .
+
+    APPEND VALUE #( structure  = 'XREF2_HD'
+          valuepart1 = iv_itemno_acc
+          valuepart2 = is_bkpf-xref2_hd ) TO  rt_extension2 .
 
   ENDMETHOD.
 ENDCLASS.

@@ -19,14 +19,13 @@ INCLUDE zfii_exec_reversao_def.
 INCLUDE zfii_exec_reversao_scr.
 INCLUDE zfii_exec_reversao_imp.
 
-data: lt_data type table of zsfi_output_revert.
+DATA: lt_data TYPE TABLE OF zsfi_output_revert.
 
 START-OF-SELECTION.
 
   DATA(lo_reverte) = NEW zclfi_reverte_prov( it_bukrs = s_bukrs[]
                                              it_belnr = s_belnr[]
-                                             it_gjahr = s_gjahr[]
-                                             it_blart = s_blart[] ).
+                                             it_gjahr = s_gjahr[] ).
 
   DATA(lt_return) = lo_reverte->main_process(  )  .
 
